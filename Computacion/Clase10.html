@@ -1,0 +1,776 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20031002;19564157">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20031002;19574741">
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P ALIGN=RIGHT STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+  
+</P>
+<P ALIGN=RIGHT STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Arreglos
+(Arrays).</B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Muchas aplicaciones requieren el procesado de m&uacute;ltiples
+datos que tienen caracter&iacute;sticas comunes. En tales situaciones
+es a menudo conveniente colocar los datos en un arreglo &oacute;
+&ldquo;array&rdquo;, donde todos comparten el mismo nombre. Los datos
+individuales pueden ser caracteres, enteros, n&uacute;meros en coma
+flotante, etc. Pero todos tienen que ser del mismo tipo y con el
+mismo tipo de almacenamiento.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Cada elemento del arreglo es referido especificando el
+nombre del arreglo seguido por uno o m&aacute;s &iacute;ndices, con
+cada &iacute;ndice encerrado entre corchetes. Cada &iacute;ndice debe
+ser expresado como un entero no negativo: una constante entera, una
+variable entera o una expresi&oacute;n entera m&aacute;s compleja.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En un arreglo x de n elementos los elementos del arreglo
+son:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>x[0], x[1],...,x[n-1].</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El n&uacute;mero de &iacute;ndices determina la
+dimensionalidad del arreglo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none">En
+matem&aacute;ticas se usa la siguiente notaci&oacute;n para
+representar</SPAN></SPAN> vectores y matrices:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Vector.					Matriz</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><IMG SRC="Clase10_html_4849fb99.gif" NAME="Objeto1" HSPACE=8 WIDTH=80 HEIGHT=118><FONT FACE="Times New Roman, serif"><FONT SIZE=3>				<SPAN STYLE="font-weight: medium"><IMG SRC="Clase10_html_m18e73c57.gif" NAME="Objeto2" HSPACE=8 WIDTH=183 HEIGHT=121></SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Donde
+cada <SPAN STYLE="font-style: normal">componente</SPAN><I> </I>se
+denota como <I>x<SUB>i</SUB> </I>en el caso de vectores
+unidimensionales y <I>a<SUB>ij</SUB> </I>en el caso de matrices. A
+los s&iacute;mbolos <I>i </I>y <I>j </I>se los conoce como <I>&iacute;ndices
+</I>y dicen la posici&oacute;n de la componente dentro del
+vector-matriz.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-weight: medium"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>La
+dimensi&oacute;n de un vector es el n&uacute;mero de sus componentes
+(<I>n</I>).</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>El
+<SPAN STYLE="font-style: normal">orden</SPAN><I> </I>de una matriz es
+el n&uacute;mero de sus filas y columnas (<I>m</I><FONT FACE="Symbol">&acute;</FONT><I>n</I>)</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Definici&oacute;n
+de un arreglo.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Al definirse, cada arreglo debe acompa&ntilde;arse de
+una especificaci&oacute;n de tama&ntilde;o (n&uacute;mero de
+elementos). En t&eacute;rminos generales, un arreglo unidimensional
+puede expresarse como:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>tipo_vector
+nombre_vector[tama&ntilde;o_vector];</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>tipo_dato nombre_arreglo[expresi&oacute;n_entera_positiva];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>donde tama&ntilde;o_vector ( que debe ser una expresi&oacute;n
+entera positiva ) indica el n&uacute;mero de elementos del arreglo.
+Ojo que para hacer referencia a estos elementos se debe tomar en
+cuenta que el primer elemento es el n&uacute;mero cero. Veamos unos
+ejemplos en los que se realiza asignaciones a elementos de un vector:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>int
+i;</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>int
+vector[3];	// Define un arreglo unidimensional de 3 elementos</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>i=2;</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>vector[i]=1;	//
+Esto se puede hacer</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>vector[0]=2;	//
+Esto tambi&eacute;n</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>vector[3]=5;	//
+Obviamente &eacute;sto NO ya que no existe. S&oacute;lo 0,1 y 2 ( 3
+elementos )</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>y unos ejemplos de
+lectura:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>i=vector[0];</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>i=vector[i];</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>vector[1]=vector[0]+vector[2];</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>vector[i-1]=1;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>vector[vector[i]]=0;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Las definiciones de arreglos pueden incluir, si se
+desea, la asignaci&oacute;n de valores iniciales. Los valores
+iniciales deben aparecer en el orden en que ser&aacute;n asignados a
+los elementos individuales del arreglo, encerrados entre llaves y
+separados por comas. La forma general es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>tipo_dato nombre_arreglo[expresi&oacute;n] =
+{valor1,valor2,...,valorn};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La presencia de la expresi&oacute;n, que indica el
+n&uacute;mero de elementos del arreglo, es opcional cuando los
+valores iniciales est&aacute;n presentes.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>OJO,
+MUY IMPORTANTE: Todos los elementos del arreglo que no tienen
+asignados valores iniciales expl&iacute;citos ser&aacute;n puestos
+autom&aacute;ticamente a cero. Por lo tanto si se desea asignar cero
+a todos los elementos de un arreglo, se podr&iacute;a tan solo
+declarar cero como el primer valor y el resto se har&aacute; de forma
+autom&aacute;tica. P</FONT></SPAN></SPAN>. ej.:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int a[40]={0};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>asignar&aacute; cero a los elementos entre el cero y el
+treinta y nueve del arreglo. Tambi&eacute;n aplica para arreglos
+multidimensionales.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Ojo, esto no quiere decir que si se inicializa el primer
+elemento con uno el resto tambi&eacute;n lo ser&aacute;. NO. El
+primero ser&aacute; uno y el resto ser&aacute; cero.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Nota
+importante acerca del procesamiento de un arreglo.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En C no se permiten operaciones que impliquen arreglos
+completos. As&iacute;, si a y b son dos arreglos similares (mismo
+tipo de datos, misma dimensionalidad y mismo tama&ntilde;o), las
+operaciones de asignaci&oacute;n, comparaci&oacute;n, etc., deben
+realizarse elemento por elemento. Para este fin tambi&eacute;n existe
+un grupo de funciones poderosas definidas dentro del archivo de
+cabecera &ldquo;string.h&rdquo; de las cuales hablaremos m&aacute;s
+adelante.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Arreglos
+multidimensionales.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Los arreglos multidimensionales son definidos
+pr&aacute;cticamente de la misma manera que los arreglos
+unidimensionales, excepto que se requiere un par de corchetes para
+cada &iacute;ndice. En general:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>tipo_matriz
+nombre_matriz[n_filas][n_columnas];</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>&oacute;
+incluso de m&aacute;s dimensiones:</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>tipo_dato nombre_arreglo
+[indice_1][indice_2]...[indice_n];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Veamos unos ejemplos en los que se realiza asignaciones
+a elementos de una matriz:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int i=1, j, k;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int Matriz[2][3];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>k=31000;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>j=2;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Matriz[1][0]=2;	// Coorecto.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Matriz[0][j]=k;	// Bien.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Matriz[i][j]=50;	// Bien</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Matriz[j][k]=100;	// No se&ntilde;or, no est&aacute;
+permitido.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Y unos ejemplos de lectura ser&iacute;an:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>k=Matriz[i][j];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>i=Matriz[1][2];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Matriz[1][i]=5*Matriz[0][i];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>j=Matriz[5][j-1];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>k=Matriz[vector[i]][0];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Los arreglos multidimensionales tambi&eacute;n puden ser
+inicializados al momento de su declaraci&oacute;n. Un ejemplo
+espec&iacute;fico con inicializaci&oacute;n para un tipo
+bidimensional ser&iacute;a algo como:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>tipo_matriz
+nombre_matriz[][2]={</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 7.5cm; margin-bottom: 0cm; font-weight: medium">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="text-decoration: none">{0</SPAN>
+, 1},</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 7.5cm; margin-bottom: 0cm; font-weight: medium">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>{1
+, -3}</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>};</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>aunque las llaves
+internas no son necesarias y s&oacute;lo se usan para facilitar la
+lectura del arreglo por parte del programador. Lo que si es
+absolutamente necesario es que en la definici&oacute;n del arreglo se
+incluya al menos uno de los &iacute;ndices ( &eacute;sto si es de dos
+dimensiones. Lo importante es que s&oacute;lo puede faltar un solo 
+&iacute;ndice como m&aacute;ximo y &eacute;ste debe ser el primero ).
+&Eacute;sto es porque el compilador necesita saber como ser&aacute;n
+organizados los datos. Si no se coloca uno de los &iacute;ndices
+entonces s&oacute;lo se sabr&iacute;a que es un arreglo que contiene
+4 elementos lo cual podr&iacute;a ser un arreglo de 4 filas y 1
+columna, 2 filas y 2 columnas &oacute; 1 fila y 4 columnas.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Los arreglos multidimensionales se procesan de la misma
+manera que los arreglos unidimensionales, sobre la base de elemento a
+elemento. Sin embargo, se requiere alg&uacute;n cuidado cuando se
+pasan arreglos multidimensionales a una funci&oacute;n. En
+particular, las declaraciones de argumentos formales dentro de la
+definici&oacute;n de funci&oacute;n deben incluir especificaciones
+expl&iacute;citas de tama&ntilde;o en todos los &iacute;ndices
+excepto en el primero ( an&aacute;logo a lo dicho en el p&aacute;rrafo
+anterior ). El paso de arreglos a funciones ser&aacute; nuestro
+pr&oacute;ximo punto.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Paso
+de arreglos a funciones.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>A diferencia de los tipos b&aacute;sicos, el contenido
+de los vectores y matrices siempre es pasado por referencia. ( Ver
+&ldquo;llamada por referencia&rdquo; en funciones ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El nombre de un arreglo se puede usar como argumento de
+una funci&oacute;n, permitiendo as&iacute; que el arreglo completo
+sea pasado a la funci&oacute;n. Para pasar un arreglo a una funci&oacute;n,
+el nombre del arreglo debe aparecer s&oacute;lo, sin corchetes o
+&iacute;ndices, como un argumento actual dentro de la llamada a la
+funci&oacute;n. El correspondiente argumento formal se escribe de la
+misma manera, pero debe ser declarado como un arreglo dentro de la
+declaraci&oacute;n de argumentos formales.  Cuando se declara un
+arreglo unidimensional como un argumento formal, el arreglo se
+escribe con un par de corchetes vac&iacute;os.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Hemos visto que los argumentos son pasados a la funci&oacute;n
+por valor cuando los argumentos son variables ordinarias. Sin
+embargo, cuando se pasa un arreglo a una funci&oacute;n, los valores
+de los elementos del arreglo no son pasados a la funci&oacute;n. En
+vez de &eacute;sto, el nombre del arreglo se interpreta como la
+direcci&oacute;n del primer elemento del arreglo. Esta direcci&oacute;n
+se asigna al correspondiente argumento formal cuando se llama a la
+funci&oacute;n. El argumento formal se convierte por tanto en un
+puntero al primer elemento del arreglo (m&aacute;s sobre esto cuando
+hablemos de punteros). Como ya sabemos, los argumentos pasados de
+esta forma se dicen que son pasados por referencia en vez de por
+valor. Por tanto, si un elemento del arreglo es alterado dentro de la
+funci&oacute;n, esta alteraci&oacute;n ser&aacute; reconocida en todo
+el &aacute;mbito de definici&oacute;n del arreglo. Veamos algunos
+ejemplos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void funcionMat(int M[2][2]); // Declara una funci&oacute;n
+que recibira una matriz de 2x2.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void main()</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>{</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int Matriz[2][2];	// Declara una matriz de 2x2 elementos</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Matriz[0][1]=1;		// Inicializa el elemento (1,2) a 1</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>funcionMat(Matriz);	// llama a la funci&oacute;n y le
+envia la direcci&oacute;n de Matriz.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 6.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>// OJO en como se le envia ( sin corchetes ). Esto se</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 6.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>// traduce en &ldquo;la direcci&oacute;n del primer
+elemento de Matriz&rdquo;.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;%d&rdquo;, Matriz[0][1]); // Imprime el
+elemento que ya no contiene 1 porque...</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void funcionMat(int M[2][2])</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>{</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>M[0][1]*=-2;</FONT></SPAN></SPAN>	//
+&eacute;sto altera el valor del arreglo original. Recordar que es por
+referencia.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Existen tres formas de pasarle un arreglo a una funci&oacute;n.
+&Eacute;stas son:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void funcion(int[10]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>que es la cl&aacute;sica que hace uso de un arreglo
+delimitado. Esta tambi&eacute;n:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void funcion(int []);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>que es la versi&oacute;n con un array no delimitado. Y
+por &uacute;ltimo, como el paso de los arreglos a una funci&oacute;n
+se hace por referencia, tambi&eacute;n podemos declarar una funci&oacute;n
+que reciba un arreglo a trav&eacute;s de los punteros. Por ejemplo
+para un arreglo unidimensional de enteros, basta con definir que la
+funci&oacute;n recibir&aacute; un puntero a entero. Veremos un
+ejemplo aunque &eacute;sto ser&aacute; profundizado m&aacute;s
+adelante. El prototipo de una funci&oacute;n que recibir&aacute; un
+arreglo unidimensional de enteros podr&iacute;a definirse:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void funcion(int *x);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Todo lo anterior hace lo mismo. Definir que la funci&oacute;n
+recibir&aacute; una direcci&oacute;n de memoria que apunta a un
+entero. De hecho, como <B><FONT SIZE=4>C no comprueba los l&iacute;mites
+de un arreglo</FONT></B>, en lo que a la funci&oacute;n se refiere,
+realmente no importa la longitud del arreglo. El compilador al leer:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void funcion(int[32]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>har&aacute; exactamente lo mismo ya que el compilador
+instruye a funcion para recibir un puntero; realmente no crea un
+arreglo de 32 elementos.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Cadenas
+de caracteres.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En realidad en Lenguaje C no existe una variable de tipo
+&ldquo;string&rdquo; como tal. En C,  lo que es conocido en otros
+lenguajes como strings son tan solo un tipo especial de arreglos.
+Espec&iacute;ficamente son arreglos de caracteres.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Una cadena de caracteres se representa por un arreglo
+unidimensional de caracteres. Cada car&aacute;cter de la cadena se
+almacena en un elemento del arreglo. De hecho &eacute;sta es la forma
+m&aacute;s usada de arreglos unidimensionales.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B><FONT SIZE=3 STYLE="font-size: 13pt">OJO. MUY
+IMPORTANTE</FONT></B>: En la las operaciones con arreglos de
+caracteres, siempre se guarda autom&aacute;ticamente como &uacute;ltimo
+elemento el car&aacute;cter nulo:'\0'.  Esto indicar&aacute; siempre
+el fin de la cadena. As&iacute; que para declarar un arreglo de
+caracteres es necesario que sean un car&aacute;cter m&aacute;s que la
+cadena m&aacute;s larga que pueda contener. Ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char array1[10]=&quot;987654321&quot;;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>declara un arreglo de caracteres de 10 elementos y es
+inicializado. Cuando se inicializa una cadena podr&iacute;a dejarse
+los corchetes vac&iacute;os y as&iacute; el compilador le asignar&aacute;
+el &iacute;ndice requerido autom&aacute;ticamente pero si NO es as&iacute;,
+se debe tener en cuenta que el &uacute;ltimo car&aacute;cter de la
+cadena tambi&eacute;n ocupar&aacute; un puesto. Este es el car&aacute;cter
+nulo \0. As&iacute; que nuestra declaraci&oacute;n contiene 10
+elementos aunque s&oacute;lo asignamos 9 ( y no se le puede asignar
+m&aacute;s ya que no dejar&iacute;amos lugar al ya bastante
+mencionado \0 ). O sea que la sentencia anterior es lo mismo que:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char
+array1[]={'9','8','7','6','5','4','3','2','1','\0'};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>usando la forma comentada en la &ldquo;Definici&oacute;n
+de Arreglos&rdquo;.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Algunas
+funciones de inter&eacute;s.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Algunos problemas requieren que los caracteres de la
+cadena sean procesados individualmente. No obstante, hay muchos otros
+problemas en los que se requiere que las cadenas se procesen como
+entidades completas. Tales problemas pueden simplificarse
+considerablemente usando funciones especiales orientadas a cadenas.
+Entre las funciones incluidas en stdio.h tenemos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>gets()</B>: Su forma general es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>gets(cadena_de_caracteres)</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>y lo que hace es tomar de teclado un texto ( hasta que
+se pulse enter ) y guardarlo en cadena_de_caracteres.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>OJO:
+</B><SPAN STYLE="font-weight: medium">Como ya se dijo antes,</SPAN><B>
+C no comprueba los l&iacute;mites de los arreglos</B><SPAN STYLE="font-weight: medium">
+as&iacute; que se puede sobrepasar cualquier extremo de un arreglo y
+escribir en alguna otra variable de datos o incluso mucho peor en el
+c&oacute;digo del programa. Como programador es tarea suya
+proporcionar una comprobaci&oacute;n de l&iacute;mites cuando sea
+necesario. Por ejemplo, aseg&uacute;rese de que los arreglos de
+caracteres que aceptan entradas de caracteres usando el anteriormente
+mencionado gets() sean suficientemente largos como para aceptar la
+mayor entrada posible.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>puts()</B>: Su forma general es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>puts(cadena_de_caracteres)</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>y lo que hace escribir en pantalla el contenido de
+cadena_de_caracteres terminando con un salto de l&iacute;nea. Tambi&eacute;n
+se puede usar la funci&oacute;n printf() especificando que el tipo a
+imprimir es %s. P. ej.:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;La cadena contiene: %s\n&rdquo;,nombre_cadena);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Las funciones especificadas a continuaci&oacute;n para
+el tratamiento de cadenas de caracteres se encuentran en el fichero
+de cabecera <B>string.h</B>:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>strcmp()</B>: Su forma general es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>strcmp(cadena1,cadena2)</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>y lo que hace es comparar alfab&eacute;ticamente dos
+cadenas. Devuelve:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>a.- un valor negativo si cadena1 precede alfab&eacute;ticamente
+a cadena2.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>b.- el valor 0 si las dos cadenas son id&eacute;nticas.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>c.- un valor positivo si cadena2 precede alfab&eacute;ticamente
+a cadena1.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Vea que esta funci&oacute;n devuelve FALSO cuando las
+cadenas son iguales por lo que si est&aacute; probando la igualdad,
+aseg&uacute;rese de usar el operador l&oacute;gico <B>!</B> Para
+invertir la condici&oacute;n. V&eacute;ase el ejemplo al final de
+este punto.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>strcpy()</B>: Su forma general es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>strcpy(cadena1, cadena2)</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>y lo que hace es copiar el valor de cadena2 en cadena1 y
+devuelve cadena1.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>strlen()</B>: Su forma general es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>strlen(cadena)</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>y retorna el n&uacute;mero de caracteres de la cadena.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>strcat()</B>: Su forma general es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>strcat(cadena1, cadena2)</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>y lo que hace es concatenar la cadena apuntada por
+cadena2 a la cadena apuntada por cadena1 la cual contendr&aacute; la
+versi&oacute;n final de la cadena. Tambi&eacute;n devuelve cadena1.
+V&eacute;ase que hace algo como: cadena1+cadena2.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>A continuaci&oacute;n veamos un ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>#include&lt;string.h&gt;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>main() {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char c1[80], c2[80];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>gets(c1);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>gets(c2);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;longitudes: %i %i\n&rdquo;, strlen(c1),
+strlen(c2));</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if ( !strcmp(c1, c2) ) printf(&ldquo;Son iguales\n&rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>strcat(c1, c2);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;%s\n&rdquo;, c1);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return 0;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Si se ejecuta este programa e introducimos las cadenas
+TEST y TEST, por ejemplo, la salida ser&aacute;:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>longitudes: 5 5	// Espero que sepan porqu&eacute;.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Son iguales</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>TESTTEST</FONT></P>
+<P ALIGN=RIGHT STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+</BODY>
+</HTML>

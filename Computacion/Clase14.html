@@ -1,0 +1,722 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20031012;8064335">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20031012;8071798">
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Punteros
+( 2da parte ).</B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Punteros
+y arreglos.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>El nombre de un
+arreglo es realmente un puntero al primer elemento de ese arreglo.
+Sin embargo, si x es un arreglo undimensional, la direcci&oacute;n
+del primer elemento puede ser expresada tanto como &amp;x[0] o
+simplemente como x. La direcci&oacute;n del elemento (i+1) se puede
+expresar como &amp;x[i] o como (x+i). En la expresi&oacute;n (x+i) x
+representa una direcci&oacute;n e i un n&uacute;mero entero. Adem&aacute;s
+x es el nombre de un arreglo cuyos elementos pueden ser caracteres,
+enteros, n&uacute;meros en coma flotante, etc. Por tanto, no estamos
+simplemente a&ntilde;adiendo valores num&eacute;ricos. M&aacute;s
+bien estamos especificando una localizaci&oacute;n que est&aacute;
+&ldquo;i&rdquo; elementos del arreglo mas all&aacute; del primero,
+con lo cual la expresi&oacute;n (x+i) es una representaci&oacute;n
+simb&oacute;lica de una direcci&oacute;n en vez de una expresi&oacute;n
+aritm&eacute;tica.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Si &amp;x[i] y (x+i)
+representan la direcci&oacute;n del i-&eacute;simo elemento de x,
+x[i] y *(x+i) representan el contenido de esa direcci&oacute;n: el
+valor del i-&eacute;simo elemento de x.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Ya que un nombre de
+arreglo es en realidad un puntero a su primer elemento, es posible
+definir un arreglo como una variable puntero en vez de como un
+arreglo convencional. La definici&oacute;n convencional de un arreglo
+produce la reserva de un bloque fijo de memoria al principio de la
+ejecuci&oacute;n del programa, mientras que esto no ocurre si se
+representa el arreglo mediante una variable puntero. En este caso, se
+necesita alg&uacute;n tipo de asignaci&oacute;n inicial de memoria
+antes de que los elementos del arreglo sean procesados.  Como  ya
+vimos anteriormente, tales tipos de reserva se realizan mediante la
+funci&oacute;n malloc().</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Hay una relaci&oacute;n muy cercana entre los punteros y
+los arreglos. Como ya vimos previamente, el nombre del arreglo (
+tambi&eacute;n conocido como denominador ) es equivalente a la
+direcci&oacute;n del elemento [0] del mismo. La explicaci&oacute;n de
+&eacute;sto es ahora sencilla : el nombre de un arreglo, para el
+compilador C, es un PUNTERO inicializado con la direcci&oacute;n del
+primer elemento del arreglo. Sin embargo hay una importante
+diferencia entre ambos, que haremos notar m&aacute;s abajo.<BR></FONT><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none"><FONT SIZE=3>Veamos
+algunas operaciones permitidas entre punteros :</FONT></P>
+<PRE>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>float var1, conjunto[] = { 9.0 , 8.0 , 7.0 , 6.0 , 5.0 );</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>float *punt ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>punt = conjunto ;    /* equivalente a hacer : punt = &amp;conjunto [0] */</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>var1 = *punt ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>*punt = 25.1 ;</FONT></FONT></PRE><P>
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY>Es perfectamente v&aacute;lido asignar a un puntero
+el valor de otro, el resultado de &eacute;sta operaci&oacute;n es
+cargar en el puntero punt la direcci&oacute;n del elemento [0] del
+arreglo conjunto, y posteriormente en la variable var1 el valor del
+mismo (9.0) y para luego cambiar el valor de dicho primer elemento a
+25.1 .<BR><BR><BR>
+</P>
+<P ALIGN=JUSTIFY>Veamos cual es la diferencia entre un puntero y el
+nombre de un arreglo : el primero es una VARIABLE, es decir que puedo
+asignarlo, incrementarlo etc, en cambio el segundo es una CONSTANTE,
+que apunta siempre al primer elemento del arreglo con que fu&eacute;
+declarado, por lo que su contenido NO PUEDE SER VARIADO. Si lo piensa
+un poco &eacute;sto es l&oacute;gico ya que &quot;conjunto&quot;
+implica la direcci&oacute;n del elemento conjunto [0] por lo que, si
+yo cambiara su valor, apuntar&iacute;a a otro lado dejando de ser
+&quot;conjunto&quot;. Desde este punto de vista, el siguiente ejemplo
+nos muestra un tipo de error bastante frecuente:</P>
+<P ALIGN=JUSTIFY><BR><BR>
+</P>
+<PRE STYLE="margin-left: 1.25cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>int conjunto[5] , lista[] = { 5 , 6 , 7 , 8 , 0 ) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>int *apuntador ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>apuntador = lista ;      /* correcto */</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>conjunto = apuntador;    /* ERROR: Conjunto es Constante */</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>lista = conjunto ;       /* ERROR: Ambos son constantes */</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>apuntador = &amp;conjunto    /* ERROR no se puede aplicar el operador &amp; aqu&iacute;.</FONT></FONT>
+</PRE><P>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Veamos ahora las
+distintas modalidades del incremento de un puntero : </FONT></FONT>
+</P>
+<P><BR><BR>
+</P>
+<PRE STYLE="margin-left: 1.25cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>int *pint , arreglo_int[5] ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>double *pdou , arreglo_dou[6] ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>pint = arreglo_int ;      /* pint apunta a arreglo_int[0] */</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>pdou = arreglo_dou ;      /* pdou apunta a arreglo_dou[0] */ </FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>pint += 1 ;              /* pint apunta a arreglo_int[1]  */</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>pdou += 1 ;              /* pdou apunta a arreglo_dou[1]  */ </FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>pint++ ;                  /* pint apunta a arreglo_int[2] */</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>pdou++ ;                  /* pdou apunta a arreglo_dou[2] */ </FONT></FONT></PRE><P STYLE="margin-left: 1.25cm">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif">Hemos declarado
+y asignado dos punteros, uno a int y otro a double, con las
+direcciones de dos arreglos de esas caracter&iacute;sticas. Ambos
+estar&aacute;n ahora apuntando a los elementos [0] de los arreglos.
+En las dos instrucciones siguientes incrementamos en uno dichos
+punteros. &iquest; adonde apuntaran ahora ?.<BR></FONT><BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif">Como ya vimos,
+para el compilador estas sentencias se leen como: incremente el
+contenido del puntero ( direcci&oacute;n del primer elemento del
+arreglo ) en un n&uacute;mero igual a la cantidad de bytes que tiene
+la variable con que fue declarado. Es decir que el contenido de pint
+es incrementado en dos bytes (un int tiene 2 bytes ) mientras que
+pdou es incrementado 8 bytes ( por ser un puntero a double ), el
+resultado entonces es el mismo para ambos, ya que luego de la
+operaci&oacute;n quedan apuntando al elemento SIGUIENTE del arreglo,
+arreglo_int[1] y arreglo_dou[1] .</FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif"><BR>Vemos que de
+&eacute;sta manera ser&aacute; muy facil &quot;barrer&quot; arreglos
+independientemente del tama&ntilde;o de variables que lo compongan,
+permitiendo por otro lado que el programa sea transportable a
+distintos &ldquo;hardwares&rdquo; sin preocuparnos de la diferente
+cantidad de bytes que pueden asignar los mismos, a un dado tipo de
+variable.</FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif"><BR>De manera
+similar las dos instrucciones siguientes, vuelven a a incrementarse
+los punteros, apuntando ahora a los elementos siguientes de los
+arreglos.<BR></FONT><BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif">Todo lo dicho es
+aplicable en id&eacute;ntica manera al operador de decremento -- .</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Si, en cambio, el
+arreglo es bidimensional ( es este caso espec&iacute;fico, pero puede
+ser multidimensional  en general ), en realidad &eacute;ste es una
+colecci&oacute;n de arreglos unidimensionales. Por lo tanto, se puede
+definir un arreglo bidimensional como un puntero a un grupo contiguo
+de arreglos unidimensionales ( OJO: No lo confundan con un arreglos
+de punteros, lo que veremos m&aacute;s adelante, aunque realmente
+pueden usarse con fines similares ). Una declaraci&oacute;n de
+arreglo bidimensional puede ser escrita como:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>tipo_dato (*ptvar)
+[expresi&oacute;n2];</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>en vez de:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>tipo_dato arreglo
+[expresi&oacute;n1][expresi&oacute;n2];</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Los
+par&eacute;ntesis que rodean al puntero deben estar presentes. De
+otra forma se interpretar&iacute;a como un arreglo de punteros ( ver
+m&aacute;s adelante ).</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Ejemplo: Supongamos
+que x es un arreglo bidimensional de enteros con 10 filas y 20
+columnas. Podemos declarar x como:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>int (*x)[20];</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>en vez de:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>int x[10][20];</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>En la primera
+declaraci&oacute;n x se define como un puntero a un grupo contiguo de
+arreglo unidimensionales de 20 elementos enteros. As&iacute; x apunta
+al primero de los arreglos de 20 elementos, que es en realidad la
+primera fila (fila 0) del arreglo bidimensional original. Del mismo
+modo (x+1) apunta al segundo arreglo de 20 elementos, y as&iacute;
+sucesivamente.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>El elemento de la
+fila 2 columna 5 es accedido  como: *(*(x+2)+5). Porqu&eacute;?
+Veamos:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<OL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>(x+2) es un puntero
+	a la fila 2</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>*(x+2) es el objeto
+	de ese puntero y refiere a toda la fila. Como la fila 2 es un
+	arreglo unidimensional. *(x+2) es realmente un puntero al primer
+	elemento de la fila 2.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>(*(x+2)+5) es un
+	puntero al elemento 5 de la fila 2.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>El objeto de este
+	puntero  *(*(x+2)+5) refiere al elemento en la columna 5 de la fila
+	2.</FONT></FONT></P>
+</OL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Punteros
+y arreglos de caracteres.</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><BR>No
+hay gran diferencia entre el trato de punteros a arreglos  y a
+cadenas de caracteres ya que &eacute;stos son entidades de la misma
+clase, sin embargo analicemos algunas particularidades. As&iacute;
+como inicializamos una cadena de caracteres con un grupo de
+caracteres terminados en '\0', podemos asignar al mismo un puntero:</FONT></FONT></P>
+<PRE STYLE="margin-left: 1.25cm; margin-bottom: 0.5cm; text-align: justify"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>p = &quot;Esto es una cadena constante &quot; ;</FONT></FONT></PRE><P ALIGN=JUSTIFY>
+<FONT FACE="Times New Roman, serif">esta operaci&oacute;n no implica
+haber copiado el texto, sino s&oacute;lo que a p se le ha asignado la
+direcci&oacute;n de memoria donde reside la &quot;E&quot; del texto.
+A partir de ello podemos manejar a p como lo hemos hecho hasta ahora.
+Veamos un ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY><BR><BR>
+</P>
+<PRE STYLE="margin-left: 1.25cm; text-align: justify"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include &lt;stdio.h&gt;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>#define TEXTO1  &quot;&iquest; Hola, como &quot;  // #define es una directiva del compilador</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>#define TEXTO2  &quot;le va a Ud. ? &quot;	// para definir constantes.</FONT></FONT>
+
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>main() {</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char palabra[20], *p ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>int i ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>p = TEXTO1 ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>for( i = 0 ; ( palabra[i] = *p++ ) != '\0' ; i++ ) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>p = TEXTO2 ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;%s&quot; , palabra ) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;%s&quot; , p ) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>return 0 ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></PRE><P ALIGN=JUSTIFY>
+<FONT FACE="Times New Roman, serif"><BR>Definimos primero dos cadenas
+constantes TEXTO1 y TEXTO2, luego asignamos al puntero p la direcci&oacute;n
+del primero y seguidamente en el bucle for copiamos el contenido de
+&eacute;ste en el arreglo palabra. Observe que dicha operaci&oacute;n
+termina cuando el contenido de lo apuntado por p es el terminador de
+la cadena. Luego asignamos a p la direcci&oacute;n de TEXTO2 y
+finalmente imprimimos ambas cadenas, obteniendo una salida del tipo :
+&quot; &iquest; Hola, como le va a UD. ? &quot;.<BR></FONT><BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif">Reconozcamos que
+&eacute;sto se podr&iacute;a haber escrito m&aacute;s compacto si
+hubi&eacute;semos recordado que palabra tambi&eacute;n es un puntero
+y NULL es cero. As&iacute;, podr&iacute;amos poner en vez del bucle
+for:</FONT></P>
+<P ALIGN=JUSTIFY><BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm"><FONT FACE="Times New Roman, serif">while(
+*palabra++ = *p++ ) ;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm"><BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif">Hay un tipo de
+error muy frecuente que podemos analizar. F&iacute;&iacute;jense en
+el ejemplo siguiente, &iquest;ve alg&uacute;n problema?. <B>OJO con
+este ejemplo.</B></FONT></P>
+<P ALIGN=JUSTIFY><BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm"><BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>void
+main() {</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>char
+*p , palabra[20];</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;Escriba
+su nombre : &quot;);</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>scanf(&quot;%s&quot;
+, p );</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>palabra
+= &quot;&iquest;Como le va &quot;;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm">printf(&quot;%s%s&quot; ,
+palabra , p ) ;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></P>
+<PRE STYLE="margin-left: 1.25cm; text-align: justify">
+
+</PRE><P ALIGN=JUSTIFY>
+<FONT FACE="Times New Roman, serif">Pues hay dos errores. El primero
+es un punto que ya fue analizado antes: la expresi&oacute;n
+scanf(&quot;%s&quot; , p ) es correcta pero el error es no haber
+inicializado al puntero p el cual s&oacute;lo fue definido pero a&uacute;n
+no apunta a ning&uacute;n lado v&aacute;lido. El segundo error est&aacute;
+dado por la expresi&oacute;n : palabra = &quot; &iquest; Como le va &quot;
+ya que el nombre del arreglo es una constante y no puede ser asignado
+a otro valor.</FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif"><BR>&iquest;Como
+lo escribir&iacute;amos para que funcione correctamente ?</FONT></P>
+<PRE STYLE="text-align: justify">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include&lt;stdlib.h&gt;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include&lt;string.h&gt;</FONT></FONT>
+
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>void main() {</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char *p , palabra[20] ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>p = malloc(128) ; // Por ejemplo.</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;Escriba su nombre : &quot;) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>scanf(&quot;%s&quot; , p ) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>strcpy(palabra , &quot;&iquest; Como le va &quot; ) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;%s%s&quot; , palabra , p ) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT>
+</PRE><P ALIGN=JUSTIFY>
+<FONT FACE="Times New Roman, serif">Observe que antes de scanf() se
+ha inicializado a p, mediante el retorno de malloc() y a al arreglo
+palabra se le ha copiado la cadena mediante la funci&oacute;n
+strcpy() que se vio en la clases de arreglos y cadenas.<BR></FONT><BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif">Debemos aclarar
+tambi&eacute;n que la secuencia de control %s en el printf() impone
+enviar a la pantalla una cadena. Estando &eacute;ste apuntado por el
+argumento, puede ser tanto el nombre de un arreglo como un puntero ya
+que ambos indican direcciones.<BR></FONT><BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif">Una forma
+alternativa de resolverlo, ser&iacute;a: </FONT>
+</P>
+<P ALIGN=JUSTIFY><BR><BR>
+</P>
+<PRE STYLE="margin-left: 1.25cm; text-align: justify"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></FONT>
+
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>void main(){</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char p[20] , *palabra ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;Escriba su nombre : &quot;) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>scanf(&quot;%s&quot; , p ) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>palabra = &quot;&iquest; Como le va &quot; ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;%s%s&quot; , palabra , p ) ;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></PRE><P ALIGN=JUSTIFY>
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif">Obs&eacute;rvese,
+que es id&eacute;ntico al primero, con la salvedad que se ha
+invertido las declaraciones de las variables, ahora el puntero es
+palabra y el arreglo es p. Ambas soluciones son equivalentes y
+depender&aacute; del resto del programa cual es la mejor elecci&oacute;n.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Por &uacute;ltimo
+mostraremos nuevamente un ejemplo visto antes que ejemplifica la
+relaci&oacute;n entre punteros y arreglos. Quiz&aacute; ahora lo
+entiendan mejor.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>int funcion1(char
+*arreglo);</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>main() {</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>/* Primero que nada
+el arreglo debe ser inicializado. De otra forma el puntero no estar&aacute;
+definido.*/</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char
+arreglo1[10]=&quot;987654321&quot;;	// recuerden el '\0' al final.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>// Le pasamos la
+cadena a la funci&oacute;n (o sea, la direcci&oacute;n del 1er
+elemento):</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>// llamada por
+referencia. ( Los datos de la cadena local SI ser&aacute;n alterados
+).</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>funcion1(arreglo1);</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;%s\n&quot;,
+arreglo1);</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>// Imprimir&aacute;
+el valor de la cadena el cual fue alterado en la funci&oacute;n. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>/************************************************************************/</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>funcion1(char
+*arreglo) {	// Recibe un puntero a char ( Puntero a la cadena )</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;%s\n&quot;,
+arreglo);	// Imprime el actual contenido de la cadena.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>arreglo +=4;		//
+Modifica la direcci&oacute;n del puntero.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>*arreglo = 'x';		//
+Modifica el dato apuntado por &rdquo;arreglo&rdquo;.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Arreglos
+de punteros.</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Es
+una pr&aacute;ctica muy habitual, sobre todo cuando se tiene que
+tratar con cadenas de distinta longitud, generar un arreglo cuyos
+elementos son punteros los cuales albergar&aacute;n las direcciones
+de dichas cadenas.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><BR>As&iacute;
+como:</FONT></FONT></P>
+<PRE STYLE="margin-left: 1.25cm; margin-bottom: 0.5cm; font-weight: medium; text-align: justify"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>char *uno;</FONT></FONT></PRE><P ALIGN=JUSTIFY STYLE="font-weight: medium">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>defin&iacute;a a un
+puntero a un caracter, la definici&oacute;n</FONT></FONT></P>
+<PRE STYLE="margin-left: 1.25cm; margin-bottom: 0.5cm; font-weight: medium; text-align: justify"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>char *muchos[5];</FONT></FONT></PRE><P ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>implica un arreglo
+de 5 punteros a caracteres .</FONT></FONT></P>
+<PRE STYLE="margin-bottom: 0.5cm; text-align: justify"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><I><B>NOTA: Observe la diferencia entre un arreglo de punteros y un puntero a arreglos. Es an&aacute;logo al caso con las funciones. &ldquo;char *muchos[5]&rdquo; define un arreglo de 5 elementos punteros a char. En cambio: &ldquo;char (*muchos)[5]&rdquo;, define un puntero a un grupo contiguo de arreglos de 5 elementos char.</B></I></FONT></FONT></PRE><P ALIGN=JUSTIFY STYLE="font-weight: medium">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif"><B>Inicializaci&oacute;n
+de arreglos de punteros</B><BR></FONT><BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Times New Roman, serif">Los arreglos de
+punteros pueden ser inicializados de la misma forma que un arreglo
+com&uacute;n. Es decir, dando los valores de sus elementos durante su
+definici&oacute;n. Por ejemplo si quisi&eacute;ramos tener un arreglo
+donde el sub&iacute;ndice de los elementos coincidiera con el nombre
+de los d&iacute;as de la semana podr&iacute;amos escribir :</FONT></P>
+<PRE STYLE="margin-left: 1.25cm; text-align: justify"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>char *dias[] = {</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&quot;n&uacute;mero de d&iacute;a no v&aacute;lido&quot;,</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&quot;lunes&quot;,</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&quot;martes&quot;,</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&quot;miercoles&quot;,</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&quot;jueves&quot;,</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&quot;viernes&quot;,</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&quot;sabado&quot;,</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&quot;domingo&quot;</FONT></FONT>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT>
+</PRE><P ALIGN=JUSTIFY>
+<FONT FACE="Times New Roman, serif">Igual que antes, no es necesario
+en este caso indicar la cantidad de elementos, ya que el compilador
+los calcula por la cantidad de t&eacute;rminos dados en la
+inicializaci&oacute;n. As&iacute;, el elemento dias[0] ser&aacute; un
+puntero con la direcci&oacute;n de la primera cadena, dias[1], la del
+segundo, etc.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Punteros
+a punteros.</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT COLOR="#000000">En
+la mayor&iacute;a de los casos los punteros apuntan directamente a un
+dato, y al emplear el operador</FONT><FONT COLOR="#009900"> * </FONT><FONT COLOR="#000000">se
+obtiene el valor del dato al que apuntan. Como muchos de ustedes
+intuir&aacute;n, si se declara una matriz de punteros en realidad se
+est&aacute;n empleando punteros a punteros, o sea que apunta a una
+localidad de memoria que contiene la localidad de memoria de una
+variable. Ojo, tambi&eacute;n se pueden definir un puntero a otro
+puntero de forma expl&iacute;cita. La forma general de declarar un
+puntero a puntero es:</FONT> </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>tipo_dato **nombre;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Veamos un ejemplo
+muy sencillo:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>main()</FONT></SPAN></SPAN>{</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">int
+n,*p,**q;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">n=5;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">p=&amp;n;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">q=&amp;p;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">printf(&quot;%i&quot;,**q)
+/*imprime el valor de x*/ </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">}
+</FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Aqu&iacute;,
+n est&aacute; declarado como un entero, p como un puntero a entero y
+q como un puntero a puntero a entero. Las asignaciones de la funci&oacute;n
+nos dan una idea de como se relacionan las tres variables entre si:
+El contenido de la variable n es 5; a su vez, asignamos al puntero p
+la direcci&oacute;n de la variable que contiene ese n&uacute;mero.
+Finalmente, como q es un puntero a un puntero, s&oacute;lo puede
+contener direcciones por tanto guarda la direcci&oacute;n de la
+variable donde se encuentra el valor de la direcci&oacute;n donde se
+encuentra el 5. </FONT></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><BR><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">Mediante
+la llamada a printf() comprobamos lo dicho, ya que despliega el
+contenido de n&uacute;mero a pesar de que es llamado desde una
+variable puntero a puntero. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none"><BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Otro con un poco m&aacute;s
+de contenido:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include&lt;stdlib.h&gt;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>main(){</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>int **p;	// Define
+un puntero a puntero llamado p.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>int fila, col;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>int nfilas=3,
+ncols=3;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>int temp = 1;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>// Ahora creo un
+arreglo y asigno memoria a &eacute;ste din&aacute;micamente.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>(*p)=(int
+*)malloc(nfilas*ncols*sizeof(int));</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>// reserva
+(nfilas*ncols*sizeof(int)) bytes. Por supuesto, sizeof(int) = 2</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>// (int *) al
+principio indica que *p ser&aacute; un puntero a entero.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>// Ojo: se uso *p y
+no p. Ya saben porqu&eacute;... cierto?</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>for(fila=0;fila&lt;nfilas;nfilas++){</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>for(col=0;col&lt;ncols;col++){</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>*(*(p+fila)+col)=temp;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>temp++;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>return 0;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>TIPS
+acerca de problemas comunes con punteros.</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>A continuaci&oacute;n
+se mostrar&aacute;n una serie de errores muy comunes al trabajar con
+punteros:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.-</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char * funcion () {</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char resultado;<BR>/*
+Aqu&iacute; rellenamos &ldquo;resultado&rdquo; con el valor deseado
+*/<BR>return &amp;resultado;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>}<BR></FONT></FONT><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Al salir de la
+funci&oacute;n, la direcci&oacute;n que estamos devolviendo ya no
+tiene sentido.<BR></FONT></FONT><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Adem&aacute;s, &eacute;sto
+nunca nos dar&aacute; un error de violaci&oacute;n de memoria, ya que
+esa zona de memoria pertenec&iacute;&shy;a a nuestro programa.
+Nuestro programa no se &quot;colgar&aacute;&quot;, simplemente dar&aacute;
+resultados incorrectos.<BR></FONT></FONT><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>TIP: No devolver
+nunca punteros a variables locales a una funci&oacute;n.<BR></FONT></FONT><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.-</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char *puntero =
+NULL;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>puntero = malloc();</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>free (puntero);</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>*puntero = 'A';</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Esto no dar&aacute;
+ning&uacute;n problema de violaci&oacute;n de memoria, puesto que la
+memoria a la que apunta puntero era nuestra. Sin embargo, alguien
+puede posteriormente sobre-escribir en esa direcci&oacute;n de
+memoria. Este problema se agrava si no lo hacemos todo seguido.
+Imaginemos que hemos liberado puntero y que en otra funci&oacute;n o
+m&aacute;s adelante en el c&oacute;digo intentamos usarlo.<BR><BR>TIP:
+Apuntar a NULL los punteros despu&eacute;s de liberarlos:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>free
+(puntero);<BR>puntero = NULL;<BR></FONT></FONT><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY><BR><BR>
+</P>
+</BODY>
+</HTML>

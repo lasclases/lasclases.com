@@ -1,0 +1,1571 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>TEMA 3</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.1  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20070113;17444600">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20070128;17490084">
+	<META NAME="Info 1" CONTENT="Tony Rodriguez">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-VE" DIR="LTR">
+<H1 ALIGN=CENTER><FONT COLOR="#0000ff"><U><B>SIMPLIFICACI&Oacute;N DE
+FUNCIONES POR ALGEBRA DE BOOLE. TABLA DE LA VERDAD. FORMAS CAN&Oacute;NICAS.</B></U></FONT></H1>
+<P><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Gracias
+a los postulados y teoremas vistos en el tema anterior podemos
+&ldquo;simplificar&rdquo; cualquier funci&oacute;n Booleana.
+Enti&eacute;ndase por simplificar a que podemos reducir a la misma a
+otra funci&oacute;n que use menos compuertas o incluso menos
+variables que la original y a&uacute;n as&iacute; obtener los mismos
+resultados. La utilidad de &eacute;sto es evidente ya que a la hora
+de implementar nuestro dise&ntilde;o digital, haremos uso de menos
+componentes reduciendo as&iacute; el tama&ntilde;o del circuito y
+facilitando tambi&eacute;n dicha implementaci&oacute;n.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Existen
+varias formas para reducir una funci&oacute;n l&oacute;gica y algunas
+de ellas ser&aacute;n vistas en los pr&oacute;ximos temas pero en
+&eacute;ste en particular, haremos las reducciones bas&aacute;ndonos
+s&oacute;lo en reglas del &aacute;lgebra de Boole, o sea,
+manipulaciones algebraicas. Para este tipo de simplificaci&oacute;n,
+no existen reglas preestablecidas. La mejor forma de simplificar una
+funci&oacute;n de Boole por manipulaci&oacute;n algebraica es por
+medio del tanteo por lo que el mejor amigo en este tipo de
+procedimiento es la pr&aacute;ctica.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
+a continuaci&oacute;n ejemplos de simplificaciones de funciones de
+Boole.</FONT></P>
+<P STYLE="margin-left: 2cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A
++ A'B</FONT></P>
+<P STYLE="margin-left: 2cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Sabemos,
+por ley distributiva, que &eacute;sto es igual a: (A + A')(A + B)</FONT></P>
+<P STYLE="margin-left: 2cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">como
+A + A' = 1, entonces:</FONT></P>
+<P STYLE="margin-left: 2cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A
++ A'B = A + B</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Queda
+claro que la reducci&oacute;n es importante ya que la primera usa una
+compuerta OR, una NOT y una AND, mientras que la segunda s&oacute;lo
+usa una OR. Excelente. Ahora, haciendo uso de la tabla de la verdad
+que vimos en el tema anterior, veamos si ambas funciones obtienen el
+mismo resultado:</FONT></P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=231 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+			<COL WIDTH=26>
+			<COL WIDTH=24>
+			<COL WIDTH=71>
+			<COL WIDTH=61>
+			<TR VALIGN=TOP>
+				<TD WIDTH=26>
+					<P><FONT FACE="Lucida Sans, sans-serif">A</FONT></P>
+				</TD>
+				<TD WIDTH=24>
+					<P><FONT FACE="Lucida Sans, sans-serif">B</FONT></P>
+				</TD>
+				<TD WIDTH=71>
+					<P><FONT FACE="Lucida Sans, sans-serif">A + A'B</FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P><FONT FACE="Lucida Sans, sans-serif">A + B</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=26>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=24>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=71>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=26>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=24>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=71>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=26>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=24>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=71>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=26>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=24>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=71>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">En
+efecto, amblas tablas de la verdad muestran el mismo resultado.
+Veamos m&aacute;s ejemplos.</FONT></P>
+<P STYLE="margin-left: 2cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A(A'
++ B)</FONT></P>
+<P STYLE="margin-left: 2cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Por
+ley distributiva, &eacute;sto es igual a AA' + AB y como por por el
+postulado 2, AA' = 0, entonces:</FONT></P>
+<P STYLE="margin-left: 2cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A(A'
++ B) = AB</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">COMENTARIO:
+Debido al principio dualidad que manifiesta el &aacute;lgebra de
+Boole, esa conclusi&oacute;n era de esperarse. Este ejemplo es, por
+dualidad, la contraparte del primero.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
+las tablas de la verdad:</FONT></P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=230 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+			<COL WIDTH=25>
+			<COL WIDTH=23>
+			<COL WIDTH=73>
+			<COL WIDTH=60>
+			<TR VALIGN=TOP>
+				<TD WIDTH=25>
+					<P><FONT FACE="Lucida Sans, sans-serif">A</FONT></P>
+				</TD>
+				<TD WIDTH=23>
+					<P><FONT FACE="Lucida Sans, sans-serif">B</FONT></P>
+				</TD>
+				<TD WIDTH=73>
+					<P><FONT FACE="Lucida Sans, sans-serif">A(A' + B)</FONT></P>
+				</TD>
+				<TD WIDTH=60>
+					<P><FONT FACE="Lucida Sans, sans-serif">A B</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=25>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=23>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=73>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=60>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=25>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=23>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=73>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=60>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=25>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=23>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=73>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=60>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=25>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=23>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=73>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=60>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Correcto.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>ATENCI&Oacute;N</B>:
+Estos ejemplos son bastante sencillos. Este tipo de reducci&oacute;n
+no es tan f&aacute;cil para funciones m&aacute;s complejas. Por eso
+coment&eacute; que la mejor forma de entender este m&eacute;todo es
+<B>&quot;practicando&quot;</B>. A continuaci&oacute;n, m&aacute;s
+ejemplos:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Simplificar:</FONT></P>
+<OL>
+	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">(x
+	+ y)(x + y')</FONT></P>
+	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">xyz
+	+ x'y + xyz'</FONT></P>
+	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">(x
+	+ y)'(x' + y')'</FONT></P>
+	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">B(DC'
+	+ DC) + AB</FONT></P>
+</OL>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Respuestas:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Para
+el n&uacute;mero 1:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">(x
++ y)(x + y') por distributiva = xx + xy' + yx + yy'</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Por
+conmutativa: yx = xy. Por t&eacute;rminos complementarios yy' = 0,
+por lo tanto:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">=
+xx + xy + xy' = por distributiva x(x + y + y') = por asociativa x(x +
+(y + y')), pero como y + y' = 1, entonces</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">=
+x(x + 1) = x (1) = x</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Respuesta:
+<B>(x + y)(x + y') = x</B></FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Este
+ejemplo es interesante ya que vemos que la funci&oacute;n no s&oacute;lo
+redujo los componentes (y de hecho los redujo de dos OR, una AND y un
+NOT a &ldquo;<B>cero</B>&rdquo; componentes) sino que tambi&eacute;n
+redujo el n&uacute;mero de variables requeridas. Aqu&iacute; se
+concluye que la variable '<B>y</B>' no tiene efecto en el resultado
+l&oacute;gico de la funci&oacute;n. Veamos la tabla de la verdad de
+la funci&oacute;n de Boole original:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=192 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=33>
+		<COL WIDTH=32>
+		<COL WIDTH=89>
+		<TR VALIGN=TOP>
+			<TD WIDTH=33>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=32>
+				<P><FONT FACE="Lucida Sans, sans-serif">Y</FONT></P>
+			</TD>
+			<TD WIDTH=89>
+				<P><FONT FACE="Lucida Sans, sans-serif">(X+Y)(X+Y')</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=33>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=32>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=89>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=33>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=32>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=89>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=33>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=32>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=89>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=33>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=32>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=89>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+ve que la funci&oacute;n tiene el mismo valor que '<B>x</B>'.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Para
+la 2:</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">xyz
++ x'y + xyz' por distributiva = xy(z +z') + x'y = xy(1) +x'y = y(x +
+x') = y</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+observa que se reducen el uso de tres variables, 5 AND, 2 OR y 2 NOT
+a una l&iacute;nea directa desde una variable (sin compuertas).
+Veamos la tabla de la verdad de la funci&oacute;n y veamos si
+coincide con la variable y</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=222 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=19>
+		<COL WIDTH=16>
+		<COL WIDTH=22>
+		<COL WIDTH=116>
+		<TR VALIGN=TOP>
+			<TD WIDTH=19>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=16>
+				<P><FONT FACE="Lucida Sans, sans-serif">Y</FONT></P>
+			</TD>
+			<TD WIDTH=22>
+				<P><FONT FACE="Lucida Sans, sans-serif">Z</FONT></P>
+			</TD>
+			<TD WIDTH=116>
+				<P><FONT FACE="Lucida Sans, sans-serif">XYZ+X'Y+XYZ'</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=19>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=16>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=22>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=116>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=19>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=16>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=22>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=116>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=19>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=16>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=22>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=116>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=19>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=16>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=22>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=116>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=19>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=16>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=22>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=116>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=19>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=16>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=22>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=116>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=19>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=16>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=22>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=116>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=19>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=16>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=22>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=116>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">PERFECTO!!!</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">El
+tercer caso:</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">(x
++ y)'(x' + y')' = (x'y')(xy) = xx'yy' = 0</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">&iquest;Qu&eacute;
+tal? Se us&oacute; distributivo, teorema de Morgan, asociativo y ley
+de los complementos (xx' = 0). Veamos la tabla de la verdad de la
+funci&oacute;n:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=215 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=21>
+		<COL WIDTH=17>
+		<COL WIDTH=139>
+		<TR VALIGN=TOP>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=17>
+				<P><FONT FACE="Lucida Sans, sans-serif">Y</FONT></P>
+			</TD>
+			<TD WIDTH=139>
+				<P><FONT FACE="Lucida Sans, sans-serif">(x+y)'(x'+y')'</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=17>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=139>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=17>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=139>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=17>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=139>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=17>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=139>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Siempre
+resulta cero.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">El
+&uacute;ltimo:</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">B(DC'
++ DC) + AB = B(D(C + C')) + AB = BD + AB = B(D+A)</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">reduciendo
+4 variables, 4 AND, 2 OR y una NOT a s&oacute;lo 3 Variables, una AND
+y una OR. Veamos la tabla de la verdad:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=386 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=14>
+		<COL WIDTH=15>
+		<COL WIDTH=21>
+		<COL WIDTH=21>
+		<COL WIDTH=137>
+		<COL WIDTH=107>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">A</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">B</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">C</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">D</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">B(DC'+DC)+AB</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">B(D+A)</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=14>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=21>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=137>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Siga
+haciendo ejercicios. La simplificaci&oacute;n de funciones l&oacute;gicas
+o de Boole es una parte importante en el dise&ntilde;o de
+aplicaciones l&oacute;gicas.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">DEFINICIONES:
+Un <B><I>literal</I></B> no se refiere m&aacute;s que a una variable
+de la funci&oacute;n o a su complemento (A, B , x, y', etc). El
+ejemplo dos anterior, antes de la simplificaci&oacute;n, tiene 8
+literales. Un <B><I>t&eacute;rmino</I></B> es una operaci&oacute;n
+que usa s&oacute;lo una compuerta l&oacute;gica sin importar el
+n&uacute;mero de literales que &eacute;sta tenga. Por ejemplo XYZ' es
+un t&eacute;rmino de 3 literales. S&oacute;lo usa una compuerta AND
+para X, Y y Z'. El ejemplo dos anterior tiene 3 t&eacute;rminos.</FONT></P>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><I><B>Complemento
+de una funci&oacute;n</B></I></FONT></P>
+<P STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">Cuando invertimos una funci&oacute;n
+l&oacute;gica <B>F</B> (eso quiere decir que cambiamos los ceros por
+uno y viceversa) obtenemos la funci&oacute;n invertida F' lo cual se
+conoce como el complemento de <B>F</B>. Para calcular el complemento
+de una funci&oacute;n Booleana podemos ayudarnos con el teorema de
+Morgan que vimos en el tema anterior. En aquella oportunidad vimos el
+teorema con s&oacute;lo dos literales pero es f&aacute;cilmente
+demostrable que tambi&eacute;n aplica a casos de 3 o m&aacute;s
+literales (de hecho, h&aacute;ganlo como ejercicio: Demostrar que
+(A+B+C)' = A'B'C'). El ejemplo m&aacute;s sencillo ser&iacute;a que
+si tenemos F = A, el complemento de F ser&iacute;a F' = A'. En el
+caso de funciones m&aacute;s complejas, puede usarse el teorema de
+Morgan tantas veces como sea necesario. Veamos algunos otros
+ejemplos:</FONT></P>
+<P STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">Siendo F<SUB>1</SUB> = A'BC' +
+A'B'C y F<SUB>2</SUB> = A(B'C'+BC), halle los complementos de ambas
+funciones.</FONT></P>
+<P STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">Respuestas:</FONT></P>
+<P STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">F<SUB>1</SUB>' = (A'BC'+A'B'C)'
+que por Morgan es = (A'BC')'(A'B'C)' Por Morgan en ambos t&eacute;rminos
+negados = (A+B'+C)(A+B+C')</FONT></P>
+<P STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">F<SUB>2</SUB>' = (A(B'C'+BC))' =
+A' + (B'C'+BC)' = A' + ((B'C')'(BC)') = A' + (B+C)(B'+C') que a su
+vez puede simplificarse a = A' + (BB'+BC'+B'C+CC') = A' + BC' + B'C</FONT></P>
+<P STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">El complemento de una funci&oacute;n
+tambi&eacute;n puede ser hallado consiguiendo el dual de la funci&oacute;n
+y luego invirtiendo todos sus literales.</FONT></P>
+<P STYLE="line-height: 150%"><BR><I><FONT SIZE=5><FONT COLOR="#008000">FORMAS
+CAN&Oacute;NICAS</FONT></FONT></I></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><I><B>T&eacute;rminos
+m&iacute;nimos y m&aacute;ximos </B></I></FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Sabemos
+que podemos expresar el complemento de una variable gracias al uso
+del &ldquo;tilde&rdquo; ( ' ). Para el caso de que una funci&oacute;n
+contenga dos variables A y B, con los que se puede formar los cuatro
+literales A, B , A' y B', existen s&oacute;lo cuatro posibilidades de
+combinar &eacute;stas (o sea, 4 t&eacute;rminos) a trav&eacute;s de
+una AND y &eacute;stas son: AB, AB', A'B y A'B'. A cada una de estas
+cuatro combinaciones se les conoce como <B>t&eacute;rmino m&iacute;nimo</B>
+(&oacute; minterm) y su designaci&oacute;n es <B>m<SUB>k</SUB></B>
+donde k es un n&uacute;mero entre 0 y 2<SUP>n</SUP>-1.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+dice que un t&eacute;rmino es normal cuando las variables aparecen
+s&oacute;lo una vez en dicho t&eacute;rmino ya sea en su forma
+directa o invertida (A o A'). Un t&eacute;rmino producto es aquel en
+el que los literales que contiene est&aacute;n relacionados s&oacute;lo
+por una operaci&oacute;n AND, por ejemplo (AB), (AB'C), (AD), etc.
+Por eso a los t&eacute;rminos m&iacute;nimos tambi&eacute;n se les
+conoce como &ldquo;t&eacute;rminos m&iacute;nimos del producto
+normalizado&rdquo;.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Teniendo
+las mismas variables del caso anterior, existen cuatro t&eacute;rminos
+posibles de expresar a trav&eacute;s de compuertas OR y estos son:
+(A+B), (A'+B), (A+B') y (A'+B'). A cada uno de &eacute;stos se les
+conoce como <B>t&eacute;rmino m&aacute;ximo</B> (&oacute; maxterm) y
+su designaci&oacute;n es <B>M<SUB>k</SUB></B> donde k es un n&uacute;mero
+entre 0 y 2<SUP>n</SUP>-1.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Un
+t&eacute;rmino suma es aquel en el que los literales que contiene
+est&aacute;n relacionados s&oacute;lo por una operaci&oacute;n OR,
+por ejemplo (A+B), (A+C), (A+D+E), etc. Por eso a los t&eacute;rminos
+m&aacute;ximos tambi&eacute;n se les conoce como &ldquo;t&eacute;rminos
+m&aacute;ximos de la suma normalizada&rdquo;.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Los
+casos vistos anteriormente son con dos variables pero existen
+t&eacute;rminos m&iacute;nimos y m&aacute;ximos para cualquier n&uacute;mero
+de ellas. Teniendo <B>n</B> variables posibles, el n&uacute;meros de
+t&eacute;rminos m&aacute;ximos y m&iacute;nimos ser&aacute; siempre
+igual a <B>2<SUP>n</SUP></B> que ser&aacute;n las representaciones de
+todos los casos entre 0 y 2<SUP>n</SUP> &ndash; 1. Veamos una tabla
+que muestra &eacute;sto para un caso de 3 variables.</FONT></P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=553 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+			<COL WIDTH=33>
+			<COL WIDTH=33>
+			<COL WIDTH=35>
+			<COL WIDTH=67>
+			<COL WIDTH=120>
+			<COL WIDTH=80>
+			<COL WIDTH=103>
+			<TR VALIGN=TOP>
+				<TD COLSPAN=3 WIDTH=123>
+					<P><FONT FACE="Lucida Sans, sans-serif">Variables</FONT></P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=198>
+					<P><FONT FACE="Lucida Sans, sans-serif">T&eacute;rminos m&iacute;nimos</FONT></P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=194>
+					<P><FONT FACE="Lucida Sans, sans-serif">T&eacute;rminos m&aacute;ximos</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">Y</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">Z</FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><FONT FACE="Lucida Sans, sans-serif">T&eacute;rmino</FONT></P>
+				</TD>
+				<TD WIDTH=120>
+					<P><FONT FACE="Lucida Sans, sans-serif">Designaci&oacute;n</FONT></P>
+				</TD>
+				<TD WIDTH=80>
+					<P><FONT FACE="Lucida Sans, sans-serif">T&eacute;rmino</FONT></P>
+				</TD>
+				<TD WIDTH=103>
+					<P><FONT FACE="Lucida Sans, sans-serif">Designaci&oacute;n</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><FONT FACE="Lucida Sans, sans-serif">x'y'z'</FONT></P>
+				</TD>
+				<TD WIDTH=120>
+					<P><FONT FACE="Lucida Sans, sans-serif">m<SUB>0</SUB></FONT></P>
+				</TD>
+				<TD WIDTH=80>
+					<P><FONT FACE="Lucida Sans, sans-serif">x+y+z</FONT></P>
+				</TD>
+				<TD WIDTH=103>
+					<P><FONT FACE="Lucida Sans, sans-serif">M<SUB>0</SUB></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><FONT FACE="Lucida Sans, sans-serif">x'y'z</FONT></P>
+				</TD>
+				<TD WIDTH=120>
+					<P><FONT FACE="Lucida Sans, sans-serif">m<SUB>1</SUB></FONT></P>
+				</TD>
+				<TD WIDTH=80>
+					<P><FONT FACE="Lucida Sans, sans-serif">x+y+z'</FONT></P>
+				</TD>
+				<TD WIDTH=103>
+					<P><FONT FACE="Lucida Sans, sans-serif">M<SUB>1</SUB></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><FONT FACE="Lucida Sans, sans-serif">x'yz'</FONT></P>
+				</TD>
+				<TD WIDTH=120>
+					<P><FONT FACE="Lucida Sans, sans-serif">m<SUB>2</SUB></FONT></P>
+				</TD>
+				<TD WIDTH=80>
+					<P><FONT FACE="Lucida Sans, sans-serif">x+y'+z</FONT></P>
+				</TD>
+				<TD WIDTH=103>
+					<P><FONT FACE="Lucida Sans, sans-serif">M<SUB>2</SUB></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><FONT FACE="Lucida Sans, sans-serif">x'yz</FONT></P>
+				</TD>
+				<TD WIDTH=120>
+					<P><FONT FACE="Lucida Sans, sans-serif">m<SUB>3</SUB></FONT></P>
+				</TD>
+				<TD WIDTH=80>
+					<P><FONT FACE="Lucida Sans, sans-serif">x+y'+z'</FONT></P>
+				</TD>
+				<TD WIDTH=103>
+					<P><FONT FACE="Lucida Sans, sans-serif">M<SUB>3</SUB></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><FONT FACE="Lucida Sans, sans-serif">xy'z'</FONT></P>
+				</TD>
+				<TD WIDTH=120>
+					<P><FONT FACE="Lucida Sans, sans-serif">m<SUB>4</SUB></FONT></P>
+				</TD>
+				<TD WIDTH=80>
+					<P><FONT FACE="Lucida Sans, sans-serif">x'+y+z</FONT></P>
+				</TD>
+				<TD WIDTH=103>
+					<P><FONT FACE="Lucida Sans, sans-serif">M<SUB>4</SUB></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><FONT FACE="Lucida Sans, sans-serif">xy'z</FONT></P>
+				</TD>
+				<TD WIDTH=120>
+					<P><FONT FACE="Lucida Sans, sans-serif">m<SUB>5</SUB></FONT></P>
+				</TD>
+				<TD WIDTH=80>
+					<P><FONT FACE="Lucida Sans, sans-serif">x'+y+z'</FONT></P>
+				</TD>
+				<TD WIDTH=103>
+					<P><FONT FACE="Lucida Sans, sans-serif">M<SUB>5</SUB></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><FONT FACE="Lucida Sans, sans-serif">xyz'</FONT></P>
+				</TD>
+				<TD WIDTH=120>
+					<P><FONT FACE="Lucida Sans, sans-serif">m<SUB>6</SUB></FONT></P>
+				</TD>
+				<TD WIDTH=80>
+					<P><FONT FACE="Lucida Sans, sans-serif">x'+y'+z</FONT></P>
+				</TD>
+				<TD WIDTH=103>
+					<P><FONT FACE="Lucida Sans, sans-serif">M<SUB>6</SUB></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><FONT FACE="Lucida Sans, sans-serif">xyz</FONT></P>
+				</TD>
+				<TD WIDTH=120>
+					<P><FONT FACE="Lucida Sans, sans-serif">m<SUB>7</SUB></FONT></P>
+				</TD>
+				<TD WIDTH=80>
+					<P><FONT FACE="Lucida Sans, sans-serif">x'+y'+z'</FONT></P>
+				</TD>
+				<TD WIDTH=103>
+					<P><FONT FACE="Lucida Sans, sans-serif">M<SUB>7</SUB></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">V&eacute;ase
+en la tabla que para cada combinaci&oacute;n binaria posible, el
+t&eacute;rmino m&iacute;nimo ser&aacute; aquella que haga 1 el
+resultado a trav&eacute;s de la AND y el t&eacute;rmino m&aacute;ximo
+ser&aacute; el que haga 0 el resultado de la OR. Ambas son
+situaciones &uacute;nicas. Para cada combinaci&oacute;n binaria
+posible existe uno y s&oacute;lo un t&eacute;rmino m&iacute;nimo y
+s&oacute;lo un t&eacute;rmino m&aacute;ximo. Observe tambi&eacute;n
+que son 3 variables, hay 2<SUP>n</SUP> = 2<SUP>3</SUP> = 8
+combinaciones y que para los m<SUB>k </SUB>y M<SUB>k, </SUB>k va
+entre 0 y 2<SUP>n</SUP> &ndash; 1 que se representa con el n&uacute;mero
+decimal correspondiente a la combinaci&oacute;n binaria (Ej: xyz =
+(101)<SUB>2</SUB> = (5)<SUB>10</SUB>, entonces k=5).</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Dada
+cualquier tabla de la verdad, es posible expresar algebraicamente una
+funci&oacute;n l&oacute;gica a trav&eacute;s de sus t&eacute;rminos
+m&iacute;nimos. &Eacute;sto es creando dicha funci&oacute;n para que
+contenga una OR entre todos los t&eacute;rminos m&iacute;nimos que
+hacen que dicha funci&oacute;n sea &ldquo;1&rdquo;. Por ejemplo, si
+la funci&oacute;n se hace uno cuando las variables son 010 entonces
+dicha funci&oacute;n contendr&aacute; el t&eacute;rmino m&iacute;nimo
+x'yz' que es el t&eacute;rmino que se hace 1 para esa combinaci&oacute;n.
+Para profundizar un poco m&aacute;s, veamos la siguiente tabla de la
+verdad:</FONT></P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=245 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+			<COL WIDTH=35>
+			<COL WIDTH=33>
+			<COL WIDTH=35>
+			<COL WIDTH=41>
+			<COL WIDTH=41>
+			<TR VALIGN=TOP>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">Y</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">Z</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">F<SUB>1</SUB></FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">F<SUB>2</SUB></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=33>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=35>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+				<TD WIDTH=41>
+					<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Entonces,
+F<SUB>1</SUB> = 1 para:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">F<SUB>1</SUB>
+= x'y'z + x'yz' + x'yz + xyz (que es una OR entre m<SUB>1</SUB>, m<SUB>2</SUB>,
+m<SUB>3</SUB> y m<SUB>7</SUB>)</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
+F<SUB>2</SUB> = 1 para:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">F<SUB>2</SUB>
+= x'y'z' + x'y'z + xy'z + xyz' + xyz (que es una OR entre m<SUB>0</SUB>,
+m<SUB>1</SUB>, m<SUB>5</SUB>, m<SUB>6</SUB> y m<SUB>7</SUB>)</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>CONCLUSI&Oacute;N</B>:
+Cualquier funci&oacute;n l&oacute;gica puede ser expresada a trav&eacute;s
+de una suma (OR) de t&eacute;rminos m&iacute;nimos.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+puede formar el <B><I>complemento de una funci&oacute;n</I></B> a
+trav&eacute;s de t&eacute;rminos m&iacute;nimos haciendo una OR entre
+todos aquellos que hagan a dicha funci&oacute;n 0. Por ejemplo, para
+la tabla de la verdad anterior: </FONT>
+</P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">F<SUB>1</SUB>'
+= x'y'z' + xy'z' + xy'z + xyz'</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">aplicando
+Morgan a esta funci&oacute;n llegamos a que tambi&eacute;n es posible
+expresar algebraicamente una funci&oacute;n l&oacute;gica a trav&eacute;s
+de sus t&eacute;rminos m&aacute;ximos y &eacute;sto se hace creando
+una funci&oacute;n que contenga una AND entre todos los t&eacute;rminos
+m&aacute;ximos que hacen que la misma sea 0. Seg&uacute;n la misma
+tabla de la verdad anterior:</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">F<SUB>1</SUB>
+= (x+y+z)(x'+y+z)(x'+y+z')(x'+y'+z) = M<SUB>0</SUB>M<SUB>4</SUB>M<SUB>5</SUB>M<SUB>6</SUB></FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">De
+forma an&aacute;loga:</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">F<SUB>2</SUB>
+= M<SUB>2</SUB>M<SUB>3</SUB>M<SUB>4</SUB></FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Recuerden
+&eacute;sto: <SPAN STYLE="background: #e6ff00"><BLINK><B><FONT SIZE=4><FONT COLOR="#ff0000">LO
+QUE SIEMPRE BUSCAMOS EN UNA FUNCI&Oacute;N DE BOOLE ES LA COMBINACI&Oacute;N
+QUE HAGA QUE DICHA FUNCI&Oacute;N SEA CIERTA O UNO (1).</FONT></FONT></B></BLINK></SPAN>
+<SPAN STYLE="text-decoration: none">Se ve que si uno de los t&eacute;rminos
+suma es cero entonces la funci&oacute;n se har&aacute; cero tambi&eacute;n.
+Por ellos la funci&oacute;n NO puede contener ninguno de los t&eacute;rminos
+m&aacute;ximos si queremos que se haga &ldquo;cierta&rdquo; dicha
+funci&oacute;n.</SPAN></FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>CONCLUSI&Oacute;N</B>:
+Cualquier funci&oacute;n l&oacute;gica puede ser expresada a trav&eacute;s
+de un producto (AND) de t&eacute;rminos m&aacute;ximos.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A
+las funciones de Boole que est&aacute;n expresadas como un producto
+de t&eacute;rminos m&aacute;ximos o una suma de t&eacute;rminos
+m&iacute;nimos se le conoce como <B>FORMA CAN&Oacute;NICA</B> de la
+funci&oacute;n.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Algunas
+veces se hace conveniente expresar una funci&oacute;n l&oacute;gica
+en su forma can&oacute;nica, digamos como una suma de t&eacute;rminos
+m&iacute;nimos. Pero hay veces que la funci&oacute;n no contiene a
+todos los literales posible para el t&eacute;rmino. En esta caso lo
+que se hace es aprovechar los postulados de identidad y ley
+conmutativa para agregar al t&eacute;rmino los literales faltantes.
+&iquest;C&oacute;mo? Inspeccionamos toda la funci&oacute;n. Si vemos
+que en alguno de sus t&eacute;rminos falta una variable, digamos que
+A, entonces hacemos una AND del t&eacute;rmino con (A+A'). Como
+(A+A')=1 no alteramos el resultado del t&eacute;rmino. Luego
+aplicamos propiedad distributiva. Veamos un ejemplo para clarificar
+este punto:</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Sea
+F = BC + AC' + AB, para hallar la forma can&oacute;nica de esta
+funci&oacute;n debemos hacer:</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">=
+BC(A+A') + AC'(B+B') + AB(C+C') = ABC +A'BC + ABC' + AB'C' + ABC +
+ABC', que por absorci&oacute;n es:</FONT></P>
+<P STYLE="line-height: 150%"><SPAN STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">=
+ABC + A'BC + ABC' +AB'C' que son m<SUB>7</SUB>, m<SUB>3</SUB>, m<SUB>6</SUB>
+y m<SUB>4</SUB></FONT></SPAN></P>
+<P STYLE="line-height: 150%"><SPAN STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">NOTA:
+Como ejercicio, simplifique la expresi&oacute;n anterior a cuatro
+literales.</FONT></SPAN></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Hay
+ocasiones en las que expresar una funci&oacute;n de Boole a trav&eacute;s
+de su tabla de la verdad o de una de sus formas can&oacute;nicas se
+hace tedioso debido a lo largo que se har&iacute;a el trabajo. Es por
+ello que existe una forma de mostrar la misma funci&oacute;n pero de
+manera abreviada. &Eacute;sto se hace expresando las funciones a
+trav&eacute;s de una sumatoria (matem&aacute;ticamente expresada por
+el signo Sigma may&uacute;scula <FONT SIZE=5><B>&Sigma; </B><FONT SIZE=3>)</FONT>
+</FONT>o de una productoria (expresada por el signo PI <FONT FACE="Lucida Sans, sans-serif">may&uacute;sculo</FONT>
+</FONT><B><FONT SIZE=5>&Pi;</FONT></B> <FONT FACE="Lucida Sans, sans-serif">usado
+tambi&eacute;n en los factoriales). La forma incluir&aacute; de un
+lado el nombre de la funci&oacute;n (regularmente F &oacute; F<SUB>n</SUB>)
+y las variables que contiene entre par&eacute;ntesis y del otro lado
+de la igualdad el n&uacute;mero del t&eacute;rmino m&iacute;nimo a
+incluir si es una sumatoria o el n&uacute;mero de t&eacute;rminos
+m&aacute;ximos si es una productoria con su respectivo signo sigma o
+pi. Tomemos como base las funciones F<SUB>1</SUB> y F<SUB>2</SUB> con
+las que hemos estado trabajando. Entonces:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">F<SUB>1</SUB>(x,y,z)
+=  <B><FONT SIZE=5>&Sigma;</FONT></B><SPAN STYLE="font-weight: medium"><FONT SIZE=3>(1,2,3,7)
+=  </FONT></SPAN><B><FONT SIZE=5><FONT FACE="Times New Roman, serif">&Pi;</FONT></FONT></B><SPAN STYLE="font-weight: medium"><FONT SIZE=3>(0,4,5,6)</FONT></SPAN></FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>y</FONT></FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>F<SUB>2</SUB>(x,y,z)
+=  <B><FONT SIZE=5>&Sigma;</FONT></B>(0,1,5,6,7) =  <B><FONT SIZE=5><FONT FACE="Times New Roman, serif">&Pi;</FONT></FONT></B>(2,3,4)</FONT></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+conoce como <B>Forma normalizada de una funci&oacute;n</B><SPAN STYLE="font-weight: medium">
+a una <I>funci&oacute;n de Boole</I><SPAN STYLE="font-style: normal">
+ya sea expresada como una suma de productos o un producto de sumas
+donde en cada t&eacute;rmino aparece uno de los literales ya sea una,
+dos o cualquier n&uacute;mero de veces. Las formas can&oacute;nicas
+son formas normalizadas de la funci&oacute;n pero existen otras
+formas que no contienen todos los literales. Por ejemplo: F = x + x'y
++ xy'z es una forma normalizada de una funci&oacute;n l&oacute;gica
+ya que est&aacute; compuesta por una suma de tres t&eacute;rminos
+productos con uno, dos y tres literales respectivamente. La forma
+dual de esa funci&oacute;n: F = x(x'+y)(x+y'+z) tambi&eacute;n es una
+funci&oacute;n en su forma normalizada ya que contiene el producto de
+tres sumas. Son tres t&eacute;rminos sumas con uno, dos y tres
+literales respectivamente. Por otra parte </SPAN></SPAN><SPAN STYLE="font-style: normal"><B>NO</B><SPAN STYLE="font-weight: medium">
+es una forma normalizada: F = (xy + wz)(x'y' + w'z'), pero puede
+convertirse en una si se aplica la propiedad distributiva, siendo
+entonces la suma de productos obtenida la siguiente: F = xyw'z' +
+x'y'wz (atenci&oacute;n: los otros dos t&eacute;rminos resultantes
+del postulado distributivo son cero y se omitieron)</SPAN></SPAN></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Lo
+que queda ahora es hacer ejercicios. En la pr&oacute;xima clase
+virtual se ver&aacute;n algunos.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Si
+desea ampliar esta informaci&oacute;n, le recomiendo <A HREF="http://www.geocities.com/hardxone/digitales1.htm">este</A>
+enlace que est&aacute; excelente. Refiere varios de los puntos vistos
+hasta ahora. Si quiere otra perspectiva, le recomiendo que vayan.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Para
+la pr&oacute;xima clase veremos el </FONT><A HREF="tema4.html"><FONT FACE="Lucida Sans, sans-serif">tema
+4: </FONT></A><A HREF="tema4.html"><FONT FACE="Lucida Sans, sans-serif">Simplificaci&oacute;n
+de funciones por el m&eacute;todo de los mapas de Karnaugh.</FONT></A></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><BR><BR>
+</P>
+</BODY>
+</HTML>

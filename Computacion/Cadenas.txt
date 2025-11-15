@@ -1,0 +1,84 @@
+/* Dise~ne un programa que contenga las siguientes funciones:
+
+ 1.- Una que imprima una cadena de cualquier longitud recibida como parametro.
+     ( Haga su propia logica de puts(), o sea, imprima \n al final ).
+     Esta funcion retornara cero si todo salio bien y uno si ocurrio algun
+     error (En nuestro caso este error solo sera "cadena esta vacia")
+ 2.- Una que convierta cada caracter de la cadena recibida al caracter ascii
+     que sigue. El resultado se guardara en la misma cadena. No retornara nada.
+
+ Ud. debe, desde el bloque main():
+
+ 1.- Pedir una cadena. Declare esta local y asumala de maximo 20 caracteres.
+     Esta es la misma que se le pasara a las funciones 1 y 2.
+ 2.- Todas las funciones deben ser llamadas desde aqui.
+ 3.- Los mensajes deben ser impresos desde aqui tambien, excepto cuando se
+     imprima la cadena con la funcion 1 ya que esta se encargara de hacerlo.
+*/
+
+#include<stdio.h>
+
+int muestra(char a[]);
+void cambia(char a[]);
+
+main(){
+    char cad[20]={0};
+    printf("Introduzca una cadena: ");
+    gets(cad);
+    /* OJO: La funcion anterior espera una cadena por teclado y la asigna
+     a "cad". El problema de esta funcion es que ella no verifica los limites
+     de la cadena. Esto quiere decir, que si se introduce una cadena de mas de
+     19 caracteres ( saben porque... no ? ), el sobrante escribira en posicio-
+     nes de memoria que pueden conterner informacion importante. Esta funcion
+     esta bien para este programa ya que no nos interesa verificar limites
+     y asumimos que el usuario introducira una cadena de maximo 19 caracteres.
+     Pero cuando desarrollen programas importantes, deben verificar estos limi-
+     tes. Una forma muy comun de hacer esto es:
+         scanf("%19s",cad); // Pide una cadena de 19 caracteres y la almacena
+	                    // en cad (Deben dejar espacio para el NULO).
+         scanf("%*[^\n]");  // Para que recoja todo lo que sobre hasta que
+                            // se presione ENTER y lo deseche.
+			    // Esta funciona como:  fflush(stdin);
+    */
+    printf("Inprimire la cadena con mi funcion: ");
+    if (muestra(cad)) printf("NADA!!!. Esta vacia\n");
+    printf("Luego de cambiar la cadena obtenemos: ");
+    cambia(cad);
+    if (muestra(cad)) printf("NADA!!!. Esta vacia\n");
+    printf("ADIOS!!!\n\n");
+    return 0;
+}
+
+int muestra(char a[]){
+    int i=0;
+    if (!a[i]) { putchar('\n'); return 1; }
+    for(;a[i];i++)    // Es lo mismo que for(i=0;a[i]!=0;i++)
+	putchar(a[i]);
+    putchar('\n');
+    return 0;
+}
+
+void cambia(char a[]){
+    int i=0;
+    while(a[i]) a[i++]++;
+}
+
+
+/* A continuacion les agrego dos salidas de este programa para 2 casos:
+
+Introduzca una cadena: Cadena de Prueba
+Inprimire la cadena con mi funcion: Cadena de Prueba
+Luego de cambiar la cadena obtenemos: Dbefob!ef!Qsvfcb
+ADIOS!!!
+
+OTRO CASO para una cadena vacia:
+
+Introduzca una cadena:
+Inprimire la cadena con mi funcion:
+NADA!!!. Esta vacia
+Luego de cambiar la cadena obtenemos:
+NADA!!!. Esta vacia
+ADIOS!!!
+
+*/
+

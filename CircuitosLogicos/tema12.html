@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>TEMA 12: Comparador de magnitud a nivel SSI y MSI</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.1  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20070113;17444600">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20070405;17534812">
+</HEAD>
+<BODY LANG="es-VE" DIR="LTR">
+<H1 ALIGN=CENTER><FONT COLOR="#0000ff"><U>TEMA 12: COMPARADOR DE
+MAGNITUD A NIVEL SSI Y MSI</U></FONT></H1>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Parte
+del siguiente material fue extra&iacute;do del libro: &ldquo;L&oacute;gica
+Digital y Dise&ntilde;o de Computadores&rdquo; de M. Morris Mano.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Un
+comparador de magnitud es un circuito combinacional que compara dos
+n&uacute;meros (llam&eacute;mosles A y B) y determina sus magnitudes
+relativas. El resultado de la comparaci&oacute;n se especifica por
+medio de tres variables binarias que indican si A&gt;B, A=B &oacute;
+A&lt;B.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><BR>Un
+circuito para comparar dos n&uacute;meros de n bits tiene 2<SUP>2n</SUP>
+entradas en la tabla de verdad y se vuelve m&aacute;s complicado a&uacute;n
+para n=3 (64 combinaciones). </FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Consid&eacute;rense
+los n&uacute;meros A y B cada uno con cuatro d&iacute;gitos y
+escr&iacute;banse los coeficientes de los n&uacute;meros en orden
+significativo descendente de la siguiente manera:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A=
+A<SUB>3</SUB> A<SUB>2</SUB> A<SUB>1</SUB> A<SUB>0</SUB></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">B=
+B<SUB>3</SUB> B<SUB>2</SUB> B<SUB>1</SUB> B<SUB>0</SUB></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><BR>Los
+dos n&uacute;meros son iguales si todos los pares significativos son
+iguales, es decir A<SUB>3</SUB>=B<SUB>3</SUB>, A<SUB>2</SUB>=B<SUB>2</SUB>,
+A<SUB>1</SUB>=B<SUB>1</SUB> y A<SUB>0</SUB>=B<SUB>0</SUB> </FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Sabemos
+que cuando los n&uacute;meros son binarios los d&iacute;gitos son 1 o
+0. Por lo tanto la relaci&oacute;n de igualdad para cada par de bits
+puede expresarse l&oacute;gicamente con una funci&oacute;n de
+equivalencia </FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">X<SUB>i</SUB>
+= A<SUB>i</SUB> B<SUB>i</SUB> + A<SUB>i</SUB>' B<SUB>i</SUB>' <BR>para
+todo i= 0,1,2,3,......., etc.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">OJO:
+X<SUB>i</SUB> es en realidad una XNOR entre A y B. Esto es una XOR
+negada que es lo que ver&aacute;n en el circuito de m&aacute;s
+adelante (&eacute;sto es: [A'B+AB']')</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><BR>X<SUB>i</SUB>
+es igual a 1 si y s&oacute;lo si el par de bits en la posici&oacute;n
+&ldquo;i&rdquo; son iguales, es decir, si ambos son unos o ceros. </FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">(A=B)
+= X<SUB>3</SUB> X<SUB>2</SUB> X<SUB>1</SUB> X<SUB>0</SUB> </FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">La
+variable binaria ( A=B ) es igual a 1 si todos los pares de d&iacute;gitos
+de los dos n&uacute;meros son iguales. <BR></FONT><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Para
+determinar si A&gt;B se inspeccionan las magnitudes relativas de los
+pares de d&iacute;gitos significativos comenzando desde la posici&oacute;n
+significativa mas alta. Si los d&iacute;gitos son iguales, se compara
+el siguiente par de d&iacute;gitos menos significativos y esta
+comparaci&oacute;n continua hasta que se encuentre un par de d&iacute;gitos
+diferente. </FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Si
+el correspondiente d&iacute;gito de A es 1 y el d&iacute;gito de B es
+0, se concluye que A&gt;B. Si el correspondiente d&iacute;gito de A
+es 0 y el de B es 1 se tiene que A&lt;B. La comparaci&oacute;n
+secuencial puede expresarse l&oacute;gicamente por las dos funciones
+de Bool que ha continuaci&oacute;n se listan:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">(A&gt;B)
+= A<SUB>3</SUB>B<SUB>3</SUB>' + X<SUB>3</SUB>A<SUB>2</SUB>B<SUB>2</SUB>'
++ X<SUB>3</SUB>X<SUB>2</SUB>A<SUB>1</SUB>B<SUB>1</SUB>' + X<SUB>3</SUB>X<SUB>2</SUB>X<SUB>1</SUB>A<SUB>0</SUB>B<SUB>0</SUB>'</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">(A&lt;B)
+= A<SUB>3</SUB>'B<SUB>3</SUB> + X<SUB>3</SUB>A<SUB>2</SUB>'B<SUB>2</SUB>
++ X<SUB>3</SUB>X<SUB>2</SUB>A<SUB>1</SUB>'B<SUB>1</SUB> + X<SUB>3</SUB>X<SUB>2</SUB>X<SUB>1</SUB>A<SUB>0</SUB>'B<SUB>0</SUB>
+<BR><BR>Los s&iacute;mbolos (A&gt;B) y ( A&lt;B) son variables de
+salida binaria que son iguales a 1 cuando (A&gt;B) o (A&lt;B)
+respectivamente. </FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Analicen
+las funciones anteriores y entiendan el por qu&eacute; de esa forma.
+Por ejemplo: &iquest;Por qu&eacute; A<SUB>3</SUB>B<SUB>3</SUB>' +
+X<SUB>3</SUB>A<SUB>2</SUB>B<SUB>2</SUB>' + X<SUB>3</SUB>X<SUB>2</SUB>A<SUB>1</SUB>B<SUB>1</SUB>'
++ X<SUB>3</SUB>X<SUB>2</SUB>X<SUB>1</SUB>A<SUB>0</SUB>B<SUB>0</SUB>'
+es uno si y s&oacute;lo si A es mayor que B? &iquest;Por qu&eacute;
+est&aacute;n formados de esa manera los t&eacute;rminos 2, 3 y 4 de
+esa funci&oacute;n? &iquest;Qu&eacute; quieren decir?</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Bas&aacute;ndonos
+en lo anterior, veamos a continuaci&oacute;n la implementaci&oacute;n
+de un circuito comparador pero de s&oacute;lo 3 bits y hecho con
+compuertas:</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="Comparador3bits.png" NAME="gr&aacute;ficos1" ALIGN=LEFT WIDTH=735 HEIGHT=459 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Puede
+conseguir m&aacute;s informaci&oacute;n en <A HREF="http://es.wikipedia.org/wiki/Circuito_comparador">este
+link de la Wikipedia</A>.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Est&aacute;
+pendiente por agregar en el futuro alg&uacute;n comentario de los
+Comparadores de magnitud a nivel MSI como por ejemplo el comparador
+de magnitud de 4 bits 7485 y alguna implementaci&oacute;n en cascada
+para comparar m&aacute;s de 4 bits.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Este
+fue el &uacute;ltimo tema de la materia.</FONT></P>
+</BODY>
+</HTML>

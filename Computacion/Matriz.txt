@@ -1,0 +1,101 @@
+/* Dise~ne un programa con las siguientes caracteristicas:
+ 1.- Debe Solicitar al usuario 2 matrices de 3x3
+ 2.- Debe conterner 3 funciones:
+     a.- Una que reciba una matriz de 3x3 y no devuelva nada.
+         En la Matriz recibida se colocaran los datos que llenaran la matriz.
+         Estos deben ser pedidos desde la misma funcion.
+         (Esta funcion hara lo requerido en el punto 1).
+     b.- Una funcion que reciba una matriz de 3x3 y la muestre por pantalla.
+     c.- Una funcion que reciba 3 matrices, sume las 2 primeras y devuelva el
+         resultado en la tercera.
+ 3.- Las tres matrices seran declaradas local al bloque main().
+ 4.- Todas las funciones deben ser llamadas desde main().
+*/
+
+#include<stdio.h>
+
+void llenaMat(int m[3][3]);
+void muestra(int m[3][3]);
+void suma(int a[3][3], int b[3][3], int c[3][3]);
+
+main() {
+    int a[3][3]={0}, b[3][3]={0}, c[3][3]={0};
+    printf("Primero llenemos las matrices\n");
+    printf("\nPrimero la Matriz a\n");
+    llenaMat(a);
+    printf("La Matriz que introdujo es:\n");
+    muestra(a);
+    printf("\nAhora llenaremos b\n");
+    llenaMat(b);
+    printf("La Matriz que introdujo es:\n");
+    muestra(b);
+    printf("Al sumar ambas Matrices obtenemos:\n");
+    suma(a,b,c);
+    muestra(c);
+    return 0;
+}
+
+void llenaMat(int m[3][3]){
+    int x, y;
+    for(x=0;x<=2;x++)
+	for(y=0;y<=2;y++){
+	    printf("Introduzca el Elemento[%i][%i]: ",x+1,y+1);
+	    scanf("%i", &m[x][y] );
+	}
+}
+
+void muestra(int m[3][3]){
+    int x, y;
+    for(x=0;x<=2;x++){
+	for(y=0;y<=2;y++) printf("%6i",m[x][y]);
+        printf("\n");
+    }
+
+}
+
+void suma(int a[3][3], int b[3][3], int c[3][3]){
+    int x,y;
+    for(x=0;x<=2;x++)
+	for(y=0;y<=2;y++)
+	    c[x][y]=a[x][y]+b[x][y];
+}
+
+
+/* A continuacion mostrare la salida de un caso posible:
+
+Primero la Matriz a
+Introduzca el Elemento[1][1]: 1
+Introduzca el Elemento[1][2]: 2
+Introduzca el Elemento[1][3]: 3
+Introduzca el Elemento[2][1]: 4
+Introduzca el Elemento[2][2]: 5
+Introduzca el Elemento[2][3]: 6
+Introduzca el Elemento[3][1]: 7
+Introduzca el Elemento[3][2]: 8
+Introduzca el Elemento[3][3]: 9
+La Matriz que introdujo es:
+     1     2     3
+     4     5     6
+     7     8     9
+
+Ahora llenaremos b
+Introduzca el Elemento[1][1]: 2
+Introduzca el Elemento[1][2]: 2
+Introduzca el Elemento[1][3]: 2
+Introduzca el Elemento[2][1]: 3
+Introduzca el Elemento[2][2]: 3
+Introduzca el Elemento[2][3]: 3
+Introduzca el Elemento[3][1]: 4
+Introduzca el Elemento[3][2]: 4
+Introduzca el Elemento[3][3]: 4
+La Matriz que introdujo es:
+     2     2     2
+     3     3     3
+     4     4     4
+Al sumar ambas Matrices obtenemos:
+     3     4     5
+     7     8     9
+     11    12    13
+
+*/
+

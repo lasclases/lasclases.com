@@ -1,0 +1,992 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20030920;20321299">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20031005;15221386">
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Variables
+y Constantes.</B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Como C es un lenguaje de
+programaci&oacute;n que soporta exclusivamente el paradigma
+imperativo, las variables son la parte m&aacute;s importante de &eacute;ste.
+Podr&iacute;a decirse que las variables son los bloques con los que
+se construyen los programas.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Los nombre usados para
+referirse a las variables, las constantes, las funciones y otros
+objetos definidos por el usuario se conocen como &ldquo;identificadores&rdquo;.
+En C, la longitud de un identificador debe estar comprendido entre 1
+y 32 caracteres. El primer caracter debe ser obligatoriamente una
+letra o un signo de subrayado ( _ ). Los siguientes caracteres pueden
+contener tambi&eacute;n n&uacute;meros. Por ejemplo, unos nombres
+correctos de variables ser&iacute;an: &ldquo;_var&rdquo;, &ldquo;var&rdquo;,
+&ldquo;var2&rdquo; y &ldquo;VariableContadora_2&rdquo;. Incorrecto
+ser&iacute;a: &ldquo;1var&rdquo;, &ldquo;var..2&rdquo;, &ldquo;var!&rdquo;
+o &ldquo;var#&rdquo; entre infinitos casos.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Otra cosa muy importante
+es que C es &ldquo;case sensitive&rdquo;, o sea, que es sensible a
+may&uacute;sculas y min&uacute;sculas por lo que &ldquo;var&rdquo; es
+distinto de &ldquo;Var&rdquo;, lo que es distinto de &ldquo;VAR&rdquo;.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Los nombres de variables
+( o cualquier otro identificador ), no puede llamarse como una
+palabra clave del compilador ni como una funci&oacute;n ya escrita.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">La
+forma de asignar un valor a una variable es tan sencillo como:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+nombreVariable = 100; // Un signo de igual.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Tipos de Variables.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">En Lenguaje C, existen
+diferentes tipos de variables. &Eacute;stas son:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">1.- Variables tipo <B>char</B>.
+Estas variables ocupan 1 byte y comprenden los n&uacute;meros entre 0
+y 255. Estas variables son usadas principalmente para almacenar
+caracteres. Existe una tabla de caracteres conocida como tabla ASCII.
+Esta tabla contiene caracteres definidos entre los n&uacute;meros 0 y
+255. Por ejemplo, el n&uacute;mero 65 de la tabla ASCII corresponde a
+la letra 'A'. La forma usada para definir estas variables es:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>char</B>
+ch;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Esta declaraci&oacute;n,
+define una variable de tipo char llamada ch.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">2.- Variables tipo <B>int.</B>
+Variable que define n&uacute;meros enteros. Ocupa 2 bytes lo que
+representa los n&uacute;meros entre -32.768 y 32.767 (2<SUP>16</SUP>).
+Se declaran de la siguiente forma:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>int</B>
+i, j, k;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Esto declara tres
+variables de tipo entero llamadas i, j y k en una sola orden. Se
+observa que para declarar m&uacute;ltiples variables del mismo tipo
+en una sola sentencia, deben estar separadas por una coma.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">3.- Variables de tipo
+<B>float</B>. Conocidas como variables de coma flotante, estas
+variables representan los n&uacute;meros reales. Ocupan 4 bytes lo
+que representan los n&uacute;meros entre 3.4E-38 y 3.4E+38. Estas
+variables y las de tipo double que se ver&aacute;n mas adelante,
+contienen dos componentes: un componente entero y otro fraccionario.
+Se declaran:</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>float</B>
+f;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">4.- Variables de tipo
+<B>double</B>. Coma flotante de doble precisi&oacute;n. Al igual que
+las float, representa a n&uacute;meros Reales. Ocupan 8 bytes lo que
+se refleja en los n&uacute;meros comprendidos entre 1.7E-308 y
+1.7E+308. Su forma de declaraci&oacute;n es:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>double</B>
+d;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">5.- Por &uacute;ltimo
+tenemos otro tipo de variable llamada <B>void</B> que ocupa cero
+bytes y que s&oacute;lo es usada para declarar que una funci&oacute;n
+no recibe ning&uacute;n par&aacute;metro o que no devuelve ninguno.
+Por ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>int</B>
+funcion(<B>void</B>); // No recibe nada y devuelve un entero.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>void</B>
+funcion(<B>int</B> x); // Recibe un entero y no devuelve nada.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>void</B>
+funcion(<B>void</B>); // Obvio.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Modificadores de
+Variables.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Todas las variables
+pueden ser modificadas agreg&aacute;ndoles una palabra reservada
+antes de la declaraci&oacute;n. Estos modificadores son:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>unsigned.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>signed.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>long.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>short.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">No todas los
+modificadores aplican a todas las variables y ya ver&aacute;n porqu&eacute;.
+Su forma de uso es: &ldquo;PalabraReservada TipoDeVariable
+NombreDeVariable;&rdquo; Por ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>unsigned
+int</B> i; // o incluso</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>unsigned
+long int</B> i; // Se le aplicaron dos modificadores.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">La palabra reservada
+<B>unsigned</B> le indica al al compilador que la variable que
+modificar&aacute; ser&aacute; tomada como una variable sin signo ( o
+sea, que no se interpretara el bit mas significativo como un bit de
+signo ). Siendo as&iacute; que:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>unsigned
+int</B> i;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">le indica al compilador
+que la variable i ser&aacute; una variable entera sin signo ( aunque
+a&uacute;n de 2 bytes ). Por lo tanto, la variable i comprender&aacute;
+los n&uacute;meros enteros entre 0 y 65535.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">La palabra reservada
+<B>signed</B> le indica al compilador que la siguiente variable
+declarada ser&aacute; tomada como una variable con signo. Es por eso
+que dec&iacute;a que no todos los modificadores aplican siempre.
+Colocar una definici&oacute;n como: &ldquo;<B>signed int</B> i;&rdquo;
+realmente redunda ( aunque es permitido ) ya que esta variable ya es
+tomada como una variable con signo por el compilador. En realidad el
+uso de la palabra reservada &ldquo;signed&rdquo; es innecesario en el
+caso de variables enteras excepto en el caso de las variables de tipo
+char. &ldquo;signed char ch;&rdquo; declarar&iacute;a una variable
+que comprender&iacute;a n&uacute;meros entre -128 y 127 pero como
+estas variables son usadas principalmente para almacenar caracteres,
+pr&aacute;cticamente no se usa.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El modificador <B>long</B>
+le indica al compilador que la variable que est&aacute; definida a
+continuaci&oacute;n de ella, ocupar&aacute; el doble de memoria que
+lo que ocupar&iacute;a por defecto. Esto quiere decir que, por
+ejemplo en:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>long
+int</B> i;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">i representar&iacute;a un
+entero que ocupar&aacute; 4 bytes ( el doble de lo normal ). Esto
+ser&iacute;a los n&uacute;meros entre -2147483648 y 2147483647.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El modificador <B>short</B>
+es de poco uso ya que es la versi&oacute;n por defecto de las
+variables. Usar short no cambiar&aacute; la caracter&iacute;stica de
+la variable ( yo dir&iacute;a que redunda ). A&uacute;n as&iacute;,
+es permisible su uso.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Comentarios: Las
+variables tambi&eacute;n pueden ser inicializadas al momento de ser
+declaradas. Esto se realiza de la siguiente forma:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">char
+ch = 'h';</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">int
+i = 100;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">float
+porcentaje = 12.5;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Como
+&uacute;ltimo quedar&iacute;a comentar nuevamente que, como vimos en
+el ejemplo de variables tipo int, se pueden declarar varias variables
+del mismo tipo en una misma sentencia. La &uacute;nica cosa necesaria
+es que &eacute;stas deben estar separadas por una coma.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Constantes.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">La palabra <B>const</B>
+declara una constante. Este tipo de dato deber&iacute;a siempre ser
+inicializado desde su creaci&oacute;n pero no es necesario. Luego de
+asign&aacute;rsele el valor, &eacute;ste no puede variar. Ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>const
+float</B> pi = 3.1415926;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Si la constante es de
+tipo entero ( &uacute;nicamente para este tipo por lo que es
+preferible ser expl&iacute;cito siempre en las declaraciones ), basta
+con s&oacute;lo hacer</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>const
+</B>entero = 1234;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Existen unas constantes
+especiales conocidas como: &ldquo;Constantes de caracter con barra
+Invertida&rdquo;. Estas constantes son:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\b
+-&gt; Espacio atr&aacute;s</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\f
+-&gt; Salto de Pagina</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\n
+-&gt; Salto de linea</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\r
+-&gt; Retorno de carro</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\t
+-&gt; Tabulaci&oacute;n</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\&quot;
+-&gt; Comilla doble</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\'
+-&gt; Comilla simple</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\0
+-&gt; Nulo</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\\
+-&gt; Backslash</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\v
+-&gt; Tabulador Vertical</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\a
+-&gt; Alerta. Cuando se imprime, la computadora emite un pitido.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\o
+-&gt; Constante Octal</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">\x
+-&gt; Constante hexadecimal</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Declaraci&oacute;n
+de variables Locales, Globales y Especificadores.</B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Variables locales.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Toda variable que sea
+declarada dentro de una funci&oacute;n, ya sea main() o alguna otra
+funci&oacute;n definida por el usuario, son conocidas como variables
+locales y s&oacute;lo son reconocidas dentro de su propio &aacute;mbito
+( sea una funci&oacute;n o un bloque ) y en todos los bloques dentro
+de &eacute;stas. Las variables son creadas al entrar al bloque y son
+destruidas al salir de &eacute;l.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El caso m&aacute;s normal
+en el que se declaran variables locales es en la funci&oacute;n.
+Consideremos el pr&oacute;ximo ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">int
+main(void){</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">int
+x; // Estas variables son conocidas solo dentro de este bloque</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">char
+ch; // y en todos los bloques dentro de &eacute;ste.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">if
+(x==1) {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm">int
+i; // Aqu&iacute; tambi&eacute;n puedo declarar variables. Lo m&aacute;s
+importante es considerar</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm">//
+que no podremos usar una variable que ya sea v&aacute;lida dentro del
+bloque.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm">//
+Por lo tanto, no puedo usar el nombre 'x' ni 'ch'.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm">i =
+x; // x es reconocida aqu&iacute;. Por eso no puedo usar el mismo
+nombre aqu&iacute; dentro</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm">//
+Aqu&iacute; adentro 'i' es reconocido.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">}</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">//
+aqu&iacute;, la variable 'i' ya ha sido destruida por lo que ya queda
+sin efecto y es desconocida.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">void
+funcion(void) {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">int
+x, f1;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">x =
+1;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">void
+otraFuncion(void) {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">int
+x, f2;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">x =
+-1;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">La variable entera x es
+declarada en ambas funciones e incluso en el bloque main() pero &eacute;stas
+no tienen ninguna relaci&oacute;n entre s&iacute;. Cada versi&oacute;n
+de la variable x es conocida s&oacute;lo dentro de su propia funci&oacute;n
+y son destruidas al salir de la misma. ( Aunque con el especificador
+indicado podemos conservar el valor de la variable entre llamadas a
+la misma funci&oacute;n en caso de ser necesario. VER el
+especificador <B>static</B> m&aacute;s adelante ).</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Como ya comentamos,
+aunque lo m&aacute;s conveniente es declarar las variables al
+principio, &eacute;stas pueden ser declaradas a cualquier altura.
+Este es el caso del bloque if{} de nuestro ejemplo. All&iacute;,
+creamos una variable para ser usada s&oacute;lo dentro del bloque de
+control durante un momento y ser destruida de inmediato al salir de
+&eacute;l. Enti&eacute;ndase esto &uacute;ltimo como que las
+variables pueden ser declaradas dentro de cualquier bucle de control
+ya sea if{}, while{}, etc y ser&iacute;an locales dentro del bloque.
+Repito, se crean dentro de &eacute;l y son destruidas al salir del
+mismo. En nuestro ejemplo, 'x' y 'ch' son conocidas dentro del bloque
+main() y dentro de todos los bloques que el &aacute;mbito main()
+contenga pero 'i' s&oacute;lo es conocida dentro del bloque if{} al
+igual que 'f1' y 'f2' son conocidas s&oacute;lo dentro de sus
+respectivas funciones.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Variables globales.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">A diferencia de las
+variables locales, las globales son conocidas en cualquier punto del
+c&oacute;digo y pueden ser usadas en cualquier parte del programa.
+Las variables globales son declaradas al principio de los programas,
+fuera de todo bloque, para que as&iacute; sea reconocida por todos.
+As&iacute;, la forma de declararlas es:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">#include&lt;stdio.h&gt;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">int
+variableGlobal; // Esta variable es global y es conocida dentro de
+todo el c&oacute;digo.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">const
+pi = 3.1415926; // Esta constante tambi&eacute;n es global.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">main()
+{</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">//
+etc.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">La variable
+&ldquo;variableGlobal&rdquo; y la constante &ldquo;pi&rdquo; son
+globales y son conocidas en cualquier punto del programa ya que est&aacute;n
+fuera de todos los &aacute;mbitos. 
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El uso de estas variables
+es perfectamente permitido y v&aacute;lido y de hecho existen casos
+en los que pueden ser muy &uacute;tiles. Sin embargo, su uso debe
+limitarse a aquellos casos en que sean realmente necesarias ya que
+ocupan memoria durante toda la ejecuci&oacute;n del programa, no
+ayudan a modularizar y que pueden generar efectos secundarios
+desconocidos debido a que pueden alterar el valor en cualquier punto
+del programa alterando as&iacute; otros resultados. Esto es un dolor
+de cabeza en programas muy grandes generando fallas que no son
+f&aacute;ciles de detectar.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Especificadores.</B> 
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Otra cosa importante en
+la declaraci&oacute;n de las variables son los llamados
+especificadores. Estos son : 
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>extern</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>static</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>register</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>auto</B>.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Su forma de uso es:
+especificador tipo nombre; p.ej:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><B>extern
+int</B> i;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El tipo <B>auto</B> es el
+predeterminado de todas las variables por lo que este especificador
+pr&aacute;cticamente no se usa.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Dado que C permite
+enlazar juntos distintos m&oacute;dulos de un mismo programa, que son
+compilados por separado ( lo que ayuda a la gesti&oacute;n de grades
+proyectos ), debe haber una forma de hacer conocer a todos los
+archivos las variables globales requeridas por el programa. El
+especificador <B>extern</B> se encarga de &eacute;sto. Indica que la
+declaraci&oacute;n de una variable ya ha sido hecha en otra m&oacute;dulo
+del proyecto. Por lo tanto, si tienes la declaraci&oacute;n de una
+variable global en un programa y debes usar la misma dentro de otro
+m&oacute;dulo, lo &uacute;nico que debes hacer es declararla dentro
+de los m&oacute;dulos que la requieran, eso si con el mismo nombre,
+como extern lo que le indica al compilador que esta variable ya ha
+sido declarada en un m&oacute;dulo externo y que debe usarse la
+misma. As&iacute;, si tenemos &quot;archivo1&quot; y &eacute;ste
+incluye un m&oacute;dulo llamado &quot;archivo2&quot; ( quien tambi&eacute;n
+necesita de las variables globales definidas en &quot;archivo1&quot;
+), se hace las declaraciones:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">en
+archivo1 en archivo2</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">#include&lt;archivo2&gt;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">int
+x,y; extern int x,y;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">y as&iacute; el
+compilador sabr&iacute;a que las variables 'x' e 'y' en &ldquo;archivo2&rdquo;
+ya han sido definidas en un m&oacute;dulo externo.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Las variables <B>static</B>
+son muy importantes. Son variables que s&oacute;lo son reconocidas
+dentro de su propio &aacute;mbito pero que el valor de la misma
+permanece entre llamadas a la funci&oacute;n, o sea que no se
+destruye el valor al salir del bloque. En otras palabras: las
+variables &quot;static&quot; son variables permanentes pero difieren
+de las globales en que no son conocidas fuera de su bloque &oacute;
+funci&oacute;n. Se puede declarar una variable global como static y
+esto lo que har&iacute;a es impedir que dicha variable sea usada
+fuera del m&oacute;dulo en el que fue declarada ( no se reconocer&iacute;a
+en todo el proyecto). Un ejemplo ser&iacute;a:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">#include&lt;stdio.h&gt;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">void
+funcion(void) {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">static
+int i;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">if
+(primeraVezQueSeEjecuta) {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm">i=0;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">}
+else {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm">i=i+1;
+// El valor de esta variable se conserva entre llamadas a la funci&oacute;n</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 5cm; margin-bottom: 0cm">// ya
+que se defini&oacute; como static.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">}</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">printf(&ldquo;%i&rdquo;,i);
+// Por lo tanto la primera vez que se llame a esta funci&oacute;n, se
+imprimir&aacute;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 5cm; margin-bottom: 0cm">// 0,
+en la segunda llamada 1 y as&iacute; el valor ir&aacute; aumentando
+en</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 5cm; margin-bottom: 0cm">// cada
+nuevo llamado.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">int
+main(void){</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Como &uacute;ltimo tipo
+tenemos el muy especial <B>register</B>. Una variable de tipo
+register pide al compilador que coloque el valor de esta variable
+directamente dentro de un registro del CPU en lugar de en memoria
+para as&iacute; poder tener acceso a esta mucho m&aacute;s r&aacute;pido.
+S&oacute;lo se puede usar en variables locales. Estas variables son
+ideales para bucles en esos casos en los que la velocidad de proceso
+de informaci&oacute;n es cr&iacute;tica. Personalmente les recomiendo
+el acostumbrase a su uso en los casos en que se hagan muchas
+referencias a la misma variable como por ejemplo en los contadores.
+Recuerden que esta variable siempre estar&aacute; ocupando un
+registro del CPU por lo que si la usan en el bloque main(), el
+registro usado por la variable se mantendr&aacute; ocupado durante
+toda la ejecuci&oacute;n del programa as&iacute; que &uacute;senla si
+en realidad es necesaria.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Operadores.</B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Operadores
+aritm&eacute;ticos.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Los operadores aritm&eacute;ticos son:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Resta &quot;-&quot;. Ejemplo x = x - 3;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Suma &quot;+&quot;. Ejemplo x = x +2;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Multiplicaci&oacute;n &quot;*&quot;. Ejemplo x = x *5;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Divisi&oacute;n &quot;/&quot;. Ejemplo x = x /5;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Divisi&oacute;n en m&oacute;dulo &quot;%&quot;. Devuelve
+el resto de una divisi&oacute;n. S&oacute;lo puede aplicarse a
+enteros.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Ejemplo x = 10%3; asignar&aacute; 1 a la variable x.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Decremento &quot;--&quot;. Ejemplo x--; Es lo mismo que
+x=x-1. Decrementa en 1 el valor de x.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Incremento &quot;++&quot;. Ejemplo x++; Es lo mismo que
+x=x+1. Incrementa en 1 el valor de x.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=4><I><B><SPAN STYLE="text-decoration: none">MUY
+IMPORANTE. OJO: Cuando se aplica la divisi&oacute;n a un entero o a
+un caracter, cualquier resto es truncado. Por ejemplo: 22/3 devolver&aacute;
+7</SPAN> en divisi&oacute;n entera.</B></I></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Los operadores de incremento y decremento pueden ser
+usados tanto como x++ y x-- &oacute; como ++x y &ndash;x. Sin embargo
+existe una diferencia entre estas dos &uacute;ltimas y es que si por
+ejemplo hacemos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>y=10;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>x = ++y;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>entonces y=11 y x= 11 ...Primero incrementa y luego
+asigna. Pero si hacemos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>y=10;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>x = y++;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>entonces y=11 y x =10 ... Primero asigna y luego
+incrementa. Ojo con &eacute;sto en los bloques for();</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La precedencia de los operadores aritm&eacute;ticos es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>++ -- Se hace primero</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>- ( menos monario )</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>* / %</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>+ - Se hace de &uacute;ltimo</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Operadores
+relacionales y l&oacute;gicos.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Los
+relacionales son:</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+Mayor que &quot;&gt;&quot;. Ej: si ( x &gt; 3 ) haz algo.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+Mayor o Igual que &quot;&gt;=&quot;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+Menor que &quot;&lt;&quot;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+Menor o Igual que &quot;&lt;=&quot;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+Igual &quot;==&quot;. Ej: if ( x == 100 ) entonces ...</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+Distinto &quot;!=&quot;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">y
+los l&oacute;gicos son:</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+AND &quot;&amp;&amp;&quot;. Se usa si se requiere que dos condiciones
+se cumplan.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+OR &quot;||&quot;. Se usa cuando se s&oacute;lo es necesario que una
+de las condiciones se cumpla.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+NOT &quot;!&quot;. Es un operador monario e invierte el estado de la
+condici&oacute;n.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">En
+realidad estos operadores se explican por s&iacute; s&oacute;los. La
+precedencia de estos es:</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+!</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+&gt; &gt;= &lt; &lt;=</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+== !=</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+&amp;&amp;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+||</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Operadores a nivel de
+bits.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+AND (&amp;)</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+OR (|)</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+XOR (^),</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+Complemento a uno (~)</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+Desplazamiento a la derecha (&gt;&gt;).</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+Desplazamiento a la izquierda (&lt;&lt;).</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ejemplos x = x &lt;&lt; 3
+desplazar&aacute; el equivalente binario de x tres bits a la
+izquierda y lo asignar&aacute; a 'x' nuevamente. x = x &gt;&gt; 2,
+desplazar&aacute; el equivalente binario de x dos bit a la derecha y
+el resultado lo asigna a 'x'. En ambos casos, los nuevos bits son
+reemplazados por ceros. Por lo tanto, si x =5, entonces:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">x =
+x &lt;&lt; 3; x = 00000101, luego de desplazar: x = 00101000, x = 40.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Como
+el t&iacute;tulo lo indica, operan a nivel de bits. Ejemplo: x=3&amp;1;
+entonces x=1. Porqu&eacute;?</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium">
+00000011</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+&amp; 00000001</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">es
+00000001</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Otros operadores.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Otros
+operadores son ',', '?', '&amp;' , '*', 'sizeof()', '.' y el '-&gt;'</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">1.-
+Los dos operadores monarios '&amp;' y '*' se usan para los punteros.
+Acerca de estos operadores profundizaremos en el apartado dedicado a
+punteros.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">2.-
+Los operadores &quot;.&quot; y &quot;-&gt;&quot; se usan en las
+estructuras. A &eacute;stos tambi&eacute;n llegaremos.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">3.-
+El operador ','. Este operador se encarga de encadenar varias
+expresiones. Por ejemplo puede usarse:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+x = (y=3, y+1);</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">En
+este caso, y ser&aacute; 3 y x quedar&aacute; con el valor 4. Los
+par&eacute;ntesis son necesarios ya que el operador ',' tiene menor
+precedencia que el operador de asignaci&oacute;n. Otro ejemplo ser&iacute;a:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+y = 10;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+x = ( y = y-5 , 25/y );</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">En
+esta caso 'y' quedar&iacute;a con el valor de 5 y x tambi&eacute;n.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">4.-
+El operador '?'. Este es un operador muy potente que puede usarse
+para sustituir sentencias del tipo if-then-else. Por ejemplo, si
+tenemos:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+y = (x&gt;9) ? 100 : 200;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">es
+lo mismo que decir:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+if (x&gt;9) {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium">
+y=100;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+} else {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium">
+y=200;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+}</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">5.-
+El operador sizeof NombreVariable; retorna el tama&ntilde;o de la
+variable. Esto se usa mucho para facilitar la portabilidad del
+c&oacute;digo. Por ejemplo, si tenemos:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+int i;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+printf(&ldquo;%i&rdquo;, sizeof(i));</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">el
+programa presentar&aacute; por pantalla el valor 2 ya que 'i' es una
+variable entera que ocupa 2 bytes.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Precedencia de los
+operadores de C.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">La
+precedencia de los operadores en C es, de mayor a menor:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+() [] -&gt;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+! ~ ++ -- * &amp; sizeof() ( '*' y '&amp;' se refieren a los usados
+en punteros )</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+- ( menos monario )</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+* / %</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
++ -</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+&lt;&lt; &gt;&gt;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+&lt; &lt;= &gt; &gt;=</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+== !=</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+&amp;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+^</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+|</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+&amp;&amp;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+||</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+?</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+= += -= *= /=</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+,</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Por
+lo tanto, todo lo que est&aacute; dentro de par&eacute;ntesis o
+corchetes, se ejecutar&aacute; primero que cualquier otra cosa. Por
+ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+3 + 4 * 5</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">ejecutar&aacute;
+4*5 ( ya que * tiene prioridad ) y luego le sumar&aacute; 3.
+Resultado = 23. En cambio</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+(3+ 4)*5</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">resolver&aacute;
+primero 3 + 4 y luego multiplicar&aacute; por 5. Resultado = 35.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Expresiones.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Los
+operadores, las constantes y las variables son lo que constituyen las
+&ldquo;expresiones&rdquo; en C. Una expresi&oacute;n en C es
+cualquier combinaci&oacute;n v&aacute;lida de estos elementos. Como
+la mayor&iacute;a de las expresiones tienden a seguir las reglas del
+&aacute;lgebra, o menudo se dan por sabidas. Sin embargo, existen
+unos pocos aspectos de las expresiones relativos espec&iacute;ficamente
+al lenguaje C. Los m&aacute;s importantes a resaltar son:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">1.-
+Moldes: Es posible forzar a una expresi&oacute;n para que sea de un
+tipo determinado. &Eacute;sto se logra usando la forma:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+(tipoQueQueremos) expresi&oacute;n;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">as&iacute;
+por ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+(float) x/2;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">forzar&aacute;
+a que la expresi&oacute;n sea evaluada como float aunque la variable
+x sea de otro tipo ( p. ej. entera ).</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">2.-
+Espaciado y par&eacute;ntesis: Se usan para dar mayor legibilidad al
+programa. Pueden a&ntilde;adirse tabulaciones y espacios a discreci&oacute;n
+en una expresi&oacute;n sin que estos alteren el resultado de la
+misma. Por ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+x=y/3-5*z&amp;127;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">es
+perfectamente v&aacute;lido, pero tambi&eacute;n es cierto que es m&aacute;s
+f&aacute;cil a simple vista:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+x = y / 3 &ndash; 5 * z &amp; 127;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">El
+uso de par&eacute;ntesis redundantes no produce errores ni disminuye
+la velocidad de ejecuci&oacute;n de un programa. Lo &uacute;nico que
+hace es facilitar la lectura del c&oacute;digo. As&iacute;, la
+expresi&oacute;n anterior tambi&eacute;n la podemos escribir como:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+x = (( y / 3) &ndash; (5 * z)) &amp; 127 ;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">por
+lo que, gracias a la ayuda de los par&eacute;ntesis, es mucho m&aacute;s
+f&aacute;cil ver la precedencia de las operaciones.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">3.-
+Abreviaturas en C.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Por
+&uacute;ltimo tenemos una abreviatura muy &uacute;til a la hora de
+escribir nuestro c&oacute;digo ya que simplifican ciertas sentencias
+de asignaci&oacute;n. Esta abreviatura consiste en que podemos
+escribir:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">NombreVariable
+= NombreVariable operador expresi&oacute;n;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">como:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+NombreVariable operador= expresi&oacute;n;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Por
+ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+x = x + 5; podemos escribirla como: x+=5;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">y =
+y &ndash; 3; podemos escribirla como y -= 3;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">z =
+z *2; podemos escribirla como: z *= 2;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=RIGHT STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

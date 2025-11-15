@@ -1,0 +1,542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20031110;14195235">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20031110;14204023">
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Entrada
+y Salida de Datos. Lectura de archivos.</B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Son innumerables los casos en los que son necesarios
+guardar datos entre ejecuciones de un programa para poder ser
+recuperados en futuras sesiones. Los archivos de datos permiten
+almacenar informaci&oacute;n de cualquier tipo de modo permanente
+para ser accedida o alterada cuando sea necesario.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En C existe un conjunto extenso de funciones de
+biblioteca para crear y procesar archivos de datos. Los archivos
+secuenciales de datos se pueden dividir en dos categor&iacute;as. En
+la primera categor&iacute;a est&aacute;n los archivos que contienen
+caracteres consecutivos. Estos caracteres se pueden interpretar como
+datos individuales, como componentes de una cadena o como n&uacute;meros.
+La segunda categor&iacute;a es a menudo denominada archivos sin
+formato y organiza los datos en bloques contiguos de informaci&oacute;n.
+Estos bloques representan estructuras de datos m&aacute;s complejas
+como arrays y estructuras ( struct ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Cuando se trabaja con archivos secuenciales de datos, el
+primer paso es establecer un &aacute;rea de buffer, donde la
+informaci&oacute;n se almacena temporalmente mientras se est&aacute;
+transfiriendo entre la memoria y el archivo de datos. Este &aacute;rea
+de buffer permite leer y escribir informaci&oacute;n del archivo m&aacute;s
+r&aacute;pidamente de lo que ser&iacute;a posible de otra manera. El
+&aacute;rea de buffer se establece escribiendo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>FILE *ptvar;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>donde FILE es un tipo de estructura que establece el
+&aacute;rea de buffer y ptvar la variable puntero ( puntero a archivo
+) que indica el comienzo de este &aacute;rea. El tipo de estructura
+FILE est&aacute; definido en stdio.h. Aqu&iacute;, a ptvar se le
+conoce como un flujo lo cual es un dispositivo l&oacute;gico
+resultado de la transformaci&oacute;n de un archivo con buffer. Esto
+crea un nivel abstracci&oacute;n que nos permite trabajar de igual
+forma con cualquier dispositivos aunque &eacute;stos sean diferentes.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN STYLE="text-decoration: none"><SPAN LANG="es-ES"><FONT SIZE=3><SPAN STYLE="font-weight: medium">Al
+principio de la ejecuci&oacute;n de una programa se abren cinco
+flujos de texto predefinidos. Se trata de </SPAN><B>stdin, stdout,
+stderr, stdaux </B><SPAN STYLE="font-weight: medium">y</SPAN><B>
+stdprn</B><SPAN STYLE="font-weight: medium">, y se refieren a los
+dispositivos de E/S est&aacute;ndar conectados al sistema para
+teclado, pantalla, errores por pantalla, primer puerto serie e
+Impresora respectivamente. Los dos &uacute;ltimos son espec&iacute;ficos
+de Turbo C por lo que pueden no ser transportables a otros
+compiladores.</SPAN></FONT></SPAN></SPAN></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El sistema de archivos ANSI C se compone de varias
+funciones interrelacionadas. Las m&aacute;s comunes son:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fopen(): Abre un flujo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fclose(): Cierra un flujo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>putc(): Escribe una car&aacute;cter en un flujo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>getc(): Lee un car&aacute;cter de un flujo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fseek(): Busca un byte espec&iacute;fico en un flujo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fprintf(): Hace lo mismo en flujos que printf() en
+consola.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fscanf(): Hace lo mismo en flujos que scanf() en
+consola.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>feof(): Devuelve cierto si ha llegado al final del
+archivo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>rewind(): Coloca el localizador de posici&oacute;n del
+archivo al principio del mismo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>remove(): Elimina un archivo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un archivo de datos debe ser abierto antes de ser creado
+o procesado. Esto asocia el nombre del archivo con el &aacute;rea de
+buffer. Tambi&eacute;n se especifica c&oacute;mo se va a usar el
+archivo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Para abrir un archivo se usa la funci&oacute;n fopen():</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ptvar = fopen ( nombre_archivo, tipo_archivo);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>donde nombre_archivo y tipo_archivo son cadenas. Los
+tipos de archivo y su significado son:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;r&quot;: Abrir un archivo existente s&oacute;lo
+para lectura.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;w&quot;: Abrir un nuevo archivo s&oacute;lo para
+escritura. Si ya existe, ser&aacute; destruido y creado uno nuevo en
+su lugar.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;a&quot;: Abrir un archivo para a&ntilde;adir. Si
+no existe, se crea uno nuevo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;r+&quot;: Abrir un archivo existente para lectura
+y escritura.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;w+&quot;: Abrir un archivo nuevo para lectura y
+escritura. Si ya existe, ser&aacute; destruido y creado uno nuevo en
+su lugar.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;a+&quot;: Abrir un archivo existente para leer y
+a&ntilde;adir. Si no existe, se crea uno nuevo. </FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La funci&oacute;n fopen() retorna un puntero al
+principio del &aacute;rea de buffer asociada con el archivo. Se
+retorna un valor NULL si no se puede abrir el archivo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un archivo de datos debe cerrarse al final del programa
+o cuando ya no sea necesario mantenerlo mas tiempo abierto. Esto se
+realiza a trav&eacute;s de:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fclose(ptvar);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un archivo secuencial de datos puede crearse de dos
+formas distintas. Una es crear el archivo directamente, usando un
+editor. La otra es escribir un programa que introduzca informaci&oacute;n
+en la computadora y la escriba en un archivo. Los archivos sin
+formato s&oacute;lo pueden crearse mediante programas.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Cuando se crea un archivo con un programa, lo habitual
+es introducir la informaci&oacute;n desde el teclado y escribirla en
+el archivo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Si el archivo consta de caracteres individuales, se
+pueden usar la funciones getchar() ( para obtener caracteres de
+teclado ) y putc() ( para escribir caracteres en un archivo ). El uso
+de putc() es el siguiente:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>putc(variable_de_tipo_caracter,puntero_al_area_de_buffer);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un archivo creado de esta manera puede ser visualizado
+de distintas formas: usando una orden del sistema operativo tal como
+type, usando un editor o escribiendo un programa que lea el contenido
+y lo muestre. Para ello se pueden utilizar las funciones getc() ( lee
+caracteres de un archivo ) y putchar() ( para escribir caracteres por
+pantalla ). El uso de getc() es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>variable_de_tipo_caracter=getc
+(puntero_al_area_de_buffer);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Los archivos de datos que contienen s&oacute;lo cadenas
+de caracteres pueden crearse y leerse m&aacute;s f&aacute;cilmente
+con programas que utilizan funciones de biblioteca especialmente
+orientadas para cadenas: fgets() y fputs().</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Muchos archivos de datos contienen estructuras de datos
+m&aacute;s complicadas ( como las struct ) que incluyen combinaciones
+de informaci&oacute;n, caracteres y n&uacute;meros. Tales archivos se
+pueden procesar usando las funciones fscanf() y fprintf():</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fprintf(puntero_area_buffer,cadena_control,argto1,..,argton);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fscanf(puntero_area_buffer,cadena_control,&amp;argto1,..,&amp;argton);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Una vez creado un archivo de datos surge la pregunta de
+c&oacute;mo detectar una condici&oacute;n de fin de archivo. La
+funci&oacute;n feof() sirve para este prop&oacute;sito ( v&aacute;lida
+para un archivo secuencial con o sin formato ). Esta funci&oacute;n
+devuelve un valor distinto de cero ( cierto ) si detecta una
+condici&oacute;n de fin de archivo y un valor cero ( falso ) si no se
+detecta.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Para actualizar los registros dentro de un archivo de
+datos hay varios enfoques. Uno de ellos consiste en leer cada
+registro del archivo, actualizarlo y escribirlo en el mismo archivo.
+Sin embargo es dif&iacute;cil leer y escribir datos con formato al
+mismo archivo sin alterar la ordenaci&oacute;n de los elementos
+dentro del archivo. Otro enfoque es trabajar con dos archivos
+diferentes: un archivo antiguo ( la fuente ) y otro nuevo. Se lee
+cada registro del archivo antiguo, se actualiza y se escribe en el
+archivo nuevo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Algunas aplicaciones implican el uso de archivos para
+almacenar bloques de datos, donde cada bloque consiste en un n&uacute;mero
+fijo de bytes contiguos. Cada bloque representar&aacute; generalmente
+una estructura de datos compleja, como una struct o un array. Para
+estas aplicaciones ser&iacute;a deseable leer o escribir el bloque
+entero del archivo de datos en vez de leer o escribir separadamente
+las componentes individuales de cada bloque. Las funciones fread() y
+fwrite() deben usarse en estas situaciones. A estas funciones se las
+conoce como funciones de lectura y escritura sin formato. Igualmente
+se hace referencia a estos archivos de datos como archivos de datos
+sin formato.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Cada una de estas funciones necesita cuatro argumentos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>- la direcci&oacute;n del bloque de datos</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>- el tama&ntilde;o del bloque de datos</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>- el n&uacute;mero de bloques a transferir</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>- el puntero a un archivo secuencial</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fwrite(&amp;cliente, sizeof(struct ejemplo), 1, ptvar);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>fread(&amp;cliente, sizeof(struct ejemplo), 1, ptvar);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>donde cliente es una variable estructura de tipo &ldquo;struct
+ejemplo&rdquo; y ptvar un puntero a archivo secuencial.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Utilizando el sistema de E/S con buffer se pueden
+realizar operaciones de lectura y escritura directa con la ayuda de
+fseek(), que sit&uacute;a el indicador de posici&oacute;n del
+archivo. Su prototipo es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int fseek(FILE *pa, long num_bytes, int origen );</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>donde pa es un puntero a archivo devuelto por una
+llamada fopen(); num_bytes es un entero largo que representa el
+n&uacute;mero de bytes a partir del &ldquo;origen&rdquo; que
+supondr&aacute;n la nueva posici&oacute;n y origen es una de las
+siguientes macros definidas en stdio.h:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>SEEK_SET	Principio del archivo ( valor de cero )</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>SEEK_CUR	Posici&oacute;n actual ( valor de uno )</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>SEEK_END	Final del archivo ( valor de dos )</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Veamos un ejemplo
+donde pondremos en pr&aacute;ctica varios de estos conceptos.</FONT></FONT></P>
+<P LANG="es-VE" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P LANG="es-VE" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P LANG="es-VE" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>/* Programa de
+acceso a archivos; escritura, agregado y lectura de l&iacute;neas */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>#include
+&lt;stdio.h&gt;</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>#define
+MAXLINEA 100</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>int
+main() {</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char n_arch[] =
+&quot;Archivo.dat&quot;;	/* nombre archivo de datos */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char n_prog[] =
+&quot;Archivo.c&quot;;	/* nombre del programa, para error */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char mensaje[] =
+&quot;Esta es una linea de prueba.\n&quot;;</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>char
+linea[MAXLINEA];		/* para lectura */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>FILE *pa;				/*
+puntero al archivo */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>int
+i = 0;</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;\n\nAcceso
+a archivos.\n&quot;);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>/*
+reescribe o crea el archivo, agrega una l&iacute;nea */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>if
+((pa = fopen(n_arch, &quot;w&quot;)) == NULL) {</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 2.5cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;%s: no
+se puede abrir archivo %s&quot;, n_prog, n_arch);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 2.5cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>return 1;			/*
+error, no pudo abrir el archivo */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>}
+else {</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 2.5cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>fputs(mensaje,
+pa);		/* graba l&iacute;nea en archivo */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 2.5cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>fclose(pa);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 2.5cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;Grab&oacute;
+l&iacute;nea en archivo.\n&quot;);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>/*
+lectura del archivo, una l&iacute;nea */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>pa
+= fopen(n_arch, &quot;r&quot;);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>fgets(linea,
+MAXLINEA, pa);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>fclose(pa);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;Ley&oacute;
+l&iacute;nea: %s&quot;, linea);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>/*
+agrega una l&iacute;nea al archivo */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>pa
+= fopen(n_arch, &quot;a&quot;);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>strcpy(linea, &quot;Esta
+es una l&iacute;nea agregada al archivo.\n&quot;);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>fputs(linea, pa);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>fclose(pa);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;Agreg&oacute;
+l&iexcl;nea al archivo.\n&quot;);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>/*
+lee l&iacute;neas del archivo hasta terminar */</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;Lectura
+de varias l&iacute;neas:\n&quot;);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">  <FONT FACE="Times New Roman, serif"><FONT SIZE=3>pa
+= fopen(n_arch, &quot;r&quot;);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>while ( fgets(linea,
+MAXLINEA, pa) != NULL ) {</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">   
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;L&iacute;nea
+%i: %s&quot;, ++i, linea);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm">    <FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>fclose(pa);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>printf(&quot;Fin de
+pruebas de acceso a archivos.\n&quot;);</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"> 
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>return 0;</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>}</FONT></FONT></P>
+<P LANG="es-VE" STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Otro ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void main(void) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+    <FONT SIZE=3>char ch;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+    <FONT SIZE=3>FILE *fp;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+    <FONT SIZE=3>// Entrada desde Archivo en DISCO</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+    <FONT SIZE=3>printf(&quot;Entrada desde archivo.\n&quot;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+    <FONT SIZE=3>if (!(fp = fopen (&quot;Archivo.c&quot;, &quot;r&quot;)))
+{</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>	printf(&quot;No se puede abrir Archivo.c\n&quot;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+    <FONT SIZE=3>} else {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+        <FONT SIZE=3>fflush(fp);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+        <FONT SIZE=3>while ((ch != EOF)) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+                <FONT SIZE=3>ch = getc(fp);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+                <FONT SIZE=3>printf(&quot;%c&quot;, ch);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+        <FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+        <FONT SIZE=3>fclose(fp);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+    <FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

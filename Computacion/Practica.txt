@@ -1,0 +1,126 @@
+- Diseñe un programa calcule el perímetro de un círculo. Declare una constante para pi con el valor 3.1415. El programa debe decir lo que hace (Objetivo), solicitar el valor del radio (un entero) y por último debe imprimir un mensaje que muestre el radio y el perímetro del círculo con solo 2 decimales de precisión.
+
+
+#include<stdio.h>
+#include<conio.h>
+
+void main(){
+	const float pi = 3.1415;
+	int radio;
+	clrscr();
+	printf("Programa que calcula el perimetro de un circulo.\n\n");
+	printf("Introduzca el valor del radio: ");
+	scanf("%i",&radio);
+	printf("\nEl perimetro del circulo es %0.2f",pi*radio*2);
+
+	getch();
+     //	return 0;
+}
+
+
+
+
+
+- Diseñe un programa borre la pantalla y que muestre el título: Contadores. Luego debo solicitar un numero entero positivo pequeño y seguidamente, haciendo uso del operador de incremento, debe aumentarlo en 2 e imprimir el resultado de dicho incremento. A continuación debe mostrar el mensaje "Presione una tecla para continuar" y al ser presionada la tecla se debe borrar la pantalla y solicitar otro número entero pequeño positivo. Ahora increméntelo en 3 usando la forma abreviada de expresiones en C e imprima el resultado.
+
+
+#include<stdio.h>
+#include<conio.h>
+
+main(){
+	int x,y;
+	clrscr();
+	printf("Contadores\n");
+	printf("Introduzca un entero positivo pequeno: ");
+	scanf("%i",&x);
+	y=x++;	// OJO
+	y=++x;	// OJ
+	printf("Dio: %i",x);
+	printf("Presione una tecla para contnuar.");
+	getch();
+	clrscr();
+	printf("Introduzca un entero positivo pequeno: ");
+	scanf("%i",&x);
+	x+=3;
+	printf("Dio: %i",x);
+	getch();
+	return 0;
+}
+
+
+
+
+
+- Diseñe un programa para calcular el desplazamiento total de un objeto en caída (en vacío) dada su velocidad inicial en m/s y el tiempo transcurrido en segundos. El programa debe limpiar la pantalla y desplegar un mensaje con el título de su preferencia. A continuación debe solicitar al usuario la velocidad inicial del objeto y luego el tiempo transcurrido. Las variables deben ser locales e inicializadas a cero en el momento de la declaración. Debe declarar una constante global para la gravedad con valor de 9.8. Por último debe desplegar un mensaje indicando el resultado de la operación con sólo 2 decimales de precisión para los valores dados (en el mensaje deben aparecer tanto los datos introducidos como el resultado).
+
+#include<stdio.h>
+#include<conio.h>
+
+const float g=9.8;
+
+void main() {
+	float Vo=0, resultado=0.0 , t=0;
+	clrscr();
+	printf(“Programa que calcula el desplazamiento de un objeto en caida\n”);
+	printf(“Introduzca la velocidad inicial en m/s: ”);
+	scanf(“%f”,&Vo);
+	printf(“Introduzca el tiempo transcurrido en segundos: ”);
+	scanf(“%f”,&t);
+	resultado = Vo*t + g*t*t/2;
+	printf(“Con una velocidad inicial de %.2fm/s y un tiempo transcurrido de %.2fs el objeto recorrera %.2fm\n”, Vo, t, resultado);
+}
+
+
+
+
+
+- Diseñe un programa que sume los primeros cien numeros enteros.
+
+#include<stdio.h>
+#include<conio.h>
+
+main() {
+	int i,res=0;
+	clrscr();
+	printf("Programa que suma los primeros 100 enteros\n");
+	i = 0;
+	while(i<101){
+		//i++;
+		res+=i;
+		i++;
+	}
+	printf("La suma de los primeros %i numeros es %i\n",i-1,res);
+	return 0;
+}
+
+
+
+
+
+- Diseñe un programa que pida al usuario un numero entero y que verifique si este es mutiplo de 2 y de 5.
+En el caso de que lo sea enviara un mensaje y de no serlo tambien enviara un mensaje indicando de quien NO
+es multiplo. El programa debe ejecutarse indefinidamente hasta que el usuario introduzca 's' por teclado.
+
+#include<stdio.h>
+#include<conio.h>
+
+main(){
+	int x;
+	char ch;
+	clrscr();
+	do {
+	  printf("Introduzca el numero a verificar: ");
+	  scanf("%i",&x);
+	  if(!(x%2))
+		if((x%5)==0) printf("El numero %i SI es multiplo de 2 y 5\n",x);
+		else printf("%i no es multiplo de 5\n",x);
+	  else printf("%i no es multiplo de 2\n",x);
+	  printf("Presione s para salir\n");
+	  ch = getch();
+	} while(ch!='s');
+	return 0;
+}
+
+
+- EJERCICIO: Diseñe un programa que contenga un menu. Las opciones del mismo son suma de 2 numeros, la resta y 
+salir del programa (solo con esta opcion saldra del programa). Hago uso del switch.

@@ -1,0 +1,65 @@
+/* Dise~ne un programa que contenga dos funciones:
+ 1.- Una que use llamada por valor y reciba 2 enteros. No retornara nada.
+     La funcion intercambiara los valores de las variables e imprimira el
+     resultado de este cambio desde dentro de la funcion.
+ 2.- Una que use llamada por Referencia y reciba 2 referencias a enteros.
+     No retornara nada. La funcion intercambiara los valores de los conte-
+     nidos de las referencias a las variables e imprimira el
+     resultado de este cambio desde dentro de la funcion.
+
+ desde main():
+ 1.- El Programa declarara dos variables 2 varaibles enteras y les dara un
+     valor. Asegurese de que sean distintos.
+ 2.- Se imprimira los valores originales de las variables.
+ 3.- Se llamara a la primera funcion.
+ 4.- Se imprimira el valor actual de las variables.
+ 5.- Se llamara a la segunda funcion.
+ 6.- Se imprimira el valor actual de las variables.
+*/
+
+#include<stdio.h>
+
+void interVal(int x, int y);
+void interRef(int *x, int *y);
+
+main(){
+  int x=100, y=200;
+  printf("\nOriginalmente, X y Y contienen: %i y % i\n", x, y);
+  printf("Ejecuto la funcion con \"Llamada por Valor\"\n");
+  interVal( x, y);
+  printf("en main(), X y Y luego de ejecutar interVal: %i y % i\n", x, y);
+  printf("Ejecuto la funcion con \"Llamada por Referencia\"\n");
+  interRef( &x, &y);
+  printf("en main(), X y Y luego de ejecutar interRef: %i y % i\n\n", x, y);
+  return 0;
+}
+
+void interVal(int x, int y) {
+  int z;
+  z = x;      	// Respaldo x
+  x = y;       	// Asigno el valor de y a x.
+  y = z;       	// Asigno el valor inicial de x (respaldado en z) a y.
+  printf("Dentro de interVal, X y Y contienen: %i y %i\n", x, y);
+}
+
+void interRef(int *x, int *y) {
+  int z;
+  z = *x;      	// Respaldo el contenido de x
+  *x = *y;     	// Asigno el contenido de y al de x
+  *y = z;       // Asigno el contenido inicial de x al de y
+  printf("Dentro de interRef, X y Y son: %x y %x pero sus contenidos son: %hi y %hi\n", x, y, *x, *y);
+}
+
+/* A continuacion les agrego la salida de este programa:
+
+Originalmente, X y Y contienen: 100 y  200
+Ejecuto la funcion con "Llamada por Valor"
+Dentro de interVal, X y Y contienen: 200 y 100
+en main(), X y Y luego de ejecutar interVal: 100 y  200
+Ejecuto la funcion con "Llamada por Referencia"
+Dentro de interRef, X y Y son: fff4 y fff2 pero sus contenidos son: 200 y 100
+en main(), X y Y luego de ejecutar interRef: 200 y  100
+
+
+*/
+

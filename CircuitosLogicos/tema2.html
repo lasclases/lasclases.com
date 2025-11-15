@@ -1,0 +1,1920 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>TEMA 2</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20070113;17444600">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20070122;17404373">
+	<STYLE>
+	<!--
+		TD P { line-height: 150%; text-align: justify }
+		TD P.western { font-family: "Lucida Sans", sans-serif }
+		P { line-height: 150%; text-align: justify }
+		P.western { font-family: "Lucida Sans", sans-serif }
+		P.subtitulo-western { color: #008000; font-family: "Lucida Sans", sans-serif; font-size: 18pt; font-style: italic }
+		P.subtitulo-cjk { color: #008000 }
+		P.subtitulo-ctl { color: #008000; font-style: italic }
+		TH P { line-height: 150% }
+		TH P.western { font-family: "Lucida Sans", sans-serif }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-VE" DIR="LTR">
+<H1 ALIGN=CENTER><FONT COLOR="#0000ff"><U><B>C&Oacute;DIGOS BINARIOS.
+&Aacute;LGEBRA DE BOOLE. FUNCIONES L&Oacute;GICAS. COMPUERTAS
+L&Oacute;GICAS.</B></U></FONT></H1>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT COLOR="#008000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=5><I>C&Oacute;DIGOS
+BINARIOS</I></FONT></FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
+ya vimos, los sistemas digitales usan se&ntilde;ales el&eacute;ctricas
+para representar dos posibles valores o estados que asociamos con
+cierto o falso. Como ya vimos tambi&eacute;n, para expresar
+informaci&oacute;n en estos sistemas hacemos uso de los n&uacute;meros
+binarios ya que con ellos podemos representar los dos estados
+estables de los sistemas digitales a trav&eacute;s del 0 y el 1 (y
+que podemos usar una combinaci&oacute;n de &eacute;stos para
+representar cualquier cantidad). Muy bien, pero los sistemas
+digitales electr&oacute;nicos pueden ser usados para procesar
+informaci&oacute;n discreta de cualquier tipo ya sean n&uacute;meros
+decimales, letras, colores, etc y es por &eacute;sto que en la
+mayor&iacute;a de los casos se hace conveniente el expresar la
+informaci&oacute;n que se desea procesar de una forma que sea m&aacute;s
+manejable. Es aqu&iacute; donde entran los <I>c&oacute;digos
+binarios</I>.</FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
+les dije en el tema pasado, al elemento m&iacute;nimo de un n&uacute;mero
+binario se le conoce como bit. Un bit no es m&aacute;s que un c&oacute;digo
+binario que s&oacute;lo puede representar los dos estados estables.
+Un bit es por definici&oacute;n un d&iacute;gito binario.</FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Si
+se quieren expresar un n&uacute;mero de elementos de <B>2<SUP>n</SUP>
+</B>se requerir&aacute;n entonces <B>n </B>bits para expresar dicho
+n&uacute;mero de elementos. Por ejemplo si se quieren representar 4
+posibilidades se requerir&aacute;n entonces 2 bits ya que 2<SUP>2</SUP>
+= 4 (y de hecho estas combinaciones son 00 01 10 y 11 que, f&aacute;cilmente
+verificable, representan los n&uacute;meros decimales del 0 al 3). Si
+se quieren representar 8 elementos entonces se requieren 3 bits ya
+que 2<SUP>3</SUP> = 8 (000, 001, 010, 011, 100, 101, 110 y 111, en
+decimal del 0 al 7). En resumen, con <B>n</B> bits se pueden
+representar 2<SUP>n</SUP> opciones que ir&aacute;n desde 0 hasta 2<SUP>n</SUP>
+&ndash; 1.</FONT></P>
+<P CLASS="western" STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ahora
+bien, no siempre se requerir&aacute; expresar una cantidad exacta de
+una potencia de 2. Por ejemplo si queremos mostrar las posibilidades
+en los d&iacute;gitos decimales requeriremos de 10 combinaciones. Por
+supuesto, tendremos que usar cuatro bits ya que con tres s&oacute;lo
+podremos representar 8 de ellas. Con los cuatro bits tenemos un
+exceso pero lo que se hace es ignorar el resto de las combinaciones.</FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>COMENTARIO:
+</B>Debido a que he recibido esta pregunta les comento de una vez que
+1kb (un kilobit) es igual a 1024 bits. Cuando hablamos en t&eacute;rminos
+de n&uacute;meros binarios, hablamos de potencias de 2. As&iacute;
+que 1kb = (10000000000)<SUB>2 </SUB>bits = 2<SUP>10</SUP> bits = 1024
+bits. De forma an&aacute;loga para 1 Kbyte (1 byte = 8 bits). Otro
+caso es 1 MB (un megabyte) = (100000000000000000000)<SUB>2</SUB> =
+2<SUP>20</SUP> bytes = 1048576 bytes.</FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><BR><BR>
+</P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><I><B>C&Oacute;DIGOS
+DECIMALES</B></I></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Entre
+los c&oacute;digos binarios tenemos algunos que se usan para
+representar d&iacute;gitos decimales. Las formas para representar los
+n&uacute;meros decimales con c&oacute;digos binarios es muy variada y
+depende de la l&oacute;gica que se use. El m&aacute;s usado de todos
+estos c&oacute;digos es el <B>BCD</B> (por sus siglas en ingl&eacute;s
+de &ldquo;Binary Coded Decimal&rdquo; o &ldquo;decimal codificado en
+binario&rdquo;)<B>.</B> En este caso se usa una relaci&oacute;n
+directa para expresar los d&iacute;gitos decimales. &iquest;Qu&eacute;
+quiero decir con directa? Pues bien, que al convertir el n&uacute;mero
+binario a decimal obtendr&aacute;s el d&iacute;gito decimal en
+cuesti&oacute;n. Por ejemplo para expresar el (0)<SUB>10</SUB><SUP>
+</SUP>usamos <B>0000</B>, para el (5)<SUB>10</SUB> <B>0101</B> y para
+el (9)<SUB>10</SUB> <B>1001 </B>(m&aacute;s adelante mostrar&eacute;
+una tabla con todas las combinaciones). La forma de calcular el
+n&uacute;mero binario para representar el d&iacute;gito decimal viene
+dada por la f&oacute;rmula explicada en el tema anterior pero para
+realizar un c&aacute;lculo r&aacute;pido recuerden que la <B>carga</B>
+del primer d&iacute;gito binario representa 8, la del segundo 4, la
+del tercero 2 y la del cuarto y &uacute;ltimo representa 1. Por
+supuesto que en <B>BCD</B> no existen <B>1100,</B> <B>1010</B>, etc
+ya que &eacute;stas no muestran ning&uacute;n d&iacute;gito decimal.
+Otro ejemplo: para representar el d&iacute;gito decimal 6 en c&oacute;digo
+BCD ser&iacute;a: <B>0110</B> ya que:</FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0
+x 8 + 1 x 4 + 1 x 2 + 0 x 1 = 6</B></FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Un
+c&oacute;digo decimal que se ha usado en algunos computadores viejos
+es el c&oacute;digo de &ldquo;<B>exceso a 3</B>&rdquo;. Este &uacute;ltimo
+es un c&oacute;digo sin carga, cuya asignaci&oacute;n se obtiene del
+correspondiente valor en BCD una vez se haya sumado 3. Ejemplo (0)<SUB>10</SUB>
+= 0011, (9)<SUB>10</SUB> = 1100, etc.</FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Tambi&eacute;n
+es posible asignar cargas negativas a un c&oacute;digo decimal, como
+por ejemplo en el c&oacute;digo 8, 4, -2, -1. En este caso la
+combinaci&oacute;n de bits 0110 se interpreta como el d&iacute;gito
+decimal 2, ya que como se ve:</FONT></FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0
+x 8 + 1 x 4 + 1 x (-2) + 0 x (-1)=2</B></FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Del
+libro &ldquo;L&oacute;gica digital y dise&ntilde;o de computadores&rdquo;
+de M. Morris Mano: &ldquo;Los n&uacute;meros se representan en
+computadores digitales en binario o decimal a trav&eacute;s de un
+c&oacute;digo binario. Cuando se est&eacute;n especificando los
+datos, el usuario gusta dar los datos en forma decimal. Las maneras
+decimales recibidas se almacenan internamente en el computador por
+medio del c&oacute;digo decimal. Cada d&iacute;gito decimal requiere
+por lo menos cuatro elementos de almacenamiento binario. Los n&uacute;meros
+decimales se convierten a binarios cuando las operaciones aritm&eacute;ticas
+se hacen internamente con n&uacute;meros representados en binario. Es
+posible tambi&eacute;n realizar operaciones aritm&eacute;ticas
+directamente en decimal con todos los n&uacute;meros ya dejados en
+forma codificada. Por ejemplo, el n&uacute;mero decimal 395, cuando
+se convierte a binario es igual a 110001011 y consiste en nueve
+d&iacute;gitos binarios. El mismo n&uacute;mero representado
+alternamente en c&oacute;digo BCD, ocupa cuatro bits para cada d&iacute;gito
+decimal para un total de 12 bits: <B>001110010101</B>&rdquo; ... esto
+&uacute;ltimo por 0011 1001 0101.</FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>OJO:
+No es lo mismo convertir un n&uacute;mero decimal a binario que
+convertir un n&uacute;mero decimal a codificaci&oacute;n binario. Por
+supuesto en ambos casos obtendremos un n&uacute;mero en binario, pero
+no el mismo. Ojo con eso.</FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>El
+c&oacute;digo BCD es el m&aacute;s com&uacute;n a la hora de trabajar
+d&iacute;gitos decimales en c&oacute;digo binario, pero los otros
+casos que coment&eacute;: exceso a 3 y 8 4 -2 -1 tienen una
+peculiaridad muy interesante y es que estos n&uacute;meros son
+<B>autocomplementarios</B>. Esto quiere decir que el complemento a 9
+del n&uacute;mero decimal se obtiene con tan s&oacute;lo intercambiar
+el estado de los bits del c&oacute;digo binario. Por ejemplo, el
+n&uacute;mero <B>cero</B> tiene un c&oacute;digo binario en &ldquo;exceso
+a 3&rdquo; de 0011. Si intercambiamos los estados de los bits
+obtenemos 1100 que es la representaci&oacute;n en exceso a 3 del
+n&uacute;mero decimal 9 que es a su vez el complemento a 9 de <B>cero</B>.
+Se observa que &eacute;sto puede ser muy &uacute;til a la hora de
+realizar operaciones aritm&eacute;ticas internas <B>de n&uacute;meros
+decimales en c&oacute;digo binario </B>en particular en el caso de la
+resta que puede realizarse por complemento a 9.</FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A
+continuaci&oacute;n veamos una tabla que resume los modos de
+presentar informaci&oacute;n en binario en los distintos &rdquo;c&oacute;digos
+decimales&rdquo; vistos</FONT></P>
+<DL>
+	<DL>
+		<DL>
+			<DD>
+			<TABLE WIDTH=360 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+				<COL WIDTH=90>
+				<COL WIDTH=60>
+				<COL WIDTH=100>
+				<COL WIDTH=60>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>D&Iacute;GITO
+						DECIMAL</B></FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>BCD</B></FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>EXCESO
+						A 3</B></FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>84-2-1</B></FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0000</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0011</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0000</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0001</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0100</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0111</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>2</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0010</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0101</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0110</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>3</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0011</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0110</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0101</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>4</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0100</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0111</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0100</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>5</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0101</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1000</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1011</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>6</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0110</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1001</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1010</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>7</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0111</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1010</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1001</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>8</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1000</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1011</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1000</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=90>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>9</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1001</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=100>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1100</FONT></FONT></P>
+					</TD>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1111</FONT></FONT></P>
+					</TD>
+				</TR>
+			</TABLE>
+		</DL>
+	</DL>
+</DL>
+<P CLASS="western" ALIGN=CENTER STYLE="line-height: 150%"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Algunos
+c&oacute;digos binarios presentan propiedades de detecci&oacute;n de
+error y de ellos hablaremos a continuaci&oacute;n.</FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><BR><BR>
+</P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><I><B>C&Oacute;DIGOS
+DE DETECCI&Oacute;N DE ERROR</B></I></FONT></FONT></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Los sistemas
+digitales procesan informaci&oacute;n binaria haciendo uso de
+se&ntilde;ales. Por supuesto que ellas deber&aacute;n ser
+transmitidas de alguna forma entre los distintos componentes del
+sistema para poder as&iacute; transferir la informaci&oacute;n. &Eacute;sto
+se hace a trav&eacute;s de un medio de comunicaci&oacute;n. En
+nuestro caso particular que usamos se&ntilde;ales el&eacute;ctricas,
+la transmisi&oacute;n se realiza, por ejemplo, a trav&eacute;s de
+cables de cobre pero tambi&eacute;n puede ser hecha por ondas de
+radio, fibra &oacute;ptica, etc dependiendo del tipo y del medio en
+el que deben transmitirse las se&ntilde;ales. Es por &eacute;sto que
+se hace necesario contar con una forma de detecci&oacute;n de
+errores. De no tenerlo, cualquier &ldquo;<B>ruido</B>&rdquo; que se
+produzca en el transporte podr&iacute;a alterar el dato que est&aacute;
+siendo transmitido y por ende no podr&iacute;amos tener la certeza de
+que la informaci&oacute;n que estamos recibiendo sea la correcta.
+&Eacute;sto puede no ser importante en algunos casos como por ejemplo
+en las transmisiones de radio o televisi&oacute;n pero en cambio es
+vital en un sistema digital. Imag&iacute;nense en el m&aacute;s
+sencillo caso: una calculadora a la que introduzcamos dos n&uacute;meros
+a sumar y que no podamos confiar en el resultado que &eacute;sta
+arroje. Pues bien, para poder detectar un posible error pueden usarse
+c&oacute;digos de detecci&oacute;n de errores. El c&oacute;digo como
+tal <B>no corregir&iacute;a el error</B> pero s&iacute; indicar&iacute;a
+su presencia. Esto entonces puede ser tomado en cuenta para tomar las
+medidas que sean necesarias ya sea un redise&ntilde;o del sistema en
+el caso de que el error sea demasiado frecuente &oacute;, en el caso
+que sea eventual, la inclusi&oacute;n de una l&oacute;gica que
+instruya al sistema a realizar nuevamente la operaci&oacute;n.</FONT></FONT></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Uno de los m&eacute;todos
+usados para la detecci&oacute;n de errores es el bit de paridad.
+Cuando se quiere generar un c&oacute;digo de error basado en el bit
+de paridad lo que se hace es agregar un bit al dato original.
+Supongamos que trabajamos con palabras de 4 bits. En este caso, luego
+de pasar el n&uacute;mero por un generador de paridad y agregar el
+bit resultado a la palabra original, obtendr&iacute;amos una palabra
+de 5 bits. La <B>paridad</B> puede ser tanto par como impar. En el
+caso de que sea paridad impar, el bit de paridad que se le agregue
+ser&aacute; aquel que haga que la nueva palabra contenga un n&uacute;mero
+impar de unos. Por ejemplo, si tenemos el n&uacute;mero: 0010, el bit
+a agregar para reflejar una paridad impar debe ser 0. Esto debido a
+que la suma de los bits que son &ldquo;1&rdquo; es impar. En otro
+caso, al n&uacute;mero 0011, siguiendo con paridad impar, deber&aacute;
+ser agregado el bit 1. De esta forma el n&uacute;mero de &ldquo;1&rdquo;
+en toda la palabra resultante ser&aacute; impar. El caso de paridad
+par es an&aacute;logo s&oacute;lo que aqu&iacute; el bit que se
+agrega ser&aacute; para completar un n&uacute;mero PAR de &ldquo;1&rdquo;.
+En &ldquo;paridad par&rdquo; el mismo ejemplo 0010 generar&iacute;a
+el bit de paridad &ldquo;1&rdquo; resultando en total en un n&uacute;mero
+par de unos. &Eacute;ste es el caso m&aacute;s sencillo de bit de
+paridad y obviamente se nota que este tipo de m&eacute;todo es s&oacute;lo
+&uacute;til si el n&uacute;mero de errores en la palabra es 1, 3, en
+fin, un n&uacute;mero impar de errores. Existen formas de generar
+paridad m&aacute;s complejas que ayudar&iacute;an en los otros casos
+pero que no ser&aacute;n cubiertas, al menos no por ahora. En todo
+caso, &eacute;ste es s&oacute;lo uno de los c&oacute;digos de
+detecci&oacute;n de errores.</FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%"><BR><BR>
+</P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><I><B>C&Oacute;DIGO
+REFLEJADO</B></I></FONT></FONT></P>
+<P CLASS="western" STYLE="line-height: 150%">Tenemos tambi&eacute;n
+el &ldquo;<B>c&oacute;digo reflejado</B>&rdquo; o &ldquo;<B>c&oacute;digo</B>
+<B>gray</B>&rdquo;. Sacado de la Wikipedia
+(<A HREF="http://es.wikipedia.org/">http://es.wikipedia.org/</A>): 
+</P>
+<P CLASS="western" STYLE="line-height: 150%">&ldquo;El <B>C&oacute;digo
+Gray</B> es un caso particular de <A HREF="http://es.wikipedia.org/wiki/C&oacute;digo_binario">c&oacute;digo
+binario</A>. Consiste en una ordenaci&oacute;n de 2<SUP>n</SUP>
+n&uacute;meros binarios de tal forma que cada n&uacute;mero s&oacute;lo
+tenga un <A HREF="http://es.wikipedia.org/wiki/Bit">d&iacute;gito
+binario</A> distinto a su predecesor. Esta t&eacute;cnica de
+codificaci&oacute;n se origin&oacute; cuando los circuitos l&oacute;gicos
+digitales se realizaban con <A HREF="http://es.wikipedia.org/wiki/V&aacute;lvula_termoi&oacute;nica">v&aacute;lvulas
+de vac&iacute;o</A> y dispositivos electromec&aacute;nicos. Los
+<A HREF="http://es.wikipedia.org/wiki/Contador">contadores</A>
+necesitaban <A HREF="http://es.wikipedia.org/wiki/Potencia">potencias</A>
+muy elevadas a la entrada y generaban picos de <A HREF="http://es.wikipedia.org/wiki/Ruido">ruido</A>
+cuando varios bits cambiaban simult&aacute;neamente. El uso de c&oacute;digo
+Gray garantiz&oacute; que en cualquier transici&oacute;n variar&iacute;a
+tan s&oacute;lo un bit. En la actualidad, el c&oacute;digo Gray se
+sigue empleando para el dise&ntilde;o de cualquier <A HREF="http://es.wikipedia.org/wiki/Circuito_combinacional">circuito
+electr&oacute;nico combinacional</A> mediante el uso de un <A HREF="http://es.wikipedia.org/wiki/Mapa_de_Karnaugh">Mapa
+de Karnaugh</A>, ya que el principio de dise&ntilde;o de buscar
+transiciones m&aacute;s simples y r&aacute;pidas entre estados sigue
+vigente, a pesar de que los problemas de ruido y potencia se hayan
+reducido.&rdquo;</P>
+<P CLASS="western" STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">En
+el tema anterior comentamos que los sistemas digitales pueden ser
+usados s&oacute;lo para procesar datos discretos pero que existen
+diversas se&ntilde;ales que son continuas (como el sonido) y que para
+llevar esas se&ntilde;ales a un medio discreto necesitar&iacute;amos
+de un convertidor anal&oacute;gico a digital. El c&oacute;digo gray
+tambi&eacute;n puede ser usado en los casos que requerimos procesar
+la informaci&oacute;n proveniente de un medio continuo o anal&oacute;gico
+ya que el cambio que presenta dicha se&ntilde;al ser&aacute;
+reflejado de forma continua en el entorno digital alterando tan s&oacute;lo
+un bit entre los estados. El c&aacute;lculo del c&oacute;digo gray de
+un n&uacute;mero puede realizarse de forma sencilla haciendo una <B>XOR</B>
+del n&uacute;mero a convertir con &eacute;l mismo pero desplazado un
+bit hacia la derecha y descartando el bit menos significativo del
+resultado. La XOR es una operaci&oacute;n l&oacute;gica y ya
+hablaremos de ella m&aacute;s adelante.</FONT></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A continuaci&oacute;n
+les presento una tabla en la que se muestran los n&uacute;meros
+binarios del 0 al (15)<SUB>10</SUB> y sus respectivos bits de paridad
+par, paridad impar y c&oacute;digo gray.</FONT></FONT></P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=394 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+			<COL WIDTH=69>
+			<COL WIDTH=70>
+			<COL WIDTH=66>
+			<COL WIDTH=67>
+			<COL WIDTH=61>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>N&uacute;mero
+					decimal</B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>N&uacute;mero
+					binario</B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>Bit
+					de paridad impar</B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>Bit
+					de paridad par</B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>C&oacute;digo
+					gray</B></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0000</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0000</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0001</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0001</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>2</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0010</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0011</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>3</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0011</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0010</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>4</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0100</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0110</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>5</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0101</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0111</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>6</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0110</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0101</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>7</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0111</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0100</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>8</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1000</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1100</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>9</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1001</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1101</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>10</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1010</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1111</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>11</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1011</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1110</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>12</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1100</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1010</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>13</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1101</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1011</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>14</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1110</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1001</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>15</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=70>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1111</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=61>
+					<P CLASS="western" ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1000</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>NOTA</B>:
+Obs&eacute;rvese que los cambios continuos en c&oacute;digo gray son
+representados con el cambio de un solo bit a la vez.</FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="line-height: 150%"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><I><B>C&Oacute;DIGOS
+ALFANUM&Eacute;RICOS</B></I></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Y &iquest;qu&eacute;
+pasa cuando el dato que quiero manejar es una letra? Aqu&iacute; se
+hace necesario el expresar este elemento discreto de una forma
+binaria y para ello usamos alg&uacute;n c&oacute;digo binario
+alfanum&eacute;rico. As&iacute; expresamos las letras del alfabeto y
+algunos s&iacute;mbolos necesarios como la coma, el punto, etc. Yo
+les hablar&eacute; en particular del c&oacute;digo <B>ASCII </B>(por
+American Standard Code for Information Interchange) que es un c&oacute;digo
+de 7 bits que se usa para expresar las letras may&uacute;sculas,
+min&uacute;sculas y los s&iacute;mbolos m&aacute;s usados. Este
+c&oacute;digo es a&uacute;n usado actualmente por las computadoras y
+es por ello que es &eacute;ste el que menciono. Por supuesto existen
+otros como el c&oacute;digo interno (de 6 bits) y el c&oacute;digo
+EBCDIC (Extended BCD Interchange Code de 8 bits), s&oacute;lo que el
+ASCII es, por as&iacute; decirlo, m&aacute;s usado. Al ser el c&oacute;digo
+ASCII un c&oacute;digo de 7 bits, en implementaciones digitales se
+suele usar el 8<SUP>avo</SUP> bit (que completa 1 byte) como bit de
+paridad. En las tablas ASCII usadas en las computadoras la letra <B>A</B>
+es siempre mostrado con el n&uacute;mero binario correspondiente al
+decimal 65 (100 0001), la <B>B</B> con el 66 (100 0010) y as&iacute;
+sucesivamente hasta llegar a la <B>Z</B> con el 90 (101 1010). Los
+caracteres que representan s&iacute;mbolos, letras min&uacute;sculas
+y n&uacute;meros, estos &uacute;ltimos empezando por el decimal 48
+con el caracter 0, tambi&eacute;n tienen su sitio dentro de la tabla
+ASCII.</FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Lo importante de
+resaltar aqu&iacute; es que <B>la mayor&iacute;a de los elementos
+discretos a los que estamos acostumbrados tienen una forma de ser
+expresados en el mundo binario a trav&eacute;s de un <I>C&oacute;digo
+Binario</I></B><I>.</I></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="line-height: 150%"><BR><BR>
+</P>
+<P CLASS="subtitulo-western">&Aacute;LGEBRA DE BOOLE</P>
+<P CLASS="western">El &Aacute;lgebra de Boole de forma an&aacute;loga
+a cualquier otro sistema matem&aacute;tico deductivo puede ser
+definida por un conjunto de elementos, operadores y postulados. Del
+libro &ldquo;L&oacute;gica Digital y Dise&ntilde;o de Computadores&rdquo;
+de M. Morris Mano: &ldquo;Un conjunto de elementos es una colecci&oacute;n
+de objetos que tienen una propiedad com&uacute;n. Si '<B>S</B>' es un
+conjunto y '<B>x</B>' y '<B>y</B>' son objetos ciertos, entonces &ldquo;<B>x
+&euro; S</B>&rdquo; denota que x es un miembro del conjunto S y &ldquo;<B>y
+&#8353; S</B>&rdquo; denota que &ldquo;y&rdquo; no es un elemento de
+S.</P>
+<P CLASS="western" STYLE="font-weight: medium">Aqu&iacute; existen
+muchos t&eacute;rminos as&iacute; que iremos explicando a medida que
+vayamos avanzando.</P>
+<P CLASS="western" STYLE="font-weight: medium">Antes que nada
+mencionemos al <B>Operador Binario. </B>OJO, no confunda, este
+operador <B>NO</B> tiene nada que ver con los n&uacute;meros binarios
+en si. Se conoce como <B>Operador Binario</B> a cualquier &ldquo;operador&rdquo;
+que es usado para realizar una &ldquo;operaci&oacute;n&rdquo; entre
+dos elementos.</P>
+<P CLASS="western" STYLE="font-weight: medium">Sabemos que algunos de
+los postulados m&aacute;s conocidos del &Aacute;lgebra son:</P>
+<P CLASS="western" STYLE="font-weight: medium"><B>Ley Asociativa</B>.
+Esta ley dice que siendo <B>* </B>un operador binario, se dice que un
+conjunto cumple con la ley asociativa si:</P>
+<P CLASS="western" ALIGN=CENTER><B>(x*y)*z = x*(y*z)</B></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">para todo
+x, y, z miembros del conjunto.</P>
+<P CLASS="western" STYLE="font-weight: medium"><B>Ley Conmutativa</B>.
+Esta ley dice que siendo <B>* </B>un operador binario, se dice que un
+conjunto cumple con la ley conmutativa si:</P>
+<P CLASS="western" ALIGN=CENTER><B>x*y = y*x</B></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">para todo
+x, y miembros del conjunto.</P>
+<P CLASS="western" STYLE="font-weight: medium"><B>Ley Distributiva</B>.
+Esta ley dice que siendo <B>* </B>y &bull; operadores binarios, se
+dice que un conjunto cumple con la ley distributiva si:</P>
+<P CLASS="western" ALIGN=CENTER><B>z*(x</B>&bull;<B>y) = (z*x)</B>&bull;<B>(z*y)</B></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">para todo
+x, y, z miembros del conjunto.</P>
+<P CLASS="western" STYLE="font-weight: medium"><B>Elemento de
+identidad</B>. Se dice que un conjunto tiene elemento de identidad
+con respecto a la operaci&oacute;n binaria * si, siendo <B>e</B> la
+identidad, se cumple que:</P>
+<P CLASS="western" ALIGN=CENTER><B>e*x = x*e = x</B></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">para todo
+'x' miembro del conjunto. O sea, en el &aacute;lgebra de los n&uacute;meros
+reales, el n&uacute;mero 0 es elemento de identidad con respecto al
+operador binario <B>+</B> (suma) y 1 es el elemento de identidad con
+respecto al operador binario <B>x</B> (multiplicaci&oacute;n).</P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">El <B>&Aacute;lgebra
+de Boole</B> es una sistema algebraico para el tratamiento de las
+relaciones l&oacute;gicas (como la usada en los sistemas digitales).
+Est&aacute; definida para un conjunto de elementos junto con sus
+operadores binarios '+' y '&bull;' de tal forma que satisfagan los
+siguientes postulados:</P>
+<OL>
+	<LI><P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">Posee
+	un elemento de identidad con respecto al operador + y &eacute;ste es
+	el 0 : A + 0 = 0 + A = A.</FONT></P>
+	<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">Posee
+	un elemento de identidad con respecto al operador &bull; y &eacute;ste
+	es el 1: A &bull; 1 = 1 &bull; A = A</FONT></P>
+	<LI><P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">Es
+	conmutativo con respecto a + ya que: A + B = B + A</FONT></P>
+	<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">Es
+	conmutativo con respecto a &bull; ya que: A &bull; B = B &bull; A</FONT></P>
+	<LI><P CLASS="western" ALIGN=LEFT>&bull; es distributivo sobre + ya
+	que: A &bull; (B + C) = (A&bull;B)+(A&bull;C)</P>
+	<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">+
+	es distributivo sobre &bull; ya que: A + (B &bull; C) = (A+B)&bull;(A+C)</FONT></P>
+	<LI><P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">Para
+	cada elemento <B><FONT SIZE=4>x</FONT></B> que pertenece a un
+	conjunto, existe tambi&eacute;n en ese mismo conjunto un elemento <B><FONT SIZE=4>x'</FONT></B>
+	llamado complemento de x tal que: (a) x + x' = 1 y (b) x &bull; x' =
+	0.</FONT></P>
+</OL>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">Por
+&uacute;ltimo tambi&eacute;n debe satisfacer la existencia en el
+conjunto de al menos dos elementos <B>x</B>, <B>y</B> tal que <B>x&ne;y</B>...
+lo que est&aacute; claro. Adem&aacute;s, el &aacute;lgebra de Boole
+tambi&eacute;n cumple con la ley asociativa pero no es un postulado
+como tal ya que &eacute;ste puede ser demostrado a trav&eacute;s de
+los mencionados.</FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Lucida Sans, sans-serif"><B>OJO</B>:
+'+' y '&bull;' son los s&iacute;mbolos usados para expresar las
+operaciones binarias posibles en el &aacute;lgebra de Boole y, aunque
+se escogieron porque tienen mucha semejanza con los usados en el
+&aacute;lgebra de los n&uacute;meros reales para la suma y la
+multiplicaci&oacute;n, <B>NO</B> son exactamente iguales y &eacute;sto
+se hace absolutamente obvio en la segunda propiedad distributiva del
+postulado 3.</FONT></P>
+<P CLASS="western" ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><I><B>&Aacute;LGEBRA
+DE BOOLE BIVALENTE</B></I></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal; font-weight: medium">
+<FONT FACE="Lucida Sans, sans-serif">&Eacute;ste es el caso
+particular que nos interesa ya que es el usado en los circuitos
+l&oacute;gicos. &Eacute;sta se define como un conjunto de dos
+elementos {0, 1} y que cumplen las reglas para los operadores
+binarios + y &bull; tal como se muestra en la siguiente tabla:</FONT></P>
+<DL>
+	<DL>
+		<DL>
+			<DD>
+			<TABLE WIDTH=320 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+				<COL WIDTH=44>
+				<COL WIDTH=42>
+				<COL WIDTH=70>
+				<COL WIDTH=73>
+				<COL WIDTH=31>
+				<TR VALIGN=TOP>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>X</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>Y</P>
+					</TD>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>X+Y</P>
+					</TD>
+					<TD WIDTH=73>
+						<P CLASS="western" ALIGN=CENTER>X&bull;Y</P>
+					</TD>
+					<TD WIDTH=31>
+						<P CLASS="western" ALIGN=CENTER>X'</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=73>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=31>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=73>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=31>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=73>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=31>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=73>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=31>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+			</TABLE>
+		</DL>
+	</DL>
+</DL>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal"><FONT FACE="Lucida Sans, sans-serif">&Eacute;stas
+son las reglas de algunas de las <B>operaciones l&oacute;gicas</B>,
+en particular de las conocidas como <B>OR</B> (para +), <B>AND</B>
+(para &bull;) y <B>NOT</B> (para el complemento). &Eacute;stas son
+las tres operaciones l&oacute;gicas b&aacute;sicas pero existen otras
+tal como el XOR u OR exclusivo pero de &eacute;stas se hablar&aacute;
+luego. Las operaciones l&oacute;gicas AND y OR tiene analog&iacute;a
+en un circuito el&eacute;ctrico. En el caso de la AND, visualicen un
+circuito con dos interruptores en serie y una carga, digamos un
+bombillo. Para que el bombillo se prenda, ambos interruptores deben
+estar cerrados. El circuito de la OR ser&iacute;a con los
+interruptores en paralelo. Si uno de ellos o ambos est&aacute;n
+cerrados, el bombillo se enciende.</FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal"><FONT FACE="Lucida Sans, sans-serif">La
+tabla anterior en la que se muestra la informaci&oacute;n es una
+forma ampliada de una <B><I>tabla de la verdad.</I></B> En realidad,
+la <B><I>tabla de la verdad </I></B>lo que muestra es el posible
+resultado que se puede generar de las distintas combinaciones de los
+valores posibles de las variables involucradas, en este caso, &ldquo;<B>x</B>&rdquo;
+y &ldquo;<B>y</B>&rdquo;, seg&uacute;n una funci&oacute;n u
+operaci&oacute;n. Las tres primeras columnas de la tabla anterior
+reflejan la tabla de la verdad de la operaci&oacute;n l&oacute;gica
+OR. La primera, segunda y cuarta columna reflejan la tabla de la
+verdad de la operaci&oacute;n l&oacute;gica AND. Las <B><I>tablas de
+la verdad</I></B> son de gran ayuda sobre todo al momento de querer
+simplificar o entender funciones l&oacute;gicas. Ya llegaremos a
+ello.</FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal"><FONT FACE="Lucida Sans, sans-serif"><B>NOTA:
+</B>Las tablas de la verdad de las distintas operaciones l&oacute;gicas
+son algo que deben aprender perfectamente. En realidad no es dif&iacute;cil
+ya que solemos pensar de esa forma. Por ejemplo cuando decimos quiero
+caf&eacute; Y leche se entiende perfectamente que se quieren las dos
+cosas. Una AND. Solo se cumple si ambas cosas son ciertas. En el caso
+del OR en realidad hay una diferencia ya que nosotros gramaticalmente
+interpretamos un O refiri&eacute;ndonos a que se cumple una cosa o la
+otra pero no ambas. Quiero una camisa Blanca O Negra. El OR presenta
+el caso de que si ambos son ciertos entonces el resultado tambi&eacute;n
+es cierto.</FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal; font-weight: medium">
+<FONT FACE="Lucida Sans, sans-serif">Se ve que la ley conmutativa es
+obvia en la tabla. La ley distributiva puede ser demostrada a partir
+de la misma. Vemos los elementos identidad. Tambi&eacute;n se puede
+concluir que <B>x + x' = 1</B> y <B>x &bull; x' = 0</B>. Cumple con
+los postulados.</FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal"><FONT FACE="Lucida Sans, sans-serif"><B>LEYES
+Y TEOREMAS B&Aacute;SICOS DEL &Aacute;LGEBRA DE BOOLE</B></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal; font-weight: medium">
+<FONT FACE="Lucida Sans, sans-serif">A continuaci&oacute;n presento
+informaci&oacute;n recopilada de la Wikipedia. Por cierto que a los
+puntos siguientes s&oacute;lo agregar&iacute;a lo que acabo de
+mencionar al finalizar el punto anterior y las operaciones posibles
+con la identidad. (que luego se ven en la tabla en dualidad). Cito:</FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-style: normal"><FONT FACE="Lucida Sans, sans-serif"><B>Leyes
+fundamentales</B></FONT></P>
+<OL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">El resultado de
+	aplicar cualquiera de las tres operaciones definidas a variables del
+	sistema booleano resulta en otra variable del sistema, y este
+	resultado es &uacute;nico. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">Ley de
+	idempotencia: A + A = A y A &bull; A = A 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">Ley de involuci&oacute;n:
+	(A')' = A 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">Ley conmutativa: A
+	+ B = B + A y A &bull; B = B &bull; A 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">Ley asociativa: A
+	+ (B + C) = (A + B) + C y A &bull; (B &bull; C) = (A &bull; B) &bull;
+	C 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">Ley distributiva:
+	A + B &bull; C = (A + B) &bull; (A + C) y A &bull; (B + C) = A &bull;
+	B + A &bull; C 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">Ley de absorci&oacute;n:
+	A + A &bull; B = A y A &bull; (A + B) = A 
+	</P>
+	<LI><P CLASS="western">Ley de De Morgan: (A + B)' = A' &bull; B' y
+	(A &bull; B)' = A' + B' 
+	</P>
+</OL>
+<P CLASS="western"><B>Principio de dualidad</B></P>
+<P CLASS="western">El concepto de dualidad permite formalizar este
+hecho: a toda relaci&oacute;n o ley l&oacute;gica le corresponder&aacute;
+su dual, formada mediante el intercambio de los operadores uni&oacute;n
+<B><I><FONT SIZE=2>(NOTA PERSONAL: el + )</FONT></I></B> con los de
+intersecci&oacute;n <B><I><FONT SIZE=2>(NOTA PERSONAL: el &bull; )</FONT></I></B>,
+y de los 1 con los 0.</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=571 BORDER=1 CELLPADDING=5 CELLSPACING=3 BGCOLOR="#f9f9f9">
+			<COL WIDTH=25>
+			<COL WIDTH=253>
+			<COL WIDTH=249>
+			<TR BGCOLOR="#e1ecf7">
+				<TH WIDTH=25></TH>
+				<TH WIDTH=253>
+					<P CLASS="western"><B>Adici&oacute;n</B></P>
+				</TH>
+				<TH WIDTH=249>
+					<P CLASS="western"><B>Producto</B></P>
+				</TH>
+			</TR>
+			<TR BGCOLOR="#f0f5fa">
+				<TD WIDTH=25>
+					<P CLASS="western" ALIGN=RIGHT>1</P>
+				</TD>
+				<TD WIDTH=253>
+					<P CLASS="western" ALIGN=RIGHT>A + A' = 1</P>
+				</TD>
+				<TD WIDTH=249>
+					<P CLASS="western" ALIGN=RIGHT>A &bull; A' = 0</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#f0f5fa">
+				<TD WIDTH=25>
+					<P CLASS="western" ALIGN=RIGHT>2</P>
+				</TD>
+				<TD WIDTH=253>
+					<P CLASS="western" ALIGN=RIGHT>A + 0 = A</P>
+				</TD>
+				<TD WIDTH=249>
+					<P CLASS="western" ALIGN=RIGHT>A &bull; 1 = A</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#f0f5fa">
+				<TD WIDTH=25>
+					<P CLASS="western" ALIGN=RIGHT>3</P>
+				</TD>
+				<TD WIDTH=253>
+					<P CLASS="western" ALIGN=RIGHT>A + 1 = 1</P>
+				</TD>
+				<TD WIDTH=249>
+					<P CLASS="western" ALIGN=RIGHT>A &bull; 0 = 0</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#f0f5fa">
+				<TD WIDTH=25>
+					<P CLASS="western" ALIGN=RIGHT>4</P>
+				</TD>
+				<TD WIDTH=253>
+					<P CLASS="western" ALIGN=RIGHT>A + A = A</P>
+				</TD>
+				<TD WIDTH=249>
+					<P CLASS="western" ALIGN=RIGHT>A &bull; A = A</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#f0f5fa">
+				<TD WIDTH=25>
+					<P CLASS="western" ALIGN=RIGHT>5</P>
+				</TD>
+				<TD WIDTH=253>
+					<P CLASS="western" ALIGN=RIGHT>A + B = B + A</P>
+				</TD>
+				<TD WIDTH=249>
+					<P CLASS="western" ALIGN=RIGHT>A &bull; B = B &bull; A</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#f0f5fa">
+				<TD WIDTH=25>
+					<P CLASS="western" ALIGN=RIGHT>6</P>
+				</TD>
+				<TD WIDTH=253>
+					<P CLASS="western" ALIGN=RIGHT>A + (B + C) = (A + B) + C</P>
+				</TD>
+				<TD WIDTH=249>
+					<P CLASS="western" ALIGN=RIGHT>A &bull; (B &bull; C) = (A &bull;
+					B) &bull; C</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#f0f5fa">
+				<TD WIDTH=25>
+					<P CLASS="western" ALIGN=RIGHT>7</P>
+				</TD>
+				<TD WIDTH=253>
+					<P CLASS="western" ALIGN=RIGHT>A + B &bull; C = (A + B) &bull;
+					(A + C)</P>
+				</TD>
+				<TD WIDTH=249>
+					<P CLASS="western" ALIGN=RIGHT>A &bull; (B + C) = A &bull; B + A
+					&bull; C</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#f0f5fa">
+				<TD WIDTH=25>
+					<P CLASS="western" ALIGN=RIGHT>8</P>
+				</TD>
+				<TD WIDTH=253>
+					<P CLASS="western" ALIGN=RIGHT>A + A &bull; B = A</P>
+				</TD>
+				<TD WIDTH=249>
+					<P CLASS="western" ALIGN=RIGHT>A &bull; (A + B) = A</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#f0f5fa">
+				<TD WIDTH=25>
+					<P CLASS="western" ALIGN=RIGHT>9</P>
+				</TD>
+				<TD WIDTH=253>
+					<P CLASS="western" ALIGN=RIGHT>(A + B)' = A' &bull; B'</P>
+				</TD>
+				<TD WIDTH=249>
+					<P CLASS="western" ALIGN=RIGHT>(A &bull; B)' = A' + B'</P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT><B>FIN DE LA CITA</B>.</P>
+<P CLASS="western" ALIGN=LEFT>Entonces, para resumir y concluir este
+apartado se podr&iacute;a decir que todos los postulados se resumen
+en:</P>
+<OL>
+	<LI><P CLASS="western" ALIGN=LEFT>(<B>a</B>) x + 0 = x ; (<B>b</B>)
+	x &bull; 1 = x</P>
+	<LI><P CLASS="western" ALIGN=LEFT>(<B>a</B>) x + x' = 1 ; (<B>b</B>)
+	x &bull; x' = 0</P>
+	<LI><P CLASS="western" ALIGN=LEFT>(<B>a</B>) x + y = y + x ; (<B>b</B>)
+	x&bull;y = y&bull;x (conmutativo)</P>
+	<LI><P CLASS="western" ALIGN=LEFT>(<B>a</B>) x &bull; (y + z) = xy +
+	xz ; (<B>b</B>) x + (y &bull; z) = (x + y) &bull; (x + z)
+	(distributivo)</P>
+</OL>
+<P CLASS="western" ALIGN=LEFT>y que de ellos pueden obtenerse (y
+probarse a trav&eacute;s de demostraciones matem&aacute;ticas) los 6
+teoremas:</P>
+<OL>
+	<LI><P CLASS="western" ALIGN=LEFT>(<B>a</B>) x + x = x ; (<B>b</B>)
+	x &bull; x = x</P>
+	<LI><P CLASS="western" ALIGN=LEFT>(<B>a</B>) x + 1 = 1 ; (<B>b</B>)
+	x &bull; 0 = 0</P>
+	<LI><P CLASS="western" ALIGN=LEFT>(x')' = x (involuci&oacute;n)</P>
+	<LI><P CLASS="western" ALIGN=LEFT>(<B>a</B>) x + (y + z) = (x + y) +
+	z ; (<B>b</B>) x &bull; (yz) = (xy) &bull; z (asociativo)</P>
+	<LI><P CLASS="western" ALIGN=LEFT>(<B>a</B>) (x + y)' = x'&bull;y' ;
+	(<B>b</B>) (xy)' = x' + y' (de Morgan)</P>
+	<LI><P CLASS="western" ALIGN=LEFT>(<B>a</B>) x + xy = x ; (<B>b</B>)
+	x(x + y) = x (de absorci&oacute;n)</P>
+</OL>
+<P CLASS="western" ALIGN=LEFT>Enti&eacute;ndase que, igualmente a lo
+que estamos acostumbrados, <B>xy es equivalente a decir x&bull;y</B>.</P>
+<P CLASS="western" ALIGN=LEFT>Si quieren, tambi&eacute;n pueden
+comprobar lo anteriormente dicho realizando la tabla de la verdad de
+los distintos casos.</P>
+<P CLASS="western" ALIGN=LEFT>Si por curiosidad desean ver como
+demostrar los teoremas a trav&eacute;s de los postulados pueden
+revisar el libro &ldquo;L&oacute;gica Digital y Dise&ntilde;o de
+Computadoras&rdquo; de M. Morris Mano en sus p&aacute;ginas 42 y 43.</P>
+<P CLASS="western" ALIGN=LEFT><B>Prioridad del operador:</B> La
+prioridad del operador al momento de evaluar una operaci&oacute;n
+viene dado por: Primero lo que est&aacute; dentro de par&eacute;ntesis,
+segundo se realiza el operador NOT ( ' ), tercero el operador AND ( &bull;
+) y por &uacute;ltimo el operador OR ( + ).</P>
+<P CLASS="western" ALIGN=LEFT>Para m&aacute;s informaci&oacute;n del
+&aacute;lgebra de Boole puede visitar este <A HREF="http://es.wikipedia.org/wiki/&Aacute;lgebra_de_Boole">v&iacute;nculo</A>
+o este <A HREF="http://es.wikipedia.org/wiki/L&oacute;gica_binaria">otro</A>
+, ambas en la Wikipedia. Puede tambi&eacute;n encontrar informaci&oacute;n
+interesante de &eacute;ste y muchos otros temas relacionados <A HREF="http://www.dea.icai.upco.es/jarm/Asignaturas/PLC/2boole/">aqu&iacute;</A>.</P>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="subtitulo-western" ALIGN=LEFT STYLE="font-style: normal"><FONT FACE="Lucida Sans, sans-serif"><B>FUNCIONES
+L&Oacute;GICAS</B></FONT></P>
+<P CLASS="western" ALIGN=LEFT>Tambi&eacute;n conocidas como funciones
+Booleanas, no son m&aacute;s que expresiones formadas por variables
+binarias (o sea, que s&oacute;lo pueden ser cero o uno), los
+operadores l&oacute;gicos OR, AND y NOT como tambi&eacute;n los
+par&eacute;ntesis y el signo de igual. El orden en el que se realizan
+las operaciones viene dada por la <B>prioridad del operador</B> que
+comentamos al final del apartado anterior.</P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">Suponga lo
+siguiente: usted tiene un bombillo en su casa. &Eacute;ste contiene
+dos interruptores. Entendiendo que la posici&oacute;n del interruptor
+en encendido se interpreta como un cierto o &ldquo;1&rdquo; y que el
+bombillo encendido tambi&eacute;n se entiende por un cierto o &ldquo;1&rdquo;,
+si usted quiere que el bombillo se encienda si y s&oacute;lo si ambos
+interruptores est&aacute;n en la posici&oacute;n de encendido, usted
+podr&iacute;a definir una funci&oacute;n l&oacute;gica del problema
+de la siguiente forma:</P>
+<P CLASS="western" ALIGN=CENTER><I><B>F = xy</B></I></P>
+<P CLASS="western" ALIGN=LEFT>donde <B>F</B> es una <B>funci&oacute;n
+de Boole</B> cuyo resultado s&oacute;lo puede ser '1' (encendido) &oacute;
+'0' (apagado) y que muestra el estado del bombillo para las dos
+variables binarias <B>'x'</B> y <B>'y'</B> que ser&iacute;an los
+interruptores. Si creamos la tabla de la verdad de esta funci&oacute;n
+tenemos que:</P>
+<DL>
+	<DL>
+		<DL>
+			<DD>
+			<TABLE WIDTH=142 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+				<COL WIDTH=33>
+				<COL WIDTH=35>
+				<COL WIDTH=36>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER><B>X</B></P>
+					</TD>
+					<TD WIDTH=35>
+						<P CLASS="western" ALIGN=CENTER><B>Y</B></P>
+					</TD>
+					<TD WIDTH=36>
+						<P CLASS="western" ALIGN=CENTER><B>F</B></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=35>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=36>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=35>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=36>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=35>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=36>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=35>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=36>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+			</TABLE>
+		</DL>
+	</DL>
+</DL>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">y esto es
+precisamente lo que quer&iacute;amos obtener. El bombillo se
+encender&aacute; si ambos interruptores est&aacute;n encendidos.</P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">Veamos otro
+ejemplo. <B>F<SUB>1</SUB> = xyz'</B></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">Esto es una
+funci&oacute;n de Boole representada por una expresi&oacute;n
+algebraica. &Eacute;sta la podemos representar tambi&eacute;n por
+medio de la tabla de la verdad.</P>
+<DL>
+	<DL>
+		<DL>
+			<DD>
+			<TABLE WIDTH=194 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+				<COL WIDTH=33>
+				<COL WIDTH=34>
+				<COL WIDTH=39>
+				<COL WIDTH=39>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER><B>X</B></P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER><B>Y</B></P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER><B>Z</B></P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER><B>F<SUB>1</SUB></B></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=33>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=39>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+			</TABLE>
+		</DL>
+	</DL>
+</DL>
+<P CLASS="western">Se ve que F<SUB>1</SUB> ser&aacute; 1 si x = 1, y
+= 1, z = 0 (z' = 1). Las tablas de la verdad de las funciones de
+Boole contendr&aacute;n siempre <B>2<SUP>n</SUP></B> combinaciones de
+unos y ceros de las n variables incluida en la funci&oacute;n y una
+columna que mostrar&aacute; para que combinaci&oacute;n el resultado
+es uno o cero. En el caso anterior ten&iacute;amos 3 variables or lo
+que necesitamos 8 combinaciones (2<SUP>3</SUP>).</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">Consideremos
+ahora los siguientes dos casos: <B>F<SUB>2</SUB> = x + y'z </B>y <B>F<SUB>3</SUB>
+= x'y'z + x'yz + xy'</B></FONT></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><FONT FACE="Lucida Sans, sans-serif">El
+la siguiente tabla de la verdad se muestran para que casos las
+funciones F<SUB>2</SUB> y F<SUB>3</SUB> se hacen uno.</FONT></P>
+<DL>
+	<DL>
+		<DL>
+			<DD>
+			<TABLE WIDTH=252 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+				<COL WIDTH=32>
+				<COL WIDTH=34>
+				<COL WIDTH=40>
+				<COL WIDTH=42>
+				<COL WIDTH=44>
+				<TR VALIGN=TOP>
+					<TD WIDTH=32>
+						<P CLASS="western" ALIGN=CENTER><B>X</B></P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER><B>Y</B></P>
+					</TD>
+					<TD WIDTH=40>
+						<P CLASS="western" ALIGN=CENTER><B>Z</B></P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER><B>F<SUB>2</SUB></B></P>
+					</TD>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER><B>F<SUB>3</SUB></B></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=32>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=40>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=32>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=40>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=32>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=40>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=32>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=40>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=32>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=40>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=32>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=40>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=32>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=40>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=32>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=34>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=40>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=42>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=44>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+			</TABLE>
+		</DL>
+	</DL>
+</DL>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%">
+<BR>
+</P>
+<P CLASS="western">Ok, pero existen varias expresiones algebraicas
+capaces de obtener el mismo resultado con las mismas variables. &iquest;Qu&eacute;
+quiere decir esto? Que yo puedo tener dos funciones de Boole con las
+mismas variables pero organizadas de otra forma (incluso puede
+contener menos variables) tal que el resultado de ambas funciones de
+Boole sea el mismo. De hecho &eacute;sta es una de las aplicaciones
+m&aacute;s importantes que se pueden obtener del &aacute;lgebra de
+Boole y consiste en reducir o &ldquo;simplificar&rdquo; una funci&oacute;n.
+De esta forma forma podr&iacute;amos realizar el dise&ntilde;o de
+nuestro circuito l&oacute;gico de una forma m&aacute;s compacto y con
+el uso de menos compuertas. F&iacute;jese en el siguiente ejemplo:</P>
+<P CLASS="western" ALIGN=CENTER><B>F<SUB>4</SUB> = xy' + x'z</B></P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">Si realiza
+la tabla de la verdad de esta funci&oacute;n observar&aacute; que el
+resultado es el mismo que para la funci&oacute;n F<SUB>3.</SUB> F<SUB>4</SUB>
+ser&aacute; uno o cero para la misma combinaci&oacute;n de X, Y y Z
+que hacen uno o cero la funci&oacute;n F<SUB>3</SUB>.</P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">Como ya se
+mencion&oacute;, las funciones l&oacute;gicas pueden resumirse,
+hacerse m&aacute;s sencillas. De esta forma al realizar el circuito
+se usar&aacute;n menos compuertas. L&aacute;s formas de simplificar
+dichas funciones es tema de los pr&oacute;ximos temas. Una funci&oacute;n
+l&oacute;gica puede ser transformada de una expresi&oacute;n
+algebraica a un diagrama compuesto por compuertas l&oacute;gicas AND,
+OR y NOT. Por ahora veamos algunos conceptos b&aacute;sicos de las
+compuertas l&oacute;gicas (que es el punto a seguir) y al finalizarlo
+les mostrar&eacute; como se expresa una funci&oacute;n l&oacute;gica
+en un diagrama de bloque formado por compuertas.</P>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="subtitulo-western" ALIGN=LEFT STYLE="font-style: normal"><FONT FACE="Lucida Sans, sans-serif"><B>COMPUERTAS
+L&Oacute;GICAS</B></FONT></P>
+<P CLASS="western">Los sistemas digitales electr&oacute;nicos se
+llaman circuitos l&oacute;gicos ya que realizan manipulaciones
+l&oacute;gicas. Cualquier informaci&oacute;n deseada en un sistema de
+control puede ser obtenida a trav&eacute;s de la combinaci&oacute;n
+de varias operaciones l&oacute;gicas. Como ya sabemos, las
+operaciones l&oacute;gicas b&aacute;sicas son AND, OR y NOT y son
+precisamente &eacute;stas las que se implementan en los circuitos
+l&oacute;gicos, &eacute;sto gracias al uso de las compuertas l&oacute;gicas
+correspondientes. Una compuerta l&oacute;gica no es m&aacute;s que un
+dise&ntilde;o de circuiter&iacute;a electr&oacute;nico capaz de
+reproducir el comportamiento de las operaciones l&oacute;gicas.</P>
+<P CLASS="western">Existen compuertas l&oacute;gicas para AND, OR,
+NOT y otras operaciones l&oacute;gicas como la <B>XOR</B> u OR
+Exclusivo. La XOR se diferencia de la OR en que si sus dos entradas
+son '1' entonces el resultado ser&aacute; '0' (la cual es la forma
+m&aacute;s natural en la que nosotros pensamos gramaticalmente...
+algo puede ser Blanco o Negro pero no ambos). El s&iacute;mbolo para
+expresar XOR viene dado por signo + inscrito en un c&iacute;rculo. La
+tabla de la verdad de funci&oacute;n XOR es:</P>
+<DL>
+	<DL>
+		<DL>
+			<DD>
+			<TABLE WIDTH=283 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+				<COL WIDTH=60>
+				<COL WIDTH=54>
+				<COL WIDTH=131>
+				<TR VALIGN=TOP>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER><B>A</B></P>
+					</TD>
+					<TD WIDTH=54>
+						<P CLASS="western" ALIGN=CENTER><B>B</B></P>
+					</TD>
+					<TD WIDTH=131>
+						<P CLASS="western" ALIGN=CENTER><IMG SRC="tema2_html_m3bf1cd30.jpg" NAME="gr&aacute;ficos1" ALIGN=LEFT WIDTH=134 HEIGHT=43 BORDER=0><BR CLEAR=LEFT><BR>
+						</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=54>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=131>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=54>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=131>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=54>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+					<TD WIDTH=131>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=60>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=54>
+						<P CLASS="western" ALIGN=CENTER>1</P>
+					</TD>
+					<TD WIDTH=131>
+						<P CLASS="western" ALIGN=CENTER>0</P>
+					</TD>
+				</TR>
+			</TABLE>
+		</DL>
+	</DL>
+</DL>
+<P CLASS="western">Tambi&eacute;n existen compuertas para las
+operaciones l&oacute;gicas NAND (que es una AND con un inversor (NOT)
+a la salida), la NOR (una OR con un inversor a la salida) y la XNOR
+(o NOR exclusivo representado por un punto inscrito en un c&iacute;rculo,
+que no es m&aacute;s que una XOR con un inversor a la salida) entre
+algunas otras pero dir&iacute;a que las ya mencionadas son las m&aacute;s
+importantes.</P>
+<P CLASS="western">A continuaci&oacute;n mostrar&eacute; los s&iacute;mbolos
+que representan las compuertas descritas:</P>
+<DL>
+	<DL>
+		<DL>
+			<DD>
+			<TABLE WIDTH=231 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+				<COL WIDTH=70>
+				<COL WIDTH=134>
+				<TR VALIGN=TOP>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER><B>Nombre</B></P>
+					</TD>
+					<TD WIDTH=134>
+						<P CLASS="western" ALIGN=CENTER><B>S&iacute;mbolo</B></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>AND</P>
+					</TD>
+					<TD WIDTH=134>
+						<P CLASS="western" ALIGN=CENTER><IMG SRC="And.png" NAME="gr&aacute;ficos2" ALIGN=LEFT WIDTH=128 HEIGHT=46 BORDER=0><BR CLEAR=LEFT><BR>
+						</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>OR</P>
+					</TD>
+					<TD WIDTH=134>
+						<P CLASS="western" ALIGN=CENTER><IMG SRC="or.png" NAME="gr&aacute;ficos3" ALIGN=LEFT WIDTH=128 HEIGHT=46 BORDER=0><BR CLEAR=LEFT><BR>
+						</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>NOT</P>
+					</TD>
+					<TD WIDTH=134>
+						<P CLASS="western" ALIGN=CENTER><IMG SRC="not.png" NAME="gr&aacute;ficos4" ALIGN=LEFT WIDTH=128 HEIGHT=46 BORDER=0><BR CLEAR=LEFT><BR>
+						</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>NAND</P>
+					</TD>
+					<TD WIDTH=134>
+						<P CLASS="western" ALIGN=CENTER><IMG SRC="nand.png" NAME="gr&aacute;ficos5" ALIGN=LEFT WIDTH=128 HEIGHT=46 BORDER=0><BR CLEAR=LEFT><BR>
+						</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>NOR</P>
+					</TD>
+					<TD WIDTH=134>
+						<P CLASS="western" ALIGN=CENTER><IMG SRC="nor.png" NAME="gr&aacute;ficos6" ALIGN=LEFT WIDTH=128 HEIGHT=46 BORDER=0><BR CLEAR=LEFT><BR>
+						</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>XOR</P>
+					</TD>
+					<TD WIDTH=134>
+						<P CLASS="western" ALIGN=CENTER><IMG SRC="xor.png" NAME="gr&aacute;ficos7" ALIGN=LEFT WIDTH=128 HEIGHT=46 BORDER=0><BR CLEAR=LEFT><BR>
+						</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=70>
+						<P CLASS="western" ALIGN=CENTER>XNOR</P>
+					</TD>
+					<TD WIDTH=134>
+						<P CLASS="western" ALIGN=CENTER><IMG SRC="xnor.png" NAME="gr&aacute;ficos8" ALIGN=LEFT WIDTH=128 HEIGHT=46 BORDER=0><BR CLEAR=LEFT><BR>
+						</P>
+					</TD>
+				</TR>
+			</TABLE>
+		</DL>
+	</DL>
+</DL>
+<P CLASS="western" ALIGN=LEFT><FONT COLOR="#2300dc"><FONT SIZE=4><B>ATENCI&Oacute;N:<FONT COLOR="#000000">
+A excepci&oacute;n de la NOT, el resto de las compuertas pueden tener
+m&aacute;s de dos entradas.</FONT></B></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT>Sabiendo &eacute;sto, veamos ahora como
+se representar&iacute;an algunas de las funciones de las que hablamos
+antes pero diagramadas con las compuertas. En particular veremos las
+funciones <B>F = xyz'</B> y <B>F<SUB>4</SUB> = xy' + x'z.</B> En ese
+orden:</P>
+<P CLASS="western" ALIGN=CENTER><IMG SRC="DIAGRAMA.jpg" NAME="gr&aacute;ficos9" ALIGN=LEFT WIDTH=417 HEIGHT=200 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P CLASS="western">y el otro ser&iacute;a:</P>
+<P CLASS="western" ALIGN=LEFT><IMG SRC="DIAGRAMA2.jpg" NAME="gr&aacute;ficos10" ALIGN=LEFT WIDTH=547 HEIGHT=273 BORDER=0><BR CLEAR=LEFT>Esto
+es todo por este tema. Para el pr&oacute;ximo hablaremos de
+<A HREF="tema3.html">Simplificaci&oacute;n de funciones por algebra
+de Boole. Tabla de la verdad. Formas can&oacute;nicas.</A></P>
+</BODY>
+</HTML>

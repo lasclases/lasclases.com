@@ -1,0 +1,1118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>TEMA 4: Mapas de Karnaugh</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.1  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20070113;17444600">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20070221;17132223">
+</HEAD>
+<BODY LANG="es-VE" DIR="LTR">
+<H1 ALIGN=CENTER><FONT COLOR="#0000ff"><U><B>SIMPLIFICACI&Oacute;N DE
+FUNCIONES POR EL M&Eacute;TODO DE LOS MAPAS DE KARNAUGH</B></U></FONT></H1>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif"><SPAN LANG="es-MX">Anteriormente
+comentamos que hab&iacute;an otras formas de simplificar una funci&oacute;n
+aparte de la simplificaci&oacute;n algebraica. Otra manera de
+simplificar funciones es represent&aacute;ndolas en lo que se conoce
+como mapas de Karnaugh. &Eacute;ste <SPAN LANG="es-MX"><FONT FACE="Arial">constituye
+un m&eacute;todo sencillo y apropiado para la minimizaci&oacute;n de
+funciones l&oacute;gicas. El tama&ntilde;o del mapa depende del
+n&uacute;mero de variables, y el m&eacute;todo de minimizaci&oacute;n
+es efectivo para expresiones de hasta 6 variables. Por supuesto que
+siempre podr&aacute;n resolverse </FONT></SPAN>las simplificaciones
+por teoremas. Sin embargo, mucha gente considera que resulta m&aacute;s
+f&aacute;cil visualizar las simplificaciones si se presentan
+gr&aacute;ficamente. Como ya se dijo, los mapas de Karnaugh pueden
+aplicarse a dos, tres, cuatro, cinco y seis variables ya que para m&aacute;s
+variables, la simplificaci&oacute;n resulta tan complicada que
+conviene en ese caso utilizar teoremas mejor. Entonces, el </SPAN>mapa
+de Karnaugh es un m&eacute;todo gr&aacute;fico que se utiliza para
+simplificar una funci&oacute;n l&oacute;gica y as&iacute; facilitar
+el dise&ntilde;o del correspondiente circuito l&oacute;gico, todo en
+un proceso simple y ordenado.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Arial">Obtener la
+funci&oacute;n de un Mapa de Karnaugh es el procedimiento inverso a
+la de la realizaci&oacute;n del mapa. Un t&eacute;rmino de la funci&oacute;n
+coloca uno o mas &quot;unos&quot; en el mapa de Karnaugh. Tomar esos
+unos, agrup&aacute;ndolos de la forma adecuada, nos permite obtener
+los t&eacute;rminos de la funci&oacute;n. Utilizaremos los Mapas de
+Karnaugh para obtener una funci&oacute;n m&iacute;nima. Una expresi&oacute;n
+es m&iacute;nima si no existe otra expresi&oacute;n equivalente que
+incluya menos t&eacute;rminos y no hay otra expresi&oacute;n
+equivalente que conste con el mismo n&uacute;mero de t&eacute;rminos,
+pero con un menor n&uacute;mero de literales. Pueden existir varias
+expresiones distintas, pero equivalentes, que satisfagan esta
+definici&oacute;n y tengan el mismo n&uacute;mero de t&eacute;rminos
+y literales.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Arial">La
+minimizaci&oacute;n de funciones sobre el mapa de Karnaugh se
+aprovecha del hecho de que las casillas del mapa est&aacute;n
+arregladas de tal forma que entre una casilla y otra, en forma
+horizontal o vertical existe ADYACENCIA LOGICA. Esto quiere decir que
+entre una casilla y otra s&oacute;lo cambia una variable.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Arial">Definimos
+los &ldquo;t&eacute;rminos m&iacute;nimos adyacentes&rdquo; desde el
+punto de vista l&oacute;gico como dos t&eacute;rminos m&iacute;nimos
+que difieren s&oacute;lo en una variable. Agrupando casillas
+adyacentes obtenemos t&eacute;rminos que eliminan las variables que
+se complementan, resultando &eacute;sto en una versi&oacute;n
+simplificada de la expresi&oacute;n.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Arial">El
+procedimiento es el de agrupar &quot;unos&quot; adyacentes en el
+mapa. Cada grupo corresponder&aacute; a un t&eacute;rmino producto, y
+la expresi&oacute;n final dar&aacute; un OR (suma) de todos los
+t&eacute;rminos producto. Se busca obtener el menor n&uacute;mero de
+t&eacute;rminos productos posible.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif">Veamos
+ahora algunos ejemplos ya que creo que la mejor forma de entender
+este concepto es con ellos.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif"><B>1.-
+</B>Simplificar la funci&oacute;n de dos variables F=A'B+AB'+AB<BR><BR>Lo
+primero que hay que hacer es representarlo en un mapa de dos
+variables. La forma de hacerlo es similar a una tabla. Veamos como
+ser&iacute;a la tabla de la verdad:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=160 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=29>
+		<COL WIDTH=35>
+		<COL WIDTH=58>
+		<TR VALIGN=TOP>
+			<TD WIDTH=29>
+				<P><FONT FACE="Arial, sans-serif">A</FONT></P>
+			</TD>
+			<TD WIDTH=35>
+				<P><FONT FACE="Arial, sans-serif">B</FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial, sans-serif">F</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=29>
+				<P><FONT FACE="Arial, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=35>
+				<P><FONT FACE="Arial, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=29>
+				<P><FONT FACE="Arial, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=35>
+				<P><FONT FACE="Arial, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=29>
+				<P><FONT FACE="Arial, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=35>
+				<P><FONT FACE="Arial, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=29>
+				<P><FONT FACE="Arial, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=35>
+				<P><FONT FACE="Arial, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif">Para un
+mapa de dos variables, el concepto ser&iacute;a algo como:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=209 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=56>
+		<COL WIDTH=59>
+		<COL WIDTH=56>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>A \ B</B></FONT></P>
+			</TD>
+			<TD WIDTH=59>
+				<P><FONT FACE="Arial, sans-serif"><B>0</B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>0</B></FONT></P>
+			</TD>
+			<TD WIDTH=59>
+				<P><FONT FACE="Arial, sans-serif"><B>m<SUB>0</SUB></B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>m<SUB>1</SUB></B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+			<TD WIDTH=59>
+				<P><FONT FACE="Arial, sans-serif"><B>m<SUB>2</SUB></B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>m<SUB>3</SUB></B></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif">OJO: Puse
+el signo &ldquo;<B>\&rdquo;</B> por comodidad pero en realidad es una
+l&iacute;nea completa desde la esquina superior izquierda hasta la
+inferior derecha que divide esa celda en dos tri&aacute;ngulos
+iguales. Las variables con las que se est&aacute; trabajando se
+colocan en cada una de esas divisiones. En este caso quiero hacer ver
+que la A es la columna y la B es la fila. De ahora en adelante lo
+mostraremos siempre as&iacute; pero en realidad deber&iacute;a verse
+as&iacute;:</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="CUADRO.JPG" NAME="gr&aacute;ficos11" ALIGN=LEFT WIDTH=139 HEIGHT=129 BORDER=0><BR CLEAR=LEFT><FONT FACE="Arial, sans-serif">Pues
+bien, <B>m<SUB>n</SUB></B> representa los t&eacute;rminos m&iacute;nimos.
+Si tuvi&eacute;semos la funci&oacute;n expresada en forma can&oacute;nica
+seg&uacute;n sus t&eacute;rminos m&iacute;nimos ya sabr&iacute;amos
+exactamente donde colocar todos los unos. Observen tambi&eacute;n que
+en el mapa se ve 0's y 1's tanto en la columna como en la fila. La
+columna indicar&iacute;a cuando A=0 (tambi&eacute;n puede colocarse
+A' en vez del 0) y cuando A=1 (puede colocarse A). Sabiendo &eacute;sto,
+y con ayuda de la tabla de la verdad que nos indica cuales son los
+casos en los que se hace uno la funci&oacute;n, veamos ahora como
+ser&iacute;a con un mapa de Karnaugh:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=209 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=56>
+		<COL WIDTH=59>
+		<COL WIDTH=56>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>A \ B</B></FONT></P>
+			</TD>
+			<TD WIDTH=59>
+				<P><FONT FACE="Arial, sans-serif"><B>0</B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>0</B></FONT></P>
+			</TD>
+			<TD WIDTH=59>
+				<P><FONT FACE="Arial, sans-serif"><B>0</B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+			<TD WIDTH=59>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif">O incluso
+podr&iacute;an hacer algo como:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=209 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=56>
+		<COL WIDTH=59>
+		<COL WIDTH=56>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P><BR>
+				</P>
+			</TD>
+			<TD WIDTH=59>
+				<P><FONT FACE="Arial, sans-serif"><B>B'</B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>B</B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>A'</B></FONT></P>
+			</TD>
+			<TD WIDTH=59>
+				<P><FONT FACE="Arial, sans-serif"><B>0</B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>A</B></FONT></P>
+			</TD>
+			<TD WIDTH=59>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Arial, sans-serif"><B>1</B></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif"><BR>O
+sea, que para llenar la tabla, pongo un uno en todos los t&eacute;rminos
+m&iacute;nimos que contenga la funci&oacute;n (que para la funci&oacute;n
+F=A'B+AB'+AB son m<SUB>1</SUB>, m<SUB>2</SUB> y m<SUB>3</SUB>
+respectivamente) o sencillamente donde la tabla de la verdad me
+indique [que son los grupos (A,B) = (0,1), (1,0) y (1,1)]. Dicho
+&eacute;sto, creo que ya pueden visualizar bien la forma en la que se
+hace el mapa. Continuemos.<BR><BR>Una vez hecho el mapa, debemos
+marcar las regiones contiguas que manejen 1's. En el siguiente dibujo
+vemos c&oacute;mo se marcan dos regiones. Estas regiones son las
+simplificaciones. Como la regi&oacute;n azul involucra solamente a la
+B, eso representa. La regi&oacute;n roja, por su parte, involucra
+solamente a la A.</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="MAPA1.jpg" NAME="gr&aacute;ficos12" ALIGN=LEFT WIDTH=457 HEIGHT=159 BORDER=0><BR CLEAR=LEFT><FONT FACE="Arial, sans-serif"><BR>Una
+vez definidas las regiones o &ldquo;agrupaciones&rdquo;, se escribe
+la funci&oacute;n simplificada y en este caso es F=A+B (Que es la
+respuesta obvia ya que el &uacute;nico 0 que contiene la funci&oacute;n
+es M<SUB>0</SUB> y dicho t&eacute;rmino m&aacute;ximo es A+B). Viendo
+la tabla de la verdad, tambi&eacute;n se deduce que la operaci&oacute;n
+es una OR.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Las
+&ldquo;agrupaciones&rdquo; siempre se hacen en forma de rect&aacute;ngulo.
+En general, si tenemos una funci&oacute;n con <B>n</B> variables :</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1.85cm; margin-bottom: 0.08cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Un rect&aacute;ngulo que
+	ocupa una celda equivale a un t&eacute;rmino con <B>n</B> variables.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1.85cm; margin-bottom: 0.08cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Un rect&aacute;ngulo que
+	ocupa dos celdas equivale a un t&eacute;rmino con <B>n-1 </B>variables.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1.85cm; margin-bottom: 0.08cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Un rect&aacute;ngulo que
+	ocupa <B>2<SUP>n</SUP></B> celdas equivale al t&eacute;rmino de
+	valor 1.</FONT></FONT></P>
+</UL>
+<P STYLE="margin-right: 1.85cm; line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Todos
+los rect&aacute;ngulos o agrupaciones contendr&aacute;n un n&uacute;mero
+par de celdas (en realidad con <B>2<SUP>n </SUP></B>celdas) con la
+&uacute;nica excepci&oacute;n de cuando es una celda &uacute;nica.
+Por lo tanto, para encontrar expresi&oacute;n m&aacute;s simplificada
+se debe:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1.85cm; margin-bottom: 0.08cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3><I>Minimizar</I> el
+	n&uacute;mero de rect&aacute;ngulos que se hacen en el mapa de
+	Karnaugh, para minimizar el n&uacute;mero de t&eacute;rminos
+	resultantes.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1.85cm; margin-bottom: 0.08cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3><I>Maximizar</I> el
+	tama&ntilde;o de cada rect&aacute;ngulo, para minimizar el n&uacute;mero
+	de variables de cada t&eacute;rmino resultante.</FONT></FONT></P>
+</UL>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Veamos
+otro ejemplo: <SPAN LANG="es-MX"><FONT FACE="Arial">Simplificar la
+funci&oacute;n de tres variables F=A'B+AB'C+C'<BR>Lo primero que hay
+que hacer es representarlo en un mapa de Karnaugh de tres variables.
+En el caso de 3 variables la forma gen&eacute;rica ser&iacute;a algo
+como:</FONT></SPAN></FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=368 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=77>
+		<COL WIDTH=58>
+		<COL WIDTH=60>
+		<COL WIDTH=58>
+		<COL WIDTH=55>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>A \ BC</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>00</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>01</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>11</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>10</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>0</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>1</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>3</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>2</SUB></B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>4</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>5</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>7</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>6</SUB></B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P LANG="es-MX" STYLE="line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3>Ok,
+ponga much&iacute;sima atenci&oacute;n ac&aacute;. En las tablas para
+tres variables, colocamos una variable s&oacute;la (ya sea en la
+columna o en la fila) y las otras dos variables juntas en el otro
+extremo. Yo lo coloco as&iacute; por costumbre pero como usted lo
+ordene no cambiar&aacute; el resultado. <B><FONT SIZE=4><FONT COLOR="#ff0000">OBSERVE</FONT></FONT></B>
+con especial atenci&oacute;n la forma en la que var&iacute;a los
+n&uacute;meros en el mapa. En el caso de la fila que contiene a BC,
+los bits que contienen NO incrementan en forma normal. En vez de ello
+el cambio se hace de forma tal que los valores adyacentes reflejen
+&uacute;nicamente el cambio de un bit (algo as&iacute; al estilo del
+c&oacute;digo Gray o reflejado que vimos en cap&iacute;tulos
+anteriores). Esto DEBE HACERSE AS&Iacute;. De lo contrario el mapa no
+servir&iacute;a ya que celdas adyacentes podr&iacute;an contener
+cambios de m&aacute;s de una variable lo cual es impermisible.
+Observen tambi&eacute;n que debido a esta caracter&iacute;stica los
+t&eacute;rminos m&iacute;nimos en las celdas no cambian incrementando
+naturalmente en decimal. Se ve que en la fila de A' se encuentran m<SUB>0</SUB>,
+m<SUB>1</SUB>, m<SUB>3</SUB>, y m<SUB>2</SUB> respectivamente y en
+ese extricto orden. <FONT COLOR="#ff0000">NOTA</FONT>: Un tip. El
+t&eacute;rmino m&iacute;nimo que debe ir en cada celda se puede
+calcular f&aacute;cilmente convirtiendo los bits ABC a decimal. Por
+ejemplo, en la celda en la que la combinaci&oacute;n de los bits para
+ABC es 011 (cuyo valor decimal es 3), va rellena con m<SUB>3</SUB>.
+Esta propiedad se cumple siempre y lo veremos en los casos con m&aacute;s
+variables.</FONT></FONT></P>
+<P LANG="es-MX" STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3>Dicho
+esto continuemos. Aqu&iacute; no realizar&eacute; la tabla de la
+verdad. En vez de ello colocar&eacute; los unos directamente sobre el
+mapa. Si usted quiere puede hacer la tabla de la verdad o llevar la
+funci&oacute;n a su forma can&oacute;nica. Yo sencillamente no lo
+hago para ahorrar tiempo ya que en este punto, esos temas ya deben
+ser dominados por ustedes. En todo caso el resultado de la funci&oacute;n
+en sus formas can&oacute;nicas simplificadas es
+<B>F(A,B,C)=&prod;(1,7)=&sum;(0,2,3,4,5,6)</B></FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=368 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=77>
+		<COL WIDTH=58>
+		<COL WIDTH=60>
+		<COL WIDTH=58>
+		<COL WIDTH=55>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>A \ BC</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>00</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>01</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>11</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>10</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P LANG="es-MX" STYLE="line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3><BR>Coloqu&eacute;
+los unos donde correspond&iacute;a y ahora debemos buscar las
+regiones que nos indiquen la funci&oacute;n simplificada. Lo primero
+que debemos observar es que las regiones pueden agruparse de los
+extremos del mapa, como la regi&oacute;n azul que vemos a
+continuaci&oacute;n:</FONT></FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="MAPA2.jpg" NAME="gr&aacute;ficos27" ALIGN=LEFT WIDTH=467 HEIGHT=340 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P LANG="es-MX" STYLE="line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3>Esta
+regi&oacute;n representa a C'. &iquest;Por qu&eacute; queda C'?
+Observe que el rect&aacute;ngulo de 4 celdas son comunes a C=0. (Para
+facilitar el entendimiento de este punto, coloque A en amarillo en el
+borde izquierdo para cuando A=1 y coloqu&eacute; unas llaves que
+indican cuando B=1 y C=1). Se ve que el rect&aacute;ngulo rodeado por
+azul es C' (La llave con C no tiene ning&uacute;n caso all&iacute;) y
+se ve que no importan los valores de A ni de B ya que <B><I>est&aacute;n
+complementados </I></B>(0 &oacute; 1 en ambas variables). Vemos
+tambi&eacute;n que queda un bit en A'BC (que est&aacute; en rojo) y
+uno en AB'C (en amarillo), pero siempre conviene agruparlo lo m&aacute;s
+posible, en regiones cuyas celdas sean potencias de 2. En este
+caso, los agrupamos con el 1 contiguo, para que la regi&oacute;n
+quede como A'B (ya que la elipse roja est&aacute; sobre A' y bajo B
+-vea la llave) y AB' (anal&iacute;celo) respectivamente. As&iacute;,
+la funci&oacute;n resultante ser&iacute;a F=A'B+AB'+C'. <BR></FONT></FONT><BR><BR>
+</P>
+<P LANG="es-MX" ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%">
+<FONT FACE="Arial"><FONT SIZE=3>Veamos otro caso. Simplificar la
+funci&oacute;n de cuatro variables <B>F(A,B,C,D)=&sum;(0,2,3,5,7,8,10,13)</B></FONT></FONT></P>
+<P LANG="es-MX" ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%">
+<FONT FACE="Arial"><FONT SIZE=3>En los casos de 4 variables podemos
+organizar de la siguiente forma:</FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=368 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=77>
+		<COL WIDTH=58>
+		<COL WIDTH=60>
+		<COL WIDTH=58>
+		<COL WIDTH=55>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>AB \ CD</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>00</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>01</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>11</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>10</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>00</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>0</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>1</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>3</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>2</SUB></B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>01</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>4</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>5</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>7</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>6</SUB></B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>11</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>12</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>13</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>15</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>14</SUB></B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>10</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>8</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>9</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>11</SUB></B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>m<SUB>10</SUB></B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P LANG="es-MX" ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%">
+<FONT FACE="Arial"><FONT SIZE=3><BR>Note nuevamente la variaci&oacute;n
+en las filas y columnas. S&oacute;lo un bit cambia en las
+adyacencias. <FONT COLOR="#ff0000">F&Iacute;JESE</FONT> muy bien como
+quedaron organizados los t&eacute;rminos m&iacute;nimos. Vea y
+deduzca que si combina los bits ABCD y convierte a decimal, ver&aacute;
+que la celda correspondiente contiene el t&eacute;rmino m&iacute;nimo
+que explicamos anteriormente que deber&iacute;a contener. Por ejemplo
+si AB,CD=10,11, (1011)<SUB>2</SUB>=11 y en dicha celda est&aacute;
+<B>m<SUB>11</SUB>.</B></FONT></FONT></P>
+<P LANG="es-MX" ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%">
+<FONT FACE="Arial"><FONT SIZE=3>Lo primero que hacemos es vaciar la
+funci&oacute;n al mapa. Como ya tenemos la forma can&oacute;nica, el
+vaciado es directo<B>. </B>Observe como queda el mapa.</FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=368 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=77>
+		<COL WIDTH=58>
+		<COL WIDTH=60>
+		<COL WIDTH=58>
+		<COL WIDTH=55>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>AB \ CD</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>00</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>01</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>11</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>10</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>00</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT COLOR="#ff0000"><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT COLOR="#008000"><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT COLOR="#ff0000"><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>01</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT COLOR="#2323dc"><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT COLOR="#008000"><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>11</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT COLOR="#2323dc"><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=77>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>10</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT COLOR="#ff0000"><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><FONT FACE="Arial"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=55>
+				<P><FONT COLOR="#ff0000"><FONT FACE="Arial"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P LANG="es-MX" ALIGN=LEFT STYLE="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%">
+<FONT FACE="Arial"><FONT SIZE=3>Ahora, lo siguiente es agrupar las
+variables en regiones. La primera regi&oacute;n agrupada son las
+esquinas (en rojo). Esta agrupaci&oacute;n representa B'D' ya que los
+valores comunes son B=0 y D=0. A y C tienen ambos valores, o sea,
+est&aacute;n complementados. Como ejercicio muestre este mapa con las
+llaves indicando donde las variables son 1 tal como mostr&eacute; el
+caso anterior. No lo hago yo aqu&iacute; porque me consume mucho
+tiempo. Sigamos. La siguiente regi&oacute;n la agrupo con los 1's en
+verde y esta agrupaci&oacute;n representa A'CD. Pude hacer el grupo
+con el 1 a la derecha, pero hubiera significado agrupar un 1 ya
+agrupado (que, como vimos, a veces es requerido para simplificar a&uacute;n
+m&aacute;s la expresi&oacute;n), y dejar otro 1, a&uacute;n no
+agrupado, por agrupar. As&iacute; que se agrupa de esta forma para
+obtener menos t&eacute;rminos. Los 1's que quedan hasta este momento,
+en azul, pueden agruparse juntos. Esto representa a BC'D. Por lo
+tanto la funci&oacute;n queda: F=B'D'+A'CD+BC'D.</FONT></FONT></P>
+<P LANG="es-MX" ALIGN=LEFT STYLE="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%">
+<FONT FACE="Arial"><FONT SIZE=3>Es importante notar que se puede
+agrupar otra region con un 1 verde y uno azul y representar&iacute;a
+A'BD. Esta regi&oacute;n es una simplificaci&oacute;n adicional
+v&aacute;lida, que pudo haberse manejado e incluso agregado a la
+funci&oacute;n. En ocasiones, habr&aacute; varias formas de agrupar a
+los 1's. Todas son v&aacute;lidas, y representan soluciones
+equivalentes. Sin embargo, hay que cuidar de siempre agrupar las
+regiones lo m&aacute;s grandes posibles, y cuidando de agrupar a los
+1's de manera que se repitan lo menos posible. Como esos &ldquo;unos&rdquo;
+ya fueron agrupados no requieren volver a serlo.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Entonces
+los pasos a seguir para simplificar una funci&oacute;n son:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-right: 1.85cm; line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>1.</B>
+<B><I>Convertir la expresi&oacute;n a una suma de productos si es
+necesario.</I> </B>&Eacute;sto se puede realizar de varias maneras:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-right: 1.85cm; margin-bottom: 0cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Llev&aacute;ndola
+	algebraicamente a su forma can&oacute;nica.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-right: 1.85cm; margin-bottom: 0cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Construyendo una tabla
+	de verdad, trasladando los valores al mapa de Karnaugh.</FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT STYLE="margin-right: 1.85cm; line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>2.</B>
+<B><I>Cubrir todos los unos del mapa mediante rect&aacute;ngulos de
+</I>2<SUP>n </SUP><I>elementos</I></B>. Ninguno de esos rect&aacute;ngulos
+debe contener ning&uacute;n cero.</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-right: 1.85cm; margin-bottom: 0.16cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Para minimizar el n&uacute;mero
+	de t&eacute;rminos resultantes se har&aacute; el m&iacute;nimo
+	n&uacute;mero posible de rect&aacute;ngulos que cubran todos los
+	unos.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-right: 1.85cm; margin-bottom: 0.16cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Para minimizar el n&uacute;mero
+	de variables se har&aacute; cada rect&aacute;ngulo tan grande como
+	sea posible. Ejemplo:</FONT></FONT></P>
+</UL>
+<UL>
+	<P ALIGN=LEFT STYLE="margin-right: 1.85cm; line-height: 150%"><IMG SRC="EJE4-1.gif" NAME="gr&aacute;ficos9" ALIGN=BOTTOM WIDTH=232 HEIGHT=133 BORDER=0></P>
+</UL>
+<P ALIGN=LEFT STYLE="margin-right: 1.85cm; line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>V&eacute;ase
+que en este caso se ha unido la columna izquierda con la derecha para
+formar un &uacute;nico rect&aacute;ngulo y que el &ldquo;uno&rdquo;
+en 001 se ha emparejado con el &ldquo;uno&rdquo; de al lado con la
+idea de reducir ese t&eacute;rmino en un literal.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-right: 1.85cm; line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>3.
+<I>Encontrar la suma de productos m&iacute;nima</I></B>. Ojo, como ya
+se dijo, podemos encontrarnos con que puede haber m&aacute;s de una
+suma de productos e incluso casos en que tengamos dos reducciones con
+el mismo n&uacute;mero de t&eacute;rminos y literales siendo ambas
+v&aacute;lidas.</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-right: 1.85cm; margin-bottom: 0.16cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Cada rect&aacute;ngulo
+	pertenece a un t&eacute;rmino producto.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-right: 1.85cm; margin-bottom: 0.16cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Cada t&eacute;rmino se
+	define encontrando las variables que hay en com&uacute;n en tal
+	rect&aacute;ngulo.</FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT STYLE="margin-right: 1.85cm; margin-bottom: 0.16cm; line-height: 150%">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=3>En nuestro ejemplo
+tenemos <B><FONT COLOR="#000000">F(X, Y, Z) = Z&rsquo; + X&rsquo;Y&rsquo;</FONT><FONT COLOR="#0000ff">
+. </FONT></B><FONT COLOR="#000000">N</FONT>&oacute;tese que las
+variables resultado son las que tienen un valor com&uacute;n en cada
+rect&aacute;ngulo.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-right: 1.85cm; margin-bottom: 0.16cm; line-height: 150%">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Cada rect&aacute;ngulo
+representa un t&eacute;rmino. El tama&ntilde;o del rect&aacute;ngulo
+y el del t&eacute;rmino resultante son inversamente proporcionales,
+es decir que, cuanto m&aacute;s largo sea el rect&aacute;ngulo menor
+ser&aacute; el tama&ntilde;o del t&eacute;rmino final.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-right: 1.85cm; margin-bottom: 0.16cm; line-height: 150%">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Cuando tenemos distintas
+posibilidades de agrupar rect&aacute;ngulos hay que seguir ciertos
+criterios:</FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-right: 2cm; line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Localiza
+	todos los rect&aacute;ngulos m&aacute;s grandes posibles, agrupando
+	todos los unos. Estos se llamar&aacute;n <B>implicantes primos</B>. </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-right: 2cm; margin-top: 0.16cm; margin-bottom: 0.08cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Si alguno de los
+	rect&aacute;ngulos anteriores contiene alg&uacute;n uno que no
+	aparece en ning&uacute;n otro rect&aacute;ngulo entonces es un
+	<B>implicante primo esencial. </B>&Eacute;stos han de aparecer en el
+	resultado final de manera obligatoria.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-right: 2cm; margin-top: 0.16cm; margin-bottom: 0.08cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=3>El resto de los
+	implicantes primos se podr&aacute;n combinar para obtener distintas
+	soluciones.</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-right: 1.85cm; line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>V&eacute;ase
+este ejemplo que ilustra lo dicho. Aqu&iacute; los implicantes primos
+son cada uno de los diferentes rect&aacute;ngulos obtenidos. Los
+implicantes primos esenciales son el rect&aacute;ngulo rojo y el
+verde, por contener &ldquo;unos&rdquo; que no son cubiertos por otros
+rect&aacute;ngulos. As&iacute; todas las posibles soluciones han de
+contener estos dos implicantes. </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="EJE4-2.gif" NAME="gr&aacute;ficos7" ALIGN=BOTTOM WIDTH=291 HEIGHT=262 BORDER=0></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>La
+mejor soluci&oacute;n, por ser la que usa menos t&eacute;rminos y
+menos literales es: <FONT COLOR="#000000">F( X, Y, Z, T ) = <B>X&rsquo;Y&rsquo;
+</B>+ <B>XYT&rsquo;</B> + <B>XZT</B></FONT></FONT></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ejemplo.
+Para la funci&oacute;n:</FONT></P>
+<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">F=A'B'C'D'+A'BC'D'+ABC'D'+AB'C'D'+A'BC'D+ABC'D+AB'C'D+ABCD+AB'CD+A'B'CD'+A'BCD'+ABCD'+AB'CD'</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">el
+mapa es:</FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><IMG SRC="EJE4-3.gif" NAME="gr&aacute;ficos1" ALIGN=LEFT WIDTH=183 HEIGHT=175 BORDER=0><BR CLEAR=LEFT><FONT FACE="Arial"><FONT SIZE=3>Supongamos
+por un momento que agrupamos los &quot;unos&quot; del mapa de
+Karnaugh como se muestra en la siguiente figura:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><IMG SRC="EJE4-4.gif" NAME="gr&aacute;ficos2" ALIGN=LEFT WIDTH=197 HEIGHT=197 BORDER=0><BR CLEAR=LEFT><FONT FACE="Arial"><FONT SIZE=3>Seg&uacute;n
+esto tenemos cuatro t&eacute;rminos que son:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3>t&eacute;rmino
+I : agrupa 8 unos y es de una variable. &Eacute;sta es A. Este
+t&eacute;rmino es un implicante primo esencial.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3>t&eacute;rmino
+II : agrupa 4 unos y es de dos variables. &Eacute;stas son BC con C
+negado. Es un implicante primo esencial.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3>t&eacute;rmino
+III : agrupa 2 unos y es de tres variables. &Eacute;stas son ACD con
+A y D negados. NO es un implicante primo.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3>t&eacute;rmino
+IV : agrupa s&oacute;lo un 1 y es de cuatro variables que son ABCD
+todos negados. &Eacute;ste, NO es un implicante primo.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3>Esa
+forma de organizar el mapa NO contiene ning&uacute;n implicante primo
+que NO sea esencial.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><FONT FACE="Arial">Puede
+verse que a medida que agrupamos mayor cantidad de &quot;unos&quot;,
+el t&eacute;rmino tiene menos literales. El agrupamiento se hace con
+una cantidad de &quot;unos&quot; que son potencias de 2. As&iacute;
+agrupamos 2 minterm's, 4 minterm's y 8 minterm's. Cada vez que
+aumentamos el rect&aacute;ngulo, el t&eacute;rmino va eliminando una
+variable. En una funci&oacute;n de 4 variables, un t&eacute;rmino que
+tenga un s&oacute;lo &quot;uno&quot; tendr&aacute; las cuatro
+variables. De hecho es un t&eacute;rmino can&oacute;nico. Al agrupar
+dos minterm's eliminaremos una variable y el t&eacute;rmino quedar&aacute;
+de tres variables. Si agrupamos cuatro &quot;unos&quot; eliminaremos
+dos variable quedando un t&eacute;rmino de dos variables y finalmente
+si agrupamos ocho &quot;unos&quot; se eliminaran tres variable para
+quedar un t&eacute;rmino de una &uacute;nica variable. Todo esto se
+debe a la adyacencia entre casillas y cada vez que agrupamos, se
+eliminan las variables que se complementan</FONT>.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>En
+este ejemplo obtenemos F=A'B'C'D'+A'CD'+BC'+A</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial"><FONT SIZE=3>Pero
+en realidad, &eacute;sta no es la funci&oacute;n m&iacute;nima...
+&iquest;cierto? El mismo mapa podemos agruparlo de otra forma y
+obtener:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><IMG SRC="EJE4-5.gif" NAME="gr&aacute;ficos3" ALIGN=LEFT WIDTH=197 HEIGHT=197 BORDER=0><BR CLEAR=LEFT><FONT FACE="Arial"><FONT SIZE=3>&Eacute;sta
+forma de agruparlos nos da como resultado: F=D'+BC'+A que s&iacute;
+es expresi&oacute;n m&iacute;nima. Es importante que al &quot;tomar&quot;
+un uno, se agrupe con todos los unos adyacentes, aunque &eacute;stos
+ya sean parte de otros grupos. F&iacute;jense que el minterm en
+ABCD=(1100)<FONT SIZE=2><SUB>2</SUB></FONT> es com&uacute;n a los
+tres t&eacute;rminos. Aqu&iacute;, los tres grupos son implicantes
+primos esenciales por lo que todos deben ir incluidos en la funci&oacute;n
+simplificada.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Vamos
+de nuevo. Recuerden que p<FONT FACE="Arial">ara simplificar funciones
+utilizando mapas de Karnaugh hay que tener en cuenta que:</FONT></FONT></FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=JUSTIFY STYLE="line-height: 150%"><FONT FACE="Arial">Podemos
+	concluir que <B>cada casilla (minterm) en un mapa de Karnaugh de n
+	variable tiene n casillas adyacentes l&oacute;gicamente, </B>o sea,
+	que se diferencian en las adyacencias por una sola variable (se
+	complementan). Esta informaci&oacute;n es de gran utilidad en los
+	casos de 5 y 6 variables.</FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="line-height: 150%"><FONT FACE="Arial">Al
+	combinar las casillas en un mapa de Karnaugh, agruparemos un n&uacute;mero
+	de minterm's que sea potencia de dos. As&iacute;, al agrupar dos
+	casillas eliminamos una variable, al agrupar cuatro casillas
+	eliminamos dos variables, y as&iacute; sucesivamente. De hecho
+	podemos concluir que al agrupar <B>2<FONT SIZE=2><SUP>n </SUP></FONT></B>casillas,
+	eliminamos <B>n</B> variables.</FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="line-height: 150%"><FONT FACE="Arial">Debemos
+	agrupar tantas casillas como sea posible; cuanto mayor sea el grupo,
+	el t&eacute;rmino producto resultante tendr&aacute; menos literales.
+	Es importante incluir todos los &quot;unos&quot; adyacentes a un
+	minterm que sea igual a uno.</FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="font-weight: medium; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Arial"><FONT SIZE=3>Para
+	que hayan menos t&eacute;rminos en la funci&oacute;n simplificada,
+	debemos formar el menor numero de grupos posibles que cubran todas
+	las casillas (minterm's) que sean iguales a uno. Un &quot;uno&quot;
+	puede ser utilizado por varios grupos, no importa si los grupos se
+	solapan. Lo importante es que si un grupo est&aacute; incluido
+	completamente en otro grupo, o sus &quot;unos&quot; est&aacute;n
+	cubiertos por otros grupos, no hace falta incluirlo como t&eacute;rmino.</FONT></FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial, sans-serif">Veamos
+otro caso en el que repasamos lo que significa &ldquo;t&eacute;rminos
+implicantes&rdquo;. En el siguiente mapa de Karnaugh:</FONT></P>
+<UL>
+	<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><IMG SRC="EJE4-6.gif" NAME="gr&aacute;ficos4" ALIGN=LEFT WIDTH=193 HEIGHT=207 BORDER=0><BR CLEAR=LEFT></P>
+	<LI><P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif">Los t&eacute;rminos I, II y III son
+	implicantes primos.</FONT></P>
+	<LI><P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif">El t&eacute;rmino IV no es implicante
+	primo.</FONT></P>
+	<LI><P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif">Los t&eacute;rminos I y III son
+	implicantes primos esenciales.</FONT></P>
+	<LI><P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif">El t&eacute;rmino II no es un
+	implicante primo esenciales.</FONT></P>
+	<LI><P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%">
+	<FONT FACE="Arial, sans-serif">La funci&oacute;n se obtiene con los
+	t&eacute;rminos I y III</FONT></P>
+</UL>
+<P ALIGN=JUSTIFY STYLE="border: none; padding: 0cm; line-height: 150%">
+<FONT FACE="Arial"><I><FONT SIZE=5><FONT COLOR="#008000">Mapas de
+Karnaugh con 5 y 6 variables</FONT></FONT></I> </FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="border: none; padding: 0cm; line-height: 150%">
+<FONT FACE="Arial">Los ejemplos anteriores se realizaron con
+funciones de hasta 4 variables. Para mapas de Karnaugh de 5 y 6
+variables el procedimiento es esencialmente el mismo y s&oacute;lo
+hay que recordar que un t&eacute;rmino m&iacute;nimo tiene adyacente
+a otro minterm, tanto en forma horizontal o vertical, qu&eacute;
+muestra diferencia en una sola variable.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="border: none; padding: 0cm; line-height: 150%">
+<FONT FACE="Arial">Veamos a continuaci&oacute;n el caso de 5
+variables. Aqu&iacute; hay 2<SUP>5</SUP> = 32 posibilidades. Una de
+las formas de ver el mapa es:</FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><IMG SRC="EJE4-7.gif" NAME="gr&aacute;ficos5" ALIGN=LEFT WIDTH=374 HEIGHT=180 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>&Eacute;sta
+ser&aacute; la forma que nosotros usemos. Se observa que se separan
+los casos para A=0 y A=1 para hacerlo m&aacute;s f&aacute;cil de
+entender y que en las adyacencias s&oacute;lo una variable cambia.
+Todos los n&uacute;meros en las celdas hacen referencia a los
+t&eacute;rminos m&iacute;nimos. Tambi&eacute;n debe saber que, <B><FONT SIZE=4>tanto
+en este caso como en el de 6 variables, la adyacencia tambi&eacute;n
+se cumple para las mismas celdas de los cuadros que se encuentren al
+lado tanto horizontal como verticalmente</FONT></B> (S&oacute;lo
+horizontal en 5 variables y ambos sentidos en 6). O sea, el t&eacute;rmino
+m&iacute;nimo 31 es adyacente al 15. De la misma forma los t&eacute;rminos
+m&iacute;nimos 31 y 30 son adyacentes a los 15 y 14 respectivamente.
+Se ve tambi&eacute;n que, al igual que en los otros casos, los
+t&eacute;rminos m&iacute;nimos que corresponden a cada celda pueden
+calcularse convirtiendo el n&uacute;mero binario de la respectiva
+combinaci&oacute;n ABCDE. Por ejemplo, para ABCDE=(10110)<SUB>2</SUB>
+=22, el t&eacute;rmino m&iacute;nimo en la celda es el <B>m<SUB>22.</SUB></B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Supongamos
+el siguiente caso: <FONT FACE="Arial">Simplificar la funci&oacute;n </FONT></FONT></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Arial"><FONT SIZE=3>F=&sum;
+(0,2,8,11,15,18,20,21,27,28,29,31)</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Arial"><FONT SIZE=3>Colocando un
+uno en los t&eacute;rminos m&iacute;nimos correspondientes, tenemos
+que:</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<IMG SRC="EJE4-8.gif" NAME="gr&aacute;ficos6" ALIGN=LEFT WIDTH=374 HEIGHT=180 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><FONT FACE="Arial"><FONT SIZE=3>De
+forma an&aacute;loga a lo que hemos venido haciendo, agrupamos los
+t&eacute;rminos m&iacute;nimos. Una forma ideal de agruparlos ser&iacute;a:</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<IMG SRC="EJE4-9.gif" NAME="gr&aacute;ficos8" ALIGN=LEFT WIDTH=374 HEIGHT=211 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><FONT FACE="Arial"><FONT SIZE=3>Vemos
+que ning&uacute;n t&eacute;rmino queda solo y que se hicieron la
+menor cantidad de grupos posibles. Esta funci&oacute;n quedar&iacute;a
+en su forma simplificada:</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Arial"><FONT SIZE=3>F=A'C'D'E'+BDE+B'C'DE'+ACD'</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Arial"><FONT SIZE=3>que son los
+grupos I, II, III y IV respectivamente.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Arial"><FONT SIZE=3>Por &uacute;ltimo,
+para el caso de 6 variables tenemos 64 combinaciones posibles y la
+forma para expresar el mapa que nosotros usaremos ser&aacute;:</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; font-weight: medium; line-height: 150%">
+<IMG SRC="EJE4-11.gif" NAME="gr&aacute;ficos13" ALIGN=LEFT WIDTH=392 HEIGHT=358 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Se
+observa que se separan los casos para A=0, A=1, B=0 y B=1. Por
+supuesto que, como en el resto de los casos, todos los n&uacute;meros
+en las celdas hacen referencia a los t&eacute;rminos m&iacute;nimos.
+Tambi&eacute;n se cumple que los t&eacute;rminos m&iacute;nimos que
+corresponden a cada celda pueden calcularse convirtiendo el n&uacute;mero
+binario de la respectiva combinaci&oacute;n ABCDEF. Por ejemplo, para
+ABCDEF=(101101)<SUB>2</SUB>=45, el t&eacute;rmino m&iacute;nimo en la
+celda es el <B>m<SUB>45.</SUB> </B>Aqu&iacute; la adyacencia es un
+poco m&aacute;s dif&iacute;cil de ver. Por ejemplo, las casillas con
+los t&eacute;rminos m&iacute;nimos (63,62) es adyacente, adem&aacute;s
+de a todas las adyacencias normales del cuadro, a (47,46) y a
+(31,30). Otro ejemplo, <B>m<SUB>0</SUB> </B>es adyacente a <B>m1</B>,
+<B>m<SUB>4</SUB></B>, <B>m<SUB>2</SUB></B>, <B>m<SUB>8</SUB></B>, <B>m<SUB>16</SUB></B>
+y <B>m<SUB>32</SUB></B>. (OJO: pero NO a <B>m<SUB>48</SUB></B> ya que
+aqu&iacute; hay dos variables distintas con respecto a <B>m<SUB>0</SUB></B>).</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="border: none; padding: 0cm; line-height: 150%"><FONT FACE="Arial, sans-serif">Como
+ejercicio, resuelva el siguiente mapa: </FONT>
+</P>
+<P STYLE="line-height: 150%"><IMG SRC="EJE4-10.gif" NAME="gr&aacute;ficos10" ALIGN=LEFT WIDTH=398 HEIGHT=370 BORDER=0><BR CLEAR=LEFT><FONT FACE="Arial, sans-serif">La
+soluci&oacute;n a este problema est&aacute; en esta misma carpeta y
+el nombre de la imagen soluci&oacute;n es el mismo que el de la
+imagen problema agreg&aacute;ndole &ldquo;_Solucion&rdquo; (sin los
+par&eacute;ntesis) al final.</FONT></P>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial">Para practicar les
+voy a dar un programa &ldquo;freeware&rdquo; muy intuitivo y f&aacute;cil
+de usar, aunque limitado a 4 variables. Llenan la tabla de la verdad
+y a medida que van colocando los unos, se va llenando el mapa de
+Karnaugh, a la vez que se van agrupando los t&eacute;rminos y
+mostrando el resultado abajo. A/B/CD representa AB'C'D. Usan /X para
+simular la raya sobre la letra que representa el s&iacute;mbolo de
+negado (<FONT FACE="Arial">al igual que el tilde)</FONT>. Tambi&eacute;n
+se pueden marcar los unos directamente en el mapa de Karnaugh. Es un
+archivo peque&ntilde;o y no se requiere instalaci&oacute;n. Hagan
+click <A HREF="kmap12.exe">aqu&iacute;</A> para bajarlo. </FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial">#######################################################</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial">NOTA AGREGADA: He
+conseguido otro programa bastante bueno y gratuito. El programa fue
+creado por </FONT><FONT SIZE=4>Javier Garc&iacute;a Zub&iacute;a </FONT><FONT FACE="Arial">y
+su p&aacute;gina web est&aacute; en
+<A HREF="http://paginaspersonales.deusto.es/zubia/">http://paginaspersonales.deusto.es/zubia/</A>.
+All&iacute; encontrar&aacute;n varios links. El programa en cuesti&oacute;n
+est&aacute; en </FONT><A HREF="http://paginaspersonales.deusto.es/zubia/BOOLE_SP.zip">BOOLE-DEUSTO:
+Descarga gratuita (espa&ntilde;ol)</A> <FONT FACE="Arial">. Tambi&eacute;n
+all&iacute; encuentran un manual en </FONT><A HREF="http://paginaspersonales.deusto.es/zubia/BOOLE_DOC_SP.zip">BOOLE-DEUSTO:
+Manual (espa&ntilde;ol)</A><FONT FACE="Arial">. El programa que me
+interes&oacute; m&aacute;s est&aacute; dentro del archivo comprimido
+BOOLE_SP con nombre boole.exe.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial">Si no quieren leer el
+manual (cosa que deber&iacute;an), luego de usarlo un rato se
+entiende como funciona. No es para nada tan f&aacute;cil de usar como
+el otro programa que les di, pero si much&iacute;simo m&aacute;s
+completo con muchas m&aacute;s opciones. Muy Interesante. He hecho
+ejemplos de hasta 12 variables. Tambi&eacute;n tiene varios m&eacute;todos
+para la entrada de los datos. Pru&eacute;benlo.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial">#######################################################</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial">Hagan el siguiente
+ejercicio a mano y luego, con la tabla de la verdad o la forma
+can&oacute;nica que consiguieron, prueben el programa.</FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: 1.85cm; margin-right: 1.85cm; line-height: 150%">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=4><B>F(x, y, z,w) = x&rsquo;y&rsquo;z&rsquo;w
++ x&rsquo;y&rsquo;z + x&rsquo;yz&rsquo;w' + xy&rsquo;z&rsquo; + xyz&rsquo;</B></FONT></FONT></P>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Arial, sans-serif">Si lo
+desea, puede ver otros puntos de vista de este tema en:</FONT></P>
+<UL>
+	<LI><P STYLE="line-height: 150%"><A HREF="http://azul.bnct.ipn.mx/~pfuentes/"><FONT FACE="Lucida Sans, sans-serif">http://azul.bnct.ipn.mx/~pfuentes/</FONT></A></P>
+	<LI><P STYLE="line-height: 150%"><A HREF="http://www.monografias.com/trabajos14/karnaughmapa/karnaughmapa.shtml"><FONT FACE="Lucida Sans, sans-serif">http://www.monografias.com/trabajos14/karnaughmapa/karnaughmapa.shtml</FONT></A></P>
+	<LI><P STYLE="line-height: 150%"><A HREF="http://perso.wanadoo.es/luis_ju/edigital/ed06.html"><FONT FACE="Lucida Sans, sans-serif">http://perso.wanadoo.es/luis_ju/edigital/ed06.html</FONT></A></P>
+	<LI><P STYLE="line-height: 150%"><A HREF="http://html.rincondelvago.com/mapa-de-karnaugh.html"><FONT FACE="Lucida Sans, sans-serif">http://html.rincondelvago.com/mapa-de-karnaugh.html</FONT></A></P>
+</UL>
+<P ALIGN=LEFT STYLE="line-height: 150%"><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Para
+la pr&oacute;xima clase veremos el </FONT><A HREF="tema5.html"><FONT FACE="Lucida Sans, sans-serif">tema
+5: Condiciones irrelevantes (don't care). Universalidad de las
+compuertas NAND y NOR.</FONT></A></P>
+</BODY>
+</HTML>

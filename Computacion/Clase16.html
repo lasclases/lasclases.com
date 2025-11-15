@@ -1,0 +1,1032 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20031023;21583914">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20031023;21590763">
+</HEAD>
+<BODY LANG="es-VE" DIR="LTR">
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Estructuras,
+uniones y tipos de datos definidos por el usuario.</B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN STYLE="text-decoration: none"><FONT SIZE=3><B>Estructuras.</B><SPAN STYLE="font-weight: medium">
+</SPAN></FONT></SPAN>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Las estructuras ( struct ) son agrupaciones de una o m&aacute;s
+variables de tipos posiblemente diferentes, agrupadas bajo un mismo
+nombre. Esto permite un manejo m&aacute;s c&oacute;modo de la
+informaci&oacute;n cuando &eacute;sta est&aacute; relacionada. Las
+&ldquo;struct&rdquo; son estructuras de datos similares a los
+registros ( record ) de Pascal. La forma general de definici&oacute;n
+es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct tipo_estructura {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>tipo miembro_1;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>tipo miembro_2;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>tipo miembro_n;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>} Lista_variables_estructura;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>donde tipo_estructura ( que ser&aacute; el nombre de la
+estructura ) &oacute; Lista_variables_estructura ( que es una lista
+de las variables que ser&aacute;n de este tipo de estructura ) pueden
+omitirse pero no ambos. Las estructuras ayudan a agrupar informaci&oacute;n
+relacionada como los datos de una c&eacute;dula de identidad, las
+coordenadas de un punto, etc.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Ejemplos de declaraci&oacute;n de estructuras</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct datos {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char nombre[20];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char direccion[20];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>long int NumCedula;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char sexo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>/* Veamos ahora como declaramos una variable de tipo
+&ldquo;struct datos&rdquo;. Aqu&iacute; tenemos a &ldquo;a&rdquo;
+como una estructura de este tipo y &ldquo;b&rdquo; como un array de 5
+estructuras de este tipo*/</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct datos a,b[5];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Las estructuras tambi&eacute;n pueden estar anidadas.
+Esto quiere decir que un elemento de una estructura puede ser a su
+vez otra estructura.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Veamos un ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct fecha {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int dia;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int mes;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int anio;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct persona {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char nombre[20];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct fecha nacimiento;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct persona p;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Aqu&iacute; vemos que la estructura persona contiene un
+elemento que es del tipo de estructura fecha.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>OJO:</B> Como vimos en la definici&oacute;n, tambi&eacute;n
+pueden declararse las variables que ser&aacute;n de un tipo de
+estructura desde el momento de la declaraci&oacute;n haciendo algo
+como:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct persona {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char nombre[20];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct fecha nacimiento;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>} p, q ; // Esto declara 'p' y 'q' de tipo &ldquo;struct
+persona&quot;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>C&oacute;mo se referencian estas variables?. Muy bien,
+los elementos individuales de una estructura se referencian
+utilizando el operador punto ( <B>.</B> ) entre el nombre de la
+variable de tipo estructura y el nombre del miembro de la estructura.
+A los elementos de una estructura se les denomina miembros.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Continuando con las estructuras de los ejemplos
+anteriores, se pueden tener las siguientes referencias a miembros:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>a.nombre	// Referencia la variable nombre de la
+estructura datos llamada &ldquo;a&rdquo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>a.direcci&oacute;n	// Referencia la variable direcci&oacute;n
+de la estructura datos llamada &ldquo;a&rdquo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>b[2].NumCedula	// Referencia la variable NumCedula del
+segundo elemento del arreglo</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>// de tipo struct datos llamado &ldquo;b&rdquo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>p.nombre</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>p.nacimiento.dia	// Estos casos referencian un elemento
+de una &ldquo;struct fecha&rdquo; dentro</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>p.nacimiento.mes	// de la &ldquo;struct persona&rdquo;.
+Anal&iacute;cenlo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B><SPAN STYLE="text-decoration: none"><FONT SIZE=3>Funciones
+y estructuras</FONT></SPAN>.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>1 .- Paso por valor de miembros de una estructura a una
+funci&oacute;n.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Se realiza como si fueran variables simples. Por
+ejemplo, para pasar por valor el miembro &ldquo;a.NumCedula&rdquo;:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void funcion f1(int x); /*declaraci&oacute;n de la
+funci&oacute;n prototipo*/</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>f1(a.NumCedula);  /* llamada a la funci&oacute;n */</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void f1(int x) {  /* definici&oacute;n de la funci&oacute;n
+*/</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>...</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>2.- Paso por direcci&oacute;n ( lo mismo que por
+referencia ) de miembros de una estructura a una funci&oacute;n.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Se realiza como si fueran variables simples. Por
+ejemplo, para pasar por referencia el miembro &ldquo;a.NumCedula&rdquo;:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void funcion f1(int *) /*declaraci&oacute;n de la
+funci&oacute;n prototipo*/</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>f1(&amp;a.codigo);  /* llamada a la funci&oacute;n */</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void f1(int *x)  { /* definici&oacute;n de la funci&oacute;n
+*/</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Hay que tener en cuenta que si lo que se pasa a una
+funci&oacute;n es un miembro de una estructura que sea un arreglo,
+&eacute;ste siempre se pasa por direcci&oacute;n ( ya que el nombre
+del arreglo es la direcci&oacute;n del primer elemento del mismo ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>3.- Paso por valor de estructuras completas a funciones.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En el siguiente ejemplo, suma es una funci&oacute;n que
+recibe dos estructuras pasadas por valor y a su vez devuelve una
+estructura.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct vector {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int x,y,z;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct vector (struct vector v1, struct vector v2);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void main() {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct vector v1,v2,v3;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>...</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>v3=suma(v1,v2);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>...</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct vector suma(struct vector v1, struct vector v2) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>v1.x+=v2.x;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>v1.y+=v2.y;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>v1.z+=v2.z;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return (v1);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>4.- Paso por referencia de estructuras completas a
+funciones.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Cuando las estructuras son muy grandes es m&aacute;s
+eficiente pasarlas por direcci&oacute;n. En ese caso se utilizan
+punteros a estructuras para realizar la comunicaci&oacute;n. Para
+acceder a los miembros de la estructura debe utilizarse la
+combinaci&oacute;n de los operadores * y punto. Sin embargo el
+operador punto tiene m&aacute;s precedencia que * siendo necesario el
+uso de par&eacute;ntesis para asegurar que se aplique primero * y
+despu&eacute;s punto. Tambi&eacute;n puede utilizarse el operador -&gt;
+para acceder a los miembros de una estructura referenciada por un
+puntero y de hecho este es la forma m&aacute;s usada en la
+actualidad.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>#include &lt;stdio.h&gt;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct pareja {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int a,b;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void f1(struct pareja *q);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void main() {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct pareja p = { 13, 17 }  /* inicializaci&oacute;n
+de los  miembros*/</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>f1(&amp;p);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;a:%d y b:%d\n&quot;, p.a, p.b);     /* a:
+14 y b:18 */</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void f1(struct pareja *q) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>q-&gt;a++;  /* equivalente a (*q).a++ pero m&aacute;s
+usado */</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>q-&gt;b++;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return;	// Este return no retorna nada ya que la funci&oacute;n
+es void.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>// En este caso no era necesario su uso pero recuerden
+que return tambi&eacute;n</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>// se usa para finalizar una funci&oacute;n
+inmediatamente.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En este ejemplo tambi&eacute;n se observ&oacute; como se
+inicializan los elementos de una estructura: con {ele1,
+ele2,...,elen}; &ldquo;igual que en los arreglos&rdquo;. El primer
+elemento inicializa la primera variable de la estructura, el segundo
+elemento a la segunda variable y as&iacute; sucesivamente. As&iacute;,
+si usamos la estructura datos que mencionamos al principio, una forma
+de inicializarla ser&iacute;a algo como:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct datos a = {&ldquo;Tony&rdquo;, &ldquo;Maracay&rdquo;,
+8765432, 'M'};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>COMENTARIO
+ADICIONAL: </B><SPAN STYLE="font-weight: medium">Existe una forma en
+C de acceder a los bits de una variable de forma independiente sin
+tener que hacer operaciones a nivel de &eacute;stos. Esta forma de
+acceso est&aacute; ligada al uso de estructuras. Si lo necesita,
+puede buscar m&aacute;s informaci&oacute;n acerca de este tema o
+preguntarme.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Uniones</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Las uniones son otro tipo de datos que pueden ser usados
+en C y aunque tienen una sintaxis similar a las estructuras se
+diferencian de &eacute;stas en que sus miembros comparten
+almacenamiento. Esto quiere decir que una variable uni&oacute;n
+define a un conjunto de valores alternos que se almacenan en una
+porci&oacute;n compartida de memoria. Es una versi&oacute;n C de los
+registros variantes de otros lenguajes como Pascal.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El compilador asigna una porci&oacute;n de
+almacenamiento que pueda acomodar al m&aacute;s grande de los
+miembros especificados. La notaci&oacute;n para acceder a un miembro
+de la uni&oacute;n es id&eacute;ntica a la que se emplea para acceder
+a un miembro de una estructura. Un ejemplo de uni&oacute;n es el
+siguiente:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>union simple {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">char
+ch;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">int
+i;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">};</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">union
+simple a;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">//
+podemos acceder a las variables de la uni&oacute;n haciendo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">a.ch
+= &acute;a&acute;;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">...</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">a.i
+= 3;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Como ya comentamos, las
+uniones comparten el almacenamiento, o sea, que s&oacute;lo se
+reserva espacio en memoria como para almacenar la m&aacute;s grande
+de las variables que en este caso es un int por lo que son dos bytes.
+Dentro de esos dos bytes se almacenar&aacute;n las variables pero,
+como usted ya habr&aacute; analizado, s&oacute;lo puede mantenerse el
+valor de una de ellas. O sea que en el ejemplo anterior, al usar a.i,
+a.ch se pierde. Veamos otro ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>union ejemplo {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>long int cedula;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char nombre[10];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char Nacimiento[12];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta variable s&oacute;lo ocupar&aacute; 12 bytes que es
+el mayor dato que puede contener y mantendr&aacute; en cada momento
+s&oacute;lo a una de ellas.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>OJO: Es muy importante que sepan que una uni&oacute;n
+s&oacute;lo puede ser inicializada con un valor del tipo de su primer
+miembro.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>union ejemplo a={8765432};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Uso
+de sizeof  para asegurar la portabilidad.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Al principio del curso, y tambi&eacute;n  en la primera
+parte de punteros, comentamos el operador sizeof(). El uso de este
+operador es de gran importancia a la hora de calcular el tama&ntilde;o
+real de las variables, el cual puede variar de maquina en maquina.
+Por ejemplo, en MSDOS:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char c;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sizeof(int); //Retorna 2, ya que int ocupa dos bytes</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sizeof(c); // retorna 1 ya que c es de tipo char y ocupa
+un byte</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>mientras que en Linux, aunque los char son del mismo
+tama&ntilde;o, sizeof(int) retorna 4.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En todo caso, hice nuevamente referencia al operador
+sizeof debido a que uno de sus mayores usos es en el c&aacute;lculo
+de tama&ntilde;os de variables definidas por el usuario tales como
+estructuras y uniones. Supongamos que se necesita guardar datos en un
+arreglo que ser&aacute; creado din&aacute;micamente con malloc y que
+este arreglo contendr&aacute;, por ejemplo, 27 elementos de un tipo
+de estructura que ha sido creada por nosotros. Supongamos tambi&eacute;n
+que la estructura es la siguiente:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct tama&ntilde;o {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char ch;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int i;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>long int li;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>float f;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>double d;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>long double ld;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char cad[10];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int mat[10][15];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>} me;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Para poder reservar memoria con malloc de forma directa
+deber&iacute;amos primero calcular cuantos bytes ocupa esta
+estructura que en MSDOS ser&iacute;a: ch = 1, i = 2, li = 4, f = 4, d
+= 8, ld = 10, cad = 10 y mat = 2*10*15 = 300. Sumado todo da 339
+bytes por estructura que luego multiplicamos por 27 para obtener el
+espacio total requerido = 9153 bytes. As&iacute;, har&iacute;amos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">struct
+tama&ntilde;o *pe;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">pe =
+(struct tama&ntilde;o *)malloc(9153);</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">y tendr&iacute;amos que
+hacer los distintos c&aacute;lculos para las diferentes plataformas.
+Usando sizeof s&oacute;lo har&iacute;amos:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">pe =
+(struct tama&ntilde;o *<B>)</B><SPAN STYLE="font-weight: medium">malloc(27</SPAN><B>*</B>sizeof(me));</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B><SPAN STYLE="text-decoration: none"><FONT SIZE=3>Tipos
+de datos definidos por el usuario</FONT></SPAN>.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>C soporta la creaci&oacute;n de nuevos nombres de tipos
+de datos. Esto se realiza utilizando la palabra reservada &ldquo;typedef:&rdquo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>typedef tipo nombre</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Ejemplos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Con tipos simples:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>typedef int ENTERO</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>typedef float REAL</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ENTERO a,b;	// Define a y b como de tipo ENTERO, o sea,
+int.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>REAL c;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Con tipos estructurados:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>typedef struct{</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int dia;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int mes;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int anio;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>} FECHA;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>FECHA a; </FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&oacute; incluso si la estructura ya est&aacute; creada:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>struct test {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int i;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char ch;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char cad[10];</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>podemos usar:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>typedef struct test MiNuevoTipo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>...</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>MiNuevoTipo a;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Enumeraciones
+( enum )</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Una enumeraci&oacute;n, es un conjunto de constantes
+enteras con nombre, que especifica todos los valores v&aacute;lidos
+que una variable de este tipo puede tener. Estos valores son listados
+expl&iacute;citamente por el programador. Las constantes representan
+los valores que pueden ser asignados a las variables declaradas del
+tipo del enum. Su forma de declaraci&oacute;n es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>enum nombre { val1,val2,...,valn };   donde valn son
+identificadores de constantes.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&oacute;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>enum etiqueta { lista_de_enumeraciones }
+lista_de_variables;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En el primer caso, val1 es un identificador que tendr&aacute;
+un valor de cero, val2 un valor de 1 y as&iacute; sucesivamente pero
+se pueden asignar otros valores indic&aacute;ndolo en la enumeraci&oacute;n:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>enum nombre {val1=0, val2=10, val3=13,... };</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Puede suceder incluso que m&aacute;s de una constante de
+enumeraci&oacute;n tenga el mismo valor entero.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>enum color{rojo=-1, azul, amarillo, verde, negro=0};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Las variables de enumeraci&oacute;n pueden utilizarse
+como enteros; asignarles valores, compararlas, etc.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Vemos un ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>enum moneda { medio, real, bolivar };</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>...</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>enum moneda dinero;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Entonces podr&iacute;amos decir:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>dinero = medio;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (dinero == medio ) printf(&ldquo;Es un medio\n&rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>La clave para entender las enumeraciones es que cada
+uno de los s&iacute;mbolos corresponde a un valor entero</B>. De esta
+forma, puede usarse en cualquier expresi&oacute;n entera. Por
+ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>printf(&ldquo;&rdquo;El
+valor de un medio es %i&rdquo;, medio</FONT></SPAN></SPAN>);</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Perfectamente v&aacute;lido.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Como ya comentamos, a
+menos que se inicialice de otro modo, el valor del primer s&iacute;mbolo
+ser&aacute; cero, el del segundo 1 y as&iacute; sucesivamente. Por lo
+tanto en el ejemplo anterior:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">printf(&ldquo;%i
+%i&rdquo;, medio, bolivar);</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">imprimir&aacute; <B>0 2</B>
+en la pantalla.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Tambi&eacute;n dijimos
+que se pueden especificar valores en la inicializaci&oacute;n:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>enum moneda { medio=25, real=50, bolivar=100 };</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&oacute;, por ejemplo, en:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>enum color { amarillo, azul=10, verde, rojo, negro=100
+};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>tendremos que, seg&uacute;n la inicializaci&oacute;n:
+amarillo=0, azul=10, verde=11, rojo=12 y negro =100.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>No se puede escribir m&aacute;s que el valor entero de
+la variable enum lo que quiere decir que no se puede escribir su
+nombre. Recuerde, NO son cadenas. Son s&oacute;lo nombres de enteros.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>dinero = real;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;%s&rdquo;, dinero); // Esto est&aacute;
+mal.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Lo que si se puede hacer es pedir un entero y
+asign&aacute;rselo a una enumeraci&oacute;n.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Los tipos enumerados NO aportan capacidades nuevas al
+lenguaje, pero aumentan la claridad de algunos programas. Veamos un
+caso t&iacute;pico de su uso ( en conjunto con arreglos de cadenas ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>enum colores {negro, azul, verde, cyan, rojo, magenta,
+marron, amarillo=14, blanco };</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char *nombreColores[]={</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+&ldquo;<FONT SIZE=3>negro&quot;,</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;azul&quot;,</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;verde&quot;,</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;cyan&quot;,</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;rojo&quot;,</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;magenta&quot;,</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&quot;marron&quot;,</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+&ldquo;<FONT SIZE=3>amarillo&rdquo;,</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+&ldquo;<FONT SIZE=3>blanco&rdquo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>};</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>/* Aunque por supuesto en este caso el &iacute;ndice del
+amarillo y blanco no corresponden con los valores en enum lo cual
+presentar&aacute; errores en el siguiente c&oacute;digo. Ser&aacute;n
+comentados */</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;Introduzca un numero de color: &quot;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>scanf(&quot;%i&quot;,&amp;i);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>color = i;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;El numero del color es %i\n&quot;,color);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>switch(color) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case negro: printf(&quot;negro =
+%s\n&quot;,nombreColores[negro]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;%s\n&quot;,nombreColores[color]); //
+An&aacute;logo a nombreColores[negro]</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case azul: printf(&quot;azul =
+%s\n&quot;,nombreColores[azul]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;%s\n&quot;,nombreColores[color]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case verde: printf(&quot;verde =
+%s\n&quot;,nombreColores[verde]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;%s\n&quot;,nombreColores[color]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case cyan: printf(&quot;cyan =
+%s\n&quot;,nombreColores[cyan]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;%s\n&quot;,nombreColores[color]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case rojo: printf(&quot;rojo =
+%s\n&quot;,nombreColores[rojo]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;%s\n&quot;,nombreColores[color]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case magenta: printf(&quot;magenta =
+%s\n&quot;,nombreColores[magenta]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;%s\n&quot;,nombreColores[color]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case marron: printf(&quot;marron =
+%s\n&quot;,nombreColores[marron]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;%s\n&quot;,nombreColores[color]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>/* Para los siguientes casos, los valores de &ldquo;color&rdquo;
+no est&aacute;n definidos dentro de los permitidos por el arreglo de
+cadenas ( aunque si por el enum ). Por tal hecho, al tratar de 
+imprimir la cadena del arreglo correspondiente, imprimir&aacute; lo
+que encuentre en ese punto de memoria hasta conseguir el caracter
+nulo */</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case amarillo: printf(&quot;amarillo =
+%s\n&quot;,nombreColores[amarillo]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;%s\n&quot;,nombreColores[color]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case blanco: printf(&quot;blanco =
+%s\n&quot;,nombreColores[blanco]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&quot;%s\n&quot;,nombreColores[color]);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>default: printf(&quot;Ese color no lo conozco\n&quot;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-ES" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

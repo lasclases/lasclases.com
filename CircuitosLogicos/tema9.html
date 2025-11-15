@@ -1,0 +1,1475 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>TEMA 9: Multiplexores y demultiplexores a nivel SSI y MSI. Aplicaciones.</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.1  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20070310;8035348">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20070407;13592423">
+</HEAD>
+<BODY LANG="es-VE" DIR="LTR">
+<P ALIGN=CENTER><FONT COLOR="#0000ff"><FONT SIZE=6><U><B>TEMA 9:
+MULTIPLEXORES Y DEMULTIPLEXORES A NIVEL SSI Y MSI. APLICACIONES</B></U></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>MULTIPLEXORES</B></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>En
+las comunicaciones, y sistemas de computadora se ejecutan muchas
+operaciones mediante circuitos l&oacute;gicos combinatorios. Cuando
+un circuito se ha dise&ntilde;ado para efectuar alguna tarea en una
+aplicaci&oacute;n, a menudo tambi&eacute;n encuentra empleo en otras
+diferentes aplicaciones. En este tema se tratar&aacute;n los
+multiplexores y demultiplexores tanto a nivel SSI como MSI y como
+podemos aprovechar sus funciones en el desarrollo de circuitos
+combinacionales.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">Un
+Multiplexor o &ldquo;<B>Selector de datos&rdquo;</B> es un circuito
+l&oacute;gico que acepta varias entradas de datos y permite que s&oacute;lo
+una de ellas pase a un tiempo a la salida. El enrutamiento de la
+entrada de datos hacia la salida est&aacute; controlado por las
+entradas de selecci&oacute;n (a las que se hace referencia a veces
+como las entradas de direcci&oacute;n). </FONT></SPAN></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="line-height: 150%"><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">El
+multiplexor, tambi&eacute;n conocido como <B>MUX, </B>act&uacute;a
+como un conmutador multiposicional controlado digitalmente, donde el
+c&oacute;digo digital aplicado a las entradas de selecci&oacute;n
+controla cu&aacute;les entradas de datos ser&aacute;n conmutadas
+hacia la salida. Por ejemplo, la salida ser&aacute; igual a la
+entrada de datos, llam&eacute;mosle D<B><SUB>0,</SUB></B></FONT> <FONT FACE="Lucida Sans, sans-serif">para
+el c&oacute;digo de entrada de selecci&oacute;n que sea cero (ABC=000
+en el diagrama de abajo); la salida ser&aacute; igual D<B><SUB>1</SUB></B></FONT>
+<FONT FACE="Lucida Sans, sans-serif">para cuando el c&oacute;digo de
+selecci&oacute;n sea uno y as&iacute; sucesivamente. Establecido de
+otra manera, un multiplexor selecciona <B>1</B></FONT> <FONT FACE="Lucida Sans, sans-serif">de
+<B><I>N</I></B></FONT> <FONT FACE="Lucida Sans, sans-serif">fuentes
+de datos y transmite los datos seleccionados a un solo canal de
+salida. Esto se llama multiplexi&oacute;n o multiplexaje.</FONT></FONT></SPAN></P>
+<P ALIGN=JUSTIFY STYLE="line-height: 150%; text-decoration: none"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Los
+multiplexores son representados en diagramas de bloques como
+trapezoides is&oacute;sceles. A continuaci&oacute;n muestro el
+esquem&aacute;tico de un multiplexor de dos entradas y una salida con
+su respectivo bit de selecci&oacute;n:</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="line-height: 150%; text-decoration: none"><IMG SRC="MultiplexesorEsquematico.png" NAME="gr&aacute;ficos4" ALIGN=LEFT WIDTH=300 HEIGHT=119 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">&oacute;</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="Multiplexer_2-to-1.png" NAME="gr&aacute;ficos5" ALIGN=LEFT WIDTH=188 HEIGHT=133 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Un
+ejemplo de multiplexores (aunque no digitales como los que vemos
+aqu&iacute;) se ve en las l&iacute;neas telef&oacute;nicas. &Eacute;stas
+usan exactamente este principio. Transmiten varias llamadas
+telef&oacute;nicas (se&ntilde;ales de audio) a trav&eacute;s de un
+&uacute;nico par cableado usando la t&eacute;cnica de &ldquo;multiplexado&rdquo;
+y cada se&ntilde;al de audio va &uacute;nicamente al receptor al que
+est&aacute; destinado.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Una
+aplicaci&oacute;n com&uacute;n para los MUX es encontrado en las
+computadoras, en las cuales la memoria din&aacute;mica usa las mismas
+l&iacute;neas de direcci&oacute;n para el direccionamiento tanto de
+las filas como de las columnas. Un grupo de multiplexores es usado
+para primero seleccionar las direcciones de la columna y luego
+cambiar para seleccionar la de la fila. Este esquema permite que
+grandes cantidades de memoria sean incorporadas dentro de una
+computadora mientras se limita a la vez la cantidad de conexiones de
+cobre requeridas para conectar la memoria al resto del circuito. Por
+eso es que tambi&eacute;n se les conoce a veces como &ldquo;selectores
+de datos&rdquo;.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%; text-decoration: none"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Ya
+se vio el s&iacute;mbolo esquem&aacute;tico del multiplexor de 2
+entradas y una salida pero los multiplexores no est&aacute;n
+limitados a 2 entradas. Si las l&iacute;neas de selecci&oacute;n son
+dos podemos alternar entre 4 datos de entrada, si son 3 entre 8 y as&iacute;
+sucesivamente. A continuaci&oacute;n se muestran los s&iacute;mbolos
+esquem&aacute;ticos de los multiplexores de &ldquo;4 a 1&rdquo;
+(cuatro entradas y una salida), &ldquo;8 a 1&rdquo; (ocho entradas y
+una salida) y &ldquo;16 a 1&rdquo; (diecis&eacute;is entradas y una
+salida) con sus respectivas l&iacute;neas de selecci&oacute;n,
+respectivamente. </FONT></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="Multiplexer_4-to-1.png" NAME="gr&aacute;ficos6" ALIGN=LEFT WIDTH=165 HEIGHT=124 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="Multiplexer_8-to-1.png" NAME="gr&aacute;ficos7" ALIGN=LEFT WIDTH=209 HEIGHT=107 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="line-height: 150%"><IMG SRC="Multiplexer_16-to-1.png" NAME="gr&aacute;ficos8" ALIGN=LEFT WIDTH=377 HEIGHT=106 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="line-height: 150%; text-decoration: none"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">En
+todos los casos la salida es Z, las entradas de selecci&oacute;n S y
+el resto es la entrada que ser&aacute; multiplexada.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="line-height: 150%; text-decoration: none"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">A
+veces pueden verse en forma rectangular asemejando el circuito
+integrado que representan pero en este caso siempre deben ir bien
+identificados para poder saber que es. Por ejemplo:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="line-height: 150%"><IMG SRC="Multiplexor_8a1_MSI.jpg" NAME="gr&aacute;ficos3" ALIGN=LEFT WIDTH=194 HEIGHT=214 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>representa
+(como se ve indicado) un multiplexor a nivel MSI de 8 entradas (que
+implica las 3 l&iacute;neas de selecci&oacute;n)  y una salida (F).
+Las entradas de selecci&oacute;n, o sea, quienes indicar&aacute;n
+cual de las entradas ser&aacute; reflejada en la salida, vienen dadas
+por el c&oacute;digo binario representado por ABC. ABC son las
+&ldquo;entradas de direccionamiento&rdquo; o de direcci&oacute;n o de
+selecci&oacute;n, como usted lo quiera llamar, ya que estas ser&aacute;n
+quienes indican el dato a acceder. Este mismo concepto es el usado en
+las memorias. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Veamos
+ahora la implementaci&oacute;n de multiplexores a nivel SSI. Para el
+caso de un multiplexor de 2 entradas y una salida (quien por supuesto
+requiere s&oacute;lo una l&iacute;nea de selecci&oacute;n) el
+circuito ser&iacute;a:</FONT></FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="Multiplexor2a1.gif" NAME="gr&aacute;ficos9" ALIGN=LEFT WIDTH=350 HEIGHT=175 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">El
+uso del inversor dos veces NO es absolutamente necesario. Se observa
+que cuando la entrada de selecci&oacute;n &ldquo;A&rdquo; tiene un
+valor cualquiera, una de las compuertas AND tendr&aacute; un UNO en
+una de sus entradas y la otra un CERO. La que tiene el CERO dejar&aacute;
+pasar s&oacute;lo el CERO pero el que tenga el valor de UNO dejar&aacute;
+pasar la otra entrada de la AND intacta y ser&aacute; este valor
+quien se refleje a la salida. Pueden verificar este circuito a trav&eacute;s
+de su tabla de la verdad. Ve&aacute;mosla a continuaci&oacute;n:</FONT></P>
+<TABLE WIDTH=92 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=12>
+	<COL WIDTH=21>
+	<COL WIDTH=23>
+	<COL WIDTH=20>
+	<TR>
+		<TD WIDTH=12>
+			<P><I><B>A</B></I></P>
+		</TD>
+		<TD WIDTH=21>
+			<P><I><B>X<SUB>0</SUB></B></I></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><I><B>X<SUB>1</SUB></B></I></P>
+		</TD>
+		<TD WIDTH=20>
+			<P><I><B>X</B></I></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=4 WIDTH=12>
+			<P>0</P>
+		</TD>
+		<TD WIDTH=21>
+			<P>1</P>
+		</TD>
+		<TD WIDTH=23>
+			<P>1</P>
+		</TD>
+		<TD WIDTH=20>
+			<P>1</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21>
+			<P>1</P>
+		</TD>
+		<TD WIDTH=23>
+			<P>0</P>
+		</TD>
+		<TD WIDTH=20>
+			<P>1</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21>
+			<P>0</P>
+		</TD>
+		<TD WIDTH=23>
+			<P>1</P>
+		</TD>
+		<TD WIDTH=20>
+			<P>0</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21>
+			<P>0</P>
+		</TD>
+		<TD WIDTH=23>
+			<P>0</P>
+		</TD>
+		<TD WIDTH=20>
+			<P>0</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=4 WIDTH=12>
+			<P>1</P>
+		</TD>
+		<TD WIDTH=21>
+			<P>1</P>
+		</TD>
+		<TD WIDTH=23>
+			<P>1</P>
+		</TD>
+		<TD WIDTH=20>
+			<P>1</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21>
+			<P>1</P>
+		</TD>
+		<TD WIDTH=23>
+			<P>0</P>
+		</TD>
+		<TD WIDTH=20>
+			<P>0</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21>
+			<P>0</P>
+		</TD>
+		<TD WIDTH=23>
+			<P>1</P>
+		</TD>
+		<TD WIDTH=20>
+			<P>1</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21>
+			<P>0</P>
+		</TD>
+		<TD WIDTH=23>
+			<P>0</P>
+		</TD>
+		<TD WIDTH=20>
+			<P>0</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P><FONT FACE="Lucida Sans, sans-serif">Se ve aqu&iacute; que cuando
+que cuando A=0, X=X<SUB>0</SUB> y cuando A=1, X=X<SUB>1</SUB>. Esto
+representa la funci&oacute;n booleana: <B>X = AX<SUB>1</SUB>+A'X<SUB>0</SUB>
+</B>que es exactamente la implementaci&oacute;n mostrada.</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
+como se ven las implementaciones de 4 a 1 y de 16 a 1:</FONT></P>
+<P STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="Multiplexor4a1.gif" NAME="gr&aacute;ficos10" ALIGN=LEFT WIDTH=450 HEIGHT=450 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P STYLE="line-height: 150%"><IMG SRC="Multiplexor_8a1_SSI.jpg" NAME="gr&aacute;ficos12" ALIGN=LEFT WIDTH=447 HEIGHT=450 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Anal&iacute;cenlos
+y si lo desean hagan sus tablas de la verdad.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+ve que en el dise&ntilde;o de multiplexores de n entradas se
+requerir&aacute; siempre 
+<IMG SRC="http://upload.wikimedia.org/math/4/8/5/48589d9c768ea56fa78ad63c6c04d0a2.png" NAME="gr&aacute;ficos1" ALT="\left \lceil \log_2(n) \right \rceil" ALIGN=BOTTOM WIDTH=73 HEIGHT=20 BORDER=0>
+l&iacute;neas de selecci&oacute;n (que dar&iacute;a un n&uacute;mero
+entero si n es potencia de 2). Claro que, aunque es lo normal, el
+multiplexor no necesariamente debe tener 2<SUP>m</SUP> l&iacute;neas
+de entrada con m entero pero en todo caso se requerir&aacute;n tantas
+l&iacute;neas de selecci&oacute;n que hagan suficientes combinaciones
+para direccionar todas las entradas. Por ejemplo, para multiplexar 3
+&oacute; 4 entradas se requieren 2 l&iacute;neas de selecci&oacute;n.
+Si se requiere multiplexar 5, 6, 7 &uacute; 8, entonces se necesitan
+3 l&iacute;neas de selecci&oacute;n y as&iacute; sucesivamente.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>El
+Multiplexor es t&iacute;picamente usado para combinar dos o m&aacute;s
+se&ntilde;ales digitales en una sola l&iacute;nea pero no es la &uacute;nica
+forma. Tambi&eacute;n puede conseguirse de otras caracter&iacute;sticas
+pero aqu&iacute; mencionar&eacute; s&oacute;lo un par de ejemplos de
+multiplexores:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>De
+	dos entradas de 4 bits y una salida de 4 bits. &Eacute;ste
+	selecciona uno de los nibbles de entrada (internamente son 4
+	multiplexores de 2 a 1 en un solo encapsulado) y lo refleja en la
+	salida.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>De
+	dos entradas de 4 bits a una salida de dos bits que representan un
+	bit direccionado en cada nibble reflejado a la salida (internamente
+	son 2 multiplexores de 4 a 1).</FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Algunas
+designaciones para multiplexores de la familia TTL son: 74153 que son
+dos multiplexores 4 a 2, 74157 que son cuatro MUX 2 a 1 y el 74151
+que es un MUX 8 a 1.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Los
+circuitos multiplexores pueden incluir tambi&eacute;n una l&iacute;nea
+de habilitaci&oacute;n indicado con una E por Enable, pero de eso
+hablaremos en el pr&oacute;ximo tema.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
+&uacute;ltimo comentario de lo multiplexores quiero agregar que estos
+pueden ser organizados en cascada (tal como los sumadores que vimos
+en el tema anterior) para implementar multiplexores m&aacute;s
+grandes. Por ejemplo podemos usar multiplexores de 2 a 1 para
+implementar un multiplexor de 4 a 1 (o de 4 a 2 que si lo piensan se
+dar&aacute;n cuenta de que es elemental) o incluso para implementar
+multiplexores de m&aacute;s entradas. Veamos espec&iacute;ficamente
+el ejemplo de implementaci&oacute;n de un multiplexor de 16 a 1
+usando s&oacute;lo multiplexores de 4 a 1. El dato de entrada es X
+formado por los 16 bits x<SUB>0</SUB>, x<SUB>1</SUB>,...,x<SUB>14</SUB>
+y x<SUB>15</SUB>. Las l&iacute;neas de selecci&oacute;n vienen dadas
+por S. <B><U><FONT SIZE=4>OJO</FONT></U></B> con este ejemplo.
+Anal&iacute;celo y enti&eacute;ndalo.</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="Multiplexor_16a1_Cascada_de_4a1.jpg" NAME="gr&aacute;ficos13" ALIGN=LEFT WIDTH=450 HEIGHT=255 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">En
+los multiplexores vemos tambi&eacute;n la entrada de enable E (que
+adem&aacute;s son de l&oacute;gica negativa que quiere decir que los
+IC's se activaran con un cero). Ese es el bit de habilitaci&oacute;n
+que les dije veremos en el pr&oacute;ximo tema.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>DEMULTIPLEXORES</B></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Es
+lo inverso a un multiplexor. Los demultiplexores o DEMUX tienen una
+entrada que es transferida a una de las m posibles l&iacute;neas de
+salida. La l&iacute;nea m vendr&aacute; direccionada por los n bits
+de selecci&oacute;n donde lo normal es que 2<SUP>n</SUP>=m. Se podr&iacute;a
+decir que, como profundizaremos en el pr&oacute;ximo tema, <B>cada
+salida del demultiplexor corresponde con el t&eacute;rmino m&iacute;nimo
+del n&uacute;mero binario que se encuentra en las l&iacute;neas de
+selecci&oacute;n</B>.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Un
+uso popular del DEMUX es como decodificador y por eso suele usarse el
+t&eacute;rmino Demultiplexor/Decodificador indistintamente. Ya
+hablaremos de &eacute;l en pr&oacute;ximo tema, pero el prop&oacute;sito
+principal de un decodificador no es tanto transferir una entrada a
+una de las salidas sino llevar un valor binario (el de la entrada de
+selecci&oacute;n) a una representaci&oacute;n de una &uacute;nica
+l&iacute;nea a la salida. Esta funci&oacute;n es de gran utilidad en
+la decodificaci&oacute;n de la direcci&oacute;n en los
+microporcesadores por ejemplo cuando involucra la selecci&oacute;n de
+uno de multiples dispositivos (como por ejemplo la memoria). De
+hecho, la mayor&iacute;a de los decodificadores son de l&oacute;gica
+invertida (o negativa) debido a que la mayor&iacute;a de los
+dispositivos perif&eacute;ricos de los microprocesadores son
+activados por una se&ntilde;al baja (como el pin E' que vimos en los
+multiplexores en cascada hace un par de p&aacute;rrafos).</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Los
+DEMUX tambi&eacute;n suelen incluir un bit de entrada de
+habilitaci&oacute;n. Algunos DEMUX de la familia TTL son: el 74139
+que son dos DEMUX de 1 a 4 con salidas invertidas (l&oacute;gica
+negada), el 74156 que son dos DEMUX de 1 a 4 con salida de colector
+abierto (Open Collector), el 74138 que es un DEMUX de 1 a 8 con
+salida invertida, el 74156 que es un DEMUX de 1 a 16 y el 74159 que
+es de 1 a 16 con salida a colector abierto.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
+a continuaci&oacute;n la implementaci&oacute;n de demultiplexores a
+nivel SSI. Para el caso de un demultiplexor de 1 a 2 ser&iacute;a:</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="Demultiplexor1a2.gif" NAME="gr&aacute;ficos16" ALIGN=LEFT WIDTH=285 HEIGHT=175 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+observa que el circuito tiene s&oacute;lo una entrada (representada
+por IN), dos salidas (OUT<SUB>1</SUB> y OUT<SUB>0</SUB>) y el bit de
+direcci&oacute;n (A). El proceso es justo el contrario del
+multiplexor. Para los casos de DEMUX de 1 a 4 y de 1 a 8 tenemos las
+siguientes implementaciones.</FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="Demultiplexor_1a4.gif" NAME="gr&aacute;ficos17" ALIGN=LEFT WIDTH=350 HEIGHT=450 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="Demultiplexor1a8.gif" NAME="gr&aacute;ficos2" ALIGN=LEFT WIDTH=552 HEIGHT=376 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">Si
+lo desean hagan sus tablas de la verdad para que les facilite
+entender el comportamiento de estos circuitos .</FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>APLICACIONES</B></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Resulta
+que algunas veces un circuito dise&ntilde;ado para cierto fin suele
+ser de gran utilidad en la resoluci&oacute;n de problemas que no
+fueron exactamente para el que fueron dise&ntilde;ados. El
+multiplexor es una de esos ejemplos. Una poderos&iacute;sima utilidad
+de los multiplexores est&aacute; en la implementaci&oacute;n de
+funciones l&oacute;gicas.</FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Vamos
+a estudiar algunas posibilidades de implementaci&oacute;n de
+funciones l&oacute;gicas mediante multiplexores. Veamos el siguiente
+ejemplo:</FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>F(<I>x</I>2,
+<I>x</I>1, <I>x</I>0 ) = &sum;(2,5,6)</B></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Sabemos que esta
+funci&oacute;n es uno para los t&eacute;rminos m&iacute;nimos 2, 5 y
+6. Esta funci&oacute;n tiene 3 variables que pueden formar 8
+combinaciones. La forma m&aacute;s sencilla de implementaci&oacute;n,
+que es la que veremos a continuaci&oacute;n, es a trav&eacute;s de un
+multiplexor de 8 a 1. Veamos la tabla de la verdad de la funci&oacute;n
+y la implementaci&oacute;n con el multiplexor:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="EjemploMultiplexor.jpg" NAME="gr&aacute;ficos11" ALIGN=LEFT WIDTH=254 HEIGHT=154 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">Dado
+que se trata de una funci&oacute;n de tres variables, el m&eacute;todo
+acabado de sugerir implica en principio utilizar un multiplexor de 8
+canales (es decir,con 3 entradas de control). Hay que conectar las
+variables x2, x1 y x0 a las entradas de selecci&oacute;n e introducir
+en cada uno de los canales el valor (&quot;0&quot; o &quot;1&quot;)
+que toma la funci&oacute;n para cada combinaci&oacute;n de dichas
+variables. Observe la figura y note que el paso de una a otra es
+inmediato ya que el multiplexor tiene cableada las entradas 2, 5 y 6
+a uno y el resto a cero. De esta forma se garantiza que para las
+combinaciones de las variables X (quien se coloc&oacute; en las
+l&iacute;neas de selecci&oacute;n) para los que se requiere que la
+funci&oacute;n sea uno har&aacute;n f=1.</FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Veamos
+otro ejemplo. F(A,B,C)=&sum;(3,5,6,7). Con un multiplexor de 8
+entradas se ver&iacute;a:</FONT></FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="Multiplexor_Cableado_Logico.jpg" NAME="gr&aacute;ficos14" ALIGN=LEFT WIDTH=200 HEIGHT=236 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Es
+f&aacute;cil de observar el porque de &eacute;sto, as&iacute; que no
+lo analizaremos m&aacute;s. </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Llegados
+a este punto, una pregunta que podemos hacernos es si es posible
+implementar funciones de n variables mediante multiplexores con menos
+de n entradas de control. La respuesta es afirmativa, aunque para
+ello ser&aacute; necesario en general a&ntilde;adir alg&uacute;n
+m&oacute;dulo o conjunto de puertas. <B><U><I>Siempre podremos
+implementar funciones l&oacute;gicas de 2<SUP>n</SUP> combinaciones
+con multiplexores de 2<SUP>n-1</SUP> entradas.</I></U></B> O lo que
+es lo mismo, siempre podremos implementar funciones l&oacute;gicas de
+n variables con un multiplexor de n-1 l&iacute;neas de selecci&oacute;n.
+Veamos el siguiente ejemplo:</FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><B>F(A,B,C)
+= &sum;(1,3,5,6)</B></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Esta
+funci&oacute;n tiene 8 (2<SUP>3</SUP>) posibles combinaciones de
+variables (3 variables) pero debemos implementarlo con un multiplexor
+de s&oacute;lo dos (3-1) entradas de selecci&oacute;n, o sea, un
+multiplexor de 4 (2<SUP>2</SUP>) a 1. Llamemos a la entrada del
+multiplexor I (I<SUB>3 </SUB>I<SUB>2 </SUB>I<SUB>1 </SUB>I<SUB>0</SUB>).
+La tabla de la verdad de la funci&oacute;n F es:</FONT></FONT></P>
+<TABLE WIDTH=197 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=35>
+	<COL WIDTH=38>
+	<COL WIDTH=38>
+	<COL WIDTH=37>
+	<TR VALIGN=TOP>
+		<TD WIDTH=35>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>B</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>C</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>F</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=35>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=35>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=35>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=35>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=35>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=35>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=35>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=35>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Lo
+primero que debemos hacer es decidir como vamos a trabajar con las
+variables. En estos casos s&oacute;lo n-1 de las variables de la
+funci&oacute;n se usar&aacute;n en las l&iacute;neas de selecci&oacute;n
+y la otra restante se usar&aacute; a la entrada del multiplexor. Es
+este caso particular s&oacute;lo dos de las variables pueden ser
+usadas en las l&iacute;neas de selecci&oacute;n. He decidido que
+&eacute;stas ser&aacute;n B y C. Por lo tanto A ser&aacute; usada a
+la entrada del multiplexor. Ok, lo primero que haremos ser&aacute;
+formar una tabla. &Eacute;sta deber&aacute; tener todas las posibles
+entradas del multiplexor como t&iacute;tulos de las columnas y las
+dos posibles combinaciones de la variable que decidimos usar en la
+entrada (en nuestro caso A en sus formas A' [0] y A [1]) como t&iacute;tulos
+de las filas.</FONT></FONT></P>
+<TABLE WIDTH=256 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=36>
+	<COL WIDTH=34>
+	<COL WIDTH=41>
+	<COL WIDTH=40>
+	<COL WIDTH=45>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>0</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>1</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>2</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>3</SUB></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A'</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A
+cada celda de la tabla le corresponder&aacute; un t&eacute;rmino
+m&iacute;nimo. Vemos que cuando A=0 (A'), los t&eacute;rminos de la
+funci&oacute;n van del 0 al 3 y cuando A=1 (A) van de 4 a 7. O sea
+que la tabla deber&aacute; ser llenada con:</FONT></FONT></P>
+<TABLE WIDTH=256 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=36>
+	<COL WIDTH=34>
+	<COL WIDTH=41>
+	<COL WIDTH=40>
+	<COL WIDTH=45>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>0</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>1</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>2</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>3</SUB></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A'</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>m<SUB>0</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>m<SUB>1</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>m<SUB>2</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>m<SUB>3</SUB></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>m<SUB>4</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>m<SUB>5</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>m<SUB>6</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>m<SUB>7</SUB></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Aqu&iacute;
+usted podr&iacute;a s&oacute;lo encerrar en c&iacute;rculos los
+t&eacute;rminos m&iacute;nimos que sean uno en la funci&oacute;n (en
+nuestro caso m<SUB>1</SUB>, m<SUB>3</SUB>, m<SUB>5</SUB> y m<SUB>7</SUB>
+) para procesar la tabla. Yo sencillamente voy a encerrarla con
+par&eacute;ntesis (&uacute;nicamente por comodidad y no tener que
+estar haciendo m&aacute;s gr&aacute;ficos). Tambi&eacute;n suele
+colocarse s&oacute;lo el n&uacute;mero del t&eacute;rmino en vez del
+m<SUB>n</SUB>. Entonces, colocando los &ldquo;c&iacute;rculos&rdquo;
+donde corresponde tenemos:</FONT></FONT></P>
+<TABLE WIDTH=256 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=36>
+	<COL WIDTH=34>
+	<COL WIDTH=41>
+	<COL WIDTH=40>
+	<COL WIDTH=45>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>0</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>1</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>2</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>3</SUB></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A'</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(1)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>2</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(3)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>4</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(5)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(6)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>7</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Aqu&iacute;
+empezamos el an&aacute;lisis. Cuando en una columna de la tabla no
+hay ning&uacute;n termino en c&iacute;rculo como es el caso de la
+primera columna, concluimos que en esa entrada del multiplexor debe
+ir 0 (cero). Cuando en una columna AMBOS t&eacute;rminos aparecen en
+c&iacute;rculo decimos que en esa entrada del multiplexor debemos
+colocar un uno. Cuando en una columna s&oacute;lo UNO de los t&eacute;rminos
+aparece en c&iacute;rculo, decimos que en la entrada correspondiente
+del multiplexor se colocar&aacute; la variable escogida (en nuestro
+caso la A) en la forma que aparezca con c&iacute;rculo que aqu&iacute;
+ser&iacute;a A para la tercera columna y A' para la cuarta columna.
+Regularmente nuestra tabla, luego del an&aacute;lisis, quedar&iacute;a:</FONT></FONT></P>
+<TABLE WIDTH=256 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=36>
+	<COL WIDTH=34>
+	<COL WIDTH=41>
+	<COL WIDTH=40>
+	<COL WIDTH=45>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>0</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>1</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>2</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>3</SUB></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A'</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(1)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>2</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(3)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(5)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(6)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>7</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A'</B></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Por
+lo tanto, nuestra implementaci&oacute;n de la funci&oacute;n F de
+tres variables con un multiplexor de 4 a 1 (con s&oacute;lo dos
+l&iacute;neas de selecci&oacute;n) nos quedar&iacute;a:</FONT></FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="Multiplexor_CombLogicaAvanzada.gif" NAME="gr&aacute;ficos15" ALIGN=LEFT WIDTH=524 HEIGHT=374 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>La
+entrada I<SUB>1</SUB> puede ir directamente conectada a UNO (1 &oacute;
+Vcc) y ahorrarnos ese inversor.</FONT></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Yo
+decid&iacute; poner B y C en las entradas de selecci&oacute;n pero
+podr&iacute;a ir cualquier combinaci&oacute;n de dos variables. Lo
+&uacute;nico que hay que tener en cuenta es que la <B>tabla no lleva
+los t&eacute;rminos m&iacute;nimos organizados de la misma forma.</B>
+Supongamos que queremos poner A y B en las l&iacute;neas de
+direccionamiento, entonces nuestra tabla ser&iacute;a:</FONT></FONT></P>
+<TABLE WIDTH=256 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=36>
+	<COL WIDTH=34>
+	<COL WIDTH=41>
+	<COL WIDTH=40>
+	<COL WIDTH=45>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>0</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>1</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>2</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>3</SUB></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>C'</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>2</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>4</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(6)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>C</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(1)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(3)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(5)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>7</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>C</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>C</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>C</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>C'</B></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Ya
+que C es el bit menos significativo y para las casos donde A y B son
+cero con C' tenemos el cero y con C el uno, Si A=0 y B=1 entonces en
+C' tenemos 2 y en C tres, y as&iacute; sucesivamente. Aqu&iacute; ya
+s&oacute;lo nos quedar&iacute;a implementar el circuito que ser&iacute;a
+colocando A en S<SUB>1</SUB>, B en S<SUB>0</SUB>, C en I<SUB>0</SUB>
+e I<SUB>1</SUB> e I<SUB>2</SUB> y por &uacute;ltimo C' en I<SUB>3</SUB>.
+Haga el esquem&aacute;tico.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Por
+&uacute;ltimo con respecto a este mismo ejemplo, demuestre que si
+quisi&eacute;ramos colocar B en la entrada, la tabla quedar&iacute;a:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<TABLE WIDTH=256 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=36>
+	<COL WIDTH=34>
+	<COL WIDTH=41>
+	<COL WIDTH=40>
+	<COL WIDTH=45>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>0</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>1</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>2</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>3</SUB></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>B'</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(1)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>4</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(5)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>B</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>2</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(3)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(6)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>7</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>B</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>B'</B></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
+dibuje el esquem&aacute;tico.</FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Veamos
+como &uacute;ltimo ejemplo de &eacute;sto la funci&oacute;n
+F(A,B,C,D)=&sum;(0,1,3,4,8,9,15). Suponiendo que queremos cablear A
+en la entrada, nuestra tabla aqu&iacute; ser&iacute;a:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<TABLE WIDTH=455 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=36>
+	<COL WIDTH=34>
+	<COL WIDTH=41>
+	<COL WIDTH=40>
+	<COL WIDTH=38>
+	<COL WIDTH=37>
+	<COL WIDTH=39>
+	<COL WIDTH=38>
+	<COL WIDTH=48>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>0</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>1</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>2</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>3</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>4</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=39>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>5</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>6</SUB></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>I<SUB>7</SUB></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A'</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(0)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(1)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>2</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(3)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(4)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=39>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>5</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>6</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>7</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>A</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(8)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(9)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>10</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>11</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>12</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=39>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>13</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>14</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>(15)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=34>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A'</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=37>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A'</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=39>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=38>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A</B></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Y
+el circuito ser&iacute;a:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="FuncionCon8a1.gif" NAME="gr&aacute;ficos18" ALIGN=LEFT WIDTH=495 HEIGHT=379 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Aqu&iacute; tambi&eacute;n
+podemos eliminar el uso de uno de los inversores y cablear directo a
+0 &oacute; 1 dependiendo del caso. Haga este ejercicio para los casos
+con B, C &oacute; D a la entrada del multiplexor.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>Dise&ntilde;o
+combinacional con demultiplexores.</B></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Este
+tema ser&aacute; visto mejor m&aacute;s adelante con el uso de
+decodificadores pero igual ser&aacute; comentado brevemente aqu&iacute;.
+Al presentar los demultiplexores se comentaba el hecho de que cada
+una de las salidas coincide algebraicamente con un t&eacute;rmino
+m&iacute;nimo diferente de las variables de entrada. Por tanto es
+inmediato sintetizar directamente cualquier funci&oacute;n de n
+variables mediante un <B>demultiplexor con n l&iacute;neas de
+selecci&oacute;n y una puerta OR</B> que agrupe las salidas
+correspondientes a los <B>t&eacute;rminos m&iacute;nimos</B> que
+aparecen en la expresi&oacute;n can&oacute;nica como suma de
+productos de la funci&oacute;n. Veamos por ejemplo la implementaci&oacute;n
+de un generador de un bit de paridad impar para un c&oacute;digo de 3
+bits. Su tabla de verdad ser&iacute;a:</FONT></FONT></P>
+<TABLE WIDTH=233 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=40>
+	<COL WIDTH=46>
+	<COL WIDTH=50>
+	<COL WIDTH=48>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>B</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=50>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>C</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>f</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=50>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=50>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=50>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=50>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=50>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=50>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=50>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=50>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=48>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>No
+hacemos mapa de Karnaugh ya que simplificar la funci&oacute;n no es
+requerido en este tipo de ejercicios debido a que la implementaci&oacute;n
+ser&aacute; hecha a nivel MSI y lo &uacute;nico que nos interesa
+realmente es que t&eacute;rminos m&iacute;nimos conforman la funci&oacute;n.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>De
+la tabla de la verdad anterior podemos concluir que la implementaci&oacute;n
+de esa funci&oacute;n l&oacute;gica a trav&eacute;s de un
+demultiplexor ser&iacute;a:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="DemultiplexorAplicacion.jpg" NAME="gr&aacute;ficos20" ALIGN=LEFT WIDTH=153 HEIGHT=111 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">La
+entrada E' es el bit de habilitaci&oacute;n del IC.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>EJERCICIOS</B></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Implemente
+	un multiplexor de 8 bits de entrada (dos nibbles indicando dos datos
+	diferentes) y dos de salida (uno de cada nibble) mediante
+	multiplexores de 2 a 1.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Implemente
+	un multiplexor con dos n&uacute;meros binarios de 3 bits <FONT COLOR="#000000">(<B>X<SUB>2</SUB></B>,
+	<B>X<SUB>1</SUB></B>, <B>X<SUB>0</SUB></B> y <B>Y<SUB>2</SUB></B>,
+	<B>Y<SUB>1</SUB></B>, <B>Y<SUB>0</SUB></B>)</FONT><FONT COLOR="#0000ff">
+	</FONT>como entrada que transmita una u otra a la salida Z (<FONT COLOR="#000000"><B>Z<SUB>2</SUB></B>,
+	<B>Z<SUB>1</SUB></B> y <B>Z<SUB>0</SUB></B></FONT>) con la ayuda de
+	una &uacute;nica l&iacute;nea de selecci&oacute;n usando
+	multiplexores de 2 a 1.</FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Implemente
+	la siguiente funci&oacute;n con multiplexores 8 a 1 y 4 a 1:
+	F(A,B,C)=&sum;(0,1,4,7). En el caso de 4 a 1, h&aacute;galo de las
+	tres formas posibles (Con A, B &oacute; C a la entrada del
+	multiplexor).</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Implemente
+	las siguientes funciones con multiplexores de forma &oacute;ptima
+	(para funciones N variables use multiplexores de N-1 l&iacute;neas
+	de selecci&oacute;n):</FONT></FONT></P>
+</OL>
+<UL>
+	<BLOCKQUOTE STYLE="margin-bottom: 0cm; line-height: 150%; text-align: left">
+	<FONT COLOR="#000000"><FONT FACE="Arial">F(A,</FONT> <FONT FACE="Arial">B,</FONT>
+	<FONT FACE="Arial">C,</FONT> <FONT FACE="Arial">D) =
+	&sum;(0,4,6,10,11,13)</FONT></FONT></BLOCKQUOTE>
+	<BLOCKQUOTE STYLE="margin-bottom: 0cm; line-height: 150%; text-align: left">
+	<FONT COLOR="#000000"><FONT FACE="Arial">F(w,</FONT> <FONT FACE="Arial">x,</FONT>
+	<FONT FACE="Arial">y,</FONT> <FONT FACE="Arial">z) =
+	&sum;(3,4,5,7,11,12,14,15)</FONT></FONT></BLOCKQUOTE>
+	<BLOCKQUOTE STYLE="margin-bottom: 0cm; line-height: 150%; text-align: left">
+	<FONT COLOR="#000000"><FONT FACE="Arial">F(a,</FONT> <FONT FACE="Arial">b,</FONT>
+	<FONT FACE="Arial">c,</FONT> <FONT FACE="Arial">d) = &sum;(3,5,7,11,15)</FONT></FONT></BLOCKQUOTE>
+	<BLOCKQUOTE STYLE="margin-bottom: 0cm; line-height: 150%; text-align: left">
+	<FONT COLOR="#000000"><FONT FACE="Arial">F(A,</FONT> <FONT FACE="Arial">B,</FONT>
+	<FONT FACE="Arial">C,</FONT> <FONT FACE="Arial">D, E) =
+	&sum;(0,1,2,8,9,11,15-19,24,25,29-31)</FONT></FONT></BLOCKQUOTE>
+	<BLOCKQUOTE STYLE="margin-bottom: 0cm; line-height: 150%; text-align: left">
+	<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><FONT FACE="Arial">F(A,</FONT>
+	<FONT FACE="Arial">B,</FONT> <FONT FACE="Arial">C,</FONT> <FONT FACE="Arial">D,
+	E, F) = &sum;(0,2,4,5,7,8,16,18,24,32,36,40,48,56)</FONT></FONT></FONT></FONT></BLOCKQUOTE>
+</UL>
+<OL START=5>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Un
+	n&uacute;mero primo</FONT> <FONT FACE="Lucida Sans, sans-serif">es
+	aquel que s&oacute;lo es divisible entre si mismo y la unidad.
+	Dise&ntilde;e</FONT> <FONT FACE="Lucida Sans, sans-serif">un
+	circuito l&oacute;gico que detecte todos los n&uacute;meros primos
+	entre 0 y 31. La salida <B>F(A, B, C, D, E)</B>, donde <B>A</B></FONT>
+	<FONT FACE="Lucida Sans, sans-serif">es la variable de mayor peso
+	binario, ser&aacute; igual a <B>1</B>, si y s&oacute;lo si, los
+	cinco bits de la entrada representan un n&uacute;mero primo. Realice
+	el circuito &oacute;ptimo utilizando un multiplexor.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Dise&ntilde;e
+	un circuito que convierta de BCD a exceso a 3 con multiplexores.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Dise&ntilde;e
+	un circuito que convierta de BCD a 84-2-1 con multiplexores.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">El
+	cerebro humano est&aacute; hecho de c&eacute;lulas especializadas
+	llamadas</FONT><FONT COLOR="#0000ff"> </FONT><FONT COLOR="#000000"><B>neuronas</B>.
+	Cada neurona</FONT></FONT><FONT COLOR="#000000"> <FONT FACE="Lucida Sans, sans-serif">tiene
+	<B>sinapsis</B></FONT> <FONT FACE="Lucida Sans, sans-serif">(que son
+	los puntos de conexi&oacute;n entre ellas<I>)</I></FONT> <FONT FACE="Lucida Sans, sans-serif">y
+	&eacute;stas pueden ser de excitaci&oacute;n y de inhibici&oacute;n
+	(VER NOTA ANEXA *). Una neurona</FONT> <FONT FACE="Lucida Sans, sans-serif">produce
+	una salida </FONT></FONT><FONT FACE="Lucida Sans, sans-serif"><B>f=1</B></FONT><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">si el n&uacute;mero de sinapsis
+	de excitaci&oacute;n</FONT> <FONT FACE="Lucida Sans, sans-serif">con
+	pulsos <B>1</B></FONT> <FONT FACE="Lucida Sans, sans-serif">excede
+	el n&uacute;mero de sinapsis de inhibici&oacute;n</FONT> <FONT FACE="Lucida Sans, sans-serif">con
+	pulsos <B>1</B></FONT> <FONT FACE="Lucida Sans, sans-serif">por al
+	menos, llam&eacute;mosle, el valor de umbral</FONT> <FONT FACE="Lucida Sans, sans-serif">(o
+	sea, al menos 1) de la neurona. Dicho lo anterior, determine</FONT>
+	<FONT FACE="Lucida Sans, sans-serif">la funci&oacute;n booleana f</FONT></FONT>(<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">a,</FONT>
+	<FONT FACE="Lucida Sans, sans-serif">b,</FONT> <FONT FACE="Lucida Sans, sans-serif">c,</FONT>
+	<FONT FACE="Lucida Sans, sans-serif">d,</FONT> <FONT FACE="Lucida Sans, sans-serif">e)
+	de emisi&oacute;n de pulsos a trav&eacute;s del canal de salida f
+	(<I>ax&oacute;n</I>) en el modelo de la figura de abajo y realice el
+	circuito &oacute;ptimo con un multiplexor.</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="EjercicioNeurona.gif" NAME="gr&aacute;ficos19" ALIGN=LEFT WIDTH=537 HEIGHT=413 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=5><B>NOTA
+(*): </B></FONT></FONT>
+</P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>La
+	actividad de nuestro cerebro resulta de un balance entre la
+	excitaci&oacute;n y la inhibici&oacute;n. La excitaci&oacute;n
+	involucra principalmente al Glutamato, que es el neurotransmisor
+	excitatorio por excelencia mientras la inhibici&oacute;n es causada
+	en su mayor&iacute;a por el neurotransmisor GABA. En la Sinapsis las
+	mol&eacute;culas transmisoras act&uacute;an sobre receptores
+	situados en la membrana postsin&aacute;ptica, con lo cual se altera
+	la permeabilidad para los iones de dicha membrana. En el caso del
+	glutamato despolariza (excitaci&oacute;n) la membrana postsin&aacute;ptica
+	por un incremento en la permeabilidad a cationes como el Na+ y Ca2+.
+	Por el contrario, GABA hiperpolariza la membrana postsin&aacute;ptica
+	(inhibici&oacute;n) producto del incremento en la permeabilidad al
+	Cl-. Al nivel neuronal, la excitaci&oacute;n permite la propagaci&oacute;n
+	de la se&ntilde;al bioel&eacute;ctrica mientras que la inhibici&oacute;n
+	evita dicha propagaci&oacute;n. </FONT></FONT>
+	</P>
+</UL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">En
+la pr&oacute;xima clase se ver&aacute; el TEMA 10: </FONT></FONT></SPAN><A HREF="http://lasclases.com/CircuitosLogicos/tema10.html"><FONT FACE="Lucida Sans, sans-serif">Decodificadores
+y codificadores nivel SSI y MSI. Aplicaciones.</FONT></A></P>
+</BODY>
+</HTML>

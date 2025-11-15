@@ -1,0 +1,1012 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>TEMA 5</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.1  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20070113;17444600">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20070302;15211535">
+</HEAD>
+<BODY LANG="es-VE" DIR="LTR">
+<H1 ALIGN=CENTER><FONT COLOR="#0000ff"><U><B>TEMA 5: CONDICIONES
+IRRELEVANTES (DON'T CARE).</B></U></FONT></H1>
+<P><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Hasta
+ahora siempre hemos visto en nuestras tablas de la verdad los casos
+para cuando una combinaci&oacute;n cualquiera en las entradas hacen
+nuestra salida del circuito cierta (un 1), y sol&iacute;amos asumir
+que el resto de ellas eran falsas (cero). &Eacute;sto no es siempre
+cierto. Al momento de dise&ntilde;ar nuestros circuitos se nos pueden
+presentar casos en los que una combinaci&oacute;n en la entrada no
+sea de nuestro inter&eacute;s. Estas condiciones que no nos importan
+se conocen como &ldquo;condiciones irrelevantes&rdquo; o tambi&eacute;n
+con la frase inglesa &ldquo;don't care&rdquo;. Estas condiciones
+suelen expresarse en las tablas de la verdad con una 'X' y al momento
+de realizar la simplificaci&oacute;n de la funci&oacute;n podemos
+asumir que este valor es uno o cero seg&uacute;n m&aacute;s nos
+convenga (lo que haga la expresi&oacute;n a&uacute;n m&aacute;s
+reducida). Incluso podemos sencillamente ignorar este valor si no
+obtenemos ning&uacute;n beneficio de &eacute;l. Pero me imagino que
+se preguntar&aacute;n, &iquest;C&oacute;mo es eso de una combinaci&oacute;n
+en la entrada que no nos importa? Bien, un ejemplo cl&aacute;sico es
+que al circuito se le entregue para procesar un n&uacute;mero en BCD.
+Ya sabemos que el c&oacute;digo BCD usa 4 bits para expresar los 10
+d&iacute;gitos decimales pero de esta forma sobran otras seis
+combinaciones que no se usan (1010, 1011, 1100, 1101, 1110 y 1111).
+Pues bien, si nuestro circuito procesar&aacute; este n&uacute;mero en
+BCD, en nuestra tabla de la verdad tendr&iacute;amos seis casos que
+no nos importan ya que sencillamente nunca ocurrir&aacute;n.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
+un ejemplo tambi&eacute;n cl&aacute;sico para ejemplificar &eacute;sto.
+Supongamos que se pide dise&ntilde;ar un circuito que debe reconocer
+cuando un n&uacute;mero entre 1 y 9 es primo. Para este caso
+tendr&iacute;amos una tabla de la verdad como la que sigue:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=342 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=41>
+		<COL WIDTH=43>
+		<COL WIDTH=46>
+		<COL WIDTH=45>
+		<COL WIDTH=107>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>A</B></FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>B</B></FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>C</B></FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>D</B></FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>Out</B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+observa que en la entrada que representar&iacute;a el valor decimal 0
+se coloca X ya que este caso no est&aacute; dentro de los presentados
+en el enunciado (entre 1 y 9). De forma an&aacute;loga, los casos del
+10 al 15 tienen X por la misma raz&oacute;n. En ciertas bibliograf&iacute;as
+muestra la expresi&oacute;n:</FONT></P>
+<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>d(A,B,C,D)
+=&sum; (0,10,11,12,13,14,15)</B></FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">para
+representar los casos que no importan (letra &ldquo;d&rdquo; por
+don't care). </FONT>
+</P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Bien,
+ahora, veamos como se ver&iacute;a un mapa derivado de esta tabla de
+la verdad:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=332 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=65>
+		<COL WIDTH=51>
+		<COL WIDTH=51>
+		<COL WIDTH=54>
+		<COL WIDTH=51>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>CD\AB</B></FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">00</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">01</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">11</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">10</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif">00</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif">01</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif">11</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif">10</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ok.
+Vemos que la mejor forma de considerar los casos irrelevantes es
+haciendo que donde va m<SUB>0</SUB>, m<SUB>12</SUB>, y m<SUB>14</SUB>
+haya cero y en el resto un uno. As&iacute; podremos hacer el menor
+n&uacute;mero de grupos y a la vez los hacemos lo m&aacute;s grandes
+posibles, tal y como vemos en el siguiente mapa:</FONT></P>
+<P STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="tema5_html_576a60ce.jpg" NAME="gr&aacute;ficos1" ALIGN=LEFT WIDTH=216 HEIGHT=216 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P STYLE="margin-bottom: 0cm; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">As&iacute; obtendr&iacute;amos
+la funci&oacute;n de salida:</FONT></P>
+<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>F
+= BD + B'C</B></FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
+otro ejemplo. Sabiendo que su circuito recibir&aacute; una entrada
+BCD, el mismo debe determinar cuando el n&uacute;mero de entrada es
+par. (Aunque seg&uacute;n para algunos lo que dir&eacute; a
+continuaci&oacute;n no es cierto, asuma para este ejemplo que que el
+cero es par).</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=342 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=41>
+		<COL WIDTH=43>
+		<COL WIDTH=46>
+		<COL WIDTH=45>
+		<COL WIDTH=107>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>A</B></FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>B</B></FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>C</B></FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>D</B></FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>Par</B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=43>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=45>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=107>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">De
+esa tabla de la verdad podemos concluir el siguiente mapa:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=332 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=65>
+		<COL WIDTH=51>
+		<COL WIDTH=51>
+		<COL WIDTH=54>
+		<COL WIDTH=51>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>CD\AB</B></FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">00</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">01</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">11</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">10</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif">00</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif">01</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif">11</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=65>
+				<P><FONT FACE="Lucida Sans, sans-serif">10</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=54>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+			<TD WIDTH=51>
+				<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+hace bastante f&aacute;cil de ver que la mejor forma de agrupar es:</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="tema5_html_73797e8d.jpg" NAME="gr&aacute;ficos2" ALIGN=LEFT WIDTH=216 HEIGHT=216 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">que
+se resume como: Par = D', conclusi&oacute;n bastante obvia seg&uacute;n
+la tabla de la verdad donde se ve que para los casos que importan, la
+salida es igual al bit menos significativo negado (siempre que D=1 la
+divisi&oacute;n entre dos dar&iacute;a resto de 1).</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Si
+lo desean, para practicar, tome los ejemplos y ejercicios del
+cap&iacute;tulo pasado y reemplacen algunos ceros por X a su antojo y
+vean los diferentes resultados que pueden obtener.</FONT></P>
+<P STYLE="line-height: 150%; text-decoration: none"><FONT COLOR="#00ae00"><FONT SIZE=5><I><B>UNIVERSALIDAD
+DE LAS COMPUERTAS NAND Y NOR</B></I></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: medium; line-height: 150%; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Las
+compuertas NAND y NOR son llamadas universales debido a que a trav&eacute;s
+de la combinaci&oacute;n de &eacute;stas pueden obtenerse las AND, OR
+y NOT. &Eacute;sto quiere decir que cualquier circuito puede
+implementarse (si bien es cierto que no necesariamente de forma m&aacute;s
+eficiente) con s&oacute;lo compuertas de alguno de esos tipos. Una
+compuerta NAND no es mas que una AND con una NOT a la salida.
+An&aacute;logamente, una compuerta NOR es una OR con una NOT en la
+salida.</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: medium; line-height: 150%; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Voy
+a aprovechar unos gr&aacute;ficos que consegu&iacute; en Internet
+para mostrar como pueden combinarse las NAND y las NOR para crear los
+distintos tipos de compuertas que usamos en nuestras funciones
+booleanas y tambi&eacute;n para mostrar como se expresan gr&aacute;ficamente
+esas compuertas.</FONT></FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD WIDTH=33%>
+			<P ALIGN=CENTER STYLE="border: none; padding: 0cm"><STRONG><FONT FACE="Arial"><FONT COLOR="#38608e">FORMA
+			NORMAL</FONT></FONT></STRONG></P>
+		</TD>
+		<TD WIDTH=33%>
+			<P ALIGN=CENTER STYLE="border: none; padding: 0cm"><STRONG><FONT FACE="Arial"><FONT COLOR="#38608e">NAND</FONT></FONT></STRONG></P>
+		</TD>
+		<TD WIDTH=34%>
+			<P ALIGN=CENTER STYLE="border: none; padding: 0cm"><STRONG><FONT FACE="Arial"><FONT COLOR="#38608e">NOR</FONT></FONT></STRONG></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33%>
+			<P ALIGN=CENTER STYLE="border: none; padding: 0cm"><IMG SRC="NOT.gif" NAME="gr&aacute;ficos3" ALT="notamarillo.gif (1376 bytes)" ALIGN=BOTTOM WIDTH=161 HEIGHT=73 BORDER=0></P>
+		</TD>
+		<TD WIDTH=33%>
+			<P STYLE="border: none; padding: 0cm"><IMG SRC="NAND_NOT.gif" NAME="gr&aacute;ficos4" ALT="notnand.gif (1372 bytes)" ALIGN=BOTTOM WIDTH=267 HEIGHT=53 BORDER=0></P>
+		</TD>
+		<TD WIDTH=34%>
+			<P STYLE="border: none; padding: 0cm"><IMG SRC="NOR_NOT.gif" NAME="gr&aacute;ficos5" ALT="notnor.gif (1379 bytes)" ALIGN=BOTTOM WIDTH=270 HEIGHT=55 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33%>
+			<P ALIGN=CENTER STYLE="border: none; padding: 0cm"><IMG SRC="AND.gif" NAME="gr&aacute;ficos6" ALT="andamarillo.gif (1405 bytes)" ALIGN=BOTTOM WIDTH=161 HEIGHT=73 BORDER=0></P>
+		</TD>
+		<TD WIDTH=33%>
+			<P STYLE="border: none; padding: 0cm"><IMG SRC="NAND_AND.gif" NAME="gr&aacute;ficos7" ALT="andnand.gif (1629 bytes)" ALIGN=BOTTOM WIDTH=267 HEIGHT=85 BORDER=0></P>
+		</TD>
+		<TD WIDTH=34%>
+			<P STYLE="border: none; padding: 0cm"><IMG SRC="NOR_AND.gif" NAME="gr&aacute;ficos8" ALT="andnor.gif (1945 bytes)" ALIGN=BOTTOM WIDTH=270 HEIGHT=111 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33%>
+			<P ALIGN=CENTER STYLE="border: none; padding: 0cm"><IMG SRC="OR.gif" NAME="gr&aacute;ficos9" ALT="oramarillo.gif (1388 bytes)" ALIGN=BOTTOM WIDTH=161 HEIGHT=73 BORDER=0></P>
+		</TD>
+		<TD WIDTH=33%>
+			<P STYLE="border: none; padding: 0cm"><IMG SRC="NAND_OR.gif" NAME="gr&aacute;ficos10" ALT="ornand.gif (1961 bytes)" ALIGN=BOTTOM WIDTH=267 HEIGHT=116 BORDER=0></P>
+		</TD>
+		<TD WIDTH=34%>
+			<P STYLE="border: none; padding: 0cm"><IMG SRC="NOR_OR.gif" NAME="gr&aacute;ficos11" ALT="ornor.gif (1628 bytes)" ALIGN=BOTTOM WIDTH=270 HEIGHT=82 BORDER=0></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">OJO:
+Recuerden que colocar una raya sobre la variable indica que &eacute;sta
+est&aacute; negada, como si pusi&eacute;ramos el tilde (').</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">NOTA:
+Existen otras compuertas que tienen las mismas funcionalidades que
+las NAND y las NOR. Para el caso de las NAND tenemos la compuerta OR
+con todas sus entradas negadas (el s&iacute;mbolo es el mismo de la
+or pero con un c&iacute;rculo en cada entrada indicando que son
+negadas). Claro, sabemos por Morgan que A'+B' = (AB)'. De forma
+an&aacute;loga, la compuerta NOR puede verse como una compuerta AND
+con todas sus entradas negadas (el s&iacute;mbolo es una AND con
+c&iacute;rculos en todas sus entradas.).</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Se
+ve que la &uacute;nica diferencia entre una NAND y una AND y entre
+una OR y una NOR es el c&iacute;rculo que se encuentra en el lado de
+la salida de la compuerta. Los casos m&aacute;s interesantes son para
+la construcci&oacute;n de una AND con NOR y de una OR con NAND en los
+que se ve la aplicaci&oacute;n del teorema de Morgan.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">En
+realidad, al menos en los circuitos integrados, los circuitos se
+construyen con mucha m&aacute;s frecuencia con compuertas NAND y NOR
+que con las AND, OR y NOT. Esto es debido a que esas compuertas son
+mucho m&aacute;s f&aacute;ciles de construir y requieren de la
+integraci&oacute;n de menos transistores.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Entonces,
+todo circuito puede ser llevado a formas estructuradas por puras
+compuertas NOR o puras compuertas NAND.  Si se quiere implementar con
+compuertas NAND se lleva la funci&oacute;n a una forma de suma de
+productos y se niega dos veces ya que sabemos, por el principio de
+involuci&oacute;n, que as&iacute; obtenemos la misma funci&oacute;n
+original. Al momento de negar hacemos uso del Teorema de Morgan . Si
+en cambio se quiere ver con compuertas NOR debe llevarse a una forma
+de producto de sumas y negar dos veces.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ejemplos:
+Implementar F = AB + CD + E con compuertas NAND.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">F =
+[(AB+CD+E)']' = [(AB)'.(CD)'.E']'</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">que
+es una implementaci&oacute;n con 5 compuertas NAND. El gr&aacute;fico
+se hizo en clase. No lo coloco aqu&iacute; por falta de tiempo para
+hacerlo.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
+que pasa si se pide implementar con NOR. Tenemos F = (A+B)(C+D)E, que
+se ve que ya est&aacute; en forma de producto de t&eacute;rminos
+sumas. De hecho, esta funci&oacute;n es la dual de la anterior. Al
+aplicar involuci&oacute;n obtenemos: F = [(A+B)'+(C+D)'+E']'. Ver la
+clase para el diagrama del mismo.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Estos
+dos ejemplos tienen s&oacute;lo dos niveles de ejecuci&oacute;n. Las
+entradas van a una compuerta y las salidas de &eacute;stas van a su
+vez a la entrada de otra. Si la salida del segundo nivel fuese a otra
+compuerta, entonces se dir&iacute;a que tiene tres niveles de
+ejecuci&oacute;n.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">NOTA:
+Esto ya es de clases pasadas, pero recuerden que si les digo que
+F(A,B,C)=<FONT FACE="Tahoma, sans-serif">&sum;</FONT>(0,6), F' ser&aacute;
+la suma de los t&eacute;rminos m&iacute;nimos que son cero en la
+tabla de la verdad o en el mapa de K.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><SPAN LANG="es-MX"><FONT SIZE=1><FONT FACE="Arial"><FONT SIZE=3><FONT FACE="Lucida Sans, sans-serif">Para
+la pr&oacute;xima clase veremos el </FONT></FONT><A HREF="tema6.html"><FONT SIZE=3><FONT FACE="Lucida Sans, sans-serif">tema
+6: </FONT></FONT></A></FONT></FONT></SPAN><A HREF="tema6.html"><FONT FACE="Lucida Sans, sans-serif">Simplificaci&oacute;n
+de funciones por el m&eacute;todo de Quine-Mc Cluskey. Dispositivos
+l&oacute;gicos programables combinacionales<FONT SIZE=5>.</FONT></FONT></A></P>
+</BODY>
+</HTML>

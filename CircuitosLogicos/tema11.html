@@ -1,0 +1,787 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>TEMA 11: DISPLAY DE 7 SEGMENTOS, CIRCUITO MANEJADOR DE DISPLAY</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.1  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20070113;17444600">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20070323;22110315">
+</HEAD>
+<BODY LANG="es-VE" DIR="LTR">
+<H1 ALIGN=CENTER><B><U><FONT COLOR="#0000ff">TEMA 11: DISPLAY DE 7
+SEGMENTOS, CIRCUITO MANEJADOR DE DISPLAY</FONT></U></B></H1>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">El
+&ldquo;<B>display de 7 segmentos</B>&rdquo; es un dispositivo usado
+para presentar informaci&oacute;n de forma visual. Esta informaci&oacute;n
+es espec&iacute;ficamente un d&iacute;gito decimal del 0 (cero) al 9
+(nueve), por lo que se intuye que que el c&oacute;digo BCD est&aacute;
+involucrado. El caso que nos ata&ntilde;e consta de 7 LED's (Light
+Emisor Diode), uno por cada segmento, que se encender&aacute;n o
+apagar&aacute;n dependiendo de la informaci&oacute;n que se les env&iacute;e
+(dije que en este caso ya que existen tambi&eacute;n display 7
+segmentos de cristal l&iacute;quido, incandescentes, etc.). </FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">El
+display 7 segmentos tiene una estructura similar a:</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="Display7Segmentos.GIF" NAME="gr&aacute;ficos1" ALIGN=LEFT WIDTH=224 HEIGHT=225 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">donde
+los 7 led's vienen indicados por las letras a, b, c, d, e, f y g. Con
+&eacute;stos pueden formarse todos los d&iacute;gitos decimales. Por
+ejemplo, para formar el n&uacute;mero tres deben activarse los led's
+a, b, c, d y g y desactivar los e y f. Para el uno se usan los led's
+b y c (ojo, esta es la combinaci&oacute;n correcta no e y f). De
+forma an&aacute;loga se procede para el resto de los casos. Veamos
+como queda:</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="numerosCon7seg.JPG" NAME="gr&aacute;ficos2" ALIGN=LEFT WIDTH=754 HEIGHT=294 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Estos
+dispositivos pueden ser de tipo &ldquo;&Aacute;nodo Com&uacute;n&rdquo;</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="7SegAnodoComun.GIF" NAME="gr&aacute;ficos5" ALIGN=LEFT WIDTH=281 HEIGHT=225 BORDER=0><BR CLEAR=LEFT>
+<FONT FACE="Lucida Sans, sans-serif">o &ldquo;C&aacute;todo Com&uacute;n&rdquo;</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="7SegCatodoComun.GIF" NAME="gr&aacute;ficos6" ALIGN=LEFT WIDTH=276 HEIGHT=225 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">En
+el caso de los display de  &aacute;nodo com&uacute;n todos los &aacute;nodos
+(+) de los led's comparten la conexi&oacute;n. Estos display
+requieren un cero (una tierra) a la entrada de cada segmento para
+encenderlo. En el caso de los display de  c&aacute;todo com&uacute;n
+todos los c&aacute;todos (-) de los led's comparten la conexi&oacute;n.
+Estos display requieren un uno (Vcc) a la entrada de cada segmento
+para encenderse. Todas las conexiones deben ser hechas a trav&eacute;s
+de una resistencia para regular la cantidad de corriente que pasa a
+trav&eacute;s de los led's.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Existen
+casos donde aparece un octavo segmento que suele usarse como punto
+decimal (ver el DP):</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="8segmentos.png" NAME="gr&aacute;ficos3" ALIGN=LEFT WIDTH=344 HEIGHT=299 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">En
+la figura pueden verse tambi&eacute;n una de las configuraciones de
+pines m&aacute;s popular que contienen los display 7 segmentos y lo
+que representan. Los pines 3 y 8 son el &aacute;nodo com&uacute;n &oacute;
+el c&aacute;todo com&uacute;n (dependiendo de cual sea el caso del 7
+segmentos elegido) y aunque regularmente es indiferente cual de ellos
+conecten existen casos de modelos de displays en los que, por sus
+especificaciones, se requieren ambos conectados (o tambi&eacute;n
+quiz&aacute; porque requieran cumplir alguna condici&oacute;n de
+manejo de corriente en su circuito). El encapsulado de este mismo
+display luce algo como:</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="8segmentosEncapsulado.png" NAME="gr&aacute;ficos4" ALIGN=LEFT WIDTH=295 HEIGHT=261 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">para
+la versi&oacute;n que contiene s&oacute;lo un d&iacute;gito pero
+existen algunas para m&aacute;s d&iacute;gitos como por ejemplo el de
+dos d&iacute;gitos que es bastante usado o los de X d&iacute;gitos y
+medio donde el medio viene dado por el hecho de que &eacute;l s&oacute;lo
+puede representar el n&uacute;mero uno (tiene &uacute;nicamente dos
+segmentos).</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Existen
+circuitos integrados a nivel MSI que pueden realizar la tarea de
+manejar estos displays. Estos IC's son decodificadores,
+espec&iacute;ficamente los conocidos como decodificadores de BCD a 7
+segmentos, como son los casos de los IC 7446, 7447 y 7448 de la
+familia TTL. El 7446 y 7447 tienen salidas con l&oacute;gica negativa
+por lo que enviar&aacute;n un cero al segmento que se desea encender.
+Esto quiere decir que manejan Displays 7 segmentos de &aacute;nodo
+com&uacute;n. Ambos son Open Collector (bueno para el manejo de
+corriente necesario en algunos casos) y se diferencian &uacute;nicamente
+en la salida que pueden manejar (30v para el 7446 y 15v para el
+7447). Nuestros circuitos generalmente estar&aacute;n construidos con
+tecnolog&iacute;a TTL a 5V y por ello lo m&aacute;s seguro es que
+empleemos el 7447. En el caso del 7448 las salidas son de l&oacute;gica
+positiva por lo que son usados con los dispositivos c&aacute;todo
+com&uacute;n. Todos comparten una caracter&iacute;stica: esperan a la
+entrada un n&uacute;mero en BCD y es para cada una de ellas que
+desplegar&aacute;n el d&iacute;gito decimal correspondiente. Pero a&uacute;n
+as&iacute;, estos IC tienen respuestas para otras combinaciones a la
+entrada distintas de BCD. En el siguiente dibujo se muestran las
+salidas reflejadas en los display de 7 segmentos para todas las
+combinaciones binarias de 4 bits posibles:</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="7segPosibilidades.JPG" NAME="gr&aacute;ficos7" ALIGN=LEFT WIDTH=639 HEIGHT=225 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">Aparte
+de los d&iacute;gitos decimales, se ven las salidas para cuando el
+decodificador tiene entrada de 1010, 1011, 1100, 1101, 1110 y 1111.
+Este &uacute;ltimo caso apaga todos los segmentos y por ello no se ve
+nada.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A
+continuaci&oacute;n se muestra una implementaci&oacute;n t&iacute;pica
+usada para la prueba de los dislay de 7 segmentos:</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="7segCircuitoTest.JPG" NAME="gr&aacute;ficos8" ALIGN=LEFT WIDTH=560 HEIGHT=445 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">El
+display mostrar&aacute; el d&iacute;gito decimal que corresponda con
+el n&uacute;mero binario seleccionado por los interruptores 1, 2, 3 y
+4 del dip switch. En esta configuraci&oacute;n se ve que las
+resistencias delimitadoras de corriente se colocan en el &aacute;nodo
+ com&uacute;n (sabemos que son &aacute;nodo com&uacute;n por el uso
+del 7447) pero dependiendo de la implementaci&oacute;n, e incluso a
+veces del display, en algunos casos pueden requerirse el uso de una
+resistencia por cada segmento y la conexi&oacute;n directa de los
+&aacute;nodos a Vcc.</FONT></P>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A
+continuaci&oacute;n veremos la implementaci&oacute;n de un circuito
+decodificador de BCD a 7 segmentos usando tecnolog&iacute;a SSI.
+Hallaremos s&oacute;lo las funciones y no haremos el esquem&aacute;tico
+debido a lo grande del mismo. Asumiremos que la entada ser&aacute;
+&uacute;nica y exclusivamente un n&uacute;mero BCD v&aacute;lido por
+lo que el resto de los casos no nos interesan (dont care). Asumiremos
+tambi&eacute;n que nuestro circuito ser&aacute; destinado a un
+display de c&aacute;todo com&uacute;n (por lo que tendr&aacute;
+salida con l&oacute;gica positiva). Para ello empecemos con la tabla
+de la verdad. Sabiendo que la entrada ser&aacute; I (formada por
+I<SUB>3</SUB>I<SUB>2</SUB>I<SUB>1</SUB>I<SUB>0</SUB>) y las salidas
+ser&aacute;n los siete segmentos posibles a, b, c, d, e, f y g (como
+ya se ha mostrado), tenemos que:</FONT></P>
+<TABLE WIDTH=328 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=11>
+	<COL WIDTH=12>
+	<COL WIDTH=12>
+	<COL WIDTH=12>
+	<COL WIDTH=23>
+	<COL WIDTH=19>
+	<COL WIDTH=19>
+	<COL WIDTH=24>
+	<COL WIDTH=25>
+	<COL WIDTH=22>
+	<COL WIDTH=24>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>I<SUB>3</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>I<SUB>2</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>I<SUB>1</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>I<SUB>0</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>a</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>b</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>c</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>d</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>e</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>f</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>g</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=11>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=12>
+			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+		</TD>
+		<TD WIDTH=23>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=19>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=25>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=22>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="Lucida Sans, sans-serif">X</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ahora
+bien. En este caso tenemos 7 funciones de salida que llamaremos a(I),
+b(I), c(I), d(I), e(I), f(I) y g(I). &Eacute;stas vienen dadas por:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">a(I)=&sum;(0,2,3,5,7,8,9)+d(10,11,12,13,14,15)</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">b(I)=&sum;(0,1,2,3,4,7,8,9)+d(10,11,12,13,14,15)</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">c(I)=&sum;(0,1,3,4,5,6,7,8,9)+d(10,11,12,13,14,15)</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">d(I)=&sum;(0,2,3,5,6,8)+d(10,11,12,13,14,15)</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">e(I)=&sum;(0,2,6,8)+d(10,11,12,13,14,15)</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">f(I)=&sum;(0,4,5,6,8,9)+d(10,11,12,13,14,15)</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">g(I)=&sum;(2,3,4,5,6,8,9)+d(10,11,12,13,14,15)</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">que
+luego de hacer las respectivas simplificaciones por mapas de Karnaugh
+nos queda:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>a
+= I<SUB>3 </SUB>+ I<SUB>2</SUB>I<SUB>0</SUB> + I<SUB>2</SUB>'I<SUB>0</SUB>'
++ I<SUB>2</SUB>'I<SUB>1</SUB></B></FONT></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>b
+= I<SUB>1</SUB>I<SUB>0</SUB> + I<SUB>1</SUB>'I<SUB>0</SUB>' + I<SUB>2</SUB>'</B></FONT></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>c
+= I<SUB>0</SUB> + I<SUB>2 </SUB>+ I<SUB>1</SUB>'</B></FONT></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>d
+= I<SUB>1</SUB>I<SUB>0</SUB>' + I<SUB>2</SUB>'I<SUB>1</SUB> + I<SUB>2</SUB>I<SUB>1</SUB>'I<SUB>0</SUB>
++ I<SUB>2</SUB>'I<SUB>0</SUB>'</B></FONT></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>e
+= I<SUB>1</SUB>I<SUB>0</SUB>' + I<SUB>2</SUB>'I<SUB>0</SUB>'</B></FONT></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>f
+= I<SUB>3 </SUB>+ I<SUB>2</SUB>I<SUB>0</SUB>' + I<SUB>2 </SUB>I<SUB>1</SUB>'
++ I<SUB>1</SUB>'I<SUB>0</SUB>'</B></FONT></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=4><B>g
+= I<SUB>3 </SUB>+ I<SUB>2 </SUB>I<SUB>1</SUB>' + I<SUB>2</SUB>I<SUB>0</SUB>'
++ I<SUB>2</SUB>'I<SUB>1</SUB></B></FONT></FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Partiendo
+de estas funciones simplificadas se realiza la implementaci&oacute;n.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
+ejercicio implemente el circuito anterior con un decodificador de
+salida con l&oacute;gica negativa y con compuertas AND &oacute; NAND.
+Dibuje el esquem&aacute;tico.</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Tambi&eacute;n
+como ejercicio haga la implementaci&oacute;n con tecnolog&iacute;a
+SSI para cuando la salida es con l&oacute;gica negativa.</FONT></P>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">En
+la pr&oacute;xima clase se ver&aacute; el TEMA 12: </FONT><A HREF="http://lasclases.com/CircuitosLogicos/tema12.html"><FONT FACE="Lucida Sans, sans-serif">Comparador
+de magnitud a nivel SSI y MSI.</FONT></A></P>
+</BODY>
+</HTML>

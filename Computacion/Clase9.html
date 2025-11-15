@@ -1,0 +1,535 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20030920;20391617">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20030920;20393580">
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Funciones.</B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Las funciones son los
+bloques constructores de C.  Son las funciones las que ayudan a
+realizar un programa de forma estructurada y clara am&eacute;n de su
+gran utilidad cuando se desea realizar un mismo tipo de operaci&oacute;n
+repetidas veces ya que el c&oacute;digo s&oacute;lo tiene que ser
+escrito una vez. La forma general de una funci&oacute;n es:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">especificadorDeTipoDeVuelta
+nombreDeLaFuncion(listaParametros) {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">cuerpo
+de la funci&oacute;n;	// Aqu&iacute; se agregar&aacute;n todos los
+comandos que se ejecutar&aacute;n</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 5cm; margin-bottom: 0cm">	//
+cada vez que se llame a la funci&oacute;n.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El
+&ldquo;especificadorDeTipoDeVuelta&rdquo; especifica el tipo de valor
+que devuelve la funci&oacute;n a trav&eacute;s de la sentencia
+return. El valor puede ser cualquier tipo de variable v&aacute;lido
+incluyendo void para especificar que no retorna ning&uacute;n valor (
+en caso de ser void, la funci&oacute;n no requerir&aacute; la
+sentencia return ).  Como se ha comentado con anterioridad, si no se
+define ning&uacute;n tipo de vuelta, el compilador asume que es de
+tipo int.  &ldquo;listaParametros&rdquo; es la lista de nombres de
+variables que recibir&aacute;n los valores de los argumentos que se
+le pasa a la funci&oacute;n. Las variables se encuentran separadas
+por comas y cada una con su tipo asociado,.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Tal como se comento en
+&ldquo;Estructura de un Programa en Lenguaje C&rdquo;, todas las
+funciones a ser desarrolladas en el programa ( lo cual se hace al
+final del mismo, luego del bloque main() ) deben tener una
+declaraci&oacute;n anticipada de dicha funci&oacute;n. Eso es lo que
+se conoce como &ldquo;prototipo de la funci&oacute;n&rdquo; y se
+realiza antes del bloque main(). De esta forma al compilarse el
+programa, para cada llamada a una funci&oacute;n se verificar&aacute;
+la existencia de su prototipo. Esto es inprescindible.  Ese es el
+porque de los archivos de cabecera ( .h ) que son los que contienen
+los prototipos de las funciones b&aacute;sicas de lenguaje C. Por
+ejemplo conio.h define el prototipo de la funciones: clrscr(),
+gotoxy(), textcolor(), cprintf(), etc.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Pongamos un ejemplo. Un
+prototipo de una funci&oacute;n ser&iacute;a:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">int
+kbhit (void);</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Este prototipo define una
+funci&oacute;n llamada kbhit que no recibe ning&uacute;n argumento y
+retorna un valor entero.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">***</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">NOTA: Comente esta
+funci&oacute;n debido a que es de gran utilidad. Esta funci&oacute;n
+verifica si se ha presionada alguna tecla. Si no se ha presionado
+ninguna, devuelve el valor cero ( 0 ) y cualquier otro valor en el
+caso de que si se haya presionado una tecla. Una forma com&uacute;n
+de usarla es:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">do {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">//
+Instrucciones.</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}
+while (!kbhit());</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">donde el bucle do-while
+se mantendr&aacute; en ejecuci&oacute;n mientras NO se haya
+presionado alguna tecla ya que se us&oacute; el negado del valor
+devuelto por la funci&oacute;n.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">***</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Hay dos formas de
+finalizar la ejecuci&oacute;n de una funci&oacute;n. Una es llegando
+al final de la misma donde se encuentra la llave '}', aunque
+realmente no hay muchas funciones que utilicen esta forma impl&iacute;cita
+ya que ellas no retornan valores ( este caso se usa cuando la funci&oacute;n
+retorna void ). La segunda forma y la generalmente usada es a trav&eacute;s
+del uso del <B>return. &ldquo;return&rdquo; </B><SPAN STYLE="font-weight: medium">tiene
+dos usos importantes. El primero es que fuerza a la salida inmediata
+de la funci&oacute;n en la que se encuentra ( lo cual es &uacute;til
+en los casos que se requieren multiples  puntos de salida ) y en
+segundo lugar se utiliza para devolver un valor.</SPAN></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void imprimeme ( char *mensaje ) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;%s&rdquo;,mensaje);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>la funci&oacute;n imprimeme finaliza en la llave '}'. La
+funci&oacute;n no retorna valores por lo tanto return no es
+requerido.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Otro:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int cuadrado(int x) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>x=x*x;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return x;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta funci&oacute;n recibe un valor entero y devuelve
+otro entero que en este caso es el cuadrado del argumento de la
+funci&oacute;n.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Veamos como usar&iacute;amos la funci&oacute;n cuadrado
+dentro de un programa:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int cuadrado(int x); 	// Por supuesto, hay que definir
+el prototipo de la funci&oacute;n</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int main(void) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int x,z;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Introduzca un n&uacute;mero entero: &rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>scanf(&ldquo;%i&rdquo;,&amp;x);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>z = cuadrado(x);  // Asignamos a z el valor devuelto por
+la funci&oacute;n.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;El cuadrado de %i es %i&rdquo;,x,z);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return 0;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>// Finaliz&oacute; el bloque main(), ahora si
+desarrollamos las funciones.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int cuadrado(int x) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>x=x*x;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return x;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Como se observa primero incluimos los archivos de
+cabecera. Luego definimos los prototipos de las funciones que
+desarrollaremos en nuestro programa que en nuestro caso es s&oacute;lo
+la funci&oacute;n cuadrado(). A continuaci&oacute;n colocamos el
+bloque main() de nuestro programa y luego de este desarrollamos la
+funci&oacute;n.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Las instrucciones:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>z = cuadrado(x);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;El cuadrado de %i es %i&rdquo;,x,z);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>podr&iacute;an sustituirse sencillamente por:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;El cuadrado de %i es %i&rdquo;, x,
+cuadrado(x));</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ya que cuadrado(x) es sencillamente un entero.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Llamada
+por Valor o por Referencia.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Existen dos formas en las que se le pueden pasar
+par&aacute;metros a una funci&oacute;n. El primer m&eacute;todo se
+denomina &ldquo;llamada por valor&rdquo;.  Este m&eacute;todo es el
+que hemos usado en los ejemplos anteriores y lo que hace es hacer una
+copia del argumentado pasado a la funci&oacute;n dentro de los
+par&aacute;metros formales de dicha funci&oacute;n. Por lo tanto, los
+valores con los que se realizaron las llamadas no son alterados.
+Vemos un ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void incrementa(int x, int y);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>main(){</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int x=2, y=3;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;X y Y antes de ejecutar incrementa: %i y %
+i\n&rdquo;, x, y);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>incrementa( x, y);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;X y Y luego de ejecutar incrementa: %i y %
+i\n&rdquo;, x, y);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return 0;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void incrementa(int x, int y) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>x++;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>y++;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Aqu&iacute;, los valores iniciales de 'x' y 'y' son
+pasados a la funci&oacute;n incrementa la cual coloca estos valores
+en sus variables 'x' y 'y' locales para incrementarlas. Repito: Estos
+valores son LOCALES por lo que los valores de las variables del
+bloque main() no se alteran. El programa imprimir&aacute;:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+ <FONT SIZE=3>X y Y antes de ejecutar incrementa: 2 y 3</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+ <FONT SIZE=3>X y Y luego de ejecutar incrementa: 2 y 3</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Sin embargo, el programador podr&iacute;a requerir que
+los valores del bloque main() _SI_ se vean alterados. Para lograr
+&eacute;sto debe usarse la &ldquo;llamada por referencia&rdquo;. Los
+argumentos que recibe la funci&oacute;n en este caso son referencias
+a las direcciones de las variables. Esto se hace pasando &ldquo;punteros&rdquo;
+al argumento. Los punteros se pasan a las funciones como cualquier
+otro valor pero por supuesto es necesario declarar los par&aacute;metros
+como de tipo puntero a trav&eacute;s del operador *. Para definir que
+una variable es un puntero debe usarse el operador * antes del nombre
+de la variable. Esto lo que hace es indicar que &ldquo;el valor que
+contendr&aacute; la variable es una direcci&oacute;n&rdquo; ( VER
+punteros m&aacute;s adelante ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Veamos el ejemplo anterior pero usando una &ldquo;llamada
+por referencia&rdquo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void incrementa(int *x, int *y); 	// Declara que
+incrementa() recibir&aacute; las direcciones de dos</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 7.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>// variables enteras.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>main(){</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int x=2, y=3;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;X y Y antes de ejecutar incrementa: %i y %
+i\n&rdquo;, x, y);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>incrementa(
+&amp;x, &amp;y);</FONT></SPAN></SPAN>	// le paso a incrementa las
+direcciones de 'x' y 'y'</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;X y Y luego de ejecutar incrementa: %i y %
+i\n&rdquo;, x, y);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return 0;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>void incrementa(int *x, int *y) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>(*x)++;		// Se incrementa el CONTENIDO de x</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>(*y)++;		// Se incrementa el CONTENIDO de y</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En este ejemplo la funci&oacute;n incrementar recibe dos
+punteros a enteros, o sea, dos direcciones de memoria que apuntan a
+valores enteros. Observen que los par&aacute;metros de la funci&oacute;n
+se definieron como punteros a trav&eacute;s del operador *. Observen
+tambi&eacute;n como se le pasaron los argumentos a la funci&oacute;n.
+Se hizo: incrementa( &amp;x, &amp;y).  El operador &amp; es el
+operador complemento de *. Este operador lo que hace es devolver la
+direcci&oacute;n de la variable. Por lo tanto, aqu&iacute; lo que se
+esta diciendo es algo como: &ldquo;ejecuta la funci&oacute;n
+incrementa y m&aacute;ndale como par&aacute;metros las direcciones de
+memoria de las variables 'x' y 'y' &rdquo;.  Como ya dijimos, la
+funci&oacute;n incrementa est&aacute; definida para recibir dichas
+direcciones.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La funci&oacute;n _incrementa_ incrementa en uno los
+valores que est&aacute;n contenidos dentro e 'x' y 'y'.  Obs&eacute;rvese
+que se us&oacute; (*x)++ y (*y)++ ya que lo que se quiere incrementar
+es el contenido de las direcciones. *x++ lo que har&iacute;a ser&iacute;a
+incrementar la direcci&oacute;n de memoria. (*x)++ es una forma de
+abreviar algo como:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int temporal;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>temporal = *x;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>temporal++;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>*x = temporal;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Como se est&aacute; trabajando directamente sobre las
+direcciones de memoria que contienen los datos, efectivamente se
+est&aacute;n alterando dichos datos. Por lo tanto la salida de
+ejecutar este programa ser&iacute;a:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+ <FONT SIZE=3>X y Y antes de ejecutar incrementa: 2 y 3</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+ <FONT SIZE=3>X y Y luego de ejecutar incrementa: 3 y 4</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Recursividad</B><SPAN STYLE="font-weight: medium">.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Una de las tantas caracter&iacute;sticas poderosas que
+tiene lenguaje C es que soporta la recursividad en las funciones.
+&Eacute;sto es: la capacidad que tiene una funci&oacute;n de llamarse
+a s&iacute; misma. Si una expresi&oacute;n en el cuerpo de la funci&oacute;n
+llama a la propia funci&oacute;n, se dice que es recursiva. La
+recursividad es el proceso de definir algo en t&eacute;rminos de s&iacute;
+mismo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Existen much&iacute;simos ejemplos de recursividad pero
+definitivamente el m&aacute;s t&iacute;pico es el de la funci&oacute;n
+factorial. Como todos saben el factorial se aplica s&oacute;lo a
+n&uacute;meros naturales[1] y el factorial de un n&uacute;mero N se
+define como el producto de todos los n&uacute;meros entre 1 y N. 
+Sabiendo &eacute;sto, veamos un ejemplo de una funci&oacute;n
+recursiva: la funci&oacute;n factorial.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int factorial(int x) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int resultado;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (x==1) return 1;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>resultado = factorial(x-1)*x;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return resultado;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Como se observa en la funci&oacute;n, si x es uno,
+entonces la funci&oacute;n retorna uno. Si no, &eacute;sta se llama a
+s&iacute; misma con el valor de x-1.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>[1]
+</FONT></SPAN></SPAN>Un <STRONG>n&uacute;mero natural</STRONG> es
+cualquiera de los n&uacute;meros 0, 1, 2, 3... que se pueden usar
+para contar los elementos de un conjunto. Son enteros positivos.</P>
+<P>Algunos matem&aacute;ticos (especialmente los de Teor&iacute;a de
+los N&uacute;meros<A HREF="http://es.wikipedia.org/wiki/Teor%EDa_de_N%FAmeros"><SPAN STYLE="text-decoration: none">
+</SPAN></A>) prefieren no reconocer el cero como un n&uacute;mero
+natural, mientras que otros, especialmente los de Teor&iacute;a de
+Conjuntos, L&oacute;gica e Inform&aacute;tica, tienen la postura
+opuesta.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0

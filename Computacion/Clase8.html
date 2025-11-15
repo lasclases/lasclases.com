@@ -1,0 +1,1073 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20030920;20372409">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20030920;20383796">
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Sentencias
+de control<SPAN LANG="es-ES">.</SPAN></B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En lenguaje C, existen un conjunto de sentencias que se
+pueden usar para afectar el control o flujo de un programa. La
+mayor&iacute;a de estas sentencias, se basan en una prueba
+condicional que determinar&aacute; la acci&oacute;n que se llevar&aacute;
+a cabo. Una prueba condicional produce un valor de cierto ( se puede
+usar la palabra clave de C 'TRUE' ) o de falso ( la cual es 'FALSE'
+). En lenguaje C, el falso es representado exclusivamente por el
+valor num&eacute;rico cero; cualquier otro valor representa un
+cierto. Este enfoque de lo que es cierto y lo que es falso permite
+codificar eficientemente muchos tipos de rutina.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Las sentencias de control se dividen en:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Sentencias
+Condicionales.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En lenguaje C son soportados dos tipos de sentencias
+condicionales: <B>if</B> y <B>switch</B>.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>if</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Se usa cuando se requiere que una instrucci&oacute;n o
+un bloque de ellas sea ejecutado si y s&oacute;lo si se cumple una
+condici&oacute;n particular. Su forma de uso es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (condici&oacute;n) sentencia;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&oacute;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (condici&oacute;n) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia1;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia2;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>...</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&uacute;ltima sentencia;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En el primer caso, sentencia se ejecutar&aacute; si
+condici&oacute;n es cierto. En el segundo caso se ejecutar&aacute;n
+todas las sentencias dentro del bloque.  &ldquo;condici&oacute;n&rdquo;
+es una expresi&oacute;n con operadores relacionales que es evaluada y
+retorna cero si es falsa o cualquier otro valor es cierta. P ej:  Al
+evaluar la siguiente expresi&oacute;n: (2&lt;3), se retornar&aacute;
+un n&uacute;mero diferente de cero para indicar que es cierta (
+cualquier n&uacute;mero diferente de cero pero, aunque no importa,
+suele ser uno ). Por el contrario el evaluar la expresi&oacute;n
+(3&lt;2), retornar&aacute; un cero indicando que es falsa. En
+lenguaje C tambi&eacute;n se pueden usar las macros definidas 'TRUE'
+o 'FALSE'.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>if-else</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Podr&iacute;a requerirse en un programa, y de hecho
+suele ser as&iacute;, que se ejecute una sentencia si se cumple una
+condici&oacute;n y que se ejecute otra si no. Para eso tenemos el
+compa&ntilde;ero de la sentencia if denominado else. Su forma de uso
+es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (condici&oacute;n) sentencia;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>else sentencia;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&oacute;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (condici&oacute;n) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia1;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia2;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>} else {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia3;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia4;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>Como
+intuir&aacute;n, sentencia1 y sentencia2 se ejecutar&aacute;n si y
+solo si</FONT></SPAN></SPAN> condici&oacute;n es cierta. De lo
+contrario se ejecutar&aacute;n sentencia3 y sentencia4.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ifs anidados</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Uno
+de los aspectos m&aacute;s confusos de las sentencias if se encuentra
+en los ifs anidados. Un if anidado es un if que es obejeto de otro if
+o de un else.  La raz&oacute;n por la que suelen ser tan
+problem&aacute;ticos es que puede ser dif&iacute;cil saber que else
+se asocia con que if. Por ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+if(cond1)</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium">
+if(cond2) sentencia1;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+else sentencia2;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Por
+suerte C nos da una regla muy sencilla para saber a que if pertenece
+un else y &eacute;sta es que una sentencia else pertenecer&aacute; al
+if precedente m&aacute;s pr&oacute;ximo que no tenga ya asociada una
+sentencia else. En este caso, el else esta asociado a la sentencia
+if(cond2) ( si el programador se gu&iacute;a por la estructura del
+programa podr&iacute;a pensar que esta asociado con el if(cond1) y no
+es as&iacute; ). Si lo que se quiere es que el else sea asociado con
+el if(cond1) entonces se debe usar llaves para saltarse la asociaci&oacute;n
+normal, por lo que ser&iacute;a:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+if(cond1) {</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium">
+if(cond2) sentencia1;</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+} else sentencia2;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">Ahora
+el else s&iacute; est&aacute; asociado a if(cond1).</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>if-else-if</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La escala if-else-if es una construcci&oacute;n muy
+com&uacute;n en programaci&oacute;n. Su forma de uso es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (cond1) sentencia1;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>else if (cond2) sentencia2;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>else if (cond3) sentencia3;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>...</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>else ultimaSentencia;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Todas estas sentencias se eval&uacute;an en orden y tan
+pronto como se encuentra una condici&oacute;n cierta se ejecuta la
+sentencia asociada con ella y se pasa por alto el resto de la escala.
+Si ninguna de las condiciones es cierta se ejecuta el else final.
+Esta ser&iacute;a la sentencia &ldquo;por defecto&rdquo; a ejecutarse
+pero no necesariamente debe existir. Si no est&aacute;, y ninguna de
+las condiciones se cumple, entonces no se hace nada.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>La
+alternativa a if-else con el operador ?</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Se puede usar el operador ? Para reemplazar las
+sentencias if-else con la forma general:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if(cond)</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>expresi&oacute;n;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>else</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>otraExpresi&oacute;n;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La restricci&oacute;n es que el objetivo del if y el
+else deben ser expresiones simples que retornen valores y no otras
+sentencias de C.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El ? Es un operador ternario ya que necesita tres
+opereandos. Su forma es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Exp1 ? Exp2 : Exp3</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Observe los dos puntos. Que hace &eacute;sto? Evalua
+Exp1. Si es cierta se eval&uacute;a Exp2 y se convierte en el valor
+de la expresi&oacute;n completa. Si Exp1 es falsa entonces se eval&uacute;a
+Exp3 y su valor se convierte en el valor de la expresi&oacute;n
+completa. Que quiere decir que se convierte en el valor de la
+expresi&oacute;n completa? Veamos el siguiente caso:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>i = 3;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>x = i&gt;5 ? 50 : 100;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&Eacute;sto es lo mismo que decir:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>	</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>i = 3;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (i &gt; 5) x = 50;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>else x = 100;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>o sea, que la expresi&oacute;n &ldquo;i &gt; 5 ? 50
+:100&rdquo; se convierte en 50 si se cumple la condici&oacute;n i &gt;
+5 y se convierte en 100 si no. Luego este resultado se puede asignar
+a una variable. A eso me refiero con que &ldquo;su valor se convierte
+en el valor de la expresi&oacute;n completa&rdquo;. Ok, &eacute;sto
+es as&iacute;... pero no necesariamente ustedes necesitar&aacute;n
+usarlo de esta manera. Por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char ch;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ch = getch();</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ch == 'x' ? printf(&ldquo;Presiono x&rdquo;) :
+printf(&ldquo;No presiono x&rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>eval&uacute;a si ch es igual a 'x'. Si es as&iacute;
+imprime &ldquo;Presiono x&rdquo; y si no imprimir&aacute; el mensaje
+&ldquo;No presiono x&rdquo;. No me interesa asignar el valor de la
+expresi&oacute;n completa a ninguna variable.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Otro ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int i;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>scanf(&ldquo;%i&rdquo;,&amp;i);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>i ? printf(&ldquo;Introdujo un n&uacute;mero distinto de
+cero&rdquo;) : printf(&ldquo;Introdujo cero&rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>eval&uacute;a i. Si es cero ( lo que indica falso )
+imprimir&aacute; el mensaje &ldquo;Introdujo cero&rdquo;. Para
+cualquier otro valor de i imprimir&aacute; &ldquo;Introdujo un n&uacute;mero
+distinto de cero&rdquo;. Al igual que en el caso anterior no me
+importa que valor toma la expresi&oacute;n completa.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ESO S&Iacute;: Lo que deben tomar en cuenta es que todo
+lo que usen en esta expresi&oacute;n debe retornar un valor. Esto
+quiere decir que no pueden usar funciones que retornen void. La
+mayor&iacute;a de las funciones en C retornan un valor. Por ejemplo
+printf() retorna el n&uacute;mero de caracteres impresos y es por eso
+que puede ser usada ( si, ese valor no nos interesa aqu&iacute;. Por
+eso no lo asign&eacute; a una variable como en el primer ejemplo. No
+nos interesa, pero si no lo retornara no podr&iacute;amos usar esta
+alternativa ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>switch</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Aunque la escala if-else-if puede realizar pruebas
+multicaminos, es poco elegante. El c&oacute;digo puede ser bastante
+dif&iacute;cil de seguir y puede confundir incluso a su autor al
+pasar el tiempo. Por esta raz&oacute;n, C incorpora una sentencia de
+decisi&oacute;n de ramificaci&oacute;n m&uacute;ltiple llamada
+switch.  Esta sentencia compara sucesivamente una variable con una
+lista de opciones representadas por constantes enteras o de
+caracteres y cuando encuentra una que corresponda, se ejecuta la
+sentencia o bloque de sentencias que tiene asociada la opci&oacute;n.
+Su forma de uso es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>switch (variable) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case const1:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>secuencia de sentencias1;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case const2:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>secuencia de sentencias2;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>default:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>secuencia de sentencias;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>}	</FONT></SPAN></SPAN>//
+Las sentencias break redirigen el flujo del programa directamente</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">//
+hasta aqu&iacute; y contin&uacute;a la ejecuci&oacute;n del programa
+ejecutando todo</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">// lo
+que siga.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La sentencia switch evaluar&aacute; &ldquo;variable&rdquo;
+y si &eacute;sta contiene el valor const1 se ejecutar&aacute; la
+secuencia de sentencias1 hasta conseguir un break. Si es const2 la
+secuencia de sentencias2 hasta conseguir el break y as&iacute;
+sucesivamente. Si ninguna de las constantes en los case corresponde
+al valor de la &ldquo;variable&rdquo; entonces el switch ejecutar&aacute;
+la secuencia de comandos representados por default.  La parte default
+es opcional si ustedes no quieren que se lleve a cabo ninguna
+operaci&oacute;n al fallar todas las pruebas entonces no agregan un
+bloque default y listo.  OJO: switch s&oacute;lo puede comprobar
+&ldquo;IGUALDAD&rdquo; y no puede evaluar expresiones relacionales.
+Otra cosa: switch NO puede contener dos case con el mismo valor.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El break lo veremos m&aacute;s adelante pero lo que hace
+es indicarle al programa que ya uno de los casos se ejecut&oacute; y
+que se vaya al final del bloque y finalice el mismo ( no revisar&aacute;
+nada mas ). Es por eso que la &uacute;ltima sentencia no requiere el
+break.  El break es opcional. Si no lo agregan revisar&aacute; el
+resto de los casos. El break lo que hace es enviar el flujo del
+programa al final el bloque ( VER break ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un buen ejemplo para un switch ser&iacute;a un men&uacute;.
+Veamos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char c;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Que opci&oacute;n ( 1, 2 o 3) del men&uacute;
+requiere ejecutar: &ldquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>c = getche();</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>switch ( c ) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case '1':</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Opci&oacute;n 1);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case '2':</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Opci&oacute;n 2&rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case '3':</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Opci&oacute;n 3&rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>default:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;No introdujo una opci&oacute;n v&aacute;lida\n&rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Si por ejemplo tenemos un caso en que queremos que un
+mismo bloque de sentencias se realice para varias de las opciones del
+switch, podemos hacer:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>switch ( variable ) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case 1:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case 2:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case 3:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentenciasComunes;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case 4:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia4;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case 5:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia5;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>default:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 3.75cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentenciaDefault;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Aqu&iacute; sentenciasComunes se ejecutar&aacute;n si se
+cumplen case 1, 2 o 3.  Otra cosa que se refleja en este ejemplo y
+que puede ser de gran utilidad es que si se cumple el caso 4, se
+ejecutar&aacute; la sentencia4 y como no consigue el break, tambi&eacute;n
+se ejecutar&aacute; la sentencia5.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Los &ldquo;case&rdquo; s&oacute;lo pueden contener
+secuencia de sentencias por lo que, por ejemplo, no se podr&aacute;n
+realizar declaraci&oacute;n de variables dentro de los case. Los case
+NO son bloques de c&oacute;digo sino que tienen asociadas sentencias.
+Sin embargo, si necesitasen definir una variable dentro de un bloque
+switch ( el switch, por supuesto, si es un bloque ) podr&iacute;an
+hacerlo pero fuera de todos los case. Ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>switch ( c ) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int i;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>case 1:  // etc.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><B>}</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Bucles.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>En
+C al igual que en todos los lenguajes de programaci&oacute;n
+modernos, las sentencias de iteraci&oacute;n ( o bucles )</FONT></SPAN></SPAN>
+permiten que una instrucci&oacute;n o un bloque de ellas sea
+ejecutado hasta que se alcance una cierta condici&oacute;n. Los
+bucles se logran en C a trav&eacute;s de: <B>for</B> y <B>while.</B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Bucle
+for y variaciones del mismo. Bucle infinito.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La forma general de la sentencia for es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>for(inicializaci&oacute;n;condici&oacute;n;incremento)
+sentencia;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">&oacute;</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<SPAN STYLE="text-decoration: none"><FONT SIZE=3>for(inicializaci&oacute;n;condici&oacute;n;incremento)
+{</FONT></SPAN></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia1;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia2;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia3;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>donde:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>inicializaci&oacute;n: es normalmente una sentencia de
+asignaci&oacute;n que se utiliza para inicializar la variable de
+control del bucle.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>condici&oacute;n: es una expresi&oacute;n relacional que
+determina cu&aacute;ndo finaliza el bucle</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>incremento: define como cambia la variable de control
+cada vez que se repite el bucle. Puede ser algo como i++, ++i, i-- &oacute;
+incluso x-=5, por ejemplo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Como se observa, estas tres secciones principales deben
+estar separadas por punto y coma.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Por ejemplo en el siguiente caso:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int i;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>for ( i = 0; i &lt; 256; i++ ) printf(&ldquo;(%i, %c) &rdquo;,
+i, i );</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>al entrar al bloque inicializamos la variable i con el
+valor cero. Se realiza la evaluaci&oacute;n de la condici&oacute;n y
+si &eacute;sta es menor que 256, la sentencia printf se ejecutar&aacute;.
+Al finalizar la ejecuci&oacute;n de dicha sentencia se llega al final
+del bloque y  el valor de la variable i ser&aacute; incrementada y
+as&iacute; empezara la verificaci&oacute;n de nuevo. La primera vez
+que se ejecuta el bucle la variable i contiene el valor 0, la segunda
+vez 1, la tercera 2 y as&iacute; seguir&aacute; incrementando su
+valor y ejecutando el bucle mientras se cumpla la condici&oacute;n. 
+Por cierto, este c&oacute;digo imprime todos los pares (valor entero,
+caracter) que se encuentran en la tabla ASCII.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Otro ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>for( x = 100; x != 65; x-=5 ) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>z = sqrt(x);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;La ra&iacute;z cuadrada de %d es %f&rdquo;,
+x, z);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En este caso el bucle inicializa la variable x con el
+valor 100 y se ejecutar&aacute; mientras x sea distinto de 65.  El
+valor de la variable x ser&aacute; decrementado en 5 en cada
+iteraci&oacute;n.  Por lo tanto este buble imprimir&aacute; el par
+n&uacute;mero y ra&iacute;z cuadrada del mismo para los n&uacute;meros:
+100, 95, 90, 85 , 80, 75 y 70. Al hacerse la variable x igual a 65,
+finaliza la ejecuci&oacute;n del bucle porque no se cumple la
+condici&oacute;n.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Una de las variaciones m&aacute;s comunes del bucle for
+utiliza el operador coma para permitir dos o m&aacute;s variables
+para el control de un bucle. Por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>for( x = 0, y = 0; x + y &lt; 10; x++, y++ ) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>bloque de sentencias;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>inicializa las variables x y y a cero y luego ejecutar&aacute;
+el &ldquo;bloque de sentencias&rdquo; mientras que la suma x +y sea
+menor que diez. En este ejemplo, en cada nueva iteraci&oacute;n los
+valores valor de x y y ser&aacute;n incrementados  en uno.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>OJO: Cabe destacar que los valores de las variables de
+control del bucle pueden variar dentro del bloque de sentencias y no
+necesariamente deben ser alteradas s&oacute;lo en la declaraci&oacute;n
+del bucle. Por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>for( x = 0; x &lt; 10; ) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>x++;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencias;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>es completamente v&aacute;lido. Observar&aacute;n en
+este ejemplo tambi&eacute;n que de hecho no es necesario que el bucle
+for contenga todas las secciones de definici&oacute;n. En este caso
+omitimos la parte del incrementador.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Otra variaci&oacute;n com&uacute;n es por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>for(;;) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencias;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>lo que es conocido como bucle infinito. Aqu&iacute; las
+sentencias se ejecutar&aacute;n eternamente a menos que una de las
+sentencias detenga la ejecuci&oacute;n del bloque. Ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>for(;;) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>c = getch();</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (c == 'x') break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>se ejecutar&aacute; pidiendo caracteres por teclado
+mientras que el caracter sea distinto de 'x' en cuyo caso se saldr&aacute;
+del bloque gracias a la sentencia break ( ver m&aacute;s adelante ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Cabe destacar que cada una de las secciones del bucle
+for puede consistir en cualquier expresi&oacute;n v&aacute;lida de C
+pero no ahondaremos en ese punto.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>while</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Otro bucle de control en C. Su forma de uso es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>while ( condici&oacute;n ) sentencia;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>&oacute; </FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>while ( condici&oacute;n ) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia1;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>sentencia2;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>...</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La condici&oacute;n puede ser cualquier expresi&oacute;n
+y cualquier valor distinto de cero se considera cierta.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char ch = '\0';</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>while(ch != 'x') ch = getch();</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En este ejemplo, el programa declara una variable de
+tipo char llamada ch y le asigna la constante de barra invertida que
+representa el Nulo ( \0 ). A continuaci&oacute;n entra en el bucle
+while y eval&uacute;a la condici&oacute;n. Como la primera vez ch es
+distinto de 'x' entonces se ejecuta la sentencia que en este caso es
+pedir un caracter por teclado. Este bucle se repetir&aacute; mientras
+el usuario no introduzca el caracter x.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>No es necesario tener algunas sentencias en el cuerpo
+del bucle while. Por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>	</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>char cu = '\0';</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>while ( (ch = getch()) != 'x' );</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>es perfectamente v&aacute;lido y hace exactamente lo
+mismo que el ejemplo anterior.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>do-while</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>A diferencia de los bucles for y while que analizan las
+condiciones al principio del bucle, el bucle do-while la analiza al
+final del mismo. Por lo tanto, si ustedes requieren que un bloque de
+sentencias sea ejecutado &ldquo;AL MENOS UNA VEZ&rdquo; sin importar
+la condici&oacute;n, entonces este es el bucle que necesitan. Su
+forma de uso es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>	</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>do {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>secuencia de sentencias;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>} while ( condici&oacute;n );  // OJO con este punto y
+coma.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>aunque las llaves, por supuesto, no son necesarias si
+s&oacute;lo existe una sentencia. De todas formas siempre es bueno
+usarlas para evitar confusiones con el while ( por supuesto
+confusiones del programador no del compilador ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int i = 50;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>do {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>scanf(&ldquo;%i&rdquo;,&amp;i);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>} while ( i &gt; 100 );</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En este caso, el programa pedir&aacute; datos por
+teclado y se los asignar&aacute; a la variable i mientras se cumpla
+que i sea mayor que 100. Cuando el usuario introduzca un valor menor
+o igual que 100, al evaluar la condici&oacute;n se cumplir&aacute;
+&eacute;sta y no se ejecutar&aacute; m&aacute;s el bloque.  Obs&eacute;rvese
+tambi&eacute;n que premeditadamente asigne el valor inicial de i a
+50. Esto es para mostrar que aunque la condici&oacute;n no se cumpl&iacute;a
+al entrar al bloque, de igual forma el bloque se ejecut&oacute;. Por
+eso coment&eacute; anteriormente que este bloque siempre se ejecuta
+&ldquo;al menos una vez&rdquo;.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>		</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Otras
+sentencias importantes.</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Existen tres sentencias especialmente usadas para
+alterar el control o flujo normal con el que se ejecutar&iacute;a un
+programa. Estas son: break, exit() y continue.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>break</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>La sentencia break tiene dos usos. Se puede usar para
+finalizar un case en una sentencia switch como ya vimos o para forzar
+la terminaci&oacute;n inmediata de un bucle saltando la ejecuci&oacute;n
+normal del ciclo. Por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int i;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>for( i = 0 ; i &lt; 50; i++ ) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;%i &ldquo;,i);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if ( i == 10 ) break;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>// El flujo del programa viene hasta aqu&iacute; cuando
+se ejecuta el break anterior.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>En este caso tenemos un bucle for que comienza con i = 0
+y ser&aacute; incrementado en uno en cada ciclo. El bucle imprimir&aacute;
+el valor de i mientras i sea menor que 50. Pero... que pasa? Que este
+bucle no imprimir&aacute; los n&uacute;meros entre 0 y 100 como se
+esperar&iacute;a al ver la definici&oacute;n del bucle &ldquo;for&rdquo;
+sino que imprimir&iacute;a s&oacute;lo los n&uacute;meros entre 0 y
+10 y luego, como se cumple la condici&oacute;n i == 10, saltar&aacute;
+al final del bucle no imprimiendo nada m&aacute;s. El bucle
+sencillamente finaliza su ejecuci&oacute;n cuando i se hace igual a
+diez todo &eacute;sto debido a la sentencia break.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>exit()</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><SPAN STYLE="font-weight: medium">Su
+prototipo es:</SPAN><B> void exit(int </B><SPAN STYLE="font-weight: medium">estado</SPAN><B>);</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta funci&oacute;n es ANSI C  por lo que su prototipo
+est&aacute; definido dentro de la biblioteca est&aacute;ndar stdlib.h
+&ndash; SI, dije stdlib.h no stdio.h. No es una funci&oacute;n
+est&aacute;ndar de entrada o salida.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta funci&oacute;n es usada para salir anticipadamente
+de un programa . Dicho de otra forma, ella da lugar a la terminaci&oacute;n
+inmediata del programa forzando la vuelta al sistema operativo. El
+valor del estado es devuelto y si &eacute;ste es cero, quiere decir
+que ocurri&oacute; una terminaci&oacute;n normal del programa ( &eacute;sto
+es una convenci&oacute;n internacional ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta funci&oacute;n es usada frecuentemente para
+expresar que una condici&oacute;n estrictamente necesaria para la
+ejecuci&oacute;n del programa no se cumple. Supongamos que requerimos
+verificar que cierta &ldquo;cond1&rdquo; se cumpla para poder
+ejecutar nuestro programa y que en caso contrario nos lo indique,
+podr&iacute;amos hacer algo como:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if ( cond1 )  exit(0); // Todo Ok. Se cumple la
+condici&oacute;n requerida. Retorna cero.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>else exit (cualquierValorDistintoDeCero);  // No se
+cumplio as&iacute; que retorna un c&oacute;digo de error.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Por lo tanto si al ejecutar este programa nos retorna
+cero sabemos que tenemos lo que necesitamos para que dicho programa
+se desarrolle con normalidad. Si nos devuelve el  valor  
+&ldquo;cualquierValorDistintoDeCero&rdquo;, entonces verificamos la
+&ldquo;documentaci&oacute;n del programa&rdquo; para verificar que
+significa este error. En todo caso ser&iacute;a que no se cumple la
+condici&oacute;n necesaria en nuestro programa &ldquo;cond1&rdquo;.
+Ejemplos: si necesitamos abrir un archivo para leer datos en &eacute;l
+y que si no existe nos env&iacute;e un mensaje de error, entonces
+har&iacute;amos algo como:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (!( fopen(&ldquo;NombreArchivo&rdquo;, &ldquo;r&rdquo;)
+)) exit(1);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Lo que quiere decir que: _si_ _no_ _puedo abrir el
+archivo NombreArchivo para leerlo_ entonces _sal del programa y env&iacute;a
+el mensaje de error 1_. El valor de retorno &ldquo;1&rdquo; debe
+estar documentado en alguna parte indicando el tipo de error que
+representa... o sea, no existe el archivo NomberArchivo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>continue</B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta sentencia funciona de forma similar al break. Sin
+embargo, en vez de forzar la terminaci&oacute;n del bucle, &ldquo;continue&rdquo;
+fuerza ejecutar una nueva iteraci&oacute;n del bucle saltando
+cualquier instrucci&oacute;n entre ella y el fin del bucle. Por
+ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int i;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>for( i = 0; i &lt;= 100; i++) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>if (( i % 2 ) != 1) continue;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;%i &rdquo;,i);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>} // continue lo manda hasta aqu&iacute; y verifica el
+pr&oacute;ximo caso.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>imprimir&aacute; s&oacute;lo los n&uacute;meros impares
+entre 0 y 100, o sea, mostrar&aacute; por pantalla algo como: 1 3 5 7
+9 ... 95 97 99. Por qu&eacute;? Cuando i=0, i%2=0 lo que es distinto
+de 1 y forzar&aacute; una nueva iteraci&oacute;n. Luego i=1, i%2=1 lo
+que no es distinto de 1 as&iacute; que ejecutar&aacute; el printf,
+luego i=2, i%2=0 lo que es distinto de 1 y ejecutar&aacute; el
+continue, luego i=3, i%2=1, no se hace el continue, hace el printf y
+as&iacute; sucesivamente.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El continue puede ser usado en cualquier bucle ya sea
+for, while o do-while.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+</BODY>
+</HTML>

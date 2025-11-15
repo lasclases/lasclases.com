@@ -1,0 +1,1846 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>TEMA 8: Sumadores y restadores a nivel SSI y MSI. Un ejemplo de aplicaci&oacute;n:El sumador BCD, etc.</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.1  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20070113;17444600">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20070311;7230654">
+</HEAD>
+<BODY LANG="es-VE" DIR="LTR">
+<H1 ALIGN=CENTER><FONT COLOR="#0000ff"><U><B>TEMA 8: SUMADORES Y
+RESTADORES A NIVEL SSI Y MSI. UN EJEMPLO DE APLICACI&Oacute;N: EL
+SUMADOR BCD</B></U></FONT></H1>
+<P><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>BREVE
+INTRODUCCI&Oacute;N A LOS NIVELES DE INTEGRACI&Oacute;N</B></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">SSI
+y MSI son niveles de integraci&oacute;n de compuertas l&oacute;gicas.
+Ustedes investigar&aacute;n acerca de &eacute;sto en su trabajo
+especial pero de igual forma aqu&iacute; les hablar&eacute;
+b&aacute;sicamente qu&eacute; es eso y con qu&eacute; se come.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Los
+niveles de integraci&oacute;n son:</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">SSI:
+(Small-Scale Integration o integraci&oacute;n a peque&ntilde;a
+escala). Es el nivel de integraci&oacute;n m&aacute;s b&aacute;sico y
+comprende todos aquellos circuitos integrados (desde ahora IC por sus
+siglas en ingl&eacute;s) que poseen hasta un m&aacute;ximo de diez
+(10) compuertas. (He le&iacute;do documentaci&oacute;n que habla de
+hasta doce compuertas, pero decid&iacute; tomar esta descripci&oacute;n
+debido a que aparec&iacute;a en m&aacute;s oportunidades y porque me
+parece m&aacute;s l&oacute;gico debido a las compuertas que integran
+el resto de los niveles). En este nivel tenemos las compuertas
+l&oacute;gicas como las NAND (por ejemplo, el IC 7400 tiene 4
+compuertas NAND de dos entradas), las NOT (IC 7404 con 6 compuertas
+NOT), las AND (IC 7408 de 4x2), las OR (IC 7432 de 4x2), las XOR (IC
+7486), memorias de 1 bit, flip-flops, el IC7480 que es un sumador
+completo de 1 bit, etc. Estas compuertas integran de 10 a 100
+transistores.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">MSI:
+(Medium-Scale Integration o integraci&oacute;n de mediana escala). Es
+el nivel de integraci&oacute;n que le sigue al SSI. Comprenden IC de
+que tienen entre 10 y 100 compuertas (entre 100 y 1000 transistores).
+En este campo tenemos memorias de palabra (8 bits), multiplexores,
+decodificadores, sumadores completos -entre ellos el IC7482 que es de
+2 bits y el 7483 que es de 4 bits-, registros, contadores, etc.)</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">LSI:
+(Large-Scale Integration o integraci&oacute;n de alta escala).
+Comprenden IC's de entre 100 y 1000 compuertas (o entre 1000 y 10000
+transistores. Tenemos como ejemplos aqu&iacute; : memorias ROM y RAM,
+ALU's (Unidades L&oacute;gicas y Aritm&eacute;ticas),
+microprocesadores de 8 y 16 bits, PLD (Dispositivos L&oacute;gicos
+Programables), etc.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">A
+parte de &eacute;stos est&aacute;n los VLSI (Very Large-Scale
+Integration) que tienen entre 1000 y 10000 compuertas y ahora los
+ULSI (Ultra Large) que son usados en los procesadores m&aacute;s
+modernos como los de 32 bits.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Todos
+los IC comentados hasta ahora son de la serie TTL 74XX que ser&aacute;
+los que m&aacute;s usemos en los pr&oacute;ximos meses. La serie CMOS
+es la 4000.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">M&aacute;s
+informaci&oacute;n en:
+<A HREF="http://en.wikipedia.org/wiki/Integrated_circuit">http://en.wikipedia.org/wiki/Integrated_circuit</A></FONT></P>
+<P STYLE="line-height: 150%"><BR><BR>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>SUMADORES</B></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Antes
+de empezar quisiera recordarles las compuertas XOR (el s&iacute;mbolo
+de la operaci&oacute;n es un signo de m&aacute;s circunscrito pero
+por comodidad usaremos aqu&iacute; el &loz; <FONT FACE="Tahoma, sans-serif">para
+no tener que agregar una imagen cada vez que se requiera mostrar el
+signo. OJO no es una convenci&oacute;n natural, me lo acabo de
+inventar por comodidad).La XOR u OR exclusivo es parecida a la OR con
+la &uacute;nica diferencia que para cuando sus entradas son ambas 1
+la salida es cero (por eso lo de exclusivo). La funci&oacute;n XOR
+pude por supuesto ser presentado con compuertas AND, OR y NOT. Por
+ejemplo, la funci&oacute;n F = A &loz; B (L&eacute;ase A XOR B), es
+tambi&eacute;n F = A'B+AB'. Existe tambi&eacute;n la compuerta XNOR o
+NOR exclusivo que es la funci&oacute;n negada de la XOR. El s&iacute;mbolo
+de &eacute;sta es un punto en el centro de un c&iacute;rculo. La
+funci&oacute;n F= A XNOR B tiene su equivalencia en F = AB+A'B'.
+Recuerden que los diagramas de las compuertas XOR y XNOR son:</FONT></FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="xor.png" NAME="gr&aacute;ficos1" ALIGN=LEFT WIDTH=128 HEIGHT=46 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">y</FONT></P>
+<P STYLE="line-height: 150%"><IMG SRC="xnor.png" NAME="gr&aacute;ficos2" ALIGN=LEFT WIDTH=128 HEIGHT=46 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">respectivamente.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Dicho
+&eacute;sto, empecemos por hablar del &ldquo;semisumador&rdquo;. El
+circuito semisumador (o <B>H.A.</B> Por Half Adder) es aquel que
+realiza la suma de dos bits SIN tomar en cuenta alg&uacute;n posible
+acarreo previo.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Digamos
+que <B>A</B> y <B>B</B> son los bits a sumar, que <B>S</B> es la suma
+de ellos y que <B>C<SUB>o</SUB></B> es el bit de acarreo de salida,
+la tabla de la verdad de este circuito es:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=233 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=41>
+		<COL WIDTH=46>
+		<COL WIDTH=49>
+		<COL WIDTH=48>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>A</B></FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>B</B></FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>S</B></FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>C<SUB>o</SUB></B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Vemos
+entonces que <B>C<SUB>o</SUB>(A,B)</B>=&sum;<B>(3)</B> y que
+<B>S(A,B)</B>=&sum;<B>(1,2)</B>. Resolviendo estas funciones
+obtenemos que: <B>C<SUB>o </SUB></B>= <B>AB y S = A'B + AB'</B>. Si
+ven la &uacute;ltima funci&oacute;n se dar&aacute; cuenta de por qu&eacute;
+raz&oacute;n les habl&eacute; antes de la compuerta XOR. O sea, que
+<B>S=A&loz;B</B>. La diagramaci&oacute;n de este circuito es:</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><IMG SRC="SemiSumador.gif" NAME="gr&aacute;ficos3" ALIGN=LEFT WIDTH=649 HEIGHT=463 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">Ok.
+Pero este circuito nos servir&iacute;a como sumador de un s&oacute;lo
+bit (o para el bit menos significativo de una suma) pero en realidad
+es de poca utilidad para sumas de varios bits. En los casos que se
+requiera un sumador de varios bits, se hace uso de un Sumador
+Completo (F.A. Por Full Adder).</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
+entonces como ser&iacute;a un sumador completo de 1 bit (lo que es el
+IC 7480 internamente).</FONT></P>
+<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Digamos
+que <B>A</B> y <B>B</B> son los bits a sumar, que <B>S</B> es la suma
+de ellos, que <B>C<SUB>i </SUB></B>es el acarreo de entrada y que <B>C<SUB>o</SUB></B>
+es el bit de acarreo de salida, la tabla de la verdad de este
+circuito es:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=312 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=47>
+		<COL WIDTH=50>
+		<COL WIDTH=52>
+		<COL WIDTH=56>
+		<COL WIDTH=47>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>C<SUB>i</SUB></B></FONT></P>
+			</TD>
+			<TD WIDTH=50>
+				<P><B>A</B></P>
+			</TD>
+			<TD WIDTH=52>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>B</B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>C<SUB>o</SUB></B></FONT></P>
+			</TD>
+			<TD WIDTH=47>
+				<P><B>S</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Analicen
+la tabla y corrob&oacute;renla.</FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">De
+la tabla observamos que: <B>C<SUB>o</SUB>(C<SUB>i</SUB>,A,B)=&sum;(3,5,6,7)</B>
+y que <B>S(C<SUB>i</SUB>,A,B)=&sum;(1,2,4,7). </B>O sea que
+<B>C<SUB>o</SUB>=A'BC<SUB>i</SUB>+AB'C<SUB>i</SUB>+ABC<SUB>i</SUB>'+ABC<SUB>i</SUB></B>
+y <B>S=A'B'C<SUB>i</SUB>+A'BC<SUB>i</SUB>'+AB'C<SUB>i</SUB>'+ABC<SUB>i</SUB>.</B>
+Simplificando vemos que:</FONT></P>
+<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>C<SUB>o</SUB>=AB+AC<SUB>i</SUB>+
+BC<SUB>i</SUB> </B></FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
+que <B>S=C<SUB>i</SUB>'(A'B+AB')+C<SUB>i</SUB>(A'B'+AB)</B>, como
+<B>(A'B'+AB)=(A'B+AB')'=(A&loz;B)'</B> (XOR es una XNOR negada), si
+cambiamos las variables (para verlo f&aacute;cil) y hacemos <B>(A&loz;B)=T</B>
+=&gt; <B>S=C<SUB>i</SUB>'T+C<SUB>i</SUB>T'</B> =&gt; <B>S = C<SUB>i</SUB></B>&loz;<B>T
+, </B>entonces</FONT></P>
+<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>S=C<SUB>i</SUB>&loz;A&loz;B</B></FONT></P>
+<P ALIGN=LEFT STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Si
+doble negamos la funci&oacute;n del acarreo de salida para
+implementar con compuertas NAND, obtendr&iacute;amos la funci&oacute;n
+<B>C<SUB>o</SUB>=[(AB)'(AC<SUB>i</SUB>)'(BC<SUB>i</SUB>)']'</B> y el
+diagrama del circuito se ver&iacute;a:</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="SumadorCompleto.gif" NAME="gr&aacute;ficos4" ALIGN=LEFT WIDTH=604 HEIGHT=445 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Este
+es un sumador completo de un bit, el mismo implementado en el IC
+7480. En forma de bloque ver&iacute;amos algo como:</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="SumadorCompletoBloque.gif" NAME="gr&aacute;ficos5" ALIGN=LEFT WIDTH=546 HEIGHT=370 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Estas
+implementaciones son hechas con puras compuertas y los IC's usados
+usan menos de 10 de ellas por lo que estos sumadores <B>son a nivel
+de SSI</B>. Si queremos construir un sumador de, por ejemplo, 4 bits,
+deberemos poner en cascada cuatro sumadores completos de un bit tal
+como se muestra a continuaci&oacute;n:</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="Sumador4bitsCascada.gif" NAME="gr&aacute;ficos6" ALIGN=LEFT WIDTH=580 HEIGHT=406 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">Esto
+no es m&aacute;s que el IC 7483 (<B>que es un sumador a escala MSI</B>
+debido al n&uacute;mero de compuertas que &eacute;ste usa). El IC7483
+es algo como:</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="Sumador4Bits_7483.gif" NAME="gr&aacute;ficos7" ALIGN=LEFT WIDTH=559 HEIGHT=386 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
+estos sumadores a su vez tambi&eacute;n pueden ser organizados en
+cascada para implementar sumadores de 8, 12, 16, ... 4n, bits. El
+acarreo de entrada del primer sumador (quien incluir&aacute; el bit
+menos significativo) debe ir a tierra para indicar el cero. </FONT>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Recuerden,
+cuando la implementaci&oacute;n se hace con puras compuertas l&oacute;gicas,
+el tipo de circuito integrado usado tiene nivel de integraci&oacute;n
+SSI. Puedo dise&ntilde;ar un circuito con 30 compuertas l&oacute;gicas,
+pero por el s&oacute;lo hecho de usar s&oacute;lo compuertas, estamos
+realizando la implementaci&oacute;n a nivel SSI. Si en nuestro
+circuito usamos, adem&aacute;s de las compuertas, tambi&eacute;n IC's
+como el sumador de 4 bits IC7483, estamos haciendo una implementaci&oacute;n
+que usa tecnolog&iacute;a a nivel MSI. O sea, que si les digo que
+dise&ntilde;en un sumador BCD a nivel SSI quiere decir que pueden
+usar &uacute;nica y exclusivamente chips de compuertas l&oacute;gicas
+como el 7400, 7408, etc pero si les digo que pueden realizar su
+implementaci&oacute;n a nivel MSI, quiere decir que pueden incluir
+IC's como por ejemplo el 7483 en su dise&ntilde;o.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Otro
+punto de vista para ver el sumador completo en:
+<A HREF="http://hyperphysics.phy-astr.gsu.edu/hbase/electronic/fulladd.html">http://hyperphysics.phy-astr.gsu.edu/hbase/electronic/fulladd.html</A></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Quisiera
+comentar algo: cuando se realiza la </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">suma
+de dos n&uacute;meros en paralelo</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+utilizando </FONT></FONT></SPAN><STRONG><EM><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">sumadores
+completos</FONT></FONT></SPAN></EM></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+se supone que </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">todos
+los bits est&aacute;n disponibles al mismo tiempo</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">para poder realizar la
+operaci&oacute;n; sin embargo, esto no sucede en forma instant&aacute;nea,
+ya que analizando el circuito de la </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Figura
+2a</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+se observa que para obtener el </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">acarreo
+</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">de
+salida se tiene m&aacute;s de un </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">nivel
+de ejecuci&oacute;n</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">y el </FONT></FONT></SPAN><EM><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">tiempo
+de propagaci&oacute;n total</FONT></FONT></SPAN></STRONG></EM><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">ser&aacute; igual al </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">retardo
+de propagaci&oacute;n</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">de una compuerta t&iacute;pica
+multiplicado por el n&uacute;mero de </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">niveles
+de ejecuci&oacute;n</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">en el circuito. Por lo tanto, si
+observamos el circuito de la </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Figura
+3</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+el tiempo mayor de propagaci&oacute;n ser&aacute; el tiempo que se
+tome el </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">bit
+de acarreo</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">en </FONT></FONT></SPAN><EM><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">propagarse</FONT></FONT></SPAN></STRONG></EM><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">por los </FONT></FONT></SPAN><STRONG><EM><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">sumadores
+completos</FONT></FONT></SPAN></EM></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.
+Como cada bit de salida de la suma depende del </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">valor
+del </FONT></FONT></SPAN></STRONG><EM><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">acarreo</FONT></FONT></SPAN></EM><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">de entrada</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+esta </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">salida</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">ocurrir&aacute; solamente cuando
+el </FONT><STRONG><FONT FACE="Lucida Sans, sans-serif">bit de </FONT></STRONG></FONT></SPAN><STRONG><EM><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">acarreo</FONT></FONT></SPAN></EM></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">se haya </FONT></FONT></SPAN><EM><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">propagado</FONT></FONT></SPAN></STRONG></EM><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.
+Por ejemplo </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">S<SUB>3</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+de la </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Figura
+3</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">ocurrir&aacute;</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">solamente cuando </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">C<SUB>3</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">se </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">genere</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+pero a su vez </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">C<SUB>3</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">se </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">genera</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">cuando </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">S<SUB>2</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+</FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">ocurra</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">y </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">S<SUB>2</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+</FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">ocurre</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">cuando se genera </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">C<SUB>2</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+y as&iacute; sucesivamente. El tiempo de propagaci&oacute;n del
+</FONT></FONT></SPAN><EM><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">acarreo</FONT></FONT></SPAN></STRONG></EM><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">es un factor que limita la
+</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">rapidez</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">con que se suman dos n&uacute;meros
+en paralelo y si recordamos que las operaciones aritm&eacute;ticas se
+efect&uacute;an por medio de sumas sucesivas, el resultado obtenido
+viene siendo </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">cr&iacute;tico</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+si no se le da el tiempo necesario para la </FONT></FONT></SPAN><EM><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">propagaci&oacute;n
+del acarreo</FONT></FONT></SPAN></STRONG></EM><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.
+Una de las </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">t&eacute;cnicas</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">m&aacute;s usadas es haciendo
+&ldquo;Circuitos Generadores de Acarreo&rdquo;, la cual probablemente
+ser&aacute; explicado en el futuro de ser necesario y si nos da
+tiempo.</FONT></FONT></SPAN></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>RESTADORES</B></FONT></P>
+<P ALIGN=LEFT STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">De
+la misma forma que pueden implementarse circuitos sumadores, pueden
+tambi&eacute;n implementarse los restadores. Veamos primero el caso
+del semi-restador. Para &eacute;ste, asumiendo que tenemos la resta
+de A &ndash; B siendo A y B bits, R el resultado de la resta y <B>P<SUB>o
+</SUB></B>el bit de &ldquo;pr&eacute;stame&rdquo;, tenemos la
+siguiente tabla de a verdad:</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=233 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=41>
+		<COL WIDTH=46>
+		<COL WIDTH=49>
+		<COL WIDTH=48>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>A</B></FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>B</B></FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>R</B></FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><B>P<SUB>o</SUB></B></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=41>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">ya que 1-1 = 0-0 = 0, 1-0=1 y,
+el m&aacute;s interesante, 0-1 que debe pedir 1 prestado para formar
+la resta 10-1 = 1 y por esa raz&oacute;n en este caso la resta es 1 y
+el bit de pr&eacute;stame tambi&eacute;n es 1.</FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">Como ya se ha comentado, y
+veremos con m&aacute;s calma m&aacute;s adelante, lo normal en los
+sistemas l&oacute;gicos y la forma en que las computadoras procesan
+los n&uacute;meros negativos es a trav&eacute;s del complemento a dos
+del n&uacute;mero. Es por ello que en las computadoras el bit m&aacute;s
+significativo representa el bit de signo. Si est&aacute; activo se
+dice que el n&uacute;mero es negativo y el valor del mismo es el
+complemento a dos de dicho n&uacute;mero. As&iacute; pues, para el
+caso de 0-1, tenemos que el resultado es 11, que es negativo y cuyo
+complemento a dos es 1, por lo que representa el -1... correcto. OJO:
+El bit m&aacute;s significativo es el <B>P<SUB>o </SUB></B>.</FONT></P>
+<P ALIGN=LEFT STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Vemos
+entonces que <B>R(A,B)</B>=&sum;<B>(1,2)</B> y que <B>P<SUB>o</SUB>(A,B)</B>=&sum;<B>(1)</B>.
+Resolviendo estas funciones obtenemos que: <B>P<SUB>o</SUB></B>= <B>A'B
+y R = A'B + AB'</B>. Si ven la &uacute;ltima funci&oacute;n se dar&aacute;n
+cuenta de que es igual al resultado en la operaci&oacute;n de la
+suma, o sea, <B>R=A&loz;B</B>. La diagramaci&oacute;n de este
+circuito, y un diagrama en bloque del mismo, se ve a continuaci&oacute;n:</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="SemiRestador.gif" NAME="gr&aacute;ficos8" ALIGN=LEFT WIDTH=505 HEIGHT=380 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-weight: medium; line-height: 150%">
+<FONT FACE="Lucida Sans, sans-serif">Para el caso del restador
+completo, tenemos la siguiente tabla:</FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=312 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=47>
+		<COL WIDTH=50>
+		<COL WIDTH=52>
+		<COL WIDTH=56>
+		<COL WIDTH=47>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>A</B></FONT></P>
+			</TD>
+			<TD WIDTH=50>
+				<P><B>B</B></P>
+			</TD>
+			<TD WIDTH=52>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>P<SUB>i</SUB></B></FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P><FONT FACE="Lucida Sans, sans-serif"><B>P<SUB>o</SUB></B></FONT></P>
+			</TD>
+			<TD WIDTH=47>
+				<P><B>R</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>0</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=50>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=52>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=56>
+				<P>1</P>
+			</TD>
+			<TD WIDTH=47>
+				<P>1</P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">De
+la tabla observamos que: <B>P<SUB>o</SUB>(A,B,P<SUB>i</SUB>)=&sum;(1,2,3,7)</B>
+y que <B>R(A,B,P<SUB>i</SUB>)=&sum;(1,2,4,7). </B>O sea que
+<B>P<SUB>o</SUB>=A'B'P<SUB>i</SUB>+A'BP<SUB>i</SUB>'+A'BP<SUB>i</SUB>+ABP<SUB>i</SUB></B>
+y <B>R=A'B'P<SUB>i</SUB>+A'BP<SUB>i</SUB>'+AB'P<SUB>i</SUB>'+ABP<SUB>i</SUB>.</B>
+Simplificando vemos que:</FONT></P>
+<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>P<SUB>o</SUB>=A'B+A'P<SUB>i</SUB>+
+BP<SUB>i</SUB> </B></FONT>
+</P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Si
+lo negamos dos veces para tener su forma con compuertas NAND
+tendr&iacute;amos que</FONT></P>
+<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>P<SUB>o</SUB>=[(A'B)'(A'P<SUB>i</SUB>)'(BP<SUB>i</SUB>)']'</B></FONT></P>
+<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
+que <B>R=P<SUB>i</SUB>'(A'B+AB')+P<SUB>i</SUB>(A'B'+AB)</B>, como
+<B>(A'B'+AB)=(A'B+AB')'=(A&loz;B)'</B>, entonces</FONT></P>
+<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>R=P<SUB>i</SUB>&loz;A&loz;B</B></FONT></P>
+<P ALIGN=LEFT STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">funci&oacute;n
+que es igual a la de la suma.</FONT></P>
+<P ALIGN=LEFT STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">El
+diagrama del circuito restador completo y su respectivo diagrama de
+bloque lo vemos a continuaci&oacute;n:</FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><IMG SRC="RestadorCompleto.gif" NAME="gr&aacute;ficos9" ALIGN=LEFT WIDTH=477 HEIGHT=310 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Como
+ya les coment&eacute;, las computadoras actuales utilizan
+</FONT></FONT><STRONG><EM><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">complementos</FONT></FONT></EM></STRONG><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">a dos (aparte de por lo pr&aacute;ctico
+que resulta trabajar con los resultados, debido a que con el
+complemento a 1 podr&iacute;a haber ambiguedad con el n&uacute;mero
+cero) para efectuar la operaci&oacute;n </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">resta</FONT></FONT></STRONG><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">y para la representaci&oacute;n
+de n&uacute;meros negativos. Los </FONT></FONT><EM><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">complementos</FONT></FONT></STRONG></EM><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">se usan en las computadoras para
+simplificar y hacer m&aacute;s r&aacute;pidas las operaciones
+aritm&eacute;ticas. La forma en que funciona la resta por complemento
+ya ha sido estudiada por lo que no ser&aacute; revisada aqu&iacute;
+(si lo desea puede volver a ver el tema 1 y releer la parte de resta
+por complemento). Entonces, de todo &eacute;sto podemos inferir que
+para realizar restas podemos usar tambi&eacute;n nuestros circuitos
+sumadores tradicionales ya que la representaci&oacute;n de los
+n&uacute;meros negativos vendr&aacute; dada por un &ldquo;1&rdquo; en
+el bit m&aacute;s significativo del n&uacute;mero y el complemento a
+dos del resto de los bits.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Entonces,
+la forma m&aacute;s f&aacute;cil de trabajar con n&uacute;meros
+negativos es asumiendo que en nuestros circuitos todos ellos estar&aacute;n
+expresados en la forma de complemento a dos. Veamos un par de
+ejemplos: Si queremos realizar la resta: 7-3 en binario, tenemos que
+(7)<SUB>10</SUB>=0111 y que (-3)<SUB>10</SUB>=1101. Al realizar la
+suma tenemos que el resultado es 0100 con acarreo 1. Sabemos que en
+el caso de restas por complemento a dos, este acarreo no tiene
+efecto, por lo que el resultado es correcto y es (4)<SUB>10</SUB>.
+Pero que pasa si hacemos 3-7. Aqu&iacute; (3)<SUB>10</SUB>=0011 y
+(-7)<SUB>10</SUB>=1001. La suma es 1100 SIN acarreo que es un n&uacute;mero
+negativo y representa al (-4)<SUB>10</SUB> lo que es correcto. Cuando
+trabajamos de esta forma debemos estar consientes de que 1010 NO
+representa el n&uacute;mero 10 sino al -6. Con cuatro bits s&oacute;lo
+podemos trabajar con n&uacute;meros comprendidos entre -8 y 7
+(Obvio), as&iacute; que si queremos trabajar con n&uacute;meros m&aacute;s
+grandes debemos trabajar a su vez con m&aacute;s bits.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Si en todo
+caso, queremos &ldquo;convertir&rdquo; los n&uacute;meros positivos a
+complemento a dos en nuestros circuitos (por cualquiera que fuera la
+raz&oacute;n), podemos sencillamente implementarlo con el uso de
+inversores y un sumador para sumar el uno necesario para convertir el
+complemento a uno en complemento a dos, o usando tambi&eacute;n
+circuitos sumadores en el que una de las entradas tenga una
+implementaci&oacute;n con compuertas XOR, tal y como se vio en clase
+y que por razones de tiempo no colocar&eacute; el diagrama aqu&iacute;
+ahora (4 XOR, cada uno de dos entradas siendo una de las mismas com&uacute;n
+a las 4 compuertas... en el caso que esta entrada com&uacute;n sea
+cero, las otras cuatro entradas pasar&aacute;n directas o si es uno,
+neg&aacute;ndolas y llevando ese mismo uno a la pata de acarreo de
+entrada para sumar el uno necesario para convertir un complemento a
+uno a un complemento a dos. Este circuitos sirve para sumas, con cero
+en la entrada com&uacute;n de las xor, y para restas con un uno. De
+haber acarreo, &eacute;ste s&oacute;lo debe ser considerado si se
+est&aacute; realizando una suma).</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>UN
+EJEMPLO DE APLICACI&Oacute;N: EL SUMADOR BCD</B></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
+ahora un ejemplo usando los sumadores 7483, en este caso particular
+el de la suma BCD.</FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
+ya hemos dicho, p<FONT COLOR="#000000">osiblemente el </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">c&oacute;digo</FONT></FONT></STRONG><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">m&aacute;s com&uacute;nmente
+empleado sea el </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">C&Oacute;DIGO
+DECIMAL CODIFICADO EN BINARIO</FONT></FONT></STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+generalmente llamado </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">c&oacute;digo
+BCD</FONT></FONT></STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+utilizado en computadoras digitales para </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">representar</FONT></FONT></STRONG><FONT COLOR="#000000">
+</FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">n&uacute;meros
+decimales</FONT></FONT></STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.
+Una caracter&iacute;stica particular de este </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">c&oacute;digo</FONT></FONT></STRONG><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">es que por <EM><STRONG>cada
+d&iacute;gito decimal </STRONG>se requieren</EM></FONT></FONT><STRONG><EM><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">4 d&iacute;gitos binarios</FONT></FONT></EM></STRONG><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">(bits), esto quiere decir que se
+tendr&aacute;n </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">16</FONT></FONT></STRONG><FONT COLOR="#000000">
+</FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">combinaciones</FONT></FONT></STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+de las cuales s&oacute;lo son </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">v&aacute;lidas</FONT></FONT></STRONG><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">del </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">0</FONT></FONT></STRONG><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">al </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">9</FONT></FONT></STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+quedando como </FONT></FONT><STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">opcionales
+6 combinaciones</FONT></FONT></STRONG><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>F&iacute;jense,
+las sumas 1+2=3, 3+4=7, 8+1=9, etc, o sea, todas cuya suma sea menor
+o igual a nueve no tienen problemas en BCD ya que todas esas sumas
+son iguales en binario y en BCD. Pero en el caso de 5+5=10, que es
+0101+0101 el resultado es 1010 que tiene sentido en binario pero NO
+en BCD. El resultado en BCD es 1 y 0000, que son los dos c&oacute;digos
+binarios de los n&uacute;meros decimales 1 y 0 que juntos representan
+el 10. Recuerden que los n&uacute;meros BCD son una forma de trabajar
+los n&uacute;meros DECIMALES pero expresados con c&oacute;digo
+binario. Entonces, toda suma cuyo resultado est&eacute; por encima de
+9 debe tener un procesamiento especial. Por otro lado, el n&uacute;mero
+m&aacute;ximo que puede formarse de la suma de dos n&uacute;meros BCD
+es el 18 (9+9) o en todo caso el 19 si tomamos en cuenta el acarreo
+de entrada (9+9+1). La primera etapa de nuestro circuito es
+elemental, son nuestros dos n&uacute;meros binarios de entrada a un
+circuito sumador. Lo que requerir&aacute; de procesamiento ser&aacute;
+la salida de esta primera etapa.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Veamos
+entonces la siguiente tabla de la verdad:</FONT></FONT></FONT></P>
+<TABLE WIDTH=677 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+	<COL WIDTH=86>
+	<COL WIDTH=56>
+	<COL WIDTH=51>
+	<COL WIDTH=51>
+	<COL WIDTH=49>
+	<COL WIDTH=44>
+	<COL WIDTH=43>
+	<COL WIDTH=43>
+	<COL WIDTH=46>
+	<COL WIDTH=46>
+	<COL WIDTH=36>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>Resultado
+			de la suma en decimal.</B></FONT></FONT></P>
+		</TD>
+		<TD COLSPAN=5 WIDTH=295>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>Resultado
+			de la suma en Binario</B></FONT></FONT></P>
+		</TD>
+		<TD COLSPAN=5 WIDTH=258>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>Resultado
+			de la suma en BCD (binario corregido)</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>C<SUB>4</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>S<SUB>3</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>S<SUB>2</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>S<SUB>1</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>S<SUB>0</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>C<SUB>n</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>R<SUB>3</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>R<SUB>2</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>R<SUB>1</SUB></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>R<SUB>0</SUB></B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>2</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>3</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>4</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>5</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>6</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>7</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>8</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>9</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#23ff23"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>10</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>11</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>12</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>13</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>14</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>15</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>16</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0
+			</B></FONT></FONT></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>17</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>18</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=86>
+			<P ALIGN=LEFT><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>19</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=44>
+			<P ALIGN=LEFT><FONT COLOR="#000080"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=46>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>0</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=LEFT><FONT COLOR="#ff0000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>1</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>S
+es la salida originada por la suma de nuestra primera etapa del
+circuito y C<SUB>4</SUB> es el acarreo generado en la misma. Vemos
+que los resultados en <FONT COLOR="#000080">AZUL </FONT>son los
+generados por nuestra primera etapa. Vemos que para nuestro circuito
+de salida ninguno de los resultados en <FONT COLOR="#23ff23">VERDE
+CLARO</FONT> requieren correcci&oacute;n (El resultado en BCD es el
+mismo que en binario). En cambio, para todos nuestros resultados en
+<FONT COLOR="#ff0000">ROJO</FONT> si requeriremos de una correcci&oacute;n.
+</FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>De
+aqu&iacute; podemos concluir que el &ldquo;procesamiento especial&rdquo;
+al que hice referencia puede resolverse con tan s&oacute;lo sumar 6
+(0110) a los resultados de la suma de nuestra primera etapa cuyos
+valores est&eacute;n por encima del nueve (ejemplos: 10=1010 que +
+0110 es 1 0000, 12=1100 que + 0110 es 1 0010, 19=10011 que + 0110 es
+1 1001) y que en todos los casos que se requieren correcci&oacute;n
+el bit m&aacute;s significativo de nuestro resultado a obtener es UNO
+(C<SUB>n</SUB>=1). CONCLUSI&Oacute;N: R=S si S&lt;=9 y R=S+6 si S&gt;9.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>De
+la tabla tambi&eacute;n podemos tambi&eacute;n obtener que:
+<B>C<SUB>n</SUB>(C<SUB>4</SUB>,S<SUB>3</SUB>,S<SUB>2</SUB>,S<SUB>1</SUB>,S<SUB>0</SUB>)</B>=&sum;<B>(10,11,12,13,14,15,16,17,18,19</B>)
+o lo que es lo mismo: <B>C<SUB>n</SUB>=C<SUB>4</SUB>+F(S<SUB>3</SUB>,S<SUB>2</SUB>,S<SUB>1</SUB>,S<SUB>0</SUB>)
+</B>donde <B>F(S<SUB>3</SUB>,S<SUB>2</SUB>,S<SUB>1</SUB>,S<SUB>0</SUB>)</B>=&sum;<B>(10,11,12,13,14,15</B>).
+Este es en realidad nuestro circuito corrector ya que ser&aacute;
+&eacute;ste quien indique cuando es que deben sumarse 0110 (como ya
+coment&eacute;, la correcci&oacute;n es siempre que C<SUB>n</SUB>=1).</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Ejerc&iacute;tese
+con mapas de K. y resuelva las funciones anteriores. Se dar&aacute;
+cuenta de que el resultado de la simplificaci&oacute;n es:
+<B>C<SUB>n</SUB>=C<SUB>4</SUB>+S<SUB>3</SUB>S<SUB>2</SUB>+S<SUB>3</SUB>,S<SUB>1</SUB></B>
+y que a su vez, llev&aacute;ndolo a compuertas universales en este
+caso a NAND, ser&aacute;: <B>C<SUB>n</SUB>=[(C<SUB>4</SUB>)'(S<SUB>3</SUB>S<SUB>2</SUB>)'(S<SUB>3</SUB>,S<SUB>1</SUB>)']'</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Veamos
+entonces nuestro circuito:</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><IMG SRC="SumadorBCD_OK.gif" NAME="gr&aacute;ficos10" ALIGN=LEFT WIDTH=544 HEIGHT=337 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none">Analizando
+el circuito, se observa que en los resultados del </SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">0</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">al </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">9</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">no se se realiza ninguna
+correcci&oacute;n. Por ejemplo, si el resultado es </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">1001</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">(</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">9<SUB>10</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">),
+</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">C<SUB>4</SUB>=0</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">y la salida de la compuerta </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">(1)</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">es </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">;
+</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">S<SUB>3</SUB>=1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">y </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">S<SUB>2</SUB>=0</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+por lo que la salida de la compuerta </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">(2)</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">es </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">;
+para la compuerta </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">(3)</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+las entradas son </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">y </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">0</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">y la salida es </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.
+Las tres entradas de la compuerta </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">(4)</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">son </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+lo que da como resultado que su salida sea </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">0</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.
+En forma similar se analizan los resultados del </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">10</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">al </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">15</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">y del </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">16</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">al </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">19
+(este &uacute;ltimo el m&aacute;s f&aacute;cil de explicar ya que al
+ser C<SUB>4</SUB>=1 la salida de la compuerta (1) es cero por lo que
+autom&aacute;ticamente la salida de la compuerta (4) es 1)</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">;
+en estos casos la salida </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">C<SUB>n</SUB>=1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+por lo que </FONT></FONT></SPAN><EM><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">se
+requiere la correcci&oacute;n</FONT></FONT></SPAN></STRONG></EM><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">y el </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">generado en el circuito
+corrector va a las entradas del segundo sumador para originar el </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">0110</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+<FONT FACE="Lucida Sans, sans-serif">(</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">6<SUB>10</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">)
+as&iacute; como tambi&eacute;n a formar parte del n&uacute;mero final
+us&aacute;ndose como el bit m&aacute;s significativo de nuestro
+resultado en BCD. Como algunos notar&aacute;n, en todos los casos en
+que se usa la correcci&oacute;n el acarreo del segundo sumador es 1.
+Este bit de acarreo SI puede ser usado como el bit m&aacute;s
+significativo del resultado BCD. Lo &uacute;nico que podr&iacute;a
+ser una factor importante a tomar en cuenta es el tiempo de
+propagaci&oacute;n. Obviamente C<SUB>n</SUB> est&aacute; disponible
+antes que el acarreo de salida del segundo sumador y es por ello que
+suele usarse &eacute;ste sobre todo si se colocar&aacute;n varios
+circuitos de este tipo en cascada. Por lo tanto, si el tiempo no es
+un factor importante en su circuito, es indiferente usar cualquiera
+de los dos, as&iacute; que pueden utilizar el que le resulte m&aacute;s
+c&oacute;modo de cablear.</FONT></FONT></SPAN></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="font-style: normal; font-weight: medium; line-height: 150%">
+<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Espero
+que les haya quedado claro. Cualquier cosa preg&uacute;ntenme en la
+clase virtual. Ahora les dejo algunos ejercicios.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="font-style: normal; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>EJERCICIOS</B></FONT></FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Dise&ntilde;e</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">un</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">circuito
+	combinacional para obtener el </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">complemento
+	a 2</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">y el </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">complemento
+	a 1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+	a partir del </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">c&oacute;digo
+	binario </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">de</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">4
+	variables.</FONT></FONT></SPAN></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="line-height: 150%"><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Obtener</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">el</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">diagrama
+	l&oacute;gico de un </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">sumador
+	completo </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">de
+	dos variables</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">A </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">y</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">B</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+	usando s&oacute;lo compuertas </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">NAND</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.</FONT></FONT></SPAN></P>
+	<LI><P ALIGN=LEFT STYLE="line-height: 150%"><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Dise&ntilde;e</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">un</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">circuito
+	l&oacute;gico que genere el </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">complemento</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">a </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">NUEVE</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">de un n&uacute;mero en</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">BCD </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">de</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">4
+	bits. Utilice para tal fin el </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">sumador
+	completo </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">de</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">4
+	bits</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">7483</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.</FONT></FONT></SPAN></P>
+	<LI><P ALIGN=LEFT STYLE="line-height: 150%"><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Usando
+	4 compuertas XOR y un circuito </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">MSI</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">de </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">sumadores
+	completos </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">de
+	4 bits (</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">7483</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">),
+	construya</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">un</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">sumador-restador </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">paralelo.
+	Use una variable de selecci&oacute;n de entrada</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">Op</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+	de tal manera que cuando Op</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">=0</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">el circuito </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">sumar&aacute;
+	</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">y
+	cuando Op</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">=1</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">este restar&aacute;. Ya saben
+	como hacerlo ya que se vio en clases.</FONT></FONT></SPAN></P>
+	<LI><P ALIGN=LEFT STYLE="line-height: 150%"><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Dise&ntilde;e</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">un</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">multiplicador </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">binario
+	que multiplique un n&uacute;mero de </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">4</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">bits </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">B=b<SUB>3</SUB>b<SUB>2</SUB>b<SUB>1</SUB>b<SUB>0</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">por un n&uacute;mero de 2 bits
+	</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">A=a<SUB>1</SUB>a<SUB>0</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+	para formar el producto </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">C=c<SUB>5</SUB>c<SUB>4</SUB>c<SUB>3</SUB>c<SUB>2</SUB>c<SUB>1</SUB>c<SUB>0</SUB></FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">.
+	Esto puede lograrse mediante compuertas AND y </FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">sumadores
+	paralelos </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">de
+	4 bits.</FONT></FONT></SPAN></P>
+	<LI><P ALIGN=LEFT STYLE="line-height: 150%"><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Partiendo
+	del c&oacute;digo</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">BCD </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">de
+	4 bits, dise&ntilde;e</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">un</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	</FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">circuito
+	que genere el c&oacute;digo</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">EXCESO </FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">en</FONT></FONT></SPAN><STRONG><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000">
+	<FONT FACE="Lucida Sans, sans-serif">3</FONT></FONT></SPAN></STRONG><SPAN STYLE="text-decoration: none"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">,
+	y el complemento a nueve de este &uacute;ltimo (por supuesto,
+	tambi&eacute;n en exceso a 3) utilizando tecnolog&iacute;a SSI y
+	MSI.</FONT></FONT></SPAN></P>
+</OL>
+<P ALIGN=LEFT STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">En
+la pr&oacute;xima clase se ver&aacute; el TEMA 9: </FONT><A HREF="http://lasclases.com/CircuitosLogicos/tema9.html"><FONT FACE="Lucida Sans, sans-serif">Multiplexores
+y demultiplexores a nivel SSI y MSI. Aplicaciones.</FONT></A></P>
+</BODY>
+</HTML>

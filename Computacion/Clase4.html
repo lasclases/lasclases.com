@@ -1,0 +1,628 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
+	<META NAME="CREATED" CONTENT="20030920;20353951">
+	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
+	<META NAME="CHANGED" CONTENT="20030920;20362217">
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Comandos
+del Lenguaje C.</B></U></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Funciones b&aacute;sicas
+de Entrada y Salida por <SPAN LANG="es-ES">consola.</SPAN></B></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">La
+E/S por <SPAN LANG="es-ES">consola</SPAN> se refiere a todas las
+operaciones que se producen en el teclado y la pantalla <SPAN LANG="es-ES">de</SPAN>
+la computadora.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">A
+continuaci&oacute;n comentaremos algunas funciones b&aacute;sicas de
+entrada y salida. Los prototipos de las que forman parte del est&aacute;ndar
+ANSI C <SPAN STYLE="text-decoration: none"><FONT SIZE=3>se encuentran
+dentro de la librer&iacute;a stdio.h.</FONT></SPAN></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>printf:
+</B><SPAN STYLE="font-weight: medium">Definida</SPAN><B> </B><SPAN STYLE="font-weight: medium">dentro
+de ANSI C.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo de printf es:	int printf(const char
+*formato, listaDeArgumentos);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Como ver&aacute;n, printf devuelve un n&uacute;mero
+entero. Este representa el n&uacute;mero de caracteres escritos.
+Cualquier n&uacute;mero negativo indica que ocurri&oacute; un error.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta funci&oacute;n escribe en el flujo est&aacute;ndar
+de salida stdout ( o sea, por pantalla ) los argumentos que componen 
+&ldquo;listaDeArgumentos&rdquo; seg&uacute;n las especificaciones
+dadas por la cadena apuntada por &ldquo;formato&rdquo;.  La cadena
+&ldquo;formato&rdquo;, puede contener tanto letras como c&oacute;digos
+que describen la forma en que se muestran los argumentos.  Existen
+varios c&oacute;digos, pero a continuaci&oacute;n s&oacute;lo les
+comentar&eacute; los m&aacute;s usados:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>%c	Se usa para imprimir un caracter</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>%i	Se usa para imprimir un entero en decimal con signo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>%d	Se usa para imprimir un entero en decimal con signo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>%f	Se usa para imprimir un n&uacute;mero en coma
+flotante ( real ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>%x	Se usa para imprimir n&uacute;meros hexadecimales.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>%o	Se usa para imprimir n&uacute;meros en Octal.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>%s	Se usa para imprimir una cadena de caracteres.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>%e	Se usa para imprimir un n&uacute;mero en notaci&oacute;n
+cient&iacute;fica.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Para su informaci&oacute;n, existen modificadores que
+pueden especificar con mas detalle de que forma se quiere que se
+muestren los datos con la finalidad de poder ordenarlos. Esto quiere
+decir que se puede modificar el c&oacute;digo ( colocando los
+modificadores entre el signo % y el caracter de formato ) para que
+muestre por ejemplo una determinada longitud del campo, cuantas
+posiciones decimales se mostrar&aacute;n o un indicador de ajuste a
+la izquierda.  Por ejemplo, %-10.2f ajusta un n&uacute;mero en coma
+flotante por la izquierda con dos posiciones decimales en un campo de
+diez caracteres. No profundizaremos en este punto.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Ejemplos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Hola&rdquo;);  // Imprime la palabra Hola
+por pantalla ( sin las comillas ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Hola\n&rdquo;); // Igual al anterior pero
+imprime imprime el retorno de carro- Nueva l&iacute;nea</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>i = 10;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;N&uacute;mero entero %i \n&rdquo;, i); //
+Imprime &ldquo;Numero entero 10&rdquo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>c = 'x';</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Caracter %c y n&uacute;mero %i\n&rdquo;,
+c, i); // Imprime &ldquo;Caracter x y n&uacute;mero 10&rdquo;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Nuestro
+Primer programa: </B><SPAN STYLE="font-weight: medium">El cl&aacute;sico
+Hola Mundo.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+ <FONT SIZE=3>#include&lt;stdio.h&gt;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>int main(void) {</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Hola Mundo!\n&rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>return 0;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>}</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Al compilar y ejecutar este programa, lo que har&aacute;
+es imprimir la frase &ldquo;Hola Mundo!&rdquo; por pantalla ( sin las
+comillas ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>getchar:</B><SPAN STYLE="font-weight: medium">
+Es la funci&oacute;n de entrada definida por el ANSI C. Esta funci&oacute;n
+se encarga de obtener un caracter desde el teclado. El problema de
+esta funci&oacute;n es que guarda en un <SPAN LANG="es-ES">buffer</SPAN>
+la entrada hasta que se presiona la tecla ENTER ( y al hacerlo, ella
+tomar&aacute; s&oacute;lo el primer caracter del <SPAN LANG="es-ES">buffer
+).</SPAN> La raz&oacute;n de &eacute;sto es que los sistemas UNIX
+originales usaban un <SPAN LANG="es-ES">buffer</SPAN> de l&iacute;nea
+para entrada por terminal ( lo que quiere decir que hab&iacute;a que
+introducir un retorno de carro para que lo que se hubiese escrito
+fuese efectivamente enviado al computador ). Esta funci&oacute;n est&aacute;
+en desuso debido a que los programas modernos requieren cierto grado
+de <SPAN LANG="es-ES">interactividad</SPAN> y el hecho de tener que
+esperar a enviar un ENTER para procesar suele ser <SPAN LANG="es-ES">desconcertante.</SPAN>
+A&uacute;n as&iacute;, siempre es <SPAN LANG="es-ES">incluida</SPAN>
+en los compiladores por razones de portabilidad.  Existe una funci&oacute;n
+no ANSI mas conveniente a la hora de esperar un caracter por teclado
+que est&aacute; <SPAN LANG="es-ES">incluida</SPAN> en la librer&iacute;a
+de Turbo C  conio.h que veremos m&aacute;s adelante.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo del getchar() es:	int getchar(void);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un ejemplo de su uso:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>char</B> ch;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ch = <B>getchar()</B>;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN STYLE="text-decoration: none"><FONT SIZE=3><B>getche:
+</B><SPAN STYLE="font-weight: medium">No es</SPAN></FONT></SPAN> ANSI
+C sino que est&aacute; definida dentro de una librer&iacute;a de
+Borland ( quien desarrollo Turbo C, Turbo C++ y Borland C++) llamada
+conio.h. Espera a que el usuario presione una tecla por teclado y
+esta funci&oacute;n lee el caracter presionado sin necesidad de
+esperar el ENTER y el &ldquo;eco&rdquo; de la misma es presentado por
+pantalla.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo del getche() es:	int getche(void);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un ejemplo de su uso:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>char</B> ch;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ch = <B>getche()</B>;  // Asigna a ch el caracter
+presionado por teclado y lo muestra por pantalla.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>getch:
+</B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">No
+es</SPAN><B> </B><SPAN STYLE="font-weight: medium">ANSI C sino que
+est&aacute; definida dentro de una librer&iacute;a conio.h. Espera a
+que el usuario presione una tecla por teclado y esta funci&oacute;n
+lee el caracter presionado sin necesidad de esperar el ENTER pero a
+diferencia del getche(), &eacute;sta no muestra el &ldquo;eco&rdquo;
+por pantalla.</SPAN></SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo del getch() es:	int getch(void);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un ejemplo de su uso:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>char</B> ch;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ch = <B>getch()</B>;  // Asigna a ch el caracter
+presionado por teclado. No muestra nada por pantalla.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>putchar:</B><SPAN STYLE="font-weight: medium">
+Definida</SPAN><B> </B><SPAN STYLE="font-weight: medium">dentro de
+ANSI C. Imprime un caracter en pantalla en la posici&oacute;n actual
+del cursor</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo de putchar es:	int putchar(int c);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>donde c es el caracter a imprimir. Esta funci&oacute;n
+devuelve un par&aacute;metro ya que el programador podr&iacute;a
+necesitar verificar que la funci&oacute;n haya sido ejecutada con
+&eacute;xito. Si es cierto, devuelve el mismo caracter c, de lo
+contrario devolver&aacute; un EOF ( Una macro definida en stdio.h que
+significa End Of File. Lo veremos m&aacute;s adelante en el curso ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Un ejemplo de su uso:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>char</B> ch;</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>ch = 'S';</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><FONT SIZE=3>put</FONT></SPAN></SPAN>char(ch);	//
+Lo que imprime el caracter 'S' por pantalla.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>scanf:
+</B><SPAN STYLE="font-weight: medium">Definida</SPAN><B> </B><SPAN STYLE="font-weight: medium">dentro
+de ANSI C.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo de scanf es:	int scanf(const char *formato,
+listaDeArgumentos);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Es la funci&oacute;n encargada de leer datos desde el
+buffer est&aacute;ndar de entrada stdin ( teclado ). Puede leer todos
+los tipos de datos que hayan. Es la funci&oacute;n inversa de
+printf();</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Los c&oacute;digos para representar los datos son los
+mismos que en printf. Por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>scanf(&ldquo;%i&rdquo;, &amp;i);  // OJO con el signo
+'&amp;'</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>especifica que se espera del buffer est&aacute;ndar un
+n&uacute;mero entero y &eacute;ste ser&aacute; almacenado dentro de
+la variable i. En realidad el s&iacute;mbolo '&amp;' podr&iacute;a
+traducirse como: &ldquo;en la direcci&oacute;n de memoria que
+contiene la variable 'i'&rdquo;. Sobre esto profundizaremos en
+punteros. Lo que se est&aacute; diciendo que se almacene el valor
+dentro de una localidad de memoria. Este signo NO puede faltar a
+menos que hablemos de cadenas y esto tiene su explicaci&oacute;n que
+lo veremos cuando estudiemos Cadenas m&aacute;s adelante.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Otra cosa es que una s&oacute;lo orden puede ser usada
+para recibir varios datos al mismo tiempo. Por ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>scanf(&ldquo;%i%c&rdquo;, &amp;i, &amp;ch);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>espera a que el usuario introduzca algo como &ldquo;10
+a&rdquo; y luego ENTER por teclado para almacenar 10 en i y la letra
+a en ch.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>Otras
+funciones b&aacute;sicas<SPAN LANG="es-ES">.</SPAN></B></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B><SPAN STYLE="text-decoration: none"><SPAN LANG="es-ES"><FONT SIZE=3>textcolor:</FONT></SPAN></SPAN></B>
+Definida dentro de conio.h. Esta funci&oacute;n cambia el color de
+las letras que se muestran por pantalla.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Su prototipo es: void
+textcolor(int color);</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Donde color es un n&uacute;mero
+que representa el color deseado. Tambien existen unas MACROS
+definidas dentro de conio.h que representan el color. Estos son:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">Macro		Equivalente
+entero</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">BLACK		0</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">BLUE			1</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">GREEN		2</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">CYAN		3</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">RED			4</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">MAGENTA		5</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">BROWN		6</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">LIGHTGRAY	7</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">DARKGRAY		8</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">LIGHTBLUE		9</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">LIGHTGREEN	10</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">LIGHTCYAN	11</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">LIGHTRED		12</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">LIGHTMAGENTA	13</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">YELLOW		14</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">WHITE		15</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">BLINK		128</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El BLINK es para hacer al
+cursor parpadeante.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ejemplo:</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">textcolor(RED);</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">har&aacute; que todo el
+texto que se imprima a continuaci&oacute;n aparezca en rojo.</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>textbackground:
+</B><SPAN STYLE="font-weight: medium">Definida dentro de conio.h.
+Esta funci&oacute;n cambia el color del fondo de pantalla sobre el
+cual se muestran las letras.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Su prototipo es: void textbackground(int color);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El color de fondo s&oacute;lo puede ser de los 8
+principales colores as&iacute; que s&oacute;lo aplican las 8 primeras
+MACROS mencionadas en textcolor ( de 0 a 7 ).</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>textbackground(RED); // El color de fondo ser&aacute;
+Rojo</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>textcolor(BLUE); // El color del texto ser&aacute; Azul.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>clrscr(); // Borra la pantalla pero debido a que el
+color de fondo es rojo,</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>// toda la pantalla se ver&aacute; roja.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>printf(&ldquo;Texto\n); // Imprime la palabra &ldquo;Texto&rdquo;
+en Azul sobre el fondo rojo.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>clrscr:</B><SPAN STYLE="font-weight: medium">
+No est&aacute; definida por el ANSI C. Esta funci&oacute;n se
+encuentra dentro de la librer&iacute;a conio.h de Borland.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta funci&oacute;n borra todo el contenido de la
+ventana de texto actual.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo de clrscr es:	void clrscr(void);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Su forma de uso es:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>clrscr();</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>gotoxy:
+</B><SPAN STYLE="font-weight: medium">No est&aacute; definida por el
+ANSI C. Esta funci&oacute;n se encuentra dentro de la librer&iacute;a
+conio.h de Borland.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo de gotoxy es:	void gotoxy(int x, int y);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta funci&oacute;n coloca al cursor en la posici&oacute;n
+de pantalla apuntada por las coordenadas x e y dentro de la pantalla
+de texto actual. Una pantalla est&aacute;ndar de DOS contiene 80
+columnas por 25 filas. Si las coordenadas no son v&aacute;lidas, no
+se hace nada.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>clrscr();</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>gotoxy(20,10);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><SPAN LANG="es-ES"><FONT SIZE=3>putchar('*');</FONT></SPAN></SPAN></SPAN></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>borra la pantalla, se posiciona en la columna, fila 10 e
+imprime el caracter *.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B><SPAN STYLE="text-decoration: none"><SPAN LANG="es-ES"><FONT SIZE=3>wherex:</FONT></SPAN></SPAN></B>
+<SPAN STYLE="font-weight: medium"><SPAN STYLE="text-decoration: none"><SPAN LANG="es-ES"><FONT SIZE=3>No
+est&aacute; definida por el ANSI C. Esta funci&oacute;n se encuentra
+dentro de la librer&iacute;a conio.h de Borland.</FONT></SPAN></SPAN></SPAN></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo de wherex es:	int wherex(void);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Retorna la columna en la que se encuentra posicionado el
+cursor relativa a la ventana de texto actual.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>wherey:
+</B><SPAN STYLE="font-weight: medium">No est&aacute; definida por el
+ANSI C. Esta funci&oacute;n se encuentra dentro de la librer&iacute;a
+conio.h de Borland.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo de wherey es:	int wherey(void);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Retorna la fila en la que se encuentra posicionado el
+cursor relativa a la ventana de texto actual. </FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>window:
+</B><SPAN STYLE="font-weight: medium">No est&aacute; definida por el
+ANSI C. Esta funci&oacute;n se encuentra dentro de la librer&iacute;a
+conio.h de Borland.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo de window es:	void window(int izq, int arr,
+int der, int aba);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esta funci&oacute;n se usa para crear una ventana de
+texto rectangular con coordenadas superior-izquierda e
+inferior-derecha dadas por izq,arr y der,aba. Si las coordenadas no
+son v&aacute;lidas, no se hace nada.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Es por esta funci&oacute;n que he estado comentando en
+las funciones anteriores: &ldquo;dentro de la pantalla de texto
+actual&rdquo; ya que luego de usada esta funcion, todas las
+opereciones como clrscr, cprintf, gotoxy, etc, son relativas a esta
+nueva ventana.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Ejemplo:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>window(10, 10, 60, 15);  // crea una ventana cuyas
+esquinas son (10,10) y (60,15)</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>gotoxy(2, 3); // Se coloca en la posici&oacute;n (2,3)
+dentro de la ventana anterior.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><FONT SIZE=3><B>cprintf:
+</B><SPAN STYLE="font-weight: medium">No est&aacute; definida por el
+ANSI C. Esta funci&oacute;n se encuentra dentro de la librer&iacute;a
+conio.h de Borland.</SPAN></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>El prototipo de cprintf es:	int cprintf(const char
+*fmt,...);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Hace lo mismo que printf pero dentro de la ventana de
+texto actual.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Siguiendo el mismo ejemplo anterior, si a&ntilde;adimos:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>cprintf(&ldquo;Punto (2,3) de la ventana activa\n\r&rdquo;);</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>imprimir&iacute;a dentro de la ventana definida en la
+posici&oacute;n dada la frase: &ldquo;Punto (2,3) de la ventana
+activa&rdquo;.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Debe ponerse tambi&eacute;n \r ya que cprintf no
+interpreta el \n como un par \r\n como hace el printf. \r es retorno
+de carro.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>
