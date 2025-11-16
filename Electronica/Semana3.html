@@ -11,7 +11,7 @@
         <h1 class="center highlight">Respuesta en Alta Frecuencia</h1>
         <h2 class="center">Superposición de polos. Concepto de polo dominante.</h2>
 
-        <p class="content-block">Hasta ahora hemos visto la respuesta de un amplificador en baja frecuencia y qué técnica usar para el caso específico de acoplar varias etapas amplificadoras con BJT en emisor común a fin de hallar la $f_{L}$.</p>
+        <p class="content-block">Hasta ahora hemos visto la respuesta de un amplificador en baja frecuencia y qué técnica usar para el caso específico de acoplar varias etapas amplificadoras con BJT en emisor común a fin de hallar la f<sub>L</sub>.</p>
 
         <p class="content-block">Cuando hemos indicado el modelo equivalente del transistor, siempre nos hemos remitido al modelo "H" para una configuración Emisor Común, de manera que obteníamos los siguientes elementos del cuadripolo:</p>
         
@@ -23,9 +23,9 @@
         </p>
         <p class="content-block">(Para ver valores regulares de estos parámetros en un transistor comercial, hay que revisar la información en el manual que nos da el fabricante)</p>
 
-        <h2 class="highlight">Modelo Híbrido $\pi$ (Pi)</h2>
-        <p class="content-block">Existe otro modelo circuital, llamado Modelo Híbrido $\pi$ (Pi) que también nos ayuda a analizar el comportamiento de un transistor.</p>
-        <p class="content-block">En baja frecuencia el modelo híbrido $\pi$ del BJT es como sigue:</p>
+        <h2 class="highlight">Modelo Híbrido π (Pi)</h2>
+        <p class="content-block">Existe otro modelo circuital, llamado Modelo Híbrido Π (π,Pi) que también nos ayuda a analizar el comportamiento de un transistor.</p>
+        <p class="content-block">En baja frecuencia el modelo híbrido Π del BJT es como sigue:</p>
         <p class="center"><img src="Clases3_archivos/image008.gif" alt="Modelo Pi de baja frecuencia"></p>
 
         <p class="content-block">En alta frecuencia, se añaden a este modelo las capacitancias parásitas internas que aparecen en las uniones del transistor, quedando como sigue:</p>
@@ -33,8 +33,8 @@
 
         <p class="content-block">Para simplificar este modelo, asumimos algunas consideraciones, que siguen permitiendo que nuestro modelo sea válido:</p>
         <ul class="content-list">
-            <li>En la configuración de Emisor Común, la resistencia $r_{ce}$ queda en paralelo con la carga y, por lo general $R_{L} \ll r_{ce}$ por lo que podemos suprimir a $r_{ce}$.</li>
-            <li>También podemos suprimir $r_{b'c}$ porque es mucho mayor que las demás resistencias del circuito.</li>
+            <li>En la configuración de Emisor Común, la resistencia r<sub>ce</sub> queda en paralelo con la carga y, por lo general R<sub>L</sub> << r<sub>ce</sub> por lo que podemos suprimir a r<sub>ce</sub>.</li>
+            <li>También podemos suprimir r<sub>b'c</sub> porque es mucho mayor que las demás resistencias del circuito.</li>
         </ul>
 
         <p class="content-block">Con las consideraciones previas, llegamos al siguiente circuito simplificado:</p>
@@ -50,7 +50,7 @@
             <img src="Clases3_archivos/image014.gif" alt="C_mu">
         </p>
 
-        <p class="content-block">A continuación tenemos las equivalencias entre los parámetros $\pi$ y los parámetros H de los modelos de transistor.</p>
+        <p class="content-block">A continuación tenemos las equivalencias entre los parámetros Π y los parámetros H de los modelos de transistor.</p>
         <p class="center">
             <img src="Clases3_archivos/image015.gif" alt="h_fe">
             <img src="Clases3_archivos/image016.gif" alt="r_pi">
@@ -67,49 +67,49 @@
         <p class="content-block">En clase se hablará del TEOREMA DE MILLER.</p>
 
         <h2 class="highlight">Ganancia de Corriente de Cortocircuito en Emisor Común</h2>
-        <p class="content-block">Ya conocemos varios elementos necesarios para entender un parámetro importante en el estudio de un amplificador a alta frecuencia. Dicho parámetro es $f_{T}$.</p>
+        <p class="content-block">Ya conocemos varios elementos necesarios para entender un parámetro importante en el estudio de un amplificador a alta frecuencia. Dicho parámetro es f<sub>T</sub>.</p>
         
         <p class="content-block">
-            $f_{T}$ es la frecuencia a la cual la Ganancia de <strong>CORRIENTE</strong> en cortocircuito, en emisor común, se hace igual a la unidad.
+            f<sub>T</sub> es la frecuencia a la cual la Ganancia de <strong>CORRIENTE</strong> en cortocircuito, en emisor común, se hace igual a la unidad.
         </p>
         
-        <p class="content-block">Pero antes vamos a determinar esa ganancia de corriente $A_{i}$.</p>
-        <p class="content-block">Como bien se ha dicho en la definición de $f_{T}$ consideraremos $R_{L} = 0$. Determinaremos la función de transferencia usando el modelo híbrido $\pi$.</p>
+        <p class="content-block">Pero antes vamos a determinar esa ganancia de corriente A<sub>i</sub>.</p>
+        <p class="content-block">Como bien se ha dicho en la definición de f<sub>T</sub> consideraremos R<sub>L</sub> = 0. Determinaremos la función de transferencia usando el modelo híbrido π.</p>
         
-        <p class="center">La corriente que circula por la rama de la carga es $I_{c} = g_{m} V_{\pi} - I_{f}$ y podemos despejar el valor de $A_{i}$ (Ganancia de Corriente).</p>
+        <p class="center">La corriente que circula por la rama de la carga es $I_{c} = g_{m} V_{\pi} - I_{f}$ y podemos despejar el valor de A<sub>i</sub> (Ganancia de Corriente).</p>
         
         <p class="center">
             <img src="./Semana3-1 sin error_html_m70385e17.gif" alt="Ecuación 1">
             <img src="./Semana3-1 sin error_html_1b8b59f3.gif" alt="Ecuación 2">
         </p>
         
-        <p class="content-block">Sustituyendo el valor de $V_{\pi}$ en $A_{i}$ podemos obtener la ganancia de corriente en cortocircuito:</p>
+        <p class="content-block">Sustituyendo el valor de V<sub>Π</sub> en A<sub>i</sub> podemos obtener la ganancia de corriente en cortocircuito:</p>
         <p class="center"><img src="./Semana3-1 sin error_html_212c3793.gif" alt="Ecuación de A_i"></p>
         
         <p class="content-block">Sustituyendo el valor de $g_{m} r_{\pi} = h_{fe}$ y agrupando algunos términos como $\tau_{H} = r_{\pi} (C_{\pi} + C_{\mu})$ resulta la siguiente expresión:</p>
         <p class="center"><img src="Clases3_archivos/image030.gif" alt="Ecuación final de A_i"></p>
         
         <p class="content-block">
-            $f_{\beta}$ es la frecuencia límite del circuito a la cual la ganancia de corriente en baja frecuencia ($h_{fe}$) se ve disminuida en 3dB, es decir, $f_{\beta}$ nos determina el ancho de banda del circuito.
+            f<sub>β</sub> es la frecuencia límite del circuito a la cual la ganancia de corriente en baja frecuencia (h<sub>fe</sub>) se ve disminuida en 3dB, es decir, f<sub>β</sub> nos determina el ancho de banda del circuito.
         </p>
         
-        <p class="content-block">Recordando la definición de $f_{T}$ y usando las ecuaciones precedentes, junto con la consideración de que $f \gg f_{\beta}$, llegamos a la aproximación:</p>
+        <p class="content-block">Recordando la definición de f<sub>T</sub> y usando las ecuaciones precedentes, junto con la consideración de que $f \gg f_{\beta}$, llegamos a la aproximación:</p>
         <p class="center"><img src="./Semana3-1 sin error_html_m5288238b.gif" alt="Ecuación de f_T"></p>
         
-        <p class="content-block">Sabiendo esto, también podemos llamar a $f_{T}$ el <em>producto del ancho de banda por la ganancia de corriente en cortocircuito</em>. De manera que si tenemos dos transistores con igual $f_{T}$, el que tenga menor $h_{fe}$ será el que tenga mayor ancho de banda.</p>
+        <p class="content-block">Sabiendo esto, también podemos llamar a f<sub>T</sub> el <em>producto del ancho de banda por la ganancia de corriente en cortocircuito</em>. De manera que si tenemos dos transistores con igual f<sub>T</sub>, el que tenga menor h<sub>fe</sub> será el que tenga mayor ancho de banda.</p>
 
         <h2 class="highlight">Concepto del Polo Dominante</h2>
         <p class="content-block">En clases anteriores vimos la expresión resultante de la Frecuencia Inferior de Corte para un circuito amplificador configurado en emisor común. Dicha expresión fue el resultado de aplicar el principio de Superposición en el modelo híbrido equivalente (H), de manera que obtuvimos tantas frecuencias de corte como condensadores independientes había en el circuito. El concepto del Polo dominante, nos ayuda a reducir esta expresión y nos dice que:</p>
 
-        <h3 class="highlight">A Baja Frecuencia ($f_{L}$)</h3>
+        <h3 class="highlight">A Baja Frecuencia (f<sub>L</sub>)</h3>
         <p class="content-block">Podemos decir que el polo dominante es el mayor polo de los encontrados, siempre y cuando éste diste del que le precede, al menos una década. Matemáticamente podemos expresarlo como:</p>
         <p class="center"><img src="Clases3_archivos/image034.gif" alt="Ecuación de f_L"></p>
-        <p class="content-block">Si $f_{L} \approx f_{L1}$ (donde $f_{L1}$ es el polo mayor (de mayor frecuencia) y $f_{L2}$ es el segundo mayor polo) entonces podemos decir que $f_{L} \approx f_{L1}$.</p>
+        <p class="content-block">Si $f_{L} \approx f_{L1}$ (donde f<sub>L1</sub> es el polo mayor (de mayor frecuencia) y f<sub>L2</sub> es el segundo mayor polo) entonces podemos decir que $f_{L} \approx f_{L1}$.</p>
 
-        <h3 class="highlight">A Alta Frecuencia ($f_{H}$)</h3>
+        <h3 class="highlight">A Alta Frecuencia (f<sub>H</sub>)</h3>
         <p class="content-block">Podemos decir que el polo dominante es el menor polo de los encontrados, siempre y cuando éste diste del que le precede, al menos una década. Matemáticamente podemos expresarlo como:</p>
         <p class="center"><img src="Clases3_archivos/image039.gif" alt="Ecuación de f_H"></p>
-        <p class="content-block">Si $f_{H} \approx f_{H1}$ (donde $f_{H1}$ es el polo menor (de menor frecuencia) y $f_{H2}$ es el segundo menor polo) entonces podemos decir que $f_{H} \approx f_{H1}$.</p>
+        <p class="content-block">Si $f_{H} \approx f_{H1}$ (donde f<sub>H1</sub> es el polo menor (de menor frecuencia) y f<sub>H2</sub> es el segundo menor polo) entonces podemos decir que $f_{H} \approx f_{H1}$.</p>
 
         <p class="content-block">A manera de información general es bueno conocer que cuando una frecuencia es el doble de otra podemos decir que tales frecuencias distan entre sí "una Octava".</p>
     </div>
