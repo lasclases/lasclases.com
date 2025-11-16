@@ -1,28 +1,37 @@
-/* Estilos base para modernizar las clases */
+/* Estilos base para modernizar las clases con paleta de colores */
+
+:root {
+    --primary-dark: #283618;
+    --primary-green: #606c38;
+    --cream: #fefae0;
+    --orange: #dda15e;
+    --brown: #bc6c25;
+}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--cream);
+    color: var(--primary-dark);
 }
 
 h1, h2, h3, h4 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
+    color: var(--primary-green);
+    border-bottom: 2px solid var(--orange);
     padding-bottom: 5px;
     margin-top: 20px;
 }
 
 a {
-    color: #3498db;
+    color: var(--brown);
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+    color: var(--primary-green);
 }
 
 /* Estilo para bloques de código */
@@ -43,7 +52,7 @@ pre, code {
 
 /* Estilos para reemplazar etiquetas obsoletas */
 .highlight {
-    color: #5c8526; /* Color original de la fuente */
+    color: var(--primary-green);
     font-weight: bold;
 }
 
@@ -53,4 +62,67 @@ pre, code {
 
 .justify {
     text-align: justify;
+}
+
+/* Estilos para el índice principal */
+.subject-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.subject-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.topic-list {
+    list-style: none;
+    padding: 0;
+}
+
+.topic-list li {
+    margin-bottom: 5px;
+}
+
+.topic-list a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.topic-list a:hover {
+    background-color: var(--orange);
+    color: var(--cream);
+}
+
+/* Header */
+.site-header {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-green);
+    color: var(--cream);
+    margin: -20px -20px 20px -20px;
+}
+
+.site-header h1 {
+    margin: 0;
+    border: none;
+    color: var(--cream);
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-dark);
+    color: var(--cream);
+    margin: 20px -20px -20px -20px;
+}
+
+.site-footer p {
+    margin: 5px 0;
 }
