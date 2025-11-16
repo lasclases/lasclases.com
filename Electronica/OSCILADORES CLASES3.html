@@ -1,218 +1,113 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-<HEAD>
+<!DOCTYPE html>
+<html>
+<head>
 	<meta charset="utf-8">
-	<TITLE>UNEFA -ELECTRONICA III-SemanaV</TITLE>
-	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Win32)">
-	<META NAME="CREATED" CONTENT="20041005;7525689">
-	<META NAME="CHANGEDBY" CONTENT="Isabel Vera">
-	<META NAME="CHANGED" CONTENT="20041120;22524914">
-	<STYLE>
-	<!--
-		P.msonormal { margin-bottom: 0cm }
-		P.cuerpo-de-texto-con-sangría { margin-left: 0.5cm }
-		A:visited { color: #800080 }
-		A:link { color: #0000ff }
-	-->
-	</STYLE>
+	<title>OSCILADORES 3: Osciladores de Colpitts y Hartley</title>
+    <link rel="stylesheet" href="../../style.css">
+	<meta name="author" content="Isabel Vera">
 </HEAD>
-<BODY LANG="es-VE" LINK="#0000ff" VLINK="#800080" DIR="LTR">
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><A NAME="Inicio de esta p&aacute;gina"></A>
-<FONT FACE="Arial"><FONT SIZE=3>N&uacute;cleo Maracay</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Dpto.
-de Ingenier&iacute;a Electr&oacute;nica</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>IX
-T&eacute;rmino, 03-2004</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3><I>Prof.
-Isabel Vera</I></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Secciones
-A y B </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2.49cm; margin-bottom: 0.5cm">
-<FONT FACE="Arial"><FONT SIZE=3>Semana 10 OSCILADORES.
-...continuaci&oacute;n de Oscilador de desplazamiento de fase y
-<A HREF="#colpitts y hartley">Osciladores de Colpitts y Hartley</A>.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT SIZE=3><FONT FACE="Arial">Bueno,
-espero que ahora s&iacute; hayas calculado la funci&oacute;n de
-transferencia. Debes haber obtenido algo como:     </FONT></FONT><A HREF="./OSCILADORES CLASES2.html">(p&aacute;gina
-anterior -teor&iacute;a-)</A></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="./OSCILADORES CLASES3_html_m6fca2320.gif" NAME="Objeto1" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=275 HEIGHT=56 BORDER=0>
-<FONT FACE="Arial">donde 
-<IMG SRC="./OSCILADORES CLASES3_html_53215f38.gif" NAME="Objeto2" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=127 HEIGHT=50 BORDER=0></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Para
-cumplir con el hecho de que la fase de la funci&oacute;n de la
-&ldquo;Ganancia del Lazo&rdquo; (-A<FONT FACE="Arial, sans-serif">&beta;</FONT>)
-sea 0&ordm; &oacute; (n*360&ordm;) (Criterio de Barkhausen) debemos
-garantizar que en la funci&oacute;n anterior la parte imaginaria sea
-igual a cero, es decir: 
-<IMG SRC="./OSCILADORES CLASES3_html_m5a9afd67.gif" NAME="Objeto3" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=163 HEIGHT=27 BORDER=0>y
-por ende 
-<IMG SRC="./OSCILADORES CLASES3_html_m523a8660.gif" NAME="Objeto4" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=194 HEIGHT=52 BORDER=0>Frecuencia
-de oscilaci&oacute;n del circuito.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Al
-sustituir el valor de &ldquo;<FONT FACE="Arial, sans-serif">&alpha;&rdquo;
-en la expresi&oacute;n de (</FONT>-<FONT FACE="Arial, sans-serif">&beta;)
-obtenemos que 
-<IMG SRC="./OSCILADORES CLASES3_html_3b00b098.gif" NAME="Objeto5" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=78 HEIGHT=49 BORDER=0></FONT></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Y
-si queremos cumplir con la otra parte del criterio de Barkhausen que
-nos dice que la Ganancia del Lazo debe ser igual a la unidad,
-entonces la ganancia en lazo abierto del circuito amplificador con
-FET dibujado anteriormente debe ser A=29.</FONT></FONT></P>
-<UL>
-	<LI><P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Ejerc&iacute;tese:
-	C&oacute;mo calcula la ganancia de tensi&oacute;n del siguiente
-	circuito: </FONT></FONT>
-	</P>
-</UL>
-<TABLE WIDTH=100% BORDER=0 CELLPADDING=5 CELLSPACING=0>
-	<COL WIDTH=76*>
-	<COL WIDTH=180*>
-	<THEAD>
-		<TR VALIGN=TOP>
-			<TD WIDTH=30%>
-				<P ALIGN=JUSTIFY><IMG SRC="./OSCILADORES CLASES3_html_6f6a0787.gif" NAME="Imagen4" ALIGN=RIGHT WIDTH=226 HEIGHT=324 BORDER=0><BR CLEAR=RIGHT><BR>
-				</P>
-			</TD>
-			<TD WIDTH=70%>
-				<P ALIGN=JUSTIFY STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">Tips:
-				Use el modelo equivalente a frecuencias medias.</FONT></P>
-				<P CLASS="cuerpo-de-texto-con-sangr&iacute;a" ALIGN=JUSTIFY STYLE="margin-left: 2cm">
-				<FONT FACE="Arial, sans-serif">Obtendr&aacute; :</FONT></P>
-				<P ALIGN=JUSTIFY STYLE="margin-left: 2cm"><IMG SRC="./OSCILADORES CLASES3_html_6df329f3.gif" NAME="Objeto6" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=197 HEIGHT=54 BORDER=0></P>
-			</TD>
-		</TR>
-	</THEAD>
-</TABLE>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><A NAME="colpitts y hartley"></A>
-<FONT FACE="Arial, sans-serif"><FONT SIZE=3>OSCILADOR DE COLPITTS,
-OSCILADOR DE HARTLEY</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>A
-continuaci&oacute;n veremos la topolog&iacute;a de otro tipo de
-oscilador.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Contamos
-con el siguiente circuito. </FONT></FONT>
-</P>
-<TABLE WIDTH=100% BORDER=0 CELLPADDING=5 CELLSPACING=0>
-	<COL WIDTH=103*>
-	<COL WIDTH=153*>
-	<THEAD>
-		<TR VALIGN=TOP>
-			<TD WIDTH=40%>
-				<P ALIGN=JUSTIFY><IMG SRC="./OSCILADORES CLASES3_html_7cd37cff.gif" NAME="Imagen5" ALIGN=RIGHT WIDTH=216 HEIGHT=204 BORDER=0><BR CLEAR=RIGHT><BR>
-				</P>
-			</TD>
-			<TD WIDTH=60%>
-				<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0.5cm">
-				<FONT FACE="Arial, sans-serif"><FONT SIZE=3>El amplificador
-				operacional usado en dicho circuito tiene las siguientes
-				caracter&iacute;sticas:</FONT></FONT></P>
-				<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0.5cm">
-				<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Resistencia de
-				entrada infinita (Ri &rarr; &infin;).</FONT></FONT></P>
-				<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0.5cm">
-				<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Ganancia de tensi&oacute;n:
-				-A</FONT></FONT></P>
-				<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Resistencia
-				de salida Ro.</FONT></FONT></P>
-			</TD>
-		</TR>
-	</THEAD>
-</TABLE>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>El
-circuito anterior puede ser sustitu&iacute;do por el siguiente modelo
-equivalente:</FONT></FONT></P>
-<TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0>
-	<COL WIDTH=103*>
-	<COL WIDTH=153*>
-	<THEAD>
-		<TR VALIGN=TOP>
-			<TH WIDTH=40%>
-				<P><IMG SRC="./OSCILADORES CLASES3_html_m466fdb28.gif" NAME="Imagen6" ALIGN=RIGHT WIDTH=274 HEIGHT=232 BORDER=0><BR CLEAR=RIGHT><BR>
-				</P>
-			</TH>
-			<TH WIDTH=60%>
-				<P ALIGN=LEFT STYLE="margin-left: 2cm; font-weight: medium"><FONT FACE="Arial, sans-serif">Donde:</FONT></P>
-				<P><IMG SRC="./OSCILADORES CLASES3_html_m445fe2ba.gif" NAME="Objeto7" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=126 HEIGHT=26 BORDER=0>
-				<FONT FACE="Arial, sans-serif">(La tensi&oacute;n de la entrada
-				[V<SUB>13</SUB>=Vi] amplificada un factor &ldquo;Av&rdquo; e
-				invertida)</FONT></P>
-				<P><IMG SRC="./OSCILADORES CLASES3_html_3394e17a.gif" NAME="Objeto8" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=381 HEIGHT=54 BORDER=0><FONT FACE="Arial, sans-serif">;</FONT></P>
-				<P><FONT FACE="Arial, sans-serif">donde Z<SUB>L</SUB> es la
-				impedancia equivalente resultante de: (Z1+Z3) || Z2</FONT></P>
-				<P><FONT FACE="Arial, sans-serif">Si -&beta; es la relaci&oacute;n
-				entre la se&ntilde;al de entrada Vi y la salida Vo entonces:</FONT></P>
-				<P ALIGN=LEFT STYLE="margin-left: 2cm"><IMG SRC="./OSCILADORES CLASES3_html_m6fa25767.gif" NAME="Objeto9" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=128 HEIGHT=54 BORDER=0></P>
-			</TH>
-		</TR>
-	</THEAD>
-</TABLE>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Como
-ya conocemos la expresi&oacute;n de la ganancia del circuito a lazo
-abierto (A) y la ganancia del bloque de realimentaci&oacute;n (&beta;),
-podemos determinar la &ldquo;Ganancia del Lazo&rdquo;:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Ejerc&iacute;tese
-en &ldquo;carpinter&iacute;a matem&aacute;tica&rdquo; y calcule la
-expresi&oacute;n de la Ganancia del Lazo.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Deber&aacute;
-obtener lo siguiente:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="./OSCILADORES CLASES3_html_m7bb70e63.gif" NAME="Objeto10" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=361 HEIGHT=54 BORDER=0></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Ahora
-vamos a asumir otro detalle. Imaginemos que Z1, Z2 y Z3 son
-impedancias reactivas puras (no tienen parte real), de manera que:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Z1=
-jX1 ; Z2= jX2 y Z3= jX3 donde X puede ser X=&omega;L &oacute; X=
--1/(&omega;C)</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>entonces
-podremos decir que:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="./OSCILADORES CLASES3_html_m576cea60.gif" NAME="Objeto11" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=393 HEIGHT=54 BORDER=0><FONT FACE="Arial, sans-serif">para
-que el desfase sea nulo la parte imaginaria deber&aacute; ser nula y
-como Ro es un valor real y positivo, solo nos queda decir que: </FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>X1+X2+X3=0</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Al
-cumplir esa condici&oacute;n que hemos mencionado se simplifica la
-expresi&oacute;n de la &ldquo;Ganancia del lazo&rdquo; de la
-siguiente forma:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="./OSCILADORES CLASES3_html_5b0b901d.gif" NAME="Objeto12" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=329 HEIGHT=54 BORDER=0>
-<FONT FACE="Arial, sans-serif">se sabe que X1+X3= -X2 as&iacute; que
-tambi&eacute;n es v&aacute;lida la expresi&oacute;n 
-<IMG SRC="./OSCILADORES CLASES3_html_57c5fcfa.gif" NAME="Objeto13" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=146 HEIGHT=54 BORDER=0>(#)</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Si
-sabemos que la ganancia del lazo debe cumplir: -A&beta;&ge;1
-(idealmente, ser&iacute;a igual a la unidad) entonces de la &uacute;ltima
-expresi&oacute;n (#) se deduce que X1 y X2 deben tener el mismo signo
-para que la expresi&oacute;n resulte en un valor positivo.
-Consecuentemente, X3 tendr&aacute; signo contrario a X1 y X2.</FONT></FONT></P>
-<UL>
-	<LI><P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>OSCILADOR
-	DE COLPITTS : Cuando X1 y X2 son reactancias Capacitivas y X3 es una
-	reactancia Inductiva</FONT></FONT></P>
-	<LI><P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>OSCILADOR
-	DE HARTLEY: Cuando X1 y X2 son reactancias Inductivas y X3 es una
-	reactancia Capacitiva.</FONT></FONT></P>
-</UL>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><A HREF="#Inicio de esta p&aacute;gina">Ir
-al comienzo de esta p&aacute;gina</A>.</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><A HREF="../ElectronicaIII.html">Ir
-a p&aacute;gina principal</A></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-</BODY>
-</HTML>
+<body>
+<div class="content-block">
+    <p>Núcleo Maracay</p>
+    <p>Dpto. de Ingeniería Electrónica</p>
+    <p>IX Término, 03-2004</p>
+    <p><i>Prof. Isabel Vera</i></p>
+    <p>Secciones A y B</p>
+    <p>&nbsp;</p>
+    <p><strong>Semana 10 OSCILADORES. ...continuación de Oscilador de desplazamiento de fase y <a href="#colpitts y hartley">Osciladores de Colpitts y Hartley</a>.</strong></p>
+</div>
+
+<p class="content-block">Bueno, espero que ahora sí hayas calculado la función de transferencia. Debes haber obtenido algo como: <a href="./OSCILADORES CLASES2.html">(página anterior -teoría-)</a></p>
+
+<p class="center content-block"><img src="./OSCILADORES CLASES3_html_m6fca2320.gif" alt="Ecuación de beta para oscilador de cambio de fase"></p>
+
+<p class="content-block">donde <img src="./OSCILADORES CLASES3_html_53215f38.gif" alt="Ecuación de alfa"></p>
+
+<p class="content-block">Para cumplir con el hecho de que la fase de la función de la “Ganancia del Lazo” (-A&beta;) sea 0º ó (n*360º) (Criterio de Barkhausen) debemos garantizar que en la función anterior la parte imaginaria sea igual a cero, es decir: <img src="./OSCILADORES CLASES3_html_m5a9afd67.gif" alt="Condición de fase nula"> y por ende <img src="./OSCILADORES CLASES3_html_m523a8660.gif" alt="Ecuación de frecuencia de oscilación"> Frecuencia de oscilación del circuito.</p>
+
+<p class="content-block">Al sustituir el valor de “&alpha;” en la expresión de (-&beta;) obtenemos que <img src="./OSCILADORES CLASES3_html_3b00b098.gif" alt="Ecuación de beta simplificada"></p>
+
+<p class="content-block">Y si queremos cumplir con la otra parte del criterio de Barkhausen que nos dice que la Ganancia del Lazo debe ser igual a la unidad, entonces la ganancia en lazo abierto del circuito amplificador con FET dibujado anteriormente debe ser A=29.</p>
+
+<p class="content-block">Ejercítese: Cómo calcula la ganancia de tensión del siguiente circuito:</p>
+
+<table class="content-block" border="0" cellpadding="5" cellspacing="0">
+    <tr>
+        <td style="width: 30%;"><p class="center content-block"><img src="./OSCILADORES CLASES3_html_6f6a0787.gif" alt="Circuito amplificador con BJT"></p></td>
+        <td style="width: 70%;">
+            <p class="content-block" style="margin-left: 2cm;">Tips: Use el modelo equivalente a frecuencias medias.</p>
+            <p class="content-block" style="margin-left: 2cm;">Obtendrá :</p>
+            <p class="center content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_6df329f3.gif" alt="Ecuación de ganancia de voltaje"></p>
+        </td>
+    </tr>
+</table>
+
+<p class="content-block"><a name="colpitts y hartley"></a></p>
+<h2 class="content-block">OSCILADOR DE COLPITTS, OSCILADOR DE HARTLEY</h2>
+
+<p class="content-block">A continuación veremos la topología de otro tipo de oscilador.</p>
+
+<p class="content-block">Contamos con el siguiente circuito.</p>
+
+<table class="content-block" border="0" cellpadding="5" cellspacing="0">
+    <tr>
+        <td style="width: 40%;"><p class="center content-block"><img src="./OSCILADORES CLASES3_html_7cd37cff.gif" alt="Circuito oscilador con amplificador operacional"></p></td>
+        <td style="width: 60%;">
+            <p class="content-block" style="margin-left: 2cm;">El amplificador operacional usado en dicho circuito tiene las siguientes características:</p>
+            <ul style="margin-left: 2cm;">
+                <li>Resistencia de entrada infinita (R<sub>i</sub> &rarr; &infin;).</li>
+                <li>Ganancia de tensión: -A</li>
+                <li>Resistencia de salida R<sub>o</sub>.</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<p class="content-block">El circuito anterior puede ser sustituído por el siguiente modelo equivalente:</p>
+
+<table class="content-block" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="width: 40%;"><p class="center content-block"><img src="./OSCILADORES CLASES3_html_m466fdb28.gif" alt="Modelo equivalente del oscilador con fuente dependiente"></p></td>
+        <td style="width: 60%;">
+            <p class="content-block" style="margin-left: 2cm;">Donde:</p>
+            <p class="content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_m445fe2ba.gif" alt="Ecuación de voltaje de salida"> (La tensión de la entrada [V<sub>13</sub>=V<sub>i</sub>] amplificada un factor “A<sub>v</sub>” e invertida)</p>
+            <p class="content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_3394e17a.gif" alt="Ecuación de voltaje de entrada V_i">;</p>
+            <p class="content-block" style="margin-left: 2cm;">donde Z<sub>L</sub> es la impedancia equivalente resultante de: (Z1+Z3) || Z2</p>
+            <p class="content-block" style="margin-left: 2cm;">Si -&beta; es la relación entre la señal de entrada V<sub>i</sub> y la salida V<sub>o</sub> entonces:</p>
+            <p class="center content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_m6fa25767.gif" alt="Ecuación de beta"></p>
+        </td>
+    </tr>
+</table>
+
+<p class="content-block">Como ya conocemos la expresión de la ganancia del circuito a lazo abierto (A) y la ganancia del bloque de realimentación (&beta;), podemos determinar la “Ganancia del Lazo”:</p>
+
+<p class="content-block">Ejercítese en “carpintería matemática” y calcule la expresión de la Ganancia del Lazo.</p>
+
+<p class="content-block">Deberá obtener lo siguiente:</p>
+
+<p class="center content-block"><img src="./OSCILADORES CLASES3_html_m7bb70e63.gif" alt="Ecuación de ganancia del lazo"></p>
+
+<p class="content-block">Ahora vamos a asumir otro detalle. Imaginemos que Z1, Z2 y Z3 son impedancias reactivas puras (no tienen parte real), de manera que:</p>
+
+<p class="content-block">Z1= jX1 ; Z2= jX2 y Z3= jX3 donde X puede ser X=&omega;L ó X= -1/(&omega;C)</p>
+
+<p class="content-block">entonces podremos decir que: <img src="./OSCILADORES CLASES3_html_m576cea60.gif" alt="Ecuación de ganancia del lazo con reactancias"> para que el desfase sea nulo la parte imaginaria deberá ser nula y como R<sub>o</sub> es un valor real y positivo, solo nos queda decir que:</p>
+
+<p class="content-block">X1+X2+X3=0</p>
+
+<p class="content-block">Al cumplir esa condición que hemos mencionado se simplifica la expresión de la “Ganancia del lazo” de la siguiente forma:</p>
+
+<p class="center content-block"><img src="./OSCILADORES CLASES3_html_5b0b901d.gif" alt="Ecuación de ganancia del lazo simplificada"> se sabe que X1+X3= -X2 así que también es válida la expresión <img src="./OSCILADORES CLASES3_html_57c5fcfa.gif" alt="Ecuación de ganancia del lazo simplificada 2">(#)</p>
+
+<p class="content-block">Si sabemos que la ganancia del lazo debe cumplir: <code>-A&beta; &ge; 1</code> (idealmente, sería igual a la unidad) entonces de la última expresión (#) se deduce que X1 y X2 deben tener el mismo signo para que la expresión resulte en un valor positivo. Consecuentemente, X3 tendrá signo contrario a X1 y X2.</p>
+
+<ul>
+    <li><strong>OSCILADOR DE COLPITTS:</strong> Cuando X1 y X2 son reactancias Capacitivas y X3 es una reactancia Inductiva</li>
+    <li><strong>OSCILADOR DE HARTLEY:</strong> Cuando X1 y X2 son reactancias Inductivas y X3 es una reactancia Capacitiva.</li>
+</ul>
+
+<p class="content-block"><a href="#Inicio de esta página">Ir al comienzo de esta página</a>.</p>
+<p class="content-block"><a href="../ElectronicaIII.html">Ir a página principal</a></p>
+
+</body>
+</html>

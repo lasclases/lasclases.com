@@ -1,154 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-<HEAD>
+<!DOCTYPE html>
+<html>
+<head>
 	<meta charset="utf-8">
-	<TITLE>UNEFA -ELECTRONICA III-SemanaV</TITLE>
-	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Win32)">
-	<META NAME="CREATED" CONTENT="20041005;7525689">
-	<META NAME="CHANGEDBY" CONTENT="Isabel Vera">
-	<META NAME="CHANGED" CONTENT="20041119;21521085">
-	<STYLE>
-	<!--
-		P.msonormal { margin-bottom: 0cm }
-		A:visited { color: #800080 }
-		A:link { color: #0000ff }
-	-->
-	</STYLE>
+	<title>OSCILADORES 1: Realimentación y Principio de Barkhausen</title>
+    <link rel="stylesheet" href="../../style.css">
+	<meta name="author" content="Isabel Vera">
 </HEAD>
-<BODY LANG="es-VE" LINK="#0000ff" VLINK="#800080" DIR="LTR">
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>N&uacute;cleo
-Maracay</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Dpto.
-de Ingenier&iacute;a Electr&oacute;nica</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>IX
-T&eacute;rmino, 03-2004</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3><I>Prof.
-Isabel Vera</I></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Secciones
-A y B </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2.49cm; margin-bottom: 0.5cm">
-<FONT FACE="Arial"><FONT SIZE=3>Semanas 9 y 10 OSCILADORES.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2.49cm; margin-bottom: 0.5cm">
-<BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2.49cm; margin-bottom: 0.5cm">
-<FONT FACE="Arial"><FONT SIZE=3>Los osciladores son circuitos que
-generan a su salida una se&ntilde;al alterna peri&oacute;dica,
-vali&eacute;ndose s&oacute;lo de la polarizaci&oacute;n (DC) de sus
-componentes y prescindiendo de una se&ntilde;al externa.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2.49cm; margin-bottom: 0.5cm">
-<FONT FACE="Arial"><FONT SIZE=3>Existen osciladores senoidales y de
-relajaci&oacute;n (se&ntilde;ales triangulares o cuadradas).</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 2.49cm; margin-bottom: 0.5cm">
-<BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Antes
-de empezar recordemos un poco de la teor&iacute;a de realimentaci&oacute;n.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Sabemos
-que la funci&oacute;n de transferencia de un circuito realimentado
-viene dada por la expresi&oacute;n:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="./OSCILADORES CLASES_html_1097ca69.gif" NAME="Objeto1" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=143 HEIGHT=50 BORDER=0></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>reconoceremos
-si la realimentaci&oacute;n es negativa o positiva, al revisar las
-siguientes inecuaciones:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Si
-<IMG SRC="./OSCILADORES CLASES_html_7c86a1fc.gif" NAME="Objeto2" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=112 HEIGHT=25 BORDER=0>
-entonces sabremos que la realimentaci&oacute;n es NEGATIVA. (La
-ganancia realimentada es <I><FONT COLOR="#800000">menor</FONT></I>
-que la ganancia a lazo abierto)</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Si
-<IMG SRC="./OSCILADORES CLASES_html_m56c2284c.gif" NAME="Objeto3" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=112 HEIGHT=25 BORDER=0>
-entonces sabremos que la realimentaci&oacute;n es POSITIVA. (La
-ganancia realimentada es <I><FONT COLOR="#800000">mayor </FONT></I>que
-la ganancia a lazo abierto).</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Ahora
-pensemos un momento en lo siguiente: Si tenemos un circuito con
-realimentaci&oacute;n de manera que:</FONT></FONT></P>
-<UL>
-	<LI><P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>la
-	se&ntilde;al externa ser&aacute; Xs,</FONT></FONT></P>
-	<LI><P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>la
-	se&ntilde;al de entrada al bloque amplificador ser&aacute; Xi,
-	resultante del sumador (algebraico) de la se&ntilde;al externa y la
-	se&ntilde;al procedente del bloque de realimentaci&oacute;n.</FONT></FONT></P>
-	<LI><P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>La
-	ganancia del bloque principal ser&aacute; A y </FONT></FONT>
-	</P>
-	<LI><P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>la
-	ganancia del bloque de realimentaci&oacute;n ser&aacute; <FONT FACE="Arial, sans-serif">&beta;</FONT></FONT></FONT></P>
-</UL>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>tendremos
-algo como sigue:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="./OSCILADORES CLASES_html_4e6d0700.gif" NAME="Imagen1" ALIGN=LEFT WIDTH=409 HEIGHT=180 BORDER=0><BR CLEAR=LEFT><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>En
-este diagrama se cumple que: Xi=Xs-(A*&beta;*Xi)</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Pensemos
-ahora, que decidimos eliminar las se&ntilde;al Xs de la entrada al
-sumador algebraico, pero asumamos que la se&ntilde;al de entrada al
-bloque de realimentaci&oacute;n sigue siendo Xi. Esto implica que la
-se&ntilde;al Xi cumplir&aacute; con:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Xi=
-- (A*&beta;*Xi)</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>de
-aqu&iacute; se deduce que debe cumplirse que -(A*&beta;) = 1 para
-poder afirmar que a la entrada del amplificador realimentado se sigue
-viendo la se&ntilde;al Xi.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Se
-define como GANANCIA DEL LAZO, a la relaci&oacute;n entre la se&ntilde;al
-resultante a la salida del bloque de realimentaci&oacute;n y la se&ntilde;al
-a la entrada de dicho bloque, es decir:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>GANANCIA
-DEL LAZO = 
-<IMG SRC="./OSCILADORES CLASES_html_m6ee56d83.gif" NAME="Objeto4" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=126 HEIGHT=54 BORDER=0></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Nos
-damos cuenta de que obtenemos una se&ntilde;al a la salida partiendo
-del hecho de que no hay se&ntilde;al externa a la entrada. En este
-caso se comprueba que si [A*&beta; = 1] entonces habr&aacute; una
-se&ntilde;al resultante en el circuito. &ldquo;Esto es, se crea un
-lazo donde la se&ntilde;al se sostiene a s&iacute; misma y se produce
-una salida en onda sinusoidal... este fen&oacute;meno se denomina
-<U><I>oscilaci&oacute;n</I></U>&rdquo; (Floyd, 2001, p.757).</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif">Ahora
-recordemos que &ldquo;A&rdquo; y &ldquo;&beta;&rdquo; pueden ser
-funciones con valores complejos, es decir, provienen de circuitos con
-elementos reactivos, lo cual implica tomar en cuenta tanto el m&oacute;dulo
-como la fase de la &ldquo;Ganancia del Lazo&rdquo; . De aqu&iacute;
-se derivan los dos <I><FONT COLOR="#800000">criterios de Barkhausen</FONT></I></FONT>
-<FONT FACE="Arial, sans-serif">para que un circuito oscile de forma
-independiente y autosostenida:</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif">Un
-criterio: El m&oacute;dulo de la funci&oacute;n &ldquo;Ganancia del
-Lazo&rdquo; debe ser &ldquo;1&rdquo;. Expresado matem&aacute;ticamente
-tendremos:</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="./OSCILADORES CLASES_html_6f5554d0.gif" NAME="Objeto5" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=100 HEIGHT=25 BORDER=0></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Otro
-criterio: La fase resultante de la &ldquo;Ganancia del Lazo&rdquo;
-debe ser 0&ordm; o (n*360&ordm;). Dicho de otra forma:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="./OSCILADORES CLASES_html_285b6cdd.gif" NAME="Objeto6" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=288 HEIGHT=25 BORDER=0>
-<FONT FACE="Arial, sans-serif">; 
-<IMG SRC="./OSCILADORES CLASES_html_m3cc6a817.gif" NAME="Objeto7" ALIGN=ABSMIDDLE HSPACE=10 WIDTH=189 HEIGHT=25 BORDER=0></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>El
-criterio de Barkhausen podr&iacute;amos decir que es uno solo, pero
-se desglosa en dos partes para que se cumpla a cabalidad.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><A HREF="./OSCILADORES CLASES2.html">Pr&oacute;xima
-p&aacute;gina de &ldquo;osciladores&rdquo;</A>.</FONT></FONT></P>
-<P ALIGN=JUSTIFY><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><BR><BR>
-</P>
-</BODY>
-</HTML>
+<body>
+<div class="content-block">
+    <p>Núcleo Maracay</p>
+    <p>Dpto. de Ingeniería Electrónica</p>
+    <p>IX Término, 03-2004</p>
+    <p><i>Prof. Isabel Vera</i></p>
+    <p>Secciones A y B</p>
+    <p>&nbsp;</p>
+    <p><strong>Semanas 9 y 10 OSCILADORES.</strong></p>
+</div>
+
+<p class="content-block">Los osciladores son circuitos que generan a su salida una señal alterna periódica, valiéndose sólo de la polarización (DC) de sus componentes y prescindiendo de una señal externa.</p>
+
+<p class="content-block">Existen osciladores senoidales y de relajación (señales triangulares o cuadradas).</p>
+
+<p class="content-block">Antes de empezar recordemos un poco de la teoría de realimentación.</p>
+
+<p class="content-block">Sabemos que la función de transferencia de un circuito realimentado viene dada por la expresión:</p>
+
+<p class="center content-block"><img src="./OSCILADORES CLASES_html_1097ca69.gif" alt="Ecuación de ganancia realimentada"></p>
+
+<p class="content-block">reconoceremos si la realimentación es negativa o positiva, al revisar las siguientes inecuaciones:</p>
+
+<p class="content-block">Si <img src="./OSCILADORES CLASES_html_7c86a1fc.gif" alt="Condición de realimentación negativa"> entonces sabremos que la realimentación es NEGATIVA. (La ganancia realimentada es <i>menor</i> que la ganancia a lazo abierto)</p>
+
+<p class="content-block">Si <img src="./OSCILADORES CLASES_html_m56c2284c.gif" alt="Condición de realimentación positiva"> entonces sabremos que la realimentación es POSITIVA. (La ganancia realimentada es <i>mayor</i> que la ganancia a lazo abierto).</p>
+
+<p class="content-block">Ahora pensemos un momento en lo siguiente: Si tenemos un circuito con realimentación de manera que:</p>
+
+<ul>
+    <li>la señal externa será X<sub>s</sub>,</li>
+    <li>la señal de entrada al bloque amplificador será X<sub>i</sub>, resultante del sumador (algebraico) de la señal externa y la señal procedente del bloque de realimentación.</li>
+    <li>La ganancia del bloque principal será A y</li>
+    <li>la ganancia del bloque de realimentación será &beta;</li>
+</ul>
+
+<p class="content-block">tendremos algo como sigue:</p>
+
+<p class="center content-block"><img src="./OSCILADORES CLASES_html_4e6d0700.gif" alt="Diagrama de bloques de realimentación"></p>
+
+<p class="content-block">En este diagrama se cumple que: X<sub>i</sub>=X<sub>s</sub>-(A*&beta;*X<sub>i</sub>)</p>
+
+<p class="content-block">Pensemos ahora, que decidimos eliminar las señal X<sub>s</sub> de la entrada al sumador algebraico, pero asumamos que la señal de entrada al bloque de realimentación sigue siendo X<sub>i</sub>. Esto implica que la señal X<sub>i</sub> cumplirá con:</p>
+
+<p class="content-block">X<sub>i</sub>= - (A*&beta;*X<sub>i</sub>)</p>
+
+<p class="content-block">de aquí se deduce que debe cumplirse que -(A*&beta;) = 1 para poder afirmar que a la entrada del amplificador realimentado se sigue viendo la señal X<sub>i</sub>.</p>
+
+<p class="content-block">Se define como GANANCIA DEL LAZO, a la relación entre la señal resultante a la salida del bloque de realimentación y la señal a la entrada de dicho bloque, es decir:</p>
+
+<p class="content-block">GANANCIA DEL LAZO = <img src="./OSCILADORES CLASES_html_m6ee56d83.gif" alt="Ecuación de ganancia del lazo"></p>
+
+<p class="content-block">Nos damos cuenta de que obtenemos una señal a la salida partiendo del hecho de que no hay señal externa a la entrada. En este caso se comprueba que si [A*&beta; = 1] entonces habrá una señal resultante en el circuito. “Esto es, se crea un lazo donde la señal se sostiene a sí misma y se produce una salida en onda sinusoidal... este fenómeno se denomina <u><i>oscilación</i></u>” (Floyd, 2001, p.757).</p>
+
+<p class="content-block">Ahora recordemos que “A” y “&beta;” pueden ser funciones con valores complejos, es decir, provienen de circuitos con elementos reactivos, lo cual implica tomar en cuenta tanto el módulo como la fase de la “Ganancia del Lazo” . De aquí se derivan los dos <i style="color: #800000;">criterios de Barkhausen</i> para que un circuito oscile de forma independiente y autosostenida:</p>
+
+<p class="content-block">Un criterio: El módulo de la función “Ganancia del Lazo” debe ser “1”. Expresado matemáticamente tendremos:</p>
+
+<p class="center content-block"><img src="./OSCILADORES CLASES_html_6f5554d0.gif" alt="Criterio de módulo de Barkhausen"></p>
+
+<p class="content-block">Otro criterio: La fase resultante de la “Ganancia del Lazo” debe ser 0º o (n*360º). Dicho de otra forma:</p>
+
+<p class="center content-block"><img src="./OSCILADORES CLASES_html_285b6cdd.gif" alt="Criterio de fase de Barkhausen">; <img src="./OSCILADORES CLASES_html_m3cc6a817.gif" alt="Criterio de fase de Barkhausen simplificado"></p>
+
+<p class="content-block">El criterio de Barkhausen podríamos decir que es uno solo, pero se desglosa en dos partes para que se cumpla a cabalidad.</p>
+
+<p class="content-block"><a href="./OSCILADORES CLASES2.html">Próxima página de “osciladores”</a>.</p>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* Estilos base para modernizar las clases */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1, h2, h3, h4 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para bloques de código */
+pre, code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    padding: 10px;
+    display: block;
+    overflow-x: auto;
+    white-space: pre-wrap; /* Para manejar el código C que usa <BR> */
+}
+
+/* Estilo para el contenido de las clases que usa <BR> como salto de línea */
+.content-block {
+    margin-bottom: 20px;
+}
+
+/* Estilos para reemplazar etiquetas obsoletas */
+.highlight {
+    color: #5c8526; /* Color original de la fuente */
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}

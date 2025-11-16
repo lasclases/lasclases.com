@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <conio.h>
+// #include <conio.h> // Librería no estándar, obsoleta.
 
 // Todos los archivos con extension .h ( o archivos de cabecera ) lo que
 // hacen es incluir prototipos de funciones. Por ejemplo: stdio.h, contiene
@@ -69,8 +69,8 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
     // Sin embargo, se recomienda realizar todas las declaraciones al principio
     // del codigo para mantener una mayor legibilidad del mismo.
     char ch, ch2; // Variables tipo char. Ocupa 1 byte -> 0..255
-    int i, cont, q; // Variable de Enteros. Ocupa 2 bytes -> -32.768 a 32767
-    float f; // Coma flotante. 
+    int i, cont, q; // Variable de Enteros. Ocupa típicamente 4 bytes en sistemas modernos (rango: -2,147,483,648 a 2,147,483,647). En sistemas antiguos de 16 bits, ocupaba 2 bytes.
+    float f; // Coma flotante.
             // Numeros Reales. Ocupa 4 bytes -> 3.4E-38 a 3.4E+38
     double d; // Coma flotante doble precision.
             // Numeros Reales. Ocupa 8 bytes -> 1.7E-308 a 1.7E+308
@@ -189,7 +189,7 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
     //Los otros dos son operadores monarios que se usan para los punteros.
     //Los operadores son '&' y '*'( Luego profundizaremos en esto ).
     // Operadores:
-    // sizeof NombreVariable; retorna el tama�o de la variable. (Portabilidad)
+    // sizeof NombreVariable; retorna el tama�o de la variable. (Portabilidad)
     // , => x=(y=3, y+1); => x=4 otro ej: y=10;x=(y=y-5,25/y); => y=5
     // el "." y el "->" Se usan en estructuras ( y en objectos en c++ )
     //    para referenciar variables o partes de las estructuras (u objetos).
@@ -283,7 +283,7 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
      */
     // system("cls"); // Ejecuta una orden de sistema, en este caso cls
     // Mejor usaremos:
-    clrscr();
+    // clrscr(); // Función no estándar (de conio.h).
     // Impresion de la tabla ASCII
     for (i=0;i<256;i++) {
         printf("(%i,%c) ",i,i);
@@ -301,7 +301,7 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
        //
        if anidados: if (exp1)
                      if (exp2) sent;
-                     else sent;               �
+                     else sent;               �
                     if (exp1) {
                      if (exp2) sent; }
                     else sent;
@@ -382,7 +382,7 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
     do {
         printf("Introduzca una letra (x para salir): ");
         ch=getchar();
-        fflush(stdin);  // Por si acaso se introdujo un caracter de control.
+        // fflush(stdin);  // fflush(stdin) tiene un comportamiento indefinido según el estándar C. Se omite.
     } while( ch != 'x' );
     printf("\n");
     printf("Introduzca un numero: ");
@@ -399,9 +399,7 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
     // Exacto, funciona en la funcion pero no aqui. Ver mas datos en el
     // desarrollo de la funcion. Pensar en esto.
     system("pause"); // Para no se cierre la ventana de DOS y ver el resultado.
-    //clrscr(); // Definida en conio.h
-    //textcolor(1); // Definida en conio.h
-    //textbackground(4); // Definida en conio.h
+    // Funciones de conio.h (clrscr, textcolor, textbackground) no son estándar y se han comentado.
     printf("Texto de prueba\n");
     system("pause"); // Para no se cierre la ventana de DOS y ver el resultado.
     return 0;
@@ -485,7 +483,7 @@ int cuadrado (int x) { // Ejemplo de una funcion que recibe un entero como
           register int i;
           for(i=0;i<7;i++) printf("%i", miCad[i]);
         }
-    donde miCad se declara como un array de tama�o desconocido. (OJO: C no
+    donde miCad se declara como un array de tama�o desconocido. (OJO: C no
     comprueba los limites de los arrays esto debe hacerlo el programador en
     el caso de que sea necesario. Un descontrol en las cadenas puede generar
     sobreescritura del area de memoria. Luego ahondaremos. OJO ) Este metodo

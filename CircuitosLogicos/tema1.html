@@ -1,1428 +1,651 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-<HEAD>
+<!DOCTYPE html>
+<html>
+<head>
 	<meta charset="utf-8">
-	<TITLE>TEMA 1</TITLE>
-	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Win32)">
-	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
-	<META NAME="CREATED" CONTENT="20070113;17444600">
-	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
-	<META NAME="CHANGED" CONTENT="20070122;18134068">
+	<title>TEMA 1: Sistemas Numéricos y Operaciones Aritméticas</title>
+    <link rel="stylesheet" href="../style.css">
+	<meta name="author" content="Tony Rodriguez">
 </HEAD>
-<BODY LANG="es-VE" DIR="LTR">
-<H1 ALIGN=CENTER><FONT COLOR="#0000ff"><U><B>SISTEMAS
-NUM&Eacute;RICOS.<BR>CONVERSI&Oacute;N ENTRE SISTEMAS
-NUM&Eacute;RICOS.<BR>OPERACIONES BINARIAS ARITM&Eacute;TICAS: SUMA,
-RESTA, MULTIPLICACI&Oacute;N Y COMPLEMENTO</B></U></FONT></H1>
-<P><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Empecemos
-por mencionar a los &quot;Elementos discretos&quot;. Estos no son m&aacute;s
-que un grupo de s&iacute;mbolos con un significado. Por ejemplo:
-N&uacute;meros, letras, signos de puntuaci&oacute;n, etc. Colocar
-elementos discretos uno al lado del otro representan informaci&oacute;n.
-De hecho, esta secuencia de elementos forman un &quot;lenguaje&quot;
-y que obviamente deben conocer para poder saber cu&aacute;l es la
-informaci&oacute;n que contiene. Los primeros computadores se usaban
-para realizar c&aacute;lculos num&eacute;ricos y los elementos
-discretos usados eran los d&iacute;gitos y es de aqu&iacute; que
-surge el t&eacute;rmino computador digital. </FONT>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">En
-los sistemas digitales, los elementos discretos son representados por
-se&ntilde;ales (en nuestro caso se&ntilde;ales el&eacute;ctricas) y
-en el caso particular de los sistemas digitales actuales las se&ntilde;ales
-tienen s&oacute;lo 2 posibles valores discretos y por esa raz&oacute;n
-se les conoce como binarios. Las se&ntilde;ales representan dos
-estados que acorde a la l&oacute;gica humana representan verdadero o
-falso.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">COMENTARIO:
-Es probable que en un futuro estos sistemas digitales sean
-reemplazados por otros que usen &quot;Fuzzy Logic&quot; o &quot;l&oacute;gica
-difusa&quot;. A este tipo de sistemas, adem&aacute;s de los dos
-valores verdadero y falso, se le a&ntilde;ade otro estado que
-representar&iacute;a un &quot;quiz&aacute;&quot; o en el caso de que
-ese estado pueda contener varios valores un &quot;es verdad pero s&oacute;lo
-en cierto grado&quot;. Es en este tipo de l&oacute;gica que muchos
-expertos consideran podr&iacute;a estar la verdadera esencia de la
-inteligencia artificial. No todo es blanco o negro ;-).</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>Se&ntilde;ales
-anal&oacute;gicas</B>: Son se&ntilde;ales que se representan de forma
-continua y no por elementos discretos como las se&ntilde;ales
-digitales. Si queremos simular un proceso que es anal&oacute;gico en
-un sistema digital requeriremos de un <B>&quot;convertidor Anal&oacute;gico
-Digital&quot;</B>. &Eacute;ste se encargar&aacute; de &quot;transformar&quot;
-los datos anal&oacute;gicos a una forma que sea representada por
-elementos discretos y as&iacute; poder ser procesada por sistemas
-digitales. Un ejemplo de ello son los CD's de m&uacute;sica. El
-sonido es una se&ntilde;al anal&oacute;gica. Esto quiere decir que la
-variaci&oacute;n de la misma es de forma continua pero los CD's son
-un medio de almacenamiento digital. Es por ello que el sonido debe
-pasar por un proceso de conversi&oacute;n para poder ser usado en
-sistemas digitales. Y esto es s&oacute;lo un ejemplo. Otro ser&iacute;a
-la luz, que es tambi&eacute;n una se&ntilde;al continua (o
-anal&oacute;gica). La cantidad de aplicaciones que pueden realizarse
-con los sistemas digitales actuales son muy variadas. Algunos
-ejemplos son: num&eacute;ricas, procesamiento de texto, aplicaciones
-de dise&ntilde;o gr&aacute;fico, estudios digitales de audio, etc. El
-&quot;truco&quot; es saber c&oacute;mo expresar esa informaci&oacute;n
-en t&eacute;rminos discretos y en nuestro caso espec&iacute;fico
-&ldquo;binarios&rdquo; para que dichos sistemas digitales puedan
-procesarla, por lo que la necesidad de este tipo de sistemas en el
-mundo moderno es por dem&aacute;s evidente. </FONT>
-</P>
-<P STYLE="line-height: 150%"><BR><I><FONT SIZE=5><FONT COLOR="#008000">N&Uacute;MEROS
-BINARIOS</FONT></FONT></I> 
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
-mencionamos anteriormente, los sistemas digitales actuales s&oacute;lo
-procesan dos se&ntilde;ales (cierto o falso) y es por ello que se
-aplica el t&eacute;rmino de binario. Nosotros estamos acostumbrados a
-usar los n&uacute;meros en base decimal (o base 10) pero &eacute;sta
-es s&oacute;lo una de las formas de representar cantidades. En
-realidad &quot;2&quot; es s&oacute;lo un s&iacute;mbolo y cuando lo
-vemos nosotros entendemos que existen dos unidades de algo. Si yo les
-digo que tengo 2 computadoras ustedes no visualizan el s&iacute;mbolo
-2 sino la cantidad... quiz&aacute; representada por una computadora
-al lado de la otra, pero no el s&iacute;mbolo. As&iacute; que &quot;2&quot;
-es s&oacute;lo eso: un s&iacute;mbolo. Lo que trato de hacerles
-entender es que no importa c&oacute;mo lo expresemos, qu&eacute;
-s&iacute;mbolo o s&iacute;mbolos usemos, lo importante es que
-entendamos ese &quot;lenguaje&quot; y saber qu&eacute; es lo que
-representa. <B>Usamos los s&iacute;mbolos como una abstracci&oacute;n
-para representar cantidades</B>. </FONT>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Pongamos
-que tenemos un n&uacute;mero decimal tal como 123. Eso representa una
-centena m&aacute;s dos decenas m&aacute;s tres unidades. O sea:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>1
-x 10<SUP>2</SUP> + 2 x 10<SUP>1</SUP> + 3 x 10<SUP>0</SUP></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">o
-sea, 123 ;-). Por lo tanto podr&iacute;amos decir que si tenemos un
-n&uacute;mero decimal de forma </FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>a<SUB>4</SUB>a<SUB>3</SUB>a<SUB>2</SUB>a<SUB>1</SUB>a<SUB>0</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">entonces
-<B>a<SUB>4, </SUB>a<SUB>3, </SUB>a<SUB>2, </SUB>a<SUB>1 y </SUB>a<SUB>0</SUB></B>
-son los coeficientes en la siguiente ecuaci&oacute;n:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>a<SUB>4</SUB>
-x 10<SUP>4</SUP> + a<SUB>3</SUB> x 10<SUP>3</SUP> + a<SUB>2</SUB> x
-10<SUP>2</SUP> + a<SUB>1</SUB> x 10<SUP>1</SUP> + a<SUB>0</SUB> x 10<SUP>0</SUP>
-</B></FONT>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">donde
-todos los coeficientes deben ser un n&uacute;mero entre 0 y 9. En
-este caso en particular estamos usando lo que conocemos: la base 10 o
-sistema decimal; pero podemos ampliar este concepto a cualquier base.
-Por lo tanto podemos decir que todo n&uacute;mero puede ser expresado
-en un sistema de base &quot;b&quot; por:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>a<SUB>n</SUB>.b<SUP>n</SUP>
-+ a<SUB>n-1</SUB>.b<SUP>n-1</SUP> + ... + a<SUB>2</SUB>.b<SUP>2</SUP>
-+ a<SUB>1</SUB>.b<SUP>1</SUP> + a<SUB>0</SUB>.b<SUP>0</SUP></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
-en el caso que contenga decimales:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>a<SUB>n</SUB>.b<SUP>n</SUP>
-+ a<SUB>n-1</SUB>.b<SUP>n-1</SUP> + ... + a<SUB>2</SUB>.b<SUP>2</SUP>
-+ a<SUB>1</SUB>.b<SUP>1</SUP> + a<SUB>0</SUB>.b<SUP>0</SUP> + a<SUB>-1</SUB>.b<SUP>-1</SUP>
-+ a<SUB>-2</SUB>.b<SUP>-2</SUP> + ... + a<SUB>-m</SUB>.b<SUP>-m</SUP></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">donde
-<B>a<SUB>n</SUB></B> es un valor que siempre estar&aacute; entre 0 y
-(b-1) siendo &ldquo;<B>n</B>&rdquo; el n&uacute;mero de d&iacute;gitos
-enteros menos uno y &ldquo;<B>m</B>&rdquo; el n&uacute;mero de
-d&iacute;gitos en la fracci&oacute;n decimal. En un n&uacute;mero
-binario la base es 2. Por lo tanto, un n&uacute;mero binario s&oacute;lo
-puede contener d&iacute;gitos entre 0 y 1 (que en nuestro caso
-representar&aacute;n los dos estados que asociamos con falso o
-cierto). A un solo d&iacute;gito binario (elemento m&iacute;nimo de
-un n&uacute;mero binario) se le conoce como BIT. A la agrupaci&oacute;n
-de 8 BITS se le conoce como BYTE. </FONT>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Un
-ejemplo de un n&uacute;mero binario es: 1010011. Si quisi&eacute;ramos
-representar este n&uacute;mero de 7 bits (donde b=2, n=6 y m =0) de
-una forma que nos fuese m&aacute;s familiar, es decir, en decimal,
-har&iacute;amos:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>1
-x 2<SUP>6</SUP> + 0 x 2<SUP>5</SUP> + 1 x 2<SUP>4</SUP> + 0 x 2<SUP>3</SUP>
-+ 0 x 2<SUP>2</SUP> + 1 x 2<SUP>1</SUP> + 1 x 2<SUP>0</SUP> = 64 + 0
-+ 16 + 0 + 0 + 2 + 1 = 83</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">por
-lo tanto, el n&uacute;mero binario de 7 bits 1010011 es igual que el
-n&uacute;mero decimal 83. Son dos formas distintas de expresar la
-misma cantidad. Y que lo haya convertido a decimal no quiere decir
-que la f&oacute;rmula convierte el n&uacute;mero a base decimal. En
-realidad Yo us&eacute; la base decimal para resolver porque es la
-forma natural en la que nosotros pensamos. Vi 2<SUP>6</SUP>, y yo s&eacute;
-que representa una cantidad de sesenta y cuatro y la forma en la que
-Yo s&eacute; escribir esa cantidad es en decimal y representada por
-los s&iacute;mbolos 64. Si yo pensase en otra base, como veremos m&aacute;s
-adelante, ver&iacute;a otros s&iacute;mbolos pero al final
-representar&iacute;an la misma cantidad.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Cuando
-trabajamos con n&uacute;meros en distintas bases la forma de expresar
-en qu&eacute; base est&aacute; escrito un n&uacute;mero es
-coloc&aacute;ndole dentro de par&eacute;ntesis e indicando al lado la
-base. Por ejemplo:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(1010011)<SUB>2</SUB>
-= (83)<SUB>10</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">quiere
-decir que el n&uacute;mero 1010011 en base 2 es igual al n&uacute;mero
-83 en base 10.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Por
-supuesto los n&uacute;meros binarios, o en base 2, son s&oacute;lo un
-ejemplo. La base puede ser cualquiera. Supongamos ahora que les digo
-que tenemos: (1234,2)<SUB>5</SUB> que es un n&uacute;mero en base 5
-con fracci&oacute;n decimal y que, como se observa, s&oacute;lo usa
-d&iacute;gitos del 0 al 4 que, como ya se ha mencionado, son las
-&uacute;nicas posibilidades. Bien, luego les digo que lo conviertan a
-base 10. Sabiendo que en ese caso n=3, que m=1 y que la base b=5,
-entonces gracias a la f&oacute;rmula que ya mostramos podremos decir
-que:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(1234,2)<SUB>5</SUB>
-= 1 x 5<SUP>3</SUP> + 2 x 5<SUP>2</SUP> + 3 x 5<SUP>1</SUP> + 4 x 5<SUP>0</SUP>
-+ 2 x 5<SUP>-1</SUP> = 125 + 50 + 15 + 4 + 0,4 = (194,4)<SUB>10</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Perfecto.
-Por lo tanto ya sabemos entonces qu&eacute; debemos hacer para
-convertir n&uacute;meros que est&aacute;n en cualquier base &ldquo;<B>b</B>&rdquo;
-a, en nuestro caso, base 10.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Si
-el n&uacute;mero que queremos mostrar est&aacute; en una base menor o
-igual a diez pues podremos usar los d&iacute;gitos conocidos por
-nosotros (del 0 al 9) como los &quot;s&iacute;mbolos&quot; a usar.
-Pero &iquest;qu&eacute; pasa si el n&uacute;mero est&aacute; en una
-base mayor a 10? pues que deberemos usar otros s&iacute;mbolos. Lo
-normalmente usado son las letras del alfabeto (regularmente en
-may&uacute;sculas) para expresar dichos n&uacute;meros. Por ejemplo
-el sistema en base hexadecimal (&aacute;mpliamente usado) que est&aacute;
-en base 16 usa los s&iacute;mbolos A, B, C, D, E y F para expresar
-las cantidades que conocemos en decimal como 10, 11, 12, 13, 14 y 15
-respectivamente (los cuales son necesarios en la base 16 ya que
-recuerden que los coeficientes en cualquier base son n&uacute;meros
-entre 0 y <B>base-1</B>). Por lo tanto:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(1F)<SUB>16</SUB>
-= 1 x 16<SUP>1</SUP> + 15 x 16<SUP>0</SUP> = 16 + 15 = (31)<SUB>10</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y,
-m&aacute;s interesante a&uacute;n:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(10)<SUB>16</SUB>
-= 1 x 16<SUP>1</SUP> + 0 x 16<SUP>0</SUP> = 16 + 0 = (16)<SUB>10</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
-es por eso comentaba que no importan los s&iacute;mbolos usados, lo
-importante es saber la cantidad que representan y para ello es
-necesario saber el &quot;lenguaje&quot; que se est&aacute; hablando.
-Si yo escribo los s&iacute;mbolos 10... que ven ustedes? Pues lo que
-ven depender&aacute; de su sistema base. Ustedes pueden decir que
-entienden una cantidad de diez. Yo digo que entiendo una cantidad de
-diecis&eacute;is. Si ustedes est&aacute;n trabajando en base 10 y yo
-en base 16, ambas cantidades son correctas.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Hace
-unos momentos cuando est&aacute;bamos en el punto de convertir
-n&uacute;meros seg&uacute;n la formula dije: &quot;Si yo pensase en
-otra base&quot; . Que pasa si probamos el mismo ejemplo, pero esta
-vez &ldquo;pensando&rdquo; en hexadecimal. Tendr&iacute;amos:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(1010011)<SUB>2</SUB>
-= 1 x 2<SUP>6</SUP> + 0 x 2<SUP>5</SUP> + 1 x 2<SUP>4</SUP> + 0 x 2<SUP>3</SUP>
-+ 0 x 2<SUP>2</SUP> + 1 x 2<SUP>1</SUP> + 1 x 2<SUP>0</SUP> = (40)<SUB>16</SUB>
-+ 0 + (10)<SUB>16</SUB> + 0 + 0 + (2 + 1)<SUB>16</SUB> = (53)<SUB>16</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ahora,
-cuando yo vi 2<SUP>6</SUP> vi la cantidad o el valor de sesenta y
-cuatro que es representada en hexadecimal por los s&iacute;mbolos 40,
-2<SUP>4 </SUP>por 10, etc. </FONT>
-</P>
-<P STYLE="line-height: 150%"><BR><I><FONT SIZE=5><FONT COLOR="#008000">N&Uacute;MEROS
-HEXADECIMALES Y OCTALES</FONT></FONT></I> 
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
-ya se coment&oacute;, los n&uacute;meros hexadecimales son aquellos
-que est&aacute;n en base 16. En el caso de los octales tienen base 8.
-Estos n&uacute;meros son muy usados en los sistemas digitales
-principalmente porque pueden representar los n&uacute;meros binarios
-de una forma m&aacute;s compacta (debido a que 2<SUP>3</SUP> son 8 y
-2<SUP>4</SUP> son 16). Realizar esa conversi&oacute;n es
-extremadamente sencillo. Veamos el siguiente ejemplo: <B>(10100101)<SUB>2</SUB></B>
-es un n&uacute;mero binarios de 8 bits (o un byte). Este puede ser
-representado en dos partes de 4 bits (conocidas como NIBBLES). Si
-dividimos el byte del ejemplo en sus Nibbles, tendr&iacute;amos: <B>1010
-y 0101</B> cada una representando 2<SUP>4</SUP> posibilidades, o sea
-un n&uacute;mero hexadecimal (un n&uacute;mero entre 0 y 15). As&iacute;:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(1010)<SUB>2</SUB>
-= (A)<SUB>16</SUB> , (0101)<SUB>2</SUB> = (5)<SUB>16</SUB> =&gt;
-(10100101)<SUB>2</SUB> = (A5)<SUB>16</SUB>.</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">El
-caso de octal es semejante. Si tenemos el n&uacute;mero <B>(101010111)<SUB>2</SUB></B>
-podr&iacute;amos dividir &eacute;ste en tres partes de 3 bits (o sea,
-con 2<SUP>3</SUP> posibilidades cada una) y tendr&iacute;amos: <B>101,
-010 y 111</B> que representan los n&uacute;meros octales 5, 2 y 7
-respectivamente. Por lo tanto:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(101010111)<SUB>2</SUB>
-= (527)<SUB>8</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Y
-por supuesto que hacer lo contrario, o sea, convertir de octal o
-hexadecimal a binario, es igual de sencillo. Por ejemplo:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(7531)<SUB>8</SUB>
-=&gt; 111 101 011 001 =&gt; (111101011001)<SUB>2</SUB></B></FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(123,A)<SUB>16</SUB>
-= 0001 0010 0011 , 1010 = (000100100011,1010)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Pero
-existen otras conversiones que no son tan obvias como &eacute;stas. A
-continuaci&oacute;n profundizaremos en ellas.</FONT></P>
-<P><BR><I><FONT SIZE=5><FONT COLOR="#008000">CONVERSIONES ENTRE
-N&Uacute;MEROS DE BASE DIFERENTE</FONT></FONT></I> <BR><BR><FONT FACE="Lucida Sans, sans-serif">La
-conversi&oacute;n entre n&uacute;meros de distintas bases a un n&uacute;mero
-decimal es, como ya vimos, bastante sencilla. S&oacute;lo debemos
-usar la f&oacute;rmula que ya se describi&oacute;. Pero &iquest;qu&eacute;
-pasa si lo que queremos es convertir un n&uacute;mero decimal a
-binario? &iquest;o a hexadecimal? &iquest;o a octal? Para realizar
-estas conversiones primero que nada, si el n&uacute;mero tiene parte
-decimal, separamos la parte entera de la fracci&oacute;n decimal. La
-mejor forma de mostrar la conversi&oacute;n es a trav&eacute;s de
-ejemplos. Veamos algunos:</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>Convertir
-a binario el n&uacute;mero decimal 41:</B> En el caso de querer
-convertir a n&uacute;meros binarios lo que debemos hacer es realizar
-sucesivas divisiones del n&uacute;mero a convertir entre dos hasta
-que lleguemos a un cociente de cero. Los restos de las divisiones
-representar&aacute;n los d&iacute;gitos desde el menos significativo
-(que ser&aacute; el primer resto) hasta el m&aacute;s significativo
-que ser&aacute; el resto de la &uacute;ltima divisi&oacute;n cuando
-lleguemos al cociente cero. Entonces si el n&uacute;mero es 41, al
-realizar la divisi&oacute;n entre dos obtendremos un cociente de 20 y
-un resto de 1. Es precisamente el resto quien indicar&aacute; cu&aacute;l
-es el valor del bit y en este caso este es el bit menos
-significativo. Luego haremos la operaci&oacute;n nuevamente con el
-nuevo cociente que es el 20 y as&iacute; sucesivamente hasta llegar
-al momento en que el cociente sea 0. Entonces, desde el principio: </FONT>
-</P>
-<UL>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">41
-	/ 2 = 20 con resto 1 =&gt; El coeficiente el menos significativo
-	ser&aacute; 1, digamos a<SUB>0</SUB>=1.</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">20/2
-	= 10 con resto 0 =&gt; El coeficiente 1 ser&aacute; 0 =&gt; a<SUB>1</SUB>=0.</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">10/2
-	= 5 con resto 0 =&gt; a<SUB>2</SUB>=0.</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">5/2
-	= 2 con resto 1 =&gt; a<SUB>3</SUB>=1.</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">2/2
-	= 1 con resto 0 =&gt; a<SUB>4</SUB>=0.</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">1/2
-	= 0 con resto 1 =&gt; a<SUB>5</SUB>=1.</FONT></P>
-</UL>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Por
-lo tanto:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(41)<SUB>10</SUB>
-= (a<SUB>5</SUB>a<SUB>4</SUB>a<SUB>3</SUB>a<SUB>2</SUB>a<SUB>1</SUB>a<SUB>0</SUB>)
-= (101001)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">&iquest;y
-si quisi&eacute;ramos mostrar el n&uacute;mero en octal y/&oacute;
-hexadecimal, partiendo de que ya tenemos el n&uacute;mero binario?,
-entonces ser&iacute;a:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(101001)<SUB>2</SUB>
-= (51)<SUB>8</SUB> = (29)<SUB>16</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
-otro ejemplo. Convertir el n&uacute;mero decimal 161 a binario.
-Har&iacute;amos:</FONT></P>
-<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
-	<COL WIDTH=28*>
-	<COL WIDTH=28*>
-	<COL WIDTH=28*>
-	<COL WIDTH=28*>
-	<COL WIDTH=28*>
-	<COL WIDTH=28*>
-	<COL WIDTH=28*>
-	<COL WIDTH=28*>
-	<COL WIDTH=28*>
-	<TR VALIGN=TOP>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">161</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">80</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">40</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">20</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">10</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">5</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">2</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-		</TD>
-		<TD WIDTH=11%>
-			<P><BR>
-			</P>
-		</TD>
-	</TR>
-</TABLE>
-<P STYLE="line-height: 150%"><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">sabiendo
-que el primer bit es el menos significativo tendr&iacute;amos:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(161)<SUB>10</SUB>
-= (10100001)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">partiendo
-del binario, en octal y hexadecimal ser&iacute;a:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(10100001)<SUB>2</SUB>
-= (A1)<SUB>16</SUB> = (241)<SUB>8</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">&iquest;quieren
-revisar? OK:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(A1)<SUB>16</SUB>
-= 10 x 16<SUP>1</SUP> + 1 x 16<SUP>0</SUP> = 160 + 1 = (161)<SUB>10</SUB></B></FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(241)<SUB>8</SUB>
-= 2 x 8<SUP>2</SUP> + 4 x 8<SUP>1</SUP> + 1 x 8<SUP>0</SUP> = 128 +
-32 + 1 = (161)<SUB>10</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ok,
-todo ch&eacute;vere. Pero &iquest;qu&eacute; pasa si lo que quiero es
-convertir el n&uacute;mero decimal directamente a octal o a
-hexadecimal? (quiero decir si NO tenemos el n&uacute;mero binario).
-Por supuesto, ustedes podr&iacute;an convertirlo a binario y luego a
-octal o hexadecimal. Soy de la pol&iacute;tica de que no importa c&oacute;mo
-se llegue al resultado mientras &eacute;ste sea el correcto a menos
-claro est&aacute; de que se les diga <B>expl&iacute;citamente</B> que
-lo hagan de alguna forma en particular. En todo caso, la forma m&aacute;s
-r&aacute;pida de hacerlo ser&iacute;a aplicando el m&eacute;todo
-an&aacute;logo a la conversi&oacute;n a binario s&oacute;lo que
-cambiando el divisor a la base correspondiente. Si en binario es 2,
-en octal es 8, en hexadecimal es 16 en base 5 ser&iacute;a 5, etc.
-Procedamos con el mismo ejemplo anterior, con el n&uacute;mero 161.
-Convirt&aacute;moslo a octal. Ser&iacute;a:</FONT></P>
-<UL>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">161
-	</FONT>
-	</P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">20
-	con resto 1 </FONT>
-	</P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">2
-	con resto 4 </FONT>
-	</P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0
-	con resto 2</FONT></P>
-</UL>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">por
-lo tanto:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(161)<SUB>10</SUB>
-= (241)<SUB>8</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">ya
-que el primer resto es el d&iacute;gito menos significativo. Y &iquest;qu&eacute;
-tal a hexadecimal? Ser&iacute;a:</FONT></P>
-<UL>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">161</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">10
-	con resto 1</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0
-	con resto 10 que en hexadecimal es representado por <B>A</B></FONT></P>
-</UL>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">entonces:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(161)<SUB>10</SUB>
-= (A1)<SUB>16</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ok.
-Si la base destino es 5, por ejemplo, llevarlo a binario no les
-servir&iacute;a de nada. En este caso tendr&iacute;amos que proceder
-obligat&oacute;riamente con el m&eacute;todo explicado, en este caso
-siendo el divisor el n&uacute;mero 5. Mismo ejemplo:</FONT></P>
-<DL>
-	<DL>
-		<DL>
-			<DL>
-				<DL>
-					<DL>
-						<DD>
-						<TABLE WIDTH=212 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
-							<COL WIDTH=88>
-							<COL WIDTH=97>
-							<TR VALIGN=TOP>
-								<TD WIDTH=88>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">161</FONT></P>
-								</TD>
-								<TD WIDTH=97>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">RESTO</FONT></P>
-								</TD>
-							</TR>
-							<TR VALIGN=TOP>
-								<TD WIDTH=88>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">32</FONT></P>
-								</TD>
-								<TD WIDTH=97>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-								</TD>
-							</TR>
-							<TR VALIGN=TOP>
-								<TD WIDTH=88>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">6</FONT></P>
-								</TD>
-								<TD WIDTH=97>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">2</FONT></P>
-								</TD>
-							</TR>
-							<TR VALIGN=TOP>
-								<TD WIDTH=88>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-								</TD>
-								<TD WIDTH=97>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-								</TD>
-							</TR>
-							<TR VALIGN=TOP>
-								<TD WIDTH=88>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-								</TD>
-								<TD WIDTH=97>
-									<P ALIGN=CENTER><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-								</TD>
-							</TR>
-						</TABLE>
-					</DL>
-				</DL>
-			</DL>
-		</DL>
-	</DL>
-</DL>
-<P STYLE="line-height: 150%"><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Por
-lo tanto:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(161)<SUB>10</SUB>
-= (1121)<SUB>5</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Revisemos:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(1121)<SUB>5</SUB>
-= 1 x 5<SUP>3</SUP> + 1 x 5<SUP>2</SUP> + 2 x 5<SUP>1</SUP> + 1 x 5<SUP>0</SUP>
-= 125 + 25 + 10 + 1 = (161)<SUB>10</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">CORRECTO!!!
-Veamos ahora el caso de que el n&uacute;mero sea con decimales. Como
-ya se coment&oacute;, en estos casos es m&aacute;s conveniente
-separar la parte entera de la fracci&oacute;n decimal. La parte
-entera ya sabemos c&oacute;mo resolverla. La fracci&oacute;n decimal
-se hace por un procedimiento similar pero la operaci&oacute;n
-involucrada es la multiplicaci&oacute;n y quien representar&aacute;
-el d&iacute;gito a colocar ser&aacute; la parte entera siendo el
-primer entero quien ser&aacute; la cifra m&aacute;s significativa.
-Por ejemplo si queremos convertir el n&uacute;mero decimal 0,8125 a
-binario hacemos:</FONT></P>
-<UL>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0,8125
-	x 2 = 1 + 0,625</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0,625
-	x 2 = 1 + 0,25</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0,25
-	x 2 = 0 + 0,50</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0,50
-	x 2 = 1 + 0</FONT></P>
-</UL>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">as&iacute;
-que</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(0,812)<SUB>10</SUB>
-= (0,1101)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Revisemos:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(0,1101)<SUB>2</SUB>
-= 1 x 2<SUP>-1</SUP> + 1 x 2<SUP>-2</SUP> + 0 x 2<SUP>-3</SUP> + 1 x
-2<SUP>-4</SUP> = 0,5 + 0,25 + 0 + 0,0625 = (0,8125)<SUB>10</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Excelente!!!
-Veamos un &uacute;ltimo ejemplo. Convertir el n&uacute;mero decimal
-48,407407407407 (407 peri&oacute;dico) al correspondiente en base 3.
-Para la parte entera:</FONT></P>
-<UL>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">48</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">16
-	con resto 0</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">5
-	con resto 1</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">1
-	con resto 2</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0
-	con resto 1</FONT></P>
-</UL>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
-para la fracci&oacute;n decimal:</FONT></P>
-<UL>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0,407407407407
-	x 3 = 1 + 0,2222222 peri&oacute;dico</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0,222222222222
-	x 3 = 0 + 0,6666666 peri&oacute;dico</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">0,666666666666
-	x 3 = 2 + 0</FONT></P>
-</UL>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Por
-lo tanto</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(48,407407407407...)<SUB>10</SUB>
-= (1210,102)<SUB>3</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Rev&iacute;senlo.</FONT></P>
-<P><FONT SIZE=4 STYLE="font-size: 16pt"><B>NOTA: Dada la confusi&oacute;n
-presentada por los n&uacute;meros en distintas bases y viendo el
-resultado en algunos alumnos que dio dar ejemplos de series en
-distintas bases, aqu&iacute; les anexo una tabla con n&uacute;meros
-en decimal y su correspondiente en otras bases. Observen como var&iacute;an
-los s&iacute;mbolos usados en las distintas bases en incrementos de
-uno.</B></FONT></P>
-<DL>
-	<DL>
-		<DL>
-			<DD>
-			<TABLE WIDTH=385 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
-				<COL WIDTH=65>
-				<COL WIDTH=100>
-				<COL WIDTH=49>
-				<COL WIDTH=57>
-				<COL WIDTH=54>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>Decimal</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">Hexadecimal</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">Octal</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">Base 3</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">Base 7</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>0</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">0</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>1</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">1</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>2</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">2</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">2</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">2</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">2</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>3</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">3</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">3</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">10</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">3</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>4</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">4</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">4</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">11</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">4</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>5</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">5</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">5</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">12</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">5</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>6</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">6</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">6</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">20</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">6</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>7</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">7</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">7</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">21</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">10</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>8</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">8</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">10</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">22</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">11</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>9</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">9</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">11</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">100</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">12</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>10</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">A</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">12</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">101</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">13</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>11</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">B</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">13</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">102</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">14</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>12</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">C</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">14</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">110</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">15</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>13</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">D</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">15</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">111</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">16</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>14</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">E</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">16</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">112</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">20</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>15</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">F</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">17</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">120</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">21</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>16</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">10</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">20</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">121</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">22</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>17</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">11</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">21</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">122</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">23</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>18</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">12</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">22</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">200</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">24</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>30</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">1E</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">36</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">1010</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">42</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>31</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">1F</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">37</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">1011</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">43</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>32</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">20</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">40</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">1012</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">44</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>64</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">40</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">100</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">2101</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">121</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>69</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">45</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">105</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">2120</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">126</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>70</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">46</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">106</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">2121</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">130</FONT></P>
-					</TD>
-				</TR>
-				<TR VALIGN=TOP>
-					<TD WIDTH=65>
-						<P><FONT FACE="Lucida Sans, sans-serif"><B>71</B></FONT></P>
-					</TD>
-					<TD WIDTH=100>
-						<P><FONT FACE="Lucida Sans, sans-serif">47</FONT></P>
-					</TD>
-					<TD WIDTH=49>
-						<P><FONT FACE="Lucida Sans, sans-serif">107</FONT></P>
-					</TD>
-					<TD WIDTH=57>
-						<P><FONT FACE="Lucida Sans, sans-serif">2122</FONT></P>
-					</TD>
-					<TD WIDTH=54>
-						<P><FONT FACE="Lucida Sans, sans-serif">131</FONT></P>
-					</TD>
-				</TR>
-			</TABLE>
-		</DL>
-	</DL>
-</DL>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Si
-por ejemplo tienen el n&uacute;mero (12)<SUB>3</SUB> y se le pide que
-le sumen 2, el resultado que van a obtener es el n&uacute;mero en
-base 3 que est&aacute; 2 posiciones adelante del (12)<SUB>3</SUB> ,
-en este caso el (21)3. Espero que esta tabla les sirva para
-comprender mejor los n&uacute;meros en bases distintas. (4 + 6)<SUB>7</SUB>
-= (13)<SUB>7</SUB>. Teniendo ya esto en cuenta, veamos como se
-realizan operaciones aritm&eacute;ticas en distintas bases.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><I><FONT SIZE=5><FONT COLOR="#008000">OPERACIONES
-ARITM&Eacute;TICAS CON N&Uacute;MEROS DE DISTINTAS BASES</FONT></FONT></I>
-</FONT>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">En
-realidad las operaciones aritm&eacute;ticas se realizan igual sin
-importar cu&aacute;l sea la base. La &uacute;nica consideraci&oacute;n
-a tomar es que s&oacute;lo pueden existir d&iacute;gitos entre 0 y
-<B>base-1</B>. Veamos algunos ejemplos de suma, resta y
-multiplicaci&oacute;n.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Sume
-los n&uacute;meros binarios 10111101 y 10110:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">10111101</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">+
-010110</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">---------------------------------</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">11010011</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
-les dije deben considerar la base que se est&aacute; usando. En este
-caso usamos n&uacute;meros binarios (base 2) por lo que los d&iacute;gitos
-s&oacute;lo pueden ser 0 &oacute; 1. &iquest;Qu&eacute; tenemos
-entonces? Bien, para este caso de suma (s&oacute;lo dos n&uacute;meros
-binarios) lo que debemos saber es que (0+0)=0, (0+1)=(1+0)=1,
-(1+1)=10 y (1+1+1)=11. Por lo tanto, empezando por el d&iacute;gito
-menos significativo tenemos que: (1+0)=1. Sigamos: (0+1)=1, (1+1)=10
-(por lo que colocamos el 0 y sabemos que llevamos 1 de acarreo que
-para el resto de la explicaci&oacute;n pondr&eacute; entre []),
-([1]+1+0)=10, ([1]+1+1)=11, ([1]+1+0)=10, ([1]+0)=1 y por &uacute;ltimo
-(1+0)=1. Rev&iacute;senlo y practiquen haciendo ejercicios.</FONT></P>
-<P STYLE="line-height: 150%"><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Realice
-la resta entre los mismos n&uacute;meros:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">10111101</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">-
-0010110</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">---------------------------------</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">10100111</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ok,
-sabiendo que (0-0)=0, (1-0)=1, (1-1)=0, (0-1)=-1 y (10-1)=1,
-entonces, empezando por el menos significativo y continuando,
-(1-0)=1, (10-1)=1, (10-1)=1, (0-0)=0, (1-1)=0, (1-0)=1 y (10-0)=10.
-En realidad no hay m&aacute;s que explicar aqu&iacute;. Realicen
-ejercicios.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Por
-&uacute;ltimo la multiplicaci&oacute;n:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">10111101</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">x
-10110</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">--------------------------------------------------</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">________00000000</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">______10111101</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">____10111101</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">__00000000</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">10111101</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">---------------------------------------------------</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 100%"><FONT FACE="Lucida Sans, sans-serif">1000000111110</FONT></P>
-<P STYLE="line-height: 150%"><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">En
-la multiplicaci&oacute;n de n&uacute;meros binarios tenemos que (0 x
-0)=(0 x 1)=(1 x 0)=0 y (1 x 1)=1 el cual, como veremos en los
-pr&oacute;ximos cap&iacute;tulos, es el comportamiento de una
-compuerta AND. Ese an&aacute;lisis nos es familiar ya que cumple
-exactamente las mismas propiedades a las que estamos acostumbrados.
-Yo dir&iacute;a m&aacute;s bien que realizar esta multiplicaci&oacute;n
-es un buen ejercicio para la suma ya que debe considerar m&uacute;ltiples
-acarreos. Entienda que en binario (1+1+1)=11, (1+1+1+1)=100,
-(1+1+1+1+1)=101, (1+1+1+1+1+1+1+1)=1000, etc.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Hagamos
-ahora la suma y resta de los mismos n&uacute;meros pero en
-hexadecimal:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>BD
-+ 16 = D3</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">ya
-que (D+6)<SUB>16</SUB>=(13)<SUB>16</SUB> que conlleva 1 de acarreo y
-luego ([1]+B+1)<SUB>16</SUB>=D<SUB>16</SUB>. Para la resta:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>BD
-- 16 = A7</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Lo
-cual no tiene mucho que analizar. La consideraci&oacute;n m&aacute;s
-importante a tomar es qu&eacute; d&iacute;gitos se pueden usar lo
-cual depende de la base. De resto el procedimiento es igual al que
-estamos familiarizados.</FONT></P>
-<P STYLE="line-height: 150%"><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><I><FONT SIZE=5><FONT COLOR="#008000">COMPLEMENTOS</FONT></FONT></I>
-</FONT>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Los
-complementos son muy usados en los sistemas digitales al momento de
-realizar operaciones de resta. Existen dos tipos de complemento. El
-complemento a <B>b</B> y el complemento a <B>b-1</B> donde <B>b</B>
-es la base. Es decir, para los n&uacute;meros binarios existen los
-complementos a 2 y a 1. En base octal ser&iacute;an complemento a 8 y
-a 7, etc. El complemento a <B>b</B> se define de la siguiente forma:</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>Complemento
-a b</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Teniendo
-un n&uacute;mero <B>N</B> de <B>n</B> d&iacute;gitos enteros, el
-complemento a <B>b</B> de <B>N</B> = (<B>b<SUP>n </SUP>- N)</B> si <B>N
-&ne; 0</B> y ser&aacute; <B>0</B> si <B>N=0</B>. Esto se cumple para
-todos los n&uacute;meros N positivos incluso con fracci&oacute;n
-decimal. El &uacute;nico caso especial a considerar es cuando la
-parte entera es cero. Esto se interpreta como que <B>n = 0</B>.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
-algunos ejemplos: &iquest;Cu&aacute;l es el complemento a 10 de
-(987)<SUB>10</SUB>? En este caso N = 987 y n = 3, entonces:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>10<SUP>3</SUP>
-- 987 = 1000 - 987 = 13</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">&iquest;El
-complemento a 10 de (0,125)<SUB>10</SUB>? Aqu&iacute; N = 0,125 y n =
-0, as&iacute; que:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>10<SUP>0</SUP>
-- 0,125 = 1 - 0,125 = 0,875</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">&iquest;El
-complemento a 10 de (987,125)<SUB>10</SUB>? N= 987,125 y n = 3, por
-lo tanto:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>10<SUP>3</SUP>
-- 987,125 = 1000 - 987,125 = 12,875</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>ATENCI&Oacute;N</B>:
-Observen que <B>NO</B> es lo mismo que calcular el complemento de la
-parte entera y de la fracci&oacute;n decimal por separado y juntar
-los resultados. OJO con eso.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
-unos casos en binario. Para el complemento a 2 de (10101100)<SUB>2</SUB>
-tenemos que n=8, entonces:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(2<SUP>8</SUP>)<SUB>10</SUB>
-- (10101100)<SUB>2</SUB> = (256)<SUB>10</SUB> - (10101100)<SUB>2</SUB>
-= (100000000 - 10101100)<SUB>2</SUB> = (01010100)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Otro.
-El complemento a 2 de (1010)<SUB>2</SUB> es</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(10000
-- 1010)<SUB>2</SUB> = (0110)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Obs&eacute;rvese
-que para calcular el complemento a 2 de un n&uacute;mero binario s&oacute;lo
-basta con revisar todos los d&iacute;gitos desde el menos
-significativo hacia el m&aacute;s significativo y mientras se consiga
-un cero, dejarlo igual, al conseguir el primer n&uacute;mero 1,
-dejarlo igual para luego cambiar el resto de ellos hasta llegar al
-m&aacute;s significativo. As&iacute; podemos decir r&aacute;pidamente
-que el complemento a 2 de (10100000)<SUB>2</SUB> es (01100000)<SUB>2</SUB>,
-que el complemento a 2 de (111)<SUB>2</SUB> es (001)<SUB>2</SUB>,
-etc. Otra forma muy sencilla de hallar el complemento a 2 de un
-n&uacute;mero binario es invirtiendo todos los d&iacute;gitos (que
-como veremos a continuaci&oacute;n es lo que se conoce como
-complemento a 1) y sum&aacute;ndole uno al resultado obtenido.
-Pru&eacute;benlo.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>Complemento
-a b-1</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Por
-otro lado tenemos tambi&eacute;n el complemento a <B>b-1</B>. En este
-caso, teniendo un n&uacute;mero positivo <B>N</B> en base <B>b</B>
-con <B>n</B> d&iacute;gitos enteros y <B>m</B> d&iacute;gitos en la
-fracci&oacute;n decimal, se conoce como complemento a <B>b-1</B> de <B>N</B>
-a</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>b<SUP>n</SUP>
-- b<SUP>-m</SUP> - N</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
-entonces. Para el complemento a 9 de (987)<SUB>10</SUB> tenemos que N
-= 987, n = 3 y m = 0, por lo tanto</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>10<SUP>3</SUP>
-- 10<SUP>0</SUP> - 987 = 1000 - 1 - 987 = 12</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Para
-el complemento a 9 de (0,125)<SUB>10</SUB> tenemos que N = 0,125 y n
-= 0 y m = 3, entonces</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>10<SUP>0</SUP>
-- 10<SUP>-3</SUP> - 0,25 = 1 - 0,001 - 0,125 = 0,999 - 0,125 = 0,874</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Y
-&iquest;qu&eacute; hay del complemento a 9 de (987,125)<SUB>10</SUB>?
-En ese caso N= 987,125 ; n = 3 y m = 3, por lo tanto</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>10<SUP>3</SUP>
-- 10<SUP>-3</SUP> - 987,125 = 1000 - 0,001 - 987,125 = 999,999 -
-987,125 = 12,874</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Observen
-que en este caso s&iacute; es lo mismo calcular el complemento de la
-parte entera y el de la fracci&oacute;n decimal por separado y juntar
-&oacute; sumar los resultados.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Algunos
-ejemplos en binario. Para el complemento a 1 de (10101100)<SUB>2</SUB>
-sabemos que n=8 y m=0 =&gt;</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(2<SUP>8</SUP>)<SUB>10</SUB>
--1 - (10101100)<SUB>2</SUB> = (256)<SUB>10</SUB> - 1 - (10101100)<SUB>2</SUB>
-= (100000000 - 1 - 10101100)<SUB>2</SUB> = (01010011)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
-que el complemento a 1 de (1010)<SUB>2</SUB> es</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>(10000
-- 1 - 1010)<SUB>2</SUB> = (0101)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">En
-estos dos &uacute;ltimos ejemplos se puede observar que para
-conseguir el complemento a 1 de un n&uacute;mero binario basta con
-tan solo invertir todos los d&iacute;gitos (esto quiere decir cambiar
-0 por 1 y viceversa). Es por esto que les coment&eacute;
-anteriormente que otra forma de calcular el complemento a 2 de un
-n&uacute;mero binario es hallando el complemento a 1 (o sea invertir
-todos los digitos) y sumarle 1.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>Resta
-por complemento</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Al
-principio les dije que los complementos se usaban mucho en los
-sistemas digitales para realizar c&aacute;lculos de resta. Si
-queremos realizar una resta bas&aacute;ndonos en el complemento a <B>b</B>
-(base) lo que hacemos es sumar al minuendo el complemento a <B>b</B>
-del sustraendo. Si la suma acarrea 1, &eacute;ste se descarta. En
-caso contrario se dice que el n&uacute;mero es negativo y ser&aacute;
-el complemento a <B>b</B> del resultado de la suma.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
-un ejemplo con n&uacute;meros: <B>(123 - 023)<SUB>10</SUB></B> ; aqu&iacute;
-el complemento a 10 de 23 es 977, entonces:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">123</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">+
-977</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">-------------------------</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">1
-100</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">El
-primer 1 es el acarreo por lo que la <B>respuesta es 100</B>. <B>OJO</B>:
-al usar este m&eacute;todo debe considerar todos los n&uacute;meros
-con la misma cantidad de d&iacute;gitos. &iquest;Qu&eacute; quiero
-decir con esto?, que NO, repito: <B>NO!</B> pueden considerar el
-n&uacute;mero 23 como un n&uacute;mero de 2 d&iacute;gitos. Minuendo
-y sustraendo deben contener el mismo n&uacute;mero de d&iacute;gitos.
-Por lo tanto deben considerar 023. En caso contrario obtendr&iacute;an
-un error.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
-otro ejemplo en el que la suma no arroja complemento: <B>(23 - 100)<SUB>10</SUB></B>
-; para este caso el complemento a 10 de 100 es 900 =&gt; 23 + 900 =
-923 ( no lleva acarreo ) =&gt; el complemento a 10 de 923 es 77 =&gt;
-<B>Respuesta = -77</B>.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Tambi&eacute;n
-existe un m&eacute;todo para realizar la resta pero usando el
-complemento a <B>b-1</B>. Este caso es muy similar al caso anterior
-con la diferencia del acarreo. Aqu&iacute;, en el caso de haber un
-acarreo, &eacute;ste no es descartado sino que el mismo es sumado al
-resultado de la suma para obtener el resultado final. En caso de no
-tener acarreo, al igual que antes, se procede a realizar el
-complemento del resultado de la suma y agregarle un signo negativo.
-OBVIAMENTE todos los c&aacute;lculos de complementos en este m&eacute;todo
-son basados en el complemento a <B>b-1</B> y no al complemento a <B>b.</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
-algunos ejemplos: <B>(123 - 023)<SUB>10</SUB></B> ; el complemento a
-9 de 23 es 976 , entonces</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">123</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">+
-976</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">--------------</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">1
-099 </FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">+
-1</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">--------------</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">100</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">El
-primer 1 es el acarreo y como &eacute;ste debe sum&aacute;rsele al
-resultado de la suma tenemos que 99 + 1 es 100. Por supuesto que al
-usar este m&eacute;todo tambi&eacute;n debe considerar todos los
-n&uacute;meros con la misma cantidad de d&iacute;gitos. El n&uacute;mero
-23 es en realidad 023. Veamos el otro ejemplo en el que la suma no
-arroja complemento: <B>(23 - 100)<SUB>10</SUB> </B>=&gt; el
-complemento a 9 de 100 es 899 =&gt; 23 + 899 = 922 ( no lleva acarreo
-) =&gt; el complemento a 9 de 922 es 77 =&gt; <B>Respuesta = -77</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
-algunos casos con n&uacute;meros binarios. Realizar la resta por
-complemento a 2 y por complemento a 1 de: <B>(10101110 &ndash;
-110010)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Por
-el m&eacute;todo de complemento a 2 tenemos: El complemento a 2 de
-110010 (recordando que debe tener 8 d&iacute;gitos) es 11001110
-entonces</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">10101110
-</FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">+
-11001110 </FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">-------------------
-</FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">1
-01111100 </FONT>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">de
-lo que se concluye que <B>(10101110 - 110010)<SUB>2</SUB></B> =
-<B>(1111100)<SUB>2</SUB></B></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ve&aacute;moslo
-ahora por el m&eacute;todo de complemento a 1. Aqu&iacute; tendr&iacute;amos
-que complemento a 1 de 110010 es 11001101, entonces</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">10101110</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">+
-11001101 </FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">-------------------
-</FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">1
-01111011 </FONT>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">por
-lo que tenemos que hacer <B>(01111011 + 1)<SUB>2</SUB> </B>resultando
-<B>(01111100)<SUB>2</SUB></B>.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Excelente.
-Veamos otro caso. Realizar la resta de <B>(110010 - 10101110)<SUB>2</SUB></B>.
-Por complemento a 2 ser&iacute;a:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">00110010</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">+
-01010010 </FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">----------------
-</FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">10000100</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">que
-como no tiene acarreo le calculamos el complemento a 2 y tenemos que
-el <B>resultado es -1111100</B>. Con el m&eacute;todo de complemento
-a 1 ser&iacute;a:</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">00110010</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">+
-01010001</FONT></P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">---------------------
-</FONT>
-</P>
-<P ALIGN=CENTER STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">10000011</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">y
-calculando el complemento a 1 (ya que no tiene acarreo) tenemos que
-el <B>resultado = -01111100</B>. Lo cual es correcto.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">&iquest;Por
-qu&eacute; har&iacute;amos una resta con complemento? La suma es
-mucho m&aacute;s sencilla de implementar en los sistemas digitales; y
-por otro lado, aunque en base 10 no tenemos problemas para realizar
-una resta, hacer el mismo proceso para otras bases no nos ser&aacute;
-tan intuitivo por lo que estos m&eacute;todos facilitar&iacute;an el
-proceso del c&aacute;lculo. </FONT>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
-comentario final me gustar&iacute;a acotar que las computadoras
-trabajan los n&uacute;meros negativos a trav&eacute;s del complemento
-a dos. Para ellas, el primer bit del byte indica el signo. Si este es
-uno (1) querr&aacute; decir que el n&uacute;mero es negativo. Por lo
-tanto, y bas&aacute;ndonos en este &uacute;ltimo ejemplo por el
-m&eacute;todo de complemento a dos, al realizar la resta de 110010 -
-10101110 el resultado que almacena el computador en sus registros o
-variables es en realidad el n&uacute;mero (10000100)<SUB>2</SUB> o lo
-que es lo mismo (84)<SUB>16</SUB>. Al tener el bit m&aacute;s
-significativo activo, representa que es un n&uacute;mero negativo y
-que el mismo es su complemento a 2.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Pues
-bien, esto es lo &uacute;ltimo en este cap&iacute;tulo. Para el
-pr&oacute;ximo hablaremos de </FONT><A HREF="tema2.html"><FONT FACE="Lucida Sans, sans-serif">C&oacute;digos
-binarios. &Aacute;lgebra de Boole. Funciones l&oacute;gicas.
-Compuertas l&oacute;gicas.</FONT></A> 
-</P>
-</BODY>
-</HTML>
+<body>
+<h1 class="center content-block" style="color: #0000ff;">SISTEMAS NUMÉRICOS.<br>CONVERSIÓN ENTRE SISTEMAS NUMÉRICOS.<br>OPERACIONES BINARIAS ARITMÉTICAS: SUMA, RESTA, MULTIPLICACIÓN Y COMPLEMENTO</h1>
+
+<p class="content-block">Empecemos por mencionar a los "Elementos discretos". Estos no son más que un grupo de símbolos con un significado. Por ejemplo: Números, letras, signos de puntuación, etc. Colocar elementos discretos uno al lado del otro representan información. De hecho, esta secuencia de elementos forman un "lenguaje" y que obviamente deben conocer para poder saber cuál es la información que contiene. Los primeros computadores se usaban para realizar cálculos numéricos y los elementos discretos usados eran los dígitos y es de aquí que surge el término computador digital.</p>
+
+<p class="content-block">En los sistemas digitales, los elementos discretos son representados por señales (en nuestro caso señales eléctricas) y en el caso particular de los sistemas digitales actuales las señales tienen sólo 2 posibles valores discretos y por esa razón se les conoce como binarios. Las señales representan dos estados que acorde a la lógica humana representan verdadero o falso.</p>
+
+<p class="content-block">COMENTARIO: Es probable que en un futuro estos sistemas digitales sean reemplazados por otros que usen "Fuzzy Logic" o "lógica difusa". A este tipo de sistemas, además de los dos valores verdadero y falso, se le añade otro estado que representaría un "quizá" o en el caso de que ese estado pueda contener varios valores un "es verdad pero sólo en cierto grado". Es en este tipo de lógica que muchos expertos consideran podría estar la verdadera esencia de la inteligencia artificial. No todo es blanco o negro ;-).</p>
+
+<p class="content-block"><strong>Señales analógicas</strong>: Son señales que se representan de forma continua y no por elementos discretos como las señales digitales. Si queremos simular un proceso que es analógico en un sistema digital requeriremos de un <strong>"convertidor Analógico Digital"</strong>. Éste se encargará de "transformar" los datos analógicos a una forma que sea representada por elementos discretos y así poder ser procesada por sistemas digitales. Un ejemplo de ello son los CD's de música. El sonido es una señal analógica. Esto quiere decir que la variación de la misma es de forma continua pero los CD's son un medio de almacenamiento digital. Es por ello que el sonido debe pasar por un proceso de conversión para poder ser usado en sistemas digitales. Y esto es sólo un ejemplo. Otro sería la luz, que es también una señal continua (o analógica). La cantidad de aplicaciones que pueden realizarse con los sistemas digitales actuales son muy variadas. Algunos ejemplos son: numéricas, procesamiento de texto, aplicaciones de diseño gráfico, estudios digitales de audio, etc. El "truco" es saber cómo expresar esa información en términos discretos y en nuestro caso específico “binarios” para que dichos sistemas digitales puedan procesarla, por lo que la necesidad de este tipo de sistemas en el mundo moderno es por demás evidente.</p>
+
+<h2 class="content-block" style="color: #008000;">NÚMEROS BINARIOS</h2>
+
+<p class="content-block">Como mencionamos anteriormente, los sistemas digitales actuales sólo procesan dos señales (cierto o falso) y es por ello que se aplica el término de binario. Nosotros estamos acostumbrados a usar los números en base decimal (o base 10) pero ésta es sólo una de las formas de representar cantidades. En realidad "2" es sólo un símbolo y cuando lo vemos nosotros entendemos que existen dos unidades de algo. Si yo les digo que tengo 2 computadoras ustedes no visualizan el símbolo 2 sino la cantidad... quizá representada por una computadora al lado de la otra, pero no el símbolo. Así que "2" es sólo eso: un símbolo. Lo que trato de hacerles entender es que no importa cómo lo expresemos, qué símbolo o símbolos usemos, lo importante es que entendamos ese "lenguaje" y saber qué es lo que representa. <strong>Usamos los símbolos como una abstracción para representar cantidades</strong>.</p>
+
+<p class="content-block">Pongamos que tenemos un número decimal tal como 123. Eso representa una centena más dos decenas más tres unidades. O sea:</p>
+
+<p class="center content-block"><strong>1 x 10<sup>2</sup> + 2 x 10<sup>1</sup> + 3 x 10<sup>0</sup></strong></p>
+
+<p class="content-block">o sea, 123 ;-). Por lo tanto podríamos decir que si tenemos un número decimal de forma</p>
+
+<p class="center content-block"><strong>a<sub>4</sub>a<sub>3</sub>a<sub>2</sub>a<sub>1</sub>a<sub>0</sub></strong></p>
+
+<p class="content-block">entonces <strong>a<sub>4</sub>, a<sub>3</sub>, a<sub>2</sub>, a<sub>1</sub> y a<sub>0</sub></strong> son los coeficientes en la siguiente ecuación:</p>
+
+<p class="center content-block"><strong>a<sub>4</sub> x 10<sup>4</sup> + a<sub>3</sub> x 10<sup>3</sup> + a<sub>2</sub> x 10<sup>2</sup> + a<sub>1</sub> x 10<sup>1</sup> + a<sub>0</sub> x 10<sup>0</sup></strong></p>
+
+<p class="content-block">donde todos los coeficientes deben ser un número entre 0 y 9. En este caso en particular estamos usando lo que conocemos: la base 10 o sistema decimal; pero podemos ampliar este concepto a cualquier base. Por lo tanto podemos decir que todo número puede ser expresado en un sistema de base "b" por:</p>
+
+<p class="center content-block"><strong>a<sub>n</sub>.b<sup>n</sup> + a<sub>n-1</sub>.b<sup>n-1</sup> + ... + a<sub>2</sub>.b<sup>2</sup> + a<sub>1</sub>.b<sup>1</sup> + a<sub>0</sub>.b<sup>0</sup></strong></p>
+
+<p class="content-block">y en el caso que contenga decimales:</p>
+
+<p class="center content-block"><strong>a<sub>n</sub>.b<sup>n</sup> + a<sub>n-1</sub>.b<sup>n-1</sup> + ... + a<sub>2</sub>.b<sup>2</sup> + a<sub>1</sub>.b<sup>1</sup> + a<sub>0</sub>.b<sup>0</sup> + a<sub>-1</sub>.b<sup>-1</sup> + a<sub>-2</sub>.b<sup>-2</sup> + ... + a<sub>-m</sub>.b<sup>-m</sup></strong></p>
+
+<p class="content-block">donde <strong>a<sub>n</sub></strong> es un valor que siempre estará entre 0 y (b-1) siendo “<strong>n</strong>” el número de dígitos enteros menos uno y “<strong>m</strong>” el número de dígitos en la fracción decimal. En un número binario la base es 2. Por lo tanto, un número binario sólo puede contener dígitos entre 0 y 1 (que en nuestro caso representarán los dos estados que asociamos con falso o cierto). A un solo dígito binario (elemento mínimo de un número binario) se le conoce como BIT. A la agrupación de 8 BITS se le conoce como BYTE.</p>
+
+<p class="content-block">Un ejemplo de un número binario es: 1010011. Si quisiéramos representar este número de 7 bits (donde b=2, n=6 y m =0) de una forma que nos fuese más familiar, es decir, en decimal, haríamos:</p>
+
+<p class="center content-block"><strong>1 x 2<sup>6</sup> + 0 x 2<sup>5</sup> + 1 x 2<sup>4</sup> + 0 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 1 x 2<sup>0</sup> = 64 + 0 + 16 + 0 + 0 + 2 + 1 = 83</strong></p>
+
+<p class="content-block">por lo tanto, el número binario de 7 bits 1010011 es igual que el número decimal 83. Son dos formas distintas de expresar la misma cantidad. Y que lo haya convertido a decimal no quiere decir que la fórmula convierte el número a base decimal. En realidad Yo usé la base decimal para resolver porque es la forma natural en la que nosotros pensamos. Vi 2<sup>6</sup>, y yo sé que representa una cantidad de sesenta y cuatro y la forma en la que Yo sé escribir esa cantidad es en decimal y representada por los símbolos 64. Si yo pensase en otra base, como veremos más adelante, vería otros símbolos pero al final representarían la misma cantidad.</p>
+
+<p class="content-block">Cuando trabajamos con números en distintas bases la forma de expresar en qué base está escrito un número es colocándole dentro de paréntesis e indicando al lado la base. Por ejemplo:</p>
+
+<p class="center content-block"><strong>(1010011)<sub>2</sub> = (83)<sub>10</sub></strong></p>
+
+<p class="content-block">quiere decir que el número 1010011 en base 2 es igual al número 83 en base 10.</p>
+
+<p class="content-block">Por supuesto los números binarios, o en base 2, son sólo un ejemplo. La base puede ser cualquiera. Supongamos ahora que les digo que tenemos: <code>(1234,2)<sub>5</sub></code> que es un número en base 5 con fracción decimal y que, como se observa, sólo usa dígitos del 0 al 4 que, como ya se ha mencionado, son las únicas posibilidades. Bien, luego les digo que lo conviertan a base 10. Sabiendo que en ese caso n=3, que m=1 y que la base b=5, entonces gracias a la fórmula que ya mostramos podremos decir que:</p>
+
+<p class="center content-block"><strong>(1234,2)<sub>5</sub> = 1 x 5<sup>3</sup> + 2 x 5<sup>2</sup> + 3 x 5<sup>1</sup> + 4 x 5<sup>0</sup> + 2 x 5<sup>-1</sup> = 125 + 50 + 15 + 4 + 0,4 = (194,4)<sub>10</sub></strong></p>
+
+<p class="content-block">Perfecto. Por lo tanto ya sabemos entonces qué debemos hacer para convertir números que están en cualquier base “<strong>b</strong>” a, en nuestro caso, base 10.</p>
+
+<p class="content-block">Si el número que queremos mostrar está en una base menor o igual a diez pues podremos usar los dígitos conocidos por nosotros (del 0 al 9) como los "símbolos" a usar. Pero ¿qué pasa si el número está en una base mayor a 10? pues que deberemos usar otros símbolos. Lo normalmente usado son las letras del alfabeto (regularmente en mayúsculas) para expresar dichos números. Por ejemplo el sistema en base hexadecimal (ámpliamente usado) que está en base 16 usa los símbolos A, B, C, D, E y F para expresar las cantidades que conocemos en decimal como 10, 11, 12, 13, 14 y 15 respectivamente (los cuales son necesarios en la base 16 ya que recuerden que los coeficientes en cualquier base son números entre 0 y <strong>base-1</strong>). Por lo tanto:</p>
+
+<p class="center content-block"><strong>(1F)<sub>16</sub> = 1 x 16<sup>1</sup> + 15 x 16<sup>0</sup> = 16 + 15 = (31)<sub>10</sub></strong></p>
+
+<p class="content-block">y, más interesante aún:</p>
+
+<p class="center content-block"><strong>(10)<sub>16</sub> = 1 x 16<sup>1</sup> + 0 x 16<sup>0</sup> = 16 + 0 = (16)<sub>10</sub></strong></p>
+
+<p class="content-block">y es por eso comentaba que no importan los símbolos usados, lo importante es saber la cantidad que representan y para ello es necesario saber el "lenguaje" que se está hablando. Si yo escribo los símbolos 10... que ven ustedes? Pues lo que ven dependerá de su sistema base. Ustedes pueden decir que entienden una cantidad de diez. Yo digo que entiendo una cantidad de dieciséis. Si ustedes están trabajando en base 10 y yo en base 16, ambas cantidades son correctas.</p>
+
+<p class="content-block">Hace unos momentos cuando estábamos en el punto de convertir números según la formula dije: "Si yo pensase en otra base" . Que pasa si probamos el mismo ejemplo, pero esta vez “pensando” en hexadecimal. Tendríamos:</p>
+
+<p class="center content-block"><strong>(1010011)<sub>2</sub> = 1 x 2<sup>6</sup> + 0 x 2<sup>5</sup> + 1 x 2<sup>4</sup> + 0 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 1 x 2<sup>0</sup> = (40)<sub>16</sub> + 0 + (10)<sub>16</sub> + 0 + 0 + (2 + 1)<sub>16</sub> = (53)<sub>16</sub></strong></p>
+
+<p class="content-block">Ahora, cuando yo vi 2<sup>6</sup> vi la cantidad o el valor de sesenta y cuatro que es representada en hexadecimal por los símbolos 40, 2<sup>4</sup> por 10, etc.</p>
+
+<h2 class="content-block" style="color: #008000;">NÚMEROS HEXADECIMALES Y OCTALES</h2>
+
+<p class="content-block">Como ya se comentó, los números hexadecimales son aquellos que están en base 16. En el caso de los octales tienen base 8. Estos números son muy usados en los sistemas digitales principalmente porque pueden representar los números binarios de una forma más compacta (debido a que 2<sup>3</sup> son 8 y 2<sup>4</sup> son 16). Realizar esa conversión es extremadamente sencillo. Veamos el siguiente ejemplo: <strong>(10100101)<sub>2</sub></strong> es un número binarios de 8 bits (o un byte). Este puede ser representado en dos partes de 4 bits (conocidas como NIBBLES). Si dividimos el byte del ejemplo en sus Nibbles, tendríamos: <strong>1010 y 0101</strong> cada una representando 2<sup>4</sup> posibilidades, o sea un número hexadecimal (un número entre 0 y 15). Así:</p>
+
+<p class="center content-block"><strong>(1010)<sub>2</sub> = (A)<sub>16</sub> , (0101)<sub>2</sub> = (5)<sub>16</sub> => (10100101)<sub>2</sub> = (A5)<sub>16</sub>.</strong></p>
+
+<p class="content-block">El caso de octal es semejante. Si tenemos el número <strong>(101010111)<sub>2</sub></strong> podríamos dividir éste en tres partes de 3 bits (o sea, con 2<sup>3</sup> posibilidades cada una) y tendríamos: <strong>101, 010 y 111</strong> que representan los números octales 5, 2 y 7 respectivamente. Por lo tanto:</p>
+
+<p class="center content-block"><strong>(101010111)<sub>2</sub> = (527)<sub>8</sub></strong></p>
+
+<p class="content-block">Y por supuesto que hacer lo contrario, o sea, convertir de octal o hexadecimal a binario, es igual de sencillo. Por ejemplo:</p>
+
+<p class="center content-block"><strong>(7531)<sub>8</sub> => 111 101 011 001 => (111101011001)<sub>2</sub></strong></p>
+<p class="center content-block"><strong>(123,A)<sub>16</sub> = 0001 0010 0011 , 1010 = (000100100011,1010)<sub>2</sub></strong></p>
+
+<p class="content-block">Pero existen otras conversiones que no son tan obvias como éstas. A continuación profundizaremos en ellas.</p>
+
+<h2 class="content-block" style="color: #008000;">CONVERSIONES ENTRE NÚMEROS DE BASE DIFERENTE</h2>
+
+<p class="content-block">La conversión entre números de distintas bases a un número decimal es, como ya vimos, bastante sencilla. Sólo debemos usar la fórmula que ya se describió. Pero ¿qué pasa si lo que queremos es convertir un número decimal a binario? ¿o a hexadecimal? ¿o a octal? Para realizar estas conversiones primero que nada, si el número tiene parte decimal, separamos la parte entera de la fracción decimal. La mejor forma de mostrar la conversión es a través de ejemplos. Veamos algunos:</p>
+
+<p class="content-block"><strong>Convertir a binario el número decimal 41:</strong> En el caso de querer convertir a números binarios lo que debemos hacer es realizar sucesivas divisiones del número a convertir entre dos hasta que lleguemos a un cociente de cero. Los restos de las divisiones representarán los dígitos desde el menos significativo (que será el primer resto) hasta el más significativo que será el resto de la última división cuando lleguemos al cociente cero. Entonces si el número es 41, al realizar la división entre dos obtendremos un cociente de 20 y un resto de 1. Es precisamente el resto quien indicará cuál es el valor del bit y en este caso este es el bit menos significativo. Luego haremos la operación nuevamente con el nuevo cociente que es el 20 y así sucesivamente hasta llegar al momento en que el cociente sea 0. Entonces, desde el principio:</p>
+
+<ol>
+    <li>41 / 2 = 20 con resto 1 => El coeficiente el menos significativo será 1, digamos a<sub>0</sub>=1.</li>
+    <li>20/2 = 10 con resto 0 => El coeficiente 1 será 0 => a<sub>1</sub>=0.</li>
+    <li>10/2 = 5 con resto 0 => a<sub>2</sub>=0.</li>
+    <li>5/2 = 2 con resto 1 => a<sub>3</sub>=1.</li>
+    <li>2/2 = 1 con resto 0 => a<sub>4</sub>=0.</li>
+    <li>1/2 = 0 con resto 1 => a<sub>5</sub>=1.</li>
+</ol>
+
+<p class="content-block">Por lo tanto:</p>
+
+<p class="center content-block"><strong>(41)<sub>10</sub> = (a<sub>5</sub>a<sub>4</sub>a<sub>3</sub>a<sub>2</sub>a<sub>1</sub>a<sub>0</sub>) = (101001)<sub>2</sub></strong></p>
+
+<p class="content-block">¿y si quisiéramos mostrar el número en octal y/ó hexadecimal, partiendo de que ya tenemos el número binario?, entonces sería:</p>
+
+<p class="center content-block"><strong>(101001)<sub>2</sub> = (51)<sub>8</sub> = (29)<sub>16</sub></strong></p>
+
+<p class="content-block">Veamos otro ejemplo. Convertir el número decimal 161 a binario. Haríamos:</p>
+
+<table border="1" cellpadding="4" cellspacing="3" class="content-block">
+    <tr>
+        <td>161</td>
+        <td>80</td>
+        <td>40</td>
+        <td>20</td>
+        <td>10</td>
+        <td>5</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td></td>
+    </tr>
+</table>
+
+<p class="content-block">sabiendo que el primer bit es el menos significativo tendríamos:</p>
+
+<p class="center content-block"><strong>(161)<sub>10</sub> = (10100001)<sub>2</sub></strong></p>
+
+<p class="content-block">partiendo del binario, en octal y hexadecimal sería:</p>
+
+<p class="center content-block"><strong>(10100001)<sub>2</sub> = (A1)<sub>16</sub> = (241)<sub>8</sub></strong></p>
+
+<p class="content-block">¿quieren revisar? OK:</p>
+
+<p class="center content-block"><strong>(A1)<sub>16</sub> = 10 x 16<sup>1</sup> + 1 x 16<sup>0</sup> = 160 + 1 = (161)<sub>10</sub></strong></p>
+<p class="center content-block"><strong>(241)<sub>8</sub> = 2 x 8<sup>2</sup> + 4 x 8<sup>1</sup> + 1 x 8<sup>0</sup> = 128 + 32 + 1 = (161)<sub>10</sub></strong></p>
+
+<p class="content-block">Ok, todo chévere. Pero ¿qué pasa si lo que quiero es convertir el número decimal directamente a octal o a hexadecimal? (quiero decir si NO tenemos el número binario). Por supuesto, ustedes podrían convertirlo a binario y luego a octal o hexadecimal. Soy de la política de que no importa cómo se llegue al resultado mientras éste sea el correcto a menos claro está de que se les diga <strong>explícitamente</strong> que lo hagan de alguna forma en particular. En todo caso, la forma más rápida de hacerlo sería aplicando el método análogo a la conversión a binario sólo que cambiando el divisor a la base correspondiente. Si en binario es 2, en octal es 8, en hexadecimal es 16 en base 5 sería 5, etc. Procedamos con el mismo ejemplo anterior, con el número 161. Convirtámoslo a octal. Sería:</p>
+
+<ol>
+    <li>161 / 8 = 20 con resto 1</li>
+    <li>20 / 8 = 2 con resto 4</li>
+    <li>2 / 8 = 0 con resto 2</li>
+</ol>
+
+<p class="content-block">por lo tanto:</p>
+
+<p class="center content-block"><strong>(161)<sub>10</sub> = (241)<sub>8</sub></strong></p>
+
+<p class="content-block">ya que el primer resto es el dígito menos significativo. Y ¿qué tal a hexadecimal? Sería:</p>
+
+<ol>
+    <li>161 / 16 = 10 con resto 1</li>
+    <li>10 / 16 = 0 con resto 10 (que en hexadecimal es representado por <strong>A</strong>)</li>
+</ol>
+
+<p class="content-block">entonces:</p>
+
+<p class="center content-block"><strong>(161)<sub>10</sub> = (A1)<sub>16</sub></strong></p>
+
+<p class="content-block">Ok. Si la base destino es 5, por ejemplo, llevarlo a binario no les serviría de nada. En este caso tendríamos que proceder obligatóriamente con el método explicado, en este caso siendo el divisor el número 5. Mismo ejemplo:</p>
+
+<table border="1" cellpadding="4" cellspacing="3" class="content-block">
+    <tr>
+        <td>161</td>
+        <td>RESTO</td>
+    </tr>
+    <tr>
+        <td>32</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>1</td>
+    </tr>
+</table>
+
+<p class="content-block">Por lo tanto:</p>
+
+<p class="center content-block"><strong>(161)<sub>10</sub> = (1121)<sub>5</sub></strong></p>
+
+<p class="content-block">Revisemos:</p>
+
+<p class="center content-block"><strong>(1121)<sub>5</sub> = 1 x 5<sup>3</sup> + 1 x 5<sup>2</sup> + 2 x 5<sup>1</sup> + 1 x 5<sup>0</sup> = 125 + 25 + 10 + 1 = (161)<sub>10</sub></strong></p>
+
+<p class="content-block">CORRECTO!!! Veamos ahora el caso de que el número sea con decimales. Como ya se comentó, en estos casos es más conveniente separar la parte entera de la fracción decimal. La parte entera ya sabemos cómo resolverla. La fracción decimal se hace por un procedimiento similar pero la operación involucrada es la multiplicación y quien representará el dígito a colocar será la parte entera siendo el primer entero quien será la cifra más significativa. Por ejemplo si queremos convertir el número decimal 0,8125 a binario hacemos:</p>
+
+<ol>
+    <li>0,8125 x 2 = 1 + 0,625</li>
+    <li>0,625 x 2 = 1 + 0,25</li>
+    <li>0,25 x 2 = 0 + 0,50</li>
+    <li>0,50 x 2 = 1 + 0</li>
+</ol>
+
+<p class="content-block">así que</p>
+
+<p class="center content-block"><strong>(0,812)<sub>10</sub> = (0,1101)<sub>2</sub></strong></p>
+
+<p class="content-block">Revisemos:</p>
+
+<p class="center content-block"><strong>(0,1101)<sub>2</sub> = 1 x 2<sup>-1</sup> + 1 x 2<sup>-2</sup> + 0 x 2<sup>-3</sup> + 1 x 2<sup>-4</sup> = 0,5 + 0,25 + 0 + 0,0625 = (0,8125)<sub>10</sub></strong></p>
+
+<p class="content-block">Excelente!!! Veamos un último ejemplo. Convertir el número decimal 48,407407407407 (407 periódico) al correspondiente en base 3. Para la parte entera:</p>
+
+<ol>
+    <li>48 / 3 = 16 con resto 0</li>
+    <li>16 / 3 = 5 con resto 1</li>
+    <li>5 / 3 = 1 con resto 2</li>
+    <li>1 / 3 = 0 con resto 1</li>
+</ol>
+
+<p class="content-block">y para la fracción decimal:</p>
+
+<ol>
+    <li>0,407407407407 x 3 = 1 + 0,2222222 periódico</li>
+    <li>0,222222222222 x 3 = 0 + 0,6666666 periódico</li>
+    <li>0,666666666666 x 3 = 2 + 0</li>
+</ol>
+
+<p class="content-block">Por lo tanto</p>
+
+<p class="center content-block"><strong>(48,407407407407...)<sub>10</sub> = (1210,102)<sub>3</sub></strong></p>
+
+<p class="content-block">Revísenlo.</p>
+
+<p class="content-block"><strong>NOTA: Dada la confusión presentada por los números en distintas bases y viendo el resultado en algunos alumnos que dio dar ejemplos de series en distintas bases, aquí les anexo una tabla con números en decimal y su correspondiente en otras bases. Observen como varían los símbolos usados en las distintas bases en incrementos de uno.</strong></p>
+
+<table border="1" cellpadding="4" cellspacing="3" class="content-block">
+    <tr>
+        <td><strong>Decimal</strong></td>
+        <td>Hexadecimal</td>
+        <td>Octal</td>
+        <td>Base 3</td>
+        <td>Base 7</td>
+    </tr>
+    <tr>
+        <td><strong>0</strong></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td><strong>1</strong></td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td><strong>2</strong></td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td><strong>3</strong></td>
+        <td>3</td>
+        <td>3</td>
+        <td>10</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td><strong>4</strong></td>
+        <td>4</td>
+        <td>4</td>
+        <td>11</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td><strong>5</strong></td>
+        <td>5</td>
+        <td>5</td>
+        <td>12</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td><strong>6</strong></td>
+        <td>6</td>
+        <td>6</td>
+        <td>20</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td><strong>7</strong></td>
+        <td>7</td>
+        <td>7</td>
+        <td>21</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td><strong>8</strong></td>
+        <td>8</td>
+        <td>10</td>
+        <td>22</td>
+        <td>11</td>
+    </tr>
+    <tr>
+        <td><strong>9</strong></td>
+        <td>9</td>
+        <td>11</td>
+        <td>100</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td><strong>10</strong></td>
+        <td>A</td>
+        <td>12</td>
+        <td>101</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td><strong>11</strong></td>
+        <td>B</td>
+        <td>13</td>
+        <td>102</td>
+        <td>14</td>
+    </tr>
+    <tr>
+        <td><strong>12</strong></td>
+        <td>C</td>
+        <td>14</td>
+        <td>110</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td><strong>13</strong></td>
+        <td>D</td>
+        <td>15</td>
+        <td>111</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td><strong>14</strong></td>
+        <td>E</td>
+        <td>16</td>
+        <td>112</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td><strong>15</strong></td>
+        <td>F</td>
+        <td>17</td>
+        <td>120</td>
+        <td>21</td>
+    </tr>
+    <tr>
+        <td><strong>16</strong></td>
+        <td>10</td>
+        <td>20</td>
+        <td>121</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td><strong>17</strong></td>
+        <td>11</td>
+        <td>21</td>
+        <td>122</td>
+        <td>23</td>
+    </tr>
+    <tr>
+        <td><strong>18</strong></td>
+        <td>12</td>
+        <td>22</td>
+        <td>200</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td><strong>30</strong></td>
+        <td>1E</td>
+        <td>36</td>
+        <td>1010</td>
+        <td>42</td>
+    </tr>
+    <tr>
+        <td><strong>31</strong></td>
+        <td>1F</td>
+        <td>37</td>
+        <td>1011</td>
+        <td>43</td>
+    </tr>
+    <tr>
+        <td><strong>32</strong></td>
+        <td>20</td>
+        <td>40</td>
+        <td>1012</td>
+        <td>44</td>
+    </tr>
+    <tr>
+        <td><strong>64</strong></td>
+        <td>40</td>
+        <td>100</td>
+        <td>2101</td>
+        <td>121</td>
+    </tr>
+    <tr>
+        <td><strong>69</strong></td>
+        <td>45</td>
+        <td>105</td>
+        <td>2120</td>
+        <td>126</td>
+    </tr>
+    <tr>
+        <td><strong>70</strong></td>
+        <td>46</td>
+        <td>106</td>
+        <td>2121</td>
+        <td>130</td>
+    </tr>
+    <tr>
+        <td><strong>71</strong></td>
+        <td>47</td>
+        <td>107</td>
+        <td>2122</td>
+        <td>131</td>
+    </tr>
+</table>
+
+<p class="content-block">Si por ejemplo tienen el número <code>(12)<sub>3</sub></code> y se le pide que le sumen 2, el resultado que van a obtener es el número en base 3 que está 2 posiciones adelante del <code>(12)<sub>3</sub></code>, en este caso el <code>(21)<sub>3</sub></code>. Espero que esta tabla les sirva para comprender mejor los números en bases distintas. <code>(4 + 6)<sub>7</sub> = (13)<sub>7</sub></code>. Teniendo ya esto en cuenta, veamos como se realizan operaciones aritméticas en distintas bases.</p>
+
+<h2 class="content-block" style="color: #008000;">OPERACIONES ARITMÉTICAS CON NÚMEROS DE DISTINTAS BASES</h2>
+
+<p class="content-block">En realidad las operaciones aritméticas se realizan igual sin importar cuál sea la base. La única consideración a tomar es que sólo pueden existir dígitos entre 0 y <strong>base-1</strong>. Veamos algunos ejemplos de suma, resta y multiplicación.</p>
+
+<p class="content-block">Sume los números binarios 10111101 y 10110:</p>
+
+<pre>
+  10111101
++   010110
+------------
+  11010011
+</pre>
+
+<p class="content-block">Como les dije deben considerar la base que se está usando. En este caso usamos números binarios (base 2) por lo que los dígitos sólo pueden ser 0 ó 1. ¿Qué tenemos entonces? Bien, para este caso de suma (sólo dos números binarios) lo que debemos saber es que <code>(0+0)=0</code>, <code>(0+1)=(1+0)=1</code>, <code>(1+1)=10</code> y <code>(1+1+1)=11</code>. Por lo tanto, empezando por el dígito menos significativo tenemos que: <code>(1+0)=1</code>. Sigamos: <code>(0+1)=1</code>, <code>(1+1)=10</code> (por lo que colocamos el 0 y sabemos que llevamos 1 de acarreo que para el resto de la explicación pondré entre []), <code>([1]+1+0)=10</code>, <code>([1]+1+1)=11</code>, <code>([1]+1+0)=10</code>, <code>([1]+0)=1</code> y por último <code>(1+0)=1</code>. Revísenlo y practiquen haciendo ejercicios.</p>
+
+<p class="content-block">Realice la resta entre los mismos números:</p>
+
+<pre>
+  10111101
+-   0010110
+------------
+  10100111
+</pre>
+
+<p class="content-block">Ok, sabiendo que <code>(0-0)=0</code>, <code>(1-0)=1</code>, <code>(1-1)=0</code>, <code>(0-1)=-1</code> y <code>(10-1)=1</code>, entonces, empezando por el menos significativo y continuando, <code>(1-0)=1</code>, <code>(10-1)=1</code>, <code>(10-1)=1</code>, <code>(0-0)=0</code>, <code>(1-1)=0</code>, <code>(1-0)=1</code> y <code>(10-0)=10</code>. En realidad no hay más que explicar aquí. Realicen ejercicios.</p>
+
+<p class="content-block">Por último la multiplicación:</p>
+
+<pre>
+  10111101
+x    10110
+--------------------------------------------------
+  00000000
+ 10111101
+10111101
+00000000
+10111101
+---------------------------------------------------
+1000000111110
+</pre>
+
+<p class="content-block">En la multiplicación de números binarios tenemos que <code>(0 x 0)=(0 x 1)=(1 x 0)=0</code> y <code>(1 x 1)=1</code> el cual, como veremos en los próximos capítulos, es el comportamiento de una compuerta AND. Ese análisis nos es familiar ya que cumple exactamente las mismas propiedades a las que estamos acostumbrados. Yo diría más bien que realizar esta multiplicación es un buen ejercicio para la suma ya que debe considerar múltiples acarreos. Entienda que en binario <code>(1+1+1)=11</code>, <code>(1+1+1+1)=100</code>, <code>(1+1+1+1+1)=101</code>, <code>(1+1+1+1+1+1+1+1)=1000</code>, etc.</p>
+
+<p class="content-block">Hagamos ahora la suma y resta de los mismos números pero en hexadecimal:</p>
+
+<p class="center content-block"><strong>BD + 16 = D3</strong></p>
+
+<p class="content-block">ya que <code>(D+6)<sub>16</sub>=(13)<sub>16</sub></code> que conlleva 1 de acarreo y luego <code>([1]+B+1)<sub>16</sub>=D<sub>16</sub></code>. Para la resta:</p>
+
+<p class="center content-block"><strong>BD - 16 = A7</strong></p>
+
+<p class="content-block">Lo cual no tiene mucho que analizar. La consideración más importante a tomar es qué dígitos se pueden usar lo cual depende de la base. De resto el procedimiento es igual al que estamos familiarizados.</p>
+
+<h2 class="content-block" style="color: #008000;">COMPLEMENTOS</h2>
+
+<p class="content-block">Los complementos son muy usados en los sistemas digitales al momento de realizar operaciones de resta. Existen dos tipos de complemento. El complemento a <strong>b</strong> y el complemento a <strong>b-1</strong> donde <strong>b</strong> es la base. Es decir, para los números binarios existen los complementos a 2 y a 1. En base octal serían complemento a 8 y a 7, etc. El complemento a <strong>b</strong> se define de la siguiente forma:</p>
+
+<h3 class="content-block">Complemento a b</h3>
+
+<p class="content-block">Teniendo un número <strong>N</strong> de <strong>n</strong> dígitos enteros, el complemento a <strong>b</strong> de <strong>N</strong> = <strong>(b<sup>n</sup> - N)</strong> si <strong>N ≠ 0</strong> y será <strong>0</strong> si <strong>N=0</strong>. Esto se cumple para todos los números N positivos incluso con fracción decimal. El único caso especial a considerar es cuando la parte entera es cero. Esto se interpreta como que <strong>n = 0</strong>.</p>
+
+<p class="content-block">Veamos algunos ejemplos: ¿Cuál es el complemento a 10 de <code>(987)<sub>10</sub></code>? En este caso N = 987 y n = 3, entonces:</p>
+
+<p class="center content-block"><strong>10<sup>3</sup> - 987 = 1000 - 987 = 13</strong></p>
+
+<p class="content-block">¿El complemento a 10 de <code>(0,125)<sub>10</sub></code>? Aquí N = 0,125 y n = 0, así que:</p>
+
+<p class="center content-block"><strong>10<sup>0</sup> - 0,125 = 1 - 0,125 = 0,875</strong></p>
+
+<p class="content-block">¿El complemento a 10 de <code>(987,125)<sub>10</sub></code>? N= 987,125 y n = 3, por lo tanto:</p>
+
+<p class="center content-block"><strong>10<sup>3</sup> - 987,125 = 1000 - 987,125 = 12,875</strong></p>
+
+<p class="content-block"><strong>ATENCIÓN</strong>: Observen que <strong>NO</strong> es lo mismo que calcular el complemento de la parte entera y de la fracción decimal por separado y juntar los resultados. OJO con eso.</p>
+
+<p class="content-block">Veamos unos casos en binario. Para el complemento a 2 de <code>(10101100)<sub>2</sub></code> tenemos que n=8, entonces:</p>
+
+<p class="center content-block"><strong>(2<sup>8</sup>)<sub>10</sub> - (10101100)<sub>2</sub> = (256)<sub>10</sub> - (10101100)<sub>2</sub> = (100000000 - 10101100)<sub>2</sub> = (01010100)<sub>2</sub></strong></p>
+
+<p class="content-block">Otro. El complemento a 2 de <code>(1010)<sub>2</sub></code> es</p>
+
+<p class="center content-block"><strong>(10000 - 1010)<sub>2</sub> = (0110)<sub>2</sub></strong></p>
+
+<p class="content-block">Obsérvese que para calcular el complemento a 2 de un número binario sólo basta con revisar todos los dígitos desde el menos significativo hacia el más significativo y mientras se consiga un cero, dejarlo igual, al conseguir el primer número 1, dejarlo igual para luego cambiar el resto de ellos hasta llegar al más significativo. Así podemos decir rápidamente que el complemento a 2 de <code>(10100000)<sub>2</sub></code> es <code>(01100000)<sub>2</sub></code>, que el complemento a 2 de <code>(111)<sub>2</sub></code> es <code>(001)<sub>2</sub></code>, etc. Otra forma muy sencilla de hallar el complemento a 2 de un número binario es invirtiendo todos los dígitos (que como veremos a continuación es lo que se conoce como complemento a 1) y sumándole uno al resultado obtenido. Pruébenlo.</p>
+
+<h3 class="content-block">Complemento a b-1</h3>
+
+<p class="content-block">Por otro lado tenemos también el complemento a <strong>b-1</strong>. En este caso, teniendo un número positivo <strong>N</strong> en base <strong>b</strong> con <strong>n</strong> dígitos enteros y <strong>m</strong> dígitos en la fracción decimal, se conoce como complemento a <strong>b-1</strong> de <strong>N</strong> a</p>
+
+<p class="center content-block"><strong>b<sup>n</sup> - b<sup>-m</sup> - N</strong></p>
+
+<p class="content-block">Veamos entonces. Para el complemento a 9 de <code>(987)<sub>10</sub></code> tenemos que N = 987, n = 3 y m = 0, por lo tanto</p>
+
+<p class="center content-block"><strong>10<sup>3</sup> - 10<sup>0</sup> - 987 = 1000 - 1 - 987 = 12</strong></p>
+
+<p class="content-block">Para el complemento a 9 de <code>(0,125)<sub>10</sub></code> tenemos que N = 0,125 y n = 0 y m = 3, entonces</p>
+
+<p class="center content-block"><strong>10<sup>0</sup> - 10<sup>-3</sup> - 0,25 = 1 - 0,001 - 0,125 = 0,999 - 0,125 = 0,874</strong></p>
+
+<p class="content-block">Y ¿qué hay del complemento a 9 de <code>(987,125)<sub>10</sub></code>? En ese caso N= 987,125 ; n = 3 y m = 3, por lo tanto</p>
+
+<p class="center content-block"><strong>10<sup>3</sup> - 10<sup>-3</sup> - 987,125 = 1000 - 0,001 - 987,125 = 999,999 - 987,125 = 12,874</strong></p>
+
+<p class="content-block">Observen que en este caso sí es lo mismo calcular el complemento de la parte entera y el de la fracción decimal por separado y juntar ó sumar los resultados.</p>
+
+<p class="content-block">Algunos ejemplos en binario. Para el complemento a 1 de <code>(10101100)<sub>2</sub></code> sabemos que n=8 y m=0 =></p>
+
+<p class="center content-block"><strong>(2<sup>8</sup>)<sub>10</sub> -1 - (10101100)<sub>2</sub> = (256)<sub>10</sub> - 1 - (10101100)<sub>2</sub> = (100000000 - 1 - 10101100)<sub>2</sub> = (01010011)<sub>2</sub></strong></p>
+
+<p class="content-block">y que el complemento a 1 de <code>(1010)<sub>2</sub></code> es</p>
+
+<p class="center content-block"><strong>(10000 - 1 - 1010)<sub>2</sub> = (0101)<sub>2</sub></strong></p>
+
+<p class="content-block">En estos dos últimos ejemplos se puede observar que para conseguir el complemento a 1 de un número binario basta con tan solo invertir todos los dígitos (esto quiere decir cambiar 0 por 1 y viceversa). Es por esto que les comenté anteriormente que otra forma de calcular el complemento a 2 de un número binario es hallando el complemento a 1 (o sea invertir todos los digitos) y sumarle 1.</p>
+
+<h3 class="content-block">Resta por complemento</h3>
+
+<p class="content-block">Al principio les dije que los complementos se usaban mucho en los sistemas digitales para realizar cálculos de resta. Si queremos realizar una resta basándonos en el complemento a <strong>b</strong> (base) lo que hacemos es sumar al minuendo el complemento a <strong>b</strong> del sustraendo. Si la suma acarrea 1, éste se descarta. En caso contrario se dice que el número es negativo y será el complemento a <strong>b</strong> del resultado de la suma.</p>
+
+<p class="content-block">Veamos un ejemplo con números: <code>(123 - 023)<sub>10</sub></code>; aquí el complemento a 10 de 23 es 977, entonces:</p>
+
+<pre>
+  123
++ 977
+---------
+1 100
+</pre>
+
+<p class="content-block">El primer 1 es el acarreo por lo que la <strong>respuesta es 100</strong>. <strong>OJO</strong>: al usar este método debe considerar todos los números con la misma cantidad de dígitos. ¿Qué quiero decir con esto?, que NO, repito: <strong>NO!</strong> pueden considerar el número 23 como un número de 2 dígitos. Minuendo y sustraendo deben contener el mismo número de dígitos. Por lo tanto deben considerar 023. En caso contrario obtendrían un error.</p>
+
+<p class="content-block">Veamos otro ejemplo en el que la suma no arroja complemento: <code>(23 - 100)<sub>10</sub></code>; para este caso el complemento a 10 de 100 es 900 => 23 + 900 = 923 (no lleva acarreo) => el complemento a 10 de 923 es 77 => <strong>Respuesta = -77</strong>.</p>
+
+<p class="content-block">También existe un método para realizar la resta pero usando el complemento a <strong>b-1</strong>. Este caso es muy similar al caso anterior con la diferencia del acarreo. Aquí, en el caso de haber un acarreo, éste no es descartado sino que el mismo es sumado al resultado de la suma para obtener el resultado final. En caso de no tener acarreo, al igual que antes, se procede a realizar el complemento del resultado de la suma y agregarle un signo negativo. OBVIAMENTE todos los cálculos de complementos en este método son basados en el complemento a <strong>b-1</strong> y no al complemento a <strong>b.</strong></p>
+
+<p class="content-block">Veamos algunos ejemplos: <code>(123 - 023)<sub>10</sub></code>; el complemento a 9 de 23 es 976, entonces</p>
+
+<pre>
+  123
++ 976
+--------------
+1 099
++   1
+--------------
+  100
+</pre>
+
+<p class="content-block">El primer 1 es el acarreo y como éste debe sumársele al resultado de la suma tenemos que 99 + 1 es 100. Por supuesto que al usar este método también debe considerar todos los números con la misma cantidad de dígitos. El número 23 es en realidad 023. Veamos el otro ejemplo en el que la suma no arroja complemento: <code>(23 - 100)<sub>10</sub></code> => el complemento a 9 de 100 es 899 => 23 + 899 = 922 (no lleva acarreo) => el complemento a 9 de 922 es 77 => <strong>Respuesta = -77</strong></p>
+
+<p class="content-block">Veamos algunos casos con números binarios. Realizar la resta por complemento a 2 y por complemento a 1 de: <strong>(10101110 – 110010)<sub>2</sub></strong></p>
+
+<p class="content-block">Por el método de complemento a 2 tenemos: El complemento a 2 de 110010 (recordando que debe tener 8 dígitos) es 11001110 entonces</p>
+
+<pre>
+  10101110
++ 11001110
+-------------------
+1 01111100
+</pre>
+
+<p class="content-block">de lo que se concluye que <strong>(10101110 - 110010)<sub>2</sub></strong> = <strong>(1111100)<sub>2</sub></strong></p>
+
+<p class="content-block">Veámoslo ahora por el método de complemento a 1. Aquí tendríamos que complemento a 1 de 110010 es 11001101, entonces</p>
+
+<pre>
+  10101110
++ 11001101
+-------------------
+1 01111011
+</pre>
+
+<p class="content-block">por lo que tenemos que hacer <strong>(01111011 + 1)<sub>2</sub></strong> resultando <strong>(01111100)<sub>2</sub></strong>.</p>
+
+<p class="content-block">Excelente. Veamos otro caso. Realizar la resta de <strong>(110010 - 10101110)<sub>2</sub></strong>. Por complemento a 2 sería:</p>
+
+<pre>
+  00110010
++ 01010010
+----------------
+  10000100
+</pre>
+
+<p class="content-block">que como no tiene acarreo le calculamos el complemento a 2 y tenemos que el <strong>resultado es -1111100</strong>. Con el método de complemento a 1 sería:</p>
+
+<pre>
+  00110010
++ 01010001
+---------------------
+  10000011
+</pre>
+
+<p class="content-block">y calculando el complemento a 1 (ya que no tiene acarreo) tenemos que el <strong>resultado = -01111100</strong>. Lo cual es correcto.</p>
+
+<p class="content-block">¿Por qué haríamos una resta con complemento? La suma es mucho más sencilla de implementar en los sistemas digitales; y por otro lado, aunque en base 10 no tenemos problemas para realizar una resta, hacer el mismo proceso para otras bases no nos será tan intuitivo por lo que estos métodos facilitarían el proceso del cálculo.</p>
+
+<p class="content-block">Como comentario final me gustaría acotar que las computadoras trabajan los números negativos a través del complemento a dos. Para ellas, el primer bit del byte indica el signo. Si este es uno (1) querrá decir que el número es negativo. Por lo tanto, y basándonos en este último ejemplo por el método de complemento a dos, al realizar la resta de <code>110010 - 10101110</code> el resultado que almacena el computador en sus registros o variables es en realidad el número <code>(10000100)<sub>2</sub></code> o lo que es lo mismo <code>(84)<sub>16</sub></code>. Al tener el bit más significativo activo, representa que es un número negativo y que el mismo es su complemento a 2.</p>
+
+<p class="content-block">Pues bien, esto es lo último en este capítulo. Para el próximo hablaremos de <a href="tema2.html">Códigos binarios. Álgebra de Boole. Funciones lógicas. Compuertas lógicas.</a></p>
+
+</body>
+</html>

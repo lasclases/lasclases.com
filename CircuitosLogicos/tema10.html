@@ -1,1251 +1,189 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-<HEAD>
+<!DOCTYPE html>
+<html>
+<head>
 	<meta charset="utf-8">
-	<TITLE>TEMA 10: Decodificadores y codificadores nivel SSI y MSI. Aplicaciones.</TITLE>
-	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.1  (Win32)">
-	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
-	<META NAME="CREATED" CONTENT="20070113;17444600">
-	<META NAME="CHANGEDBY" CONTENT="Tony Rodriguez">
-	<META NAME="CHANGED" CONTENT="20070408;11552192">
+	<title>TEMA 10: Decodificadores y Codificadores Nivel SSI y MSI. Aplicaciones.</title>
+    <link rel="stylesheet" href="../style.css">
+	<meta name="author" content="Tony Rodriguez">
 </HEAD>
-<BODY LANG="es-VE" DIR="LTR">
-<H1 ALIGN=CENTER><FONT COLOR="#0000ff"><U><B>TEMA 10: DECODIFICADORES
-Y CODIFICADORES NIVEL SSI Y MSI. APLICACIONES</B></U></FONT></H1>
-<P STYLE="line-height: 150%"><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Los
-sistemas digitales contienen datos o informaci&oacute;n que est&aacute;
-en alguna forma de c&oacute;digo binario, los cuales se operan de
-alguna manera. En este tema se examinan circuitos combinatorios,
-cuyas aplicaciones incluyen:</FONT></FONT></P>
-<OL>
-	<LI><BLOCKQUOTE STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Cambio
-	de datos de una forma a otra.</FONT></FONT></BLOCKQUOTE>
-	<LI><BLOCKQUOTE STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Tomar
-	datos y enviarlos a uno de varios destinos.</FONT></FONT></BLOCKQUOTE>
-</OL>
-<BLOCKQUOTE STYLE="margin-left: 0cm; margin-right: 0cm; line-height: 150%">
-<FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Muchos de
-los circuitos l&oacute;gicos que cumplen estas funciones est&aacute;n
-ahora como circuitos integrados MSI. Por esta raz&oacute;n, no nos
-concentraremos en el dise&ntilde;o de estos circuitos, sino que
-investigaremos c&oacute;mo se usan solos o en combinaci&oacute;n,
-para cumplir varias operaciones sobre datos digitales. Las
-operaciones que se discuten son: Decodificaci&oacute;n y
-codificaci&oacute;n.</FONT></FONT></BLOCKQUOTE>
-<P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><B>DECODIFICADORES</B></FONT></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Un
-decodificador es un circuito combinacional que convierte la
-informaci&oacute;n binaria de n l&iacute;neas de entradas a un m&aacute;ximo
-de 2<SUP>n</SUP> l&iacute;neas &uacute;nicas de salida. <FONT COLOR="#000000">Para
-cada una de las combinaciones de entrada s&oacute;lo una de la
-salidas estar&aacute; activada con un 1</FONT></FONT><FONT COLOR="#000000">
-<FONT FACE="Lucida Sans, sans-serif">(para cuando es l&oacute;gica
-positiva) y todas las otras salidas estar&aacute;n en <B>0</B>.
-Muchos decodificadores se dise&ntilde;an para producir salidas
-activas con un 0 (l&oacute;gica negativa donde la salida seleccionada
-es <B>0 </B>mientras que las otras son 1). Esto &uacute;ltimo se
-indica siempre por la presencia de peque&ntilde;os c&iacute;rculos en
-las l&iacute;neas de salida del diagrama del decodificador y &eacute;sto
-es de gran utilidad a la hora de dise&ntilde;ar circuitos debido a
-que los decodificadores son muy usados para direccionamiento de
-perif&eacute;ricos donde dichos perif&eacute;ricos tienen una l&iacute;nea
-de habilitaci&oacute;n (indicada con una E por ENABLE) que
-regularmente es de l&oacute;gica negativa (indicada con el c&iacute;rculo
-en la entrada o con la ralla sobre la E). Si la informaci&oacute;n
-decodificada tiene condiciones no usadas o &ldquo;irrelevantes&rdquo;,
-entonces el decodificador tendr&aacute; menos de 2<SUP>n</SUP>
-salidas como es el caso del decodificador BCD a decimal que tiene 4
-bits de entrada (necesarios para expresar los n&uacute;meros BCD) y
-s&oacute;lo 10 l&iacute;neas de salida. Es interesante comentar que
-en algunos decodificadores de este tipo cuando se agrega a la entrada
-un c&oacute;digo que no es BCD v&aacute;lido ninguna de las salidas
-se activa. Recuerden que en todo caso <B>S&Oacute;LO UNA SALIDA
-ESTAR&Aacute; ACTIVA</B>.</FONT></FONT></P>
-<P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">La
-siguiente figura muestra un decodificador de 3 entradas y 2<SUP>3</SUP>
-= 8 salidas. Observen que la &uacute;nica diferencia significativa
-con respecto al demultiplexor es que no tiene la &ldquo;l&iacute;nea
-de entrada&rdquo; caracter&iacute;sticas de ellos. Este decodificador
-se le conoce como &ldquo;Decodificador Binario a Octal&rdquo; (o
-&ldquo;Convertidor de Binario a Octal&rdquo; o incluso &ldquo;decodificador
-de 3 a 8&rdquo;).</FONT></FONT></P>
-<P STYLE="line-height: 150%"><IMG SRC="BinarioOctal.gif" NAME="gr&aacute;ficos1" ALIGN=LEFT WIDTH=595 HEIGHT=403 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Este
-circuito muestra el decodificador con salida positiva. Si lo
-quisi&eacute;ramos con salida negativa los integrados a la salida
-deber&iacute;an ser compuertas NAND. Se observa con facilidad (si lo
-desea haga la tabla de la verdad) que este decodificador tendr&aacute;
-&uacute;nicamente una salida activa a la vez. <B>OBSERVE</B> que cada
-una de las salidas <B>corresponde al t&eacute;rmino m&iacute;nimo</B>
-de la entrada. Esta caracter&iacute;stica es muy &uacute;til a la
-hora de implementar funciones l&oacute;gicas con decodificadores.</FONT></FONT></P>
-<P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">En
-general, los decodificadores tienen n l&iacute;neas de entradas y 2<SUP>n</SUP>
-l&iacute;neas de salida y de estas &uacute;ltimas s&oacute;lo estar&aacute;
-activa aquella que sea el &ldquo;t&eacute;rmino m&iacute;nimo&rdquo;
-(y s&oacute;lo ella ya que las salidas son mutuamente exclusivas)
-representado por la entrada.</FONT></FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>CODIFICADORES</B></FONT></P>
-<P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Un
-codificador, en cambio, tiene un n&uacute;mero de l&iacute;neas de
-entrada, de las cuales s&oacute;lo una es activa (ya sea con l&oacute;gica
-positiva o negativa) en un tiempo dado y produce un c&oacute;digo de
-salida de</FONT> <B><I><FONT FACE="Lucida Sans, sans-serif">N</FONT></I></B>
-<FONT FACE="Lucida Sans, sans-serif">bits, dependiendo de cu&aacute;l
-entrada est&aacute; activa. O sea, el codificador hace el proceso
-contrario del decodificador.</FONT></FONT></P>
-<P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Se
-vio que un decodificador binario a octal acepta un c&oacute;digo
-binario de entrada de 3 bits y activa una y s&oacute;lo una de las 8
-l&iacute;neas de salida. Un codificador octal a binario opera de la
-manera opuesta. Acepta ocho l&iacute;neas de entrada y produce un
-c&oacute;digo de <B>3</B> bits a la salida. Hagamos la tabla de la
-verdad, concluyamos cuales son las funciones y luego veamos el
-gr&aacute;fico que nos muestra esta implementaci&oacute;n a nivel SSI
-de este circuito:</FONT></FONT></P>
-<TABLE WIDTH=619 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
-	<COL WIDTH=40>
-	<COL WIDTH=46>
-	<COL WIDTH=46>
-	<COL WIDTH=43>
-	<COL WIDTH=45>
-	<COL WIDTH=44>
-	<COL WIDTH=45>
-	<COL WIDTH=41>
-	<COL WIDTH=51>
-	<COL WIDTH=46>
-	<COL WIDTH=46>
-	<TR VALIGN=TOP>
-		<TD COLSPAN=8 WIDTH=427>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>Entradas</B></FONT></FONT></P>
-		</TD>
-		<TD COLSPAN=3 WIDTH=165>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>Salidas</B></FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=40>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A<SUB>0</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A<SUB>1</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A<SUB>2</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=43>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A<SUB>3</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A<SUB>4</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=44>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A<SUB>5</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A<SUB>6</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=41>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>A<SUB>7</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=51>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>O<SUB>2</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>O<SUB>1</SUB></B></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3><B>O<SUB>0</SUB></B></FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=40>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=43>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=44>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=41>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=51>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=40>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=43>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=44>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=41>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=51>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=40>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=43>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=44>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=41>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=51>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=40>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=43>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=44>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=41>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=51>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=40>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=43>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=44>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=41>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=51>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=40>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=43>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=44>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=41>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=51>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=40>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=43>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=44>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=41>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=51>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=40>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=43>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=44>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=45>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=41>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=51>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=46>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>1</FONT></FONT></P>
-		</TD>
-	</TR>
-</TABLE>
-<P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>De
-esta tabla podemos concluir que:</FONT></FONT></FONT></P>
-<P STYLE="font-weight: medium; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>O<SUB>2
-</SUB>= A<SUB>4 </SUB>+ A<SUB>5 </SUB>+ A<SUB>6 </SUB>+ A<SUB>7</SUB></FONT></FONT></FONT></P>
-<P STYLE="font-weight: medium; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>O<SUB>1
-</SUB>= A<SUB>2</SUB> + A<SUB>3</SUB> + A<SUB>6</SUB> + A<SUB>7</SUB></FONT></FONT></FONT></P>
-<P STYLE="font-weight: medium; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>y</FONT></FONT></FONT></P>
-<P STYLE="font-weight: medium; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>O<SUB>0
-</SUB>= A<SUB>1</SUB> + A<SUB>3</SUB> + A<SUB>5</SUB> + A<SUB>7</SUB></FONT></FONT></FONT></P>
-<P STYLE="font-weight: medium; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=3>Por
-lo que el esquem&aacute;tico queda:</FONT></FONT></FONT></P>
-<P STYLE="line-height: 150%"><IMG SRC="OctalBinario.GIF" NAME="gr&aacute;ficos2" ALIGN=LEFT WIDTH=575 HEIGHT=388 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Se
-supone que una y s&oacute;lo una de las entradas es 1 a la vez, as&iacute;
-que s&oacute;lo hay 8 condiciones posible de entrada. El circuito
-est&aacute; dise&ntilde;ado de tal manera que cuando <B>A<SUB>0</SUB></B>
-es <B>1</B>, se genera a la salida el c&oacute;digo binario 000.
-Cuando <B>A<SUB>1</SUB></B> es <B>1</B>, se genera el c&oacute;digo
-binario 001, cuando <B>A<SUB>2</SUB></B><SUB> </SUB>es <B>1</B>, se
-genera el c&oacute;digo binario 010 y as&iacute; sucesivamente. El
-dise&ntilde;o del circuito es muy simple, puesto que involucra
-analizar cada bit de salida y determinar para cu&aacute;les casos de
-entrada ese bit es <B>1</B> y luego pasar los resultados por una
-compuerta OR. Por ejemplo, la tabla funcional muestra que <B>O<SUB>0</SUB></B>
-(que es el bit menos significativo del c&oacute;digo de salida) debe
-ser <B>1</B> cuando cualesquiera de las entradas <B>A<SUB>1</SUB></B>,
-<B>A<SUB>3</SUB></B>, <B>A<SUB>5</SUB></B> o <B>A<SUB>7</SUB></B>
-sean <B>1</B>. Se observa tambi&eacute;n que que la entrada A<SUB>0</SUB>
-no se usa nunca ya que cuando este bit es &ldquo;uno&rdquo; todas las
-salidas deben ser &ldquo;cero&rdquo;, pero resulta que si todas las
-entradas son cero (indicando que no hay un n&uacute;mero octal a la
-entrada, por ejemplo) todas las salidas del circuito tambi&eacute;n
-ser&aacute;n cero. Esto genera una discrepancia que puede ser
-solventada agreg&aacute;ndole otra salida al circuito que se activar&aacute;
-&uacute;nica y exclusivamente cuando todas las entradas sean cero y
-de esta forma indicarnos cuando se cumple esa condici&oacute;n
-(f&aacute;cilmente implementable con una OR).</FONT></FONT></P>
-<P STYLE="font-weight: medium; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Por
-otro lado est&aacute; la posibilidad de que haya m&aacute;s de un uno
-en la entrada (una situaci&oacute;n inv&aacute;lida pero por 'x' o
-por 'y' posible). Las implementaciones integradas de &ldquo;codificadores&rdquo;
-resuelven este problema agregando un circuito de alta prioridad para
-estos casos. La alta prioridad lo que hace es que si el uno de la
-posici&oacute;n cero est&aacute; activo, asume que el n&uacute;mero a
-la salida es el cero sin importar lo que exista en el resto de las
-entradas. Si el la posici&oacute;n cero est&aacute; en cero la la uno
-en uno entonces a la salida habr&aacute; un uno sin importar el resto
-de la entrada y as&iacute; sucesivamente.</FONT></FONT></P>
-<P STYLE="font-weight: medium; line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Como
-ejercicio, dise&ntilde;e un circuito codificador de 4 a 2. La salida
-deber&aacute; ser cero (00) en el caso que no hay ninguna entrada al
-codificador (cuando la entrada tiene puros ceros), en todos los casos
-que no sean v&aacute;lidos (cualquier caso que tenga m&aacute;s de un
-uno) y cuando la entrada es propiamente la que corresponde al cero
-(I<SUB>0</SUB>=1) . Para solventar la discrepancia agregue otra
-salida al circuito que ser&aacute; &ldquo;uno&rdquo; cuando la
-entrada si sea v&aacute;lida.</FONT></FONT></P>
-<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">APLICACIONES</FONT></P>
-<P STYLE="font-weight: medium; line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Veamos
-algunas aplicaciones con decodificadores.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Dise&ntilde;e
-un decodificador de BCD a decimal con compuertas (a nivel SSI). En
-realidad este circuito ya existe a nivel MSI pero se hace este
-ejercicio para dar a conocer como se dise&ntilde;a y que se debe
-esperar de &eacute;l. Este un caso en el que no se tienen para n bits
-de entrada 2<SUP>n</SUP> salidas ya que los casos del 10 al 15 no son
-v&aacute;lidos (asumimos que no son posibles y las tomaremos como
-&ldquo;condiciones irrelevantes&rdquo;). Veamos la tabla de la
-verdad:</FONT></P>
-<TABLE WIDTH=346 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
-	<COL WIDTH=8>
-	<COL WIDTH=8>
-	<COL WIDTH=9>
-	<COL WIDTH=10>
-	<COL WIDTH=16>
-	<COL WIDTH=16>
-	<COL WIDTH=16>
-	<COL WIDTH=16>
-	<COL WIDTH=16>
-	<COL WIDTH=16>
-	<COL WIDTH=16>
-	<COL WIDTH=16>
-	<COL WIDTH=16>
-	<COL WIDTH=12>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>A</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>B</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>C</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>0</SUB></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>1</SUB></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>2</SUB></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>3</SUB></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>4</SUB></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>5</SUB></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>6</SUB></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>7</SUB></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>8</SUB></FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>D<SUB>9</SUB></FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=16>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=12>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD ROWSPAN=6 COLSPAN=10 WIDTH=253>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>DON'T CARE</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=8>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=9>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-		<TD WIDTH=10>
-			<P><FONT FACE="Lucida Sans, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
-		</TD>
-	</TR>
-</TABLE>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">De
-esta tabla se deducen las siguientes funciones:</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>0</SUB>=&sum;(0)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>1</SUB>=&sum;(1)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>2</SUB>=&sum;(2)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>3</SUB>=&sum;(3)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>4</SUB>=&sum;(4)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>5</SUB>=&sum;(5)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>6</SUB>=&sum;(6)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>7</SUB>=&sum;(7)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>8</SUB>=&sum;(8)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>9</SUB>=&sum;(9)+d(10,11,12,13,14,15)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Estas
-funciones pueden trabajarse por mapa de Karnaugh igual que hemos
-hecho hasta ahora, pero en el caso de funciones de conmutaci&oacute;n
-(donde cada funci&oacute;n tiene s&oacute;lo una posible salida en
-uno) puede usarse un s&oacute;lo mapa para todas las funciones. (Si
-lo desea haga los mapas de las funciones por separado y demuestre que
-se cumple).</FONT></P>
-<P STYLE="line-height: 150%"><IMG SRC="MapaDecoBCD.gif" NAME="gr&aacute;ficos3" ALIGN=LEFT WIDTH=619 HEIGHT=398 BORDER=0><BR CLEAR=LEFT><FONT FACE="Lucida Sans, sans-serif">Por
-lo tanto las funciones quedan:</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">D<SUB>0</SUB>(A,B,C,D)=A'B'C'D',
-D<SUB>1</SUB>(A,B,C,D)=A'B'C'D, D<SUB>2</SUB>(A,B,C,D)=B'CD',
-D<SUB>3</SUB>(A,B,C,D)=B'CD, D<SUB>4</SUB>(A,B,C,D)=BC'D',
-D<SUB>5</SUB>(A,B,C,D)=BC'D, D<SUB>6</SUB>(A,B,C,D)=BCD',
-D<SUB>7</SUB>(A,B,C,D)=BCD, D<SUB>8</SUB>(A,B,C,D)=AD' y
-D<SUB>9</SUB>(A,B,C,D)=AD</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">por
-lo que el esquem&aacute;tico nos quedar&iacute;a:</FONT></P>
-<P STYLE="line-height: 150%"><IMG SRC="BCD_Decimal.gif" NAME="gr&aacute;ficos4" ALIGN=LEFT WIDTH=608 HEIGHT=453 BORDER=0><BR CLEAR=LEFT><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Este
-circuito es s&oacute;lo v&aacute;lido si NO es posible opciones
-diferentes de BCD a la entrada. Si se quiere que todas las salidas
-sean cero para casos no v&aacute;lidos en BCD debe hacerse otro
-circuito. H&aacute;galo como ejercicio.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Otro.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
-se coment&oacute; en el tema anterior, los decodificadores (o
-demultiplexores) tambi&eacute;n pueden ser usados para el desarrollo
-de circuitos combinacionales con la ayuda de compuertas OR a la
-salida para &ldquo;sumar&rdquo; los t&eacute;rminos m&iacute;nimos
-que forman la funci&oacute;n. Si nuestro dise&ntilde;o requiere m&aacute;s
-de una funci&oacute;n de salida, entonces podemos hacer uso de mas de
-una compuerta OR (una para cada funci&oacute;n requerida). Veamos un
-ejemplo: Construir un circuito sumador completo de dos bits con un
-decodificador y dos compuertas NAND. (OJO, SI ped&iacute; implementar
-con NAND, no con OR)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Ya
-sabemos que nuestras funciones para un sumador completo de 2 bits.
-Asumiendo que A y B son los bits a sumar y C el acarreo de entrada
-tenemos que:</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">S(A,B,C)=&sum;(1,2,4,7)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">C<SUB>o</SUB>(A,B,C)=&sum;(3,5,6,7)</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Nuestro
-sumador quedar&iacute;a:</FONT></P>
-<P STYLE="line-height: 150%"><IMG SRC="SumadorConDeco.gif" NAME="gr&aacute;ficos5" ALIGN=LEFT WIDTH=601 HEIGHT=412 BORDER=0><BR CLEAR=LEFT><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Observe
-bien este circuito. El decodificador tiene las salidas con &ldquo;<B>l&oacute;gica
-negativa</B>&rdquo; por lo que tenemos a la salida NO son los
-t&eacute;rminos m&iacute;nimos sino los t&eacute;rminos m&aacute;ximos.
-Por esta raz&oacute;n nuestra implementaci&oacute;n puede realizarse
-f&aacute;cilmente con compuertas NAND (o incluso AND; h&aacute;galo
-como ejercicio). Recuerden que, por ejemplo la funci&oacute;n S,
-puede ser expresada en una suma de productos (con t&eacute;rminos
-m&iacute;nimos) o como un producto de sumas (con t&eacute;rminos
-m&aacute;ximos). As&iacute; que S=m<SUB>1</SUB>+m<SUB>2</SUB>+m<SUB>4</SUB>+m<SUB>7</SUB>=M<SUB>0</SUB>M<SUB>3</SUB>M<SUB>5</SUB>M<SUB>6</SUB>=(M<SUB>1</SUB>M<SUB>2</SUB>M<SUB>4</SUB>M<SUB>7</SUB>)'
-(ya que M<SUB>1</SUB>M<SUB>2</SUB>M<SUB>4</SUB>M<SUB>7 </SUB>es S') y
-es exactamente esta &uacute;ltima forma la que estamos aprovechando.
-Hacemos el an&aacute;lisis rec&iacute;proco para C<SUB>o</SUB>. Como
-ejercicio, realice la misma implementaci&oacute;n pero con compuertas
-OR.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">El
-m&eacute;todo del decodificador puede usarse para implementar
-cualquier circuito combinacional pero en realidad debe pensarse bien
-lo que se va a hacer debido a que pueden existir soluciones m&aacute;s
-&oacute;ptimas. <B>Este m&eacute;todo es principalmente &uacute;til
-para el desarrollo de circuitos con varias salidas</B> ya que para
-una sola salida yo dir&iacute;a que es preferible usar la
-implementaci&oacute;n con multiplexores tal y como se vio en el tema
-anterior.</FONT></P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">La
-mayor&iacute;a de las aplicaciones con codificadores que he visto son
-de implementaci&oacute;n a nivel SSI. Ya de eso hablamos antes as&iacute;
-que no repetir&eacute; otros casos de ello.</FONT></P>
-<P STYLE="line-height: 150%"><BR><BR>
-</P>
-<P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><B>EJERCICIOS</B></FONT></P>
-<OL>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
-	ya se plante&oacute; haga el BCD a decimal con puro cero a la salida
-	si la entrada NO es BCD v&aacute;lido.</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Como
-	ya se plante&oacute;, haga el sumador completo de 2 bits con un
-	decodificador y compuertas OR.</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Dise&ntilde;e
-	un decodificador de 2 a 4 con una entrada de habilitaci&oacute;n. La
-	salida es con l&oacute;gica negada. La entrada de habilitaci&oacute;n
-	(E por Enable) es de l&oacute;gica positiva. En el caso de que E=1,
-	todas las salidas son uno (recuerde que el circuito tiene salida con
-	l&oacute;gica negativa as&iacute; que este es el comportamiento
-	normal). Si E=0, la salida del decodificador cero cero dependiendo
-	de la entrada. Haga el esquem&aacute;tico.</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Dise&ntilde;e
-	un decodificador de 4 a 16 con 2 decodificadores 3 a 8. TIP:
-	Recuerde que los decodificadores tienen la entrada ENABLE.</FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif">Realice
-	las siguientes funciones con decodificadores:</FONT></P>
-</OL>
-<UL>
-	<LI><BLOCKQUOTE STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">f(A,B,C,D)
-	= &sum; (0,4,6,10,11,13)</FONT></FONT></BLOCKQUOTE>
-	<LI><BLOCKQUOTE STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">f(w,x,y,z)
-	= &prod;<SUB> </SUB>(3,4,5,7,11,12,14,15)</FONT></FONT></BLOCKQUOTE>
-	<LI><BLOCKQUOTE STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">f(a,b,c,d)
-	= &sum;(3,5,7,11,15)</FONT></FONT></BLOCKQUOTE>
-	<LI><BLOCKQUOTE STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">f(A,B,C,D,E)
-	= &prod;<SUB> </SUB>(0,1,2,8,9,11,15-19,24,25,29-31)</FONT></FONT></BLOCKQUOTE>
-	<LI><BLOCKQUOTE STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">f(A,B,C,D,E,F)
-	= &sum; (0,2,4,5,7,8,16,18,24,32,36,40,48,56)</FONT></FONT></BLOCKQUOTE>
-</UL>
-<OL START=6>
-	<LI><P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Un
-	circuito tiene 5 entradas A, B, C, D y E. Considere que A es el m&aacute;s
-	significativo. De las entradas, B, C, D y E representan un n&uacute;mero
-	BCD. A ser&aacute; una entrada de control que cumple que:</FONT></FONT></P>
-</OL>
-<UL>
-	<LI><BLOCKQUOTE STYLE="line-height: 150%"><FONT FACE="Lucida Sans, sans-serif"><FONT COLOR="#000000">Cuando
-	el control est&aacute; en <B>0</B> l&oacute;gico, la salida <B>Z</B>
-	es igual a 0 si el n&uacute;mero decimal es impar y 1 si es par.</FONT></FONT></BLOCKQUOTE>
-	<LI><BLOCKQUOTE STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Cuando
-	el control est&aacute; en <B>1</B> l&oacute;gico, la salida <B>Z</B>
-	es igual a 1 cuando la entrada es m&uacute;ltiplo de 3, en caso
-	contrario es 0.</FONT></FONT></BLOCKQUOTE>
-</UL>
-<OL START=7>
-	<P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Dise&ntilde;e
-	un circuito utilizando un decodificador y compuertas externas,
-	considerando l&oacute;gica negativa y que 0 es par.</FONT></FONT></P>
-	<LI><P STYLE="line-height: 150%"><FONT COLOR="#000000"><FONT FACE="Lucida Sans, sans-serif">Describa
-	como funciona y como est&aacute; estructurado un codificador de
-	decimal a BCD con salidas de l&oacute;gica negativa. Haga la tabla
-	de la verdad.</FONT></FONT></P>
-</OL>
-<BLOCKQUOTE STYLE="margin-left: 0cm; margin-right: 0cm"><BR><BR>
-</BLOCKQUOTE>
-<BLOCKQUOTE STYLE="margin-left: 0cm; margin-right: 0cm; line-height: 150%">
-<FONT FACE="Lucida Sans, sans-serif"><FONT FACE="Lucida Sans, sans-serif">En
-la pr&oacute;xima clase se ver&aacute; el TEMA 11: </FONT><A HREF="http://lasclases.com/CircuitosLogicos/tema11.html"><FONT FACE="Lucida Sans, sans-serif">Display
-de 7 segmentos, circuito manejador de display.</FONT></A></FONT></BLOCKQUOTE>
-</BODY>
-</HTML>
+<body>
+<h1 class="center content-block" style="color: #0000ff;">DECODIFICADORES Y CODIFICADORES NIVEL SSI Y MSI. APLICACIONES</h1>
+
+<p class="content-block">Los sistemas digitales contienen datos o información que está en alguna forma de código binario, los cuales se operan de alguna manera. En este tema se examinan circuitos combinatorios, cuyas aplicaciones incluyen:</p>
+<ol>
+    <li>Cambio de datos de una forma a otra.</li>
+    <li>Tomar datos y enviarlos a uno de varios destinos.</li>
+</ol>
+<p class="content-block">Muchos de los circuitos lógicos que cumplen estas funciones están ahora como circuitos integrados MSI. Por esta razón, no nos concentraremos en el diseño de estos circuitos, sino que investigaremos cómo se usan solos o en combinación, para cumplir varias operaciones sobre datos digitales. Las operaciones que se discuten son: Decodificación y codificación.</p>
+
+<h2 class="content-block">DECODIFICADORES</h2>
+<p class="content-block">Un decodificador es un circuito combinacional que convierte la información binaria de n líneas de entradas a un máximo de 2<sup>n</sup> líneas únicas de salida. Para cada una de las combinaciones de entrada sólo una de la salidas estará activada con un 1 (para cuando es lógica positiva) y todas las otras salidas estarán en <strong>0</strong>. Muchos decodificadores se diseñan para producir salidas activas con un 0 (lógica negativa donde la salida seleccionada es <strong>0</strong> mientras que las otras son 1). Esto último se indica siempre por la presencia de pequeños círculos en las líneas de salida del diagrama del decodificador y ésto es de gran utilidad a la hora de diseñar circuitos debido a que los decodificadores son muy usados para direccionamiento de periféricos donde dichos periféricos tienen una línea de habilitación (indicada con una E por ENABLE) que regularmente es de lógica negativa (indicada con el círculo en la entrada o con la raya sobre la E). Si la información decodificada tiene condiciones no usadas o “irrelevantes”, entonces el decodificador tendrá menos de 2<sup>n</sup> salidas como es el caso del decodificador BCD a decimal que tiene 4 bits de entrada (necesarios para expresar los números BCD) y sólo 10 líneas de salida. Es interesante comentar que en algunos decodificadores de este tipo cuando se agrega a la entrada un código que no es BCD válido ninguna de las salidas se activa. Recuerden que en todo caso <strong>SÓLO UNA SALIDA ESTARÁ ACTIVA</strong>.</p>
+
+<p class="content-block">La siguiente figura muestra un decodificador de 3 entradas y 2<sup>3</sup> = 8 salidas. Observen que la única diferencia significativa con respecto al demultiplexor es que no tiene la “línea de entrada” características de ellos. Este decodificador se le conoce como “Decodificador Binario a Octal” (o “Convertidor de Binario a Octal” o incluso “decodificador de 3 a 8”).</p>
+
+<p class="content-block"><img src="BinarioOctal.gif" alt="Decodificador Binario a Octal" width="595" height="403"></p>
+
+<p class="content-block">Este circuito muestra el decodificador con salida positiva. Si lo quisiéramos con salida negativa los integrados a la salida deberían ser compuertas NAND. Se observa con facilidad (si lo desea haga la tabla de la verdad) que este decodificador tendrá únicamente una salida activa a la vez. <strong>OBSERVE</strong> que cada una de las salidas <strong>corresponde al término mínimo</strong> de la entrada. Esta característica es muy útil a la hora de implementar funciones lógicas con decodificadores.</p>
+
+<p class="content-block">En general, los decodificadores tienen n líneas de entradas y 2<sup>n</sup> líneas de salida y de estas últimas sólo estará activa aquella que sea el “término mínimo” (y sólo ella ya que las salidas son mutuamente exclusivas) representado por la entrada.</p>
+
+<h2 class="content-block">CODIFICADORES</h2>
+<p class="content-block">Un codificador, en cambio, tiene un número de líneas de entrada, de las cuales sólo una es activa (ya sea con lógica positiva o negativa) en un tiempo dado y produce un código de salida de <strong>N</strong> bits, dependiendo de cuál entrada está activa. O sea, el codificador hace el proceso contrario del decodificador.</p>
+
+<p class="content-block">Se vio que un decodificador binario a octal acepta un código binario de entrada de 3 bits y activa una y sólo una de las 8 líneas de salida. Un codificador octal a binario opera de la manera opuesta. Acepta ocho líneas de entrada y produce un código de <strong>3</strong> bits a la salida. Hagamos la tabla de la verdad, concluyamos cuales son las funciones y luego veamos el gráfico que nos muestra esta implementación a nivel SSI de este circuito:</p>
+
+<table border="1" cellpadding="4" cellspacing="3" class="content-block">
+    <tr>
+        <td colspan="8"><strong>Entradas</strong></td>
+        <td colspan="3"><strong>Salidas</strong></td>
+    </tr>
+    <tr>
+        <td><strong>A<sub>0</sub></strong></td>
+        <td><strong>A<sub>1</sub></strong></td>
+        <td><strong>A<sub>2</sub></strong></td>
+        <td><strong>A<sub>3</sub></strong></td>
+        <td><strong>A<sub>4</sub></strong></td>
+        <td><strong>A<sub>5</sub></strong></td>
+        <td><strong>A<sub>6</sub></strong></td>
+        <td><strong>A<sub>7</sub></strong></td>
+        <td><strong>O<sub>2</sub></strong></td>
+        <td><strong>O<sub>1</sub></strong></td>
+        <td><strong>O<sub>0</sub></strong></td>
+    </tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+
+<p class="content-block">De esta tabla podemos concluir que:</p>
+<p class="content-block">O<sub>2</sub> = A<sub>4</sub> + A<sub>5</sub> + A<sub>6</sub> + A<sub>7</sub></p>
+<p class="content-block">O<sub>1</sub> = A<sub>2</sub> + A<sub>3</sub> + A<sub>6</sub> + A<sub>7</sub></p>
+<p class="content-block">y</p>
+<p class="content-block">O<sub>0</sub> = A<sub>1</sub> + A<sub>3</sub> + A<sub>5</sub> + A<sub>7</sub></p>
+<p class="content-block">Por lo que el esquemático queda:</p>
+
+<p class="content-block"><img src="OctalBinario.GIF" alt="Codificador Octal a Binario" width="575" height="388"></p>
+
+<p class="content-block">Se supone que una y sólo una de las entradas es 1 a la vez, así que sólo hay 8 condiciones posible de entrada. El circuito está diseñado de tal manera que cuando <strong>A<sub>0</sub></strong> es <strong>1</strong>, se genera a la salida el código binario 000. Cuando <strong>A<sub>1</sub></strong> es <strong>1</strong>, se genera el código binario 001, cuando <strong>A<sub>2</sub></strong> es <strong>1</strong>, se genera el código binario 010 y así sucesivamente. El diseño del circuito es muy simple, puesto que involucra analizar cada bit de salida y determinar para cuáles casos de entrada ese bit es <strong>1</strong> y luego pasar los resultados por una compuerta OR. Por ejemplo, la tabla funcional muestra que <strong>O<sub>0</sub></strong> (que es el bit menos significativo del código de salida) debe ser <strong>1</strong> cuando cualesquiera de las entradas <strong>A<sub>1</sub></strong>, <strong>A<sub>3</sub></strong>, <strong>A<sub>5</sub></strong> o <strong>A<sub>7</sub></strong> sean <strong>1</strong>. Se observa también que que la entrada A<sub>0</sub> no se usa nunca ya que cuando este bit es “uno” todas las salidas deben ser “cero”, pero resulta que si todas las entradas son cero (indicando que no hay un número octal a la entrada, por ejemplo) todas las salidas del circuito también serán cero. Esto genera una discrepancia que puede ser solventada agregándole otra salida al circuito que se activará única y exclusivamente cuando todas las entradas sean cero y de esta forma indicarnos cuando se cumple esa condición (fácilmente implementable con una OR).</p>
+
+<p class="content-block">Por otro lado está la posibilidad de que haya más de un uno en la entrada (una situación inválida pero por 'x' o por 'y' posible). Las implementaciones integradas de “codificadores” resuelven este problema agregando un circuito de alta prioridad para estos casos. La alta prioridad lo que hace es que si el uno de la posición cero está activo, asume que el número a la salida es el cero sin importar lo que exista en el resto de las entradas. Si el la posición cero está en cero la la uno en uno entonces a la salida habrá un uno sin importar el resto de la entrada y así sucesivamente.</p>
+
+<p class="content-block">Como ejercicio, diseñe un circuito codificador de 4 a 2. La salida deberá ser cero (00) en el caso que no hay ninguna entrada al codificador (cuando la entrada tiene puros ceros), en todos los casos que no sean válidos (cualquier caso que tenga más de un uno) y cuando la entrada es propiamente la que corresponde al cero (I<sub>0</sub>=1). Para solventar la discrepancia agregue otra salida al circuito que será “uno” cuando la entrada si sea válida.</p>
+
+<h2 class="content-block">APLICACIONES</h2>
+<p class="content-block">Veamos algunas aplicaciones con decodificadores.</p>
+
+<p class="content-block">Diseñe un decodificador de BCD a decimal con compuertas (a nivel SSI). En realidad este circuito ya existe a nivel MSI pero se hace este ejercicio para dar a conocer como se diseña y que se debe esperar de él. Este un caso en el que no se tienen para n bits de entrada 2<sup>n</sup> salidas ya que los casos del 10 al 15 no son válidos (asumimos que no son posibles y las tomaremos como “condiciones irrelevantes”). Veamos la tabla de la verdad:</p>
+
+<table border="1" cellpadding="4" cellspacing="3" class="content-block">
+    <tr>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>D<sub>0</sub></td>
+        <td>D<sub>1</sub></td>
+        <td>D<sub>2</sub></td>
+        <td>D<sub>3</sub></td>
+        <td>D<sub>4</sub></td>
+        <td>D<sub>5</sub></td>
+        <td>D<sub>6</sub></td>
+        <td>D<sub>7</sub></td>
+        <td>D<sub>8</sub></td>
+        <td>D<sub>9</sub></td>
+    </tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+</table>
+
+<p class="content-block">De esta tabla se deducen las siguientes funciones:</p>
+<p class="content-block">D<sub>0</sub> = &sum;(0) + d(10,11,12,13,14,15)</p>
+<p class="content-block">D<sub>1</sub> = &sum;(1) + d(10,11,12,13,14,15)</p>
+<p class="content-block">D<sub>2</sub> = &sum;(2) + d(10,11,12,13,14,15)</p>
+<p class="content-block">D<sub>3</sub> = &sum;(3) + d(10,11,12,13,14,15)</p>
+<p class="content-block">D<sub>4</sub> = &sum;(4) + d(10,11,12,13,14,15)</p>
+<p class="content-block">D<sub>5</sub> = &sum;(5) + d(10,11,12,13,14,15)</p>
+<p class="content-block">D<sub>6</sub> = &sum;(6) + d(10,11,12,13,14,15)</p>
+<p class="content-block">D<sub>7</sub> = &sum;(7) + d(10,11,12,13,14,15)</p>
+<p class="content-block">D<sub>8</sub> = &sum;(8) + d(10,11,12,13,14,15)</p>
+<p class="content-block">D<sub>9</sub> = &sum;(9) + d(10,11,12,13,14,15)</p>
+
+<p class="content-block">Estas funciones pueden trabajarse por mapa de Karnaugh igual que hemos hecho hasta ahora, pero en el caso de funciones de conmutación (donde cada función tiene sólo una posible salida en uno) puede usarse un sólo mapa para todas las funciones. (Si lo desea haga los mapas de las funciones por separado y demuestre que se cumple).</p>
+
+<p class="content-block"><img src="MapaDecoBCD.gif" alt="Mapa de Karnaugh para Decodificador BCD a Decimal" width="619" height="398"></p>
+
+<p class="content-block">Por lo tanto las funciones quedan:</p>
+<p class="content-block">D<sub>0</sub>(A,B,C,D)=A'B'C'D', D<sub>1</sub>(A,B,C,D)=A'B'C'D, D<sub>2</sub>(A,B,C,D)=B'CD', D<sub>3</sub>(A,B,C,D)=B'CD, D<sub>4</sub>(A,B,C,D)=BC'D', D<sub>5</sub>(A,B,C,D)=BC'D, D<sub>6</sub>(A,B,C,D)=BCD', D<sub>7</sub>(A,B,C,D)=BCD, D<sub>8</sub>(A,B,C,D)=AD' y D<sub>9</sub>(A,B,C,D)=AD</p>
+
+<p class="content-block">por lo que el esquemático nos quedaría:</p>
+
+<p class="content-block"><img src="BCD_Decimal.gif" alt="Circuito Decodificador BCD a Decimal" width="608" height="453"></p>
+
+<p class="content-block">Este circuito es sólo válido si NO es posible opciones diferentes de BCD a la entrada. Si se quiere que todas las salidas sean cero para casos no válidos en BCD debe hacerse otro circuito. Hágala como ejercicio.</p>
+
+<p class="content-block">Otro.</p>
+
+<p class="content-block">Como se comentó en el tema anterior, los decodificadores (o demultiplexores) también pueden ser usados para el desarrollo de circuitos combinacionales con la ayuda de compuertas OR a la salida para “sumar” los términos mínimos que forman la función. Si nuestro diseño requiere más de una función de salida, entonces podemos hacer uso de mas de una compuerta OR (una para cada función requerida). Veamos un ejemplo: Construir un circuito sumador completo de dos bits con un decodificador y dos compuertas NAND. (OJO, SÍ pedí implementar con NAND, no con OR)</p>
+
+<p class="content-block">Ya sabemos que nuestras funciones para un sumador completo de 2 bits. Asumiendo que A y B son los bits a sumar y C el acarreo de entrada tenemos que:</p>
+<p class="content-block">S(A,B,C)=&sum;(1,2,4,7)</p>
+<p class="content-block">C<sub>o</sub>(A,B,C)=&sum;(3,5,6,7)</p>
+
+<p class="content-block">Nuestro sumador quedaría:</p>
+
+<p class="content-block"><img src="SumadorConDeco.gif" alt="Sumador Completo con Decodificador y NAND" width="601" height="412"></p>
+
+<p class="content-block">Observe bien este circuito. El decodificador tiene las salidas con “<strong>lógica negativa</strong>” por lo que tenemos a la salida NO son los términos mínimos sino los términos máximos. Por esta razón nuestra implementación puede realizarse fácilmente con compuertas NAND (o incluso AND; hágalo como ejercicio). Recuerden que, por ejemplo la función S, puede ser expresada en una suma de productos (con términos mínimos) o como un producto de sumas (con términos máximos). Así que S=m<sub>1</sub>+m<sub>2</sub>+m<sub>4</sub>+m<sub>7</sub>=M<sub>0</sub>M<sub>3</sub>M<sub>5</sub>M<sub>6</sub>=(M<sub>1</sub>M<sub>2</sub>M<sub>4</sub>M<sub>7</sub>)' (ya que M<sub>1</sub>M<sub>2</sub>M<sub>4</sub>M<sub>7</sub> es S') y es exactamente esta última forma la que estamos aprovechando. Hacemos el análisis recíproco para C<sub>o</sub>. Como ejercicio, realice la misma implementación pero con compuertas OR.</p>
+
+<p class="content-block">El método del decodificador puede usarse para implementar cualquier circuito combinacional pero en realidad debe pensarse bien lo que se va a hacer debido a que pueden existir soluciones más óptimas. <strong>Este método es principalmente útil para el desarrollo de circuitos con varias salidas</strong> ya que para una sola salida yo diría que es preferible usar la implementación con multiplexores tal y como se vio en el tema anterior.</p>
+
+<p class="content-block">La mayoría de las aplicaciones con codificadores que he visto son de implementación a nivel SSI. Ya de eso hablamos antes así que no repetiré otros casos de ello.</p>
+
+<h2 class="content-block">EJERCICIOS</h2>
+<ol>
+    <li>Como ya se planteó haga el BCD a decimal con puro cero a la salida si la entrada NO es BCD válido.</li>
+    <li>Como ya se planteó, haga el sumador completo de 2 bits con un decodificador y compuertas OR.</li>
+    <li>Diseñe un decodificador de 2 a 4 con una entrada de habilitación. La salida es con lógica negada. La entrada de habilitación (E por Enable) es de lógica positiva. En el caso de que E=1, todas las salidas son uno (recuerde que el circuito tiene salida con lógica negativa así que este es el comportamiento normal). Si E=0, la salida del decodificador cero cero dependiendo de la entrada. Haga el esquemático.</li>
+    <li>Diseñe un decodificador de 4 a 16 con 2 decodificadores 3 a 8. TIP: Recuerde que los decodificadores tienen la entrada ENABLE.</li>
+    <li>Realice las siguientes funciones con decodificadores:
+        <ul>
+            <li>f(A,B,C,D) = &sum; (0,4,6,10,11,13)</li>
+            <li>f(w,x,y,z) = &prod; (3,4,5,7,11,12,14,15)</li>
+            <li>f(a,b,c,d) = &sum;(3,5,7,11,15)</li>
+            <li>f(A,B,C,D,E) = &prod; (0,1,2,8,9,11,15-19,24,25,29-31)</li>
+            <li>f(A,B,C,D,E,F) = &sum; (0,2,4,5,7,8,16,18,24,32,36,40,48,56)</li>
+        </ul>
+    </li>
+    <li>Un circuito tiene 5 entradas A, B, C, D y E. Considere que A es el más significativo. De las entradas, B, C, D y E representan un número BCD. A será una entrada de control que cumple que:
+        <ul>
+            <li>Cuando el control está en <strong>0</strong> lógico, la salida <strong>Z</strong> es igual a 0 si el número decimal es impar y 1 si es par.</li>
+            <li>Cuando el control está en <strong>1</strong> lógico, la salida <strong>Z</strong> es igual a 1 cuando la entrada es múltiplo de 3, en caso contrario es 0.</li>
+        </ul>
+    </li>
+    <li>Diseñe un circuito utilizando un decodificador y compuertas externas, considerando lógica negativa y que 0 es par.</li>
+    <li>Describa como funciona y como está estructurado un codificador de decimal a BCD con salidas de lógica negativa. Haga la tabla de la verdad.</li>
+</ol>
+
+<p class="content-block">En la próxima clase se verá el TEMA 11: <a href="http://lasclases.com/CircuitosLogicos/tema11.html">Display de 7 segmentos, circuito manejador de display.</a></p>
+
+</body>
+</html>

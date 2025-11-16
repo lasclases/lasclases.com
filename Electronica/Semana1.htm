@@ -1,331 +1,160 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-<HEAD>
-	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
-	<TITLE>ELECTRONICA III, CLASE1</TITLE>
-	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Win32)">
-	<META NAME="CREATED" CONTENT="20041229;20161501">
-	<META NAME="CHANGEDBY" CONTENT="Isabel Vera">
-	<META NAME="CHANGED" CONTENT="20041229;20162543">
-	<STYLE>
-	<!--
-		P.msonormal { margin-bottom: 0cm }
-		A:visited { color: #800080 }
-		A:link { color: #0000ff }
-	-->
-	</STYLE>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ELECTRONICA III, CLASE 1: Respuesta Frecuencial</title>
+    <link rel="stylesheet" href="../../style.css">
+	<meta name="author" content="Isabel Vera">
 </HEAD>
-<BODY LANG="es-VE" LINK="#0000ff" VLINK="#800080" DIR="LTR">
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>N&uacute;cleo
-Maracay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Dpto.
-de Ingenier&iacute;a Electr&oacute;nica</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>IX
-T&eacute;rmino, 03-2004&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3><I>Prof.
-Isabel Vera</I></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Secciones
-A y B Comunicaciones</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Semana
-1: &nbsp;&nbsp;&nbsp; Respuesta frecuencial de amplificadores
-electr&oacute;nicos:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<FONT FACE="Arial">Frecuencias de Corte.</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<FONT FACE="Arial">Ancho de Banda.</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<FONT FACE="Arial">Velocidad de Respuesta.</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Vivimos
-rodeados de se&ntilde;ales electromagn&eacute;ticas que transmiten
-informaci&oacute;n de inter&eacute;s para unos u otros.&nbsp; Esas
-se&ntilde;ales deben ser amplificadas previamente para poder ser
-interpretadas.&nbsp; Tal es el caso de las se&ntilde;ales de audio y
-video (radio, televisi&oacute;n). &nbsp;Es por ello que se presenta
-la necesidad de contar con <B>amplificadores</B> para tales se&ntilde;ales.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Pero,
-una vez conocidos los amplificadores, debemos tomar en cuenta que la
-respuesta de estos elementos ante la presencia de se&ntilde;ales de
-diferentes formas (senoidales y no senoidales) no es la misma y que
-su comportamiento var&iacute;a en funci&oacute;n de la frecuencia de&nbsp;
-tal se&ntilde;al de entrada.&nbsp; Por lo tanto nuestra primera
-conclusi&oacute;n es:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-left: 0.64cm; margin-bottom: 0.5cm">
-<FONT FACE="Symbol">&sect;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </FONT><FONT FACE="Arial">La
-ganancia &ldquo;A&rdquo; de un amplificador es un n&uacute;mero
-complejo cuya magnitud y fase dependen de la frecuencia de la se&ntilde;al
-de entrada.</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Hasta
-ahora hemos considerado a los amplificadores en su regi&oacute;n de
-&ldquo;frecuencias medias&rdquo; en donde la amplificaci&oacute;n es
-casi constante &ldquo;A<SUB>0</SUB>&rdquo;.&nbsp; A partir de ahora
-asumiremos que dicha ganancia (en esa regi&oacute;n) es igual a la
-unidad: A<SUB>0</SUB>= 1.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Consideremos
-ahora el siguiente circuito: </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="Clases1_archivos/image003.gif" NAME="Imagen1" ALIGN=BOTTOM WIDTH=175 HEIGHT=118 BORDER=0>&nbsp;&nbsp;&nbsp;
-<FONT FACE="Arial">CIRCUITO1= AMPLIFICADOR PASA-ALTO</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Haciendo
-un peque&ntilde;o an&aacute;lisis gr&aacute;fico nos damos cuenta que
-se trata de un circuito pasa-alto: A bajas frecuencias no obtenemos
-se&ntilde;al de salida (Vo); a altas frecuencias la salida es
-equivalente a la entrada (Vo=Vi)</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Al
-despejar su funci&oacute;n de transferencia encontramos:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image004.gif" NAME="Imagen2" ALIGN=BOTTOM WIDTH=100 HEIGHT=61 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P LANG="en-US" CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">
-<FONT FACE="Arial"><FONT SIZE=3>sabiendo que:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image005.gif" NAME="Imagen3" ALIGN=BOTTOM WIDTH=169 HEIGHT=44 BORDER=0></SUB>&nbsp;<SUB><IMG SRC="Clases1_archivos/image006.gif" NAME="Imagen4" ALIGN=BOTTOM WIDTH=12 HEIGHT=23 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>entonces
-podemos decir:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image007.gif" NAME="Imagen5" ALIGN=BOTTOM WIDTH=104 HEIGHT=64 BORDER=0></SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<FONT FACE="Arial">donde &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</FONT><FONT COLOR="#0000ff"><SUB>
-<IMG SRC="Clases1_archivos/image008.gif" NAME="Imagen6" ALIGN=BOTTOM WIDTH=90 HEIGHT=43 BORDER=0></SUB>&nbsp;<FONT FACE="Arial">FRECUENCIA
-INFERIOR DE CORTE</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial">el
-m&oacute;dulo de </FONT><SUB>
-<IMG SRC="Clases1_archivos/image009.gif" NAME="Imagen7" ALIGN=BOTTOM WIDTH=132 HEIGHT=77 BORDER=0></SUB>&nbsp;<FONT FACE="Arial">;
-</FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>y
-la fase ser&aacute; <SUB>
-<IMG SRC="Clases1_archivos/image010.gif" NAME="Imagen8" ALIGN=BOTTOM WIDTH=92 HEIGHT=44 BORDER=0></SUB></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Cuando
-la frecuencia en estudio es igual a la Frecuencia Inferior de Corte
-obtenemos que el m&oacute;dulo de la funci&oacute;n de ganancia es
-igual a <SUB>
-<IMG SRC="Clases1_archivos/image011.gif" NAME="Imagen9" ALIGN=BOTTOM WIDTH=28 HEIGHT=44 BORDER=0></SUB>&nbsp;y
-si </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image012.gif" NAME="Imagen10" ALIGN=BOTTOM WIDTH=145 HEIGHT=29 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Observemos
-que a la Frecuencia Inferior de Corte la impedancia capacitiva es
-igual a la Resistencia equivalente: </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image013.gif" NAME="Imagen11" ALIGN=BOTTOM WIDTH=71 HEIGHT=45 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="Clases1_archivos/image014.gif" NAME="Imagen12" ALIGN=BOTTOM WIDTH=600 HEIGHT=10 BORDER=0></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>De
-manera equivalente al estudio hecho hasta ahora, veremos el
-comportamiento del siguiente circuito:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="Clases1_archivos/image015.gif" NAME="Imagen13" ALIGN=BOTTOM WIDTH=189 HEIGHT=107 BORDER=0>&nbsp;<FONT FACE="Arial">CIRCUITO2=
-AMPLIFICADOR PASA-BAJO</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Comprobamos
-facilmente que se trata de un circuito pasa-bajo.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Su
-funci&oacute;n de transferencia es:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image016.gif" NAME="Imagen14" ALIGN=BOTTOM WIDTH=100 HEIGHT=88 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>es
-decir, que:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image017.gif" NAME="Imagen15" ALIGN=BOTTOM WIDTH=117 HEIGHT=45 BORDER=0></SUB>&nbsp;
-<FONT FACE="Arial">; si decimos que <SUB>
-<IMG SRC="Clases1_archivos/image018.gif" NAME="Imagen16" ALIGN=BOTTOM WIDTH=93 HEIGHT=47 BORDER=0></SUB>&nbsp;&nbsp;<FONT COLOR="#0000ff">FRECUENCIA
-SUPERIOR DE CORTE</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>entonces:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image019.gif" NAME="Imagen17" ALIGN=BOTTOM WIDTH=109 HEIGHT=65 BORDER=0></SUB>&nbsp;&nbsp;
-<FONT FACE="Arial">y el m&oacute;dulo de </FONT><SUB>
-<IMG SRC="Clases1_archivos/image020.gif" NAME="Imagen18" ALIGN=BOTTOM WIDTH=139 HEIGHT=79 BORDER=0></SUB>&nbsp;<FONT FACE="Arial">;
-</FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>y
-la fase ser&aacute; <SUB>
-<IMG SRC="Clases1_archivos/image021.gif" NAME="Imagen19" ALIGN=BOTTOM WIDTH=95 HEIGHT=45 BORDER=0></SUB></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Cuando
-la frecuencia en estudio es igual a la Frecuencia Superior de Corte
-obtenemos que el m&oacute;dulo de la funci&oacute;n de ganancia es
-igual a <SUB>
-<IMG SRC="Clases1_archivos/image011.gif" NAME="Imagen20" ALIGN=BOTTOM WIDTH=28 HEIGHT=44 BORDER=0></SUB>&nbsp;y
-si </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image022.gif" NAME="Imagen21" ALIGN=BOTTOM WIDTH=145 HEIGHT=29 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Observemos
-que a la Frecuencia Superior de Corte la impedancia capacitiva es
-igual a la Resistencia equivalente: </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image023.gif" NAME="Imagen22" ALIGN=BOTTOM WIDTH=77 HEIGHT=45 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Hasta
-ahora ya conocemos <FONT COLOR="#0000ff">las frecuencias de corte
-Superior e Inferior</FONT>.&nbsp; Pues bien, ahora representaremos el
-comportamiento de la ganacia de tensi&oacute;n de los circuitos
-anteriores en una gr&aacute;fica, pero el eje de la variable
-independiente (frecuencia), lo mostraremos en escala logar&iacute;tmica:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Alexander
-Graham Bell estableci&oacute; una relaci&oacute;n entre dos niveles
-de Potencia en una misma impedancia, a la que llam&oacute; &ldquo;Bel&rdquo;,
-simbolizada como &ldquo;G&rdquo; y que viene dada por:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image024.gif" NAME="Imagen23" ALIGN=BOTTOM WIDTH=88 HEIGHT=41 BORDER=0></SUB>&nbsp;&nbsp;
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>para
-aplicaciones pr&aacute;cticas se utiliza el t&eacute;rmino
-&ldquo;decibelio&rdquo; (dB) , definido como:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image025.gif" NAME="Imagen24" ALIGN=BOTTOM WIDTH=116 HEIGHT=41 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>si
-a esos valores de Potencia los sustituimos por &nbsp;la potencia
-disipada por una resistencia R:&nbsp;&nbsp; <SUB>
-<IMG SRC="Clases1_archivos/image026.gif" NAME="Imagen25" ALIGN=BOTTOM WIDTH=53 HEIGHT=44 BORDER=0></SUB></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>obtendremos:&nbsp;&nbsp;&nbsp;&nbsp;
-<SUB>
-<IMG SRC="Clases1_archivos/image027.gif" NAME="Imagen26" ALIGN=BOTTOM WIDTH=211 HEIGHT=41 BORDER=0></SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>los
-resultados obtenidos de esta expresi&oacute;n se expresan como
-&ldquo;decibelios&rdquo;.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Si
-sustituimos en la ecuaci&oacute;n anterior los valores que obtiene la
-funci&oacute;n de transferencia de los circuitos en estudio cuando
-<SUB>
-<IMG SRC="Clases1_archivos/image028.gif" NAME="Imagen27" ALIGN=BOTTOM WIDTH=48 HEIGHT=23 BORDER=0></SUB>&nbsp;y
-<SUB>
-<IMG SRC="Clases1_archivos/image029.gif" NAME="Imagen28" ALIGN=BOTTOM WIDTH=51 HEIGHT=23 BORDER=0></SUB>&nbsp;respectivamente
-(<SUB><IMG SRC="Clases1_archivos/image011.gif" NAME="Imagen29" ALIGN=BOTTOM WIDTH=28 HEIGHT=44 BORDER=0></SUB>)
-se tiene que el valor resultante, en decibelios es de -3dB.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT COLOR="#0000ff"><FONT FACE="Arial"><FONT SIZE=3>Ancho
-de Banda</FONT></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Es
-conocido por sus siglas en ingl&eacute;s BW (BandWidth) y no es m&aacute;s
-que la diferencia entre la Frecuencia superior de corte y la
-frecuencia inferior de Corte.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=CENTER STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image030.gif" NAME="Imagen30" ALIGN=BOTTOM WIDTH=97 HEIGHT=25 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>M&aacute;s
-all&aacute; del concepto matem&aacute;tico, podemos decir que el
-ancho de banda es el rango de frecuencia en el cual el comportamiento
-de un amplificador se mantiene en un valor relativamente constante y
-m&aacute;ximo y sus l&iacute;mites est&aacute;n cercados por aquellas
-frecuencias donde ese valor constante de ganancia decae en 3 dB.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT COLOR="#0000ff"><FONT FACE="Arial"><FONT SIZE=3>Velocidad
-de Respuesta</FONT></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Recordemos
-nuevamente nuestro objetivo: Reproducir una se&ntilde;al de entrada
-de un circuito a su salida, lo m&aacute;s fielmente posible (con la
-misma forma) y amplificada.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Hay
-ciertos valores que nos &ldquo;hablan&rdquo; acerca de la &ldquo;fidelidad&rdquo;
-de un circuito a cierta frecuencia.&nbsp; En otras palabras, hay
-valores en un circuito que nos indican cu&aacute;n fiel ser&aacute;
-reproducida la se&ntilde;al de entrada a la salida. </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Hay
-una forma de onda muy usada en forma pr&aacute;ctica que nos permite
-hacer un estudio tanto en alta como en baja frecuencia a un circuito
-amplificador como los mostrados en los circuitos 1 y 2 y es la forma
-de escal&oacute;n.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>De
-manera general, existe una relaci&oacute;n entre la distorsi&oacute;n
-del extremo anterior del escal&oacute;n y la respuesta en alta
-frecuencia, as&iacute; como tambi&eacute;n entre la respuesta en baja
-frecuencia y la distorsi&oacute;n en la parte plana de dicho escal&oacute;n.</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Consideremos
-primeramente el comportamiento del CIRCUITO2 ante cambios bruscos de
-tensi&oacute;n (equivalente a se&ntilde;ales de alta frecuencia)
-ayud&aacute;ndonos de la forma de onda de escal&oacute;n. Tenemos que
-:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image031.gif" NAME="Imagen31" ALIGN=BOTTOM WIDTH=112 HEIGHT=37 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Definiremos
-<FONT COLOR="#0000ff">Tiempo de Subida (<SUB><IMG SRC="Clases1_archivos/image032.gif" NAME="Imagen32" ALIGN=BOTTOM WIDTH=13 HEIGHT=23 BORDER=0></SUB>)
-</FONT>(Raise Time)&nbsp; como el tiempo que transcurre desde que la
-se&ntilde;al alcanza el 10% de su valor final hasta que alcanza el
-90% de su valor final.&nbsp; </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Sustituyendo
-en la ecuaci&oacute;n anterior los valores extremos de tiempo que
-hemos determinado, se obtiene que </FONT></FONT>
-</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image033.gif" NAME="Imagen33" ALIGN=BOTTOM WIDTH=83 HEIGHT=23 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>usando
-la expresi&oacute;n de <SUB>
-<IMG SRC="Clases1_archivos/image018.gif" NAME="Imagen34" ALIGN=BOTTOM WIDTH=93 HEIGHT=47 BORDER=0></SUB>&nbsp;y
-sustituy&eacute;ndola en la expresi&oacute;n de <SUB><FONT COLOR="#0000ff">
-<IMG SRC="Clases1_archivos/image032.gif" NAME="Imagen35" ALIGN=BOTTOM WIDTH=13 HEIGHT=23 BORDER=0></FONT></SUB>obtenemos:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image034.gif" NAME="Imagen36" ALIGN=BOTTOM WIDTH=63 HEIGHT=45 BORDER=0></SUB>&nbsp;<FONT FACE="Arial">lo
-que nos dice que estos valores (tiempo de subida y frecuencia
-superior de corte) son inversamente proporcionales.</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><IMG SRC="Clases1_archivos/image014.gif" NAME="Imagen37" ALIGN=BOTTOM WIDTH=600 HEIGHT=10 BORDER=0></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Ahora
-estudiaremos el comportamiento del CIRCUITO1 ante una se&ntilde;al
-&ldquo;continua&rdquo; durante un intervalo de tiempo t<SUB>1</SUB>(que
-estimaremos muy peque&ntilde;o).&nbsp; Para ello nos remitiremos a la
-parta plana de la se&ntilde;al escal&oacute;n.&nbsp; La ecuaci&oacute;n
-que describe este comportamiento es:</FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image035.gif" NAME="Imagen38" ALIGN=BOTTOM WIDTH=88 HEIGHT=37 BORDER=0></SUB>&nbsp;<FONT FACE="Arial">para
-valores de t mucho menores que R1C1, podemos decir que:</FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><SUB><IMG SRC="Clases1_archivos/image036.gif" NAME="Imagen39" ALIGN=BOTTOM WIDTH=112 HEIGHT=51 BORDER=0></SUB></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Ahora
-definiremos <FONT COLOR="#0000ff">Pendiente (P)</FONT> como el valor
-porcentual de variaci&oacute;n de la se&ntilde;al de salida en un
-tiempo t<SUB>1</SUB></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm">&nbsp;</P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>P<SUB><IMG SRC="Clases1_archivos/image037.gif" NAME="Imagen40" ALIGN=BOTTOM WIDTH=235 HEIGHT=56 BORDER=0></SUB></FONT></FONT></P>
-<P CLASS="msonormal" ALIGN=JUSTIFY STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial"><FONT SIZE=3>Nos
-interesa que tanto el valor de tiempo de subida como el valor de
-Pendiente, sean lo suficientemente peque&ntilde;os como para poder
-darnos a la salida la mejor y m&aacute;s fiel reproducci&oacute;n de
-la se&ntilde;al de entrada (se&ntilde;al escal&oacute;n).</FONT></FONT></P>
-</BODY>
-</HTML>
+<body>
+<div class="content-block">
+    <p>Núcleo Maracay</p>
+    <p>Dpto. de Ingeniería Electrónica</p>
+    <p>&nbsp;</p>
+    <p>IX Término, 03-2004</p>
+    <p>&nbsp;</p>
+    <p><i>Prof. Isabel Vera</i></p>
+    <p>&nbsp;</p>
+    <p>Secciones A y B Comunicaciones</p>
+    <p>&nbsp;</p>
+    <p><strong>Semana 1: Respuesta frecuencial de amplificadores electrónicos:</strong></p>
+    <ul>
+        <li>Frecuencias de Corte.</li>
+        <li>Ancho de Banda.</li>
+        <li>Velocidad de Respuesta.</li>
+    </ul>
+</div>
+
+<p class="content-block">Vivimos rodeados de señales electromagnéticas que transmiten información de interés para unos u otros. Esas señales deben ser amplificadas previamente para poder ser interpretadas. Tal es el caso de las señales de audio y video (radio, televisión). Es por ello que se presenta la necesidad de contar con <strong>amplificadores</strong> para tales señales.</p>
+
+<p class="content-block">Pero, una vez conocidos los amplificadores, debemos tomar en cuenta que la respuesta de estos elementos ante la presencia de señales de diferentes formas (senoidales y no senoidales) no es la misma y que su comportamiento varía en función de la frecuencia de tal señal de entrada. Por lo tanto nuestra primera conclusión es:</p>
+
+<p class="content-block">La ganancia “A” de un amplificador es un número complejo cuya magnitud y fase dependen de la frecuencia de la señal de entrada.</p>
+
+<p class="content-block">Hasta ahora hemos considerado a los amplificadores en su región de “frecuencias medias” en donde la amplificación es casi constante “A<sub>0</sub>”. A partir de ahora asumiremos que dicha ganancia (en esa región) es igual a la unidad: A<sub>0</sub>= 1.</p>
+
+<p class="content-block">Consideremos ahora el siguiente circuito:</p>
+
+<p class="content-block"><img src="Clases1_archivos/image003.gif" alt="Circuito 1: Amplificador Pasa-Alto"> CIRCUITO1= AMPLIFICADOR PASA-ALTO</p>
+
+<p class="content-block">Haciendo un pequeño análisis gráfico nos damos cuenta que se trata de un circuito pasa-alto: A bajas frecuencias no obtenemos señal de salida (Vo); a altas frecuencias la salida es equivalente a la entrada (Vo=Vi)</p>
+
+<p class="content-block">Al despejar su función de transferencia encontramos:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image004.gif" alt="Ecuación de función de transferencia"></p>
+
+<p class="content-block">sabiendo que:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image005.gif" alt="Ecuación de impedancia capacitiva"> <img src="Clases1_archivos/image006.gif" alt="Ecuación de frecuencia angular"></p>
+
+<p class="content-block">entonces podemos decir:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image007.gif" alt="Ecuación de ganancia de voltaje"> donde <img src="Clases1_archivos/image008.gif" alt="Ecuación de frecuencia inferior de corte"> FRECUENCIA INFERIOR DE CORTE</p>
+
+<p class="content-block">el módulo de <img src="Clases1_archivos/image009.gif" alt="Módulo de la ganancia">;</p>
+
+<p class="content-block">y la fase será <img src="Clases1_archivos/image010.gif" alt="Ecuación de fase"></p>
+
+<p class="content-block">Cuando la frecuencia en estudio es igual a la Frecuencia Inferior de Corte obtenemos que el módulo de la función de ganancia es igual a <img src="Clases1_archivos/image011.gif" alt="Valor de ganancia en frecuencia de corte"> y si</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image012.gif" alt="Ecuación de ganancia en dB"></p>
+
+<p class="content-block">Observemos que a la Frecuencia Inferior de Corte la impedancia capacitiva es igual a la Resistencia equivalente:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image013.gif" alt="Ecuación de impedancia capacitiva igual a resistencia"></p>
+
+<p class="center content-block"><img src="Clases1_archivos/image014.gif" alt="Línea divisoria"></p>
+
+<p class="content-block">De manera equivalente al estudio hecho hasta ahora, veremos el comportamiento del siguiente circuito:</p>
+
+<p class="content-block"><img src="Clases1_archivos/image015.gif" alt="Circuito 2: Amplificador Pasa-Bajo"> CIRCUITO2= AMPLIFICADOR PASA-BAJO</p>
+
+<p class="content-block">Comprobamos facilmente que se trata de un circuito pasa-bajo.</p>
+
+<p class="content-block">Su función de transferencia es:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image016.gif" alt="Ecuación de función de transferencia pasa-bajo"></p>
+
+<p class="content-block">es decir, que:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image017.gif" alt="Ecuación de ganancia pasa-bajo"> ; si decimos que <img src="Clases1_archivos/image018.gif" alt="Ecuación de frecuencia superior de corte"> FRECUENCIA SUPERIOR DE CORTE</p>
+
+<p class="content-block">entonces:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image019.gif" alt="Ecuación de ganancia pasa-bajo simplificada"> y el módulo de <img src="Clases1_archivos/image020.gif" alt="Módulo de la ganancia pasa-bajo">;</p>
+
+<p class="content-block">y la fase será <img src="Clases1_archivos/image021.gif" alt="Ecuación de fase pasa-bajo"></p>
+
+<p class="content-block">Cuando la frecuencia en estudio es igual a la Frecuencia Superior de Corte obtenemos que el módulo de la función de ganancia es igual a <img src="Clases1_archivos/image011.gif" alt="Valor de ganancia en frecuencia de corte"> y si</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image022.gif" alt="Ecuación de ganancia en dB"></p>
+
+<p class="content-block">Observemos que a la Frecuencia Superior de Corte la impedancia capacitiva es igual a la Resistencia equivalente:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image023.gif" alt="Ecuación de impedancia capacitiva igual a resistencia"></p>
+
+<p class="content-block">Hasta ahora ya conocemos las frecuencias de corte Superior e Inferior. Pues bien, ahora representaremos el comportamiento de la ganacia de tensión de los circuitos anteriores en una gráfica, pero el eje de la variable independiente (frecuencia), lo mostraremos en escala logarítmica:</p>
+
+<p class="content-block">Alexander Graham Bell estableció una relación entre dos niveles de Potencia en una misma impedancia, a la que llamó “Bel”, simbolizada como “G” y que viene dada por:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image024.gif" alt="Ecuación de Bel"></p>
+
+<p class="content-block">para aplicaciones prácticas se utiliza el término “decibelio” (dB), definido como:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image025.gif" alt="Ecuación de Decibelio"></p>
+
+<p class="content-block">si a esos valores de Potencia los sustituimos por la potencia disipada por una resistencia R: <img src="Clases1_archivos/image026.gif" alt="Ecuación de potencia"></p>
+
+<p class="content-block">obtendremos: <img src="Clases1_archivos/image027.gif" alt="Ecuación de ganancia de voltaje en dB"></p>
+
+<p class="content-block">los resultados obtenidos de esta expresión se expresan como “decibelios”.</p>
+
+<p class="content-block">Si sustituimos en la ecuación anterior los valores que obtiene la función de transferencia de los circuitos en estudio cuando <img src="Clases1_archivos/image028.gif" alt="Ganancia de voltaje" > y <img src="Clases1_archivos/image029.gif" alt="Ganancia de voltaje" > respectivamente (<img src="Clases1_archivos/image011.gif" alt="Valor de ganancia en frecuencia de corte">) se tiene que el valor resultante, en decibelios es de -3dB.</p>
+
+<h3 class="content-block" style="color: #0000ff;">Ancho de Banda</h3>
+<p class="content-block">Es conocido por sus siglas en inglés BW (BandWidth) y no es más que la diferencia entre la Frecuencia superior de corte y la frecuencia inferior de Corte.</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image030.gif" alt="Ecuación de Ancho de Banda"></p>
+
+<p class="content-block">Más allá del concepto matemático, podemos decir que el ancho de banda es el rango de frecuencia en el cual el comportamiento de un amplificador se mantiene en un valor relativamente constante y máximo y sus límites están cercados por aquellas frecuencias donde ese valor constante de ganancia decae en 3 dB.</p>
+
+<h3 class="content-block" style="color: #0000ff;">Velocidad de Respuesta</h3>
+
+<p class="content-block">Recordemos nuevamente nuestro objetivo: Reproducir una señal de entrada de un circuito a su salida, lo más fielmente posible (con la misma forma) y amplificada.</p>
+
+<p class="content-block">Hay ciertos valores que nos “hablan” acerca de la “fidelidad” de un circuito a cierta frecuencia. En otras palabras, hay valores en un circuito que nos indican cuán fiel será reproducida la señal de entrada a la salida.</p>
+
+<p class="content-block">Hay una forma de onda muy usada en forma práctica que nos permite hacer un estudio tanto en alta como en baja frecuencia a un circuito amplificador como los mostrados en los circuitos 1 y 2 y es la forma de escalón.</p>
+
+<p class="content-block">De manera general, existe una relación entre la distorsión del extremo anterior del escalón y la respuesta en alta frecuencia, así como también entre la respuesta en baja frecuencia y la distorsión en la parte plana de dicho escalón.</p>
+
+<p class="content-block">Consideremos primeramente el comportamiento del CIRCUITO2 ante cambios bruscos de tensión (equivalente a señales de alta frecuencia) ayudándonos de la forma de onda de escalón. Tenemos que:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image031.gif" alt="Ecuación de respuesta a escalón"></p>
+
+<p class="content-block">Definiremos <span style="color: #0000ff;">Tiempo de Subida (T<sub>R</sub>)</span> (Raise Time) como el tiempo que transcurre desde que la señal alcanza el 10% de su valor final hasta que alcanza el 90% de su valor final.</p>
+
+<p class="content-block">Sustituyendo en la ecuación anterior los valores extremos de tiempo que hemos determinado, se obtiene que</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image033.gif" alt="Ecuación de tiempo de subida"></p>
+
+<p class="content-block">usando la expresión de <img src="Clases1_archivos/image018.gif" alt="Ecuación de frecuencia superior de corte"> y sustituyéndola en la expresión de <span style="color: #0000ff;">T<sub>R</sub></span> obtenemos:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image034.gif" alt="Relación entre tiempo de subida y frecuencia de corte"> lo que nos dice que estos valores (tiempo de subida y frecuencia superior de corte) son inversamente proporcionales.</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image014.gif" alt="Línea divisoria"></p>
+
+<p class="content-block">Ahora estudiaremos el comportamiento del CIRCUITO1 ante una señal “continua” durante un intervalo de tiempo t<sub>1</sub> (que estimaremos muy pequeño). Para ello nos remitiremos a la parta plana de la señal escalón. La ecuación que describe este comportamiento es:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image035.gif" alt="Ecuación de respuesta a escalón en baja frecuencia"> para valores de t mucho menores que R1C1, podemos decir que:</p>
+
+<p class="center content-block"><img src="Clases1_archivos/image036.gif" alt="Ecuación de respuesta a escalón en baja frecuencia simplificada"></p>
+
+<p class="content-block">Ahora definiremos <span style="color: #0000ff;">Pendiente (P)</span> como el valor porcentual de variación de la señal de salida en un tiempo t<sub>1</sub></p>
+
+<p class="center content-block"><img src="Clases1_archivos/image037.gif" alt="Ecuación de Pendiente"></p>
+
+<p class="content-block">Nos interesa que tanto el valor de tiempo de subida como el valor de Pendiente, sean lo suficientemente pequeños como para poder darnos a la salida la mejor y más fiel reproducción de la señal de entrada (señal escalón).</p>
+
+</body>
+</html>

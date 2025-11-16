@@ -1,671 +1,205 @@
-<html xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:w="urn:schemas-microsoft-com:office:word"
-xmlns="http://www.w3.org/TR/REC-html40">
-
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=ProgId content=Word.Document>
-<meta name=Generator content="Microsoft Word 10">
-<meta name=Originator content="Microsoft Word 10">
-<link rel=File-List href="Clase19_archivos/filelist.xml">
-<title>Los siguientes ejercicios se estudiaron en clases</title>
-<!--[if gte mso 9]><xml>
- <o:DocumentProperties>
-  <o:Author>Javier</o:Author>
-  <o:LastAuthor>Javier</o:LastAuthor>
-  <o:Revision>2</o:Revision>
-  <o:TotalTime>6</o:TotalTime>
-  <o:Created>2003-11-16T15:18:00Z</o:Created>
-  <o:LastSaved>2003-11-16T15:50:00Z</o:LastSaved>
-  <o:Pages>3</o:Pages>
-  <o:Words>683</o:Words>
-  <o:Characters>3758</o:Characters>
-  <o:Lines>31</o:Lines>
-  <o:Paragraphs>8</o:Paragraphs>
-  <o:CharactersWithSpaces>4433</o:CharactersWithSpaces>
-  <o:Version>10.2625</o:Version>
- </o:DocumentProperties>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <w:WordDocument>
-  <w:SpellingState>Clean</w:SpellingState>
-  <w:GrammarState>Clean</w:GrammarState>
-  <w:HyphenationZone>21</w:HyphenationZone>
-  <w:Compatibility>
-   <w:BreakWrappedTables/>
-   <w:SnapToGridInCell/>
-   <w:WrapTextWithPunct/>
-   <w:UseAsianBreakRules/>
-  </w:Compatibility>
-  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
- </w:WordDocument>
-</xml><![endif]-->
-<style>
-<!--
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-parent:"";
-	margin:0cm;
-	margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:"Times New Roman";
-	mso-fareast-font-family:"Times New Roman";}
-p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
-	{margin:0cm;
-	margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	font-size:10.0pt;
-	font-family:"Courier New";
-	mso-fareast-font-family:"Times New Roman";}
-span.SpellE
-	{mso-style-name:"";
-	mso-spl-e:yes;}
-span.GramE
-	{mso-style-name:"";
-	mso-gram-e:yes;}
-@page Section1
-	{size:612.0pt 792.0pt;
-	margin:70.85pt 3.0cm 70.85pt 3.0cm;
-	mso-header-margin:35.4pt;
-	mso-footer-margin:35.4pt;
-	mso-paper-source:0;}
-div.Section1
-	{page:Section1;}
--->
-</style>
-<!--[if gte mso 10]>
-<style>
- /* Style Definitions */
- table.MsoNormalTable
-	{mso-style-name:"Tabla normal";
-	mso-tstyle-rowband-size:0;
-	mso-tstyle-colband-size:0;
-	mso-style-noshow:yes;
-	mso-style-parent:"";
-	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
-	mso-para-margin:0cm;
-	mso-para-margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	font-size:10.0pt;
-	font-family:"Times New Roman";}
-</style>
-<![endif]-->
+	<meta charset="utf-8">
+	<title>Clase 19: Ejercicios de Punteros y Estructuras</title>
+	<meta name="author" content="Javier">
+    <link rel="stylesheet" href="../style.css">
 </head>
-
-<body lang=ES-VE style='tab-interval:35.4pt'>
-
-<div class=Section1>
-
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'>EN CONSTRUCCION<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'>Los siguientes
-ejercicios se estudiaron en clases.<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'>1.- <o:p></o:p></span></p>
-
-<p class=MsoPlainText>/* <span class=SpellE>Disene</span> un programa que:</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span>a.- Pida al
-usuario el numero de datos con lo que se va a trabajar.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span>A partir e este
-valor, reservar espacio <span class=SpellE>dinamicamente</span> para almacenar</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span><span
-class=GramE>esa</span> cantidad de datos. El tipo de dato es entero.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span>Luego de esto,
-debe imprimir un <span class=SpellE>menu</span> que ofrezca:</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span>1.- Ingresar un
-dato. Para esto debe usarse una <span class=SpellE>funcion</span> que reciba la</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span><span
-class=SpellE><span class=GramE>direccion</span></span> de la <span
-class=SpellE>posicion</span> de memoria reservada y</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span><span
-class=GramE>el</span> dato. La <span class=SpellE>funcion</span> retorna cero
-si todo sale bien y 1 en caso</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span><span
-class=GramE>de</span> ocurrir <span class=SpellE>algun</span> error.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span>2.- Guardar los
-datos en un archivo y salir. Guardar los datos debe</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span><span
-class=GramE>realizarse</span> con una <span class=SpellE>funcion</span> que
-reciba la <span class=SpellE>direccion</span> del espacio reservado y</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span><span
-class=GramE>el</span> numero de elementos a guardar. Devuelve cero si todo
-salio bien o</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span><span
-class=GramE>uno</span> en caso de error. Defina una macro para el nombre del
-archivo en el</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span><span
-class=GramE>que</span> se guardaran los datos. Este nombre debe ser: <span
-class=SpellE>entero.dat</span></p>
-
-<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span><span
-class=SpellE>Referencie</span> los datos en forma de punteros y en forma de
-arreglo.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>  </span>Imprima mensajes
-que muestren lo que sucede en ambos casos.</p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>*/<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'>#include&lt;<span class=SpellE>stdio.h</span>&gt;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'>#include&lt;<span class=SpellE>stdlib.h</span>&gt;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'>#include&lt;<span class=SpellE>conio.h</span>&gt;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'>#include&lt;<span class=SpellE>ctype.h</span>&gt;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'>#define NOMB &quot;<span class=SpellE>entero.dat</span>&quot;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span class=SpellE><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>int</span></span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> mete(<span class=SpellE>int</span>
-*,<span class=SpellE>int</span>);<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span class=SpellE><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>int</span></span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> <span class=SpellE>guarda</span>(<span
-class=SpellE>int</span> *,<span class=SpellE>int</span>);<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span class=SpellE><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>int</span></span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> <span class=SpellE>indice</span>;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span class=GramE><span
-lang=EN-US style='mso-ansi-language:EN-US'>unsigned</span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> <span class=SpellE>int</span> <span
-class=SpellE>i</span>;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span class=GramE><span
-lang=EN-US style='mso-ansi-language:EN-US'>void</span></span><span lang=EN-US
-style='mso-ansi-language:EN-US'> main(){<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span><span
-class=SpellE><span class=GramE>int</span></span> <span class=SpellE>dato</span>,
-*pi;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span></span><span
-class=SpellE><span class=GramE>char</span></span> <span class=SpellE>ch</span>;</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-1'>      </span><span class=SpellE><span class=GramE>clrscr</span></span>();</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-1'>      </span><span class=SpellE><span class=GramE>printf</span></span>(&quot;Para
-cuantos datos enteros desea reservar espacio?: &quot;);</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-1'>      </span><span class=SpellE><span class=GramE><span lang=EN-US
-style='mso-ansi-language:EN-US'>scanf</span></span></span><span class=GramE><span
-lang=EN-US style='mso-ansi-language:EN-US'>(</span></span><span lang=EN-US
-style='mso-ansi-language:EN-US'>&quot;%<span class=SpellE>i</span>%*<span
-class=SpellE>c&quot;,&amp;i</span>);<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span><span
-class=GramE>pi</span> = (<span class=SpellE>int</span> *)<span class=SpellE>malloc</span>(<span
-class=SpellE>i</span>*<span class=SpellE>sizeof</span>(<span class=SpellE>int</span>));<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span></span><span
-class=SpellE><span class=GramE>for</span></span>(;;){</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-2'>            </span><span style='mso-spacerun:yes'>  </span><span
-class=SpellE><span class=GramE>printf</span></span>(&quot;Que desea hacer?<span
-class=SpellE>\n</span>(M)<span class=SpellE>eter</span> <span class=SpellE>dato\n</span>(G)<span
-class=SpellE>uardar</span> y <span class=SpellE>Salir\n</span>&quot;);</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-2'>            </span><span style='mso-spacerun:yes'>  </span><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>while</span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> ( (<span class=SpellE>ch</span> = <span
-class=SpellE>tolower</span>(<span class=SpellE>getch</span>()))!='m' &amp;&amp;
-<span class=SpellE>ch</span>!='g');<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:2'>            </span><span
-style='mso-spacerun:yes'>  </span><span class=GramE>switch</span> (<span
-class=SpellE>ch</span>) {<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:2'>            </span><span
-style='mso-spacerun:yes'>    </span><span class=GramE>case</span> 'm': <span
-class=SpellE>printf</span>(&quot;<span class=SpellE>Que</span> <span
-class=SpellE>dato</span> <span class=SpellE>desea</span> <span class=SpellE>agregar</span>?:
-&quot;);<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:3'>                  </span><span
-style='mso-spacerun:yes'>      </span><span class=SpellE><span class=GramE>scanf</span></span><span
-class=GramE>(</span>&quot;%<span class=SpellE>i</span>%*<span class=SpellE>c&quot;,&amp;dato</span>);<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:3'>                  </span><span
-style='mso-spacerun:yes'>      </span><span class=GramE>if</span> (mete(<span
-class=SpellE>pi,dato</span>)) <span class=SpellE>printf</span>(&quot;\n<span
-style='mso-tab-count:1'> </span>No hay <span class=SpellE>espacio</span>!!!\n\n&quot;);<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:3'>                  </span><span
-class=GramE>break</span>;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:2'>            </span><span
-style='mso-spacerun:yes'>    </span><span class=GramE>case</span> 'g': if (<span
-class=SpellE>guarda</span>(<span class=SpellE>pi,indice</span>)) {<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:4'>                        </span></span><span
-class=SpellE><span class=GramE>printf</span></span>(&quot;<span class=SpellE>Algun</span>
-<span class=SpellE>Error\n</span>&quot;);</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-4'>                        </span><span class=SpellE><span class=GramE>exit</span></span><span
-class=GramE>(</span>1);</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-3'>                  </span><span lang=EN-US style='mso-ansi-language:EN-US'>}
-else <span class=GramE>exit(</span>0);<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:2'>            </span><span
-style='mso-spacerun:yes'>  </span>}<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span>}<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span class=SpellE><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>int</span></span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> mete(<span class=SpellE>int</span>
-*<span class=SpellE>p,int</span> a){<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span><span
-class=GramE>if</span> (<span class=SpellE>indice</span>&gt;=<span class=SpellE>i</span>)
-return 1;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span><span
-class=SpellE><span class=GramE>printf</span></span><span class=GramE>(</span>&quot;<span
-class=SpellE>Guardare</span> el <span class=SpellE>dato</span> %<span
-class=SpellE>i</span> en la <span class=SpellE>posicion</span> %<span
-class=SpellE>i\n&quot;,a,indice</span>);<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span><span
-class=GramE>p[</span><span class=SpellE>indice</span>]=a; // *(<span
-class=SpellE>p+indice</span>)=a;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span></span><span
-class=SpellE><span class=GramE>printf</span></span>(&quot;Guarde el dato en
-&amp;p[<span class=SpellE>indice</span>]=0x<span class=SpellE>%X</span> pero observe
-que (<span class=SpellE>p+indice</span>)=0x<span class=SpellE>%X\n</span>&quot;,&amp;p[<span
-class=SpellE>indice</span>],(<span class=SpellE>p+indice</span>));</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-1'>      </span><span class=SpellE><span class=GramE>printf</span></span>(&quot;Por
-lo tanto p[<span class=SpellE>indice</span>]=%i <span class=SpellE>tambien</span>
-puede <span class=SpellE>referenciarse</span> como *(<span class=SpellE>p+indice</span>)=%<span
-class=SpellE>i\n</span>&quot;,p[<span class=SpellE>indice</span>],*(<span
-class=SpellE>p+indice</span>));</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-1'>      </span><span class=SpellE><span class=GramE><span lang=EN-US
-style='mso-ansi-language:EN-US'>indice</span></span></span><span lang=EN-US
-style='mso-ansi-language:EN-US'> ++;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span><span
-class=GramE>return</span> 0;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span class=SpellE><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>int</span></span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> <span class=SpellE>guarda</span>(<span
-class=SpellE>int</span> *<span class=SpellE>p,int</span> a){<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span>FILE
-*pf;<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>      </span><span
-class=GramE>if</span> (pf = <span class=SpellE>fopen</span>(<span class=SpellE>NOMB,&quot;w</span>&quot;))
-{<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:2'>            </span><span
-class=SpellE><span class=GramE>fwrite</span></span><span class=GramE>(</span><span
-class=SpellE>p,sizeof</span>(<span class=SpellE>int</span>),<span class=SpellE>a,pf</span>);<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span lang=EN-US
-style='mso-ansi-language:EN-US'><span style='mso-tab-count:2'>            </span></span><span
-class=SpellE><span class=GramE>return</span></span> 0;</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-1'>      </span>} <span class=SpellE><span class=GramE>else</span></span> {</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-2'>            </span><span class=SpellE><span class=GramE>return</span></span>
-1;</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'><span style='mso-tab-count:
-1'>      </span>}</p>
-
-<p class=MsoPlainText style='margin-left:35.4pt'>}</p>
-
-<p class=MsoNormal style='margin-left:35.4pt'><span lang=ES style='mso-ansi-language:
-ES'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'>2.- <o:p></o:p></span></p>
-
-<p class=MsoPlainText>/* Desarrolle un programa que almacene una lista de
-trabajadores.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>Los datos de
-estos <span class=SpellE>estaran</span> contenidos en una estructura <span
-class=GramE>( solo</span> nombre ).</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>Como la lista es
-<span class=SpellE>dinamica</span> <span class=GramE>( no</span> sabe cuantos
-trabajadores hay ) use un</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
-class=GramE>puntero</span> a una estructura del mismo tipo en la estructura.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>Los datos se
-guardaran en un archivo llamado: <span class=SpellE>Lista_t.dat</span></p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>Este archivo
-debe verificarse al inicio del programa y debe cargarse</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
-class=GramE>sus</span> datos en la lista en caso de que exista.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>El programa debe
-tener un <span class=SpellE>menu</span> para:</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>1.- Agregar un
-nuevo empleado.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>2.- Guardar los
-datos de la lista y salir.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>Ambas cosas
-deben hacerse con funciones. Con condiciones similares</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
-class=GramE>a</span> las de EJE1.c en cuanto a valor retornado. En cuanto a los
-valores</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
-class=GramE>que</span> recibe, 1: Recibe <span class=SpellE>void</span>.
-Procesa fin de la lista.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
-class=SpellE><span class=GramE>pedira</span></span> los datos dentro de la <span
-class=SpellE>funcion</span> mientras que guarda <span class=SpellE>recibira</span></p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
-class=GramE>el</span> inicio de la lista.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>Debe haber un
-puntero al inicio de la lista y otro al final de la misma.</p>
-
-<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>Por
-conveniencia, declaremos estos como globales.</p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>*/<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>#include&lt;stdio.h&gt;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>#include&lt;stdlib.h&gt;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>#include&lt;conio.h&gt;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>#include&lt;ctype.h&gt;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>#include&lt;string.h&gt;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>#define
-NOMB &quot;lista_t.dat&quot;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>typedef
-struct list {<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:1'>      </span></span><span lang=FR style='mso-ansi-language:
-FR'>char nombre[30];<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=FR style='mso-ansi-language:FR'><span
-style='mso-tab-count:1'>      </span>struct list *prox;<o:p></o:p></span></p>
-
-<p class=MsoPlainText>} <span class=GramE>lista</span>;</p>
-
-<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
-
-<p class=MsoPlainText><span class=GramE>lista</span> *fin, <span class=SpellE>inicio=</span>{&quot;&quot;,NULL};</p>
-
-<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
-
-<p class=MsoPlainText><span class=SpellE><span lang=EN-US style='mso-ansi-language:
-EN-US'>int</span></span><span lang=EN-US style='mso-ansi-language:EN-US'>
-mete(void);<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>int
-guarda(void);<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>void
-main(){<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:1'>      </span>char ch;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:1'>      </span>fin=&amp;inicio;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:1'>      </span>clrscr();<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:1'>      </span>for(;;){<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:2'>            </span><span style='mso-spacerun:yes'> 
-</span></span><span class=SpellE><span class=GramE>printf</span></span>(&quot;Que
-desea hacer?<span class=SpellE>\n</span>(M)<span class=SpellE>eter</span> <span
-class=SpellE>dato\n</span>(G)<span class=SpellE>uardar</span> y <span
-class=SpellE>Salir\n</span>&quot;);</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:2'>            </span><span
-style='mso-spacerun:yes'>  </span><span lang=EN-US style='mso-ansi-language:
-EN-US'>while ( (ch = tolower(getch()))!='m' &amp;&amp; ch!='g');<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:2'>            </span><span style='mso-spacerun:yes'> 
-</span><span class=GramE>switch</span> (<span class=SpellE>ch</span>) {<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:2'>            </span><span style='mso-spacerun:yes'>   
-</span><span class=GramE>case</span> 'm': if (mete()) <span class=SpellE>printf</span>(&quot;\n<span
-style='mso-tab-count:1'>     </span>No hay <span class=SpellE>espacio</span>!!!\n\n&quot;);<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:3'>                  </span><span class=GramE>break</span>;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:2'>            </span><span style='mso-spacerun:yes'>   
-</span></span><span class=GramE>case</span> 'g': <span class=SpellE>if</span>
-(guarda()) {<o:p></o:p></p>
-
-<p class=MsoPlainText><span style='mso-tab-count:4'>                        </span><span
-class=SpellE><span class=GramE>printf</span></span>(&quot;<span class=SpellE>Algun</span>
-<span class=SpellE>Error\n</span>&quot;);</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:4'>                        </span><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>exit(</span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'>1);<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:3'>                  </span>} else <span class=GramE>exit(</span>0);<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:2'>            </span><span style='mso-spacerun:yes'> 
-</span>}<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:1'>      </span>}<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>int
-mete(void){<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:1'>      </span></span><span class=GramE>lista</span> *<span
-class=SpellE>pl</span>;</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
-class=SpellE><span class=GramE>if</span></span> (!(<span class=SpellE>pl</span>
-= (lista *)<span class=SpellE>malloc</span>(<span class=SpellE>sizeof</span>(lista))))
-<span class=SpellE>return</span> 1;</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
-class=GramE>fin</span>-&gt;<span class=SpellE>prox=pl</span>;</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
-class=GramE>fin</span> = fin-&gt;<span class=SpellE>prox</span>;</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
-class=SpellE><span class=GramE>printf</span></span>(&quot;Introduzca el nombre:
-&quot;);</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
-class=SpellE><span class=GramE>scanf</span></span>(&quot;%29[^\n]&quot;,fin-&gt;nombre);</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
-lang=EN-US style='mso-ansi-language:EN-US'>fflush(stdin);<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:1'>      </span>fin-&gt;prox=NULL;<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:1'>      </span>return 0;<o:p></o:p></span></p>
-
-<p class=MsoPlainText>}</p>
-
-<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
-
-<p class=MsoPlainText><span class=SpellE><span class=GramE>int</span></span>
-guarda(<span class=SpellE>void</span>){</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>FILE *<span
-class=SpellE>pf</span>;</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
-class=GramE>lista</span> *<span class=SpellE>actual=&amp;inicio</span>;</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
-lang=EN-US style='mso-ansi-language:EN-US'>if (pf = fopen(NOMB,&quot;w&quot;))
-{<o:p></o:p></span></p>
-
-<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-tab-count:2'>            </span></span><span class=SpellE><span
-class=GramE>while</span></span> (actual-&gt;<span class=SpellE>prox</span>){</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:2'>            </span><span
-style='mso-spacerun:yes'>  </span><span class=GramE>actual</span> = actual-&gt;<span
-class=SpellE>prox</span>;</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:2'>            </span><span
-style='mso-spacerun:yes'>  </span><span class=SpellE><span class=GramE>fwrite</span></span><span
-class=GramE>(</span>actual-&gt;<span class=SpellE>nombre,strlen</span>(actual-&gt;nombre)+1,1,<span
-class=SpellE>pf</span>);</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>}</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:2'>            </span><span
-class=SpellE><span class=GramE>return</span></span> 0;</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>} <span
-class=SpellE><span class=GramE>else</span></span> {</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:2'>            </span><span
-class=SpellE><span class=GramE>return</span></span> 1;</p>
-
-<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>}</p>
-
-<p class=MsoPlainText>}</p>
-
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'><o:p>&nbsp;</o:p></span></p>
-
-</div>
+<body>
+<h1 class="content-block">Ejercicios de Punteros y Estructuras</h1>
+
+<p class="content-block">EN CONSTRUCCIÓN.</p>
+
+<p class="content-block">Los siguientes ejercicios se estudiaron en clases.</p>
+
+<h2 class="content-block">1.- Ejercicio de Asignación Dinámica y Archivos</h2>
+
+<pre>
+/* Diseñe un programa que:
+ * a.- Pida al usuario el numero de datos con lo que se va a trabajar.
+ * A partir de este valor, reservar espacio dinamicamente para almacenar
+ * esa cantidad de datos. El tipo de dato es entero.
+ * Luego de esto, debe imprimir un menu que ofrezca:
+ * 1.- Ingresar un dato. Para esto debe usarse una funcion que reciba la
+ * direccion de la posicion de memoria reservada y
+ * el dato. La funcion retorna cero si todo sale bien y 1 en caso
+ * de ocurrir algun error.
+ * 2.- Guardar los datos en un archivo y salir. Guardar los datos debe
+ * realizarse con una funcion que reciba la direccion del espacio reservado y
+ * el numero de elementos a guardar. Devuelve cero si todo salio bien o
+ * uno en caso de error. Defina una macro para el nombre del archivo en el
+ * que se guardaran los datos. Este nombre debe ser: entero.dat
+ *
+ * Referencie los datos en forma de punteros y en forma de arreglo.
+ * Imprima mensajes que muestren lo que sucede en ambos casos.
+ */
+
+#include<stdio.h>
+#include<stdlib.h>
+// #include<conio.h> // No estándar
+#include<ctype.h>
+
+#define NOMB "entero.dat"
+
+int mete(int *,int);
+int guarda(int *,int);
+
+int indice;
+unsigned int i;
+
+int main(){
+    int dato, *pi;
+    char ch;
+    
+    // clrscr(); // No estándar
+    
+    printf("Para cuantos datos enteros desea reservar espacio?: ");
+    // Usamos %*c para limpiar el buffer de entrada después de leer el entero.
+    // Esto es una técnica antigua para evitar fflush(stdin).
+    scanf("%i%*c",&i);
+    
+    pi = (int *)malloc(i*sizeof(int));
+    
+    for(;;){
+        printf("Que desea hacer?\n(M)eter dato\n(G)uardar y Salir\n");
+        // tolower() y getch() son no estándar (conio.h). Se mantienen para el ejemplo, pero se advierte.
+        while ( (ch = tolower(getch()))!='m' && ch!='g');
+        
+        switch (ch) {
+            case 'm': 
+                printf("Que dato desea agregar?: ");
+                scanf("%i%*c",&dato);
+                if (mete(pi,dato)) printf("\n\t No hay espacio!!!\n\n");
+                break;
+            case 'g': 
+                if (guarda(pi,indice)) {
+                    printf("Algun Error\n");
+                    exit(1);
+                } else exit(0);
+        }
+    }
+}
+
+int mete(int *p,int a){
+    if (indice>=i) return 1;
+    printf("Guardare el dato %i en la posicion %i\n",a,indice);
+    p[indice]=a; // *(p+indice)=a;
+    printf("Guarde el dato en &p[indice]=%p pero observe que (p+indice)=%p\n",(void*)&p[indice],(void*)(p+indice));
+    printf("Por lo tanto p[indice]=%i tambien puede referenciarse como *(p+indice)=%i\n",p[indice],*(p+indice));
+    indice ++;
+    return 0;
+}
+
+int guarda(int *p,int a){
+    FILE *pf;
+    if (pf = fopen(NOMB,"w")) {
+        fwrite(p,sizeof(int),a,pf);
+        return 0;
+    } else {
+        return 1;
+    }
+}
+</pre>
+
+<h2 class="content-block">2.- Ejercicio de Lista Enlazada Dinámica</h2>
+
+<pre>
+/* Desarrolle un programa que almacene una lista de trabajadores.
+ * Los datos de estos estaran contenidos en una estructura (solo nombre).
+ * Como la lista es dinamica (no sabe cuantos trabajadores hay) use un
+ * puntero a una estructura del mismo tipo en la estructura.
+ * Los datos se guardaran en un archivo llamado: Lista_t.dat
+ * Este archivo debe verificarse al inicio del programa y debe cargarse
+ * sus datos en la lista en caso de que exista.
+ * El programa debe tener un menu para:
+ * 1.- Agregar un nuevo empleado.
+ * 2.- Guardar los datos de la lista y salir.
+ * Ambas cosas deben hacerse con funciones. Con condiciones similares
+ * a las de EJE1.c en cuanto a valor retornado. En cuanto a los valores
+ * que recibe, 1: Recibe void. Procesa fin de la lista.
+ * pedira los datos dentro de la funcion mientras que guarda recibira
+ * el inicio de la lista.
+ * Debe haber un puntero al inicio de la lista y otro al final de la misma.
+ * Por conveniencia, declaremos estos como globales.
+ */
+
+#include<stdio.h>
+#include<stdlib.h>
+// #include<conio.h> // No estándar
+#include<ctype.h>
+#include<string.h>
+
+#define NOMB "lista_t.dat"
+
+typedef struct list {
+    char nombre[30];
+    struct list *prox;
+} lista;
+
+lista *fin, inicio={"",NULL};
+
+int mete(void);
+int guarda(void);
+
+int main(){
+    char ch;
+    fin=&inicio;
+    
+    // clrscr(); // No estándar
+    
+    for(;;){
+        printf("Que desea hacer?\n(M)eter dato\n(G)uardar y Salir\n");
+        // tolower() y getch() son no estándar (conio.h). Se mantienen para el ejemplo.
+        while ( (ch = tolower(getch()))!='m' && ch!='g');
+        
+        switch (ch) {
+            case 'm': 
+                if (mete()) printf("\n\t No hay espacio!!!\n\n");
+                break;
+            case 'g': 
+                if (guarda()) {
+                    printf("Algun Error\n");
+                    exit(1);
+                } else exit(0);
+        }
+    }
+}
+
+int mete(void){
+    lista *pl;
+    if (!(pl = (lista *)malloc(sizeof(lista)))) return 1;
+    fin->prox=pl;
+    fin = fin->prox;
+    printf("Introduzca el nombre: ");
+    // Usamos %29[^\n] para leer hasta 29 caracteres (dejando espacio para el nulo) o hasta el salto de línea.
+    scanf("%29[^\n]",fin->nombre);
+    // fflush(stdin); // ADVERTENCIA: fflush(stdin) es comportamiento indefinido.
+    // Se asume que el usuario limpiará el buffer o que el compilador lo maneja.
+    
+    // Limpiar el buffer después de scanf para evitar problemas con la próxima lectura
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+    
+    fin->prox=NULL;
+    return 0;
+}
+
+int guarda(void){
+    FILE *pf;
+    lista *actual=&inicio;
+    if (pf = fopen(NOMB,"w")) {
+        while (actual->prox){
+            actual = actual->prox;
+            // Escribimos la cadena incluyendo el terminador nulo (+1)
+            fwrite(actual->nombre,strlen(actual->nombre)+1,1,pf);
+        }
+        return 0;
+    } else {
+        return 1;
+    }
+}
+</pre>
 
 </body>
-
 </html>

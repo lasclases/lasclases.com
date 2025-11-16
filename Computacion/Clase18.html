@@ -1,203 +1,56 @@
-<html xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:w="urn:schemas-microsoft-com:office:word"
-xmlns="http://www.w3.org/TR/REC-html40">
-
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=ProgId content=Word.Document>
-<meta name=Generator content="Microsoft Word 10">
-<meta name=Originator content="Microsoft Word 10">
-<link rel=File-List href="Clase18_archivos/filelist.xml">
-<title>Uno de los puntos más usados en la programación en el área de
-Electrónica es la entrada y salida de datos a través de los puer</title>
-<!--[if gte mso 9]><xml>
- <o:DocumentProperties>
-  <o:Author>Javier</o:Author>
-  <o:LastAuthor>Javier</o:LastAuthor>
-  <o:Revision>4</o:Revision>
-  <o:TotalTime>15</o:TotalTime>
-  <o:Created>2003-11-16T15:34:00Z</o:Created>
-  <o:LastSaved>2003-11-16T15:49:00Z</o:LastSaved>
-  <o:Pages>1</o:Pages>
-  <o:Words>260</o:Words>
-  <o:Characters>1430</o:Characters>
-  <o:Lines>11</o:Lines>
-  <o:Paragraphs>3</o:Paragraphs>
-  <o:CharactersWithSpaces>1687</o:CharactersWithSpaces>
-  <o:Version>10.2625</o:Version>
- </o:DocumentProperties>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <w:WordDocument>
-  <w:SpellingState>Clean</w:SpellingState>
-  <w:GrammarState>Clean</w:GrammarState>
-  <w:HyphenationZone>21</w:HyphenationZone>
-  <w:Compatibility>
-   <w:BreakWrappedTables/>
-   <w:SnapToGridInCell/>
-   <w:WrapTextWithPunct/>
-   <w:UseAsianBreakRules/>
-  </w:Compatibility>
-  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
- </w:WordDocument>
-</xml><![endif]-->
-<style>
-<!--
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-parent:"";
-	margin:0cm;
-	margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:"Times New Roman";
-	mso-fareast-font-family:"Times New Roman";}
-span.SpellE
-	{mso-style-name:"";
-	mso-spl-e:yes;}
-span.GramE
-	{mso-style-name:"";
-	mso-gram-e:yes;}
-@page Section1
-	{size:612.0pt 792.0pt;
-	margin:70.85pt 3.0cm 70.85pt 3.0cm;
-	mso-header-margin:35.4pt;
-	mso-footer-margin:35.4pt;
-	mso-paper-source:0;}
-div.Section1
-	{page:Section1;}
--->
-</style>
-<!--[if gte mso 10]>
-<style>
- /* Style Definitions */
- table.MsoNormalTable
-	{mso-style-name:"Tabla normal";
-	mso-tstyle-rowband-size:0;
-	mso-tstyle-colband-size:0;
-	mso-style-noshow:yes;
-	mso-style-parent:"";
-	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
-	mso-para-margin:0cm;
-	mso-para-margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	font-size:10.0pt;
-	font-family:"Times New Roman";}
-</style>
-<![endif]-->
+	<meta charset="utf-8">
+	<title>Clase 18: Entrada y Salida de Puertos (Histórico)</title>
+	<meta name="author" content="Tony Rodriguez">
+    <link rel="stylesheet" href="../style.css">
 </head>
+<body>
+<h1 class="content-block">Entrada y Salida de Datos a través de Puertos (E/S de Bajo Nivel)</h1>
 
-<body lang=ES-VE style='tab-interval:35.4pt'>
+<p class="content-block"><strong>ADVERTENCIA HISTÓRICA:</strong> El contenido de esta clase describe técnicas de programación de E/S de puertos de hardware (como el puerto paralelo y serial) que eran comunes en sistemas operativos antiguos como MS-DOS y versiones tempranas de Windows. Estas funciones de bajo nivel (<code>outport</code>, <code>inport</code>, etc., a menudo encontradas en librerías como <code>dos.h</code> o <code>conio.h</code>) <strong>no funcionan en sistemas operativos modernos</strong> (Windows, Linux, macOS) debido a la protección de memoria y la arquitectura del sistema operativo. El acceso directo a los puertos requiere privilegios de kernel o el uso de drivers específicos.</p>
 
-<div class=Section1>
+<p class="content-block">Uno de los puntos más usados en la programación en el área de Electrónica era la entrada y salida de datos a través de los puertos de la computadora ya sea para la adquisición de datos desde o enviarle datos hacia un hardware. El manejo de los puertos podía realizarse a través de las funciones en <code>bios.h</code> (<code>biosprint()</code> para el puerto paralelo y <code>bioscom()</code> para el serial) pero era mucho mas poderoso y versátil usar las funciones para manejo de puertos declaradas en <code>dos.h</code>. Estas son:</p>
 
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'>EN CONSTRUCCION.<o:p></o:p></span></p>
+<pre>
+void outport(int Direccion, int dato);
+</pre>
 
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'><o:p>&nbsp;</o:p></span></p>
+<p class="content-block">para sacar un entero (una Palabra ó 2 bytes) “dato” por el puerto que se encuentra en “Direccion”.</p>
 
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'>Uno de los puntos
-más usados en la programación en el área de Electrónica es la entrada y salida
-de datos a través de los puertos de la computadora ya sea para la adquisición
-de datos desde o enviarle datos hacia un hardware. El manejo de los puertos
-puede realizarse a través de las funciones en “<span class=SpellE>bios.h</span>”
-<span class=SpellE><span class=GramE>biosprint</span></span><span class=GramE>(</span>)
-para el puerto paralelo y <span class=SpellE>bioscom</span>() para el serial
-pero es mucho mas poderoso y versátil usar las funciones para manejo de puertos
-declaradas en “<span class=SpellE>dos.h</span>”. Estas son:<o:p></o:p></span></p>
+<pre>
+void outportb(int Direccion, unsigned char dato);
+</pre>
 
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'><o:p>&nbsp;</o:p></span></p>
+<p class="content-block">que es lo mismo que <code>outport()</code> pero sólo para 1 byte.</p>
 
-<p class=MsoNormal style='margin-left:35.4pt'><span class=SpellE><span
-class=GramE><span lang=ES style='mso-ansi-language:ES'>void</span></span></span><span
-lang=ES style='mso-ansi-language:ES'> <span class=SpellE>outport</span>(<span
-class=SpellE>int</span> <span class=SpellE>Direccion</span>, <span
-class=SpellE>int</span> dato);<o:p></o:p></span></p>
+<p class="content-block">Para la entrada tenemos:</p>
 
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'><o:p>&nbsp;</o:p></span></p>
+<pre>
+int inport(int Direccion);
+</pre>
 
-<p class=MsoNormal><span class=GramE><span lang=ES style='mso-ansi-language:
-ES'>para</span></span><span lang=ES style='mso-ansi-language:ES'> sacar un
-entero ( una Palabra – 2 <span class=SpellE>bytes</span> ) “dato” por el puerto
-que se encuentra en “<span class=SpellE>Direccion</span>”.<o:p></o:p></span></p>
+<p class="content-block">La función <code>inport()</code> devuelve una palabra (un entero ó 2 bytes) leídos desde “Direccion”.</p>
 
-<p class=MsoNormal><span lang=ES style='mso-ansi-language:ES'><o:p>&nbsp;</o:p></span></p>
+<pre>
+unsigned char inportb(int Direccion);
+</pre>
 
-<p class=MsoNormal style='margin-left:35.4pt'><span class=GramE><span
-lang=EN-US style='mso-ansi-language:EN-US'>void</span></span><span lang=EN-US
-style='mso-ansi-language:EN-US'> <span class=SpellE>outportb</span>(<span
-class=SpellE>int</span> <span class=SpellE>Direccion</span>, unsigned char <span
-class=SpellE>dato</span>);<o:p></o:p></span></p>
+<p class="content-block">La función <code>inportb()</code> devuelve un byte leído desde “Direccion”.</p>
 
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+<p class="content-block">“Direccion” es el valor de la dirección desde y hacia la cual se leen y escriben datos respectivamente. Los valores tradicionales para los puertos de una computadora son:</p>
 
-<p class=MsoNormal><span class=GramE>que</span> es lo mismo que <span
-class=SpellE>outport</span>() pero sólo para 1 <span class=SpellE>byte</span>.</p>
+<ul>
+    <li>Para el puerto serial 1 (com1) -> <code>0x3F8</code>.</li>
+    <li>Para el puerto serial 2 (com2) -> <code>0x2F8</code>.</li>
+    <li>Para el puerto paralelo 1 (LPT1) -> <code>0x378</code> (o <code>0x3BC</code>)</li>
+    <li>Para el puerto paralelo 2 (LPT2) -> <code>0x278</code></li>
+</ul>
 
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+<p class="content-block">El puerto paralelo contiene tres registros. El DATA Register que se encuentra en la dirección <code>BASE+0</code> y que ofrece 8 bits de salida. El STATUS Register que se encuentra en <code>BASE+1</code> y ofrece 5 bits de entrada y el CONTROL Register que se encuentra en <code>BASE+2</code> y ofrece 4 bits de salida adicionales.</p>
 
-<p class=MsoNormal>Para la entrada tenemos:</p>
-
-<p class=MsoNormal><span style='mso-spacerun:yes'> </span><o:p></o:p></p>
-
-<p class=MsoNormal style='margin-left:35.4pt'><span class=SpellE><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>int</span></span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> <span class=SpellE>inport</span>(<span
-class=SpellE>int</span> <span class=SpellE>Direccion</span>);<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal>La función <span class=SpellE><span class=GramE>import</span></span><span
-class=GramE>(</span>) devuelve una palabra ( un entero – 2 <span class=SpellE>bytes</span>
-) leídos desde “<span class=SpellE>Direccion</span>”.<o:p></o:p></p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<p class=MsoNormal style='margin-left:35.4pt'><span class=SpellE><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>usigned</span></span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> char <span class=SpellE>inport</span>(<span
-class=SpellE>int</span> <span class=SpellE>Direccion</span>);<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal>La función <span class=SpellE><span class=GramE>importb</span></span><span
-class=GramE>(</span>) devuelve un <span class=SpellE>byte</span> leído desde “<span
-class=SpellE>Direccion</span>”.<o:p></o:p></p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<p class=MsoNormal>“<span class=SpellE>Direccion</span>” es el valor de la dirección
-desde y hacia la cual se leen y escriben datos respectivamente. Los valores
-tradicionales para los puertos de una computadora son:</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<p class=MsoNormal>Para el puerto serial 1 (com1) -&gt; 0x3F8.</p>
-
-<p class=MsoNormal>Para el puerto serial 2 (com2) -&gt; 0x2F8.</p>
-
-<p class=MsoNormal>Para el puerto paralelo 1 (LPT1) -&gt; 0x378 <span
-class=GramE>( o</span> 0x3BC)</p>
-
-<p class=MsoNormal>Para el puerto paralelo 2 (LPT2) -&gt; 0x278</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<p class=MsoNormal>El puerto paralelo contiene tres registros. El DATA <span
-class=SpellE>Register</span> que se encuentra en la dirección <span
-class=SpellE>BASE+0</span> y que ofrece 8 bits de salida. El STATUS <span
-class=SpellE>Register</span> que se encuentra en <span class=SpellE>BASE+1</span>
-y ofrece 5 bits de entrada y el CONTROL <span class=SpellE>Register</span> que
-se encuentra en <span class=SpellE>BASE+2</span> y ofrece 4 bits de salida
-adicionales.</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<p class=MsoNormal>Aquí se agregara el <span class=SpellE>pinout</span> del
-puerto paralelo.<o:p></o:p></p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-</div>
+<p class="content-block">Aquí se agregará el pinout del puerto paralelo.</p>
 
 </body>
-
 </html>

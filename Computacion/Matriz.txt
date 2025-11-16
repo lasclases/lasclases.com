@@ -18,7 +18,7 @@ void llenaMat(int m[3][3]);
 void muestra(int m[3][3]);
 void suma(int a[3][3], int b[3][3], int c[3][3]);
 
-main() {
+int main(void) {
     int a[3][3]={0}, b[3][3]={0}, c[3][3]={0};
     printf("Primero llenemos las matrices\n");
     printf("\nPrimero la Matriz a\n");

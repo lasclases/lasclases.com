@@ -24,21 +24,24 @@ void cambia(char a[]);
 main(){
     char cad[20]={0};
     printf("Introduzca una cadena: ");
-    gets(cad);
-    /* OJO: La funcion anterior espera una cadena por teclado y la asigna
-     a "cad". El problema de esta funcion es que ella no verifica los limites
-     de la cadena. Esto quiere decir, que si se introduce una cadena de mas de
-     19 caracteres ( saben porque... no ? ), el sobrante escribira en posicio-
-     nes de memoria que pueden conterner informacion importante. Esta funcion
-     esta bien para este programa ya que no nos interesa verificar limites
-     y asumimos que el usuario introducira una cadena de maximo 19 caracteres.
-     Pero cuando desarrollen programas importantes, deben verificar estos limi-
-     tes. Una forma muy comun de hacer esto es:
-         scanf("%19s",cad); // Pide una cadena de 19 caracteres y la almacena
-	                    // en cad (Deben dejar espacio para el NULO).
-         scanf("%*[^\n]");  // Para que recoja todo lo que sobre hasta que
-                            // se presione ENTER y lo deseche.
-			    // Esta funciona como:  fflush(stdin);
+    // gets(cad); // ADVERTENCIA: gets() es insegura y obsoleta. Se recomienda usar fgets().
+    // Usamos fgets para leer de forma segura, limitando la entrada a 19 caracteres (20 - 1 para el nulo).
+    fgets(cad, 20, stdin);
+    
+    /* OJO: La función gets() es extremadamente insegura ya que no verifica los límites
+     de la cadena, lo que puede llevar a desbordamientos de búfer.
+     La alternativa moderna y segura es fgets(cadena, tamaño, stdin).
+     
+     Si se usa fgets(), es posible que se capture el carácter de nueva línea ('\n').
+     Si se desea eliminarlo, se puede hacer:
+     size_t len = strlen(cad);
+     if (len > 0 && cad[len-1] == '\n') {
+         cad[len-1] = '\0';
+     }
+     
+     La técnica de scanf("%*[^\n]") para limpiar el buffer es una solución común
+     para evitar el comportamiento indefinido de fflush(stdin), pero es compleja.
+     Para este ejemplo, asumiremos que fgets() es suficiente para la entrada.
     */
     printf("Inprimire la cadena con mi funcion: ");
     if (muestra(cad)) printf("NADA!!!. Esta vacia\n");

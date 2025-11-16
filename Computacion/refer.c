@@ -22,7 +22,7 @@
 void interVal(int x, int y);
 void interRef(int *x, int *y);
 
-main(){
+int main(void){
   int x=100, y=200;
   printf("\nOriginalmente, X y Y contienen: %i y % i\n", x, y);
   printf("Ejecuto la funcion con \"Llamada por Valor\"\n");
@@ -47,7 +47,7 @@ void interRef(int *x, int *y) {
   z = *x;      	// Respaldo el contenido de x
   *x = *y;     	// Asigno el contenido de y al de x
   *y = z;       // Asigno el contenido inicial de x al de y
-  printf("Dentro de interRef, X y Y son: %x y %x pero sus contenidos son: %hi y %hi\n", x, y, *x, *y);
+  printf("Dentro de interRef, X y Y son: %p y %p pero sus contenidos son: %i y %i\n", (void*)x, (void*)y, *x, *y);
 }
 
 /* A continuacion les agrego la salida de este programa:
