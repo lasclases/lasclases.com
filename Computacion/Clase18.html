@@ -1,9 +1,9 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Clase 18: Entrada y Salida de Puertos (HistÃ³rico)</title>
+	<title>Clase 18: Entrada y Salida de Puertos (Histórico)</title>
 	<meta name="author" content="Tony Rodriguez">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -14,23 +14,23 @@
     </nav>
 
     <main id="content">
-<h1 class="content-block">Entrada y Salida de Datos a travÃ©s de Puertos (E/S de Bajo Nivel)</h1>
+<h1 class="content-block">Entrada y Salida de Datos a través de Puertos (E/S de Bajo Nivel)</h1>
 
-<p class="content-block"><strong>ADVERTENCIA HISTÃ“RICA:</strong> El contenido de esta clase describe tÃ©cnicas de programaciÃ³n de E/S de puertos de hardware (como el puerto paralelo y serial) que eran comunes en sistemas operativos antiguos como MS-DOS y versiones tempranas de Windows. Estas funciones de bajo nivel (<code>outport</code>, <code>inport</code>, etc., a menudo encontradas en librerÃ­as como <code>dos.h</code> o <code>conio.h</code>) <strong>no funcionan en sistemas operativos modernos</strong> (Windows, Linux, macOS) debido a la protecciÃ³n de memoria y la arquitectura del sistema operativo. El acceso directo a los puertos requiere privilegios de kernel o el uso de drivers especÃ­ficos.</p>
+<p class="content-block"><strong>ADVERTENCIA HISTÓRICA:</strong> El contenido de esta clase describe técnicas de programación de E/S de puertos de hardware (como el puerto paralelo y serial) que eran comunes en sistemas operativos antiguos como MS-DOS y versiones tempranas de Windows. Estas funciones de bajo nivel (<code>outport</code>, <code>inport</code>, etc., a menudo encontradas en librerías como <code>dos.h</code> o <code>conio.h</code>) <strong>no funcionan en sistemas operativos modernos</strong> (Windows, Linux, macOS) debido a la protección de memoria y la arquitectura del sistema operativo. El acceso directo a los puertos requiere privilegios de kernel o el uso de drivers específicos.</p>
 
-<p class="content-block">Uno de los puntos mÃ¡s usados en la programaciÃ³n en el Ã¡rea de ElectrÃ³nica era la entrada y salida de datos a travÃ©s de los puertos de la computadora ya sea para la adquisiciÃ³n de datos desde o enviarle datos hacia un hardware. El manejo de los puertos podÃ­a realizarse a travÃ©s de las funciones en <code>bios.h</code> (<code>biosprint()</code> para el puerto paralelo y <code>bioscom()</code> para el serial) pero era mucho mas poderoso y versÃ¡til usar las funciones para manejo de puertos declaradas en <code>dos.h</code>. Estas son:</p>
+<p class="content-block">Uno de los puntos más usados en la programación en el área de Electrónica era la entrada y salida de datos a través de los puertos de la computadora ya sea para la adquisición de datos desde o enviarle datos hacia un hardware. El manejo de los puertos podía realizarse a través de las funciones en <code>bios.h</code> (<code>biosprint()</code> para el puerto paralelo y <code>bioscom()</code> para el serial) pero era mucho mas poderoso y versátil usar las funciones para manejo de puertos declaradas en <code>dos.h</code>. Estas son:</p>
 
 <pre>
 void outport(int Direccion, int dato);
 </pre>
 
-<p class="content-block">para sacar un entero (una Palabra Ã³ 2 bytes) â€œdatoâ€ por el puerto que se encuentra en â€œDireccionâ€.</p>
+<p class="content-block">para sacar un entero (una Palabra ó 2 bytes) "dato" por el puerto que se encuentra en "Direccion".</p>
 
 <pre>
 void outportb(int Direccion, unsigned char dato);
 </pre>
 
-<p class="content-block">que es lo mismo que <code>outport()</code> pero sÃ³lo para 1 byte.</p>
+<p class="content-block">que es lo mismo que <code>outport()</code> pero sólo para 1 byte.</p>
 
 <p class="content-block">Para la entrada tenemos:</p>
 
@@ -38,15 +38,15 @@ void outportb(int Direccion, unsigned char dato);
 int inport(int Direccion);
 </pre>
 
-<p class="content-block">La funciÃ³n <code>inport()</code> devuelve una palabra (un entero Ã³ 2 bytes) leÃ­dos desde â€œDireccionâ€.</p>
+<p class="content-block">La función <code>inport()</code> devuelve una palabra (un entero ó 2 bytes) leídos desde "Direccion".</p>
 
 <pre>
 unsigned char inportb(int Direccion);
 </pre>
 
-<p class="content-block">La funciÃ³n <code>inportb()</code> devuelve un byte leÃ­do desde â€œDireccionâ€.</p>
+<p class="content-block">La función <code>inportb()</code> devuelve un byte leído desde "Direccion".</p>
 
-<p class="content-block">â€œDireccionâ€ es el valor de la direcciÃ³n desde y hacia la cual se leen y escriben datos respectivamente. Los valores tradicionales para los puertos de una computadora son:</p>
+<p class="content-block">"Direccion" es el valor de la dirección desde y hacia la cual se leen y escriben datos respectivamente. Los valores tradicionales para los puertos de una computadora son:</p>
 
 <ul>
     <li>Para el puerto serial 1 (com1) -> <code>0x3F8</code>.</li>
@@ -55,9 +55,9 @@ unsigned char inportb(int Direccion);
     <li>Para el puerto paralelo 2 (LPT2) -> <code>0x278</code></li>
 </ul>
 
-<p class="content-block">El puerto paralelo contiene tres registros. El DATA Register que se encuentra en la direcciÃ³n <code>BASE+0</code> y que ofrece 8 bits de salida. El STATUS Register que se encuentra en <code>BASE+1</code> y ofrece 5 bits de entrada y el CONTROL Register que se encuentra en <code>BASE+2</code> y ofrece 4 bits de salida adicionales.</p>
+<p class="content-block">El puerto paralelo contiene tres registros. El DATA Register que se encuentra en la dirección <code>BASE+0</code> y que ofrece 8 bits de salida. El STATUS Register que se encuentra en <code>BASE+1</code> y ofrece 5 bits de entrada y el CONTROL Register que se encuentra en <code>BASE+2</code> y ofrece 4 bits de salida adicionales.</p>
 
-<p class="content-block">AquÃ­ se agregarÃ¡ el pinout del puerto paralelo.</p>
+<p class="content-block">Aquí se agregará el pinout del puerto paralelo.</p>
 
     </main>
 

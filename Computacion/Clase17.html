@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
@@ -16,38 +16,38 @@
     <main id="content">
 <h1 class="content-block">Entrada y Salida de Datos. Lectura de archivos.</h1>
 
-<p class="content-block">Son innumerables los casos en los que son necesarios guardar datos entre ejecuciones de un programa para poder ser recuperados en futuras sesiones. Los archivos de datos permiten almacenar informaciÃ³n de cualquier tipo de modo permanente para ser accedida o alterada cuando sea necesario.</p>
+<p class="content-block">Son innumerables los casos en los que son necesarios guardar datos entre ejecuciones de un programa para poder ser recuperados en futuras sesiones. Los archivos de datos permiten almacenar información de cualquier tipo de modo permanente para ser accedida o alterada cuando sea necesario.</p>
 
-<p class="content-block">En C existe un conjunto extenso de funciones de biblioteca para crear y procesar archivos de datos. Los archivos secuenciales de datos se pueden dividir en dos categorÃ­as. En la primera categorÃ­a estÃ¡n los archivos que contienen caracteres consecutivos. Estos caracteres se pueden interpretar como datos individuales, como componentes de una cadena o como nÃºmeros. La segunda categorÃ­a es a menudo denominada archivos sin formato y organiza los datos en bloques contiguos de informaciÃ³n. Estos bloques representan estructuras de datos mÃ¡s complejas como arrays y estructuras (<code>struct</code>).</p>
+<p class="content-block">En C existe un conjunto extenso de funciones de biblioteca para crear y procesar archivos de datos. Los archivos secuenciales de datos se pueden dividir en dos categorías. En la primera categoría están los archivos que contienen caracteres consecutivos. Estos caracteres se pueden interpretar como datos individuales, como componentes de una cadena o como números. La segunda categoría es a menudo denominada archivos sin formato y organiza los datos en bloques contiguos de información. Estos bloques representan estructuras de datos más complejas como arrays y estructuras (<code>struct</code>).</p>
 
-<p class="content-block">Cuando se trabaja con archivos secuenciales de datos, el primer paso es establecer un Ã¡rea de buffer, donde la informaciÃ³n se almacena temporalmente mientras se estÃ¡ transfiriendo entre la memoria y el archivo de datos. Este Ã¡rea de buffer permite leer y escribir informaciÃ³n del archivo mÃ¡s rÃ¡pidamente de lo que serÃ­a posible de otra manera. El Ã¡rea de buffer se establece escribiendo:</p>
+<p class="content-block">Cuando se trabaja con archivos secuenciales de datos, el primer paso es establecer un área de buffer, donde la información se almacena temporalmente mientras se está transfiriendo entre la memoria y el archivo de datos. Este área de buffer permite leer y escribir información del archivo más rápidamente de lo que sería posible de otra manera. El área de buffer se establece escribiendo:</p>
 
 <pre>
 FILE *ptvar;
 </pre>
 
-<p class="content-block">donde <code>FILE</code> es un tipo de estructura que establece el Ã¡rea de buffer y <code>ptvar</code> la variable puntero (puntero a archivo) que indica el comienzo de este Ã¡rea. El tipo de estructura <code>FILE</code> estÃ¡ definido en <code>stdio.h</code>. AquÃ­, a <code>ptvar</code> se le conoce como un flujo lo cual es un dispositivo lÃ³gico resultado de la transformaciÃ³n de un archivo con buffer. Esto crea un nivel abstracciÃ³n que nos permite trabajar de igual forma con cualquier dispositivos aunque Ã©stos sean diferentes.</p>
+<p class="content-block">donde <code>FILE</code> es un tipo de estructura que establece el área de buffer y <code>ptvar</code> la variable puntero (puntero a archivo) que indica el comienzo de este área. El tipo de estructura <code>FILE</code> está definido en <code>stdio.h</code>. Aquí, a <code>ptvar</code> se le conoce como un flujo lo cual es un dispositivo lógico resultado de la transformación de un archivo con buffer. Esto crea un nivel abstracción que nos permite trabajar de igual forma con cualquier dispositivos aunque éstos sean diferentes.</p>
 
-<p class="content-block">Al principio de la ejecuciÃ³n de una programa se abren flujos de texto predefinidos. Se trata de <strong><code>stdin</code>, <code>stdout</code>, <code>stderr</code></strong>, y en algunos compiladores antiguos <code>stdaux</code> y <code>stdprn</code>. Estos flujos se refieren a los dispositivos de E/S estÃ¡ndar conectados al sistema para teclado, pantalla, y errores por pantalla, respectivamente. Los flujos <code>stdaux</code> (primer puerto serie) y <code>stdprn</code> (Impresora) son especÃ­ficos de compiladores antiguos (como Turbo C) por lo que pueden no ser transportables a otros compiladores.</p>
+<p class="content-block">Al principio de la ejecución de una programa se abren flujos de texto predefinidos. Se trata de <strong><code>stdin</code>, <code>stdout</code>, <code>stderr</code></strong>, y en algunos compiladores antiguos <code>stdaux</code> y <code>stdprn</code>. Estos flujos se refieren a los dispositivos de E/S estándar conectados al sistema para teclado, pantalla, y errores por pantalla, respectivamente. Los flujos <code>stdaux</code> (primer puerto serie) y <code>stdprn</code> (Impresora) son específicos de compiladores antiguos (como Turbo C) por lo que pueden no ser transportables a otros compiladores.</p>
 
-<p class="content-block">El sistema de archivos ANSI C se compone de varias funciones interrelacionadas. Las mÃ¡s comunes son:</p>
+<p class="content-block">El sistema de archivos ANSI C se compone de varias funciones interrelacionadas. Las más comunes son:</p>
 
 <ul>
     <li><code>fopen()</code>: Abre un flujo.</li>
     <li><code>fclose()</code>: Cierra un flujo.</li>
-    <li><code>putc()</code>: Escribe una carÃ¡cter en un flujo.</li>
-    <li><code>getc()</code>: Lee un carÃ¡cter de un flujo.</li>
-    <li><code>fseek()</code>: Busca un byte especÃ­fico en un flujo.</li>
+    <li><code>putc()</code>: Escribe una carácter en un flujo.</li>
+    <li><code>getc()</code>: Lee un carácter de un flujo.</li>
+    <li><code>fseek()</code>: Busca un byte específico en un flujo.</li>
     <li><code>fprintf()</code>: Hace lo mismo en flujos que <code>printf()</code> en consola.</li>
     <li><code>fscanf()</code>: Hace lo mismo en flujos que <code>scanf()</code> en consola.</li>
     <li><code>feof()</code>: Devuelve cierto si ha llegado al final del archivo.</li>
-    <li><code>rewind()</code>: Coloca el localizador de posiciÃ³n del archivo al principio del mismo.</li>
+    <li><code>rewind()</code>: Coloca el localizador de posición del archivo al principio del mismo.</li>
     <li><code>remove()</code>: Elimina un archivo.</li>
 </ul>
 
-<p class="content-block">Un archivo de datos debe ser abierto antes de ser creado o procesado. Esto asocia el nombre del archivo con el Ã¡rea de buffer. TambiÃ©n se especifica cÃ³mo se va a usar el archivo.</p>
+<p class="content-block">Un archivo de datos debe ser abierto antes de ser creado o procesado. Esto asocia el nombre del archivo con el área de buffer. También se especifica cómo se va a usar el archivo.</p>
 
-<p class="content-block">Para abrir un archivo se usa la funciÃ³n <code>fopen()</code>:</p>
+<p class="content-block">Para abrir un archivo se usa la función <code>fopen()</code>:</p>
 
 <pre>
 ptvar = fopen ( nombre_archivo, tipo_archivo);
@@ -56,25 +56,25 @@ ptvar = fopen ( nombre_archivo, tipo_archivo);
 <p class="content-block">donde <code>nombre_archivo</code> y <code>tipo_archivo</code> son cadenas. Los tipos de archivo y su significado son:</p>
 
 <ul>
-    <li>"r": Abrir un archivo existente sÃ³lo para lectura.</li>
-    <li>"w": Abrir un nuevo archivo sÃ³lo para escritura. Si ya existe, serÃ¡ destruido y creado uno nuevo en su lugar.</li>
-    <li>"a": Abrir un archivo para aÃ±adir. Si no existe, se crea uno nuevo.</li>
+    <li>"r": Abrir un archivo existente sólo para lectura.</li>
+    <li>"w": Abrir un nuevo archivo sólo para escritura. Si ya existe, será destruido y creado uno nuevo en su lugar.</li>
+    <li>"a": Abrir un archivo para añadir. Si no existe, se crea uno nuevo.</li>
     <li>"r+": Abrir un archivo existente para lectura y escritura.</li>
-    <li>"w+": Abrir un archivo nuevo para lectura y escritura. Si ya existe, serÃ¡ destruido y creado uno nuevo en su lugar.</li>
-    <li>"a+": Abrir un archivo existente para leer y aÃ±adir. Si no existe, se crea uno nuevo.</li>
+    <li>"w+": Abrir un archivo nuevo para lectura y escritura. Si ya existe, será destruido y creado uno nuevo en su lugar.</li>
+    <li>"a+": Abrir un archivo existente para leer y añadir. Si no existe, se crea uno nuevo.</li>
 </ul>
 
-<p class="content-block">La funciÃ³n <code>fopen()</code> retorna un puntero al principio del Ã¡rea de buffer asociada con el archivo. Se retorna un valor <code>NULL</code> si no se puede abrir el archivo.</p>
+<p class="content-block">La función <code>fopen()</code> retorna un puntero al principio del área de buffer asociada con el archivo. Se retorna un valor <code>NULL</code> si no se puede abrir el archivo.</p>
 
-<p class="content-block">Un archivo de datos debe cerrarse al final del programa o cuando ya no sea necesario mantenerlo mas tiempo abierto. Esto se realiza a travÃ©s de:</p>
+<p class="content-block">Un archivo de datos debe cerrarse al final del programa o cuando ya no sea necesario mantenerlo mas tiempo abierto. Esto se realiza a través de:</p>
 
 <pre>
 fclose(ptvar);
 </pre>
 
-<p class="content-block">Un archivo secuencial de datos puede crearse de dos formas distintas. Una es crear el archivo directamente, usando un editor. La otra es escribir un programa que introduzca informaciÃ³n en la computadora y la escriba en un archivo. Los archivos sin formato sÃ³lo pueden crearse mediante programas.</p>
+<p class="content-block">Un archivo secuencial de datos puede crearse de dos formas distintas. Una es crear el archivo directamente, usando un editor. La otra es escribir un programa que introduzca información en la computadora y la escriba en un archivo. Los archivos sin formato sólo pueden crearse mediante programas.</p>
 
-<p class="content-block">Cuando se crea un archivo con un programa, lo habitual es introducir la informaciÃ³n desde el teclado y escribirla en el archivo.</p>
+<p class="content-block">Cuando se crea un archivo con un programa, lo habitual es introducir la información desde el teclado y escribirla en el archivo.</p>
 
 <p class="content-block">Si el archivo consta de caracteres individuales, se pueden usar la funciones <code>getchar()</code> (para obtener caracteres de teclado) y <code>putc()</code> (para escribir caracteres en un archivo). El uso de <code>putc()</code> es el siguiente:</p>
 
@@ -88,9 +88,9 @@ putc(variable_de_tipo_caracter, puntero_al_area_de_buffer);
 variable_de_tipo_caracter = getc(puntero_al_area_de_buffer);
 </pre>
 
-<p class="content-block">Los archivos de datos que contienen sÃ³lo cadenas de caracteres pueden crearse y leerse mÃ¡s fÃ¡cilmente con programas que utilizan funciones de biblioteca especialmente orientadas para cadenas: <code>fgets()</code> y <code>fputs()</code>.</p>
+<p class="content-block">Los archivos de datos que contienen sólo cadenas de caracteres pueden crearse y leerse más fácilmente con programas que utilizan funciones de biblioteca especialmente orientadas para cadenas: <code>fgets()</code> y <code>fputs()</code>.</p>
 
-<p class="content-block">Muchos archivos de datos contienen estructuras de datos mÃ¡s complicadas (como las <code>struct</code>) que incluyen combinaciones de informaciÃ³n, caracteres y nÃºmeros. Tales archivos se pueden procesar usando las funciones <code>fscanf()</code> y <code>fprintf()</code>:</p>
+<p class="content-block">Muchos archivos de datos contienen estructuras de datos más complicadas (como las <code>struct</code>) que incluyen combinaciones de información, caracteres y números. Tales archivos se pueden procesar usando las funciones <code>fscanf()</code> y <code>fprintf()</code>:</p>
 
 <pre>
 fprintf(puntero_area_buffer, cadena_control, argto1,.., argton);
@@ -98,17 +98,17 @@ fprintf(puntero_area_buffer, cadena_control, argto1,.., argton);
 fscanf(puntero_area_buffer, cadena_control, &argto1,.., &argton);
 </pre>
 
-<p class="content-block">Una vez creado un archivo de datos surge la pregunta de cÃ³mo detectar una condiciÃ³n de fin de archivo. La funciÃ³n <code>feof()</code> sirve para este propÃ³sito (vÃ¡lida para un archivo secuencial con o sin formato). Esta funciÃ³n devuelve un valor distinto de cero (cierto) si detecta una condiciÃ³n de fin de archivo y un valor cero (falso) si no se detecta.</p>
+<p class="content-block">Una vez creado un archivo de datos surge la pregunta de cómo detectar una condición de fin de archivo. La función <code>feof()</code> sirve para este propósito (válida para un archivo secuencial con o sin formato). Esta función devuelve un valor distinto de cero (cierto) si detecta una condición de fin de archivo y un valor cero (falso) si no se detecta.</p>
 
-<p class="content-block">Para actualizar los registros dentro de un archivo de datos hay varios enfoques. Uno de ellos consiste en leer cada registro del archivo, actualizarlo y escribirlo en el mismo archivo. Sin embargo es difÃ­cil leer y escribir datos con formato al mismo archivo sin alterar la ordenaciÃ³n de los elementos dentro del archivo. Otro enfoque es trabajar con dos archivos diferentes: un archivo antiguo (la fuente) y otro nuevo. Se lee cada registro del archivo antiguo, se actualiza y se escribe en el archivo nuevo.</p>
+<p class="content-block">Para actualizar los registros dentro de un archivo de datos hay varios enfoques. Uno de ellos consiste en leer cada registro del archivo, actualizarlo y escribirlo en el mismo archivo. Sin embargo es difícil leer y escribir datos con formato al mismo archivo sin alterar la ordenación de los elementos dentro del archivo. Otro enfoque es trabajar con dos archivos diferentes: un archivo antiguo (la fuente) y otro nuevo. Se lee cada registro del archivo antiguo, se actualiza y se escribe en el archivo nuevo.</p>
 
-<p class="content-block">Algunas aplicaciones implican el uso de archivos para almacenar bloques de datos, donde cada bloque consiste en un nÃºmero fijo de bytes contiguos. Cada bloque representarÃ¡ generalmente una estructura de datos compleja, como una <code>struct</code> o un array. Para estas aplicaciones serÃ­a deseable leer o escribir el bloque entero del archivo de datos en vez de leer o escribir separadamente las componentes individuales de cada bloque. Las funciones <code>fread()</code> y <code>fwrite()</code> deben usarse en estas situaciones. A estas funciones se las conoce como funciones de lectura y escritura sin formato. Igualmente se hace referencia a estos archivos de datos como archivos de datos sin formato.</p>
+<p class="content-block">Algunas aplicaciones implican el uso de archivos para almacenar bloques de datos, donde cada bloque consiste en un número fijo de bytes contiguos. Cada bloque representará generalmente una estructura de datos compleja, como una <code>struct</code> o un array. Para estas aplicaciones sería deseable leer o escribir el bloque entero del archivo de datos en vez de leer o escribir separadamente las componentes individuales de cada bloque. Las funciones <code>fread()</code> y <code>fwrite()</code> deben usarse en estas situaciones. A estas funciones se las conoce como funciones de lectura y escritura sin formato. Igualmente se hace referencia a estos archivos de datos como archivos de datos sin formato.</p>
 
 <p class="content-block">Cada una de estas funciones necesita cuatro argumentos:</p>
 <ul>
-    <li>- la direcciÃ³n del bloque de datos</li>
-    <li>- el tamaÃ±o del bloque de datos</li>
-    <li>- el nÃºmero de bloques a transferir</li>
+    <li>- la dirección del bloque de datos</li>
+    <li>- el tamaño del bloque de datos</li>
+    <li>- el número de bloques a transferir</li>
     <li>- el puntero a un archivo secuencial</li>
 </ul>
 
@@ -119,26 +119,26 @@ fwrite(&cliente, sizeof(struct ejemplo), 1, ptvar);
 fread(&cliente, sizeof(struct ejemplo), 1, ptvar);
 </pre>
 
-<p class="content-block">donde <code>cliente</code> es una variable estructura de tipo â€œ<code>struct ejemplo</code>â€ y <code>ptvar</code> un puntero a archivo secuencial.</p>
+<p class="content-block">donde <code>cliente</code> es una variable estructura de tipo "<code>struct ejemplo</code>" y <code>ptvar</code> un puntero a archivo secuencial.</p>
 
-<p class="content-block">Utilizando el sistema de E/S con buffer se pueden realizar operaciones de lectura y escritura directa con la ayuda de <code>fseek()</code>, que sitÃºa el indicador de posiciÃ³n del archivo. Su prototipo es:</p>
+<p class="content-block">Utilizando el sistema de E/S con buffer se pueden realizar operaciones de lectura y escritura directa con la ayuda de <code>fseek()</code>, que sitúa el indicador de posición del archivo. Su prototipo es:</p>
 
 <pre>
 int fseek(FILE *pa, long num_bytes, int origen );
 </pre>
 
-<p class="content-block">donde <code>pa</code> es un puntero a archivo devuelto por una llamada <code>fopen()</code>; <code>num_bytes</code> es un entero largo que representa el nÃºmero de bytes a partir del â€œorigenâ€ que supondrÃ¡n la nueva posiciÃ³n y <code>origen</code> es una de las siguientes macros definidas en <code>stdio.h</code>:</p>
+<p class="content-block">donde <code>pa</code> es un puntero a archivo devuelto por una llamada <code>fopen()</code>; <code>num_bytes</code> es un entero largo que representa el número de bytes a partir del "origen" que supondrán la nueva posición y <code>origen</code> es una de las siguientes macros definidas en <code>stdio.h</code>:</p>
 
 <ul>
     <li><code>SEEK_SET</code>	Principio del archivo (valor de cero)</li>
-    <li><code>SEEK_CUR</code>	PosiciÃ³n actual (valor de uno)</li>
+    <li><code>SEEK_CUR</code>	Posición actual (valor de uno)</li>
     <li><code>SEEK_END</code>	Final del archivo (valor de dos)</li>
 </ul>
 
-<p class="content-block">Veamos un ejemplo donde pondremos en prÃ¡ctica varios de estos conceptos.</p>
+<p class="content-block">Veamos un ejemplo donde pondremos en práctica varios de estos conceptos.</p>
 
 <pre>
-/* Programa de acceso a archivos; escritura, agregado y lectura de lÃ­neas */
+/* Programa de acceso a archivos; escritura, agregado y lectura de líneas */
 #include <stdio.h>
 #include <string.h> // Necesario para strcpy
 #define MAXLINEA 100
@@ -155,36 +155,36 @@ int main() {
 
     printf("\n\nAcceso a archivos.\n");
 
-    /* reescribe o crea el archivo, agrega una lÃ­nea */
+    /* reescribe o crea el archivo, agrega una línea */
 
     if ((pa = fopen(n_arch, "w")) == NULL) {
         printf("%s: no se puede abrir archivo %s", n_prog, n_arch);
         return 1;			/* error, no pudo abrir el archivo */
     }
     else {
-        fputs(mensaje, pa);		/* graba lÃ­nea en archivo */
+        fputs(mensaje, pa);		/* graba línea en archivo */
         fclose(pa);
-        printf("GrabÃ³ lÃ­nea en archivo.\n");
+        printf("Grabó línea en archivo.\n");
     }
 
-    /* lectura del archivo, una lÃ­nea */
+    /* lectura del archivo, una línea */
     pa = fopen(n_arch, "r");
     fgets(linea, MAXLINEA, pa);
     fclose(pa);
-    printf("LeyÃ³ lÃ­nea: %s", linea);
+    printf("Leyó línea: %s", linea);
 
-    /* agrega una lÃ­nea al archivo */
+    /* agrega una línea al archivo */
     pa = fopen(n_arch, "a");
-    strcpy(linea, "Esta es una lÃ­nea agregada al archivo.\n");
+    strcpy(linea, "Esta es una línea agregada al archivo.\n");
     fputs(linea, pa);
     fclose(pa);
-    printf("AgregÃ³ lÃ­nea al archivo.\n");
+    printf("Agregó línea al archivo.\n");
 
-    /* lee lÃ­neas del archivo hasta terminar */
-    printf("Lectura de varias lÃ­neas:\n");
+    /* lee líneas del archivo hasta terminar */
+    printf("Lectura de varias líneas:\n");
     pa = fopen(n_arch, "r");
     while ( fgets(linea, MAXLINEA, pa) != NULL ) {
-        printf("LÃ­nea %i: %s", ++i, linea);
+        printf("Línea %i: %s", ++i, linea);
     }
     fclose(pa);
 
@@ -206,7 +206,7 @@ void main(void) { // Nota: main() sin tipo de retorno es obsoleto. Usar int main
     if (!(fp = fopen ("Archivo.c", "r"))) {
         printf("No se puede abrir Archivo.c\n");
     } else {
-        // fflush(fp); // ADVERTENCIA: fflush() en flujos de entrada es innecesario y puede ser problemÃ¡tico.
+        // fflush(fp); // ADVERTENCIA: fflush() en flujos de entrada es innecesario y puede ser problemático.
         while ((ch != EOF)) {
             ch = getc(fp);
             printf("%c", ch);

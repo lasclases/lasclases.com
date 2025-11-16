@@ -1,9 +1,9 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Clase 4: Funciones BÃ¡sicas de E/S</title>
+	<title>Clase 4: Funciones Básicas de E/S</title>
 	<meta name="author" content="Tony Rodriguez">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -16,46 +16,46 @@
     <main id="content">
 <h1 class="content-block">Comandos del Lenguaje C.</h1>
 
-<h2 class="content-block">Funciones bÃ¡sicas de Entrada y Salida por consola.</h2>
+<h2 class="content-block">Funciones básicas de Entrada y Salida por consola.</h2>
 
 <p class="content-block">La E/S por consola se refiere a todas las operaciones que se producen en el teclado y la pantalla de la computadora.</p>
 
-<p class="content-block">A continuaciÃ³n comentaremos algunas funciones bÃ¡sicas de entrada y salida. Los prototipos de las que forman parte del estÃ¡ndar ANSI C se encuentran dentro de la librerÃ­a <code>stdio.h</code>.</p>
+<p class="content-block">A continuación comentaremos algunas funciones básicas de entrada y salida. Los prototipos de las que forman parte del estándar ANSI C se encuentran dentro de la librería <code>stdio.h</code>.</p>
 
 <h3 class="content-block">printf:</h3>
 <p class="content-block">El prototipo de printf es: <code>int printf(const char *formato, listaDeArgumentos);</code></p>
 
-<p class="content-block">Como verÃ¡n, printf devuelve un nÃºmero entero. Este representa el nÃºmero de caracteres escritos. Cualquier nÃºmero negativo indica que ocurriÃ³ un error.</p>
+<p class="content-block">Como verán, printf devuelve un número entero. Este representa el número de caracteres escritos. Cualquier número negativo indica que ocurrió un error.</p>
 
-<p class="content-block">Esta funciÃ³n escribe en el flujo estÃ¡ndar de salida <code>stdout</code> (o sea, por pantalla) los argumentos que componen â€œlistaDeArgumentosâ€ segÃºn las especificaciones dadas por la cadena apuntada por â€œformatoâ€. La cadena â€œformatoâ€, puede contener tanto letras como cÃ³digos que describen la forma en que se muestran los argumentos. Existen varios cÃ³digos, pero a continuaciÃ³n sÃ³lo les comentarÃ© los mÃ¡s usados:</p>
+<p class="content-block">Esta función escribe en el flujo estándar de salida <code>stdout</code> (o sea, por pantalla) los argumentos que componen "listaDeArgumentos" según las especificaciones dadas por la cadena apuntada por "formato". La cadena "formato", puede contener tanto letras como códigos que describen la forma en que se muestran los argumentos. Existen varios códigos, pero a continuación sólo les comentaré los más usados:</p>
 
 <ul>
     <li><code>%c</code> Se usa para imprimir un caracter</li>
     <li><code>%i</code> Se usa para imprimir un entero en decimal con signo.</li>
     <li><code>%d</code> Se usa para imprimir un entero en decimal con signo.</li>
-    <li><code>%f</code> Se usa para imprimir un nÃºmero en coma flotante (real).</li>
-    <li><code>%x</code> Se usa para imprimir nÃºmeros hexadecimales.</li>
-    <li><code>%o</code> Se usa para imprimir nÃºmeros en Octal.</li>
+    <li><code>%f</code> Se usa para imprimir un número en coma flotante (real).</li>
+    <li><code>%x</code> Se usa para imprimir números hexadecimales.</li>
+    <li><code>%o</code> Se usa para imprimir números en Octal.</li>
     <li><code>%s</code> Se usa para imprimir una cadena de caracteres.</li>
-    <li><code>%e</code> Se usa para imprimir un nÃºmero en notaciÃ³n cientÃ­fica.</li>
+    <li><code>%e</code> Se usa para imprimir un número en notación científica.</li>
 </ul>
 
-<p class="content-block">Para su informaciÃ³n, existen modificadores que pueden especificar con mas detalle de que forma se quiere que se muestren los datos con la finalidad de poder ordenarlos. Esto quiere decir que se puede modificar el cÃ³digo (colocando los modificadores entre el signo % y el caracter de formato) para que muestre por ejemplo una determinada longitud del campo, cuantas posiciones decimales se mostrarÃ¡n o un indicador de ajuste a la izquierda. Por ejemplo, <code>%-10.2f</code> ajusta un nÃºmero en coma flotante por la izquierda con dos posiciones decimales en un campo de diez caracteres. No profundizaremos en este punto.</p>
+<p class="content-block">Para su información, existen modificadores que pueden especificar con mas detalle de que forma se quiere que se muestren los datos con la finalidad de poder ordenarlos. Esto quiere decir que se puede modificar el código (colocando los modificadores entre el signo % y el caracter de formato) para que muestre por ejemplo una determinada longitud del campo, cuantas posiciones decimales se mostrarán o un indicador de ajuste a la izquierda. Por ejemplo, <code>%-10.2f</code> ajusta un número en coma flotante por la izquierda con dos posiciones decimales en un campo de diez caracteres. No profundizaremos en este punto.</p>
 
 <p class="content-block">Ejemplos:</p>
 <pre>
 printf("Hola");  // Imprime la palabra Hola por pantalla (sin las comillas).
 
-printf("Hola\n"); // Igual al anterior pero imprime el retorno de carro - Nueva lÃ­nea
+printf("Hola\n"); // Igual al anterior pero imprime el retorno de carro - Nueva línea
 
 i = 10;
-printf("NÃºmero entero %i \n", i); // Imprime "Numero entero 10"
+printf("Número entero %i \n", i); // Imprime "Numero entero 10"
 
 c = 'x';
-printf("Caracter %c y nÃºmero %i\n", c, i); // Imprime "Caracter x y nÃºmero 10"
+printf("Caracter %c y número %i\n", c, i); // Imprime "Caracter x y número 10"
 </pre>
 
-<h3 class="content-block">Nuestro Primer programa: El clÃ¡sico Hola Mundo.</h3>
+<h3 class="content-block">Nuestro Primer programa: El clásico Hola Mundo.</h3>
 <pre>
 #include<stdio.h>
 
@@ -64,10 +64,10 @@ int main(void) {
     return 0;
 }
 </pre>
-<p class="content-block">Al compilar y ejecutar este programa, lo que harÃ¡ es imprimir la frase â€œHola Mundo!â€ por pantalla (sin las comillas).</p>
+<p class="content-block">Al compilar y ejecutar este programa, lo que hará es imprimir la frase "Hola Mundo!" por pantalla (sin las comillas).</p>
 
 <h3 class="content-block">getchar:</h3>
-<p class="content-block">Es la funciÃ³n de entrada definida por el ANSI C. Esta funciÃ³n se encarga de obtener un caracter desde el teclado. El problema de esta funciÃ³n es que guarda en un buffer la entrada hasta que se presiona la tecla ENTER (y al hacerlo, ella tomarÃ¡ sÃ³lo el primer caracter del buffer). La razÃ³n de Ã©sto es que los sistemas UNIX originales usaban un buffer de lÃ­nea para entrada por terminal (lo que quiere decir que habÃ­a que introducir un retorno de carro para que lo que se hubiese escrito fuese efectivamente enviado al computador). Esta funciÃ³n estÃ¡ en desuso debido a que los programas modernos requieren cierto grado de interactividad y el hecho de tener que esperar a enviar un ENTER para procesar suele ser desconcertante. AÃºn asÃ­, siempre es incluida en los compiladores por razones de portabilidad.</p>
+<p class="content-block">Es la función de entrada definida por el ANSI C. Esta función se encarga de obtener un caracter desde el teclado. El problema de esta función es que guarda en un buffer la entrada hasta que se presiona la tecla ENTER (y al hacerlo, ella tomará sólo el primer caracter del buffer). La razón de ésto es que los sistemas UNIX originales usaban un buffer de línea para entrada por terminal (lo que quiere decir que había que introducir un retorno de carro para que lo que se hubiese escrito fuese efectivamente enviado al computador). Esta función está en desuso debido a que los programas modernos requieren cierto grado de interactividad y el hecho de tener que esperar a enviar un ENTER para procesar suele ser desconcertante. Aún así, siempre es incluida en los compiladores por razones de portabilidad.</p>
 
 <p class="content-block">El prototipo del <code>getchar()</code> es: <code>int getchar(void);</code></p>
 
@@ -77,11 +77,11 @@ int main(void) {
 ch = <strong>getchar()</strong>;
 </pre>
 
-<h3 class="content-block">Funciones de Consola No EstÃ¡ndar (conio.h)</h3>
-<p class="content-block"><strong>ADVERTENCIA:</strong> Las siguientes funciones no forman parte del estÃ¡ndar ANSI C y dependen de librerÃ­as especÃ­ficas de compiladores antiguos (como Borland/Turbo C). Su uso limita la portabilidad del cÃ³digo a sistemas modernos. Se incluyen aquÃ­ solo con fines educativos e histÃ³ricos.</p>
+<h3 class="content-block">Funciones de Consola No Estándar (conio.h)</h3>
+<p class="content-block"><strong>ADVERTENCIA:</strong> Las siguientes funciones no forman parte del estándar ANSI C y dependen de librerías específicas de compiladores antiguos (como Borland/Turbo C). Su uso limita la portabilidad del código a sistemas modernos. Se incluyen aquí solo con fines educativos e históricos.</p>
 
 <h4 class="content-block">getche:</h4>
-<p class="content-block">No es ANSI C sino que estÃ¡ definida dentro de una librerÃ­a de Borland (quien desarrollÃ³ Turbo C, Turbo C++ y Borland C++) llamada <code>conio.h</code>. Espera a que el usuario presione una tecla por teclado y esta funciÃ³n lee el caracter presionado sin necesidad de esperar el ENTER y el â€œecoâ€ de la misma es presentado por pantalla.</p>
+<p class="content-block">No es ANSI C sino que está definida dentro de una librería de Borland (quien desarrolló Turbo C, Turbo C++ y Borland C++) llamada <code>conio.h</code>. Espera a que el usuario presione una tecla por teclado y esta función lee el caracter presionado sin necesidad de esperar el ENTER y el "eco" de la misma es presentado por pantalla.</p>
 
 <p class="content-block">El prototipo del <code>getche()</code> es: <code>int getche(void);</code></p>
 
@@ -92,7 +92,7 @@ ch = <strong>getche()</strong>;  // Asigna a ch el caracter presionado por tecla
 </pre>
 
 <h4 class="content-block">getch:</h4>
-<p class="content-block">No es ANSI C sino que estÃ¡ definida dentro de una librerÃ­a <code>conio.h</code>. Espera a que el usuario presione una tecla por teclado y esta funciÃ³n lee el caracter presionado sin necesidad de esperar el ENTER pero a diferencia del <code>getche()</code>, Ã©sta no muestra el â€œecoâ€ por pantalla.</p>
+<p class="content-block">No es ANSI C sino que está definida dentro de una librería <code>conio.h</code>. Espera a que el usuario presione una tecla por teclado y esta función lee el caracter presionado sin necesidad de esperar el ENTER pero a diferencia del <code>getche()</code>, ésta no muestra el "eco" por pantalla.</p>
 
 <p class="content-block">El prototipo del <code>getch()</code> es: <code>int getch(void);</code></p>
 
@@ -103,11 +103,11 @@ ch = <strong>getch()</strong>;  // Asigna a ch el caracter presionado por teclad
 </pre>
 
 <h3 class="content-block">putchar:</h3>
-<p class="content-block">Definida dentro de ANSI C. Imprime un caracter en pantalla en la posiciÃ³n actual del cursor.</p>
+<p class="content-block">Definida dentro de ANSI C. Imprime un caracter en pantalla en la posición actual del cursor.</p>
 
 <p class="content-block">El prototipo de <code>putchar</code> es: <code>int putchar(int c);</code></p>
 
-<p class="content-block">donde c es el caracter a imprimir. Esta funciÃ³n devuelve un parÃ¡metro ya que el programador podrÃ­a necesitar verificar que la funciÃ³n haya sido ejecutada con Ã©xito. Si es cierto, devuelve el mismo caracter c, de lo contrario devolverÃ¡ un EOF (Una macro definida en <code>stdio.h</code> que significa End Of File. Lo veremos mÃ¡s adelante en el curso).</p>
+<p class="content-block">donde c es el caracter a imprimir. Esta función devuelve un parámetro ya que el programador podría necesitar verificar que la función haya sido ejecutada con éxito. Si es cierto, devuelve el mismo caracter c, de lo contrario devolverá un EOF (Una macro definida en <code>stdio.h</code> que significa End Of File. Lo veremos más adelante en el curso).</p>
 
 <p class="content-block">Un ejemplo de su uso:</p>
 <pre>
@@ -121,34 +121,34 @@ putchar(ch);	// Lo que imprime el caracter 'S' por pantalla.
 
 <p class="content-block">El prototipo de <code>scanf</code> es: <code>int scanf(const char *formato, listaDeArgumentos);</code></p>
 
-<p class="content-block">Es la funciÃ³n encargada de leer datos desde el buffer estÃ¡ndar de entrada <code>stdin</code> (teclado). Puede leer todos los tipos de datos que hayan. Es la funciÃ³n inversa de <code>printf()</code>;</p>
+<p class="content-block">Es la función encargada de leer datos desde el buffer estándar de entrada <code>stdin</code> (teclado). Puede leer todos los tipos de datos que hayan. Es la función inversa de <code>printf()</code>;</p>
 
-<p class="content-block">Los cÃ³digos para representar los datos son los mismos que en <code>printf</code>. Por ejemplo:</p>
-
-<pre>
-scanf(â€œ%iâ€, &i);  // OJO con el signo '&'
-</pre>
-
-<p class="content-block">especifica que se espera del buffer estÃ¡ndar un nÃºmero entero y Ã©ste serÃ¡ almacenado dentro de la variable i. En realidad el sÃ­mbolo '&' podrÃ­a traducirse como: â€œen la direcciÃ³n de memoria que contiene la variable 'i'â€. Sobre esto profundizaremos en punteros. Lo que se estÃ¡ diciendo que se almacene el valor dentro de una localidad de memoria. Este signo NO puede faltar a menos que hablemos de cadenas y esto tiene su explicaciÃ³n que lo veremos cuando estudiemos Cadenas mÃ¡s adelante.</p>
-
-<p class="content-block">Otra cosa es que una sÃ³lo orden puede ser usada para recibir varios datos al mismo tiempo. Por ejemplo:</p>
+<p class="content-block">Los códigos para representar los datos son los mismos que en <code>printf</code>. Por ejemplo:</p>
 
 <pre>
-scanf(â€œ%i%câ€, &i, &ch);
+scanf("%i", &i);  // OJO con el signo '&'
 </pre>
 
-<p class="content-block">espera a que el usuario introduzca algo como â€œ10 aâ€ y luego ENTER por teclado para almacenar 10 en i y la letra a en ch.</p>
+<p class="content-block">especifica que se espera del buffer estándar un número entero y éste será almacenado dentro de la variable i. En realidad el símbolo '&' podría traducirse como: "en la dirección de memoria que contiene la variable 'i'". Sobre esto profundizaremos en punteros. Lo que se está diciendo que se almacene el valor dentro de una localidad de memoria. Este signo NO puede faltar a menos que hablemos de cadenas y esto tiene su explicación que lo veremos cuando estudiemos Cadenas más adelante.</p>
 
-<h2 class="content-block">Otras funciones bÃ¡sicas (No EstÃ¡ndar).</h2>
+<p class="content-block">Otra cosa es que una sólo orden puede ser usada para recibir varios datos al mismo tiempo. Por ejemplo:</p>
 
-<p class="content-block"><strong>ADVERTENCIA:</strong> Las siguientes funciones son especÃ­ficas de <code>conio.h</code> y no son portables. En sistemas modernos, estas funcionalidades se logran con librerÃ­as como <code>ncurses</code> o llamadas al sistema operativo.</p>
+<pre>
+scanf("%i%c", &i, &ch);
+</pre>
+
+<p class="content-block">espera a que el usuario introduzca algo como "10 a" y luego ENTER por teclado para almacenar 10 en i y la letra a en ch.</p>
+
+<h2 class="content-block">Otras funciones básicas (No Estándar).</h2>
+
+<p class="content-block"><strong>ADVERTENCIA:</strong> Las siguientes funciones son específicas de <code>conio.h</code> y no son portables. En sistemas modernos, estas funcionalidades se logran con librerías como <code>ncurses</code> o llamadas al sistema operativo.</p>
 
 <h4 class="content-block">textcolor:</h4>
-<p class="content-block">Definida dentro de <code>conio.h</code>. Esta funciÃ³n cambia el color de las letras que se muestran por pantalla.</p>
+<p class="content-block">Definida dentro de <code>conio.h</code>. Esta función cambia el color de las letras que se muestran por pantalla.</p>
 
 <p class="content-block">Su prototipo es: <code>void textcolor(int color);</code></p>
 
-<p class="content-block">Donde color es un nÃºmero que representa el color deseado. TambiÃ©n existen unas MACROS definidas dentro de <code>conio.h</code> que representan el color. Estos son:</p>
+<p class="content-block">Donde color es un número que representa el color deseado. También existen unas MACROS definidas dentro de <code>conio.h</code> que representan el color. Estos son:</p>
 
 <pre>
 Macro		Equivalente entero
@@ -177,28 +177,28 @@ BLINK		128
 <pre>
 textcolor(RED);
 </pre>
-<p class="content-block">harÃ¡ que todo el texto que se imprima a continuaciÃ³n aparezca en rojo.</p>
+<p class="content-block">hará que todo el texto que se imprima a continuación aparezca en rojo.</p>
 
 <h4 class="content-block">textbackground:</h4>
-<p class="content-block">Definida dentro de <code>conio.h</code>. Esta funciÃ³n cambia el color del fondo de pantalla sobre el cual se muestran las letras.</p>
+<p class="content-block">Definida dentro de <code>conio.h</code>. Esta función cambia el color del fondo de pantalla sobre el cual se muestran las letras.</p>
 
 <p class="content-block">Su prototipo es: <code>void textbackground(int color);</code></p>
 
-<p class="content-block">El color de fondo sÃ³lo puede ser de los 8 principales colores asÃ­ que sÃ³lo aplican las 8 primeras MACROS mencionadas en <code>textcolor</code> (de 0 a 7).</p>
+<p class="content-block">El color de fondo sólo puede ser de los 8 principales colores así que sólo aplican las 8 primeras MACROS mencionadas en <code>textcolor</code> (de 0 a 7).</p>
 
 <p class="content-block">Ejemplo:</p>
 <pre>
-textbackground(RED); // El color de fondo serÃ¡ Rojo
-textcolor(BLUE); // El color del texto serÃ¡ Azul.
+textbackground(RED); // El color de fondo será Rojo
+textcolor(BLUE); // El color del texto será Azul.
 clrscr(); // Borra la pantalla pero debido a que el color de fondo es rojo,
-// toda la pantalla se verÃ¡ roja.
-printf("Texto\n); // Imprime la palabra â€œTextoâ€ en Azul sobre el fondo rojo.
+// toda la pantalla se verá roja.
+printf("Texto\n); // Imprime la palabra "Texto" en Azul sobre el fondo rojo.
 </pre>
 
 <h4 class="content-block">clrscr:</h4>
-<p class="content-block">No estÃ¡ definida por el ANSI C. Esta funciÃ³n se encuentra dentro de la librerÃ­a <code>conio.h</code> de Borland.</p>
+<p class="content-block">No está definida por el ANSI C. Esta función se encuentra dentro de la librería <code>conio.h</code> de Borland.</p>
 
-<p class="content-block">Esta funciÃ³n borra todo el contenido de la ventana de texto actual.</p>
+<p class="content-block">Esta función borra todo el contenido de la ventana de texto actual.</p>
 
 <p class="content-block">El prototipo de <code>clrscr</code> es: <code>void clrscr(void);</code></p>
 
@@ -208,11 +208,11 @@ clrscr();
 </pre>
 
 <h4 class="content-block">gotoxy:</h4>
-<p class="content-block">No estÃ¡ definida por el ANSI C. Esta funciÃ³n se encuentra dentro de la librerÃ­a <code>conio.h</code> de Borland.</p>
+<p class="content-block">No está definida por el ANSI C. Esta función se encuentra dentro de la librería <code>conio.h</code> de Borland.</p>
 
 <p class="content-block">El prototipo de <code>gotoxy</code> es: <code>void gotoxy(int x, int y);</code></p>
 
-<p class="content-block">Esta funciÃ³n coloca al cursor en la posiciÃ³n de pantalla apuntada por las coordenadas x e y dentro de la pantalla de texto actual. Una pantalla estÃ¡ndar de DOS contiene 80 columnas por 25 filas. Si las coordenadas no son vÃ¡lidas, no se hace nada.</p>
+<p class="content-block">Esta función coloca al cursor en la posición de pantalla apuntada por las coordenadas x e y dentro de la pantalla de texto actual. Una pantalla estándar de DOS contiene 80 columnas por 25 filas. Si las coordenadas no son válidas, no se hace nada.</p>
 
 <p class="content-block">Ejemplo:</p>
 <pre>
@@ -223,47 +223,47 @@ putchar('*');
 <p class="content-block">borra la pantalla, se posiciona en la columna, fila 10 e imprime el caracter *.</p>
 
 <h4 class="content-block">wherex:</h4>
-<p class="content-block">No estÃ¡ definida por el ANSI C. Esta funciÃ³n se encuentra dentro de la librerÃ­a <code>conio.h</code> de Borland.</p>
+<p class="content-block">No está definida por el ANSI C. Esta función se encuentra dentro de la librería <code>conio.h</code> de Borland.</p>
 
 <p class="content-block">El prototipo de <code>wherex</code> es: <code>int wherex(void);</code></p>
 
 <p class="content-block">Retorna la columna en la que se encuentra posicionado el cursor relativa a la ventana de texto actual.</p>
 
 <h4 class="content-block">wherey:</h4>
-<p class="content-block">No estÃ¡ definida por el ANSI C. Esta funciÃ³n se encuentra dentro de la librerÃ­a <code>conio.h</code> de Borland.</p>
+<p class="content-block">No está definida por el ANSI C. Esta función se encuentra dentro de la librería <code>conio.h</code> de Borland.</p>
 
 <p class="content-block">El prototipo de <code>wherey</code> es: <code>int wherey(void);</code></p>
 
 <p class="content-block">Retorna la fila en la que se encuentra posicionado el cursor relativa a la ventana de texto actual.</p>
 
 <h4 class="content-block">window:</h4>
-<p class="content-block">No estÃ¡ definida por el ANSI C. Esta funciÃ³n se encuentra dentro de la librerÃ­a <code>conio.h</code> de Borland.</p>
+<p class="content-block">No está definida por el ANSI C. Esta función se encuentra dentro de la librería <code>conio.h</code> de Borland.</p>
 
 <p class="content-block">El prototipo de <code>window</code> es: <code>void window(int izq, int arr, int der, int aba);</code></p>
 
-<p class="content-block">Esta funciÃ³n se usa para crear una ventana de texto rectangular con coordenadas superior-izquierda e inferior-derecha dadas por izq,arr y der,aba. Si las coordenadas no son vÃ¡lidas, no se hace nada.</p>
+<p class="content-block">Esta función se usa para crear una ventana de texto rectangular con coordenadas superior-izquierda e inferior-derecha dadas por izq,arr y der,aba. Si las coordenadas no son válidas, no se hace nada.</p>
 
-<p class="content-block">Es por esta funciÃ³n que he estado comentando en las funciones anteriores: â€œdentro de la pantalla de texto actualâ€ ya que luego de usada esta funcion, todas las opereciones como <code>clrscr</code>, <code>cprintf</code>, <code>gotoxy</code>, etc, son relativas a esta nueva ventana.</p>
+<p class="content-block">Es por esta función que he estado comentando en las funciones anteriores: "dentro de la pantalla de texto actual" ya que luego de usada esta funcion, todas las opereciones como <code>clrscr</code>, <code>cprintf</code>, <code>gotoxy</code>, etc, son relativas a esta nueva ventana.</p>
 
 <p class="content-block">Ejemplo:</p>
 <pre>
 window(10, 10, 60, 15);  // crea una ventana cuyas esquinas son (10,10) y (60,15)
-gotoxy(2, 3); // Se coloca en la posiciÃ³n (2,3) dentro de la ventana anterior.
+gotoxy(2, 3); // Se coloca en la posición (2,3) dentro de la ventana anterior.
 </pre>
 
 <h4 class="content-block">cprintf:</h4>
-<p class="content-block">No estÃ¡ definida por el ANSI C. Esta funciÃ³n se encuentra dentro de la librerÃ­a <code>conio.h</code> de Borland.</p>
+<p class="content-block">No está definida por el ANSI C. Esta función se encuentra dentro de la librería <code>conio.h</code> de Borland.</p>
 
 <p class="content-block">El prototipo de <code>cprintf</code> es: <code>int cprintf(const char *fmt,...);</code></p>
 
 <p class="content-block">Hace lo mismo que <code>printf</code> pero dentro de la ventana de texto actual.</p>
 
-<p class="content-block">Siguiendo el mismo ejemplo anterior, si aÃ±adimos:</p>
+<p class="content-block">Siguiendo el mismo ejemplo anterior, si añadimos:</p>
 <pre>
-cprintf(â€œPunto (2,3) de la ventana activa\n\râ€);
+cprintf("Punto (2,3) de la ventana activa\n\r");
 </pre>
-<p class="content-block">imprimirÃ­a dentro de la ventana definida en la posiciÃ³n dada la frase: â€œPunto (2,3) de la ventana activaâ€.</p>
-<p class="content-block">Debe ponerse tambiÃ©n <code>\r</code> ya que <code>cprintf</code> no interpreta el <code>\n</code> como un par <code>\r\n</code> como hace el <code>printf</code>. <code>\r</code> es retorno de carro.</p>
+<p class="content-block">imprimiría dentro de la ventana definida en la posición dada la frase: "Punto (2,3) de la ventana activa".</p>
+<p class="content-block">Debe ponerse también <code>\r</code> ya que <code>cprintf</code> no interpreta el <code>\n</code> como un par <code>\r\n</code> como hace el <code>printf</code>. <code>\r</code> es retorno de carro.</p>
 
     </main>
 

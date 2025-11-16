@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
@@ -15,24 +15,24 @@
 
     <main id="content">
 <div class="content-block">
-    <p>NÃºcleo Maracay</p>
-    <p>Dpto. de IngenierÃ­a ElectrÃ³nica</p>
-    <p>IX TÃ©rmino, 03-2004</p>
+    <p>Núcleo Maracay</p>
+    <p>Dpto. de Ingeniería Electrónica</p>
+    <p>IX Término, 03-2004</p>
     <p><i>Prof. Isabel Vera</i></p>
     <p>Secciones A y B</p>
     <p>&nbsp;</p>
     <p><strong>TEMA 7: OSCILADORES  (Parte I): Oscilador de desplazamiento de fase, osciladores de Colpitts y Hartley.</strong></p>
 </div>
 
-<p class="content-block">Ya hemos visto que la seÃ±al a la salida del bloque de realimentaciÃ³n, debe ser igual a la seÃ±al de entrada desde la que partimos nuestro anÃ¡lisis, con esto se garantiza el criterio de oscilaciÃ³n de Barkhausen. Este hecho implica, matemÃ¡ticamente hablando, que la expresiÃ³n de la ganancia de un circuito realimentado se indeterminarÃ¡.</p>
+<p class="content-block">Ya hemos visto que la señal a la salida del bloque de realimentación, debe ser igual a la señal de entrada desde la que partimos nuestro análisis, con esto se garantiza el criterio de oscilación de Barkhausen. Este hecho implica, matemáticamente hablando, que la expresión de la ganancia de un circuito realimentado se indeterminará.</p>
 
-<p class="center content-block"><img src="./OSCILADORES CLASES2_html_m111ca4e8.gif" alt="EcuaciÃ³n de ganancia realimentada indeterminada"></p>
+<p class="center content-block"><img src="./OSCILADORES CLASES2_html_m111ca4e8.gif" alt="Ecuación de ganancia realimentada indeterminada"></p>
 
-<p class="content-block">ElectrÃ³nicamente hablando, podemos interpretar esa indeterminaciÃ³n como la existencia de una seÃ±al a la salida del circuito aunque no haya seÃ±al de entrada.</p>
+<p class="content-block">Electrónicamente hablando, podemos interpretar esa indeterminación como la existencia de una señal a la salida del circuito aunque no haya señal de entrada.</p>
 
 <h2 class="content-block">EL OSCILADOR DE CAMBIO DE FASE u OSCILADOR DE DESPLAZAMIENTO DE FASE:</h2>
 
-<p class="content-block">Existe una topologÃ­a consistente de un arreglo R-C que conectada convenientemente como bloque de realimentaciÃ³n (&beta;) produce un desfasamiento de la seÃ±al de salida del amplificador al que se conecte, hasta conseguir que se cumpla el criterio de oscilaciÃ³n de Barkhausen.</p>
+<p class="content-block">Existe una topología consistente de un arreglo R-C que conectada convenientemente como bloque de realimentación (&beta;) produce un desfasamiento de la señal de salida del amplificador al que se conecte, hasta conseguir que se cumpla el criterio de oscilación de Barkhausen.</p>
 
 <p class="content-block">Imaginemos el siguiente circuito amplificador:</p>
 
@@ -40,27 +40,27 @@
     <tr>
         <td style="width: 33%;"><p class="center content-block"><img src="./OSCILADORES CLASES2_html_m5c4d9180.gif" alt="Circuito amplificador con FET"></p></td>
         <td style="width: 67%;">
-            <p class="content-block">Si entre la salida (Drenaje) y la entrada (Compuerta o Gate) agregamos una red desfasadora como la que se muestra a continuaciÃ³n:</p>
+            <p class="content-block">Si entre la salida (Drenaje) y la entrada (Compuerta o Gate) agregamos una red desfasadora como la que se muestra a continuación:</p>
             <p class="center content-block"><img src="./OSCILADORES CLASES2_html_m4cac76b7.gif" alt="Red desfasadora RC"></p>
         </td>
     </tr>
 </table>
 
-<p class="content-block">Obtendremos que a una determinada â€œfâ€, el desfase de dicha red serÃ¡ de 180Âº y el desfase total serÃ¡ de 360Âº (cuando decimos <i>desfase total</i> nos referimos al desfase de la <span style="color: #800000;">Ganancia del Lazo:</span> <span style="background: transparent;">-A&beta;</span>)</p>
+<p class="content-block">Obtendremos que a una determinada "f", el desfase de dicha red será de 180º y el desfase total será de 360º (cuando decimos <i>desfase total</i> nos referimos al desfase de la <span style="color: #800000;">Ganancia del Lazo:</span> <span style="background: transparent;">-A&beta;</span>)</p>
 
 <p class="content-block">El siguiente, es el modelo equivalente del circuito (modelo a frecuencias medias):</p>
 
 <p class="center content-block"><img src="./OSCILADORES CLASES2_html_35378b4b.gif" alt="Modelo equivalente del oscilador de cambio de fase"></p>
 
-<p class="content-block">Ok, ya hemos llegado hasta el modelo equivalente incluyendo la red desfasadora. Ahora necesitamos conocer las expresiones de â€œ&beta;â€ y â€œAâ€ en funciÃ³n de los componentes del circuito, para asÃ­ <i>forzar</i> a tales expresiones a que cumplan el criterio de Barkhausen.</p>
+<p class="content-block">Ok, ya hemos llegado hasta el modelo equivalente incluyendo la red desfasadora. Ahora necesitamos conocer las expresiones de "&beta;" y "A" en función de los componentes del circuito, para así <i>forzar</i> a tales expresiones a que cumplan el criterio de Barkhausen.</p>
 
-<p class="content-block">Empecemos recordando que la Ganancia del Lazo es: <img src="./OSCILADORES CLASES_html_m6ee56d83.gif" alt="EcuaciÃ³n de ganancia del lazo"></p>
+<p class="content-block">Empecemos recordando que la Ganancia del Lazo es: <img src="./OSCILADORES CLASES_html_m6ee56d83.gif" alt="Ecuación de ganancia del lazo"></p>
 
-<p class="content-block">Si sabemos que la Ganancia del Lazo debe cumplir que sea igual a la unidad, entonces <code>(-Xf= Xi)</code> y <code>(A= -1/&beta;)</code> podemos decir entonces que <code>-&beta;</code> es la relaciÃ³n entre la entrada (V<sub>i</sub>) y la salida (V<sub>o</sub>) (lo inverso de â€œAâ€): <img src="./OSCILADORES CLASES2_html_m6779ecb1.gif" alt="EcuaciÃ³n de beta"></p>
+<p class="content-block">Si sabemos que la Ganancia del Lazo debe cumplir que sea igual a la unidad, entonces <code>(-Xf= Xi)</code> y <code>(A= -1/&beta;)</code> podemos decir entonces que <code>-&beta;</code> es la relación entre la entrada (V<sub>i</sub>) y la salida (V<sub>o</sub>) (lo inverso de "A"): <img src="./OSCILADORES CLASES2_html_m6779ecb1.gif" alt="Ecuación de beta"></p>
 
-<p class="content-block">Muevan un poco esa mano y hallen ustedes la expresiÃ³n de <code>-&beta;</code> usando el circuito anterior.</p>
+<p class="content-block">Muevan un poco esa mano y hallen ustedes la expresión de <code>-&beta;</code> usando el circuito anterior.</p>
 
-<p class="content-block">Cuando hayas calculado la funciÃ³n de transferencia, <a href="./OSCILADORES CLASES3.html">presiona aquÃ­ para continuar</a>....</p>
+<p class="content-block">Cuando hayas calculado la función de transferencia, <a href="./OSCILADORES CLASES3.html">presiona aquí para continuar</a>....</p>
 
     </main>
 

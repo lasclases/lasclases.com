@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
@@ -16,28 +16,28 @@
     <main id="content">
 <h1 class="center content-block" style="color: #0000ff;">DECODIFICADORES Y CODIFICADORES NIVEL SSI Y MSI. APLICACIONES</h1>
 
-<p class="content-block">Los sistemas digitales contienen datos o informaciÃ³n que estÃ¡ en alguna forma de cÃ³digo binario, los cuales se operan de alguna manera. En este tema se examinan circuitos combinatorios, cuyas aplicaciones incluyen:</p>
+<p class="content-block">Los sistemas digitales contienen datos o información que está en alguna forma de código binario, los cuales se operan de alguna manera. En este tema se examinan circuitos combinatorios, cuyas aplicaciones incluyen:</p>
 <ol>
     <li>Cambio de datos de una forma a otra.</li>
     <li>Tomar datos y enviarlos a uno de varios destinos.</li>
 </ol>
-<p class="content-block">Muchos de los circuitos lÃ³gicos que cumplen estas funciones estÃ¡n ahora como circuitos integrados MSI. Por esta razÃ³n, no nos concentraremos en el diseÃ±o de estos circuitos, sino que investigaremos cÃ³mo se usan solos o en combinaciÃ³n, para cumplir varias operaciones sobre datos digitales. Las operaciones que se discuten son: DecodificaciÃ³n y codificaciÃ³n.</p>
+<p class="content-block">Muchos de los circuitos lógicos que cumplen estas funciones están ahora como circuitos integrados MSI. Por esta razón, no nos concentraremos en el diseño de estos circuitos, sino que investigaremos cómo se usan solos o en combinación, para cumplir varias operaciones sobre datos digitales. Las operaciones que se discuten son: Decodificación y codificación.</p>
 
 <h2 class="content-block">DECODIFICADORES</h2>
-<p class="content-block">Un decodificador es un circuito combinacional que convierte la informaciÃ³n binaria de n lÃ­neas de entradas a un mÃ¡ximo de 2<sup>n</sup> lÃ­neas Ãºnicas de salida. Para cada una de las combinaciones de entrada sÃ³lo una de la salidas estarÃ¡ activada con un 1 (para cuando es lÃ³gica positiva) y todas las otras salidas estarÃ¡n en <strong>0</strong>. Muchos decodificadores se diseÃ±an para producir salidas activas con un 0 (lÃ³gica negativa donde la salida seleccionada es <strong>0</strong> mientras que las otras son 1). Esto Ãºltimo se indica siempre por la presencia de pequeÃ±os cÃ­rculos en las lÃ­neas de salida del diagrama del decodificador y Ã©sto es de gran utilidad a la hora de diseÃ±ar circuitos debido a que los decodificadores son muy usados para direccionamiento de perifÃ©ricos donde dichos perifÃ©ricos tienen una lÃ­nea de habilitaciÃ³n (indicada con una E por ENABLE) que regularmente es de lÃ³gica negativa (indicada con el cÃ­rculo en la entrada o con la raya sobre la E). Si la informaciÃ³n decodificada tiene condiciones no usadas o â€œirrelevantesâ€, entonces el decodificador tendrÃ¡ menos de 2<sup>n</sup> salidas como es el caso del decodificador BCD a decimal que tiene 4 bits de entrada (necesarios para expresar los nÃºmeros BCD) y sÃ³lo 10 lÃ­neas de salida. Es interesante comentar que en algunos decodificadores de este tipo cuando se agrega a la entrada un cÃ³digo que no es BCD vÃ¡lido ninguna de las salidas se activa. Recuerden que en todo caso <strong>SÃ“LO UNA SALIDA ESTARÃ ACTIVA</strong>.</p>
+<p class="content-block">Un decodificador es un circuito combinacional que convierte la información binaria de n líneas de entradas a un máximo de 2<sup>n</sup> líneas únicas de salida. Para cada una de las combinaciones de entrada sólo una de la salidas estará activada con un 1 (para cuando es lógica positiva) y todas las otras salidas estarán en <strong>0</strong>. Muchos decodificadores se diseñan para producir salidas activas con un 0 (lógica negativa donde la salida seleccionada es <strong>0</strong> mientras que las otras son 1). Esto último se indica siempre por la presencia de pequeños círculos en las líneas de salida del diagrama del decodificador y ésto es de gran utilidad a la hora de diseñar circuitos debido a que los decodificadores son muy usados para direccionamiento de periféricos donde dichos periféricos tienen una línea de habilitación (indicada con una E por ENABLE) que regularmente es de lógica negativa (indicada con el círculo en la entrada o con la raya sobre la E). Si la información decodificada tiene condiciones no usadas o irrelevantesâ€, entonces el decodificador tendrá menos de 2<sup>n</sup> salidas como es el caso del decodificador BCD a decimal que tiene 4 bits de entrada (necesarios para expresar los números BCD) y sólo 10 líneas de salida. Es interesante comentar que en algunos decodificadores de este tipo cuando se agrega a la entrada un código que no es BCD válido ninguna de las salidas se activa. Recuerden que en todo caso <strong>SÓLO UNA SALIDA ESTARÁ ACTIVA</strong>.</p>
 
-<p class="content-block">La siguiente figura muestra un decodificador de 3 entradas y 2<sup>3</sup> = 8 salidas. Observen que la Ãºnica diferencia significativa con respecto al demultiplexor es que no tiene la â€œlÃ­nea de entradaâ€ caracterÃ­sticas de ellos. Este decodificador se le conoce como â€œDecodificador Binario a Octalâ€ (o â€œConvertidor de Binario a Octalâ€ o incluso â€œdecodificador de 3 a 8â€).</p>
+<p class="content-block">La siguiente figura muestra un decodificador de 3 entradas y 2<sup>3</sup> = 8 salidas. Observen que la única diferencia significativa con respecto al demultiplexor es que no tiene la línea de entrada características de ellos. Este decodificador se le conoce como "Decodificador Binario a Octal" (o "Convertidor de Binario a Octal" o incluso "decodificador de 3 a 8").</p>
 
 <p class="content-block"><img src="BinarioOctal.gif" alt="Decodificador Binario a Octal" width="595" height="403"></p>
 
-<p class="content-block">Este circuito muestra el decodificador con salida positiva. Si lo quisiÃ©ramos con salida negativa los integrados a la salida deberÃ­an ser compuertas NAND. Se observa con facilidad (si lo desea haga la tabla de la verdad) que este decodificador tendrÃ¡ Ãºnicamente una salida activa a la vez. <strong>OBSERVE</strong> que cada una de las salidas <strong>corresponde al tÃ©rmino mÃ­nimo</strong> de la entrada. Esta caracterÃ­stica es muy Ãºtil a la hora de implementar funciones lÃ³gicas con decodificadores.</p>
+<p class="content-block">Este circuito muestra el decodificador con salida positiva. Si lo quisiéramos con salida negativa los integrados a la salida deberían ser compuertas NAND. Se observa con facilidad (si lo desea haga la tabla de la verdad) que este decodificador tendrá únicamente una salida activa a la vez. <strong>OBSERVE</strong> que cada una de las salidas <strong>corresponde al término mínimo</strong> de la entrada. Esta característica es muy útil a la hora de implementar funciones lógicas con decodificadores.</p>
 
-<p class="content-block">En general, los decodificadores tienen n lÃ­neas de entradas y 2<sup>n</sup> lÃ­neas de salida y de estas Ãºltimas sÃ³lo estarÃ¡ activa aquella que sea el â€œtÃ©rmino mÃ­nimoâ€ (y sÃ³lo ella ya que las salidas son mutuamente exclusivas) representado por la entrada.</p>
+<p class="content-block">En general, los decodificadores tienen n líneas de entradas y 2<sup>n</sup> líneas de salida y de estas últimas sólo estará activa aquella que sea el "término mínimo" (y sólo ella ya que las salidas son mutuamente exclusivas) representado por la entrada.</p>
 
 <h2 class="content-block">CODIFICADORES</h2>
-<p class="content-block">Un codificador, en cambio, tiene un nÃºmero de lÃ­neas de entrada, de las cuales sÃ³lo una es activa (ya sea con lÃ³gica positiva o negativa) en un tiempo dado y produce un cÃ³digo de salida de <strong>N</strong> bits, dependiendo de cuÃ¡l entrada estÃ¡ activa. O sea, el codificador hace el proceso contrario del decodificador.</p>
+<p class="content-block">Un codificador, en cambio, tiene un número de líneas de entrada, de las cuales sólo una es activa (ya sea con lógica positiva o negativa) en un tiempo dado y produce un código de salida de <strong>N</strong> bits, dependiendo de cuál entrada está activa. O sea, el codificador hace el proceso contrario del decodificador.</p>
 
-<p class="content-block">Se vio que un decodificador binario a octal acepta un cÃ³digo binario de entrada de 3 bits y activa una y sÃ³lo una de las 8 lÃ­neas de salida. Un codificador octal a binario opera de la manera opuesta. Acepta ocho lÃ­neas de entrada y produce un cÃ³digo de <strong>3</strong> bits a la salida. Hagamos la tabla de la verdad, concluyamos cuales son las funciones y luego veamos el grÃ¡fico que nos muestra esta implementaciÃ³n a nivel SSI de este circuito:</p>
+<p class="content-block">Se vio que un decodificador binario a octal acepta un código binario de entrada de 3 bits y activa una y sólo una de las 8 líneas de salida. Un codificador octal a binario opera de la manera opuesta. Acepta ocho líneas de entrada y produce un código de <strong>3</strong> bits a la salida. Hagamos la tabla de la verdad, concluyamos cuales son las funciones y luego veamos el gráfico que nos muestra esta implementación a nivel SSI de este circuito:</p>
 
 <table border="1" cellpadding="4" cellspacing="3" class="content-block">
     <tr>
@@ -72,20 +72,20 @@
 <p class="content-block">O<sub>1</sub> = A<sub>2</sub> + A<sub>3</sub> + A<sub>6</sub> + A<sub>7</sub></p>
 <p class="content-block">y</p>
 <p class="content-block">O<sub>0</sub> = A<sub>1</sub> + A<sub>3</sub> + A<sub>5</sub> + A<sub>7</sub></p>
-<p class="content-block">Por lo que el esquemÃ¡tico queda:</p>
+<p class="content-block">Por lo que el esquemático queda:</p>
 
 <p class="content-block"><img src="OctalBinario.GIF" alt="Codificador Octal a Binario" width="575" height="388"></p>
 
-<p class="content-block">Se supone que una y sÃ³lo una de las entradas es 1 a la vez, asÃ­ que sÃ³lo hay 8 condiciones posible de entrada. El circuito estÃ¡ diseÃ±ado de tal manera que cuando <strong>A<sub>0</sub></strong> es <strong>1</strong>, se genera a la salida el cÃ³digo binario 000. Cuando <strong>A<sub>1</sub></strong> es <strong>1</strong>, se genera el cÃ³digo binario 001, cuando <strong>A<sub>2</sub></strong> es <strong>1</strong>, se genera el cÃ³digo binario 010 y asÃ­ sucesivamente. El diseÃ±o del circuito es muy simple, puesto que involucra analizar cada bit de salida y determinar para cuÃ¡les casos de entrada ese bit es <strong>1</strong> y luego pasar los resultados por una compuerta OR. Por ejemplo, la tabla funcional muestra que <strong>O<sub>0</sub></strong> (que es el bit menos significativo del cÃ³digo de salida) debe ser <strong>1</strong> cuando cualesquiera de las entradas <strong>A<sub>1</sub></strong>, <strong>A<sub>3</sub></strong>, <strong>A<sub>5</sub></strong> o <strong>A<sub>7</sub></strong> sean <strong>1</strong>. Se observa tambiÃ©n que que la entrada A<sub>0</sub> no se usa nunca ya que cuando este bit es â€œunoâ€ todas las salidas deben ser â€œceroâ€, pero resulta que si todas las entradas son cero (indicando que no hay un nÃºmero octal a la entrada, por ejemplo) todas las salidas del circuito tambiÃ©n serÃ¡n cero. Esto genera una discrepancia que puede ser solventada agregÃ¡ndole otra salida al circuito que se activarÃ¡ Ãºnica y exclusivamente cuando todas las entradas sean cero y de esta forma indicarnos cuando se cumple esa condiciÃ³n (fÃ¡cilmente implementable con una OR).</p>
+<p class="content-block">Se supone que una y sólo una de las entradas es 1 a la vez, así que sólo hay 8 condiciones posible de entrada. El circuito está diseñado de tal manera que cuando <strong>A<sub>0</sub></strong> es <strong>1</strong>, se genera a la salida el código binario 000. Cuando <strong>A<sub>1</sub></strong> es <strong>1</strong>, se genera el código binario 001, cuando <strong>A<sub>2</sub></strong> es <strong>1</strong>, se genera el código binario 010 y así sucesivamente. El diseño del circuito es muy simple, puesto que involucra analizar cada bit de salida y determinar para cuáles casos de entrada ese bit es <strong>1</strong> y luego pasar los resultados por una compuerta OR. Por ejemplo, la tabla funcional muestra que <strong>O<sub>0</sub></strong> (que es el bit menos significativo del código de salida) debe ser <strong>1</strong> cuando cualesquiera de las entradas <strong>A<sub>1</sub></strong>, <strong>A<sub>3</sub></strong>, <strong>A<sub>5</sub></strong> o <strong>A<sub>7</sub></strong> sean <strong>1</strong>. Se observa también que que la entrada A<sub>0</sub> no se usa nunca ya que cuando este bit es "uno" todas las salidas deben ser "cero", pero resulta que si todas las entradas son cero (indicando que no hay un número octal a la entrada, por ejemplo) todas las salidas del circuito también serán cero. Esto genera una discrepancia que puede ser solventada agregándole otra salida al circuito que se activará única y exclusivamente cuando todas las entradas sean cero y de esta forma indicarnos cuando se cumple esa condición (fácilmente implementable con una OR).</p>
 
-<p class="content-block">Por otro lado estÃ¡ la posibilidad de que haya mÃ¡s de un uno en la entrada (una situaciÃ³n invÃ¡lida pero por 'x' o por 'y' posible). Las implementaciones integradas de â€œcodificadoresâ€ resuelven este problema agregando un circuito de alta prioridad para estos casos. La alta prioridad lo que hace es que si el uno de la posiciÃ³n cero estÃ¡ activo, asume que el nÃºmero a la salida es el cero sin importar lo que exista en el resto de las entradas. Si el la posiciÃ³n cero estÃ¡ en cero la la uno en uno entonces a la salida habrÃ¡ un uno sin importar el resto de la entrada y asÃ­ sucesivamente.</p>
+<p class="content-block">Por otro lado está la posibilidad de que haya más de un uno en la entrada (una situación inválida pero por 'x' o por 'y' posible). Las implementaciones integradas de "codificadores" resuelven este problema agregando un circuito de alta prioridad para estos casos. La alta prioridad lo que hace es que si el uno de la posición cero está activo, asume que el número a la salida es el cero sin importar lo que exista en el resto de las entradas. Si el la posición cero está en cero la la uno en uno entonces a la salida habrá un uno sin importar el resto de la entrada y así sucesivamente.</p>
 
-<p class="content-block">Como ejercicio, diseÃ±e un circuito codificador de 4 a 2. La salida deberÃ¡ ser cero (00) en el caso que no hay ninguna entrada al codificador (cuando la entrada tiene puros ceros), en todos los casos que no sean vÃ¡lidos (cualquier caso que tenga mÃ¡s de un uno) y cuando la entrada es propiamente la que corresponde al cero (I<sub>0</sub>=1). Para solventar la discrepancia agregue otra salida al circuito que serÃ¡ â€œunoâ€ cuando la entrada si sea vÃ¡lida.</p>
+<p class="content-block">Como ejercicio, diseñe un circuito codificador de 4 a 2. La salida deberá ser cero (00) en el caso que no hay ninguna entrada al codificador (cuando la entrada tiene puros ceros), en todos los casos que no sean válidos (cualquier caso que tenga más de un uno) y cuando la entrada es propiamente la que corresponde al cero (I<sub>0</sub>=1). Para solventar la discrepancia agregue otra salida al circuito que será "uno" cuando la entrada si sea válida.</p>
 
 <h2 class="content-block">APLICACIONES</h2>
 <p class="content-block">Veamos algunas aplicaciones con decodificadores.</p>
 
-<p class="content-block">DiseÃ±e un decodificador de BCD a decimal con compuertas (a nivel SSI). En realidad este circuito ya existe a nivel MSI pero se hace este ejercicio para dar a conocer como se diseÃ±a y que se debe esperar de Ã©l. Este un caso en el que no se tienen para n bits de entrada 2<sup>n</sup> salidas ya que los casos del 10 al 15 no son vÃ¡lidos (asumimos que no son posibles y las tomaremos como â€œcondiciones irrelevantesâ€). Veamos la tabla de la verdad:</p>
+<p class="content-block">Diseñe un decodificador de BCD a decimal con compuertas (a nivel SSI). En realidad este circuito ya existe a nivel MSI pero se hace este ejercicio para dar a conocer como se diseña y que se debe esperar de él. Este un caso en el que no se tienen para n bits de entrada 2<sup>n</sup> salidas ya que los casos del 10 al 15 no son válidos (asumimos que no son posibles y las tomaremos como "condiciones irrelevantes"). Veamos la tabla de la verdad:</p>
 
 <table border="1" cellpadding="4" cellspacing="3" class="content-block">
     <tr>
@@ -134,43 +134,43 @@
 <p class="content-block">D<sub>8</sub> = &sum;(8) + d(10,11,12,13,14,15)</p>
 <p class="content-block">D<sub>9</sub> = &sum;(9) + d(10,11,12,13,14,15)</p>
 
-<p class="content-block">Estas funciones pueden trabajarse por mapa de Karnaugh igual que hemos hecho hasta ahora, pero en el caso de funciones de conmutaciÃ³n (donde cada funciÃ³n tiene sÃ³lo una posible salida en uno) puede usarse un sÃ³lo mapa para todas las funciones. (Si lo desea haga los mapas de las funciones por separado y demuestre que se cumple).</p>
+<p class="content-block">Estas funciones pueden trabajarse por mapa de Karnaugh igual que hemos hecho hasta ahora, pero en el caso de funciones de conmutación (donde cada función tiene sólo una posible salida en uno) puede usarse un sólo mapa para todas las funciones. (Si lo desea haga los mapas de las funciones por separado y demuestre que se cumple).</p>
 
 <p class="content-block"><img src="MapaDecoBCD.gif" alt="Mapa de Karnaugh para Decodificador BCD a Decimal" width="619" height="398"></p>
 
 <p class="content-block">Por lo tanto las funciones quedan:</p>
 <p class="content-block">D<sub>0</sub>(A,B,C,D)=A'B'C'D', D<sub>1</sub>(A,B,C,D)=A'B'C'D, D<sub>2</sub>(A,B,C,D)=B'CD', D<sub>3</sub>(A,B,C,D)=B'CD, D<sub>4</sub>(A,B,C,D)=BC'D', D<sub>5</sub>(A,B,C,D)=BC'D, D<sub>6</sub>(A,B,C,D)=BCD', D<sub>7</sub>(A,B,C,D)=BCD, D<sub>8</sub>(A,B,C,D)=AD' y D<sub>9</sub>(A,B,C,D)=AD</p>
 
-<p class="content-block">por lo que el esquemÃ¡tico nos quedarÃ­a:</p>
+<p class="content-block">por lo que el esquemático nos quedaría:</p>
 
 <p class="content-block"><img src="BCD_Decimal.gif" alt="Circuito Decodificador BCD a Decimal" width="608" height="453"></p>
 
-<p class="content-block">Este circuito es sÃ³lo vÃ¡lido si NO es posible opciones diferentes de BCD a la entrada. Si se quiere que todas las salidas sean cero para casos no vÃ¡lidos en BCD debe hacerse otro circuito. HÃ¡gala como ejercicio.</p>
+<p class="content-block">Este circuito es sólo válido si NO es posible opciones diferentes de BCD a la entrada. Si se quiere que todas las salidas sean cero para casos no válidos en BCD debe hacerse otro circuito. Hágala como ejercicio.</p>
 
 <p class="content-block">Otro.</p>
 
-<p class="content-block">Como se comentÃ³ en el tema anterior, los decodificadores (o demultiplexores) tambiÃ©n pueden ser usados para el desarrollo de circuitos combinacionales con la ayuda de compuertas OR a la salida para â€œsumarâ€ los tÃ©rminos mÃ­nimos que forman la funciÃ³n. Si nuestro diseÃ±o requiere mÃ¡s de una funciÃ³n de salida, entonces podemos hacer uso de mas de una compuerta OR (una para cada funciÃ³n requerida). Veamos un ejemplo: Construir un circuito sumador completo de dos bits con un decodificador y dos compuertas NAND. (OJO, SÃ pedÃ­ implementar con NAND, no con OR)</p>
+<p class="content-block">Como se comentó en el tema anterior, los decodificadores (o demultiplexores) también pueden ser usados para el desarrollo de circuitos combinacionales con la ayuda de compuertas OR a la salida para "sumar" los términos mínimos que forman la función. Si nuestro diseño requiere más de una función de salida, entonces podemos hacer uso de mas de una compuerta OR (una para cada función requerida). Veamos un ejemplo: Construir un circuito sumador completo de dos bits con un decodificador y dos compuertas NAND. (OJO, SI pedí implementar con NAND, no con OR)</p>
 
 <p class="content-block">Ya sabemos que nuestras funciones para un sumador completo de 2 bits. Asumiendo que A y B son los bits a sumar y C el acarreo de entrada tenemos que:</p>
 <p class="content-block">S(A,B,C)=&sum;(1,2,4,7)</p>
 <p class="content-block">C<sub>o</sub>(A,B,C)=&sum;(3,5,6,7)</p>
 
-<p class="content-block">Nuestro sumador quedarÃ­a:</p>
+<p class="content-block">Nuestro sumador quedaría:</p>
 
 <p class="content-block"><img src="SumadorConDeco.gif" alt="Sumador Completo con Decodificador y NAND" width="601" height="412"></p>
 
-<p class="content-block">Observe bien este circuito. El decodificador tiene las salidas con â€œ<strong>lÃ³gica negativa</strong>â€ por lo que tenemos a la salida NO son los tÃ©rminos mÃ­nimos sino los tÃ©rminos mÃ¡ximos. Por esta razÃ³n nuestra implementaciÃ³n puede realizarse fÃ¡cilmente con compuertas NAND (o incluso AND; hÃ¡galo como ejercicio). Recuerden que, por ejemplo la funciÃ³n S, puede ser expresada en una suma de productos (con tÃ©rminos mÃ­nimos) o como un producto de sumas (con tÃ©rminos mÃ¡ximos). AsÃ­ que S=m<sub>1</sub>+m<sub>2</sub>+m<sub>4</sub>+m<sub>7</sub>=M<sub>0</sub>M<sub>3</sub>M<sub>5</sub>M<sub>6</sub>=(M<sub>1</sub>M<sub>2</sub>M<sub>4</sub>M<sub>7</sub>)' (ya que M<sub>1</sub>M<sub>2</sub>M<sub>4</sub>M<sub>7</sub> es S') y es exactamente esta Ãºltima forma la que estamos aprovechando. Hacemos el anÃ¡lisis recÃ­proco para C<sub>o</sub>. Como ejercicio, realice la misma implementaciÃ³n pero con compuertas OR.</p>
+<p class="content-block">Observe bien este circuito. El decodificador tiene las salidas con "<strong>lógica negativa</strong>" por lo que tenemos a la salida NO son los términos mínimos sino los términos máximos. Por esta razón nuestra implementación puede realizarse fácilmente con compuertas NAND (o incluso AND; hágalo como ejercicio). Recuerden que, por ejemplo la función S, puede ser expresada en una suma de productos (con términos mínimos) o como un producto de sumas (con términos máximos). Así que S=m<sub>1</sub>+m<sub>2</sub>+m<sub>4</sub>+m<sub>7</sub>=M<sub>0</sub>M<sub>3</sub>M<sub>5</sub>M<sub>6</sub>=(M<sub>1</sub>M<sub>2</sub>M<sub>4</sub>M<sub>7</sub>)' (ya que M<sub>1</sub>M<sub>2</sub>M<sub>4</sub>M<sub>7</sub> es S') y es exactamente esta última forma la que estamos aprovechando. Hacemos el análisis recíproco para C<sub>o</sub>. Como ejercicio, realice la misma implementación pero con compuertas OR.</p>
 
-<p class="content-block">El mÃ©todo del decodificador puede usarse para implementar cualquier circuito combinacional pero en realidad debe pensarse bien lo que se va a hacer debido a que pueden existir soluciones mÃ¡s Ã³ptimas. <strong>Este mÃ©todo es principalmente Ãºtil para el desarrollo de circuitos con varias salidas</strong> ya que para una sola salida yo dirÃ­a que es preferible usar la implementaciÃ³n con multiplexores tal y como se vio en el tema anterior.</p>
+<p class="content-block">El método del decodificador puede usarse para implementar cualquier circuito combinacional pero en realidad debe pensarse bien lo que se va a hacer debido a que pueden existir soluciones más óptimas. <strong>Este método es principalmente útil para el desarrollo de circuitos con varias salidas</strong> ya que para una sola salida yo diría que es preferible usar la implementación con multiplexores tal y como se vio en el tema anterior.</p>
 
-<p class="content-block">La mayorÃ­a de las aplicaciones con codificadores que he visto son de implementaciÃ³n a nivel SSI. Ya de eso hablamos antes asÃ­ que no repetirÃ© otros casos de ello.</p>
+<p class="content-block">La mayoría de las aplicaciones con codificadores que he visto son de implementación a nivel SSI. Ya de eso hablamos antes así que no repetiré otros casos de ello.</p>
 
 <h2 class="content-block">EJERCICIOS</h2>
 <ol>
-    <li>Como ya se planteÃ³ haga el BCD a decimal con puro cero a la salida si la entrada NO es BCD vÃ¡lido.</li>
-    <li>Como ya se planteÃ³, haga el sumador completo de 2 bits con un decodificador y compuertas OR.</li>
-    <li>DiseÃ±e un decodificador de 2 a 4 con una entrada de habilitaciÃ³n. La salida es con lÃ³gica negada. La entrada de habilitaciÃ³n (E por Enable) es de lÃ³gica positiva. En el caso de que E=1, todas las salidas son uno (recuerde que el circuito tiene salida con lÃ³gica negativa asÃ­ que este es el comportamiento normal). Si E=0, la salida del decodificador cero cero dependiendo de la entrada. Haga el esquemÃ¡tico.</li>
-    <li>DiseÃ±e un decodificador de 4 a 16 con 2 decodificadores 3 a 8. TIP: Recuerde que los decodificadores tienen la entrada ENABLE.</li>
+    <li>Como ya se planteó haga el BCD a decimal con puro cero a la salida si la entrada NO es BCD válido.</li>
+    <li>Como ya se planteó, haga el sumador completo de 2 bits con un decodificador y compuertas OR.</li>
+    <li>Diseñe un decodificador de 2 a 4 con una entrada de habilitación. La salida es con lógica negada. La entrada de habilitación (E por Enable) es de lógica positiva. En el caso de que E=1, todas las salidas son uno (recuerde que el circuito tiene salida con lógica negativa así que este es el comportamiento normal). Si E=0, la salida del decodificador cero cero dependiendo de la entrada. Haga el esquemático.</li>
+    <li>Diseñe un decodificador de 4 a 16 con 2 decodificadores 3 a 8. TIP: Recuerde que los decodificadores tienen la entrada ENABLE.</li>
     <li>Realice las siguientes funciones con decodificadores:
         <ul>
             <li>f(A,B,C,D) = &sum; (0,4,6,10,11,13)</li>
@@ -180,17 +180,17 @@
             <li>f(A,B,C,D,E,F) = &sum; (0,2,4,5,7,8,16,18,24,32,36,40,48,56)</li>
         </ul>
     </li>
-    <li>Un circuito tiene 5 entradas A, B, C, D y E. Considere que A es el mÃ¡s significativo. De las entradas, B, C, D y E representan un nÃºmero BCD. A serÃ¡ una entrada de control que cumple que:
+    <li>Un circuito tiene 5 entradas A, B, C, D y E. Considere que A es el más significativo. De las entradas, B, C, D y E representan un número BCD. A será una entrada de control que cumple que:
         <ul>
-            <li>Cuando el control estÃ¡ en <strong>0</strong> lÃ³gico, la salida <strong>Z</strong> es igual a 0 si el nÃºmero decimal es impar y 1 si es par.</li>
-            <li>Cuando el control estÃ¡ en <strong>1</strong> lÃ³gico, la salida <strong>Z</strong> es igual a 1 cuando la entrada es mÃºltiplo de 3, en caso contrario es 0.</li>
+            <li>Cuando el control está en <strong>0</strong> lógico, la salida <strong>Z</strong> es igual a 0 si el número decimal es impar y 1 si es par.</li>
+            <li>Cuando el control está en <strong>1</strong> lógico, la salida <strong>Z</strong> es igual a 1 cuando la entrada es múltiplo de 3, en caso contrario es 0.</li>
         </ul>
     </li>
-    <li>DiseÃ±e un circuito utilizando un decodificador y compuertas externas, considerando lÃ³gica negativa y que 0 es par.</li>
-    <li>Describa como funciona y como estÃ¡ estructurado un codificador de decimal a BCD con salidas de lÃ³gica negativa. Haga la tabla de la verdad.</li>
+    <li>Diseñe un circuito utilizando un decodificador y compuertas externas, considerando lógica negativa y que 0 es par.</li>
+    <li>Describa como funciona y como está estructurado un codificador de decimal a BCD con salidas de lógica negativa. Haga la tabla de la verdad.</li>
 </ol>
 
-<p class="content-block">En la prÃ³xima clase se verÃ¡ el TEMA 11: <a href="http://lasclases.com/CircuitosLogicos/tema11.html">Display de 7 segmentos, circuito manejador de display.</a></p>
+<p class="content-block">En la próxima clase se verá el TEMA 11: <a href="http://lasclases.com/CircuitosLogicos/tema11.html">Display de 7 segmentos, circuito manejador de display.</a></p>
 
     </main>
 

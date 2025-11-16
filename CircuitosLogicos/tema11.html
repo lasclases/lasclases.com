@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
@@ -16,49 +16,49 @@
     <main id="content">
 <h1 class="center content-block" style="color: #0000ff;">DISPLAY DE 7 SEGMENTOS, CIRCUITO MANEJADOR DE DISPLAY</h1>
 
-<p class="content-block">El â€œ<strong>display de 7 segmentos</strong>â€ es un dispositivo usado para presentar informaciÃ³n de forma visual. Esta informaciÃ³n es especÃ­ficamente un dÃ­gito decimal del 0 (cero) al 9 (nueve), por lo que se intuye que que el cÃ³digo BCD estÃ¡ involucrado. El caso que nos ataÃ±e consta de 7 LED's (Light Emisor Diode), uno por cada segmento, que se encenderÃ¡n o apagarÃ¡n dependiendo de la informaciÃ³n que se les envÃ­e (dije que en este caso ya que existen tambiÃ©n display 7 segmentos de cristal lÃ­quido, incandescentes, etc.).</p>
+<p class="content-block">El "<strong>display de 7 segmentos</strong>" es un dispositivo usado para presentar información de forma visual. Esta información es específicamente un dígito decimal del 0 (cero) al 9 (nueve), por lo que se intuye que que el código BCD está involucrado. El caso que nos atañe consta de 7 LED's (Light Emisor Diode), uno por cada segmento, que se encenderán o apagarán dependiendo de la información que se les envíe (dije que en este caso ya que existen también display 7 segmentos de cristal líquido, incandescentes, etc.).</p>
 
 <p class="content-block">El display 7 segmentos tiene una estructura similar a:</p>
 
 <p class="content-block"><img src="Display7Segmentos.GIF" alt="Diagrama de segmentos a, b, c, d, e, f, g" width="224" height="225"></p>
 
-<p class="content-block">donde los 7 led's vienen indicados por las letras a, b, c, d, e, f y g. Con Ã©stos pueden formarse todos los dÃ­gitos decimales. Por ejemplo, para formar el nÃºmero tres deben activarse los led's a, b, c, d y g y desactivar los e y f. Para el uno se usan los led's b y c (ojo, esta es la combinaciÃ³n correcta no e y f). De forma anÃ¡loga se procede para el resto de los casos. Veamos como queda:</p>
+<p class="content-block">donde los 7 led's vienen indicados por las letras a, b, c, d, e, f y g. Con éstos pueden formarse todos los dígitos decimales. Por ejemplo, para formar el número tres deben activarse los led's a, b, c, d y g y desactivar los e y f. Para el uno se usan los led's b y c (ojo, esta es la combinación correcta no e y f). De forma análoga se procede para el resto de los casos. Veamos como queda:</p>
 
-<p class="content-block"><img src="numerosCon7seg.JPG" alt="NÃºmeros decimales representados en display de 7 segmentos" width="754" height="294"></p>
+<p class="content-block"><img src="numerosCon7seg.JPG" alt="Números decimales representados en display de 7 segmentos" width="754" height="294"></p>
 
-<p class="content-block">Estos dispositivos pueden ser de tipo â€œÃnodo ComÃºnâ€</p>
+<p class="content-block">Estos dispositivos pueden ser de tipo "Ánodo Común"</p>
 
-<p class="content-block"><img src="7SegAnodoComun.GIF" alt="Diagrama de Display de 7 Segmentos de Ãnodo ComÃºn" width="281" height="225"></p>
+<p class="content-block"><img src="7SegAnodoComun.GIF" alt="Diagrama de Display de 7 Segmentos de Ánodo Común" width="281" height="225"></p>
 
-<p class="content-block">o â€œCÃ¡todo ComÃºnâ€</p>
+<p class="content-block">o "Cátodo Común"</p>
 
-<p class="content-block"><img src="7SegCatodoComun.GIF" alt="Diagrama de Display de 7 Segmentos de CÃ¡todo ComÃºn" width="276" height="225"></p>
+<p class="content-block"><img src="7SegCatodoComun.GIF" alt="Diagrama de Display de 7 Segmentos de Cátodo Común" width="276" height="225"></p>
 
-<p class="content-block">En el caso de los display de Ã¡nodo comÃºn todos los Ã¡nodos (+) de los led's comparten la conexiÃ³n. Estos display requieren un cero (una tierra) a la entrada de cada segmento para encenderlo. En el caso de los display de cÃ¡todo comÃºn todos los cÃ¡todos (-) de los led's comparten la conexiÃ³n. Estos display requieren un uno (Vcc) a la entrada de cada segmento para encenderse. Todas las conexiones deben ser hechas a travÃ©s de una resistencia para regular la cantidad de corriente que pasa a travÃ©s de los led's.</p>
+<p class="content-block">En el caso de los display de ánodo común todos los ánodos (+) de los led's comparten la conexión. Estos display requieren un cero (una tierra) a la entrada de cada segmento para encenderlo. En el caso de los display de cátodo común todos los cátodos (-) de los led's comparten la conexión. Estos display requieren un uno (Vcc) a la entrada de cada segmento para encenderse. Todas las conexiones deben ser hechas a través de una resistencia para regular la cantidad de corriente que pasa a través de los led's.</p>
 
 <p class="content-block">Existen casos donde aparece un octavo segmento que suele usarse como punto decimal (ver el DP):</p>
 
 <p class="content-block"><img src="8segmentos.png" alt="Diagrama de pines de display de 8 segmentos" width="344" height="299"></p>
 
-<p class="content-block">En la figura pueden verse tambiÃ©n una de las configuraciones de pines mÃ¡s popular que contienen los display 7 segmentos y lo que representan. Los pines 3 y 8 son el Ã¡nodo comÃºn Ã³ el cÃ¡todo comÃºn (dependiendo de cual sea el caso del 7 segmentos elegido) y aunque regularmente es indiferente cual de ellos conecten existen casos de modelos de displays en los que, por sus especificaciones, se requieren ambos conectados (o tambiÃ©n quizÃ¡ porque requieran cumplir alguna condiciÃ³n de manejo de corriente en su circuito). El encapsulado de este mismo display luce algo como:</p>
+<p class="content-block">En la figura pueden verse también una de las configuraciones de pines más popular que contienen los display 7 segmentos y lo que representan. Los pines 3 y 8 son el ánodo común ó el cátodo común (dependiendo de cual sea el caso del 7 segmentos elegido) y aunque regularmente es indiferente cual de ellos conecten existen casos de modelos de displays en los que, por sus especificaciones, se requieren ambos conectados (o también quizá porque requieran cumplir alguna condición de manejo de corriente en su circuito). El encapsulado de este mismo display luce algo como:</p>
 
 <p class="content-block"><img src="8segmentosEncapsulado.png" alt="Encapsulado de display de 8 segmentos" width="295" height="261"></p>
 
-<p class="content-block">para la versiÃ³n que contiene sÃ³lo un dÃ­gito pero existen algunas para mÃ¡s dÃ­gitos como por ejemplo el de dos dÃ­gitos que es bastante usado o los de X dÃ­gitos y medio donde el medio viene dado por el hecho de que Ã©l sÃ³lo puede representar el nÃºmero uno (tiene Ãºnicamente dos segmentos).</p>
+<p class="content-block">para la versión que contiene sólo un dígito pero existen algunas para más dígitos como por ejemplo el de dos dígitos que es bastante usado o los de X dígitos y medio donde el medio viene dado por el hecho de que él sólo puede representar el número uno (tiene únicamente dos segmentos).</p>
 
-<p class="content-block">Existen circuitos integrados a nivel MSI que pueden realizar la tarea de manejar estos displays. Estos IC's son decodificadores, especÃ­ficamente los conocidos como decodificadores de BCD a 7 segmentos, como son los casos de los IC 7446, 7447 y 7448 de la familia TTL. El 7446 y 7447 tienen salidas con lÃ³gica negativa por lo que enviarÃ¡n un cero al segmento que se desea encender. Esto quiere decir que manejan Displays 7 segmentos de Ã¡nodo comÃºn. Ambos son Open Collector (bueno para el manejo de corriente necesario en algunos casos) y se diferencian Ãºnicamente en la salida que pueden manejar (30v para el 7446 y 15v para el 7447). Nuestros circuitos generalmente estarÃ¡n construidos con tecnologÃ­a TTL a 5V y por ello lo mÃ¡s seguro es que empleemos el 7447. En el caso del 7448 las salidas son de lÃ³gica positiva por lo que son usados con los dispositivos cÃ¡todo comÃºn. Todos comparten una caracterÃ­stica: esperan a la entrada un nÃºmero en BCD y es para cada una de ellas que desplegarÃ¡n el dÃ­gito decimal correspondiente. Pero aÃºn asÃ­, estos IC tienen respuestas para otras combinaciones a la entrada distintas de BCD. En el siguiente dibujo se muestran las salidas reflejadas en los display de 7 segmentos para todas las combinaciones binarias de 4 bits posibles:</p>
+<p class="content-block">Existen circuitos integrados a nivel MSI que pueden realizar la tarea de manejar estos displays. Estos IC's son decodificadores, específicamente los conocidos como decodificadores de BCD a 7 segmentos, como son los casos de los IC 7446, 7447 y 7448 de la familia TTL. El 7446 y 7447 tienen salidas con lógica negativa por lo que enviarán un cero al segmento que se desea encender. Esto quiere decir que manejan Displays 7 segmentos de ánodo común. Ambos son Open Collector (bueno para el manejo de corriente necesario en algunos casos) y se diferencian únicamente en la salida que pueden manejar (30v para el 7446 y 15v para el 7447). Nuestros circuitos generalmente estarán construidos con tecnología TTL a 5V y por ello lo más seguro es que empleemos el 7447. En el caso del 7448 las salidas son de lógica positiva por lo que son usados con los dispositivos cátodo común. Todos comparten una característica: esperan a la entrada un número en BCD y es para cada una de ellas que desplegarán el dígito decimal correspondiente. Pero aún así, estos IC tienen respuestas para otras combinaciones a la entrada distintas de BCD. En el siguiente dibujo se muestran las salidas reflejadas en los display de 7 segmentos para todas las combinaciones binarias de 4 bits posibles:</p>
 
 <p class="content-block"><img src="7segPosibilidades.JPG" alt="Posibilidades de salida del decodificador 7447/7448" width="639" height="225"></p>
 
-<p class="content-block">Aparte de los dÃ­gitos decimales, se ven las salidas para cuando el decodificador tiene entrada de 1010, 1011, 1100, 1101, 1110 y 1111. Este Ãºltimo caso apaga todos los segmentos y por ello no se ve nada.</p>
+<p class="content-block">Aparte de los dígitos decimales, se ven las salidas para cuando el decodificador tiene entrada de 1010, 1011, 1100, 1101, 1110 y 1111. Este último caso apaga todos los segmentos y por ello no se ve nada.</p>
 
-<p class="content-block">A continuaciÃ³n se muestra una implementaciÃ³n tÃ­pica usada para la prueba de los dislay de 7 segmentos:</p>
+<p class="content-block">A continuación se muestra una implementación típica usada para la prueba de los dislay de 7 segmentos:</p>
 
 <p class="content-block"><img src="7segCircuitoTest.JPG" alt="Circuito de prueba de display de 7 segmentos con 7447" width="560" height="445"></p>
 
-<p class="content-block">El display mostrarÃ¡ el dÃ­gito decimal que corresponda con el nÃºmero binario seleccionado por los interruptores 1, 2, 3 y 4 del dip switch. En esta configuraciÃ³n se ve que las resistencias delimitadoras de corriente se colocan en el Ã¡nodo comÃºn (sabemos que son Ã¡nodo comÃºn por el uso del 7447) pero dependiendo de la implementaciÃ³n, e incluso a veces del display, en algunos casos pueden requerirse el uso de una resistencia por cada segmento y la conexiÃ³n directa de los Ã¡nodos a Vcc.</p>
+<p class="content-block">El display mostrará el dígito decimal que corresponda con el número binario seleccionado por los interruptores 1, 2, 3 y 4 del dip switch. En esta configuración se ve que las resistencias delimitadoras de corriente se colocan en el ánodo común (sabemos que son ánodo común por el uso del 7447) pero dependiendo de la implementación, e incluso a veces del display, en algunos casos pueden requerirse el uso de una resistencia por cada segmento y la conexión directa de los ánodos a Vcc.</p>
 
-<p class="content-block">A continuaciÃ³n veremos la implementaciÃ³n de un circuito decodificador de BCD a 7 segmentos usando tecnologÃ­a SSI. Hallaremos sÃ³lo las funciones y no haremos el esquemÃ¡tico debido a lo grande del mismo. Asumiremos que la entada serÃ¡ Ãºnica y exclusivamente un nÃºmero BCD vÃ¡lido por lo que el resto de los casos no nos interesan (dont care). Asumiremos tambiÃ©n que nuestro circuito serÃ¡ destinado a un display de cÃ¡todo comÃºn (por lo que tendrÃ¡ salida con lÃ³gica positiva). Para ello empecemos con la tabla de la verdad. Sabiendo que la entrada serÃ¡ I (formada por I<sub>3</sub>I<sub>2</sub>I<sub>1</sub>I<sub>0</sub>) y las salidas serÃ¡n los siete segmentos posibles a, b, c, d, e, f y g (como ya se ha mostrado), tenemos que:</p>
+<p class="content-block">A continuación veremos la implementación de un circuito decodificador de BCD a 7 segmentos usando tecnología SSI. Hallaremos sólo las funciones y no haremos el esquemático debido a lo grande del mismo. Asumiremos que la entada será única y exclusivamente un número BCD válido por lo que el resto de los casos no nos interesan (dont care). Asumiremos también que nuestro circuito será destinado a un display de cátodo común (por lo que tendrá salida con lógica positiva). Para ello empecemos con la tabla de la verdad. Sabiendo que la entrada será I (formada por I<sub>3</sub>I<sub>2</sub>I<sub>1</sub>I<sub>0</sub>) y las salidas serán los siete segmentos posibles a, b, c, d, e, f y g (como ya se ha mostrado), tenemos que:</p>
 
 <table border="1" cellpadding="4" cellspacing="3" class="content-block">
     <tr>
@@ -92,7 +92,7 @@
     <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
 </table>
 
-<p class="content-block">Ahora bien. En este caso tenemos 7 funciones de salida que llamaremos a(I), b(I), c(I), d(I), e(I), f(I) y g(I). Ã‰stas vienen dadas por:</p>
+<p class="content-block">Ahora bien. En este caso tenemos 7 funciones de salida que llamaremos a(I), b(I), c(I), d(I), e(I), f(I) y g(I). Éstas vienen dadas por:</p>
 <p class="content-block">a(I)=&sum;(0,2,3,5,7,8,9)+d(10,11,12,13,14,15)</p>
 <p class="content-block">b(I)=&sum;(0,1,2,3,4,7,8,9)+d(10,11,12,13,14,15)</p>
 <p class="content-block">c(I)=&sum;(0,1,3,4,5,6,7,8,9)+d(10,11,12,13,14,15)</p>
@@ -110,13 +110,13 @@
 <p class="content-block"><strong>f = I<sub>3</sub> + I<sub>2</sub>I<sub>0</sub>' + I<sub>2</sub>I<sub>1</sub>' + I<sub>1</sub>'I<sub>0</sub>'</strong></p>
 <p class="content-block"><strong>g = I<sub>3</sub> + I<sub>2</sub>I<sub>1</sub>' + I<sub>2</sub>I<sub>0</sub>' + I<sub>2</sub>'I<sub>1</sub></strong></p>
 
-<p class="content-block">Partiendo de estas funciones simplificadas se realiza la implementaciÃ³n.</p>
+<p class="content-block">Partiendo de estas funciones simplificadas se realiza la implementación.</p>
 
-<p class="content-block">Como ejercicio implemente el circuito anterior con un decodificador de salida con lÃ³gica negativa y con compuertas AND Ã³ NAND. Dibuje el esquemÃ¡tico.</p>
+<p class="content-block">Como ejercicio implemente el circuito anterior con un decodificador de salida con lógica negativa y con compuertas AND ó NAND. Dibuje el esquemático.</p>
 
-<p class="content-block">TambiÃ©n como ejercicio haga la implementaciÃ³n con tecnologÃ­a SSI para cuando la salida es con lÃ³gica negativa.</p>
+<p class="content-block">También como ejercicio haga la implementación con tecnología SSI para cuando la salida es con lógica negativa.</p>
 
-<p class="content-block">En la prÃ³xima clase se verÃ¡ el TEMA 12: <a href="http://lasclases.com/CircuitosLogicos/tema12.html">Comparador de magnitud a nivel SSI y MSI.</a></p>
+<p class="content-block">En la próxima clase se verá el TEMA 12: <a href="http://lasclases.com/CircuitosLogicos/tema12.html">Comparador de magnitud a nivel SSI y MSI.</a></p>
 
     </main>
 
