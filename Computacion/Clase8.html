@@ -1,15 +1,22 @@
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE HTML>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Clase 8: Sentencias de Control</title>
 	<meta name="author" content="Tony Rodriguez">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <h1 class="content-block">Sentencias de control.</h1>
 
-<p class="content-block">En lenguaje C, existen un conjunto de sentencias que se pueden usar para afectar el control o flujo de un programa. La mayoría de estas sentencias, se basan en una prueba condicional que determinará la acción que se llevará a cabo. Una prueba condicional produce un valor de cierto (se puede usar la palabra clave de C 'TRUE') o de falso (la cual es 'FALSE'). En lenguaje C, el falso es representado exclusivamente por el valor numérico cero; cualquier otro valor representa un cierto. Este enfoque de lo que es cierto y lo que es falso permite codificar eficientemente muchos tipos de rutina.</p>
+<p class="content-block">En lenguaje C, existen un conjunto de sentencias que se pueden usar para afectar el control o flujo de un programa. La mayorÃ­a de estas sentencias, se basan en una prueba condicional que determinarÃ¡ la acciÃ³n que se llevarÃ¡ a cabo. Una prueba condicional produce un valor de cierto (se puede usar la palabra clave de C 'TRUE') o de falso (la cual es 'FALSE'). En lenguaje C, el falso es representado exclusivamente por el valor numÃ©rico cero; cualquier otro valor representa un cierto. Este enfoque de lo que es cierto y lo que es falso permite codificar eficientemente muchos tipos de rutina.</p>
 
 <p class="content-block">Las sentencias de control se dividen en:</p>
 
@@ -18,33 +25,33 @@
 <p class="content-block">En lenguaje C son soportados dos tipos de sentencias condicionales: <strong>if</strong> y <strong>switch</strong>.</p>
 
 <h3 class="content-block">if</h3>
-<p class="content-block">Se usa cuando se requiere que una instrucción o un bloque de ellas sea ejecutado si y sólo si se cumple una condición particular. Su forma de uso es:</p>
+<p class="content-block">Se usa cuando se requiere que una instrucciÃ³n o un bloque de ellas sea ejecutado si y sÃ³lo si se cumple una condiciÃ³n particular. Su forma de uso es:</p>
 
 <pre>
-if (condición) sentencia;
+if (condiciÃ³n) sentencia;
 </pre>
-<p class="content-block">ó</p>
+<p class="content-block">Ã³</p>
 <pre>
-if (condición) {
+if (condiciÃ³n) {
     sentencia1;
     sentencia2;
     ...
-    última sentencia;
+    Ãºltima sentencia;
 }
 </pre>
 
-<p class="content-block">En el primer caso, <code>sentencia</code> se ejecutará si <code>condición</code> es cierto. En el segundo caso se ejecutarán todas las sentencias dentro del bloque. “condición” es una expresión con operadores relacionales que es evaluada y retorna cero si es falsa o cualquier otro valor es cierta. P ej: Al evaluar la siguiente expresión: <code>(2<3)</code>, se retornará un número diferente de cero para indicar que es cierta (cualquier número diferente de cero pero, aunque no importa, suele ser uno). Por el contrario el evaluar la expresión <code>(3<2)</code>, retornará un cero indicando que es falsa. En lenguaje C también se pueden usar las macros definidas 'TRUE' o 'FALSE'.</p>
+<p class="content-block">En el primer caso, <code>sentencia</code> se ejecutarÃ¡ si <code>condiciÃ³n</code> es cierto. En el segundo caso se ejecutarÃ¡n todas las sentencias dentro del bloque. â€œcondiciÃ³nâ€ es una expresiÃ³n con operadores relacionales que es evaluada y retorna cero si es falsa o cualquier otro valor es cierta. P ej: Al evaluar la siguiente expresiÃ³n: <code>(2<3)</code>, se retornarÃ¡ un nÃºmero diferente de cero para indicar que es cierta (cualquier nÃºmero diferente de cero pero, aunque no importa, suele ser uno). Por el contrario el evaluar la expresiÃ³n <code>(3<2)</code>, retornarÃ¡ un cero indicando que es falsa. En lenguaje C tambiÃ©n se pueden usar las macros definidas 'TRUE' o 'FALSE'.</p>
 
 <h3 class="content-block">if-else</h3>
-<p class="content-block">Podría requerirse en un programa, y de hecho suele ser así, que se ejecute una sentencia si se cumple una condición y que se ejecute otra si no. Para eso tenemos el compañero de la sentencia <code>if</code> denominado <code>else</code>. Su forma de uso es:</p>
+<p class="content-block">PodrÃ­a requerirse en un programa, y de hecho suele ser asÃ­, que se ejecute una sentencia si se cumple una condiciÃ³n y que se ejecute otra si no. Para eso tenemos el compaÃ±ero de la sentencia <code>if</code> denominado <code>else</code>. Su forma de uso es:</p>
 
 <pre>
-if (condición) sentencia;
+if (condiciÃ³n) sentencia;
 else sentencia;
 </pre>
-<p class="content-block">ó</p>
+<p class="content-block">Ã³</p>
 <pre>
-if (condición) {
+if (condiciÃ³n) {
     sentencia1;
     sentencia2;
 } else {
@@ -53,10 +60,10 @@ if (condición) {
 }
 </pre>
 
-<p class="content-block">Como intuirán, <code>sentencia1</code> y <code>sentencia2</code> se ejecutarán si y solo si <code>condición</code> es cierta. De lo contrario se ejecutarán <code>sentencia3</code> y <code>sentencia4</code>.</p>
+<p class="content-block">Como intuirÃ¡n, <code>sentencia1</code> y <code>sentencia2</code> se ejecutarÃ¡n si y solo si <code>condiciÃ³n</code> es cierta. De lo contrario se ejecutarÃ¡n <code>sentencia3</code> y <code>sentencia4</code>.</p>
 
 <h3 class="content-block">ifs anidados</h3>
-<p class="content-block">Uno de los aspectos más confusos de las sentencias <code>if</code> se encuentra en los <code>if</code>s anidados. Un <code>if</code> anidado es un <code>if</code> que es objeto de otro <code>if</code> o de un <code>else</code>. La razón por la que suelen ser tan problemáticos es que puede ser difícil saber que <code>else</code> se asocia con que <code>if</code>. Por ejemplo:</p>
+<p class="content-block">Uno de los aspectos mÃ¡s confusos de las sentencias <code>if</code> se encuentra en los <code>if</code>s anidados. Un <code>if</code> anidado es un <code>if</code> que es objeto de otro <code>if</code> o de un <code>else</code>. La razÃ³n por la que suelen ser tan problemÃ¡ticos es que puede ser difÃ­cil saber que <code>else</code> se asocia con que <code>if</code>. Por ejemplo:</p>
 
 <pre>
 if(cond1)
@@ -64,7 +71,7 @@ if(cond1)
     else sentencia2;
 </pre>
 
-<p class="content-block">Por suerte C nos da una regla muy sencilla para saber a que <code>if</code> pertenece un <code>else</code> y ésta es que una sentencia <code>else</code> pertenecerá al <code>if</code> precedente más próximo que no tenga ya asociada una sentencia <code>else</code>. En este caso, el <code>else</code> está asociado a la sentencia <code>if(cond2)</code> (si el programador se guía por la estructura del programa podría pensar que está asociado con el <code>if(cond1)</code> y no es así). Si lo que se quiere es que el <code>else</code> sea asociado con el <code>if(cond1)</code> entonces se debe usar llaves para saltarse la asociación normal, por lo que sería:</p>
+<p class="content-block">Por suerte C nos da una regla muy sencilla para saber a que <code>if</code> pertenece un <code>else</code> y Ã©sta es que una sentencia <code>else</code> pertenecerÃ¡ al <code>if</code> precedente mÃ¡s prÃ³ximo que no tenga ya asociada una sentencia <code>else</code>. En este caso, el <code>else</code> estÃ¡ asociado a la sentencia <code>if(cond2)</code> (si el programador se guÃ­a por la estructura del programa podrÃ­a pensar que estÃ¡ asociado con el <code>if(cond1)</code> y no es asÃ­). Si lo que se quiere es que el <code>else</code> sea asociado con el <code>if(cond1)</code> entonces se debe usar llaves para saltarse la asociaciÃ³n normal, por lo que serÃ­a:</p>
 
 <pre>
 if(cond1) {
@@ -72,10 +79,10 @@ if(cond1) {
 } else sentencia2;
 </pre>
 
-<p class="content-block">Ahora el <code>else</code> sí está asociado a <code>if(cond1)</code>.</p>
+<p class="content-block">Ahora el <code>else</code> sÃ­ estÃ¡ asociado a <code>if(cond1)</code>.</p>
 
 <h3 class="content-block">if-else-if</h3>
-<p class="content-block">La escala <code>if-else-if</code> es una construcción muy común en programación. Su forma de uso es:</p>
+<p class="content-block">La escala <code>if-else-if</code> es una construcciÃ³n muy comÃºn en programaciÃ³n. Su forma de uso es:</p>
 
 <pre>
 if (cond1) sentencia1;
@@ -85,19 +92,19 @@ else if (cond3) sentencia3;
 else ultimaSentencia;
 </pre>
 
-<p class="content-block">Todas estas sentencias se evalúan en orden y tan pronto como se encuentra una condición cierta se ejecuta la sentencia asociada con ella y se pasa por alto el resto de la escala. Si ninguna de las condiciones es cierta se ejecuta el <code>else</code> final. Esta sería la sentencia “por defecto” a ejecutarse pero no necesariamente debe existir. Si no está, y ninguna de las condiciones se cumple, entonces no se hace nada.</p>
+<p class="content-block">Todas estas sentencias se evalÃºan en orden y tan pronto como se encuentra una condiciÃ³n cierta se ejecuta la sentencia asociada con ella y se pasa por alto el resto de la escala. Si ninguna de las condiciones es cierta se ejecuta el <code>else</code> final. Esta serÃ­a la sentencia â€œpor defectoâ€ a ejecutarse pero no necesariamente debe existir. Si no estÃ¡, y ninguna de las condiciones se cumple, entonces no se hace nada.</p>
 
 <h3 class="content-block">La alternativa a if-else con el operador ?</h3>
 <p class="content-block">Se puede usar el operador <code>?</code> para reemplazar las sentencias <code>if-else</code> con la forma general:</p>
 
 <pre>
 if(cond)
-    expresión;
+    expresiÃ³n;
 else
-    otraExpresión;
+    otraExpresiÃ³n;
 </pre>
 
-<p class="content-block">La restricción es que el objetivo del <code>if</code> y el <code>else</code> deben ser expresiones simples que retornen valores y no otras sentencias de C.</p>
+<p class="content-block">La restricciÃ³n es que el objetivo del <code>if</code> y el <code>else</code> deben ser expresiones simples que retornen valores y no otras sentencias de C.</p>
 
 <p class="content-block">El <code>?</code> es un operador ternario ya que necesita tres operandos. Su forma es:</p>
 
@@ -105,44 +112,44 @@ else
 Exp1 ? Exp2 : Exp3
 </pre>
 
-<p class="content-block">Observe los dos puntos. ¿Qué hace ésto? Evalúa <code>Exp1</code>. Si es cierta se evalúa <code>Exp2</code> y se convierte en el valor de la expresión completa. Si <code>Exp1</code> es falsa entonces se evalúa <code>Exp3</code> y su valor se convierte en el valor de la expresión completa. ¿Qué quiere decir que se convierte en el valor de la expresión completa? Veamos el siguiente caso:</p>
+<p class="content-block">Observe los dos puntos. Â¿QuÃ© hace Ã©sto? EvalÃºa <code>Exp1</code>. Si es cierta se evalÃºa <code>Exp2</code> y se convierte en el valor de la expresiÃ³n completa. Si <code>Exp1</code> es falsa entonces se evalÃºa <code>Exp3</code> y su valor se convierte en el valor de la expresiÃ³n completa. Â¿QuÃ© quiere decir que se convierte en el valor de la expresiÃ³n completa? Veamos el siguiente caso:</p>
 
 <pre>
 i = 3;
 x = i>5 ? 50 : 100;
 </pre>
 
-<p class="content-block">Ésto es lo mismo que decir:</p>
+<p class="content-block">Ã‰sto es lo mismo que decir:</p>
 <pre>
 i = 3;
 if (i > 5) x = 50;
 else x = 100;
 </pre>
 
-<p class="content-block">o sea, que la expresión <code>“i > 5 ? 50 :100”</code> se convierte en 50 si se cumple la condición <code>i > 5</code> y se convierte en 100 si no. Luego este resultado se puede asignar a una variable. A eso me refiero con que “su valor se convierte en el valor de la expresión completa”. Ok, ésto es así... pero no necesariamente ustedes necesitarán usarlo de esta manera. Por ejemplo:</p>
+<p class="content-block">o sea, que la expresiÃ³n <code>â€œi > 5 ? 50 :100â€</code> se convierte en 50 si se cumple la condiciÃ³n <code>i > 5</code> y se convierte en 100 si no. Luego este resultado se puede asignar a una variable. A eso me refiero con que â€œsu valor se convierte en el valor de la expresiÃ³n completaâ€. Ok, Ã©sto es asÃ­... pero no necesariamente ustedes necesitarÃ¡n usarlo de esta manera. Por ejemplo:</p>
 
 <pre>
 char ch;
-ch = getch(); // Nota: getch() es una función no estándar (conio.h).
+ch = getch(); // Nota: getch() es una funciÃ³n no estÃ¡ndar (conio.h).
 ch == 'x' ? printf("Presiono x") : printf("No presiono x");
 </pre>
 
-<p class="content-block">evalúa si <code>ch</code> es igual a 'x'. Si es así imprime “Presiono x” y si no imprimirá el mensaje “No presiono x”. No me interesa asignar el valor de la expresión completa a ninguna variable.</p>
+<p class="content-block">evalÃºa si <code>ch</code> es igual a 'x'. Si es asÃ­ imprime â€œPresiono xâ€ y si no imprimirÃ¡ el mensaje â€œNo presiono xâ€. No me interesa asignar el valor de la expresiÃ³n completa a ninguna variable.</p>
 
 <p class="content-block">Otro ejemplo:</p>
 
 <pre>
 int i;
-scanf(“%i”,&i);
-i ? printf("Introdujo un número distinto de cero") : printf("Introdujo cero");
+scanf(â€œ%iâ€,&i);
+i ? printf("Introdujo un nÃºmero distinto de cero") : printf("Introdujo cero");
 </pre>
 
-<p class="content-block">evalúa <code>i</code>. Si es cero (lo que indica falso) imprimirá el mensaje “Introdujo cero”. Para cualquier otro valor de <code>i</code> imprimirá “Introdujo un número distinto de cero”. Al igual que en el caso anterior no me importa que valor toma la expresión completa.</p>
+<p class="content-block">evalÃºa <code>i</code>. Si es cero (lo que indica falso) imprimirÃ¡ el mensaje â€œIntrodujo ceroâ€. Para cualquier otro valor de <code>i</code> imprimirÃ¡ â€œIntrodujo un nÃºmero distinto de ceroâ€. Al igual que en el caso anterior no me importa que valor toma la expresiÃ³n completa.</p>
 
-<p class="content-block">ESO SÍ: Lo que deben tomar en cuenta es que todo lo que usen en esta expresión debe retornar un valor. Esto quiere decir que no pueden usar funciones que retornen <code>void</code>. La mayoría de las funciones en C retornan un valor. Por ejemplo <code>printf()</code> retorna el número de caracteres impresos y es por eso que puede ser usada (si, ese valor no nos interesa aquí. Por eso no lo asigné a una variable como en el primer ejemplo. No nos interesa, pero si no lo retornara no podríamos usar esta alternativa).</p>
+<p class="content-block">ESO SÃ: Lo que deben tomar en cuenta es que todo lo que usen en esta expresiÃ³n debe retornar un valor. Esto quiere decir que no pueden usar funciones que retornen <code>void</code>. La mayorÃ­a de las funciones en C retornan un valor. Por ejemplo <code>printf()</code> retorna el nÃºmero de caracteres impresos y es por eso que puede ser usada (si, ese valor no nos interesa aquÃ­. Por eso no lo asignÃ© a una variable como en el primer ejemplo. No nos interesa, pero si no lo retornara no podrÃ­amos usar esta alternativa).</p>
 
 <h3 class="content-block">switch</h3>
-<p class="content-block">Aunque la escala <code>if-else-if</code> puede realizar pruebas multicaminos, es poco elegante. El código puede ser bastante difícil de seguir y puede confundir incluso a su autor al pasar el tiempo. Por esta razón, C incorpora una sentencia de decisión de ramificación múltiple llamada <code>switch</code>. Esta sentencia compara sucesivamente una variable con una lista de opciones representadas por constantes enteras o de caracteres y cuando encuentra una que corresponda, se ejecuta la sentencia o bloque de sentencias que tiene asociada la opción. Su forma de uso es:</p>
+<p class="content-block">Aunque la escala <code>if-else-if</code> puede realizar pruebas multicaminos, es poco elegante. El cÃ³digo puede ser bastante difÃ­cil de seguir y puede confundir incluso a su autor al pasar el tiempo. Por esta razÃ³n, C incorpora una sentencia de decisiÃ³n de ramificaciÃ³n mÃºltiple llamada <code>switch</code>. Esta sentencia compara sucesivamente una variable con una lista de opciones representadas por constantes enteras o de caracteres y cuando encuentra una que corresponda, se ejecuta la sentencia o bloque de sentencias que tiene asociada la opciÃ³n. Su forma de uso es:</p>
 
 <pre>
 switch (variable) {
@@ -159,33 +166,33 @@ switch (variable) {
         secuencia de sentencias;
 }
 // Las sentencias break redirigen el flujo del programa directamente
-// hasta aquí y continúa la ejecución del programa ejecutando todo
+// hasta aquÃ­ y continÃºa la ejecuciÃ³n del programa ejecutando todo
 // lo que siga.
 </pre>
 
-<p class="content-block">La sentencia <code>switch</code> evaluará “variable” y si ésta contiene el valor <code>const1</code> se ejecutará la <code>secuencia de sentencias1</code> hasta conseguir un <code>break</code>. Si es <code>const2</code> la <code>secuencia de sentencias2</code> hasta conseguir el <code>break</code> y así sucesivamente. Si ninguna de las constantes en los <code>case</code> corresponde al valor de la “variable” entonces el <code>switch</code> ejecutará la secuencia de comandos representados por <code>default</code>. La parte <code>default</code> es opcional si ustedes no quieren que se lleve a cabo ninguna operación al fallar todas las pruebas entonces no agregan un bloque <code>default</code> y listo. OJO: <code>switch</code> sólo puede comprobar “IGUALDAD” y no puede evaluar expresiones relacionales. Otra cosa: <code>switch</code> NO puede contener dos <code>case</code> con el mismo valor.</p>
+<p class="content-block">La sentencia <code>switch</code> evaluarÃ¡ â€œvariableâ€ y si Ã©sta contiene el valor <code>const1</code> se ejecutarÃ¡ la <code>secuencia de sentencias1</code> hasta conseguir un <code>break</code>. Si es <code>const2</code> la <code>secuencia de sentencias2</code> hasta conseguir el <code>break</code> y asÃ­ sucesivamente. Si ninguna de las constantes en los <code>case</code> corresponde al valor de la â€œvariableâ€ entonces el <code>switch</code> ejecutarÃ¡ la secuencia de comandos representados por <code>default</code>. La parte <code>default</code> es opcional si ustedes no quieren que se lleve a cabo ninguna operaciÃ³n al fallar todas las pruebas entonces no agregan un bloque <code>default</code> y listo. OJO: <code>switch</code> sÃ³lo puede comprobar â€œIGUALDADâ€ y no puede evaluar expresiones relacionales. Otra cosa: <code>switch</code> NO puede contener dos <code>case</code> con el mismo valor.</p>
 
-<p class="content-block">El <code>break</code> lo veremos más adelante pero lo que hace es indicarle al programa que ya uno de los casos se ejecutó y que se vaya al final del bloque y finalice el mismo (no revisará nada mas). Es por eso que la última sentencia no requiere el <code>break</code>. El <code>break</code> es opcional. Si no lo agregan revisará el resto de los casos. El <code>break</code> lo que hace es enviar el flujo del programa al final el bloque (VER break).</p>
+<p class="content-block">El <code>break</code> lo veremos mÃ¡s adelante pero lo que hace es indicarle al programa que ya uno de los casos se ejecutÃ³ y que se vaya al final del bloque y finalice el mismo (no revisarÃ¡ nada mas). Es por eso que la Ãºltima sentencia no requiere el <code>break</code>. El <code>break</code> es opcional. Si no lo agregan revisarÃ¡ el resto de los casos. El <code>break</code> lo que hace es enviar el flujo del programa al final el bloque (VER break).</p>
 
-<p class="content-block">Un buen ejemplo para un <code>switch</code> sería un menú. Veamos:</p>
+<p class="content-block">Un buen ejemplo para un <code>switch</code> serÃ­a un menÃº. Veamos:</p>
 
 <pre>
 char c;
-printf("Que opción (1, 2 o 3) del menú requiere ejecutar: ");
-c = getche(); // Nota: getche() es una función no estándar (conio.h).
+printf("Que opciÃ³n (1, 2 o 3) del menÃº requiere ejecutar: ");
+c = getche(); // Nota: getche() es una funciÃ³n no estÃ¡ndar (conio.h).
 
 switch ( c ) {
     case '1':
-        printf("Opción 1");
+        printf("OpciÃ³n 1");
         break;
     case '2':
-        printf("Opción 2");
+        printf("OpciÃ³n 2");
         break;
     case '3':
-        printf("Opción 3");
+        printf("OpciÃ³n 3");
         break;
     default:
-        printf("No introdujo una opción válida\n");
+        printf("No introdujo una opciÃ³n vÃ¡lida\n");
 }
 </pre>
 
@@ -208,9 +215,9 @@ switch ( variable ) {
 }
 </pre>
 
-<p class="content-block">Aquí <code>sentenciasComunes</code> se ejecutarán si se cumplen <code>case 1</code>, <code>2</code> o <code>3</code>. Otra cosa que se refleja en este ejemplo y que puede ser de gran utilidad es que si se cumple el caso 4, se ejecutará la <code>sentencia4</code> y como no consigue el <code>break</code>, también se ejecutará la <code>sentencia5</code>.</p>
+<p class="content-block">AquÃ­ <code>sentenciasComunes</code> se ejecutarÃ¡n si se cumplen <code>case 1</code>, <code>2</code> o <code>3</code>. Otra cosa que se refleja en este ejemplo y que puede ser de gran utilidad es que si se cumple el caso 4, se ejecutarÃ¡ la <code>sentencia4</code> y como no consigue el <code>break</code>, tambiÃ©n se ejecutarÃ¡ la <code>sentencia5</code>.</p>
 
-<p class="content-block">Los “case” sólo pueden contener secuencia de sentencias por lo que, por ejemplo, no se podrán realizar declaración de variables dentro de los <code>case</code>. Los <code>case</code> NO son bloques de código sino que tienen asociadas sentencias. Sin embargo, si necesitasen definir una variable dentro de un bloque <code>switch</code> (el <code>switch</code>, por supuesto, si es un bloque) podrían hacerlo pero fuera de todos los <code>case</code>. Ejemplo:</p>
+<p class="content-block">Los â€œcaseâ€ sÃ³lo pueden contener secuencia de sentencias por lo que, por ejemplo, no se podrÃ¡n realizar declaraciÃ³n de variables dentro de los <code>case</code>. Los <code>case</code> NO son bloques de cÃ³digo sino que tienen asociadas sentencias. Sin embargo, si necesitasen definir una variable dentro de un bloque <code>switch</code> (el <code>switch</code>, por supuesto, si es un bloque) podrÃ­an hacerlo pero fuera de todos los <code>case</code>. Ejemplo:</p>
 
 <pre>
 switch ( c ) {
@@ -221,17 +228,17 @@ switch ( c ) {
 
 <h2 class="content-block">Bucles.</h2>
 
-<p class="content-block">En C al igual que en todos los lenguajes de programación modernos, las sentencias de iteración (o bucles) permiten que una instrucción o un bloque de ellas sea ejecutado hasta que se alcance una cierta condición. Los bucles se logran en C a través de: <strong>for</strong> y <strong>while</strong>.</p>
+<p class="content-block">En C al igual que en todos los lenguajes de programaciÃ³n modernos, las sentencias de iteraciÃ³n (o bucles) permiten que una instrucciÃ³n o un bloque de ellas sea ejecutado hasta que se alcance una cierta condiciÃ³n. Los bucles se logran en C a travÃ©s de: <strong>for</strong> y <strong>while</strong>.</p>
 
 <h3 class="content-block">Bucle for y variaciones del mismo. Bucle infinito.</h3>
 <p class="content-block">La forma general de la sentencia <code>for</code> es:</p>
 
 <pre>
-for(inicialización;condición;incremento) sentencia;
+for(inicializaciÃ³n;condiciÃ³n;incremento) sentencia;
 </pre>
-<p class="content-block">ó</p>
+<p class="content-block">Ã³</p>
 <pre>
-for(inicialización;condición;incremento) {
+for(inicializaciÃ³n;condiciÃ³n;incremento) {
     sentencia1;
     sentencia2;
     sentencia3;
@@ -240,9 +247,9 @@ for(inicialización;condición;incremento) {
 
 <p class="content-block">donde:</p>
 <ul>
-    <li>inicialización: es normalmente una sentencia de asignación que se utiliza para inicializar la variable de control del bucle.</li>
-    <li>condición: es una expresión relacional que determina cuándo finaliza el bucle</li>
-    <li>incremento: define como cambia la variable de control cada vez que se repite el bucle. Puede ser algo como <code>i++</code>, <code>++i</code>, <code>i--</code> ó incluso <code>x-=5</code>, por ejemplo.</li>
+    <li>inicializaciÃ³n: es normalmente una sentencia de asignaciÃ³n que se utiliza para inicializar la variable de control del bucle.</li>
+    <li>condiciÃ³n: es una expresiÃ³n relacional que determina cuÃ¡ndo finaliza el bucle</li>
+    <li>incremento: define como cambia la variable de control cada vez que se repite el bucle. Puede ser algo como <code>i++</code>, <code>++i</code>, <code>i--</code> Ã³ incluso <code>x-=5</code>, por ejemplo.</li>
 </ul>
 
 <p class="content-block">Como se observa, estas tres secciones principales deben estar separadas por punto y coma.</p>
@@ -250,22 +257,22 @@ for(inicialización;condición;incremento) {
 <p class="content-block">Por ejemplo en el siguiente caso:</p>
 <pre>
 int i;
-for ( i = 0; i < 256; i++ ) printf(“(%i, %c) ”, i, i );
+for ( i = 0; i < 256; i++ ) printf(â€œ(%i, %c) â€, i, i );
 </pre>
 
-<p class="content-block">al entrar al bloque inicializamos la variable <code>i</code> con el valor cero. Se realiza la evaluación de la condición y si ésta es menor que 256, la sentencia <code>printf</code> se ejecutará. Al finalizar la ejecución de dicha sentencia se llega al final del bloque y el valor de la variable <code>i</code> será incrementada y así empezara la verificación de nuevo. La primera vez que se ejecuta el bucle la variable <code>i</code> contiene el valor 0, la segunda vez 1, la tercera 2 y así seguirá incrementando su valor y ejecutando el bucle mientras se cumpla la condición. Por cierto, este código imprime todos los pares (valor entero, caracter) que se encuentran en la tabla ASCII.</p>
+<p class="content-block">al entrar al bloque inicializamos la variable <code>i</code> con el valor cero. Se realiza la evaluaciÃ³n de la condiciÃ³n y si Ã©sta es menor que 256, la sentencia <code>printf</code> se ejecutarÃ¡. Al finalizar la ejecuciÃ³n de dicha sentencia se llega al final del bloque y el valor de la variable <code>i</code> serÃ¡ incrementada y asÃ­ empezara la verificaciÃ³n de nuevo. La primera vez que se ejecuta el bucle la variable <code>i</code> contiene el valor 0, la segunda vez 1, la tercera 2 y asÃ­ seguirÃ¡ incrementando su valor y ejecutando el bucle mientras se cumpla la condiciÃ³n. Por cierto, este cÃ³digo imprime todos los pares (valor entero, caracter) que se encuentran en la tabla ASCII.</p>
 
 <p class="content-block">Otro ejemplo:</p>
 <pre>
 for( x = 100; x != 65; x-=5 ) {
     z = sqrt(x);
-    printf(“La raíz cuadrada de %d es %f”, x, z);
+    printf(â€œLa raÃ­z cuadrada de %d es %fâ€, x, z);
 }
 </pre>
 
-<p class="content-block">En este caso el bucle inicializa la variable <code>x</code> con el valor 100 y se ejecutará mientras <code>x</code> sea distinto de 65. El valor de la variable <code>x</code> será decrementado en 5 en cada iteración. Por lo tanto este bucle imprimirá el par número y raíz cuadrada del mismo para los números: 100, 95, 90, 85 , 80, 75 y 70. Al hacerse la variable <code>x</code> igual a 65, finaliza la ejecución del bucle porque no se cumple la condición.</p>
+<p class="content-block">En este caso el bucle inicializa la variable <code>x</code> con el valor 100 y se ejecutarÃ¡ mientras <code>x</code> sea distinto de 65. El valor de la variable <code>x</code> serÃ¡ decrementado en 5 en cada iteraciÃ³n. Por lo tanto este bucle imprimirÃ¡ el par nÃºmero y raÃ­z cuadrada del mismo para los nÃºmeros: 100, 95, 90, 85 , 80, 75 y 70. Al hacerse la variable <code>x</code> igual a 65, finaliza la ejecuciÃ³n del bucle porque no se cumple la condiciÃ³n.</p>
 
-<p class="content-block">Una de las variaciones más comunes del bucle <code>for</code> utiliza el operador coma para permitir dos o más variables para el control de un bucle. Por ejemplo:</p>
+<p class="content-block">Una de las variaciones mÃ¡s comunes del bucle <code>for</code> utiliza el operador coma para permitir dos o mÃ¡s variables para el control de un bucle. Por ejemplo:</p>
 
 <pre>
 for( x = 0, y = 0; x + y < 10; x++, y++ ) {
@@ -273,9 +280,9 @@ for( x = 0, y = 0; x + y < 10; x++, y++ ) {
 }
 </pre>
 
-<p class="content-block">inicializa las variables <code>x</code> y <code>y</code> a cero y luego ejecutará el “bloque de sentencias” mientras que la suma <code>x + y</code> sea menor que diez. En este ejemplo, en cada nueva iteración los valores valor de <code>x</code> y <code>y</code> serán incrementados en uno.</p>
+<p class="content-block">inicializa las variables <code>x</code> y <code>y</code> a cero y luego ejecutarÃ¡ el â€œbloque de sentenciasâ€ mientras que la suma <code>x + y</code> sea menor que diez. En este ejemplo, en cada nueva iteraciÃ³n los valores valor de <code>x</code> y <code>y</code> serÃ¡n incrementados en uno.</p>
 
-<p class="content-block">OJO: Cabe destacar que los valores de las variables de control del bucle pueden variar dentro del bloque de sentencias y no necesariamente deben ser alteradas sólo en la declaración del bucle. Por ejemplo:</p>
+<p class="content-block">OJO: Cabe destacar que los valores de las variables de control del bucle pueden variar dentro del bloque de sentencias y no necesariamente deben ser alteradas sÃ³lo en la declaraciÃ³n del bucle. Por ejemplo:</p>
 
 <pre>
 for( x = 0; x < 10; ) {
@@ -284,9 +291,9 @@ for( x = 0; x < 10; ) {
 }
 </pre>
 
-<p class="content-block">es completamente válido. Observarán en este ejemplo también que de hecho no es necesario que el bucle <code>for</code> contenga todas las secciones de definición. En este caso omitimos la parte del incrementador.</p>
+<p class="content-block">es completamente vÃ¡lido. ObservarÃ¡n en este ejemplo tambiÃ©n que de hecho no es necesario que el bucle <code>for</code> contenga todas las secciones de definiciÃ³n. En este caso omitimos la parte del incrementador.</p>
 
-<p class="content-block">Otra variación común es por ejemplo:</p>
+<p class="content-block">Otra variaciÃ³n comÃºn es por ejemplo:</p>
 
 <pre>
 for(;;) {
@@ -294,130 +301,137 @@ for(;;) {
 }
 </pre>
 
-<p class="content-block">lo que es conocido como bucle infinito. Aquí las sentencias se ejecutarán eternamente a menos que una de las sentencias detenga la ejecución del bloque. Ejemplo:</p>
+<p class="content-block">lo que es conocido como bucle infinito. AquÃ­ las sentencias se ejecutarÃ¡n eternamente a menos que una de las sentencias detenga la ejecuciÃ³n del bloque. Ejemplo:</p>
 
 <pre>
 for(;;) {
-    c = getch(); // Nota: getch() es una función no estándar (conio.h).
+    c = getch(); // Nota: getch() es una funciÃ³n no estÃ¡ndar (conio.h).
     if (c == 'x') break;
 }
 </pre>
 
-<p class="content-block">se ejecutará pidiendo caracteres por teclado mientras que el caracter sea distinto de 'x' en cuyo caso se saldrá del bloque gracias a la sentencia <code>break</code> (ver más adelante).</p>
+<p class="content-block">se ejecutarÃ¡ pidiendo caracteres por teclado mientras que el caracter sea distinto de 'x' en cuyo caso se saldrÃ¡ del bloque gracias a la sentencia <code>break</code> (ver mÃ¡s adelante).</p>
 
-<p class="content-block">Cabe destacar que cada una de las secciones del bucle <code>for</code> puede consistir en cualquier expresión válida de C pero no ahondaremos en ese punto.</p>
+<p class="content-block">Cabe destacar que cada una de las secciones del bucle <code>for</code> puede consistir en cualquier expresiÃ³n vÃ¡lida de C pero no ahondaremos en ese punto.</p>
 
 <h3 class="content-block">while</h3>
 <p class="content-block">Otro bucle de control en C. Su forma de uso es:</p>
 
 <pre>
-while ( condición ) sentencia;
+while ( condiciÃ³n ) sentencia;
 </pre>
-<p class="content-block">ó</p>
+<p class="content-block">Ã³</p>
 <pre>
-while ( condición ) {
+while ( condiciÃ³n ) {
     sentencia1;
     sentencia2;
     ...
 }
 </pre>
 
-<p class="content-block">La condición puede ser cualquier expresión y cualquier valor distinto de cero se considera cierta.</p>
+<p class="content-block">La condiciÃ³n puede ser cualquier expresiÃ³n y cualquier valor distinto de cero se considera cierta.</p>
 
 <p class="content-block">Por ejemplo:</p>
 <pre>
 char ch = '\0';
-while(ch != 'x') ch = getch(); // Nota: getch() es una función no estándar (conio.h).
+while(ch != 'x') ch = getch(); // Nota: getch() es una funciÃ³n no estÃ¡ndar (conio.h).
 </pre>
 
-<p class="content-block">En este ejemplo, el programa declara una variable de tipo <code>char</code> llamada <code>ch</code> y le asigna la constante de barra invertida que representa el Nulo (<code>\0</code>). A continuación entra en el bucle <code>while</code> y evalúa la condición. Como la primera vez <code>ch</code> es distinto de 'x' entonces se ejecuta la sentencia que en este caso es pedir un caracter por teclado. Este bucle se repetirá mientras el usuario no introduzca el caracter x.</p>
+<p class="content-block">En este ejemplo, el programa declara una variable de tipo <code>char</code> llamada <code>ch</code> y le asigna la constante de barra invertida que representa el Nulo (<code>\0</code>). A continuaciÃ³n entra en el bucle <code>while</code> y evalÃºa la condiciÃ³n. Como la primera vez <code>ch</code> es distinto de 'x' entonces se ejecuta la sentencia que en este caso es pedir un caracter por teclado. Este bucle se repetirÃ¡ mientras el usuario no introduzca el caracter x.</p>
 
 <p class="content-block">No es necesario tener algunas sentencias en el cuerpo del bucle <code>while</code>. Por ejemplo:</p>
 
 <pre>
 char cu = '\0';
-while ( (ch = getch()) != 'x' ); // Nota: getch() es una función no estándar (conio.h).
+while ( (ch = getch()) != 'x' ); // Nota: getch() es una funciÃ³n no estÃ¡ndar (conio.h).
 </pre>
 
-<p class="content-block">es perfectamente válido y hace exactamente lo mismo que el ejemplo anterior.</p>
+<p class="content-block">es perfectamente vÃ¡lido y hace exactamente lo mismo que el ejemplo anterior.</p>
 
 <h3 class="content-block">do-while</h3>
-<p class="content-block">A diferencia de los bucles <code>for</code> y <code>while</code> que analizan las condiciones al principio del bucle, el bucle <code>do-while</code> la analiza al final del mismo. Por lo tanto, si ustedes requieren que un bloque de sentencias sea ejecutado “AL MENOS UNA VEZ” sin importar la condición, entonces este es el bucle que necesitan. Su forma de uso es:</p>
+<p class="content-block">A diferencia de los bucles <code>for</code> y <code>while</code> que analizan las condiciones al principio del bucle, el bucle <code>do-while</code> la analiza al final del mismo. Por lo tanto, si ustedes requieren que un bloque de sentencias sea ejecutado â€œAL MENOS UNA VEZâ€ sin importar la condiciÃ³n, entonces este es el bucle que necesitan. Su forma de uso es:</p>
 
 <pre>
 do {
     secuencia de sentencias;
-} while ( condición );  // OJO con este punto y coma.
+} while ( condiciÃ³n );  // OJO con este punto y coma.
 </pre>
 
-<p class="content-block">aunque las llaves, por supuesto, no son necesarias si sólo existe una sentencia. De todas formas siempre es bueno usarlas para evitar confusiones con el <code>while</code> (por supuesto confusiones del programador no del compilador).</p>
+<p class="content-block">aunque las llaves, por supuesto, no son necesarias si sÃ³lo existe una sentencia. De todas formas siempre es bueno usarlas para evitar confusiones con el <code>while</code> (por supuesto confusiones del programador no del compilador).</p>
 
 <p class="content-block">Un ejemplo:</p>
 
 <pre>
 int i = 50;
 do {
-    scanf(“%i”,&i);
+    scanf(â€œ%iâ€,&i);
 } while ( i > 100 );
 </pre>
 
-<p class="content-block">En este caso, el programa pedirá datos por teclado y se los asignará a la variable <code>i</code> mientras se cumpla que <code>i</code> sea mayor que 100. Cuando el usuario introduzca un valor menor o igual que 100, al evaluar la condición se cumplirá ésta y no se ejecutará más el bloque. Obsérvese también que premeditadamente asigne el valor inicial de <code>i</code> a 50. Esto es para mostrar que aunque la condición no se cumplía al entrar al bloque, de igual forma el bloque se ejecutó. Por eso comenté anteriormente que este bloque siempre se ejecuta “al menos una vez”.</p>
+<p class="content-block">En este caso, el programa pedirÃ¡ datos por teclado y se los asignarÃ¡ a la variable <code>i</code> mientras se cumpla que <code>i</code> sea mayor que 100. Cuando el usuario introduzca un valor menor o igual que 100, al evaluar la condiciÃ³n se cumplirÃ¡ Ã©sta y no se ejecutarÃ¡ mÃ¡s el bloque. ObsÃ©rvese tambiÃ©n que premeditadamente asigne el valor inicial de <code>i</code> a 50. Esto es para mostrar que aunque la condiciÃ³n no se cumplÃ­a al entrar al bloque, de igual forma el bloque se ejecutÃ³. Por eso comentÃ© anteriormente que este bloque siempre se ejecuta â€œal menos una vezâ€.</p>
 
 <h2 class="content-block">Otras sentencias importantes.</h2>
 
-<p class="content-block">Existen tres sentencias especialmente usadas para alterar el control o flujo normal con el que se ejecutaría un programa. Estas son: <code>break</code>, <code>exit()</code> y <code>continue</code>.</p>
+<p class="content-block">Existen tres sentencias especialmente usadas para alterar el control o flujo normal con el que se ejecutarÃ­a un programa. Estas son: <code>break</code>, <code>exit()</code> y <code>continue</code>.</p>
 
 <h3 class="content-block">break</h3>
-<p class="content-block">La sentencia <code>break</code> tiene dos usos. Se puede usar para finalizar un <code>case</code> en una sentencia <code>switch</code> como ya vimos o para forzar la terminación inmediata de un bucle saltando la ejecución normal del ciclo. Por ejemplo:</p>
+<p class="content-block">La sentencia <code>break</code> tiene dos usos. Se puede usar para finalizar un <code>case</code> en una sentencia <code>switch</code> como ya vimos o para forzar la terminaciÃ³n inmediata de un bucle saltando la ejecuciÃ³n normal del ciclo. Por ejemplo:</p>
 
 <pre>
 int i;
 for( i = 0 ; i < 50; i++ ) {
-    printf(“%i ”,i);
+    printf(â€œ%i â€,i);
     if ( i == 10 ) break;
 }
-// El flujo del programa viene hasta aquí cuando se ejecuta el break anterior.
+// El flujo del programa viene hasta aquÃ­ cuando se ejecuta el break anterior.
 </pre>
 
-<p class="content-block">En este caso tenemos un bucle <code>for</code> que comienza con <code>i = 0</code> y será incrementado en uno en cada ciclo. El bucle imprimirá el valor de <code>i</code> mientras <code>i</code> sea menor que 50. Pero... ¿qué pasa? Que este bucle no imprimirá los números entre 0 y 100 como se esperaría al ver la definición del bucle “for” sino que imprimiría sólo los números entre 0 y 10 y luego, como se cumple la condición <code>i == 10</code>, saltará al final del bucle no imprimiendo nada más. El bucle sencillamente finaliza su ejecución cuando <code>i</code> se hace igual a diez todo ésto debido a la sentencia <code>break</code>.</p>
+<p class="content-block">En este caso tenemos un bucle <code>for</code> que comienza con <code>i = 0</code> y serÃ¡ incrementado en uno en cada ciclo. El bucle imprimirÃ¡ el valor de <code>i</code> mientras <code>i</code> sea menor que 50. Pero... Â¿quÃ© pasa? Que este bucle no imprimirÃ¡ los nÃºmeros entre 0 y 100 como se esperarÃ­a al ver la definiciÃ³n del bucle â€œforâ€ sino que imprimirÃ­a sÃ³lo los nÃºmeros entre 0 y 10 y luego, como se cumple la condiciÃ³n <code>i == 10</code>, saltarÃ¡ al final del bucle no imprimiendo nada mÃ¡s. El bucle sencillamente finaliza su ejecuciÃ³n cuando <code>i</code> se hace igual a diez todo Ã©sto debido a la sentencia <code>break</code>.</p>
 
 <h3 class="content-block">exit()</h3>
 <p class="content-block">Su prototipo es: <code>void exit(int estado);</code></p>
 
-<p class="content-block">Esta función es ANSI C por lo que su prototipo está definido dentro de la biblioteca estándar <code>stdlib.h</code> – SÍ, dije <code>stdlib.h</code> no <code>stdio.h</code>. No es una función estándar de entrada o salida.</p>
+<p class="content-block">Esta funciÃ³n es ANSI C por lo que su prototipo estÃ¡ definido dentro de la biblioteca estÃ¡ndar <code>stdlib.h</code> â€“ SÃ, dije <code>stdlib.h</code> no <code>stdio.h</code>. No es una funciÃ³n estÃ¡ndar de entrada o salida.</p>
 
-<p class="content-block">Esta función es usada para salir anticipadamente de un programa. Dicho de otra forma, ella da lugar a la terminación inmediata del programa forzando la vuelta al sistema operativo. El valor del estado es devuelto y si éste es cero, quiere decir que ocurrió una terminación normal del programa (ésto es una convención internacional).</p>
+<p class="content-block">Esta funciÃ³n es usada para salir anticipadamente de un programa. Dicho de otra forma, ella da lugar a la terminaciÃ³n inmediata del programa forzando la vuelta al sistema operativo. El valor del estado es devuelto y si Ã©ste es cero, quiere decir que ocurriÃ³ una terminaciÃ³n normal del programa (Ã©sto es una convenciÃ³n internacional).</p>
 
-<p class="content-block">Esta función es usada frecuentemente para expresar que una condición estrictamente necesaria para la ejecución del programa no se cumple. Supongamos que requerimos verificar que cierta “cond1” se cumpla para poder ejecutar nuestro programa y que en caso contrario nos lo indique, podríamos hacer algo como:</p>
-
-<pre>
-if ( cond1 )  exit(0); // Todo Ok. Se cumple la condición requerida. Retorna cero.
-else exit (cualquierValorDistintoDeCero);  // No se cumplio así que retorna un código de error.
-</pre>
-
-<p class="content-block">Por lo tanto si al ejecutar este programa nos retorna cero sabemos que tenemos lo que necesitamos para que dicho programa se desarrolle con normalidad. Si nos devuelve el valor “cualquierValorDistintoDeCero”, entonces verificamos la “documentación del programa” para verificar que significa este error. En todo caso sería que no se cumple la condición necesaria en nuestro programa “cond1”. Ejemplos: si necesitamos abrir un archivo para leer datos en él y que si no existe nos envíe un mensaje de error, entonces haríamos algo como:</p>
+<p class="content-block">Esta funciÃ³n es usada frecuentemente para expresar que una condiciÃ³n estrictamente necesaria para la ejecuciÃ³n del programa no se cumple. Supongamos que requerimos verificar que cierta â€œcond1â€ se cumpla para poder ejecutar nuestro programa y que en caso contrario nos lo indique, podrÃ­amos hacer algo como:</p>
 
 <pre>
-if (!( fopen(“NombreArchivo”, “r”) )) exit(1);
+if ( cond1 )  exit(0); // Todo Ok. Se cumple la condiciÃ³n requerida. Retorna cero.
+else exit (cualquierValorDistintoDeCero);  // No se cumplio asÃ­ que retorna un cÃ³digo de error.
 </pre>
 
-<p class="content-block">Lo que quiere decir que: _si_ _no_ _puedo abrir el archivo NombreArchivo para leerlo_ entonces _sal del programa y envía el mensaje de error 1_. El valor de retorno “1” debe estar documentado en alguna parte indicando el tipo de error que representa... o sea, no existe el archivo NomberArchivo.</p>
+<p class="content-block">Por lo tanto si al ejecutar este programa nos retorna cero sabemos que tenemos lo que necesitamos para que dicho programa se desarrolle con normalidad. Si nos devuelve el valor â€œcualquierValorDistintoDeCeroâ€, entonces verificamos la â€œdocumentaciÃ³n del programaâ€ para verificar que significa este error. En todo caso serÃ­a que no se cumple la condiciÃ³n necesaria en nuestro programa â€œcond1â€. Ejemplos: si necesitamos abrir un archivo para leer datos en Ã©l y que si no existe nos envÃ­e un mensaje de error, entonces harÃ­amos algo como:</p>
+
+<pre>
+if (!( fopen(â€œNombreArchivoâ€, â€œrâ€) )) exit(1);
+</pre>
+
+<p class="content-block">Lo que quiere decir que: _si_ _no_ _puedo abrir el archivo NombreArchivo para leerlo_ entonces _sal del programa y envÃ­a el mensaje de error 1_. El valor de retorno â€œ1â€ debe estar documentado en alguna parte indicando el tipo de error que representa... o sea, no existe el archivo NomberArchivo.</p>
 
 <h3 class="content-block">continue</h3>
-<p class="content-block">Esta sentencia funciona de forma similar al <code>break</code>. Sin embargo, en vez de forzar la terminación del bucle, “continue” fuerza ejecutar una nueva iteración del bucle saltando cualquier instrucción entre ella y el fin del bucle. Por ejemplo:</p>
+<p class="content-block">Esta sentencia funciona de forma similar al <code>break</code>. Sin embargo, en vez de forzar la terminaciÃ³n del bucle, â€œcontinueâ€ fuerza ejecutar una nueva iteraciÃ³n del bucle saltando cualquier instrucciÃ³n entre ella y el fin del bucle. Por ejemplo:</p>
 
 <pre>
 int i;
 for( i = 0; i <= 100; i++) {
     if (( i % 2 ) != 1) continue;
-    printf(“%i ”,i);
+    printf(â€œ%i â€,i);
 }
-// continue lo manda hasta aquí y verifica el próximo caso.
+// continue lo manda hasta aquÃ­ y verifica el prÃ³ximo caso.
 </pre>
 
-<p class="content-block">imprimirá sólo los números impares entre 0 y 100, o sea, mostrará por pantalla algo como: 1 3 5 7 9 ... 95 97 99. ¿Por qué? Cuando <code>i=0</code>, <code>i%2=0</code> lo que es distinto de 1 y forzará una nueva iteración. Luego <code>i=1</code>, <code>i%2=1</code> lo que no es distinto de 1 así que ejecutará el <code>printf</code>, luego <code>i=2</code>, <code>i%2=0</code> lo que es distinto de 1 y ejecutará el <code>continue</code>, luego <code>i=3</code>, <code>i%2=1</code>, no se hace el <code>continue</code>, hace el <code>printf</code> y así sucesivamente.</p>
+<p class="content-block">imprimirÃ¡ sÃ³lo los nÃºmeros impares entre 0 y 100, o sea, mostrarÃ¡ por pantalla algo como: 1 3 5 7 9 ... 95 97 99. Â¿Por quÃ©? Cuando <code>i=0</code>, <code>i%2=0</code> lo que es distinto de 1 y forzarÃ¡ una nueva iteraciÃ³n. Luego <code>i=1</code>, <code>i%2=1</code> lo que no es distinto de 1 asÃ­ que ejecutarÃ¡ el <code>printf</code>, luego <code>i=2</code>, <code>i%2=0</code> lo que es distinto de 1 y ejecutarÃ¡ el <code>continue</code>, luego <code>i=3</code>, <code>i%2=1</code>, no se hace el <code>continue</code>, hace el <code>printf</code> y asÃ­ sucesivamente.</p>
 
 <p class="content-block">El <code>continue</code> puede ser usado en cualquier bucle ya sea <code>for</code>, <code>while</code> o <code>do-while</code>.</p>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

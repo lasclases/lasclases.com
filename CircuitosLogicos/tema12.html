@@ -1,60 +1,74 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TEMA 12: Comparador de Magnitud a Nivel SSI y MSI</title>
     <link rel="stylesheet" href="../style.css">
 	<meta name="author" content="Tony Rodriguez">
 </HEAD>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <h1 class="center content-block" style="color: #0000ff;">COMPARADOR DE MAGNITUD A NIVEL SSI Y MSI</h1>
 
-<p class="content-block">Parte del siguiente material fue extraído del libro: “Lógica Digital y Diseño de Computadores” de M. Morris Mano.</p>
+<p class="content-block">Parte del siguiente material fue extraÃ­do del libro: â€œLÃ³gica Digital y DiseÃ±o de Computadoresâ€ de M. Morris Mano.</p>
 
-<p class="content-block">Un comparador de magnitud es un circuito combinacional que compara dos números (llamémosles A y B) y determina sus magnitudes relativas. El resultado de la comparación se especifica por medio de tres variables binarias que indican si A>B, A=B ó A<B.</p>
+<p class="content-block">Un comparador de magnitud es un circuito combinacional que compara dos nÃºmeros (llamÃ©mosles A y B) y determina sus magnitudes relativas. El resultado de la comparaciÃ³n se especifica por medio de tres variables binarias que indican si A>B, A=B Ã³ A<B.</p>
 
-<p class="content-block">Un circuito para comparar dos números de n bits tiene 2<sup>2n</sup> entradas en la tabla de verdad y se vuelve más complicado aún para n=3 (64 combinaciones).</p>
+<p class="content-block">Un circuito para comparar dos nÃºmeros de n bits tiene 2<sup>2n</sup> entradas en la tabla de verdad y se vuelve mÃ¡s complicado aÃºn para n=3 (64 combinaciones).</p>
 
-<p class="content-block">Considérense los números A y B cada uno con cuatro dígitos y escríbanse los coeficientes de los números en orden significativo descendente de la siguiente manera:</p>
+<p class="content-block">ConsidÃ©rense los nÃºmeros A y B cada uno con cuatro dÃ­gitos y escrÃ­banse los coeficientes de los nÃºmeros en orden significativo descendente de la siguiente manera:</p>
 
 <p class="content-block">A= A<sub>3</sub> A<sub>2</sub> A<sub>1</sub> A<sub>0</sub></p>
 <p class="content-block">y</p>
 <p class="content-block">B= B<sub>3</sub> B<sub>2</sub> B<sub>1</sub> B<sub>0</sub></p>
 
-<p class="content-block">Los dos números son iguales si todos los pares significativos son iguales, es decir A<sub>3</sub>=B<sub>3</sub>, A<sub>2</sub>=B<sub>2</sub>, A<sub>1</sub>=B<sub>1</sub> y A<sub>0</sub>=B<sub>0</sub></p>
+<p class="content-block">Los dos nÃºmeros son iguales si todos los pares significativos son iguales, es decir A<sub>3</sub>=B<sub>3</sub>, A<sub>2</sub>=B<sub>2</sub>, A<sub>1</sub>=B<sub>1</sub> y A<sub>0</sub>=B<sub>0</sub></p>
 
-<p class="content-block">Sabemos que cuando los números son binarios los dígitos son 1 o 0. Por lo tanto la relación de igualdad para cada par de bits puede expresarse lógicamente con una función de equivalencia</p>
+<p class="content-block">Sabemos que cuando los nÃºmeros son binarios los dÃ­gitos son 1 o 0. Por lo tanto la relaciÃ³n de igualdad para cada par de bits puede expresarse lÃ³gicamente con una funciÃ³n de equivalencia</p>
 
 <p class="content-block">X<sub>i</sub> = A<sub>i</sub> B<sub>i</sub> + A<sub>i</sub>' B<sub>i</sub>' <br>para todo i= 0,1,2,3,......., etc.</p>
 
-<p class="content-block"><strong>OJO:</strong> X<sub>i</sub> es en realidad una XNOR entre A y B. Esto es una XOR negada que es lo que verán en el circuito de más adelante (ésto es: [A'B+AB']')</p>
+<p class="content-block"><strong>OJO:</strong> X<sub>i</sub> es en realidad una XNOR entre A y B. Esto es una XOR negada que es lo que verÃ¡n en el circuito de mÃ¡s adelante (Ã©sto es: [A'B+AB']')</p>
 
-<p class="content-block">X<sub>i</sub> es igual a 1 si y sólo si el par de bits en la posición “i” son iguales, es decir, si ambos son unos o ceros.</p>
+<p class="content-block">X<sub>i</sub> es igual a 1 si y sÃ³lo si el par de bits en la posiciÃ³n â€œiâ€ son iguales, es decir, si ambos son unos o ceros.</p>
 
 <p class="content-block">(A=B) = X<sub>3</sub> X<sub>2</sub> X<sub>1</sub> X<sub>0</sub></p>
 
-<p class="content-block">La variable binaria (A=B) es igual a 1 si todos los pares de dígitos de los dos números son iguales.</p>
+<p class="content-block">La variable binaria (A=B) es igual a 1 si todos los pares de dÃ­gitos de los dos nÃºmeros son iguales.</p>
 
-<p class="content-block">Para determinar si A>B se inspeccionan las magnitudes relativas de los pares de dígitos significativos comenzando desde la posición significativa mas alta. Si los dígitos son iguales, se compara el siguiente par de dígitos menos significativos y esta comparación continua hasta que se encuentre un par de dígitos diferente.</p>
+<p class="content-block">Para determinar si A>B se inspeccionan las magnitudes relativas de los pares de dÃ­gitos significativos comenzando desde la posiciÃ³n significativa mas alta. Si los dÃ­gitos son iguales, se compara el siguiente par de dÃ­gitos menos significativos y esta comparaciÃ³n continua hasta que se encuentre un par de dÃ­gitos diferente.</p>
 
-<p class="content-block">Si el correspondiente dígito de A es 1 y el dígito de B es 0, se concluye que A>B. Si el correspondiente dígito de A es 0 y el de B es 1 se tiene que A<B. La comparación secuencial puede expresarse lógicamente por las dos funciones de Bool que ha continuación se listan:</p>
+<p class="content-block">Si el correspondiente dÃ­gito de A es 1 y el dÃ­gito de B es 0, se concluye que A>B. Si el correspondiente dÃ­gito de A es 0 y el de B es 1 se tiene que A<B. La comparaciÃ³n secuencial puede expresarse lÃ³gicamente por las dos funciones de Bool que ha continuaciÃ³n se listan:</p>
 
 <p class="content-block">(A>B) = A<sub>3</sub>B<sub>3</sub>' + X<sub>3</sub>A<sub>2</sub>B<sub>2</sub>' + X<sub>3</sub>X<sub>2</sub>A<sub>1</sub>B<sub>1</sub>' + X<sub>3</sub>X<sub>2</sub>X<sub>1</sub>A<sub>0</sub>B<sub>0</sub>'</p>
 <p class="content-block">(A<B) = A<sub>3</sub>'B<sub>3</sub> + X<sub>3</sub>A<sub>2</sub>'B<sub>2</sub> + X<sub>3</sub>X<sub>2</sub>A<sub>1</sub>'B<sub>1</sub> + X<sub>3</sub>X<sub>2</sub>X<sub>1</sub>A<sub>0</sub>'B<sub>0</sub></p>
 
-<p class="content-block">Los símbolos (A>B) y (A<B) son variables de salida binaria que son iguales a 1 cuando (A>B) o (A<B) respectivamente.</p>
+<p class="content-block">Los sÃ­mbolos (A>B) y (A<B) son variables de salida binaria que son iguales a 1 cuando (A>B) o (A<B) respectivamente.</p>
 
-<p class="content-block">Analicen las funciones anteriores y entiendan el por qué de esa forma. Por ejemplo: ¿Por qué <code>A<sub>3</sub>B<sub>3</sub>' + X<sub>3</sub>A<sub>2</sub>B<sub>2</sub>' + X<sub>3</sub>X<sub>2</sub>A<sub>1</sub>B<sub>1</sub>' + X<sub>3</sub>X<sub>2</sub>X<sub>1</sub>A<sub>0</sub>B<sub>0</sub>'</code> es uno si y sólo si A es mayor que B? ¿Por qué están formados de esa manera los términos 2, 3 y 4 de esa función? ¿Qué quieren decir?</p>
+<p class="content-block">Analicen las funciones anteriores y entiendan el por quÃ© de esa forma. Por ejemplo: Â¿Por quÃ© <code>A<sub>3</sub>B<sub>3</sub>' + X<sub>3</sub>A<sub>2</sub>B<sub>2</sub>' + X<sub>3</sub>X<sub>2</sub>A<sub>1</sub>B<sub>1</sub>' + X<sub>3</sub>X<sub>2</sub>X<sub>1</sub>A<sub>0</sub>B<sub>0</sub>'</code> es uno si y sÃ³lo si A es mayor que B? Â¿Por quÃ© estÃ¡n formados de esa manera los tÃ©rminos 2, 3 y 4 de esa funciÃ³n? Â¿QuÃ© quieren decir?</p>
 
-<p class="content-block">Basándonos en lo anterior, veamos a continuación la implementación de un circuito comparador pero de sólo 3 bits y hecho con compuertas:</p>
+<p class="content-block">BasÃ¡ndonos en lo anterior, veamos a continuaciÃ³n la implementaciÃ³n de un circuito comparador pero de sÃ³lo 3 bits y hecho con compuertas:</p>
 
 <p class="content-block"><img src="Comparador3bits.png" alt="Circuito Comparador de 3 bits" width="735" height="459"></p>
 
-<p class="content-block">Puede conseguir más información en <a href="https://es.wikipedia.org/wiki/Circuito_comparador">este link de la Wikipedia</a>.</p>
+<p class="content-block">Puede conseguir mÃ¡s informaciÃ³n en <a href="https://es.wikipedia.org/wiki/Circuito_comparador">este link de la Wikipedia</a>.</p>
 
-<p class="content-block">Está pendiente por agregar en el futuro algún comentario de los Comparadores de magnitud a nivel MSI como por ejemplo el comparador de magnitud de 4 bits 7485 y alguna implementación en cascada para comparar más de 4 bits.</p>
+<p class="content-block">EstÃ¡ pendiente por agregar en el futuro algÃºn comentario de los Comparadores de magnitud a nivel MSI como por ejemplo el comparador de magnitud de 4 bits 7485 y alguna implementaciÃ³n en cascada para comparar mÃ¡s de 4 bits.</p>
 
-<p class="content-block">Este fue el último tema de la materia.</p>
+<p class="content-block">Este fue el Ãºltimo tema de la materia.</p>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

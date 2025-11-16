@@ -1,17 +1,24 @@
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE HTML>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Clase 16: Estructuras, Uniones y Tipos de Datos Definidos por el Usuario</title>
 	<meta name="author" content="Tony Rodriguez">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <h1 class="content-block">Estructuras, uniones y tipos de datos definidos por el usuario.</h1>
 
 <h2 class="content-block">Estructuras.</h2>
 
-<p class="content-block">Las estructuras (<code>struct</code>) son agrupaciones de una o más variables de tipos posiblemente diferentes, agrupadas bajo un mismo nombre. Esto permite un manejo más cómodo de la información cuando ésta está relacionada. Las “struct” son estructuras de datos similares a los registros (record) de Pascal. La forma general de definición es:</p>
+<p class="content-block">Las estructuras (<code>struct</code>) son agrupaciones de una o mÃ¡s variables de tipos posiblemente diferentes, agrupadas bajo un mismo nombre. Esto permite un manejo mÃ¡s cÃ³modo de la informaciÃ³n cuando Ã©sta estÃ¡ relacionada. Las â€œstructâ€ son estructuras de datos similares a los registros (record) de Pascal. La forma general de definiciÃ³n es:</p>
 
 <pre>
 struct tipo_estructura {
@@ -22,9 +29,9 @@ struct tipo_estructura {
 } Lista_variables_estructura;
 </pre>
 
-<p class="content-block">donde <code>tipo_estructura</code> (que será el nombre de la estructura) ó <code>Lista_variables_estructura</code> (que es una lista de las variables que serán de este tipo de estructura) pueden omitirse pero no ambos. Las estructuras ayudan a agrupar información relacionada como los datos de una cédula de identidad, las coordenadas de un punto, etc.</p>
+<p class="content-block">donde <code>tipo_estructura</code> (que serÃ¡ el nombre de la estructura) Ã³ <code>Lista_variables_estructura</code> (que es una lista de las variables que serÃ¡n de este tipo de estructura) pueden omitirse pero no ambos. Las estructuras ayudan a agrupar informaciÃ³n relacionada como los datos de una cÃ©dula de identidad, las coordenadas de un punto, etc.</p>
 
-<p class="content-block">Ejemplos de declaración de estructuras:</p>
+<p class="content-block">Ejemplos de declaraciÃ³n de estructuras:</p>
 
 <pre>
 struct datos {
@@ -35,13 +42,13 @@ struct datos {
 };
 </pre>
 
-<p class="content-block">/* Veamos ahora como declaramos una variable de tipo “struct datos”. Aquí tenemos a “a” como una estructura de este tipo y “b” como un array de 5 estructuras de este tipo*/</p>
+<p class="content-block">/* Veamos ahora como declaramos una variable de tipo â€œstruct datosâ€. AquÃ­ tenemos a â€œaâ€ como una estructura de este tipo y â€œbâ€ como un array de 5 estructuras de este tipo*/</p>
 
 <pre>
 struct datos a,b[5];
 </pre>
 
-<p class="content-block">Las estructuras también pueden estar anidadas. Esto quiere decir que un elemento de una estructura puede ser a su vez otra estructura.</p>
+<p class="content-block">Las estructuras tambiÃ©n pueden estar anidadas. Esto quiere decir que un elemento de una estructura puede ser a su vez otra estructura.</p>
 
 <p class="content-block">Veamos un ejemplo:</p>
 
@@ -60,64 +67,64 @@ struct persona {
 struct persona p;
 </pre>
 
-<p class="content-block">Aquí vemos que la estructura <code>persona</code> contiene un elemento que es del tipo de estructura <code>fecha</code>.</p>
+<p class="content-block">AquÃ­ vemos que la estructura <code>persona</code> contiene un elemento que es del tipo de estructura <code>fecha</code>.</p>
 
-<p class="content-block"><strong>OJO:</strong> Como vimos en la definición, también pueden declararse las variables que serán de un tipo de estructura desde el momento de la declaración haciendo algo como:</p>
+<p class="content-block"><strong>OJO:</strong> Como vimos en la definiciÃ³n, tambiÃ©n pueden declararse las variables que serÃ¡n de un tipo de estructura desde el momento de la declaraciÃ³n haciendo algo como:</p>
 
 <pre>
 struct persona {
     char nombre[20];
     struct fecha nacimiento;
-} p, q ; // Esto declara 'p' y 'q' de tipo “struct persona"
+} p, q ; // Esto declara 'p' y 'q' de tipo â€œstruct persona"
 </pre>
 
-<p class="content-block">Cómo se referencian estas variables?. Muy bien, los elementos individuales de una estructura se referencian utilizando el operador punto (<strong>.</strong>) entre el nombre de la variable de tipo estructura y el nombre del miembro de la estructura. A los elementos de una estructura se les denomina miembros.</p>
+<p class="content-block">CÃ³mo se referencian estas variables?. Muy bien, los elementos individuales de una estructura se referencian utilizando el operador punto (<strong>.</strong>) entre el nombre de la variable de tipo estructura y el nombre del miembro de la estructura. A los elementos de una estructura se les denomina miembros.</p>
 
 <p class="content-block">Continuando con las estructuras de los ejemplos anteriores, se pueden tener las siguientes referencias a miembros:</p>
 
 <pre>
-a.nombre	// Referencia la variable nombre de la estructura datos llamada “a”
-a.dirección	// Referencia la variable dirección de la estructura datos llamada “a”
+a.nombre	// Referencia la variable nombre de la estructura datos llamada â€œaâ€
+a.direcciÃ³n	// Referencia la variable direcciÃ³n de la estructura datos llamada â€œaâ€
 b[2].NumCedula	// Referencia la variable NumCedula del segundo elemento del arreglo
-// de tipo struct datos llamado “b”
+// de tipo struct datos llamado â€œbâ€
 p.nombre
-p.nacimiento.dia	// Estos casos referencian un elemento de una “struct fecha” dentro
-p.nacimiento.mes	// de la “struct persona”. Analícenlo.
+p.nacimiento.dia	// Estos casos referencian un elemento de una â€œstruct fechaâ€ dentro
+p.nacimiento.mes	// de la â€œstruct personaâ€. AnalÃ­cenlo.
 </pre>
 
 <h2 class="content-block">Funciones y estructuras.</h2>
 
-<p class="content-block">1 .- Paso por valor de miembros de una estructura a una función.</p>
+<p class="content-block">1 .- Paso por valor de miembros de una estructura a una funciÃ³n.</p>
 
-<p class="content-block">Se realiza como si fueran variables simples. Por ejemplo, para pasar por valor el miembro “<code>a.NumCedula</code>”:</p>
+<p class="content-block">Se realiza como si fueran variables simples. Por ejemplo, para pasar por valor el miembro â€œ<code>a.NumCedula</code>â€:</p>
 
 <pre>
-void funcion f1(int x); /*declaración de la función prototipo*/
+void funcion f1(int x); /*declaraciÃ³n de la funciÃ³n prototipo*/
 
-f1(a.NumCedula);  /* llamada a la función */
+f1(a.NumCedula);  /* llamada a la funciÃ³n */
 
-void f1(int x) {  /* definición de la función */
+void f1(int x) {  /* definiciÃ³n de la funciÃ³n */
 ...
 }
 </pre>
 
-<p class="content-block">2.- Paso por dirección (lo mismo que por referencia) de miembros de una estructura a una función.</p>
-<p class="content-block">Se realiza como si fueran variables simples. Por ejemplo, para pasar por referencia el miembro “<code>a.NumCedula</code>”:</p>
+<p class="content-block">2.- Paso por direcciÃ³n (lo mismo que por referencia) de miembros de una estructura a una funciÃ³n.</p>
+<p class="content-block">Se realiza como si fueran variables simples. Por ejemplo, para pasar por referencia el miembro â€œ<code>a.NumCedula</code>â€:</p>
 
 <pre>
-void funcion f1(int *); /*declaración de la función prototipo*/
+void funcion f1(int *); /*declaraciÃ³n de la funciÃ³n prototipo*/
 
-f1(&a.codigo);  /* llamada a la función */
+f1(&a.codigo);  /* llamada a la funciÃ³n */
 
-void f1(int *x)  { /* definición de la función */
+void f1(int *x)  { /* definiciÃ³n de la funciÃ³n */
 }
 </pre>
 
-<p class="content-block">Hay que tener en cuenta que si lo que se pasa a una función es un miembro de una estructura que sea un arreglo, éste siempre se pasa por dirección (ya que el nombre del arreglo es la dirección del primer elemento del mismo).</p>
+<p class="content-block">Hay que tener en cuenta que si lo que se pasa a una funciÃ³n es un miembro de una estructura que sea un arreglo, Ã©ste siempre se pasa por direcciÃ³n (ya que el nombre del arreglo es la direcciÃ³n del primer elemento del mismo).</p>
 
 <p class="content-block">3.- Paso por valor de estructuras completas a funciones.</p>
 
-<p class="content-block">En el siguiente ejemplo, <code>suma</code> es una función que recibe dos estructuras pasadas por valor y a su vez devuelve una estructura.</p>
+<p class="content-block">En el siguiente ejemplo, <code>suma</code> es una funciÃ³n que recibe dos estructuras pasadas por valor y a su vez devuelve una estructura.</p>
 
 <pre>
 struct vector {
@@ -143,7 +150,7 @@ struct vector suma(struct vector v1, struct vector v2) {
 
 <p class="content-block">4.- Paso por referencia de estructuras completas a funciones.</p>
 
-<p class="content-block">Cuando las estructuras son muy grandes es más eficiente pasarlas por dirección. En ese caso se utilizan punteros a estructuras para realizar la comunicación. Para acceder a los miembros de la estructura debe utilizarse la combinación de los operadores <code>*</code> y punto. Sin embargo el operador punto tiene más precedencia que <code>*</code> siendo necesario el uso de paréntesis para asegurar que se aplique primero <code>*</code> y después punto. También puede utilizarse el operador <code>-></code> para acceder a los miembros de una estructura referenciada por un puntero y de hecho este es la forma más usada en la actualidad.</p>
+<p class="content-block">Cuando las estructuras son muy grandes es mÃ¡s eficiente pasarlas por direcciÃ³n. En ese caso se utilizan punteros a estructuras para realizar la comunicaciÃ³n. Para acceder a los miembros de la estructura debe utilizarse la combinaciÃ³n de los operadores <code>*</code> y punto. Sin embargo el operador punto tiene mÃ¡s precedencia que <code>*</code> siendo necesario el uso de parÃ©ntesis para asegurar que se aplique primero <code>*</code> y despuÃ©s punto. TambiÃ©n puede utilizarse el operador <code>-></code> para acceder a los miembros de una estructura referenciada por un puntero y de hecho este es la forma mÃ¡s usada en la actualidad.</p>
 
 <pre>
 #include <stdio.h>
@@ -155,33 +162,33 @@ struct pareja {
 void f1(struct pareja *q);
 
 void main() { // Nota: main() sin tipo de retorno es obsoleto. Usar int main(void)
-    struct pareja p = { 13, 17 }  /* inicialización de los miembros*/
+    struct pareja p = { 13, 17 }  /* inicializaciÃ³n de los miembros*/
     f1(&p);
     printf("a:%d y b:%d\n", p.a, p.b);     /* a: 14 y b:18 */
 }
 
 void f1(struct pareja *q) {
-    q->a++;  /* equivalente a (*q).a++ pero más usado */
+    q->a++;  /* equivalente a (*q).a++ pero mÃ¡s usado */
     q->b++;
-    return;	// Este return no retorna nada ya que la función es void.
-    // En este caso no era necesario su uso pero recuerden que return también
-    // se usa para finalizar una función inmediatamente.
+    return;	// Este return no retorna nada ya que la funciÃ³n es void.
+    // En este caso no era necesario su uso pero recuerden que return tambiÃ©n
+    // se usa para finalizar una funciÃ³n inmediatamente.
 }
 </pre>
 
-<p class="content-block">En este ejemplo también se observó como se inicializan los elementos de una estructura: con <code>{ele1, ele2,...,elen}</code>; “igual que en los arreglos”. El primer elemento inicializa la primera variable de la estructura, el segundo elemento a la segunda variable y así sucesivamente. Así, si usamos la estructura <code>datos</code> que mencionamos al principio, una forma de inicializarla sería algo como:</p>
+<p class="content-block">En este ejemplo tambiÃ©n se observÃ³ como se inicializan los elementos de una estructura: con <code>{ele1, ele2,...,elen}</code>; â€œigual que en los arreglosâ€. El primer elemento inicializa la primera variable de la estructura, el segundo elemento a la segunda variable y asÃ­ sucesivamente. AsÃ­, si usamos la estructura <code>datos</code> que mencionamos al principio, una forma de inicializarla serÃ­a algo como:</p>
 
 <pre>
-struct datos a = {“Tony”, “Maracay”, 8765432, 'M'};
+struct datos a = {â€œTonyâ€, â€œMaracayâ€, 8765432, 'M'};
 </pre>
 
-<p class="content-block"><strong>COMENTARIO ADICIONAL:</strong> Existe una forma en C de acceder a los bits de una variable de forma independiente sin tener que hacer operaciones a nivel de éstos. Esta forma de acceso está ligada al uso de estructuras. Si lo necesita, puede buscar más información acerca de este tema o preguntarme.</p>
+<p class="content-block"><strong>COMENTARIO ADICIONAL:</strong> Existe una forma en C de acceder a los bits de una variable de forma independiente sin tener que hacer operaciones a nivel de Ã©stos. Esta forma de acceso estÃ¡ ligada al uso de estructuras. Si lo necesita, puede buscar mÃ¡s informaciÃ³n acerca de este tema o preguntarme.</p>
 
 <h2 class="content-block">Uniones</h2>
 
-<p class="content-block">Las uniones son otro tipo de datos que pueden ser usados en C y aunque tienen una sintaxis similar a las estructuras se diferencian de éstas en que sus miembros comparten almacenamiento. Esto quiere decir que una variable unión define a un conjunto de valores alternos que se almacenan en una porción compartida de memoria. Es una versión C de los registros variantes de otros lenguajes como Pascal.</p>
+<p class="content-block">Las uniones son otro tipo de datos que pueden ser usados en C y aunque tienen una sintaxis similar a las estructuras se diferencian de Ã©stas en que sus miembros comparten almacenamiento. Esto quiere decir que una variable uniÃ³n define a un conjunto de valores alternos que se almacenan en una porciÃ³n compartida de memoria. Es una versiÃ³n C de los registros variantes de otros lenguajes como Pascal.</p>
 
-<p class="content-block">El compilador asigna una porción de almacenamiento que pueda acomodar al más grande de los miembros especificados. La notación para acceder a un miembro de la unión es idéntica a la que se emplea para acceder a un miembro de una estructura. Un ejemplo de unión es el siguiente:</p>
+<p class="content-block">El compilador asigna una porciÃ³n de almacenamiento que pueda acomodar al mÃ¡s grande de los miembros especificados. La notaciÃ³n para acceder a un miembro de la uniÃ³n es idÃ©ntica a la que se emplea para acceder a un miembro de una estructura. Un ejemplo de uniÃ³n es el siguiente:</p>
 
 <pre>
 union simple {
@@ -190,13 +197,13 @@ union simple {
 };
 union simple a;
 
-// podemos acceder a las variables de la unión haciendo:
-a.ch = ‘a’;
+// podemos acceder a las variables de la uniÃ³n haciendo:
+a.ch = â€˜aâ€™;
 ...
 a.i = 3;
 </pre>
 
-<p class="content-block">Como ya comentamos, las uniones comparten el almacenamiento, o sea, que sólo se reserva espacio en memoria como para almacenar la más grande de las variables que en este caso es un <code>int</code> por lo que son típicamente 4 bytes en sistemas modernos. Dentro de esos bytes se almacenarán las variables pero, como usted ya habrá analizado, sólo puede mantenerse el valor de una de ellas. O sea que en el ejemplo anterior, al usar <code>a.i</code>, <code>a.ch</code> se pierde. Veamos otro ejemplo:</p>
+<p class="content-block">Como ya comentamos, las uniones comparten el almacenamiento, o sea, que sÃ³lo se reserva espacio en memoria como para almacenar la mÃ¡s grande de las variables que en este caso es un <code>int</code> por lo que son tÃ­picamente 4 bytes en sistemas modernos. Dentro de esos bytes se almacenarÃ¡n las variables pero, como usted ya habrÃ¡ analizado, sÃ³lo puede mantenerse el valor de una de ellas. O sea que en el ejemplo anterior, al usar <code>a.i</code>, <code>a.ch</code> se pierde. Veamos otro ejemplo:</p>
 
 <pre>
 union ejemplo {
@@ -206,9 +213,9 @@ union ejemplo {
 };
 </pre>
 
-<p class="content-block">Esta variable sólo ocupará 12 bytes que es el mayor dato que puede contener y mantendrá en cada momento sólo a una de ellas.</p>
+<p class="content-block">Esta variable sÃ³lo ocuparÃ¡ 12 bytes que es el mayor dato que puede contener y mantendrÃ¡ en cada momento sÃ³lo a una de ellas.</p>
 
-<p class="content-block"><strong>OJO:</strong> Es muy importante que sepan que una unión sólo puede ser inicializada con un valor del tipo de su primer miembro.</p>
+<p class="content-block"><strong>OJO:</strong> Es muy importante que sepan que una uniÃ³n sÃ³lo puede ser inicializada con un valor del tipo de su primer miembro.</p>
 
 <pre>
 union ejemplo a={8765432};
@@ -216,7 +223,7 @@ union ejemplo a={8765432};
 
 <h2 class="content-block">Uso de sizeof para asegurar la portabilidad.</h2>
 
-<p class="content-block">Al principio del curso, y también en la primera parte de punteros, comentamos el operador <code>sizeof()</code>. El uso de este operador es de gran importancia a la hora de calcular el tamaño real de las variables, el cual puede variar de maquina en maquina. Por ejemplo, en MSDOS (sistemas antiguos):</p>
+<p class="content-block">Al principio del curso, y tambiÃ©n en la primera parte de punteros, comentamos el operador <code>sizeof()</code>. El uso de este operador es de gran importancia a la hora de calcular el tamaÃ±o real de las variables, el cual puede variar de maquina en maquina. Por ejemplo, en MSDOS (sistemas antiguos):</p>
 
 <pre>
 char c;
@@ -224,12 +231,12 @@ sizeof(int); //Retorna 2, ya que int ocupa dos bytes
 sizeof(c); // retorna 1 ya que c es de tipo char y ocupa un byte
 </pre>
 
-<p class="content-block">mientras que en Linux, aunque los <code>char</code> son del mismo tamaño, <code>sizeof(int)</code> retorna 4.</p>
+<p class="content-block">mientras que en Linux, aunque los <code>char</code> son del mismo tamaÃ±o, <code>sizeof(int)</code> retorna 4.</p>
 
-<p class="content-block">En todo caso, hice nuevamente referencia al operador <code>sizeof</code> debido a que uno de sus mayores usos es en el cálculo de tamaños de variables definidas por el usuario tales como estructuras y uniones. Supongamos que se necesita guardar datos en un arreglo que será creado dinámicamente con <code>malloc</code> y que este arreglo contendrá, por ejemplo, 27 elementos de un tipo de estructura que ha sido creada por nosotros. Supongamos también que la estructura es la siguiente:</p>
+<p class="content-block">En todo caso, hice nuevamente referencia al operador <code>sizeof</code> debido a que uno de sus mayores usos es en el cÃ¡lculo de tamaÃ±os de variables definidas por el usuario tales como estructuras y uniones. Supongamos que se necesita guardar datos en un arreglo que serÃ¡ creado dinÃ¡micamente con <code>malloc</code> y que este arreglo contendrÃ¡, por ejemplo, 27 elementos de un tipo de estructura que ha sido creada por nosotros. Supongamos tambiÃ©n que la estructura es la siguiente:</p>
 
 <pre>
-struct tamaño {
+struct tamaÃ±o {
     char ch;
     int i;
     long int li;
@@ -241,22 +248,22 @@ struct tamaño {
 } me;
 </pre>
 
-<p class="content-block">Para poder reservar memoria con <code>malloc</code> de forma directa deberíamos primero calcular cuantos bytes ocupa esta estructura que en MSDOS (sistemas antiguos) sería: <code>ch = 1</code>, <code>i = 2</code>, <code>li = 4</code>, <code>f = 4</code>, <code>d = 8</code>, <code>ld = 10</code>, <code>cad = 10</code> y <code>mat = 2*10*15 = 300</code>. Sumado todo da 339 bytes por estructura que luego multiplicamos por 27 para obtener el espacio total requerido = 9153 bytes. Así, haríamos:</p>
+<p class="content-block">Para poder reservar memoria con <code>malloc</code> de forma directa deberÃ­amos primero calcular cuantos bytes ocupa esta estructura que en MSDOS (sistemas antiguos) serÃ­a: <code>ch = 1</code>, <code>i = 2</code>, <code>li = 4</code>, <code>f = 4</code>, <code>d = 8</code>, <code>ld = 10</code>, <code>cad = 10</code> y <code>mat = 2*10*15 = 300</code>. Sumado todo da 339 bytes por estructura que luego multiplicamos por 27 para obtener el espacio total requerido = 9153 bytes. AsÃ­, harÃ­amos:</p>
 
 <pre>
-struct tamaño *pe;
-pe = (struct tamaño *)malloc(9153);
+struct tamaÃ±o *pe;
+pe = (struct tamaÃ±o *)malloc(9153);
 </pre>
 
-<p class="content-block">y tendríamos que hacer los distintos cálculos para las diferentes plataformas. Usando <code>sizeof</code> sólo haríamos:</p>
+<p class="content-block">y tendrÃ­amos que hacer los distintos cÃ¡lculos para las diferentes plataformas. Usando <code>sizeof</code> sÃ³lo harÃ­amos:</p>
 
 <pre>
-pe = (struct tamaño *)malloc(27*sizeof(me));
+pe = (struct tamaÃ±o *)malloc(27*sizeof(me));
 </pre>
 
 <h2 class="content-block">Tipos de datos definidos por el usuario.</h2>
 
-<p class="content-block">C soporta la creación de nuevos nombres de tipos de datos. Esto se realiza utilizando la palabra reservada “<code>typedef:</code>”</p>
+<p class="content-block">C soporta la creaciÃ³n de nuevos nombres de tipos de datos. Esto se realiza utilizando la palabra reservada â€œ<code>typedef:</code>â€</p>
 
 <pre>
 typedef tipo nombre
@@ -286,7 +293,7 @@ typedef struct{
 FECHA a; 
 </pre>
 
-<p class="content-block">ó incluso si la estructura ya está creada:</p>
+<p class="content-block">Ã³ incluso si la estructura ya estÃ¡ creada:</p>
 
 <pre>
 struct test {
@@ -306,31 +313,31 @@ MiNuevoTipo a;
 
 <h2 class="content-block">Enumeraciones (enum)</h2>
 
-<p class="content-block">Una enumeración, es un conjunto de constantes enteras con nombre, que especifica todos los valores válidos que una variable de este tipo puede tener. Estos valores son listados explícitamente por el programador. Las constantes representan los valores que pueden ser asignados a las variables declaradas del tipo del <code>enum</code>. Su forma de declaración es:</p>
+<p class="content-block">Una enumeraciÃ³n, es un conjunto de constantes enteras con nombre, que especifica todos los valores vÃ¡lidos que una variable de este tipo puede tener. Estos valores son listados explÃ­citamente por el programador. Las constantes representan los valores que pueden ser asignados a las variables declaradas del tipo del <code>enum</code>. Su forma de declaraciÃ³n es:</p>
 
 <pre>
 enum nombre { val1,val2,...,valn };   donde valn son identificadores de constantes.
 </pre>
 
-<p class="content-block">ó</p>
+<p class="content-block">Ã³</p>
 
 <pre>
 enum etiqueta { lista_de_enumeraciones } lista_de_variables;
 </pre>
 
-<p class="content-block">En el primer caso, <code>val1</code> es un identificador que tendrá un valor de cero, <code>val2</code> un valor de 1 y así sucesivamente pero se pueden asignar otros valores indicándolo en la enumeración:</p>
+<p class="content-block">En el primer caso, <code>val1</code> es un identificador que tendrÃ¡ un valor de cero, <code>val2</code> un valor de 1 y asÃ­ sucesivamente pero se pueden asignar otros valores indicÃ¡ndolo en la enumeraciÃ³n:</p>
 
 <pre>
 enum nombre {val1=0, val2=10, val3=13,... };
 </pre>
 
-<p class="content-block">Puede suceder incluso que más de una constante de enumeración tenga el mismo valor entero.</p>
+<p class="content-block">Puede suceder incluso que mÃ¡s de una constante de enumeraciÃ³n tenga el mismo valor entero.</p>
 
 <pre>
 enum color{rojo=-1, azul, amarillo, verde, negro=0};
 </pre>
 
-<p class="content-block">Las variables de enumeración pueden utilizarse como enteros; asignarles valores, compararlas, etc.</p>
+<p class="content-block">Las variables de enumeraciÃ³n pueden utilizarse como enteros; asignarles valores, compararlas, etc.</p>
 
 <p class="content-block">Vemos un ejemplo:</p>
 
@@ -340,53 +347,53 @@ enum moneda { medio, real, bolivar };
 enum moneda dinero;
 </pre>
 
-<p class="content-block">Entonces podríamos decir:</p>
+<p class="content-block">Entonces podrÃ­amos decir:</p>
 
 <pre>
 dinero = medio;
 if (dinero == medio ) printf("Es un medio\n");
 </pre>
 
-<p class="content-block"><strong>La clave para entender las enumeraciones es que cada uno de los símbolos corresponde a un valor entero</strong>. De esta forma, puede usarse en cualquier expresión entera. Por ejemplo:</p>
+<p class="content-block"><strong>La clave para entender las enumeraciones es que cada uno de los sÃ­mbolos corresponde a un valor entero</strong>. De esta forma, puede usarse en cualquier expresiÃ³n entera. Por ejemplo:</p>
 
 <pre>
 printf("El valor de un medio es %i", medio);
 </pre>
 
-<p class="content-block">Perfectamente válido.</p>
+<p class="content-block">Perfectamente vÃ¡lido.</p>
 
-<p class="content-block">Como ya comentamos, a menos que se inicialice de otro modo, el valor del primer símbolo será cero, el del segundo 1 y así sucesivamente. Por lo tanto en el ejemplo anterior:</p>
+<p class="content-block">Como ya comentamos, a menos que se inicialice de otro modo, el valor del primer sÃ­mbolo serÃ¡ cero, el del segundo 1 y asÃ­ sucesivamente. Por lo tanto en el ejemplo anterior:</p>
 
 <pre>
 printf("%i %i", medio, bolivar);
 </pre>
 
-<p class="content-block">imprimirá <strong>0 2</strong> en la pantalla.</p>
+<p class="content-block">imprimirÃ¡ <strong>0 2</strong> en la pantalla.</p>
 
-<p class="content-block">También dijimos que se pueden especificar valores en la inicialización:</p>
+<p class="content-block">TambiÃ©n dijimos que se pueden especificar valores en la inicializaciÃ³n:</p>
 
 <pre>
 enum moneda { medio=25, real=50, bolivar=100 };
 </pre>
 
-<p class="content-block">ó, por ejemplo, en:</p>
+<p class="content-block">Ã³, por ejemplo, en:</p>
 
 <pre>
 enum color { amarillo, azul=10, verde, rojo, negro=100 };
 </pre>
 
-<p class="content-block">tendremos que, según la inicialización: <code>amarillo=0</code>, <code>azul=10</code>, <code>verde=11</code>, <code>rojo=12</code> y <code>negro =100</code>.</p>
+<p class="content-block">tendremos que, segÃºn la inicializaciÃ³n: <code>amarillo=0</code>, <code>azul=10</code>, <code>verde=11</code>, <code>rojo=12</code> y <code>negro =100</code>.</p>
 
-<p class="content-block">No se puede escribir más que el valor entero de la variable <code>enum</code> lo que quiere decir que no se puede escribir su nombre. Recuerde, NO son cadenas. Son sólo nombres de enteros.</p>
+<p class="content-block">No se puede escribir mÃ¡s que el valor entero de la variable <code>enum</code> lo que quiere decir que no se puede escribir su nombre. Recuerde, NO son cadenas. Son sÃ³lo nombres de enteros.</p>
 
 <pre>
 dinero = real;
-printf("%s", dinero); // Esto está mal.
+printf("%s", dinero); // Esto estÃ¡ mal.
 </pre>
 
-<p class="content-block">Lo que si se puede hacer es pedir un entero y asignárselo a una enumeración.</p>
+<p class="content-block">Lo que si se puede hacer es pedir un entero y asignÃ¡rselo a una enumeraciÃ³n.</p>
 
-<p class="content-block">Los tipos enumerados NO aportan capacidades nuevas al lenguaje, pero aumentan la claridad de algunos programas. Veamos un caso típico de su uso (en conjunto con arreglos de cadenas).</p>
+<p class="content-block">Los tipos enumerados NO aportan capacidades nuevas al lenguaje, pero aumentan la claridad de algunos programas. Veamos un caso tÃ­pico de su uso (en conjunto con arreglos de cadenas).</p>
 
 <pre>
 enum colores {negro, azul, verde, cyan, rojo, magenta, marron, amarillo_idx, blanco_idx }; // Renombrado amarillo y blanco para evitar conflicto de valores
@@ -406,7 +413,7 @@ char *nombreColores[]={
 };
 </pre>
 
-<p class="content-block">/* Aunque por supuesto en este caso el índice del amarillo y blanco no corresponden con los valores en enum lo cual presentará errores en el siguiente código. Serán comentados */</p>
+<p class="content-block">/* Aunque por supuesto en este caso el Ã­ndice del amarillo y blanco no corresponden con los valores en enum lo cual presentarÃ¡ errores en el siguiente cÃ³digo. SerÃ¡n comentados */</p>
 
 <pre>
 printf("Introduzca un numero de color: ");
@@ -415,7 +422,7 @@ color = i;
 printf("El numero del color es %i\n",color);
 switch(color) {
     case negro: printf("negro = %s\n",nombreColores[negro]);
-        printf("%s\n",nombreColores[color]); // Análogo a nombreColores[negro]
+        printf("%s\n",nombreColores[color]); // AnÃ¡logo a nombreColores[negro]
         break;
     case azul: printf("azul = %s\n",nombreColores[azul]);
         printf("%s\n",nombreColores[color]);
@@ -436,7 +443,7 @@ switch(color) {
         printf("%s\n",nombreColores[color]);
         break;
 
-    /* Para los siguientes casos, los valores de “color” no están definidos dentro de los permitidos por el arreglo de cadenas (aunque si por el enum). Por tal hecho, al tratar de imprimir la cadena del arreglo correspondiente, imprimirá lo que encuentre en ese punto de memoria hasta conseguir el caracter nulo */
+    /* Para los siguientes casos, los valores de â€œcolorâ€ no estÃ¡n definidos dentro de los permitidos por el arreglo de cadenas (aunque si por el enum). Por tal hecho, al tratar de imprimir la cadena del arreglo correspondiente, imprimirÃ¡ lo que encuentre en ese punto de memoria hasta conseguir el caracter nulo */
 
     case amarillo_idx: printf("amarillo = %s\n",nombreColores[amarillo_idx]);
         printf("%s\n",nombreColores[color]);
@@ -448,5 +455,12 @@ switch(color) {
 }
 </pre>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

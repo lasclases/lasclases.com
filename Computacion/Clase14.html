@@ -1,23 +1,30 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Clase 14: Punteros (2da parte)</title>
 	<meta name="author" content="Tony Rodriguez">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <h1 class="content-block">Punteros (2da parte).</h1>
 
 <h2 class="content-block">Punteros y arreglos.</h2>
 
-<p class="content-block">El nombre de un arreglo es realmente un puntero al primer elemento de ese arreglo. Sin embargo, si <code>x</code> es un arreglo unidimensional, la dirección del primer elemento puede ser expresada tanto como <code>&x[0]</code> o simplemente como <code>x</code>. La dirección del elemento <code>(i+1)</code> se puede expresar como <code>&x[i]</code> o como <code>(x+i)</code>. En la expresión <code>(x+i)</code> <code>x</code> representa una dirección e <code>i</code> un número entero. Además <code>x</code> es el nombre de un arreglo cuyos elementos pueden ser caracteres, enteros, números en coma flotante, etc. Por tanto, no estamos simplemente añadiendo valores numéricos. Más bien estamos especificando una localización que está “i” elementos del arreglo mas allá del primero, con lo cual la expresión <code>(x+i)</code> es una representación simbólica de una dirección en vez de una expresión aritmética.</p>
+<p class="content-block">El nombre de un arreglo es realmente un puntero al primer elemento de ese arreglo. Sin embargo, si <code>x</code> es un arreglo unidimensional, la direcciÃ³n del primer elemento puede ser expresada tanto como <code>&x[0]</code> o simplemente como <code>x</code>. La direcciÃ³n del elemento <code>(i+1)</code> se puede expresar como <code>&x[i]</code> o como <code>(x+i)</code>. En la expresiÃ³n <code>(x+i)</code> <code>x</code> representa una direcciÃ³n e <code>i</code> un nÃºmero entero. AdemÃ¡s <code>x</code> es el nombre de un arreglo cuyos elementos pueden ser caracteres, enteros, nÃºmeros en coma flotante, etc. Por tanto, no estamos simplemente aÃ±adiendo valores numÃ©ricos. MÃ¡s bien estamos especificando una localizaciÃ³n que estÃ¡ â€œiâ€ elementos del arreglo mas allÃ¡ del primero, con lo cual la expresiÃ³n <code>(x+i)</code> es una representaciÃ³n simbÃ³lica de una direcciÃ³n en vez de una expresiÃ³n aritmÃ©tica.</p>
 
-<p class="content-block">Si <code>&x[i]</code> y <code>(x+i)</code> representan la dirección del i-ésimo elemento de <code>x</code>, <code>x[i]</code> y <code>*(x+i)</code> representan el contenido de esa dirección: el valor del i-ésimo elemento de <code>x</code>.</p>
+<p class="content-block">Si <code>&x[i]</code> y <code>(x+i)</code> representan la direcciÃ³n del i-Ã©simo elemento de <code>x</code>, <code>x[i]</code> y <code>*(x+i)</code> representan el contenido de esa direcciÃ³n: el valor del i-Ã©simo elemento de <code>x</code>.</p>
 
-<p class="content-block">Ya que un nombre de arreglo es en realidad un puntero a su primer elemento, es posible definir un arreglo como una variable puntero en vez de como un arreglo convencional. La definición convencional de un arreglo produce la reserva de un bloque fijo de memoria al principio de la ejecución del programa, mientras que esto no ocurre si se representa el arreglo mediante una variable puntero. En este caso, se necesita algún tipo de asignación inicial de memoria antes de que los elementos del arreglo sean procesados. Como ya vimos anteriormente, tales tipos de reserva se realizan mediante la función <code>malloc()</code>.</p>
+<p class="content-block">Ya que un nombre de arreglo es en realidad un puntero a su primer elemento, es posible definir un arreglo como una variable puntero en vez de como un arreglo convencional. La definiciÃ³n convencional de un arreglo produce la reserva de un bloque fijo de memoria al principio de la ejecuciÃ³n del programa, mientras que esto no ocurre si se representa el arreglo mediante una variable puntero. En este caso, se necesita algÃºn tipo de asignaciÃ³n inicial de memoria antes de que los elementos del arreglo sean procesados. Como ya vimos anteriormente, tales tipos de reserva se realizan mediante la funciÃ³n <code>malloc()</code>.</p>
 
-<p class="content-block">Hay una relación muy cercana entre los punteros y los arreglos. Como ya vimos previamente, el nombre del arreglo (también conocido como denominador) es equivalente a la dirección del elemento <code>[0]</code> del mismo. La explicación de ésto es ahora sencilla: el nombre de un arreglo, para el compilador C, es un PUNTERO inicializado con la dirección del primer elemento del arreglo. Sin embargo hay una importante diferencia entre ambos, que haremos notar más abajo.</p>
+<p class="content-block">Hay una relaciÃ³n muy cercana entre los punteros y los arreglos. Como ya vimos previamente, el nombre del arreglo (tambiÃ©n conocido como denominador) es equivalente a la direcciÃ³n del elemento <code>[0]</code> del mismo. La explicaciÃ³n de Ã©sto es ahora sencilla: el nombre de un arreglo, para el compilador C, es un PUNTERO inicializado con la direcciÃ³n del primer elemento del arreglo. Sin embargo hay una importante diferencia entre ambos, que haremos notar mÃ¡s abajo.</p>
 
 <p class="content-block">Veamos algunas operaciones permitidas entre punteros:</p>
 <pre>
@@ -28,9 +35,9 @@ var1 = *punt ;
 *punt = 25.1 ;
 </pre>
 
-<p class="content-block">Es perfectamente válido asignar a un puntero el valor de otro, el resultado de ésta operación es cargar en el puntero <code>punt</code> la dirección del elemento <code>[0]</code> del arreglo <code>conjunto</code>, y posteriormente en la variable <code>var1</code> el valor del mismo (9.0) y para luego cambiar el valor de dicho primer elemento a 25.1.</p>
+<p class="content-block">Es perfectamente vÃ¡lido asignar a un puntero el valor de otro, el resultado de Ã©sta operaciÃ³n es cargar en el puntero <code>punt</code> la direcciÃ³n del elemento <code>[0]</code> del arreglo <code>conjunto</code>, y posteriormente en la variable <code>var1</code> el valor del mismo (9.0) y para luego cambiar el valor de dicho primer elemento a 25.1.</p>
 
-<p class="content-block">Veamos cual es la diferencia entre un puntero y el nombre de un arreglo: el primero es una VARIABLE, es decir que puedo asignarlo, incrementarlo etc, en cambio el segundo es una CONSTANTE, que apunta siempre al primer elemento del arreglo con que fué declarado, por lo que su contenido NO PUEDE SER VARIADO. Si lo piensa un poco ésto es lógico ya que "conjunto" implica la dirección del elemento <code>conjunto[0]</code> por lo que, si yo cambiara su valor, apuntaría a otro lado dejando de ser "conjunto". Desde este punto de vista, el siguiente ejemplo nos muestra un tipo de error bastante frecuente:</p>
+<p class="content-block">Veamos cual es la diferencia entre un puntero y el nombre de un arreglo: el primero es una VARIABLE, es decir que puedo asignarlo, incrementarlo etc, en cambio el segundo es una CONSTANTE, que apunta siempre al primer elemento del arreglo con que fuÃ© declarado, por lo que su contenido NO PUEDE SER VARIADO. Si lo piensa un poco Ã©sto es lÃ³gico ya que "conjunto" implica la direcciÃ³n del elemento <code>conjunto[0]</code> por lo que, si yo cambiara su valor, apuntarÃ­a a otro lado dejando de ser "conjunto". Desde este punto de vista, el siguiente ejemplo nos muestra un tipo de error bastante frecuente:</p>
 
 <pre>
 int conjunto[5] , lista[] = { 5 , 6 , 7 , 8 , 0 ) ;
@@ -38,7 +45,7 @@ int *apuntador ;
 apuntador = lista ;      /* correcto */
 conjunto = apuntador;    /* ERROR: Conjunto es Constante */
 lista = conjunto ;       /* ERROR: Ambos son constantes */
-apuntador = &conjunto    /* ERROR no se puede aplicar el operador & aquí.
+apuntador = &conjunto    /* ERROR no se puede aplicar el operador & aquÃ­.
 </pre>
 
 <p class="content-block">Veamos ahora las distintas modalidades del incremento de un puntero:</p>
@@ -54,29 +61,29 @@ pint++ ;                  /* pint apunta a arreglo_int[2] */
 pdou++ ;                  /* pdou apunta a arreglo_dou[2] */ 
 </pre>
 
-<p class="content-block">Hemos declarado y asignado dos punteros, uno a <code>int</code> y otro a <code>double</code>, con las direcciones de dos arreglos de esas características. Ambos estarán ahora apuntando a los elementos <code>[0]</code> de los arreglos. En las dos instrucciones siguientes incrementamos en uno dichos punteros. ¿Adonde apuntaran ahora?</p>
+<p class="content-block">Hemos declarado y asignado dos punteros, uno a <code>int</code> y otro a <code>double</code>, con las direcciones de dos arreglos de esas caracterÃ­sticas. Ambos estarÃ¡n ahora apuntando a los elementos <code>[0]</code> de los arreglos. En las dos instrucciones siguientes incrementamos en uno dichos punteros. Â¿Adonde apuntaran ahora?</p>
 
-<p class="content-block">Como ya vimos, para el compilador estas sentencias se leen como: incremente el contenido del puntero (dirección del primer elemento del arreglo) en un número igual a la cantidad de bytes que tiene la variable con que fue declarado. Es decir que el contenido de <code>pint</code> es incrementado en 4 bytes (un <code>int</code> tiene típicamente 4 bytes en sistemas modernos) mientras que <code>pdou</code> es incrementado 8 bytes (por ser un puntero a <code>double</code>), el resultado entonces es el mismo para ambos, ya que luego de la operación quedan apuntando al elemento SIGUIENTE del arreglo, <code>arreglo_int[1]</code> y <code>arreglo_dou[1]</code>.</p>
+<p class="content-block">Como ya vimos, para el compilador estas sentencias se leen como: incremente el contenido del puntero (direcciÃ³n del primer elemento del arreglo) en un nÃºmero igual a la cantidad de bytes que tiene la variable con que fue declarado. Es decir que el contenido de <code>pint</code> es incrementado en 4 bytes (un <code>int</code> tiene tÃ­picamente 4 bytes en sistemas modernos) mientras que <code>pdou</code> es incrementado 8 bytes (por ser un puntero a <code>double</code>), el resultado entonces es el mismo para ambos, ya que luego de la operaciÃ³n quedan apuntando al elemento SIGUIENTE del arreglo, <code>arreglo_int[1]</code> y <code>arreglo_dou[1]</code>.</p>
 
-<p class="content-block">Vemos que de ésta manera será muy fácil "barrer" arreglos independientemente del tamaño de variables que lo compongan, permitiendo por otro lado que el programa sea transportable a distintos “hardwares” sin preocuparnos de la diferente cantidad de bytes que pueden asignar los mismos, a un dado tipo de variable.</p>
+<p class="content-block">Vemos que de Ã©sta manera serÃ¡ muy fÃ¡cil "barrer" arreglos independientemente del tamaÃ±o de variables que lo compongan, permitiendo por otro lado que el programa sea transportable a distintos â€œhardwaresâ€ sin preocuparnos de la diferente cantidad de bytes que pueden asignar los mismos, a un dado tipo de variable.</p>
 
 <p class="content-block">De manera similar las dos instrucciones siguientes, vuelven a incrementarse los punteros, apuntando ahora a los elementos siguientes de los arreglos.</p>
 
-<p class="content-block">Todo lo dicho es aplicable en idéntica manera al operador de decremento <code>--</code>.</p>
+<p class="content-block">Todo lo dicho es aplicable en idÃ©ntica manera al operador de decremento <code>--</code>.</p>
 
-<p class="content-block">Si, en cambio, el arreglo es bidimensional (es este caso específico, pero puede ser multidimensional en general), en realidad éste es una colección de arreglos unidimensionales. Por lo tanto, se puede definir un arreglo bidimensional como un puntero a un grupo contiguo de arreglos unidimensionales (OJO: No lo confundan con un arreglos de punteros, lo que veremos más adelante, aunque realmente pueden usarse con fines similares). Una declaración de arreglo bidimensional puede ser escrita como:</p>
+<p class="content-block">Si, en cambio, el arreglo es bidimensional (es este caso especÃ­fico, pero puede ser multidimensional en general), en realidad Ã©ste es una colecciÃ³n de arreglos unidimensionales. Por lo tanto, se puede definir un arreglo bidimensional como un puntero a un grupo contiguo de arreglos unidimensionales (OJO: No lo confundan con un arreglos de punteros, lo que veremos mÃ¡s adelante, aunque realmente pueden usarse con fines similares). Una declaraciÃ³n de arreglo bidimensional puede ser escrita como:</p>
 
 <pre>
-tipo_dato (*ptvar) [expresión2];
+tipo_dato (*ptvar) [expresiÃ³n2];
 </pre>
 
 <p class="content-block">en vez de:</p>
 
 <pre>
-tipo_dato arreglo [expresión1][expresión2];
+tipo_dato arreglo [expresiÃ³n1][expresiÃ³n2];
 </pre>
 
-<p class="content-block"><strong>Los paréntesis que rodean al puntero deben estar presentes. De otra forma se interpretaría como un arreglo de punteros (ver más adelante).</strong></p>
+<p class="content-block"><strong>Los parÃ©ntesis que rodean al puntero deben estar presentes. De otra forma se interpretarÃ­a como un arreglo de punteros (ver mÃ¡s adelante).</strong></p>
 
 <p class="content-block">Ejemplo: Supongamos que <code>x</code> es un arreglo bidimensional de enteros con 10 filas y 20 columnas. Podemos declarar <code>x</code> como:</p>
 
@@ -90,9 +97,9 @@ int (*x)[20];
 int x[10][20];
 </pre>
 
-<p class="content-block">En la primera declaración <code>x</code> se define como un puntero a un grupo contiguo de arreglo unidimensionales de 20 elementos enteros. Así <code>x</code> apunta al primero de los arreglos de 20 elementos, que es en realidad la primera fila (fila 0) del arreglo bidimensional original. Del mismo modo <code>(x+1)</code> apunta al segundo arreglo de 20 elementos, y así sucesivamente.</p>
+<p class="content-block">En la primera declaraciÃ³n <code>x</code> se define como un puntero a un grupo contiguo de arreglo unidimensionales de 20 elementos enteros. AsÃ­ <code>x</code> apunta al primero de los arreglos de 20 elementos, que es en realidad la primera fila (fila 0) del arreglo bidimensional original. Del mismo modo <code>(x+1)</code> apunta al segundo arreglo de 20 elementos, y asÃ­ sucesivamente.</p>
 
-<p class="content-block">El elemento de la fila 2 columna 5 es accedido como: <code>*(*(x+2)+5)</code>. ¿Porqué? Veamos:</p>
+<p class="content-block">El elemento de la fila 2 columna 5 es accedido como: <code>*(*(x+2)+5)</code>. Â¿PorquÃ©? Veamos:</p>
 <ol>
     <li><code>(x+2)</code> es un puntero a la fila 2</li>
     <li><code>*(x+2)</code> es el objeto de ese puntero y refiere a toda la fila. Como la fila 2 es un arreglo unidimensional. <code>*(x+2)</code> es realmente un puntero al primer elemento de la fila 2.</li>
@@ -102,17 +109,17 @@ int x[10][20];
 
 <h2 class="content-block">Punteros y arreglos de caracteres.</h2>
 
-<p class="content-block">No hay gran diferencia entre el trato de punteros a arreglos y a cadenas de caracteres ya que éstos son entidades de la misma clase, sin embargo analicemos algunas particularidades. Así como inicializamos una cadena de caracteres con un grupo de caracteres terminados en '<code>\0</code>', podemos asignar al mismo un puntero:</p>
+<p class="content-block">No hay gran diferencia entre el trato de punteros a arreglos y a cadenas de caracteres ya que Ã©stos son entidades de la misma clase, sin embargo analicemos algunas particularidades. AsÃ­ como inicializamos una cadena de caracteres con un grupo de caracteres terminados en '<code>\0</code>', podemos asignar al mismo un puntero:</p>
 
 <pre>
 p = "Esto es una cadena constante " ;
 </pre>
 
-<p class="content-block">esta operación no implica haber copiado el texto, sino sólo que a <code>p</code> se le ha asignado la dirección de memoria donde reside la "E" del texto. A partir de ello podemos manejar a <code>p</code> como lo hemos hecho hasta ahora. Veamos un ejemplo:</p>
+<p class="content-block">esta operaciÃ³n no implica haber copiado el texto, sino sÃ³lo que a <code>p</code> se le ha asignado la direcciÃ³n de memoria donde reside la "E" del texto. A partir de ello podemos manejar a <code>p</code> como lo hemos hecho hasta ahora. Veamos un ejemplo:</p>
 
 <pre>
 #include <stdio.h>
-#define TEXTO1  "¿ Hola, como "  // #define es una directiva del compilador
+#define TEXTO1  "Â¿ Hola, como "  // #define es una directiva del compilador
 #define TEXTO2  "le va a Ud. ? "	// para definir constantes.
 
 int main() {
@@ -127,15 +134,15 @@ int main() {
 }
 </pre>
 
-<p class="content-block">Definimos primero dos cadenas constantes <code>TEXTO1</code> y <code>TEXTO2</code>, luego asignamos al puntero <code>p</code> la dirección del primero y seguidamente en el bucle <code>for</code> copiamos el contenido de éste en el arreglo <code>palabra</code>. Observe que dicha operación termina cuando el contenido de lo apuntado por <code>p</code> es el terminador de la cadena. Luego asignamos a <code>p</code> la dirección de <code>TEXTO2</code> y finalmente imprimimos ambas cadenas, obteniendo una salida del tipo: "¿ Hola, como le va a UD. ? ".</p>
+<p class="content-block">Definimos primero dos cadenas constantes <code>TEXTO1</code> y <code>TEXTO2</code>, luego asignamos al puntero <code>p</code> la direcciÃ³n del primero y seguidamente en el bucle <code>for</code> copiamos el contenido de Ã©ste en el arreglo <code>palabra</code>. Observe que dicha operaciÃ³n termina cuando el contenido de lo apuntado por <code>p</code> es el terminador de la cadena. Luego asignamos a <code>p</code> la direcciÃ³n de <code>TEXTO2</code> y finalmente imprimimos ambas cadenas, obteniendo una salida del tipo: "Â¿ Hola, como le va a UD. ? ".</p>
 
-<p class="content-block">Reconozcamos que ésto se podría haber escrito más compacto si hubiésemos recordado que <code>palabra</code> también es un puntero y <code>NULL</code> es cero. Así, podríamos poner en vez del bucle <code>for</code>:</p>
+<p class="content-block">Reconozcamos que Ã©sto se podrÃ­a haber escrito mÃ¡s compacto si hubiÃ©semos recordado que <code>palabra</code> tambiÃ©n es un puntero y <code>NULL</code> es cero. AsÃ­, podrÃ­amos poner en vez del bucle <code>for</code>:</p>
 
 <pre>
 while( *palabra++ = *p++ ) ;
 </pre>
 
-<p class="content-block">Hay un tipo de error muy frecuente que podemos analizar. Fíjense en el ejemplo siguiente, ¿ve algún problema?. <strong>OJO con este ejemplo.</strong></p>
+<p class="content-block">Hay un tipo de error muy frecuente que podemos analizar. FÃ­jense en el ejemplo siguiente, Â¿ve algÃºn problema?. <strong>OJO con este ejemplo.</strong></p>
 
 <pre>
 #include<stdio.h>
@@ -144,14 +151,14 @@ void main() { // Nota: main() sin tipo de retorno es obsoleto. Usar int main(voi
     char *p , palabra[20];
     printf("Escriba su nombre : ");
     scanf("%s" , p );
-    palabra = "¿Como le va ";
+    palabra = "Â¿Como le va ";
     printf("%s%s" , palabra , p ) ;
 }
 </pre>
 
-<p class="content-block">Pues hay dos errores. El primero es un punto que ya fue analizado antes: la expresión <code>scanf("%s", p)</code> es correcta pero el error es no haber inicializado al puntero <code>p</code> el cual sólo fue definido pero aún no apunta a ningún lado válido. El segundo error está dado por la expresión: <code>palabra = "¿Como le va "</code> ya que el nombre del arreglo es una constante y no puede ser asignado a otro valor.</p>
+<p class="content-block">Pues hay dos errores. El primero es un punto que ya fue analizado antes: la expresiÃ³n <code>scanf("%s", p)</code> es correcta pero el error es no haber inicializado al puntero <code>p</code> el cual sÃ³lo fue definido pero aÃºn no apunta a ningÃºn lado vÃ¡lido. El segundo error estÃ¡ dado por la expresiÃ³n: <code>palabra = "Â¿Como le va "</code> ya que el nombre del arreglo es una constante y no puede ser asignado a otro valor.</p>
 
-<p class="content-block">¿Como lo escribiríamos para que funcione correctamente?</p>
+<p class="content-block">Â¿Como lo escribirÃ­amos para que funcione correctamente?</p>
 
 <pre>
 #include<stdio.h>
@@ -163,18 +170,18 @@ int main() {
     p = malloc(128) ; // Por ejemplo.
     printf("Escriba su nombre : ") ;
     scanf("%s" , p ) ;
-    strcpy(palabra , "¿ Como le va " ) ;
+    strcpy(palabra , "Â¿ Como le va " ) ;
     printf("%s%s" , palabra , p ) ;
-    free(p); // Liberar la memoria asignada dinámicamente.
+    free(p); // Liberar la memoria asignada dinÃ¡micamente.
     return 0;
 }
 </pre>
 
-<p class="content-block">Observe que antes de <code>scanf()</code> se ha inicializado a <code>p</code>, mediante el retorno de <code>malloc()</code> y a al arreglo <code>palabra</code> se le ha copiado la cadena mediante la función <code>strcpy()</code> que se vio en la clases de arreglos y cadenas. (He añadido <code>free(p)</code> y <code>return 0</code> para completar el ejemplo con buenas prácticas).</p>
+<p class="content-block">Observe que antes de <code>scanf()</code> se ha inicializado a <code>p</code>, mediante el retorno de <code>malloc()</code> y a al arreglo <code>palabra</code> se le ha copiado la cadena mediante la funciÃ³n <code>strcpy()</code> que se vio en la clases de arreglos y cadenas. (He aÃ±adido <code>free(p)</code> y <code>return 0</code> para completar el ejemplo con buenas prÃ¡cticas).</p>
 
-<p class="content-block">Debemos aclarar también que la secuencia de control <code>%s</code> en el <code>printf()</code> impone enviar a la pantalla una cadena. Estando éste apuntado por el argumento, puede ser tanto el nombre de un arreglo como un puntero ya que ambos indican direcciones.</p>
+<p class="content-block">Debemos aclarar tambiÃ©n que la secuencia de control <code>%s</code> en el <code>printf()</code> impone enviar a la pantalla una cadena. Estando Ã©ste apuntado por el argumento, puede ser tanto el nombre de un arreglo como un puntero ya que ambos indican direcciones.</p>
 
-<p class="content-block">Una forma alternativa de resolverlo, sería:</p>
+<p class="content-block">Una forma alternativa de resolverlo, serÃ­a:</p>
 
 <pre>
 #include<stdio.h>
@@ -183,40 +190,47 @@ int main(){
     char p[20] , *palabra ;
     printf("Escriba su nombre : ") ;
     scanf("%s" , p ) ;
-    palabra = "¿ Como le va " ;
+    palabra = "Â¿ Como le va " ;
     printf("%s%s" , palabra , p ) ;
     return 0;
 }
 </pre>
 
-<p class="content-block">Obsérvese, que es idéntico al primero, con la salvedad que se ha invertido las declaraciones de las variables, ahora el puntero es <code>palabra</code> y el arreglo es <code>p</code>. Ambas soluciones son equivalentes y dependerá del resto del programa cual es la mejor elección.</p>
+<p class="content-block">ObsÃ©rvese, que es idÃ©ntico al primero, con la salvedad que se ha invertido las declaraciones de las variables, ahora el puntero es <code>palabra</code> y el arreglo es <code>p</code>. Ambas soluciones son equivalentes y dependerÃ¡ del resto del programa cual es la mejor elecciÃ³n.</p>
 
-<p class="content-block">Por último mostraremos nuevamente un ejemplo visto antes que ejemplifica la relación entre punteros y arreglos. Quizá ahora lo entiendan mejor.</p>
+<p class="content-block">Por Ãºltimo mostraremos nuevamente un ejemplo visto antes que ejemplifica la relaciÃ³n entre punteros y arreglos. QuizÃ¡ ahora lo entiendan mejor.</p>
 
 <pre>
 #include<stdio.h>
 
 int funcion1(char *arreglo);
 int main() {
-    /* Primero que nada el arreglo debe ser inicializado. De otra forma el puntero no estará definido.*/
+    /* Primero que nada el arreglo debe ser inicializado. De otra forma el puntero no estarÃ¡ definido.*/
 
     char arreglo1[10]="987654321";	// recuerden el '\0' al final.
-    // Le pasamos la cadena a la función (o sea, la dirección del 1er elemento):
-    // llamada por referencia. (Los datos de la cadena local SÍ serán alterados).
+    // Le pasamos la cadena a la funciÃ³n (o sea, la direcciÃ³n del 1er elemento):
+    // llamada por referencia. (Los datos de la cadena local SÃ serÃ¡n alterados).
     funcion1(arreglo1);
     printf("%s\n", arreglo1);
-    // Imprimirá el valor de la cadena el cual fue alterado en la función. 
+    // ImprimirÃ¡ el valor de la cadena el cual fue alterado en la funciÃ³n. 
     return 0;
 }
 
 /**************************************************************************/
 int funcion1(char *arreglo) {	// Recibe un puntero a char (Puntero a la cadena)
     printf("%s\n", arreglo);	// Imprime el actual contenido de la cadena.
-    arreglo +=4;		// Modifica la dirección del puntero.
-    *arreglo = 'x';		// Modifica el dato apuntado por ”arreglo”.
+    arreglo +=4;		// Modifica la direcciÃ³n del puntero.
+    *arreglo = 'x';		// Modifica el dato apuntado por â€arregloâ€.
     return 0;
 }
 </pre>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

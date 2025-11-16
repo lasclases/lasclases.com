@@ -1,23 +1,29 @@
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE HTML>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>Clase 20: Funciones Gráficas (Histórico)</title>
+	<title>Clase 20: Funciones GrÃ¡ficas (HistÃ³rico)</title>
 	<meta name="author" content="Javier">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<h1 class="content-block">Funciones Gráficas (Librería BGI)</h1>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
 
-<p class="content-block"><strong>ADVERTENCIA HISTÓRICA:</strong> El siguiente código utiliza la librería gráfica BGI (Borland Graphics Interface), que es específica de compiladores antiguos como Turbo C/C++ y no funciona en sistemas operativos modernos. Se incluye aquí solo con fines educativos e históricos para mostrar cómo se realizaba la programación gráfica en modo DOS.</p>
+    <main id="content">
+<h1 class="content-block">Funciones GrÃ¡ficas (LibrerÃ­a BGI)</h1>
 
-<p class="content-block">A continuación les coloco el código del programa que se hizo en clase de funciones gráficas.</p>
+<p class="content-block"><strong>ADVERTENCIA HISTÃ“RICA:</strong> El siguiente cÃ³digo utiliza la librerÃ­a grÃ¡fica BGI (Borland Graphics Interface), que es especÃ­fica de compiladores antiguos como Turbo C/C++ y no funciona en sistemas operativos modernos. Se incluye aquÃ­ solo con fines educativos e histÃ³ricos para mostrar cÃ³mo se realizaba la programaciÃ³n grÃ¡fica en modo DOS.</p>
+
+<p class="content-block">A continuaciÃ³n les coloco el cÃ³digo del programa que se hizo en clase de funciones grÃ¡ficas.</p>
 
 <pre>
 #include<stdio.h>
 #include<stdlib.h>
-#include<graphics.h> // Librería BGI (Borland Graphics Interface)
-#include<conio.h> // No estándar
+#include<graphics.h> // LibrerÃ­a BGI (Borland Graphics Interface)
+#include<conio.h> // No estÃ¡ndar
 
 void rectang(int x1, int y1, int x2, int y2, int color);
 
@@ -59,28 +65,28 @@ int main() {
     
     floodfill(300,150,RED);
     
-    getch(); // Espera una tecla (No estándar)
+    getch(); // Espera una tecla (No estÃ¡ndar)
     
     setcolor(WHITE);
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-    outtextxy(30,30,"Gotica de tamaño 2");
+    outtextxy(30,30,"Gotica de tamaÃ±o 2");
     
-    getch(); // Espera una tecla (No estándar)
+    getch(); // Espera una tecla (No estÃ¡ndar)
     
     settextstyle(TRIPLEX_FONT, HORIZ_DIR, 4);
-    outtext("TRIPLEX de tamaño 2 sin coordenadas");
+    outtext("TRIPLEX de tamaÃ±o 2 sin coordenadas");
     
-    getch(); // Espera una tecla (No estándar)
+    getch(); // Espera una tecla (No estÃ¡ndar)
     
     settextstyle(SANS_SERIF_FONT, HORIZ_DIR, 7);
     outtextxy(50,50,"Sans Serif 7");
     
-    getch(); // Espera una tecla (No estándar)
+    getch(); // Espera una tecla (No estÃ¡ndar)
     
     settextstyle(SANS_SERIF_FONT, VERT_DIR, 2);
-    outtextxy(600,0,"Sans Serif Vertical de tamaño 2");
+    outtextxy(600,0,"Sans Serif Vertical de tamaÃ±o 2");
     
-    getch(); // Espera una tecla (No estándar)
+    getch(); // Espera una tecla (No estÃ¡ndar)
     
     setviewport(90,90,300,110, 1); //1 recorta lo que se sale del port.
     //Si es cero, las salida puede superar los limites
@@ -91,7 +97,7 @@ int main() {
     
     outtext("Texto de prueba. Se imprime dentro del viewport?");
     
-    while(!kbhit()); // Espera una tecla (No estándar)
+    while(!kbhit()); // Espera una tecla (No estÃ¡ndar)
     
     restorecrtmode(); // closegraph();
     
@@ -107,5 +113,13 @@ void rectang(int x1, int y1, int x2, int y2, int color) {
 }
 </pre>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+
+

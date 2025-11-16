@@ -1,43 +1,50 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>OSCILADORES 3: Osciladores de Colpitts y Hartley</title>
     <link rel="stylesheet" href="../../style.css">
 	<meta name="author" content="Isabel Vera">
 </HEAD>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <div class="content-block">
-    <p>Núcleo Maracay</p>
-    <p>Dpto. de Ingeniería Electrónica</p>
-    <p>IX Término, 03-2004</p>
+    <p>NÃºcleo Maracay</p>
+    <p>Dpto. de IngenierÃ­a ElectrÃ³nica</p>
+    <p>IX TÃ©rmino, 03-2004</p>
     <p><i>Prof. Isabel Vera</i></p>
     <p>Secciones A y B</p>
     <p>&nbsp;</p>
     <p><strong>TEMA 8: OSCILADORES  (Parte II): Oscilador de desplazamiento de fase y <a href="#colpitts y hartley">Osciladores de Colpitts y Hartley.</a>.</strong></p>
 </div>
 
-<p class="content-block">Bueno, espero que ahora sí hayas calculado la función de transferencia. Debes haber obtenido algo como: <a href="./OSCILADORES CLASES2.html">(página anterior -teoría-)</a></p>
+<p class="content-block">Bueno, espero que ahora sÃ­ hayas calculado la funciÃ³n de transferencia. Debes haber obtenido algo como: <a href="./OSCILADORES CLASES2.html">(pÃ¡gina anterior -teorÃ­a-)</a></p>
 
-<p class="center content-block"><img src="./OSCILADORES CLASES3_html_m6fca2320.gif" alt="Ecuación de beta para oscilador de cambio de fase"></p>
+<p class="center content-block"><img src="./OSCILADORES CLASES3_html_m6fca2320.gif" alt="EcuaciÃ³n de beta para oscilador de cambio de fase"></p>
 
-<p class="content-block">donde <img src="./OSCILADORES CLASES3_html_53215f38.gif" alt="Ecuación de alfa"></p>
+<p class="content-block">donde <img src="./OSCILADORES CLASES3_html_53215f38.gif" alt="EcuaciÃ³n de alfa"></p>
 
-<p class="content-block">Para cumplir con el hecho de que la fase de la función de la “Ganancia del Lazo” (-A&beta;) sea 0º ó (n*360º) (Criterio de Barkhausen) debemos garantizar que en la función anterior la parte imaginaria sea igual a cero, es decir: <img src="./OSCILADORES CLASES3_html_m5a9afd67.gif" alt="Condición de fase nula"> y por ende <img src="./OSCILADORES CLASES3_html_m523a8660.gif" alt="Ecuación de frecuencia de oscilación"> Frecuencia de oscilación del circuito.</p>
+<p class="content-block">Para cumplir con el hecho de que la fase de la funciÃ³n de la â€œGanancia del Lazoâ€ (-A&beta;) sea 0Âº Ã³ (n*360Âº) (Criterio de Barkhausen) debemos garantizar que en la funciÃ³n anterior la parte imaginaria sea igual a cero, es decir: <img src="./OSCILADORES CLASES3_html_m5a9afd67.gif" alt="CondiciÃ³n de fase nula"> y por ende <img src="./OSCILADORES CLASES3_html_m523a8660.gif" alt="EcuaciÃ³n de frecuencia de oscilaciÃ³n"> Frecuencia de oscilaciÃ³n del circuito.</p>
 
-<p class="content-block">Al sustituir el valor de “&alpha;” en la expresión de (-&beta;) obtenemos que <img src="./OSCILADORES CLASES3_html_3b00b098.gif" alt="Ecuación de beta simplificada"></p>
+<p class="content-block">Al sustituir el valor de â€œ&alpha;â€ en la expresiÃ³n de (-&beta;) obtenemos que <img src="./OSCILADORES CLASES3_html_3b00b098.gif" alt="EcuaciÃ³n de beta simplificada"></p>
 
 <p class="content-block">Y si queremos cumplir con la otra parte del criterio de Barkhausen que nos dice que la Ganancia del Lazo debe ser igual a la unidad, entonces la ganancia en lazo abierto del circuito amplificador con FET dibujado anteriormente debe ser A=29.</p>
 
-<p class="content-block">Ejercítese: Cómo calcula la ganancia de tensión del siguiente circuito:</p>
+<p class="content-block">EjercÃ­tese: CÃ³mo calcula la ganancia de tensiÃ³n del siguiente circuito:</p>
 
 <table class="content-block" border="0" cellpadding="5" cellspacing="0">
     <tr>
         <td style="width: 30%;"><p class="center content-block"><img src="./OSCILADORES CLASES3_html_6f6a0787.gif" alt="Circuito amplificador con BJT"></p></td>
         <td style="width: 70%;">
             <p class="content-block" style="margin-left: 2cm;">Tips: Use el modelo equivalente a frecuencias medias.</p>
-            <p class="content-block" style="margin-left: 2cm;">Obtendrá :</p>
-            <p class="center content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_6df329f3.gif" alt="Ecuación de ganancia de voltaje"></p>
+            <p class="content-block" style="margin-left: 2cm;">ObtendrÃ¡ :</p>
+            <p class="center content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_6df329f3.gif" alt="EcuaciÃ³n de ganancia de voltaje"></p>
         </td>
     </tr>
 </table>
@@ -45,7 +52,7 @@
 <p class="content-block"><a name="colpitts y hartley"></a></p>
 <h2 class="content-block">OSCILADOR DE COLPITTS, OSCILADOR DE HARTLEY</h2>
 
-<p class="content-block">A continuación veremos la topología de otro tipo de oscilador.</p>
+<p class="content-block">A continuaciÃ³n veremos la topologÃ­a de otro tipo de oscilador.</p>
 
 <p class="content-block">Contamos con el siguiente circuito.</p>
 
@@ -53,61 +60,68 @@
     <tr>
         <td style="width: 40%;"><p class="center content-block"><img src="./OSCILADORES CLASES3_html_7cd37cff.gif" alt="Circuito oscilador con amplificador operacional"></p></td>
         <td style="width: 60%;">
-            <p class="content-block" style="margin-left: 2cm;">El amplificador operacional usado en dicho circuito tiene las siguientes características:</p>
+            <p class="content-block" style="margin-left: 2cm;">El amplificador operacional usado en dicho circuito tiene las siguientes caracterÃ­sticas:</p>
             <ul style="margin-left: 2cm;">
                 <li>Resistencia de entrada infinita (R<sub>i</sub> &rarr; &infin;).</li>
-                <li>Ganancia de tensión: -A</li>
+                <li>Ganancia de tensiÃ³n: -A</li>
                 <li>Resistencia de salida R<sub>o</sub>.</li>
             </ul>
         </td>
     </tr>
 </table>
 
-<p class="content-block">El circuito anterior puede ser sustituído por el siguiente modelo equivalente:</p>
+<p class="content-block">El circuito anterior puede ser sustituÃ­do por el siguiente modelo equivalente:</p>
 
 <table class="content-block" border="0" cellpadding="0" cellspacing="0">
     <tr>
         <td style="width: 40%;"><p class="center content-block"><img src="./OSCILADORES CLASES3_html_m466fdb28.gif" alt="Modelo equivalente del oscilador con fuente dependiente"></p></td>
         <td style="width: 60%;">
             <p class="content-block" style="margin-left: 2cm;">Donde:</p>
-            <p class="content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_m445fe2ba.gif" alt="Ecuación de voltaje de salida"> (La tensión de la entrada [V<sub>13</sub>=V<sub>i</sub>] amplificada un factor “A<sub>v</sub>” e invertida)</p>
-            <p class="content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_3394e17a.gif" alt="Ecuación de voltaje de entrada V_i">;</p>
+            <p class="content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_m445fe2ba.gif" alt="EcuaciÃ³n de voltaje de salida"> (La tensiÃ³n de la entrada [V<sub>13</sub>=V<sub>i</sub>] amplificada un factor â€œA<sub>v</sub>â€ e invertida)</p>
+            <p class="content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_3394e17a.gif" alt="EcuaciÃ³n de voltaje de entrada V_i">;</p>
             <p class="content-block" style="margin-left: 2cm;">donde Z<sub>L</sub> es la impedancia equivalente resultante de: (Z1+Z3) || Z2</p>
-            <p class="content-block" style="margin-left: 2cm;">Si -&beta; es la relación entre la señal de entrada V<sub>i</sub> y la salida V<sub>o</sub> entonces:</p>
-            <p class="center content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_m6fa25767.gif" alt="Ecuación de beta"></p>
+            <p class="content-block" style="margin-left: 2cm;">Si -&beta; es la relaciÃ³n entre la seÃ±al de entrada V<sub>i</sub> y la salida V<sub>o</sub> entonces:</p>
+            <p class="center content-block" style="margin-left: 2cm;"><img src="./OSCILADORES CLASES3_html_m6fa25767.gif" alt="EcuaciÃ³n de beta"></p>
         </td>
     </tr>
 </table>
 
-<p class="content-block">Como ya conocemos la expresión de la ganancia del circuito a lazo abierto (A) y la ganancia del bloque de realimentación (&beta;), podemos determinar la “Ganancia del Lazo”:</p>
+<p class="content-block">Como ya conocemos la expresiÃ³n de la ganancia del circuito a lazo abierto (A) y la ganancia del bloque de realimentaciÃ³n (&beta;), podemos determinar la â€œGanancia del Lazoâ€:</p>
 
-<p class="content-block">Ejercítese en “carpintería matemática” y calcule la expresión de la Ganancia del Lazo.</p>
+<p class="content-block">EjercÃ­tese en â€œcarpinterÃ­a matemÃ¡ticaâ€ y calcule la expresiÃ³n de la Ganancia del Lazo.</p>
 
-<p class="content-block">Deberá obtener lo siguiente:</p>
+<p class="content-block">DeberÃ¡ obtener lo siguiente:</p>
 
-<p class="center content-block"><img src="./OSCILADORES CLASES3_html_m7bb70e63.gif" alt="Ecuación de ganancia del lazo"></p>
+<p class="center content-block"><img src="./OSCILADORES CLASES3_html_m7bb70e63.gif" alt="EcuaciÃ³n de ganancia del lazo"></p>
 
 <p class="content-block">Ahora vamos a asumir otro detalle. Imaginemos que Z1, Z2 y Z3 son impedancias reactivas puras (no tienen parte real), de manera que:</p>
 
-<p class="content-block">Z1= jX1 ; Z2= jX2 y Z3= jX3 donde X puede ser X=&omega;L ó X= -1/(&omega;C)</p>
+<p class="content-block">Z1= jX1 ; Z2= jX2 y Z3= jX3 donde X puede ser X=&omega;L Ã³ X= -1/(&omega;C)</p>
 
-<p class="content-block">entonces podremos decir que: <img src="./OSCILADORES CLASES3_html_m576cea60.gif" alt="Ecuación de ganancia del lazo con reactancias"> para que el desfase sea nulo la parte imaginaria deberá ser nula y como R<sub>o</sub> es un valor real y positivo, solo nos queda decir que:</p>
+<p class="content-block">entonces podremos decir que: <img src="./OSCILADORES CLASES3_html_m576cea60.gif" alt="EcuaciÃ³n de ganancia del lazo con reactancias"> para que el desfase sea nulo la parte imaginaria deberÃ¡ ser nula y como R<sub>o</sub> es un valor real y positivo, solo nos queda decir que:</p>
 
 <p class="content-block">X1+X2+X3=0</p>
 
-<p class="content-block">Al cumplir esa condición que hemos mencionado se simplifica la expresión de la “Ganancia del lazo” de la siguiente forma:</p>
+<p class="content-block">Al cumplir esa condiciÃ³n que hemos mencionado se simplifica la expresiÃ³n de la â€œGanancia del lazoâ€ de la siguiente forma:</p>
 
-<p class="center content-block"><img src="./OSCILADORES CLASES3_html_5b0b901d.gif" alt="Ecuación de ganancia del lazo simplificada"> se sabe que X1+X3= -X2 así que también es válida la expresión <img src="./OSCILADORES CLASES3_html_57c5fcfa.gif" alt="Ecuación de ganancia del lazo simplificada 2">(#)</p>
+<p class="center content-block"><img src="./OSCILADORES CLASES3_html_5b0b901d.gif" alt="EcuaciÃ³n de ganancia del lazo simplificada"> se sabe que X1+X3= -X2 asÃ­ que tambiÃ©n es vÃ¡lida la expresiÃ³n <img src="./OSCILADORES CLASES3_html_57c5fcfa.gif" alt="EcuaciÃ³n de ganancia del lazo simplificada 2">(#)</p>
 
-<p class="content-block">Si sabemos que la ganancia del lazo debe cumplir: <code>-A&beta; &ge; 1</code> (idealmente, sería igual a la unidad) entonces de la última expresión (#) se deduce que X1 y X2 deben tener el mismo signo para que la expresión resulte en un valor positivo. Consecuentemente, X3 tendrá signo contrario a X1 y X2.</p>
+<p class="content-block">Si sabemos que la ganancia del lazo debe cumplir: <code>-A&beta; &ge; 1</code> (idealmente, serÃ­a igual a la unidad) entonces de la Ãºltima expresiÃ³n (#) se deduce que X1 y X2 deben tener el mismo signo para que la expresiÃ³n resulte en un valor positivo. Consecuentemente, X3 tendrÃ¡ signo contrario a X1 y X2.</p>
 
 <ul>
     <li><strong>OSCILADOR DE COLPITTS:</strong> Cuando X1 y X2 son reactancias Capacitivas y X3 es una reactancia Inductiva</li>
     <li><strong>OSCILADOR DE HARTLEY:</strong> Cuando X1 y X2 son reactancias Inductivas y X3 es una reactancia Capacitiva.</li>
 </ul>
 
-<p class="content-block"><a href="#Inicio de esta página">Ir al comienzo de esta página</a>.</p>
-<p class="content-block"><a href="../ElectronicaIII.html">Ir a página principal</a></p>
+<p class="content-block"><a href="#Inicio de esta pÃ¡gina">Ir al comienzo de esta pÃ¡gina</a>.</p>
+<p class="content-block"><a href="../ElectronicaIII.html">Ir a pÃ¡gina principal</a></p>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

@@ -1,39 +1,46 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<title>TEMA 1: Sistemas Numéricos y Operaciones Aritméticas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMA 1: Sistemas NumÃ©ricos y Operaciones AritmÃ©ticas</title>
     <link rel="stylesheet" href="../style.css">
-	<meta name="author" content="Tony Rodriguez">
-</HEAD>
+    <meta name="author" content="Tony Rodriguez">
+</head>
 <body>
-<h1 class="center content-block" style="color: #0000ff;">SISTEMAS NUMÉRICOS.<br>CONVERSIÓN ENTRE SISTEMAS NUMÉRICOS.<br>OPERACIONES BINARIAS ARITMÉTICAS: SUMA, RESTA, MULTIPLICACIÓN Y COMPLEMENTO</h1>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
 
-<p class="content-block">Empecemos por mencionar a los "Elementos discretos". Estos no son más que un grupo de símbolos con un significado. Por ejemplo: Números, letras, signos de puntuación, etc. Colocar elementos discretos uno al lado del otro representan información. De hecho, esta secuencia de elementos forman un "lenguaje" y que obviamente deben conocer para poder saber cuál es la información que contiene. Los primeros computadores se usaban para realizar cálculos numéricos y los elementos discretos usados eran los dígitos y es de aquí que surge el término computador digital.</p>
+    <main id="content">
+        <h1 class="center">SISTEMAS NUMÃ‰RICOS. CONVERSIÃ“N ENTRE SISTEMAS NUMÃ‰RICOS. OPERACIONES BINARIAS ARITMÃ‰TICAS: SUMA, RESTA, MULTIPLICACIÃ“N Y COMPLEMENTO</h1>
 
-<p class="content-block">En los sistemas digitales, los elementos discretos son representados por señales (en nuestro caso señales eléctricas) y en el caso particular de los sistemas digitales actuales las señales tienen sólo 2 posibles valores discretos y por esa razón se les conoce como binarios. Las señales representan dos estados que acorde a la lógica humana representan verdadero o falso.</p>
+<p class="content-block">Empecemos por mencionar a los "Elementos discretos". Estos no son mÃ¡s que un grupo de sÃ­mbolos con un significado. Por ejemplo: NÃºmeros, letras, signos de puntuaciÃ³n, etc. Colocar elementos discretos uno al lado del otro representan informaciÃ³n. De hecho, esta secuencia de elementos forman un "lenguaje" y que obviamente deben conocer para poder saber cuÃ¡l es la informaciÃ³n que contiene. Los primeros computadores se usaban para realizar cÃ¡lculos numÃ©ricos y los elementos discretos usados eran los dÃ­gitos y es de aquÃ­ que surge el tÃ©rmino computador digital.</p>
 
-<p class="content-block">COMENTARIO: Es probable que en un futuro estos sistemas digitales sean reemplazados por otros que usen "Fuzzy Logic" o "lógica difusa". A este tipo de sistemas, además de los dos valores verdadero y falso, se le añade otro estado que representaría un "quizá" o en el caso de que ese estado pueda contener varios valores un "es verdad pero sólo en cierto grado". Es en este tipo de lógica que muchos expertos consideran podría estar la verdadera esencia de la inteligencia artificial. No todo es blanco o negro ;-).</p>
+<p class="content-block">En los sistemas digitales, los elementos discretos son representados por seÃ±ales (en nuestro caso seÃ±ales elÃ©ctricas) y en el caso particular de los sistemas digitales actuales las seÃ±ales tienen sÃ³lo 2 posibles valores discretos y por esa razÃ³n se les conoce como binarios. Las seÃ±ales representan dos estados que acorde a la lÃ³gica humana representan verdadero o falso.</p>
 
-<p class="content-block"><strong>Señales analógicas</strong>: Son señales que se representan de forma continua y no por elementos discretos como las señales digitales. Si queremos simular un proceso que es analógico en un sistema digital requeriremos de un <strong>"convertidor Analógico Digital"</strong>. Éste se encargará de "transformar" los datos analógicos a una forma que sea representada por elementos discretos y así poder ser procesada por sistemas digitales. Un ejemplo de ello son los CD's de música. El sonido es una señal analógica. Esto quiere decir que la variación de la misma es de forma continua pero los CD's son un medio de almacenamiento digital. Es por ello que el sonido debe pasar por un proceso de conversión para poder ser usado en sistemas digitales. Y esto es sólo un ejemplo. Otro sería la luz, que es también una señal continua (o analógica). La cantidad de aplicaciones que pueden realizarse con los sistemas digitales actuales son muy variadas. Algunos ejemplos son: numéricas, procesamiento de texto, aplicaciones de diseño gráfico, estudios digitales de audio, etc. El "truco" es saber cómo expresar esa información en términos discretos y en nuestro caso específico “binarios” para que dichos sistemas digitales puedan procesarla, por lo que la necesidad de este tipo de sistemas en el mundo moderno es por demás evidente.</p>
+<p class="content-block">COMENTARIO: Es probable que en un futuro estos sistemas digitales sean reemplazados por otros que usen "Fuzzy Logic" o "lÃ³gica difusa". A este tipo de sistemas, ademÃ¡s de los dos valores verdadero y falso, se le aÃ±ade otro estado que representarÃ­a un "quizÃ¡" o en el caso de que ese estado pueda contener varios valores un "es verdad pero sÃ³lo en cierto grado". Es en este tipo de lÃ³gica que muchos expertos consideran podrÃ­a estar la verdadera esencia de la inteligencia artificial. No todo es blanco o negro ;-).</p>
 
-<h2 class="content-block" style="color: #008000;">NÚMEROS BINARIOS</h2>
+<p class="content-block"><strong>SeÃ±ales analÃ³gicas</strong>: Son seÃ±ales que se representan de forma continua y no por elementos discretos como las seÃ±ales digitales. Si queremos simular un proceso que es analÃ³gico en un sistema digital requeriremos de un <strong>"convertidor AnalÃ³gico Digital"</strong>. Ã‰ste se encargarÃ¡ de "transformar" los datos analÃ³gicos a una forma que sea representada por elementos discretos y asÃ­ poder ser procesada por sistemas digitales. Un ejemplo de ello son los CD's de mÃºsica. El sonido es una seÃ±al analÃ³gica. Esto quiere decir que la variaciÃ³n de la misma es de forma continua pero los CD's son un medio de almacenamiento digital. Es por ello que el sonido debe pasar por un proceso de conversiÃ³n para poder ser usado en sistemas digitales. Y esto es sÃ³lo un ejemplo. Otro serÃ­a la luz, que es tambiÃ©n una seÃ±al continua (o analÃ³gica). La cantidad de aplicaciones que pueden realizarse con los sistemas digitales actuales son muy variadas. Algunos ejemplos son: numÃ©ricas, procesamiento de texto, aplicaciones de diseÃ±o grÃ¡fico, estudios digitales de audio, etc. El "truco" es saber cÃ³mo expresar esa informaciÃ³n en tÃ©rminos discretos y en nuestro caso especÃ­fico â€œbinariosâ€ para que dichos sistemas digitales puedan procesarla, por lo que la necesidad de este tipo de sistemas en el mundo moderno es por demÃ¡s evidente.</p>
 
-<p class="content-block">Como mencionamos anteriormente, los sistemas digitales actuales sólo procesan dos señales (cierto o falso) y es por ello que se aplica el término de binario. Nosotros estamos acostumbrados a usar los números en base decimal (o base 10) pero ésta es sólo una de las formas de representar cantidades. En realidad "2" es sólo un símbolo y cuando lo vemos nosotros entendemos que existen dos unidades de algo. Si yo les digo que tengo 2 computadoras ustedes no visualizan el símbolo 2 sino la cantidad... quizá representada por una computadora al lado de la otra, pero no el símbolo. Así que "2" es sólo eso: un símbolo. Lo que trato de hacerles entender es que no importa cómo lo expresemos, qué símbolo o símbolos usemos, lo importante es que entendamos ese "lenguaje" y saber qué es lo que representa. <strong>Usamos los símbolos como una abstracción para representar cantidades</strong>.</p>
+<h2 class="content-block" style="color: #008000;">NÃšMEROS BINARIOS</h2>
 
-<p class="content-block">Pongamos que tenemos un número decimal tal como 123. Eso representa una centena más dos decenas más tres unidades. O sea:</p>
+<p class="content-block">Como mencionamos anteriormente, los sistemas digitales actuales sÃ³lo procesan dos seÃ±ales (cierto o falso) y es por ello que se aplica el tÃ©rmino de binario. Nosotros estamos acostumbrados a usar los nÃºmeros en base decimal (o base 10) pero Ã©sta es sÃ³lo una de las formas de representar cantidades. En realidad "2" es sÃ³lo un sÃ­mbolo y cuando lo vemos nosotros entendemos que existen dos unidades de algo. Si yo les digo que tengo 2 computadoras ustedes no visualizan el sÃ­mbolo 2 sino la cantidad... quizÃ¡ representada por una computadora al lado de la otra, pero no el sÃ­mbolo. AsÃ­ que "2" es sÃ³lo eso: un sÃ­mbolo. Lo que trato de hacerles entender es que no importa cÃ³mo lo expresemos, quÃ© sÃ­mbolo o sÃ­mbolos usemos, lo importante es que entendamos ese "lenguaje" y saber quÃ© es lo que representa. <strong>Usamos los sÃ­mbolos como una abstracciÃ³n para representar cantidades</strong>.</p>
+
+<p class="content-block">Pongamos que tenemos un nÃºmero decimal tal como 123. Eso representa una centena mÃ¡s dos decenas mÃ¡s tres unidades. O sea:</p>
 
 <p class="center content-block"><strong>1 x 10<sup>2</sup> + 2 x 10<sup>1</sup> + 3 x 10<sup>0</sup></strong></p>
 
-<p class="content-block">o sea, 123 ;-). Por lo tanto podríamos decir que si tenemos un número decimal de forma</p>
+<p class="content-block">o sea, 123 ;-). Por lo tanto podrÃ­amos decir que si tenemos un nÃºmero decimal de forma</p>
 
 <p class="center content-block"><strong>a<sub>4</sub>a<sub>3</sub>a<sub>2</sub>a<sub>1</sub>a<sub>0</sub></strong></p>
 
-<p class="content-block">entonces <strong>a<sub>4</sub>, a<sub>3</sub>, a<sub>2</sub>, a<sub>1</sub> y a<sub>0</sub></strong> son los coeficientes en la siguiente ecuación:</p>
+<p class="content-block">entonces <strong>a<sub>4</sub>, a<sub>3</sub>, a<sub>2</sub>, a<sub>1</sub> y a<sub>0</sub></strong> son los coeficientes en la siguiente ecuaciÃ³n:</p>
 
 <p class="center content-block"><strong>a<sub>4</sub> x 10<sup>4</sup> + a<sub>3</sub> x 10<sup>3</sup> + a<sub>2</sub> x 10<sup>2</sup> + a<sub>1</sub> x 10<sup>1</sup> + a<sub>0</sub> x 10<sup>0</sup></strong></p>
 
-<p class="content-block">donde todos los coeficientes deben ser un número entre 0 y 9. En este caso en particular estamos usando lo que conocemos: la base 10 o sistema decimal; pero podemos ampliar este concepto a cualquier base. Por lo tanto podemos decir que todo número puede ser expresado en un sistema de base "b" por:</p>
+<p class="content-block">donde todos los coeficientes deben ser un nÃºmero entre 0 y 9. En este caso en particular estamos usando lo que conocemos: la base 10 o sistema decimal; pero podemos ampliar este concepto a cualquier base. Por lo tanto podemos decir que todo nÃºmero puede ser expresado en un sistema de base "b" por:</p>
 
 <p class="center content-block"><strong>a<sub>n</sub>.b<sup>n</sup> + a<sub>n-1</sub>.b<sup>n-1</sup> + ... + a<sub>2</sub>.b<sup>2</sup> + a<sub>1</sub>.b<sup>1</sup> + a<sub>0</sub>.b<sup>0</sup></strong></p>
 
@@ -41,49 +48,49 @@
 
 <p class="center content-block"><strong>a<sub>n</sub>.b<sup>n</sup> + a<sub>n-1</sub>.b<sup>n-1</sup> + ... + a<sub>2</sub>.b<sup>2</sup> + a<sub>1</sub>.b<sup>1</sup> + a<sub>0</sub>.b<sup>0</sup> + a<sub>-1</sub>.b<sup>-1</sup> + a<sub>-2</sub>.b<sup>-2</sup> + ... + a<sub>-m</sub>.b<sup>-m</sup></strong></p>
 
-<p class="content-block">donde <strong>a<sub>n</sub></strong> es un valor que siempre estará entre 0 y (b-1) siendo “<strong>n</strong>” el número de dígitos enteros menos uno y “<strong>m</strong>” el número de dígitos en la fracción decimal. En un número binario la base es 2. Por lo tanto, un número binario sólo puede contener dígitos entre 0 y 1 (que en nuestro caso representarán los dos estados que asociamos con falso o cierto). A un solo dígito binario (elemento mínimo de un número binario) se le conoce como BIT. A la agrupación de 8 BITS se le conoce como BYTE.</p>
+<p class="content-block">donde <strong>a<sub>n</sub></strong> es un valor que siempre estarÃ¡ entre 0 y (b-1) siendo â€œ<strong>n</strong>â€ el nÃºmero de dÃ­gitos enteros menos uno y â€œ<strong>m</strong>â€ el nÃºmero de dÃ­gitos en la fracciÃ³n decimal. En un nÃºmero binario la base es 2. Por lo tanto, un nÃºmero binario sÃ³lo puede contener dÃ­gitos entre 0 y 1 (que en nuestro caso representarÃ¡n los dos estados que asociamos con falso o cierto). A un solo dÃ­gito binario (elemento mÃ­nimo de un nÃºmero binario) se le conoce como BIT. A la agrupaciÃ³n de 8 BITS se le conoce como BYTE.</p>
 
-<p class="content-block">Un ejemplo de un número binario es: 1010011. Si quisiéramos representar este número de 7 bits (donde b=2, n=6 y m =0) de una forma que nos fuese más familiar, es decir, en decimal, haríamos:</p>
+<p class="content-block">Un ejemplo de un nÃºmero binario es: 1010011. Si quisiÃ©ramos representar este nÃºmero de 7 bits (donde b=2, n=6 y m =0) de una forma que nos fuese mÃ¡s familiar, es decir, en decimal, harÃ­amos:</p>
 
 <p class="center content-block"><strong>1 x 2<sup>6</sup> + 0 x 2<sup>5</sup> + 1 x 2<sup>4</sup> + 0 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 1 x 2<sup>0</sup> = 64 + 0 + 16 + 0 + 0 + 2 + 1 = 83</strong></p>
 
-<p class="content-block">por lo tanto, el número binario de 7 bits 1010011 es igual que el número decimal 83. Son dos formas distintas de expresar la misma cantidad. Y que lo haya convertido a decimal no quiere decir que la fórmula convierte el número a base decimal. En realidad Yo usé la base decimal para resolver porque es la forma natural en la que nosotros pensamos. Vi 2<sup>6</sup>, y yo sé que representa una cantidad de sesenta y cuatro y la forma en la que Yo sé escribir esa cantidad es en decimal y representada por los símbolos 64. Si yo pensase en otra base, como veremos más adelante, vería otros símbolos pero al final representarían la misma cantidad.</p>
+<p class="content-block">por lo tanto, el nÃºmero binario de 7 bits 1010011 es igual que el nÃºmero decimal 83. Son dos formas distintas de expresar la misma cantidad. Y que lo haya convertido a decimal no quiere decir que la fÃ³rmula convierte el nÃºmero a base decimal. En realidad Yo usÃ© la base decimal para resolver porque es la forma natural en la que nosotros pensamos. Vi 2<sup>6</sup>, y yo sÃ© que representa una cantidad de sesenta y cuatro y la forma en la que Yo sÃ© escribir esa cantidad es en decimal y representada por los sÃ­mbolos 64. Si yo pensase en otra base, como veremos mÃ¡s adelante, verÃ­a otros sÃ­mbolos pero al final representarÃ­an la misma cantidad.</p>
 
-<p class="content-block">Cuando trabajamos con números en distintas bases la forma de expresar en qué base está escrito un número es colocándole dentro de paréntesis e indicando al lado la base. Por ejemplo:</p>
+<p class="content-block">Cuando trabajamos con nÃºmeros en distintas bases la forma de expresar en quÃ© base estÃ¡ escrito un nÃºmero es colocÃ¡ndole dentro de parÃ©ntesis e indicando al lado la base. Por ejemplo:</p>
 
 <p class="center content-block"><strong>(1010011)<sub>2</sub> = (83)<sub>10</sub></strong></p>
 
-<p class="content-block">quiere decir que el número 1010011 en base 2 es igual al número 83 en base 10.</p>
+<p class="content-block">quiere decir que el nÃºmero 1010011 en base 2 es igual al nÃºmero 83 en base 10.</p>
 
-<p class="content-block">Por supuesto los números binarios, o en base 2, son sólo un ejemplo. La base puede ser cualquiera. Supongamos ahora que les digo que tenemos: <code>(1234,2)<sub>5</sub></code> que es un número en base 5 con fracción decimal y que, como se observa, sólo usa dígitos del 0 al 4 que, como ya se ha mencionado, son las únicas posibilidades. Bien, luego les digo que lo conviertan a base 10. Sabiendo que en ese caso n=3, que m=1 y que la base b=5, entonces gracias a la fórmula que ya mostramos podremos decir que:</p>
+<p class="content-block">Por supuesto los nÃºmeros binarios, o en base 2, son sÃ³lo un ejemplo. La base puede ser cualquiera. Supongamos ahora que les digo que tenemos: <code>(1234,2)<sub>5</sub></code> que es un nÃºmero en base 5 con fracciÃ³n decimal y que, como se observa, sÃ³lo usa dÃ­gitos del 0 al 4 que, como ya se ha mencionado, son las Ãºnicas posibilidades. Bien, luego les digo que lo conviertan a base 10. Sabiendo que en ese caso n=3, que m=1 y que la base b=5, entonces gracias a la fÃ³rmula que ya mostramos podremos decir que:</p>
 
 <p class="center content-block"><strong>(1234,2)<sub>5</sub> = 1 x 5<sup>3</sup> + 2 x 5<sup>2</sup> + 3 x 5<sup>1</sup> + 4 x 5<sup>0</sup> + 2 x 5<sup>-1</sup> = 125 + 50 + 15 + 4 + 0,4 = (194,4)<sub>10</sub></strong></p>
 
-<p class="content-block">Perfecto. Por lo tanto ya sabemos entonces qué debemos hacer para convertir números que están en cualquier base “<strong>b</strong>” a, en nuestro caso, base 10.</p>
+<p class="content-block">Perfecto. Por lo tanto ya sabemos entonces quÃ© debemos hacer para convertir nÃºmeros que estÃ¡n en cualquier base â€œ<strong>b</strong>â€ a, en nuestro caso, base 10.</p>
 
-<p class="content-block">Si el número que queremos mostrar está en una base menor o igual a diez pues podremos usar los dígitos conocidos por nosotros (del 0 al 9) como los "símbolos" a usar. Pero ¿qué pasa si el número está en una base mayor a 10? pues que deberemos usar otros símbolos. Lo normalmente usado son las letras del alfabeto (regularmente en mayúsculas) para expresar dichos números. Por ejemplo el sistema en base hexadecimal (ámpliamente usado) que está en base 16 usa los símbolos A, B, C, D, E y F para expresar las cantidades que conocemos en decimal como 10, 11, 12, 13, 14 y 15 respectivamente (los cuales son necesarios en la base 16 ya que recuerden que los coeficientes en cualquier base son números entre 0 y <strong>base-1</strong>). Por lo tanto:</p>
+<p class="content-block">Si el nÃºmero que queremos mostrar estÃ¡ en una base menor o igual a diez pues podremos usar los dÃ­gitos conocidos por nosotros (del 0 al 9) como los "sÃ­mbolos" a usar. Pero Â¿quÃ© pasa si el nÃºmero estÃ¡ en una base mayor a 10? pues que deberemos usar otros sÃ­mbolos. Lo normalmente usado son las letras del alfabeto (regularmente en mayÃºsculas) para expresar dichos nÃºmeros. Por ejemplo el sistema en base hexadecimal (Ã¡mpliamente usado) que estÃ¡ en base 16 usa los sÃ­mbolos A, B, C, D, E y F para expresar las cantidades que conocemos en decimal como 10, 11, 12, 13, 14 y 15 respectivamente (los cuales son necesarios en la base 16 ya que recuerden que los coeficientes en cualquier base son nÃºmeros entre 0 y <strong>base-1</strong>). Por lo tanto:</p>
 
 <p class="center content-block"><strong>(1F)<sub>16</sub> = 1 x 16<sup>1</sup> + 15 x 16<sup>0</sup> = 16 + 15 = (31)<sub>10</sub></strong></p>
 
-<p class="content-block">y, más interesante aún:</p>
+<p class="content-block">y, mÃ¡s interesante aÃºn:</p>
 
 <p class="center content-block"><strong>(10)<sub>16</sub> = 1 x 16<sup>1</sup> + 0 x 16<sup>0</sup> = 16 + 0 = (16)<sub>10</sub></strong></p>
 
-<p class="content-block">y es por eso comentaba que no importan los símbolos usados, lo importante es saber la cantidad que representan y para ello es necesario saber el "lenguaje" que se está hablando. Si yo escribo los símbolos 10... que ven ustedes? Pues lo que ven dependerá de su sistema base. Ustedes pueden decir que entienden una cantidad de diez. Yo digo que entiendo una cantidad de dieciséis. Si ustedes están trabajando en base 10 y yo en base 16, ambas cantidades son correctas.</p>
+<p class="content-block">y es por eso comentaba que no importan los sÃ­mbolos usados, lo importante es saber la cantidad que representan y para ello es necesario saber el "lenguaje" que se estÃ¡ hablando. Si yo escribo los sÃ­mbolos 10... que ven ustedes? Pues lo que ven dependerÃ¡ de su sistema base. Ustedes pueden decir que entienden una cantidad de diez. Yo digo que entiendo una cantidad de diecisÃ©is. Si ustedes estÃ¡n trabajando en base 10 y yo en base 16, ambas cantidades son correctas.</p>
 
-<p class="content-block">Hace unos momentos cuando estábamos en el punto de convertir números según la formula dije: "Si yo pensase en otra base" . Que pasa si probamos el mismo ejemplo, pero esta vez “pensando” en hexadecimal. Tendríamos:</p>
+<p class="content-block">Hace unos momentos cuando estÃ¡bamos en el punto de convertir nÃºmeros segÃºn la formula dije: "Si yo pensase en otra base" . Que pasa si probamos el mismo ejemplo, pero esta vez â€œpensandoâ€ en hexadecimal. TendrÃ­amos:</p>
 
 <p class="center content-block"><strong>(1010011)<sub>2</sub> = 1 x 2<sup>6</sup> + 0 x 2<sup>5</sup> + 1 x 2<sup>4</sup> + 0 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 1 x 2<sup>0</sup> = (40)<sub>16</sub> + 0 + (10)<sub>16</sub> + 0 + 0 + (2 + 1)<sub>16</sub> = (53)<sub>16</sub></strong></p>
 
-<p class="content-block">Ahora, cuando yo vi 2<sup>6</sup> vi la cantidad o el valor de sesenta y cuatro que es representada en hexadecimal por los símbolos 40, 2<sup>4</sup> por 10, etc.</p>
+<p class="content-block">Ahora, cuando yo vi 2<sup>6</sup> vi la cantidad o el valor de sesenta y cuatro que es representada en hexadecimal por los sÃ­mbolos 40, 2<sup>4</sup> por 10, etc.</p>
 
-<h2 class="content-block" style="color: #008000;">NÚMEROS HEXADECIMALES Y OCTALES</h2>
+<h2 class="content-block" style="color: #008000;">NÃšMEROS HEXADECIMALES Y OCTALES</h2>
 
-<p class="content-block">Como ya se comentó, los números hexadecimales son aquellos que están en base 16. En el caso de los octales tienen base 8. Estos números son muy usados en los sistemas digitales principalmente porque pueden representar los números binarios de una forma más compacta (debido a que 2<sup>3</sup> son 8 y 2<sup>4</sup> son 16). Realizar esa conversión es extremadamente sencillo. Veamos el siguiente ejemplo: <strong>(10100101)<sub>2</sub></strong> es un número binarios de 8 bits (o un byte). Este puede ser representado en dos partes de 4 bits (conocidas como NIBBLES). Si dividimos el byte del ejemplo en sus Nibbles, tendríamos: <strong>1010 y 0101</strong> cada una representando 2<sup>4</sup> posibilidades, o sea un número hexadecimal (un número entre 0 y 15). Así:</p>
+<p class="content-block">Como ya se comentÃ³, los nÃºmeros hexadecimales son aquellos que estÃ¡n en base 16. En el caso de los octales tienen base 8. Estos nÃºmeros son muy usados en los sistemas digitales principalmente porque pueden representar los nÃºmeros binarios de una forma mÃ¡s compacta (debido a que 2<sup>3</sup> son 8 y 2<sup>4</sup> son 16). Realizar esa conversiÃ³n es extremadamente sencillo. Veamos el siguiente ejemplo: <strong>(10100101)<sub>2</sub></strong> es un nÃºmero binarios de 8 bits (o un byte). Este puede ser representado en dos partes de 4 bits (conocidas como NIBBLES). Si dividimos el byte del ejemplo en sus Nibbles, tendrÃ­amos: <strong>1010 y 0101</strong> cada una representando 2<sup>4</sup> posibilidades, o sea un nÃºmero hexadecimal (un nÃºmero entre 0 y 15). AsÃ­:</p>
 
 <p class="center content-block"><strong>(1010)<sub>2</sub> = (A)<sub>16</sub> , (0101)<sub>2</sub> = (5)<sub>16</sub> => (10100101)<sub>2</sub> = (A5)<sub>16</sub>.</strong></p>
 
-<p class="content-block">El caso de octal es semejante. Si tenemos el número <strong>(101010111)<sub>2</sub></strong> podríamos dividir éste en tres partes de 3 bits (o sea, con 2<sup>3</sup> posibilidades cada una) y tendríamos: <strong>101, 010 y 111</strong> que representan los números octales 5, 2 y 7 respectivamente. Por lo tanto:</p>
+<p class="content-block">El caso de octal es semejante. Si tenemos el nÃºmero <strong>(101010111)<sub>2</sub></strong> podrÃ­amos dividir Ã©ste en tres partes de 3 bits (o sea, con 2<sup>3</sup> posibilidades cada una) y tendrÃ­amos: <strong>101, 010 y 111</strong> que representan los nÃºmeros octales 5, 2 y 7 respectivamente. Por lo tanto:</p>
 
 <p class="center content-block"><strong>(101010111)<sub>2</sub> = (527)<sub>8</sub></strong></p>
 
@@ -92,17 +99,17 @@
 <p class="center content-block"><strong>(7531)<sub>8</sub> => 111 101 011 001 => (111101011001)<sub>2</sub></strong></p>
 <p class="center content-block"><strong>(123,A)<sub>16</sub> = 0001 0010 0011 , 1010 = (000100100011,1010)<sub>2</sub></strong></p>
 
-<p class="content-block">Pero existen otras conversiones que no son tan obvias como éstas. A continuación profundizaremos en ellas.</p>
+<p class="content-block">Pero existen otras conversiones que no son tan obvias como Ã©stas. A continuaciÃ³n profundizaremos en ellas.</p>
 
-<h2 class="content-block" style="color: #008000;">CONVERSIONES ENTRE NÚMEROS DE BASE DIFERENTE</h2>
+<h2 class="content-block" style="color: #008000;">CONVERSIONES ENTRE NÃšMEROS DE BASE DIFERENTE</h2>
 
-<p class="content-block">La conversión entre números de distintas bases a un número decimal es, como ya vimos, bastante sencilla. Sólo debemos usar la fórmula que ya se describió. Pero ¿qué pasa si lo que queremos es convertir un número decimal a binario? ¿o a hexadecimal? ¿o a octal? Para realizar estas conversiones primero que nada, si el número tiene parte decimal, separamos la parte entera de la fracción decimal. La mejor forma de mostrar la conversión es a través de ejemplos. Veamos algunos:</p>
+<p class="content-block">La conversiÃ³n entre nÃºmeros de distintas bases a un nÃºmero decimal es, como ya vimos, bastante sencilla. SÃ³lo debemos usar la fÃ³rmula que ya se describiÃ³. Pero Â¿quÃ© pasa si lo que queremos es convertir un nÃºmero decimal a binario? Â¿o a hexadecimal? Â¿o a octal? Para realizar estas conversiones primero que nada, si el nÃºmero tiene parte decimal, separamos la parte entera de la fracciÃ³n decimal. La mejor forma de mostrar la conversiÃ³n es a travÃ©s de ejemplos. Veamos algunos:</p>
 
-<p class="content-block"><strong>Convertir a binario el número decimal 41:</strong> En el caso de querer convertir a números binarios lo que debemos hacer es realizar sucesivas divisiones del número a convertir entre dos hasta que lleguemos a un cociente de cero. Los restos de las divisiones representarán los dígitos desde el menos significativo (que será el primer resto) hasta el más significativo que será el resto de la última división cuando lleguemos al cociente cero. Entonces si el número es 41, al realizar la división entre dos obtendremos un cociente de 20 y un resto de 1. Es precisamente el resto quien indicará cuál es el valor del bit y en este caso este es el bit menos significativo. Luego haremos la operación nuevamente con el nuevo cociente que es el 20 y así sucesivamente hasta llegar al momento en que el cociente sea 0. Entonces, desde el principio:</p>
+<p class="content-block"><strong>Convertir a binario el nÃºmero decimal 41:</strong> En el caso de querer convertir a nÃºmeros binarios lo que debemos hacer es realizar sucesivas divisiones del nÃºmero a convertir entre dos hasta que lleguemos a un cociente de cero. Los restos de las divisiones representarÃ¡n los dÃ­gitos desde el menos significativo (que serÃ¡ el primer resto) hasta el mÃ¡s significativo que serÃ¡ el resto de la Ãºltima divisiÃ³n cuando lleguemos al cociente cero. Entonces si el nÃºmero es 41, al realizar la divisiÃ³n entre dos obtendremos un cociente de 20 y un resto de 1. Es precisamente el resto quien indicarÃ¡ cuÃ¡l es el valor del bit y en este caso este es el bit menos significativo. Luego haremos la operaciÃ³n nuevamente con el nuevo cociente que es el 20 y asÃ­ sucesivamente hasta llegar al momento en que el cociente sea 0. Entonces, desde el principio:</p>
 
 <ol>
-    <li>41 / 2 = 20 con resto 1 => El coeficiente el menos significativo será 1, digamos a<sub>0</sub>=1.</li>
-    <li>20/2 = 10 con resto 0 => El coeficiente 1 será 0 => a<sub>1</sub>=0.</li>
+    <li>41 / 2 = 20 con resto 1 => El coeficiente el menos significativo serÃ¡ 1, digamos a<sub>0</sub>=1.</li>
+    <li>20/2 = 10 con resto 0 => El coeficiente 1 serÃ¡ 0 => a<sub>1</sub>=0.</li>
     <li>10/2 = 5 con resto 0 => a<sub>2</sub>=0.</li>
     <li>5/2 = 2 con resto 1 => a<sub>3</sub>=1.</li>
     <li>2/2 = 1 con resto 0 => a<sub>4</sub>=0.</li>
@@ -113,11 +120,11 @@
 
 <p class="center content-block"><strong>(41)<sub>10</sub> = (a<sub>5</sub>a<sub>4</sub>a<sub>3</sub>a<sub>2</sub>a<sub>1</sub>a<sub>0</sub>) = (101001)<sub>2</sub></strong></p>
 
-<p class="content-block">¿y si quisiéramos mostrar el número en octal y/ó hexadecimal, partiendo de que ya tenemos el número binario?, entonces sería:</p>
+<p class="content-block">Â¿y si quisiÃ©ramos mostrar el nÃºmero en octal y/Ã³ hexadecimal, partiendo de que ya tenemos el nÃºmero binario?, entonces serÃ­a:</p>
 
 <p class="center content-block"><strong>(101001)<sub>2</sub> = (51)<sub>8</sub> = (29)<sub>16</sub></strong></p>
 
-<p class="content-block">Veamos otro ejemplo. Convertir el número decimal 161 a binario. Haríamos:</p>
+<p class="content-block">Veamos otro ejemplo. Convertir el nÃºmero decimal 161 a binario. HarÃ­amos:</p>
 
 <table border="1" cellpadding="4" cellspacing="3" class="content-block">
     <tr>
@@ -144,20 +151,20 @@
     </tr>
 </table>
 
-<p class="content-block">sabiendo que el primer bit es el menos significativo tendríamos:</p>
+<p class="content-block">sabiendo que el primer bit es el menos significativo tendrÃ­amos:</p>
 
 <p class="center content-block"><strong>(161)<sub>10</sub> = (10100001)<sub>2</sub></strong></p>
 
-<p class="content-block">partiendo del binario, en octal y hexadecimal sería:</p>
+<p class="content-block">partiendo del binario, en octal y hexadecimal serÃ­a:</p>
 
 <p class="center content-block"><strong>(10100001)<sub>2</sub> = (A1)<sub>16</sub> = (241)<sub>8</sub></strong></p>
 
-<p class="content-block">¿quieren revisar? OK:</p>
+<p class="content-block">Â¿quieren revisar? OK:</p>
 
 <p class="center content-block"><strong>(A1)<sub>16</sub> = 10 x 16<sup>1</sup> + 1 x 16<sup>0</sup> = 160 + 1 = (161)<sub>10</sub></strong></p>
 <p class="center content-block"><strong>(241)<sub>8</sub> = 2 x 8<sup>2</sup> + 4 x 8<sup>1</sup> + 1 x 8<sup>0</sup> = 128 + 32 + 1 = (161)<sub>10</sub></strong></p>
 
-<p class="content-block">Ok, todo chévere. Pero ¿qué pasa si lo que quiero es convertir el número decimal directamente a octal o a hexadecimal? (quiero decir si NO tenemos el número binario). Por supuesto, ustedes podrían convertirlo a binario y luego a octal o hexadecimal. Soy de la política de que no importa cómo se llegue al resultado mientras éste sea el correcto a menos claro está de que se les diga <strong>explícitamente</strong> que lo hagan de alguna forma en particular. En todo caso, la forma más rápida de hacerlo sería aplicando el método análogo a la conversión a binario sólo que cambiando el divisor a la base correspondiente. Si en binario es 2, en octal es 8, en hexadecimal es 16 en base 5 sería 5, etc. Procedamos con el mismo ejemplo anterior, con el número 161. Convirtámoslo a octal. Sería:</p>
+<p class="content-block">Ok, todo chÃ©vere. Pero Â¿quÃ© pasa si lo que quiero es convertir el nÃºmero decimal directamente a octal o a hexadecimal? (quiero decir si NO tenemos el nÃºmero binario). Por supuesto, ustedes podrÃ­an convertirlo a binario y luego a octal o hexadecimal. Soy de la polÃ­tica de que no importa cÃ³mo se llegue al resultado mientras Ã©ste sea el correcto a menos claro estÃ¡ de que se les diga <strong>explÃ­citamente</strong> que lo hagan de alguna forma en particular. En todo caso, la forma mÃ¡s rÃ¡pida de hacerlo serÃ­a aplicando el mÃ©todo anÃ¡logo a la conversiÃ³n a binario sÃ³lo que cambiando el divisor a la base correspondiente. Si en binario es 2, en octal es 8, en hexadecimal es 16 en base 5 serÃ­a 5, etc. Procedamos con el mismo ejemplo anterior, con el nÃºmero 161. ConvirtÃ¡moslo a octal. SerÃ­a:</p>
 
 <ol>
     <li>161 / 8 = 20 con resto 1</li>
@@ -169,7 +176,7 @@
 
 <p class="center content-block"><strong>(161)<sub>10</sub> = (241)<sub>8</sub></strong></p>
 
-<p class="content-block">ya que el primer resto es el dígito menos significativo. Y ¿qué tal a hexadecimal? Sería:</p>
+<p class="content-block">ya que el primer resto es el dÃ­gito menos significativo. Y Â¿quÃ© tal a hexadecimal? SerÃ­a:</p>
 
 <ol>
     <li>161 / 16 = 10 con resto 1</li>
@@ -180,7 +187,7 @@
 
 <p class="center content-block"><strong>(161)<sub>10</sub> = (A1)<sub>16</sub></strong></p>
 
-<p class="content-block">Ok. Si la base destino es 5, por ejemplo, llevarlo a binario no les serviría de nada. En este caso tendríamos que proceder obligatóriamente con el método explicado, en este caso siendo el divisor el número 5. Mismo ejemplo:</p>
+<p class="content-block">Ok. Si la base destino es 5, por ejemplo, llevarlo a binario no les servirÃ­a de nada. En este caso tendrÃ­amos que proceder obligatÃ³riamente con el mÃ©todo explicado, en este caso siendo el divisor el nÃºmero 5. Mismo ejemplo:</p>
 
 <table border="1" cellpadding="4" cellspacing="3" class="content-block">
     <tr>
@@ -213,7 +220,7 @@
 
 <p class="center content-block"><strong>(1121)<sub>5</sub> = 1 x 5<sup>3</sup> + 1 x 5<sup>2</sup> + 2 x 5<sup>1</sup> + 1 x 5<sup>0</sup> = 125 + 25 + 10 + 1 = (161)<sub>10</sub></strong></p>
 
-<p class="content-block">CORRECTO!!! Veamos ahora el caso de que el número sea con decimales. Como ya se comentó, en estos casos es más conveniente separar la parte entera de la fracción decimal. La parte entera ya sabemos cómo resolverla. La fracción decimal se hace por un procedimiento similar pero la operación involucrada es la multiplicación y quien representará el dígito a colocar será la parte entera siendo el primer entero quien será la cifra más significativa. Por ejemplo si queremos convertir el número decimal 0,8125 a binario hacemos:</p>
+<p class="content-block">CORRECTO!!! Veamos ahora el caso de que el nÃºmero sea con decimales. Como ya se comentÃ³, en estos casos es mÃ¡s conveniente separar la parte entera de la fracciÃ³n decimal. La parte entera ya sabemos cÃ³mo resolverla. La fracciÃ³n decimal se hace por un procedimiento similar pero la operaciÃ³n involucrada es la multiplicaciÃ³n y quien representarÃ¡ el dÃ­gito a colocar serÃ¡ la parte entera siendo el primer entero quien serÃ¡ la cifra mÃ¡s significativa. Por ejemplo si queremos convertir el nÃºmero decimal 0,8125 a binario hacemos:</p>
 
 <ol>
     <li>0,8125 x 2 = 1 + 0,625</li>
@@ -222,7 +229,7 @@
     <li>0,50 x 2 = 1 + 0</li>
 </ol>
 
-<p class="content-block">así que</p>
+<p class="content-block">asÃ­ que</p>
 
 <p class="center content-block"><strong>(0,812)<sub>10</sub> = (0,1101)<sub>2</sub></strong></p>
 
@@ -230,7 +237,7 @@
 
 <p class="center content-block"><strong>(0,1101)<sub>2</sub> = 1 x 2<sup>-1</sup> + 1 x 2<sup>-2</sup> + 0 x 2<sup>-3</sup> + 1 x 2<sup>-4</sup> = 0,5 + 0,25 + 0 + 0,0625 = (0,8125)<sub>10</sub></strong></p>
 
-<p class="content-block">Excelente!!! Veamos un último ejemplo. Convertir el número decimal 48,407407407407 (407 periódico) al correspondiente en base 3. Para la parte entera:</p>
+<p class="content-block">Excelente!!! Veamos un Ãºltimo ejemplo. Convertir el nÃºmero decimal 48,407407407407 (407 periÃ³dico) al correspondiente en base 3. Para la parte entera:</p>
 
 <ol>
     <li>48 / 3 = 16 con resto 0</li>
@@ -239,11 +246,11 @@
     <li>1 / 3 = 0 con resto 1</li>
 </ol>
 
-<p class="content-block">y para la fracción decimal:</p>
+<p class="content-block">y para la fracciÃ³n decimal:</p>
 
 <ol>
-    <li>0,407407407407 x 3 = 1 + 0,2222222 periódico</li>
-    <li>0,222222222222 x 3 = 0 + 0,6666666 periódico</li>
+    <li>0,407407407407 x 3 = 1 + 0,2222222 periÃ³dico</li>
+    <li>0,222222222222 x 3 = 0 + 0,6666666 periÃ³dico</li>
     <li>0,666666666666 x 3 = 2 + 0</li>
 </ol>
 
@@ -251,9 +258,9 @@
 
 <p class="center content-block"><strong>(48,407407407407...)<sub>10</sub> = (1210,102)<sub>3</sub></strong></p>
 
-<p class="content-block">Revísenlo.</p>
+<p class="content-block">RevÃ­senlo.</p>
 
-<p class="content-block"><strong>NOTA: Dada la confusión presentada por los números en distintas bases y viendo el resultado en algunos alumnos que dio dar ejemplos de series en distintas bases, aquí les anexo una tabla con números en decimal y su correspondiente en otras bases. Observen como varían los símbolos usados en las distintas bases en incrementos de uno.</strong></p>
+<p class="content-block"><strong>NOTA: Dada la confusiÃ³n presentada por los nÃºmeros en distintas bases y viendo el resultado en algunos alumnos que dio dar ejemplos de series en distintas bases, aquÃ­ les anexo una tabla con nÃºmeros en decimal y su correspondiente en otras bases. Observen como varÃ­an los sÃ­mbolos usados en las distintas bases en incrementos de uno.</strong></p>
 
 <table border="1" cellpadding="4" cellspacing="3" class="content-block">
     <tr>
@@ -447,13 +454,13 @@
     </tr>
 </table>
 
-<p class="content-block">Si por ejemplo tienen el número <code>(12)<sub>3</sub></code> y se le pide que le sumen 2, el resultado que van a obtener es el número en base 3 que está 2 posiciones adelante del <code>(12)<sub>3</sub></code>, en este caso el <code>(21)<sub>3</sub></code>. Espero que esta tabla les sirva para comprender mejor los números en bases distintas. <code>(4 + 6)<sub>7</sub> = (13)<sub>7</sub></code>. Teniendo ya esto en cuenta, veamos como se realizan operaciones aritméticas en distintas bases.</p>
+<p class="content-block">Si por ejemplo tienen el nÃºmero <code>(12)<sub>3</sub></code> y se le pide que le sumen 2, el resultado que van a obtener es el nÃºmero en base 3 que estÃ¡ 2 posiciones adelante del <code>(12)<sub>3</sub></code>, en este caso el <code>(21)<sub>3</sub></code>. Espero que esta tabla les sirva para comprender mejor los nÃºmeros en bases distintas. <code>(4 + 6)<sub>7</sub> = (13)<sub>7</sub></code>. Teniendo ya esto en cuenta, veamos como se realizan operaciones aritmÃ©ticas en distintas bases.</p>
 
-<h2 class="content-block" style="color: #008000;">OPERACIONES ARITMÉTICAS CON NÚMEROS DE DISTINTAS BASES</h2>
+<h2 class="content-block" style="color: #008000;">OPERACIONES ARITMÃ‰TICAS CON NÃšMEROS DE DISTINTAS BASES</h2>
 
-<p class="content-block">En realidad las operaciones aritméticas se realizan igual sin importar cuál sea la base. La única consideración a tomar es que sólo pueden existir dígitos entre 0 y <strong>base-1</strong>. Veamos algunos ejemplos de suma, resta y multiplicación.</p>
+<p class="content-block">En realidad las operaciones aritmÃ©ticas se realizan igual sin importar cuÃ¡l sea la base. La Ãºnica consideraciÃ³n a tomar es que sÃ³lo pueden existir dÃ­gitos entre 0 y <strong>base-1</strong>. Veamos algunos ejemplos de suma, resta y multiplicaciÃ³n.</p>
 
-<p class="content-block">Sume los números binarios 10111101 y 10110:</p>
+<p class="content-block">Sume los nÃºmeros binarios 10111101 y 10110:</p>
 
 <pre>
   10111101
@@ -462,9 +469,9 @@
   11010011
 </pre>
 
-<p class="content-block">Como les dije deben considerar la base que se está usando. En este caso usamos números binarios (base 2) por lo que los dígitos sólo pueden ser 0 ó 1. ¿Qué tenemos entonces? Bien, para este caso de suma (sólo dos números binarios) lo que debemos saber es que <code>(0+0)=0</code>, <code>(0+1)=(1+0)=1</code>, <code>(1+1)=10</code> y <code>(1+1+1)=11</code>. Por lo tanto, empezando por el dígito menos significativo tenemos que: <code>(1+0)=1</code>. Sigamos: <code>(0+1)=1</code>, <code>(1+1)=10</code> (por lo que colocamos el 0 y sabemos que llevamos 1 de acarreo que para el resto de la explicación pondré entre []), <code>([1]+1+0)=10</code>, <code>([1]+1+1)=11</code>, <code>([1]+1+0)=10</code>, <code>([1]+0)=1</code> y por último <code>(1+0)=1</code>. Revísenlo y practiquen haciendo ejercicios.</p>
+<p class="content-block">Como les dije deben considerar la base que se estÃ¡ usando. En este caso usamos nÃºmeros binarios (base 2) por lo que los dÃ­gitos sÃ³lo pueden ser 0 Ã³ 1. Â¿QuÃ© tenemos entonces? Bien, para este caso de suma (sÃ³lo dos nÃºmeros binarios) lo que debemos saber es que <code>(0+0)=0</code>, <code>(0+1)=(1+0)=1</code>, <code>(1+1)=10</code> y <code>(1+1+1)=11</code>. Por lo tanto, empezando por el dÃ­gito menos significativo tenemos que: <code>(1+0)=1</code>. Sigamos: <code>(0+1)=1</code>, <code>(1+1)=10</code> (por lo que colocamos el 0 y sabemos que llevamos 1 de acarreo que para el resto de la explicaciÃ³n pondrÃ© entre []), <code>([1]+1+0)=10</code>, <code>([1]+1+1)=11</code>, <code>([1]+1+0)=10</code>, <code>([1]+0)=1</code> y por Ãºltimo <code>(1+0)=1</code>. RevÃ­senlo y practiquen haciendo ejercicios.</p>
 
-<p class="content-block">Realice la resta entre los mismos números:</p>
+<p class="content-block">Realice la resta entre los mismos nÃºmeros:</p>
 
 <pre>
   10111101
@@ -473,9 +480,9 @@
   10100111
 </pre>
 
-<p class="content-block">Ok, sabiendo que <code>(0-0)=0</code>, <code>(1-0)=1</code>, <code>(1-1)=0</code>, <code>(0-1)=-1</code> y <code>(10-1)=1</code>, entonces, empezando por el menos significativo y continuando, <code>(1-0)=1</code>, <code>(10-1)=1</code>, <code>(10-1)=1</code>, <code>(0-0)=0</code>, <code>(1-1)=0</code>, <code>(1-0)=1</code> y <code>(10-0)=10</code>. En realidad no hay más que explicar aquí. Realicen ejercicios.</p>
+<p class="content-block">Ok, sabiendo que <code>(0-0)=0</code>, <code>(1-0)=1</code>, <code>(1-1)=0</code>, <code>(0-1)=-1</code> y <code>(10-1)=1</code>, entonces, empezando por el menos significativo y continuando, <code>(1-0)=1</code>, <code>(10-1)=1</code>, <code>(10-1)=1</code>, <code>(0-0)=0</code>, <code>(1-1)=0</code>, <code>(1-0)=1</code> y <code>(10-0)=10</code>. En realidad no hay mÃ¡s que explicar aquÃ­. Realicen ejercicios.</p>
 
-<p class="content-block">Por último la multiplicación:</p>
+<p class="content-block">Por Ãºltimo la multiplicaciÃ³n:</p>
 
 <pre>
   10111101
@@ -490,9 +497,9 @@ x    10110
 1000000111110
 </pre>
 
-<p class="content-block">En la multiplicación de números binarios tenemos que <code>(0 x 0)=(0 x 1)=(1 x 0)=0</code> y <code>(1 x 1)=1</code> el cual, como veremos en los próximos capítulos, es el comportamiento de una compuerta AND. Ese análisis nos es familiar ya que cumple exactamente las mismas propiedades a las que estamos acostumbrados. Yo diría más bien que realizar esta multiplicación es un buen ejercicio para la suma ya que debe considerar múltiples acarreos. Entienda que en binario <code>(1+1+1)=11</code>, <code>(1+1+1+1)=100</code>, <code>(1+1+1+1+1)=101</code>, <code>(1+1+1+1+1+1+1+1)=1000</code>, etc.</p>
+<p class="content-block">En la multiplicaciÃ³n de nÃºmeros binarios tenemos que <code>(0 x 0)=(0 x 1)=(1 x 0)=0</code> y <code>(1 x 1)=1</code> el cual, como veremos en los prÃ³ximos capÃ­tulos, es el comportamiento de una compuerta AND. Ese anÃ¡lisis nos es familiar ya que cumple exactamente las mismas propiedades a las que estamos acostumbrados. Yo dirÃ­a mÃ¡s bien que realizar esta multiplicaciÃ³n es un buen ejercicio para la suma ya que debe considerar mÃºltiples acarreos. Entienda que en binario <code>(1+1+1)=11</code>, <code>(1+1+1+1)=100</code>, <code>(1+1+1+1+1)=101</code>, <code>(1+1+1+1+1+1+1+1)=1000</code>, etc.</p>
 
-<p class="content-block">Hagamos ahora la suma y resta de los mismos números pero en hexadecimal:</p>
+<p class="content-block">Hagamos ahora la suma y resta de los mismos nÃºmeros pero en hexadecimal:</p>
 
 <p class="center content-block"><strong>BD + 16 = D3</strong></p>
 
@@ -500,29 +507,29 @@ x    10110
 
 <p class="center content-block"><strong>BD - 16 = A7</strong></p>
 
-<p class="content-block">Lo cual no tiene mucho que analizar. La consideración más importante a tomar es qué dígitos se pueden usar lo cual depende de la base. De resto el procedimiento es igual al que estamos familiarizados.</p>
+<p class="content-block">Lo cual no tiene mucho que analizar. La consideraciÃ³n mÃ¡s importante a tomar es quÃ© dÃ­gitos se pueden usar lo cual depende de la base. De resto el procedimiento es igual al que estamos familiarizados.</p>
 
 <h2 class="content-block" style="color: #008000;">COMPLEMENTOS</h2>
 
-<p class="content-block">Los complementos son muy usados en los sistemas digitales al momento de realizar operaciones de resta. Existen dos tipos de complemento. El complemento a <strong>b</strong> y el complemento a <strong>b-1</strong> donde <strong>b</strong> es la base. Es decir, para los números binarios existen los complementos a 2 y a 1. En base octal serían complemento a 8 y a 7, etc. El complemento a <strong>b</strong> se define de la siguiente forma:</p>
+<p class="content-block">Los complementos son muy usados en los sistemas digitales al momento de realizar operaciones de resta. Existen dos tipos de complemento. El complemento a <strong>b</strong> y el complemento a <strong>b-1</strong> donde <strong>b</strong> es la base. Es decir, para los nÃºmeros binarios existen los complementos a 2 y a 1. En base octal serÃ­an complemento a 8 y a 7, etc. El complemento a <strong>b</strong> se define de la siguiente forma:</p>
 
 <h3 class="content-block">Complemento a b</h3>
 
-<p class="content-block">Teniendo un número <strong>N</strong> de <strong>n</strong> dígitos enteros, el complemento a <strong>b</strong> de <strong>N</strong> = <strong>(b<sup>n</sup> - N)</strong> si <strong>N ≠ 0</strong> y será <strong>0</strong> si <strong>N=0</strong>. Esto se cumple para todos los números N positivos incluso con fracción decimal. El único caso especial a considerar es cuando la parte entera es cero. Esto se interpreta como que <strong>n = 0</strong>.</p>
+<p class="content-block">Teniendo un nÃºmero <strong>N</strong> de <strong>n</strong> dÃ­gitos enteros, el complemento a <strong>b</strong> de <strong>N</strong> = <strong>(b<sup>n</sup> - N)</strong> si <strong>N â‰  0</strong> y serÃ¡ <strong>0</strong> si <strong>N=0</strong>. Esto se cumple para todos los nÃºmeros N positivos incluso con fracciÃ³n decimal. El Ãºnico caso especial a considerar es cuando la parte entera es cero. Esto se interpreta como que <strong>n = 0</strong>.</p>
 
-<p class="content-block">Veamos algunos ejemplos: ¿Cuál es el complemento a 10 de <code>(987)<sub>10</sub></code>? En este caso N = 987 y n = 3, entonces:</p>
+<p class="content-block">Veamos algunos ejemplos: Â¿CuÃ¡l es el complemento a 10 de <code>(987)<sub>10</sub></code>? En este caso N = 987 y n = 3, entonces:</p>
 
 <p class="center content-block"><strong>10<sup>3</sup> - 987 = 1000 - 987 = 13</strong></p>
 
-<p class="content-block">¿El complemento a 10 de <code>(0,125)<sub>10</sub></code>? Aquí N = 0,125 y n = 0, así que:</p>
+<p class="content-block">Â¿El complemento a 10 de <code>(0,125)<sub>10</sub></code>? AquÃ­ N = 0,125 y n = 0, asÃ­ que:</p>
 
 <p class="center content-block"><strong>10<sup>0</sup> - 0,125 = 1 - 0,125 = 0,875</strong></p>
 
-<p class="content-block">¿El complemento a 10 de <code>(987,125)<sub>10</sub></code>? N= 987,125 y n = 3, por lo tanto:</p>
+<p class="content-block">Â¿El complemento a 10 de <code>(987,125)<sub>10</sub></code>? N= 987,125 y n = 3, por lo tanto:</p>
 
 <p class="center content-block"><strong>10<sup>3</sup> - 987,125 = 1000 - 987,125 = 12,875</strong></p>
 
-<p class="content-block"><strong>ATENCIÓN</strong>: Observen que <strong>NO</strong> es lo mismo que calcular el complemento de la parte entera y de la fracción decimal por separado y juntar los resultados. OJO con eso.</p>
+<p class="content-block"><strong>ATENCIÃ“N</strong>: Observen que <strong>NO</strong> es lo mismo que calcular el complemento de la parte entera y de la fracciÃ³n decimal por separado y juntar los resultados. OJO con eso.</p>
 
 <p class="content-block">Veamos unos casos en binario. Para el complemento a 2 de <code>(10101100)<sub>2</sub></code> tenemos que n=8, entonces:</p>
 
@@ -532,11 +539,11 @@ x    10110
 
 <p class="center content-block"><strong>(10000 - 1010)<sub>2</sub> = (0110)<sub>2</sub></strong></p>
 
-<p class="content-block">Obsérvese que para calcular el complemento a 2 de un número binario sólo basta con revisar todos los dígitos desde el menos significativo hacia el más significativo y mientras se consiga un cero, dejarlo igual, al conseguir el primer número 1, dejarlo igual para luego cambiar el resto de ellos hasta llegar al más significativo. Así podemos decir rápidamente que el complemento a 2 de <code>(10100000)<sub>2</sub></code> es <code>(01100000)<sub>2</sub></code>, que el complemento a 2 de <code>(111)<sub>2</sub></code> es <code>(001)<sub>2</sub></code>, etc. Otra forma muy sencilla de hallar el complemento a 2 de un número binario es invirtiendo todos los dígitos (que como veremos a continuación es lo que se conoce como complemento a 1) y sumándole uno al resultado obtenido. Pruébenlo.</p>
+<p class="content-block">ObsÃ©rvese que para calcular el complemento a 2 de un nÃºmero binario sÃ³lo basta con revisar todos los dÃ­gitos desde el menos significativo hacia el mÃ¡s significativo y mientras se consiga un cero, dejarlo igual, al conseguir el primer nÃºmero 1, dejarlo igual para luego cambiar el resto de ellos hasta llegar al mÃ¡s significativo. AsÃ­ podemos decir rÃ¡pidamente que el complemento a 2 de <code>(10100000)<sub>2</sub></code> es <code>(01100000)<sub>2</sub></code>, que el complemento a 2 de <code>(111)<sub>2</sub></code> es <code>(001)<sub>2</sub></code>, etc. Otra forma muy sencilla de hallar el complemento a 2 de un nÃºmero binario es invirtiendo todos los dÃ­gitos (que como veremos a continuaciÃ³n es lo que se conoce como complemento a 1) y sumÃ¡ndole uno al resultado obtenido. PruÃ©benlo.</p>
 
 <h3 class="content-block">Complemento a b-1</h3>
 
-<p class="content-block">Por otro lado tenemos también el complemento a <strong>b-1</strong>. En este caso, teniendo un número positivo <strong>N</strong> en base <strong>b</strong> con <strong>n</strong> dígitos enteros y <strong>m</strong> dígitos en la fracción decimal, se conoce como complemento a <strong>b-1</strong> de <strong>N</strong> a</p>
+<p class="content-block">Por otro lado tenemos tambiÃ©n el complemento a <strong>b-1</strong>. En este caso, teniendo un nÃºmero positivo <strong>N</strong> en base <strong>b</strong> con <strong>n</strong> dÃ­gitos enteros y <strong>m</strong> dÃ­gitos en la fracciÃ³n decimal, se conoce como complemento a <strong>b-1</strong> de <strong>N</strong> a</p>
 
 <p class="center content-block"><strong>b<sup>n</sup> - b<sup>-m</sup> - N</strong></p>
 
@@ -548,11 +555,11 @@ x    10110
 
 <p class="center content-block"><strong>10<sup>0</sup> - 10<sup>-3</sup> - 0,25 = 1 - 0,001 - 0,125 = 0,999 - 0,125 = 0,874</strong></p>
 
-<p class="content-block">Y ¿qué hay del complemento a 9 de <code>(987,125)<sub>10</sub></code>? En ese caso N= 987,125 ; n = 3 y m = 3, por lo tanto</p>
+<p class="content-block">Y Â¿quÃ© hay del complemento a 9 de <code>(987,125)<sub>10</sub></code>? En ese caso N= 987,125 ; n = 3 y m = 3, por lo tanto</p>
 
 <p class="center content-block"><strong>10<sup>3</sup> - 10<sup>-3</sup> - 987,125 = 1000 - 0,001 - 987,125 = 999,999 - 987,125 = 12,874</strong></p>
 
-<p class="content-block">Observen que en este caso sí es lo mismo calcular el complemento de la parte entera y el de la fracción decimal por separado y juntar ó sumar los resultados.</p>
+<p class="content-block">Observen que en este caso sÃ­ es lo mismo calcular el complemento de la parte entera y el de la fracciÃ³n decimal por separado y juntar Ã³ sumar los resultados.</p>
 
 <p class="content-block">Algunos ejemplos en binario. Para el complemento a 1 de <code>(10101100)<sub>2</sub></code> sabemos que n=8 y m=0 =></p>
 
@@ -562,13 +569,13 @@ x    10110
 
 <p class="center content-block"><strong>(10000 - 1 - 1010)<sub>2</sub> = (0101)<sub>2</sub></strong></p>
 
-<p class="content-block">En estos dos últimos ejemplos se puede observar que para conseguir el complemento a 1 de un número binario basta con tan solo invertir todos los dígitos (esto quiere decir cambiar 0 por 1 y viceversa). Es por esto que les comenté anteriormente que otra forma de calcular el complemento a 2 de un número binario es hallando el complemento a 1 (o sea invertir todos los digitos) y sumarle 1.</p>
+<p class="content-block">En estos dos Ãºltimos ejemplos se puede observar que para conseguir el complemento a 1 de un nÃºmero binario basta con tan solo invertir todos los dÃ­gitos (esto quiere decir cambiar 0 por 1 y viceversa). Es por esto que les comentÃ© anteriormente que otra forma de calcular el complemento a 2 de un nÃºmero binario es hallando el complemento a 1 (o sea invertir todos los digitos) y sumarle 1.</p>
 
 <h3 class="content-block">Resta por complemento</h3>
 
-<p class="content-block">Al principio les dije que los complementos se usaban mucho en los sistemas digitales para realizar cálculos de resta. Si queremos realizar una resta basándonos en el complemento a <strong>b</strong> (base) lo que hacemos es sumar al minuendo el complemento a <strong>b</strong> del sustraendo. Si la suma acarrea 1, éste se descarta. En caso contrario se dice que el número es negativo y será el complemento a <strong>b</strong> del resultado de la suma.</p>
+<p class="content-block">Al principio les dije que los complementos se usaban mucho en los sistemas digitales para realizar cÃ¡lculos de resta. Si queremos realizar una resta basÃ¡ndonos en el complemento a <strong>b</strong> (base) lo que hacemos es sumar al minuendo el complemento a <strong>b</strong> del sustraendo. Si la suma acarrea 1, Ã©ste se descarta. En caso contrario se dice que el nÃºmero es negativo y serÃ¡ el complemento a <strong>b</strong> del resultado de la suma.</p>
 
-<p class="content-block">Veamos un ejemplo con números: <code>(123 - 023)<sub>10</sub></code>; aquí el complemento a 10 de 23 es 977, entonces:</p>
+<p class="content-block">Veamos un ejemplo con nÃºmeros: <code>(123 - 023)<sub>10</sub></code>; aquÃ­ el complemento a 10 de 23 es 977, entonces:</p>
 
 <pre>
   123
@@ -577,11 +584,11 @@ x    10110
 1 100
 </pre>
 
-<p class="content-block">El primer 1 es el acarreo por lo que la <strong>respuesta es 100</strong>. <strong>OJO</strong>: al usar este método debe considerar todos los números con la misma cantidad de dígitos. ¿Qué quiero decir con esto?, que NO, repito: <strong>NO!</strong> pueden considerar el número 23 como un número de 2 dígitos. Minuendo y sustraendo deben contener el mismo número de dígitos. Por lo tanto deben considerar 023. En caso contrario obtendrían un error.</p>
+<p class="content-block">El primer 1 es el acarreo por lo que la <strong>respuesta es 100</strong>. <strong>OJO</strong>: al usar este mÃ©todo debe considerar todos los nÃºmeros con la misma cantidad de dÃ­gitos. Â¿QuÃ© quiero decir con esto?, que NO, repito: <strong>NO!</strong> pueden considerar el nÃºmero 23 como un nÃºmero de 2 dÃ­gitos. Minuendo y sustraendo deben contener el mismo nÃºmero de dÃ­gitos. Por lo tanto deben considerar 023. En caso contrario obtendrÃ­an un error.</p>
 
 <p class="content-block">Veamos otro ejemplo en el que la suma no arroja complemento: <code>(23 - 100)<sub>10</sub></code>; para este caso el complemento a 10 de 100 es 900 => 23 + 900 = 923 (no lleva acarreo) => el complemento a 10 de 923 es 77 => <strong>Respuesta = -77</strong>.</p>
 
-<p class="content-block">También existe un método para realizar la resta pero usando el complemento a <strong>b-1</strong>. Este caso es muy similar al caso anterior con la diferencia del acarreo. Aquí, en el caso de haber un acarreo, éste no es descartado sino que el mismo es sumado al resultado de la suma para obtener el resultado final. En caso de no tener acarreo, al igual que antes, se procede a realizar el complemento del resultado de la suma y agregarle un signo negativo. OBVIAMENTE todos los cálculos de complementos en este método son basados en el complemento a <strong>b-1</strong> y no al complemento a <strong>b.</strong></p>
+<p class="content-block">TambiÃ©n existe un mÃ©todo para realizar la resta pero usando el complemento a <strong>b-1</strong>. Este caso es muy similar al caso anterior con la diferencia del acarreo. AquÃ­, en el caso de haber un acarreo, Ã©ste no es descartado sino que el mismo es sumado al resultado de la suma para obtener el resultado final. En caso de no tener acarreo, al igual que antes, se procede a realizar el complemento del resultado de la suma y agregarle un signo negativo. OBVIAMENTE todos los cÃ¡lculos de complementos en este mÃ©todo son basados en el complemento a <strong>b-1</strong> y no al complemento a <strong>b.</strong></p>
 
 <p class="content-block">Veamos algunos ejemplos: <code>(123 - 023)<sub>10</sub></code>; el complemento a 9 de 23 es 976, entonces</p>
 
@@ -595,11 +602,11 @@ x    10110
   100
 </pre>
 
-<p class="content-block">El primer 1 es el acarreo y como éste debe sumársele al resultado de la suma tenemos que 99 + 1 es 100. Por supuesto que al usar este método también debe considerar todos los números con la misma cantidad de dígitos. El número 23 es en realidad 023. Veamos el otro ejemplo en el que la suma no arroja complemento: <code>(23 - 100)<sub>10</sub></code> => el complemento a 9 de 100 es 899 => 23 + 899 = 922 (no lleva acarreo) => el complemento a 9 de 922 es 77 => <strong>Respuesta = -77</strong></p>
+<p class="content-block">El primer 1 es el acarreo y como Ã©ste debe sumÃ¡rsele al resultado de la suma tenemos que 99 + 1 es 100. Por supuesto que al usar este mÃ©todo tambiÃ©n debe considerar todos los nÃºmeros con la misma cantidad de dÃ­gitos. El nÃºmero 23 es en realidad 023. Veamos el otro ejemplo en el que la suma no arroja complemento: <code>(23 - 100)<sub>10</sub></code> => el complemento a 9 de 100 es 899 => 23 + 899 = 922 (no lleva acarreo) => el complemento a 9 de 922 es 77 => <strong>Respuesta = -77</strong></p>
 
-<p class="content-block">Veamos algunos casos con números binarios. Realizar la resta por complemento a 2 y por complemento a 1 de: <strong>(10101110 – 110010)<sub>2</sub></strong></p>
+<p class="content-block">Veamos algunos casos con nÃºmeros binarios. Realizar la resta por complemento a 2 y por complemento a 1 de: <strong>(10101110 â€“ 110010)<sub>2</sub></strong></p>
 
-<p class="content-block">Por el método de complemento a 2 tenemos: El complemento a 2 de 110010 (recordando que debe tener 8 dígitos) es 11001110 entonces</p>
+<p class="content-block">Por el mÃ©todo de complemento a 2 tenemos: El complemento a 2 de 110010 (recordando que debe tener 8 dÃ­gitos) es 11001110 entonces</p>
 
 <pre>
   10101110
@@ -610,7 +617,7 @@ x    10110
 
 <p class="content-block">de lo que se concluye que <strong>(10101110 - 110010)<sub>2</sub></strong> = <strong>(1111100)<sub>2</sub></strong></p>
 
-<p class="content-block">Veámoslo ahora por el método de complemento a 1. Aquí tendríamos que complemento a 1 de 110010 es 11001101, entonces</p>
+<p class="content-block">VeÃ¡moslo ahora por el mÃ©todo de complemento a 1. AquÃ­ tendrÃ­amos que complemento a 1 de 110010 es 11001101, entonces</p>
 
 <pre>
   10101110
@@ -621,7 +628,7 @@ x    10110
 
 <p class="content-block">por lo que tenemos que hacer <strong>(01111011 + 1)<sub>2</sub></strong> resultando <strong>(01111100)<sub>2</sub></strong>.</p>
 
-<p class="content-block">Excelente. Veamos otro caso. Realizar la resta de <strong>(110010 - 10101110)<sub>2</sub></strong>. Por complemento a 2 sería:</p>
+<p class="content-block">Excelente. Veamos otro caso. Realizar la resta de <strong>(110010 - 10101110)<sub>2</sub></strong>. Por complemento a 2 serÃ­a:</p>
 
 <pre>
   00110010
@@ -630,7 +637,7 @@ x    10110
   10000100
 </pre>
 
-<p class="content-block">que como no tiene acarreo le calculamos el complemento a 2 y tenemos que el <strong>resultado es -1111100</strong>. Con el método de complemento a 1 sería:</p>
+<p class="content-block">que como no tiene acarreo le calculamos el complemento a 2 y tenemos que el <strong>resultado es -1111100</strong>. Con el mÃ©todo de complemento a 1 serÃ­a:</p>
 
 <pre>
   00110010
@@ -641,11 +648,17 @@ x    10110
 
 <p class="content-block">y calculando el complemento a 1 (ya que no tiene acarreo) tenemos que el <strong>resultado = -01111100</strong>. Lo cual es correcto.</p>
 
-<p class="content-block">¿Por qué haríamos una resta con complemento? La suma es mucho más sencilla de implementar en los sistemas digitales; y por otro lado, aunque en base 10 no tenemos problemas para realizar una resta, hacer el mismo proceso para otras bases no nos será tan intuitivo por lo que estos métodos facilitarían el proceso del cálculo.</p>
+<p class="content-block">Â¿Por quÃ© harÃ­amos una resta con complemento? La suma es mucho mÃ¡s sencilla de implementar en los sistemas digitales; y por otro lado, aunque en base 10 no tenemos problemas para realizar una resta, hacer el mismo proceso para otras bases no nos serÃ¡ tan intuitivo por lo que estos mÃ©todos facilitarÃ­an el proceso del cÃ¡lculo.</p>
 
-<p class="content-block">Como comentario final me gustaría acotar que las computadoras trabajan los números negativos a través del complemento a dos. Para ellas, el primer bit del byte indica el signo. Si este es uno (1) querrá decir que el número es negativo. Por lo tanto, y basándonos en este último ejemplo por el método de complemento a dos, al realizar la resta de <code>110010 - 10101110</code> el resultado que almacena el computador en sus registros o variables es en realidad el número <code>(10000100)<sub>2</sub></code> o lo que es lo mismo <code>(84)<sub>16</sub></code>. Al tener el bit más significativo activo, representa que es un número negativo y que el mismo es su complemento a 2.</p>
+<p class="content-block">Como comentario final me gustarÃ­a acotar que las computadoras trabajan los nÃºmeros negativos a travÃ©s del complemento a dos. Para ellas, el primer bit del byte indica el signo. Si este es uno (1) querrÃ¡ decir que el nÃºmero es negativo. Por lo tanto, y basÃ¡ndonos en este Ãºltimo ejemplo por el mÃ©todo de complemento a dos, al realizar la resta de <code>110010 - 10101110</code> el resultado que almacena el computador en sus registros o variables es en realidad el nÃºmero <code>(10000100)<sub>2</sub></code> o lo que es lo mismo <code>(84)<sub>16</sub></code>. Al tener el bit mÃ¡s significativo activo, representa que es un nÃºmero negativo y que el mismo es su complemento a 2.</p>
 
-<p class="content-block">Pues bien, esto es lo último en este capítulo. Para el próximo hablaremos de <a href="tema2.html">Códigos binarios. Álgebra de Boole. Funciones lógicas. Compuertas lógicas.</a></p>
+        <p class="content-block">Pues bien, esto es lo Ãºltimo en este capÃ­tulo. Para el prÃ³ximo hablaremos de <a href="tema2.html">CÃ³digos binarios. Ãlgebra de Boole. Funciones lÃ³gicas. Compuertas lÃ³gicas.</a></p>
+    </main>
 
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

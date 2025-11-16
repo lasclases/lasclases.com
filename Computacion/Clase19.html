@@ -1,22 +1,29 @@
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE HTML>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Clase 19: Ejercicios de Punteros y Estructuras</title>
 	<meta name="author" content="Javier">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <h1 class="content-block">Ejercicios de Punteros y Estructuras</h1>
 
-<p class="content-block">EN CONSTRUCCIÓN.</p>
+<p class="content-block">EN CONSTRUCCIÃ“N.</p>
 
 <p class="content-block">Los siguientes ejercicios se estudiaron en clases.</p>
 
-<h2 class="content-block">1.- Ejercicio de Asignación Dinámica y Archivos</h2>
+<h2 class="content-block">1.- Ejercicio de AsignaciÃ³n DinÃ¡mica y Archivos</h2>
 
 <pre>
-/* Diseñe un programa que:
+/* DiseÃ±e un programa que:
  * a.- Pida al usuario el numero de datos con lo que se va a trabajar.
  * A partir de este valor, reservar espacio dinamicamente para almacenar
  * esa cantidad de datos. El tipo de dato es entero.
@@ -37,7 +44,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-// #include<conio.h> // No estándar
+// #include<conio.h> // No estÃ¡ndar
 #include<ctype.h>
 
 #define NOMB "entero.dat"
@@ -52,18 +59,18 @@ int main(){
     int dato, *pi;
     char ch;
     
-    // clrscr(); // No estándar
+    // clrscr(); // No estÃ¡ndar
     
     printf("Para cuantos datos enteros desea reservar espacio?: ");
-    // Usamos %*c para limpiar el buffer de entrada después de leer el entero.
-    // Esto es una técnica antigua para evitar fflush(stdin).
+    // Usamos %*c para limpiar el buffer de entrada despuÃ©s de leer el entero.
+    // Esto es una tÃ©cnica antigua para evitar fflush(stdin).
     scanf("%i%*c",&i);
     
     pi = (int *)malloc(i*sizeof(int));
     
     for(;;){
         printf("Que desea hacer?\n(M)eter dato\n(G)uardar y Salir\n");
-        // tolower() y getch() son no estándar (conio.h). Se mantienen para el ejemplo, pero se advierte.
+        // tolower() y getch() son no estÃ¡ndar (conio.h). Se mantienen para el ejemplo, pero se advierte.
         while ( (ch = tolower(getch()))!='m' && ch!='g');
         
         switch (ch) {
@@ -102,7 +109,7 @@ int guarda(int *p,int a){
 }
 </pre>
 
-<h2 class="content-block">2.- Ejercicio de Lista Enlazada Dinámica</h2>
+<h2 class="content-block">2.- Ejercicio de Lista Enlazada DinÃ¡mica</h2>
 
 <pre>
 /* Desarrolle un programa que almacene una lista de trabajadores.
@@ -126,7 +133,7 @@ int guarda(int *p,int a){
 
 #include<stdio.h>
 #include<stdlib.h>
-// #include<conio.h> // No estándar
+// #include<conio.h> // No estÃ¡ndar
 #include<ctype.h>
 #include<string.h>
 
@@ -146,11 +153,11 @@ int main(){
     char ch;
     fin=&inicio;
     
-    // clrscr(); // No estándar
+    // clrscr(); // No estÃ¡ndar
     
     for(;;){
         printf("Que desea hacer?\n(M)eter dato\n(G)uardar y Salir\n");
-        // tolower() y getch() son no estándar (conio.h). Se mantienen para el ejemplo.
+        // tolower() y getch() son no estÃ¡ndar (conio.h). Se mantienen para el ejemplo.
         while ( (ch = tolower(getch()))!='m' && ch!='g');
         
         switch (ch) {
@@ -172,12 +179,12 @@ int mete(void){
     fin->prox=pl;
     fin = fin->prox;
     printf("Introduzca el nombre: ");
-    // Usamos %29[^\n] para leer hasta 29 caracteres (dejando espacio para el nulo) o hasta el salto de línea.
+    // Usamos %29[^\n] para leer hasta 29 caracteres (dejando espacio para el nulo) o hasta el salto de lÃ­nea.
     scanf("%29[^\n]",fin->nombre);
     // fflush(stdin); // ADVERTENCIA: fflush(stdin) es comportamiento indefinido.
-    // Se asume que el usuario limpiará el buffer o que el compilador lo maneja.
+    // Se asume que el usuario limpiarÃ¡ el buffer o que el compilador lo maneja.
     
-    // Limpiar el buffer después de scanf para evitar problemas con la próxima lectura
+    // Limpiar el buffer despuÃ©s de scanf para evitar problemas con la prÃ³xima lectura
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
     
@@ -201,5 +208,13 @@ int guarda(void){
 }
 </pre>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+
+

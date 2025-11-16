@@ -1,37 +1,44 @@
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE HTML>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Clase 9: Funciones y Recursividad</title>
 	<meta name="author" content="Tony Rodriguez">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <h1 class="content-block">Funciones.</h1>
 
-<p class="content-block">Las funciones son los bloques constructores de C. Son las funciones las que ayudan a realizar un programa de forma estructurada y clara amén de su gran utilidad cuando se desea realizar un mismo tipo de operación repetidas veces ya que el código sólo tiene que ser escrito una vez. La forma general de una función es:</p>
+<p class="content-block">Las funciones son los bloques constructores de C. Son las funciones las que ayudan a realizar un programa de forma estructurada y clara amÃ©n de su gran utilidad cuando se desea realizar un mismo tipo de operaciÃ³n repetidas veces ya que el cÃ³digo sÃ³lo tiene que ser escrito una vez. La forma general de una funciÃ³n es:</p>
 
 <pre>
 especificadorDeTipoDeVuelta nombreDeLaFuncion(listaParametros) {
-    cuerpo de la función;	// Aquí se agregarán todos los comandos que se ejecutarán
-    // cada vez que se llame a la función.
+    cuerpo de la funciÃ³n;	// AquÃ­ se agregarÃ¡n todos los comandos que se ejecutarÃ¡n
+    // cada vez que se llame a la funciÃ³n.
 }
 </pre>
 
-<p class="content-block">El “especificadorDeTipoDeVuelta” especifica el tipo de valor que devuelve la función a través de la sentencia <code>return</code>. El valor puede ser cualquier tipo de variable válido incluyendo <code>void</code> para especificar que no retorna ningún valor (en caso de ser <code>void</code>, la función no requerirá la sentencia <code>return</code>). Como se ha comentado con anterioridad, si no se define ningún tipo de vuelta, el compilador asume que es de tipo <code>int</code>. “listaParametros” es la lista de nombres de variables que recibirán los valores de los argumentos que se le pasa a la función. Las variables se encuentran separadas por comas y cada una con su tipo asociado.</p>
+<p class="content-block">El â€œespecificadorDeTipoDeVueltaâ€ especifica el tipo de valor que devuelve la funciÃ³n a travÃ©s de la sentencia <code>return</code>. El valor puede ser cualquier tipo de variable vÃ¡lido incluyendo <code>void</code> para especificar que no retorna ningÃºn valor (en caso de ser <code>void</code>, la funciÃ³n no requerirÃ¡ la sentencia <code>return</code>). Como se ha comentado con anterioridad, si no se define ningÃºn tipo de vuelta, el compilador asume que es de tipo <code>int</code>. â€œlistaParametrosâ€ es la lista de nombres de variables que recibirÃ¡n los valores de los argumentos que se le pasa a la funciÃ³n. Las variables se encuentran separadas por comas y cada una con su tipo asociado.</p>
 
-<p class="content-block">Tal como se comentó en “Estructura de un Programa en Lenguaje C”, todas las funciones a ser desarrolladas en el programa (lo cual se hace al final del mismo, luego del bloque <code>main()</code>) deben tener una declaración anticipada de dicha función. Eso es lo que se conoce como “prototipo de la función” y se realiza antes del bloque <code>main()</code>. De esta forma al compilarse el programa, para cada llamada a una función se verificará la existencia de su prototipo. Esto es imprescindible. Ese es el porque de los archivos de cabecera (<code>.h</code>) que son los que contienen los prototipos de las funciones básicas de lenguaje C. Por ejemplo <code>conio.h</code> define el prototipo de la funciones: <code>clrscr()</code>, <code>gotoxy()</code>, <code>textcolor()</code>, <code>cprintf()</code>, etc. (Nota: Estas funciones de <code>conio.h</code> no son estándar y son específicas de compiladores antiguos).</p>
+<p class="content-block">Tal como se comentÃ³ en â€œEstructura de un Programa en Lenguaje Câ€, todas las funciones a ser desarrolladas en el programa (lo cual se hace al final del mismo, luego del bloque <code>main()</code>) deben tener una declaraciÃ³n anticipada de dicha funciÃ³n. Eso es lo que se conoce como â€œprototipo de la funciÃ³nâ€ y se realiza antes del bloque <code>main()</code>. De esta forma al compilarse el programa, para cada llamada a una funciÃ³n se verificarÃ¡ la existencia de su prototipo. Esto es imprescindible. Ese es el porque de los archivos de cabecera (<code>.h</code>) que son los que contienen los prototipos de las funciones bÃ¡sicas de lenguaje C. Por ejemplo <code>conio.h</code> define el prototipo de la funciones: <code>clrscr()</code>, <code>gotoxy()</code>, <code>textcolor()</code>, <code>cprintf()</code>, etc. (Nota: Estas funciones de <code>conio.h</code> no son estÃ¡ndar y son especÃ­ficas de compiladores antiguos).</p>
 
-<p class="content-block">Pongamos un ejemplo. Un prototipo de una función sería:</p>
+<p class="content-block">Pongamos un ejemplo. Un prototipo de una funciÃ³n serÃ­a:</p>
 
 <pre>
 int kbhit (void);
 </pre>
 
-<p class="content-block">Este prototipo define una función llamada <code>kbhit</code> que no recibe ningún argumento y retorna un valor entero.</p>
+<p class="content-block">Este prototipo define una funciÃ³n llamada <code>kbhit</code> que no recibe ningÃºn argumento y retorna un valor entero.</p>
 
 <p class="content-block">***</p>
-<p class="content-block">NOTA: <code>kbhit()</code> es una función no estándar (de <code>conio.h</code>) pero de gran utilidad. Esta función verifica si se ha presionada alguna tecla. Si no se ha presionado ninguna, devuelve el valor cero (0) y cualquier otro valor en el caso de que si se haya presionado una tecla. Una forma común de usarla es:</p>
+<p class="content-block">NOTA: <code>kbhit()</code> es una funciÃ³n no estÃ¡ndar (de <code>conio.h</code>) pero de gran utilidad. Esta funciÃ³n verifica si se ha presionada alguna tecla. Si no se ha presionado ninguna, devuelve el valor cero (0) y cualquier otro valor en el caso de que si se haya presionado una tecla. Una forma comÃºn de usarla es:</p>
 
 <pre>
 do {
@@ -39,20 +46,20 @@ do {
 } while (!kbhit());
 </pre>
 
-<p class="content-block">donde el bucle <code>do-while</code> se mantendrá en ejecución mientras NO se haya presionado alguna tecla ya que se usó el negado del valor devuelto por la función.</p>
+<p class="content-block">donde el bucle <code>do-while</code> se mantendrÃ¡ en ejecuciÃ³n mientras NO se haya presionado alguna tecla ya que se usÃ³ el negado del valor devuelto por la funciÃ³n.</p>
 <p class="content-block">***</p>
 
-<p class="content-block">Hay dos formas de finalizar la ejecución de una función. Una es llegando al final de la misma donde se encuentra la llave '}', aunque realmente no hay muchas funciones que utilicen esta forma implícita ya que ellas no retornan valores (este caso se usa cuando la función retorna <code>void</code>). La segunda forma y la generalmente usada es a través del uso del <strong>return. “return”</strong> tiene dos usos importantes. El primero es que fuerza a la salida inmediata de la función en la que se encuentra (lo cual es útil en los casos que se requieren múltiples puntos de salida) y en segundo lugar se utiliza para devolver un valor.</p>
+<p class="content-block">Hay dos formas de finalizar la ejecuciÃ³n de una funciÃ³n. Una es llegando al final de la misma donde se encuentra la llave '}', aunque realmente no hay muchas funciones que utilicen esta forma implÃ­cita ya que ellas no retornan valores (este caso se usa cuando la funciÃ³n retorna <code>void</code>). La segunda forma y la generalmente usada es a travÃ©s del uso del <strong>return. â€œreturnâ€</strong> tiene dos usos importantes. El primero es que fuerza a la salida inmediata de la funciÃ³n en la que se encuentra (lo cual es Ãºtil en los casos que se requieren mÃºltiples puntos de salida) y en segundo lugar se utiliza para devolver un valor.</p>
 
 <p class="content-block">Por ejemplo:</p>
 
 <pre>
 void imprimeme ( char *mensaje ) {
-    printf(“%s”,mensaje);
+    printf(â€œ%sâ€,mensaje);
 }
 </pre>
 
-<p class="content-block">la función <code>imprimeme</code> finaliza en la llave '}'. La función no retorna valores por lo tanto <code>return</code> no es requerido.</p>
+<p class="content-block">la funciÃ³n <code>imprimeme</code> finaliza en la llave '}'. La funciÃ³n no retorna valores por lo tanto <code>return</code> no es requerido.</p>
 
 <p class="content-block">Otro:</p>
 
@@ -63,32 +70,32 @@ int cuadrado(int x) {
 }
 </pre>
 
-<p class="content-block">Esta función recibe un valor entero y devuelve otro entero que en este caso es el cuadrado del argumento de la función.</p>
+<p class="content-block">Esta funciÃ³n recibe un valor entero y devuelve otro entero que en este caso es el cuadrado del argumento de la funciÃ³n.</p>
 
-<p class="content-block">Veamos como usaríamos la función <code>cuadrado</code> dentro de un programa:</p>
+<p class="content-block">Veamos como usarÃ­amos la funciÃ³n <code>cuadrado</code> dentro de un programa:</p>
 
 <pre>
 #include<stdio.h>
 
-int cuadrado(int x); 	// Por supuesto, hay que definir el prototipo de la función
+int cuadrado(int x); 	// Por supuesto, hay que definir el prototipo de la funciÃ³n
 
 int main(void) {
     int x,z;
-    printf("Introduzca un número entero: ");
-    scanf(“%i”,&x);
-    z = cuadrado(x);  // Asignamos a z el valor devuelto por la función.
+    printf("Introduzca un nÃºmero entero: ");
+    scanf(â€œ%iâ€,&x);
+    z = cuadrado(x);  // Asignamos a z el valor devuelto por la funciÃ³n.
     printf("El cuadrado de %i es %i",x,z);
     return 0;
 }
 
-// Finalizó el bloque main(), ahora si desarrollamos las funciones.
+// FinalizÃ³ el bloque main(), ahora si desarrollamos las funciones.
 int cuadrado(int x) {
     x=x*x;
     return x;
 }
 </pre>
 
-<p class="content-block">Como se observa primero incluimos los archivos de cabecera. Luego definimos los prototipos de las funciones que desarrollaremos en nuestro programa que en nuestro caso es sólo la función <code>cuadrado()</code>. A continuación colocamos el bloque <code>main()</code> de nuestro programa y luego de este desarrollamos la función.</p>
+<p class="content-block">Como se observa primero incluimos los archivos de cabecera. Luego definimos los prototipos de las funciones que desarrollaremos en nuestro programa que en nuestro caso es sÃ³lo la funciÃ³n <code>cuadrado()</code>. A continuaciÃ³n colocamos el bloque <code>main()</code> de nuestro programa y luego de este desarrollamos la funciÃ³n.</p>
 
 <p class="content-block">Las instrucciones:</p>
 
@@ -97,7 +104,7 @@ z = cuadrado(x);
 printf("El cuadrado de %i es %i",x,z);
 </pre>
 
-<p class="content-block">podrían sustituirse sencillamente por:</p>
+<p class="content-block">podrÃ­an sustituirse sencillamente por:</p>
 
 <pre>
 printf("El cuadrado de %i es %i", x, cuadrado(x));
@@ -107,7 +114,7 @@ printf("El cuadrado de %i es %i", x, cuadrado(x));
 
 <h2 class="content-block">Llamada por Valor o por Referencia.</h2>
 
-<p class="content-block">Existen dos formas en las que se le pueden pasar parámetros a una función. El primer método se denomina “llamada por valor”. Este método es el que hemos usado en los ejemplos anteriores y lo que hace es hacer una copia del argumentado pasado a la función dentro de los parámetros formales de dicha función. Por lo tanto, los valores con los que se realizaron las llamadas no son alterados. Vemos un ejemplo:</p>
+<p class="content-block">Existen dos formas en las que se le pueden pasar parÃ¡metros a una funciÃ³n. El primer mÃ©todo se denomina â€œllamada por valorâ€. Este mÃ©todo es el que hemos usado en los ejemplos anteriores y lo que hace es hacer una copia del argumentado pasado a la funciÃ³n dentro de los parÃ¡metros formales de dicha funciÃ³n. Por lo tanto, los valores con los que se realizaron las llamadas no son alterados. Vemos un ejemplo:</p>
 
 <pre>
 #include<stdio.h>
@@ -128,21 +135,21 @@ void incrementa(int x, int y) {
 }
 </pre>
 
-<p class="content-block">Aquí, los valores iniciales de 'x' y 'y' son pasados a la función <code>incrementa</code> la cual coloca estos valores en sus variables 'x' y 'y' locales para incrementarlas. Repito: Estos valores son LOCALES por lo que los valores de las variables del bloque <code>main()</code> no se alteran. El programa imprimirá:</p>
+<p class="content-block">AquÃ­, los valores iniciales de 'x' y 'y' son pasados a la funciÃ³n <code>incrementa</code> la cual coloca estos valores en sus variables 'x' y 'y' locales para incrementarlas. Repito: Estos valores son LOCALES por lo que los valores de las variables del bloque <code>main()</code> no se alteran. El programa imprimirÃ¡:</p>
 
 <pre>
 X y Y antes de ejecutar incrementa: 2 y 3
 X y Y luego de ejecutar incrementa: 2 y 3
 </pre>
 
-<p class="content-block">Sin embargo, el programador podría requerir que los valores del bloque <code>main()</code> SÍ se vean alterados. Para lograr ésto debe usarse la “llamada por referencia”. Los argumentos que recibe la función en este caso son referencias a las direcciones de las variables. Esto se hace pasando “punteros” al argumento. Los punteros se pasan a las funciones como cualquier otro valor pero por supuesto es necesario declarar los parámetros como de tipo puntero a través del operador <code>*</code>. Para definir que una variable es un puntero debe usarse el operador <code>*</code> antes del nombre de la variable. Esto lo que hace es indicar que “el valor que contendrá la variable es una dirección” (VER punteros más adelante).</p>
+<p class="content-block">Sin embargo, el programador podrÃ­a requerir que los valores del bloque <code>main()</code> SÃ se vean alterados. Para lograr Ã©sto debe usarse la â€œllamada por referenciaâ€. Los argumentos que recibe la funciÃ³n en este caso son referencias a las direcciones de las variables. Esto se hace pasando â€œpunterosâ€ al argumento. Los punteros se pasan a las funciones como cualquier otro valor pero por supuesto es necesario declarar los parÃ¡metros como de tipo puntero a travÃ©s del operador <code>*</code>. Para definir que una variable es un puntero debe usarse el operador <code>*</code> antes del nombre de la variable. Esto lo que hace es indicar que â€œel valor que contendrÃ¡ la variable es una direcciÃ³nâ€ (VER punteros mÃ¡s adelante).</p>
 
-<p class="content-block">Veamos el ejemplo anterior pero usando una “llamada por referencia”</p>
+<p class="content-block">Veamos el ejemplo anterior pero usando una â€œllamada por referenciaâ€</p>
 
 <pre>
 #include<stdio.h>
 
-void incrementa(int *x, int *y); 	// Declara que incrementa() recibirá las direcciones de dos
+void incrementa(int *x, int *y); 	// Declara que incrementa() recibirÃ¡ las direcciones de dos
 // variables enteras.
 
 main(){
@@ -159,9 +166,9 @@ void incrementa(int *x, int *y) {
 }
 </pre>
 
-<p class="content-block">En este ejemplo la función <code>incrementa</code> recibe dos punteros a enteros, o sea, dos direcciones de memoria que apuntan a valores enteros. Observen que los parámetros de la función se definieron como punteros a través del operador <code>*</code>. Observen también como se le pasaron los argumentos a la función. Se hizo: <code>incrementa( &x, &y)</code>. El operador <code>&</code> es el operador complemento de <code>*</code>. Este operador lo que hace es devolver la dirección de la variable. Por lo tanto, aquí lo que se esta diciendo es algo como: “ejecuta la función <code>incrementa</code> y mándale como parámetros las direcciones de memoria de las variables 'x' y 'y'”. Como ya dijimos, la función <code>incrementa</code> está definida para recibir dichas direcciones.</p>
+<p class="content-block">En este ejemplo la funciÃ³n <code>incrementa</code> recibe dos punteros a enteros, o sea, dos direcciones de memoria que apuntan a valores enteros. Observen que los parÃ¡metros de la funciÃ³n se definieron como punteros a travÃ©s del operador <code>*</code>. Observen tambiÃ©n como se le pasaron los argumentos a la funciÃ³n. Se hizo: <code>incrementa( &x, &y)</code>. El operador <code>&</code> es el operador complemento de <code>*</code>. Este operador lo que hace es devolver la direcciÃ³n de la variable. Por lo tanto, aquÃ­ lo que se esta diciendo es algo como: â€œejecuta la funciÃ³n <code>incrementa</code> y mÃ¡ndale como parÃ¡metros las direcciones de memoria de las variables 'x' y 'y'â€. Como ya dijimos, la funciÃ³n <code>incrementa</code> estÃ¡ definida para recibir dichas direcciones.</p>
 
-<p class="content-block">La función <code>_incrementa_</code> incrementa en uno los valores que están contenidos dentro e 'x' y 'y'. Obsérvese que se usó <code>(*x)++</code> y <code>(*y)++</code> ya que lo que se quiere incrementar es el contenido de las direcciones. <code>*x++</code> lo que haría sería incrementar la dirección de memoria. <code>(*x)++</code> es una forma de abreviar algo como:</p>
+<p class="content-block">La funciÃ³n <code>_incrementa_</code> incrementa en uno los valores que estÃ¡n contenidos dentro e 'x' y 'y'. ObsÃ©rvese que se usÃ³ <code>(*x)++</code> y <code>(*y)++</code> ya que lo que se quiere incrementar es el contenido de las direcciones. <code>*x++</code> lo que harÃ­a serÃ­a incrementar la direcciÃ³n de memoria. <code>(*x)++</code> es una forma de abreviar algo como:</p>
 
 <pre>
 int temporal;
@@ -170,7 +177,7 @@ temporal++;
 *x = temporal;
 </pre>
 
-<p class="content-block">Como se está trabajando directamente sobre las direcciones de memoria que contienen los datos, efectivamente se están alterando dichos datos. Por lo tanto la salida de ejecutar este programa sería:</p>
+<p class="content-block">Como se estÃ¡ trabajando directamente sobre las direcciones de memoria que contienen los datos, efectivamente se estÃ¡n alterando dichos datos. Por lo tanto la salida de ejecutar este programa serÃ­a:</p>
 
 <pre>
 X y Y antes de ejecutar incrementa: 2 y 3
@@ -179,9 +186,9 @@ X y Y luego de ejecutar incrementa: 3 y 4
 
 <h2 class="content-block">Recursividad.</h2>
 
-<p class="content-block">Una de las tantas características poderosas que tiene lenguaje C es que soporta la recursividad en las funciones. Ésto es: la capacidad que tiene una función de llamarse a sí misma. Si una expresión en el cuerpo de la función llama a la propia función, se dice que es recursiva. La recursividad es el proceso de definir algo en términos de sí mismo.</p>
+<p class="content-block">Una de las tantas caracterÃ­sticas poderosas que tiene lenguaje C es que soporta la recursividad en las funciones. Ã‰sto es: la capacidad que tiene una funciÃ³n de llamarse a sÃ­ misma. Si una expresiÃ³n en el cuerpo de la funciÃ³n llama a la propia funciÃ³n, se dice que es recursiva. La recursividad es el proceso de definir algo en tÃ©rminos de sÃ­ mismo.</p>
 
-<p class="content-block">Existen muchísimos ejemplos de recursividad pero definitivamente el más típico es el de la función factorial. Como todos saben el factorial se aplica sólo a números naturales[1] y el factorial de un número N se define como el producto de todos los números entre 1 y N. Sabiendo ésto, veamos un ejemplo de una función recursiva: la función factorial.</p>
+<p class="content-block">Existen muchÃ­simos ejemplos de recursividad pero definitivamente el mÃ¡s tÃ­pico es el de la funciÃ³n factorial. Como todos saben el factorial se aplica sÃ³lo a nÃºmeros naturales[1] y el factorial de un nÃºmero N se define como el producto de todos los nÃºmeros entre 1 y N. Sabiendo Ã©sto, veamos un ejemplo de una funciÃ³n recursiva: la funciÃ³n factorial.</p>
 
 <pre>
 int factorial(int x) {
@@ -193,9 +200,16 @@ int factorial(int x) {
 }
 </pre>
 
-<p class="content-block">Como se observa en la función, si <code>x</code> es uno, entonces la función retorna uno. Si no, ésta se llama a sí misma con el valor de <code>x-1</code>.</p>
+<p class="content-block">Como se observa en la funciÃ³n, si <code>x</code> es uno, entonces la funciÃ³n retorna uno. Si no, Ã©sta se llama a sÃ­ misma con el valor de <code>x-1</code>.</p>
 
-<p class="content-block">[1] Un <strong>número natural</strong> es cualquiera de los números 0, 1, 2, 3... que se pueden usar para contar los elementos de un conjunto. Son enteros positivos. Algunos matemáticos (especialmente los de Teoría de los Números) prefieren no reconocer el cero como un número natural, mientras que otros, especialmente los de Teoría de Conjuntos, Lógica e Informática, tienen la postura opuesta.</p>
+<p class="content-block">[1] Un <strong>nÃºmero natural</strong> es cualquiera de los nÃºmeros 0, 1, 2, 3... que se pueden usar para contar los elementos de un conjunto. Son enteros positivos. Algunos matemÃ¡ticos (especialmente los de TeorÃ­a de los NÃºmeros) prefieren no reconocer el cero como un nÃºmero natural, mientras que otros, especialmente los de TeorÃ­a de Conjuntos, LÃ³gica e InformÃ¡tica, tienen la postura opuesta.</p>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

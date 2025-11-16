@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Clase 3: Variables y Constantes</title>
 	<meta name="author" content="Tony Rodriguez">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <h1 class="content-block">Variables y Constantes.</h1>
 
-<p class="content-block">Como C es un lenguaje de programación que soporta principalmente el paradigma imperativo, las variables son la parte más importante de éste. Podría decirse que las variables son los bloques con los que se construyen los programas.</p>
+<p class="content-block">Como C es un lenguaje de programaciÃ³n que soporta principalmente el paradigma imperativo, las variables son la parte mÃ¡s importante de Ã©ste. PodrÃ­a decirse que las variables son los bloques con los que se construyen los programas.</p>
 
-<p class="content-block">Los nombre usados para referirse a las variables, las constantes, las funciones y otros objetos definidos por el usuario se conocen como “identificadores”. En C, la longitud de un identificador debe estar comprendido entre 1 y 32 caracteres. El primer caracter debe ser obligatoriamente una letra o un signo de subrayado ( _ ). Los siguientes caracteres pueden contener también números. Por ejemplo, unos nombres correctos de variables serían: “_var”, “var”, “var2” y “VariableContadora_2”. Incorrecto sería: “1var”, “var..2”, “var!” o “var#” entre infinitos casos.</p>
+<p class="content-block">Los nombre usados para referirse a las variables, las constantes, las funciones y otros objetos definidos por el usuario se conocen como â€œidentificadoresâ€. En C, la longitud de un identificador debe estar comprendido entre 1 y 32 caracteres. El primer caracter debe ser obligatoriamente una letra o un signo de subrayado ( _ ). Los siguientes caracteres pueden contener tambiÃ©n nÃºmeros. Por ejemplo, unos nombres correctos de variables serÃ­an: â€œ_varâ€, â€œvarâ€, â€œvar2â€ y â€œVariableContadora_2â€. Incorrecto serÃ­a: â€œ1varâ€, â€œvar..2â€, â€œvar!â€ o â€œvar#â€ entre infinitos casos.</p>
 
-<p class="content-block">Otra cosa muy importante es que C es “case sensitive”, o sea, que es sensible a mayúsculas y minúsculas por lo que “var” es distinto de “Var”, lo que es distinto de “VAR”.</p>
+<p class="content-block">Otra cosa muy importante es que C es â€œcase sensitiveâ€, o sea, que es sensible a mayÃºsculas y minÃºsculas por lo que â€œvarâ€ es distinto de â€œVarâ€, lo que es distinto de â€œVARâ€.</p>
 
-<p class="content-block">Los nombres de variables (o cualquier otro identificador), no puede llamarse como una palabra clave del compilador ni como una función ya escrita.</p>
+<p class="content-block">Los nombres de variables (o cualquier otro identificador), no puede llamarse como una palabra clave del compilador ni como una funciÃ³n ya escrita.</p>
 
 <p class="content-block">La forma de asignar un valor a una variable es tan sencillo como:</p>
 
@@ -25,37 +32,37 @@ nombreVariable = 100; // Un signo de igual.
 
 <h2 class="content-block">Tipos de Variables.</h2>
 
-<p class="content-block">En Lenguaje C, existen diferentes tipos de variables. Éstas son:</p>
+<p class="content-block">En Lenguaje C, existen diferentes tipos de variables. Ã‰stas son:</p>
 
-<p class="content-block">1.- Variables tipo <strong>char</strong>. Estas variables ocupan 1 byte y comprenden los números entre 0 y 255. Estas variables son usadas principalmente para almacenar caracteres. Existe una tabla de caracteres conocida como tabla ASCII. Esta tabla contiene caracteres definidos entre los números 0 y 255. Por ejemplo, el número 65 de la tabla ASCII corresponde a la letra 'A'. La forma usada para definir estas variables es:</p>
+<p class="content-block">1.- Variables tipo <strong>char</strong>. Estas variables ocupan 1 byte y comprenden los nÃºmeros entre 0 y 255. Estas variables son usadas principalmente para almacenar caracteres. Existe una tabla de caracteres conocida como tabla ASCII. Esta tabla contiene caracteres definidos entre los nÃºmeros 0 y 255. Por ejemplo, el nÃºmero 65 de la tabla ASCII corresponde a la letra 'A'. La forma usada para definir estas variables es:</p>
 
 <pre>
 <strong>char</strong> ch;
 </pre>
 
-<p class="content-block">Esta declaración, define una variable de tipo char llamada ch.</p>
+<p class="content-block">Esta declaraciÃ³n, define una variable de tipo char llamada ch.</p>
 
-<p class="content-block">2.- Variables tipo <strong>int.</strong> Variable que define números enteros. Ocupa típicamente 4 bytes en sistemas modernos (rango: -2,147,483,648 a 2,147,483,647). En sistemas antiguos de 16 bits, ocupaba 2 bytes (rango: -32.768 y 32.767). Se declaran de la siguiente forma:</p>
+<p class="content-block">2.- Variables tipo <strong>int.</strong> Variable que define nÃºmeros enteros. Ocupa tÃ­picamente 4 bytes en sistemas modernos (rango: -2,147,483,648 a 2,147,483,647). En sistemas antiguos de 16 bits, ocupaba 2 bytes (rango: -32.768 y 32.767). Se declaran de la siguiente forma:</p>
 
 <pre>
 <strong>int</strong> i, j, k;
 </pre>
 
-<p class="content-block">Esto declara tres variables de tipo entero llamadas i, j y k en una sola orden. Se observa que para declarar múltiples variables del mismo tipo en una sola sentencia, deben estar separadas por una coma.</p>
+<p class="content-block">Esto declara tres variables de tipo entero llamadas i, j y k en una sola orden. Se observa que para declarar mÃºltiples variables del mismo tipo en una sola sentencia, deben estar separadas por una coma.</p>
 
-<p class="content-block">3.- Variables de tipo <strong>float</strong>. Conocidas como variables de coma flotante, estas variables representan los números reales. Ocupan 4 bytes lo que representan los números entre 3.4E-38 y 3.4E+38. Estas variables y las de tipo double que se verán mas adelante, contienen dos componentes: un componente entero y otro fraccionario. Se declaran:</p>
+<p class="content-block">3.- Variables de tipo <strong>float</strong>. Conocidas como variables de coma flotante, estas variables representan los nÃºmeros reales. Ocupan 4 bytes lo que representan los nÃºmeros entre 3.4E-38 y 3.4E+38. Estas variables y las de tipo double que se verÃ¡n mas adelante, contienen dos componentes: un componente entero y otro fraccionario. Se declaran:</p>
 
 <pre>
 <strong>float</strong> f;
 </pre>
 
-<p class="content-block">4.- Variables de tipo <strong>double</strong>. Coma flotante de doble precisión. Al igual que las float, representa a números Reales. Ocupan 8 bytes lo que se refleja en los números comprendidos entre 1.7E-308 y 1.7E+308. Su forma de declaración es:</p>
+<p class="content-block">4.- Variables de tipo <strong>double</strong>. Coma flotante de doble precisiÃ³n. Al igual que las float, representa a nÃºmeros Reales. Ocupan 8 bytes lo que se refleja en los nÃºmeros comprendidos entre 1.7E-308 y 1.7E+308. Su forma de declaraciÃ³n es:</p>
 
 <pre>
 <strong>double</strong> d;
 </pre>
 
-<p class="content-block">5.- Por último tenemos otro tipo de variable llamada <strong>void</strong> que ocupa cero bytes y que sólo es usada para declarar que una función no recibe ningún parámetro o que no devuelve ninguno. Por ejemplo:</p>
+<p class="content-block">5.- Por Ãºltimo tenemos otro tipo de variable llamada <strong>void</strong> que ocupa cero bytes y que sÃ³lo es usada para declarar que una funciÃ³n no recibe ningÃºn parÃ¡metro o que no devuelve ninguno. Por ejemplo:</p>
 
 <pre>
 <strong>int</strong> funcion(<strong>void</strong>); // No recibe nada y devuelve un entero.
@@ -65,7 +72,7 @@ nombreVariable = 100; // Un signo de igual.
 
 <h2 class="content-block">Modificadores de Variables.</h2>
 
-<p class="content-block">Todas las variables pueden ser modificadas agregándoles una palabra reservada antes de la declaración. Estos modificadores son:</p>
+<p class="content-block">Todas las variables pueden ser modificadas agregÃ¡ndoles una palabra reservada antes de la declaraciÃ³n. Estos modificadores son:</p>
 
 <ul>
     <li><strong>unsigned.</strong></li>
@@ -74,34 +81,34 @@ nombreVariable = 100; // Un signo de igual.
     <li><strong>short.</strong></li>
 </ul>
 
-<p class="content-block">No todas los modificadores aplican a todas las variables y ya verán porqué. Su forma de uso es: “PalabraReservada TipoDeVariable NombreDeVariable;” Por ejemplo:</p>
+<p class="content-block">No todas los modificadores aplican a todas las variables y ya verÃ¡n porquÃ©. Su forma de uso es: â€œPalabraReservada TipoDeVariable NombreDeVariable;â€ Por ejemplo:</p>
 
 <pre>
 <strong>unsigned int</strong> i; // o incluso
 <strong>unsigned long int</strong> i; // Se le aplicaron dos modificadores.
 </pre>
 
-<p class="content-block">La palabra reservada <strong>unsigned</strong> le indica al al compilador que la variable que modificará será tomada como una variable sin signo (o sea, que no se interpretara el bit mas significativo como un bit de signo). Siendo así que:</p>
+<p class="content-block">La palabra reservada <strong>unsigned</strong> le indica al al compilador que la variable que modificarÃ¡ serÃ¡ tomada como una variable sin signo (o sea, que no se interpretara el bit mas significativo como un bit de signo). Siendo asÃ­ que:</p>
 
 <pre>
 <strong>unsigned int</strong> i;
 </pre>
 
-<p class="content-block">le indica al compilador que la variable i será una variable entera sin signo (aunque aún de 2 bytes en sistemas antiguos). Por lo tanto, la variable i comprenderá los números enteros entre 0 y 65535.</p>
+<p class="content-block">le indica al compilador que la variable i serÃ¡ una variable entera sin signo (aunque aÃºn de 2 bytes en sistemas antiguos). Por lo tanto, la variable i comprenderÃ¡ los nÃºmeros enteros entre 0 y 65535.</p>
 
-<p class="content-block">La palabra reservada <strong>signed</strong> le indica al compilador que la siguiente variable declarada será tomada como una variable con signo. Es por eso que decía que no todos los modificadores aplican siempre. Colocar una definición como: “<strong>signed int</strong> i;” realmente redunda (aunque es permitido) ya que esta variable ya es tomada como una variable con signo por el compilador. En realidad el uso de la palabra reservada “signed” es innecesario en el caso de variables enteras excepto en el caso de las variables de tipo char. “signed char ch;” declararía una variable que comprendería números entre -128 y 127 pero como estas variables son usadas principalmente para almacenar caracteres, prácticamente no se usa.</p>
+<p class="content-block">La palabra reservada <strong>signed</strong> le indica al compilador que la siguiente variable declarada serÃ¡ tomada como una variable con signo. Es por eso que decÃ­a que no todos los modificadores aplican siempre. Colocar una definiciÃ³n como: â€œ<strong>signed int</strong> i;â€ realmente redunda (aunque es permitido) ya que esta variable ya es tomada como una variable con signo por el compilador. En realidad el uso de la palabra reservada â€œsignedâ€ es innecesario en el caso de variables enteras excepto en el caso de las variables de tipo char. â€œsigned char ch;â€ declararÃ­a una variable que comprenderÃ­a nÃºmeros entre -128 y 127 pero como estas variables son usadas principalmente para almacenar caracteres, prÃ¡cticamente no se usa.</p>
 
-<p class="content-block">El modificador <strong>long</strong> le indica al compilador que la variable que está definida a continuación de ella, ocupará más memoria que lo que ocuparía por defecto. Esto quiere decir que, por ejemplo en:</p>
+<p class="content-block">El modificador <strong>long</strong> le indica al compilador que la variable que estÃ¡ definida a continuaciÃ³n de ella, ocuparÃ¡ mÃ¡s memoria que lo que ocuparÃ­a por defecto. Esto quiere decir que, por ejemplo en:</p>
 
 <pre>
 <strong>long int</strong> i;
 </pre>
 
-<p class="content-block">i representaría un entero que ocupará 4 bytes (o más, dependiendo de la arquitectura). Esto sería los números entre -2147483648 y 2147483647.</p>
+<p class="content-block">i representarÃ­a un entero que ocuparÃ¡ 4 bytes (o mÃ¡s, dependiendo de la arquitectura). Esto serÃ­a los nÃºmeros entre -2147483648 y 2147483647.</p>
 
-<p class="content-block">El modificador <strong>short</strong> se usa para garantizar que la variable ocupe la menor cantidad de memoria posible (generalmente 2 bytes para `short int`). Aunque `int` puede ser de 2 bytes en sistemas antiguos, usar `short` asegura un tamaño más pequeño y es preferible para la portabilidad si se requiere un entero pequeño. Aún así, es permisible su uso.</p>
+<p class="content-block">El modificador <strong>short</strong> se usa para garantizar que la variable ocupe la menor cantidad de memoria posible (generalmente 2 bytes para `short int`). Aunque `int` puede ser de 2 bytes en sistemas antiguos, usar `short` asegura un tamaÃ±o mÃ¡s pequeÃ±o y es preferible para la portabilidad si se requiere un entero pequeÃ±o. AÃºn asÃ­, es permisible su uso.</p>
 
-<p class="content-block">Comentarios: Las variables también pueden ser inicializadas al momento de ser declaradas. Esto se realiza de la siguiente forma:</p>
+<p class="content-block">Comentarios: Las variables tambiÃ©n pueden ser inicializadas al momento de ser declaradas. Esto se realiza de la siguiente forma:</p>
 
 <pre>
 char ch = 'h';
@@ -109,30 +116,30 @@ int i = 100;
 float porcentaje = 12.5;
 </pre>
 
-<p class="content-block">Como último quedaría comentar nuevamente que, como vimos en el ejemplo de variables tipo int, se pueden declarar varias variables del mismo tipo en una misma sentencia. La única cosa necesaria es que éstas deben estar separadas por una coma.</p>
+<p class="content-block">Como Ãºltimo quedarÃ­a comentar nuevamente que, como vimos en el ejemplo de variables tipo int, se pueden declarar varias variables del mismo tipo en una misma sentencia. La Ãºnica cosa necesaria es que Ã©stas deben estar separadas por una coma.</p>
 
 <h2 class="content-block">Constantes.</h2>
 
-<p class="content-block">La palabra <strong>const</strong> declara una constante. Este tipo de dato debería siempre ser inicializado desde su creación pero no es necesario. Luego de asignársele el valor, éste no puede variar. Ejemplo:</p>
+<p class="content-block">La palabra <strong>const</strong> declara una constante. Este tipo de dato deberÃ­a siempre ser inicializado desde su creaciÃ³n pero no es necesario. Luego de asignÃ¡rsele el valor, Ã©ste no puede variar. Ejemplo:</p>
 
 <pre>
 <strong>const float</strong> pi = 3.1415926;
 </pre>
 
-<p class="content-block">Si la constante es de tipo entero (únicamente para este tipo por lo que es preferible ser explícito siempre en las declaraciones), basta con sólo hacer</p>
+<p class="content-block">Si la constante es de tipo entero (Ãºnicamente para este tipo por lo que es preferible ser explÃ­cito siempre en las declaraciones), basta con sÃ³lo hacer</p>
 
 <pre>
 <strong>const</strong> entero = 1234;
 </pre>
 
-<p class="content-block">Existen unas constantes especiales conocidas como: “Constantes de caracter con barra Invertida”. Estas constantes son:</p>
+<p class="content-block">Existen unas constantes especiales conocidas como: â€œConstantes de caracter con barra Invertidaâ€. Estas constantes son:</p>
 
 <ul>
-    <li>\b -> Espacio atrás</li>
+    <li>\b -> Espacio atrÃ¡s</li>
     <li>\f -> Salto de Pagina</li>
     <li>\n -> Salto de linea</li>
     <li>\r -> Retorno de carro</li>
-    <li>\t -> Tabulación</li>
+    <li>\t -> TabulaciÃ³n</li>
     <li>\" -> Comilla doble</li>
     <li>\' -> Comilla simple</li>
     <li>\0 -> Nulo</li>
@@ -143,26 +150,26 @@ float porcentaje = 12.5;
     <li>\x -> Constante hexadecimal</li>
 </ul>
 
-<h1 class="content-block">Declaración de variables Locales, Globales y Especificadores.</h1>
+<h1 class="content-block">DeclaraciÃ³n de variables Locales, Globales y Especificadores.</h1>
 
 <h2 class="content-block">Variables locales.</h2>
 
-<p class="content-block">Toda variable que sea declarada dentro de una función, ya sea main() o alguna otra función definida por el usuario, son conocidas como variables locales y sólo son reconocidas dentro de su propio ámbito (sea una función o un bloque) y en todos los bloques dentro de éstas. Las variables son creadas al entrar al bloque y son destruidas al salir de él.</p>
+<p class="content-block">Toda variable que sea declarada dentro de una funciÃ³n, ya sea main() o alguna otra funciÃ³n definida por el usuario, son conocidas como variables locales y sÃ³lo son reconocidas dentro de su propio Ã¡mbito (sea una funciÃ³n o un bloque) y en todos los bloques dentro de Ã©stas. Las variables son creadas al entrar al bloque y son destruidas al salir de Ã©l.</p>
 
-<p class="content-block">El caso más normal en el que se declaran variables locales es en la función. Consideremos el próximo ejemplo:</p>
+<p class="content-block">El caso mÃ¡s normal en el que se declaran variables locales es en la funciÃ³n. Consideremos el prÃ³ximo ejemplo:</p>
 
 <pre>
 int main(void){
     int x; // Estas variables son conocidas solo dentro de este bloque
-    char ch; // y en todos los bloques dentro de éste.
+    char ch; // y en todos los bloques dentro de Ã©ste.
     if (x==1) {
-        int i; // Aquí también puedo declarar variables. Lo más importante es considerar
-        // que no podremos usar una variable que ya sea válida dentro del bloque.
+        int i; // AquÃ­ tambiÃ©n puedo declarar variables. Lo mÃ¡s importante es considerar
+        // que no podremos usar una variable que ya sea vÃ¡lida dentro del bloque.
         // Por lo tanto, no puedo usar el nombre 'x' ni 'ch'.
-        i = x; // x es reconocida aquí. Por eso no puedo usar el mismo nombre aquí dentro
-        // Aquí adentro 'i' es reconocido.
+        i = x; // x es reconocida aquÃ­. Por eso no puedo usar el mismo nombre aquÃ­ dentro
+        // AquÃ­ adentro 'i' es reconocido.
     }
-    // aquí, la variable 'i' ya ha sido destruida por lo que ya queda sin efecto y es desconocida.
+    // aquÃ­, la variable 'i' ya ha sido destruida por lo que ya queda sin efecto y es desconocida.
 }
 
 void funcion(void) {
@@ -176,19 +183,19 @@ void otraFuncion(void) {
 }
 </pre>
 
-<p class="content-block">La variable entera x es declarada en ambas funciones e incluso en el bloque main() pero éstas no tienen ninguna relación entre sí. Cada versión de la variable x es conocida sólo dentro de su propia función y son destruidas al salir de la misma. (Aunque con el especificador indicado podemos conservar el valor de la variable entre llamadas a la misma función en caso de ser necesario. VER el especificador <strong>static</strong> más adelante).</p>
+<p class="content-block">La variable entera x es declarada en ambas funciones e incluso en el bloque main() pero Ã©stas no tienen ninguna relaciÃ³n entre sÃ­. Cada versiÃ³n de la variable x es conocida sÃ³lo dentro de su propia funciÃ³n y son destruidas al salir de la misma. (Aunque con el especificador indicado podemos conservar el valor de la variable entre llamadas a la misma funciÃ³n en caso de ser necesario. VER el especificador <strong>static</strong> mÃ¡s adelante).</p>
 
-<p class="content-block">Como ya comentamos, aunque lo más conveniente es declarar las variables al principio, éstas pueden ser declaradas a cualquier altura. Este es el caso del bloque if{} de nuestro ejemplo. Allí, creamos una variable para ser usada sólo dentro del bloque de control durante un momento y ser destruida de inmediato al salir de él. Entiéndase esto último como que las variables pueden ser declaradas dentro de cualquier bucle de control ya sea if{}, while{}, etc y serían locales dentro del bloque. Repito, se crean dentro de él y son destruidas al salir del mismo. En nuestro ejemplo, 'x' y 'ch' son conocidas dentro del bloque main() y dentro de todos los bloques que el ámbito main() contenga pero 'i' sólo es conocida dentro del bloque if{} al igual que 'f1' y 'f2' son conocidas sólo dentro de sus respectivas funciones.</p>
+<p class="content-block">Como ya comentamos, aunque lo mÃ¡s conveniente es declarar las variables al principio, Ã©stas pueden ser declaradas a cualquier altura. Este es el caso del bloque if{} de nuestro ejemplo. AllÃ­, creamos una variable para ser usada sÃ³lo dentro del bloque de control durante un momento y ser destruida de inmediato al salir de Ã©l. EntiÃ©ndase esto Ãºltimo como que las variables pueden ser declaradas dentro de cualquier bucle de control ya sea if{}, while{}, etc y serÃ­an locales dentro del bloque. Repito, se crean dentro de Ã©l y son destruidas al salir del mismo. En nuestro ejemplo, 'x' y 'ch' son conocidas dentro del bloque main() y dentro de todos los bloques que el Ã¡mbito main() contenga pero 'i' sÃ³lo es conocida dentro del bloque if{} al igual que 'f1' y 'f2' son conocidas sÃ³lo dentro de sus respectivas funciones.</p>
 
 <h2 class="content-block">Variables globales.</h2>
 
-<p class="content-block">A diferencia de las variables locales, las globales son conocidas en cualquier punto del código y pueden ser usadas en cualquier parte del programa. Las variables globales son declaradas al principio de los programas, fuera de todo bloque, para que así sea reconocida por todos. Así, la forma de declararlas es:</p>
+<p class="content-block">A diferencia de las variables locales, las globales son conocidas en cualquier punto del cÃ³digo y pueden ser usadas en cualquier parte del programa. Las variables globales son declaradas al principio de los programas, fuera de todo bloque, para que asÃ­ sea reconocida por todos. AsÃ­, la forma de declararlas es:</p>
 
 <pre>
 #include<stdio.h>
 
-int variableGlobal; // Esta variable es global y es conocida dentro de todo el código.
-const pi = 3.1415926; // Esta constante también es global.
+int variableGlobal; // Esta variable es global y es conocida dentro de todo el cÃ³digo.
+const pi = 3.1415926; // Esta constante tambiÃ©n es global.
 
 main()
 {
@@ -196,13 +203,13 @@ main()
 }
 </pre>
 
-<p class="content-block">La variable “variableGlobal” y la constante “pi” son globales y son conocidas en cualquier punto del programa ya que están fuera de todos los ámbitos.</p>
+<p class="content-block">La variable â€œvariableGlobalâ€ y la constante â€œpiâ€ son globales y son conocidas en cualquier punto del programa ya que estÃ¡n fuera de todos los Ã¡mbitos.</p>
 
-<p class="content-block">El uso de estas variables es perfectamente permitido y válido y de hecho existen casos en los que pueden ser muy útiles. Sin embargo, su uso debe limitarse a aquellos casos en que sean realmente necesarias ya que ocupan memoria durante toda la ejecución del programa, no ayudan a modularizar y que pueden generar efectos secundarios desconocidos debido a que pueden alterar el valor en cualquier punto del programa alterando así otros resultados. Esto es un dolor de cabeza en programas muy grandes generando fallas que no son fáciles de detectar.</p>
+<p class="content-block">El uso de estas variables es perfectamente permitido y vÃ¡lido y de hecho existen casos en los que pueden ser muy Ãºtiles. Sin embargo, su uso debe limitarse a aquellos casos en que sean realmente necesarias ya que ocupan memoria durante toda la ejecuciÃ³n del programa, no ayudan a modularizar y que pueden generar efectos secundarios desconocidos debido a que pueden alterar el valor en cualquier punto del programa alterando asÃ­ otros resultados. Esto es un dolor de cabeza en programas muy grandes generando fallas que no son fÃ¡ciles de detectar.</p>
 
 <h2 class="content-block">Especificadores.</h2>
 
-<p class="content-block">Otra cosa importante en la declaración de las variables son los llamados especificadores. Estos son :</p>
+<p class="content-block">Otra cosa importante en la declaraciÃ³n de las variables son los llamados especificadores. Estos son :</p>
 
 <ul>
     <li><strong>extern</strong></li>
@@ -217,9 +224,9 @@ main()
 <strong>extern int</strong> i;
 </pre>
 
-<p class="content-block">El tipo <strong>auto</strong> es el predeterminado de todas las variables por lo que este especificador prácticamente no se usa.</p>
+<p class="content-block">El tipo <strong>auto</strong> es el predeterminado de todas las variables por lo que este especificador prÃ¡cticamente no se usa.</p>
 
-<p class="content-block">Dado que C permite enlazar juntos distintos módulos de un mismo programa, que son compilados por separado (lo que ayuda a la gestión de grandes proyectos), debe haber una forma de hacer conocer a todos los archivos las variables globales requeridas por el programa. El especificador <strong>extern</strong> se encarga de ésto. Indica que la declaración de una variable ya ha sido hecha en otra módulo del proyecto. Por lo tanto, si tienes la declaración de una variable global en un programa y debes usar la misma dentro de otro módulo, lo único que debes hacer es declararla dentro de los módulos que la requieran, eso si con el mismo nombre, como extern lo que le indica al compilador que esta variable ya ha sido declarada en un módulo externo y que debe usarse la misma. Así, si tenemos "archivo1" y éste incluye un módulo llamado "archivo2" (quien también necesita de las variables globales definidas en "archivo1"), se hace las declaraciones:</p>
+<p class="content-block">Dado que C permite enlazar juntos distintos mÃ³dulos de un mismo programa, que son compilados por separado (lo que ayuda a la gestiÃ³n de grandes proyectos), debe haber una forma de hacer conocer a todos los archivos las variables globales requeridas por el programa. El especificador <strong>extern</strong> se encarga de Ã©sto. Indica que la declaraciÃ³n de una variable ya ha sido hecha en otra mÃ³dulo del proyecto. Por lo tanto, si tienes la declaraciÃ³n de una variable global en un programa y debes usar la misma dentro de otro mÃ³dulo, lo Ãºnico que debes hacer es declararla dentro de los mÃ³dulos que la requieran, eso si con el mismo nombre, como extern lo que le indica al compilador que esta variable ya ha sido declarada en un mÃ³dulo externo y que debe usarse la misma. AsÃ­, si tenemos "archivo1" y Ã©ste incluye un mÃ³dulo llamado "archivo2" (quien tambiÃ©n necesita de las variables globales definidas en "archivo1"), se hace las declaraciones:</p>
 
 <pre>
 en archivo1 en archivo2
@@ -227,9 +234,9 @@ en archivo1 en archivo2
 int x,y; extern int x,y;
 </pre>
 
-<p class="content-block">y así el compilador sabría que las variables 'x' e 'y' en “archivo2” ya han sido definidas en un módulo externo.</p>
+<p class="content-block">y asÃ­ el compilador sabrÃ­a que las variables 'x' e 'y' en â€œarchivo2â€ ya han sido definidas en un mÃ³dulo externo.</p>
 
-<p class="content-block">Las variables <strong>static</strong> son muy importantes. Son variables que sólo son reconocidas dentro de su propio ámbito pero que el valor de la misma permanece entre llamadas a la función, o sea que no se destruye el valor al salir del bloque. En otras palabras: las variables "static" son variables permanentes pero difieren de las globales en que no son conocidas fuera de su bloque ó función. Se puede declarar una variable global como static y esto lo que haría es impedir que dicha variable sea usada fuera del módulo en el que fue declarada (no se reconocería en todo el proyecto). Un ejemplo sería:</p>
+<p class="content-block">Las variables <strong>static</strong> son muy importantes. Son variables que sÃ³lo son reconocidas dentro de su propio Ã¡mbito pero que el valor de la misma permanece entre llamadas a la funciÃ³n, o sea que no se destruye el valor al salir del bloque. En otras palabras: las variables "static" son variables permanentes pero difieren de las globales en que no son conocidas fuera de su bloque Ã³ funciÃ³n. Se puede declarar una variable global como static y esto lo que harÃ­a es impedir que dicha variable sea usada fuera del mÃ³dulo en el que fue declarada (no se reconocerÃ­a en todo el proyecto). Un ejemplo serÃ­a:</p>
 
 <pre>
 #include<stdio.h>
@@ -241,12 +248,12 @@ if (primeraVezQueSeEjecuta) {
 }
 else {
     i=i+1;
-    // El valor de esta variable se conserva entre llamadas a la función
-    // ya que se definió como static.
+    // El valor de esta variable se conserva entre llamadas a la funciÃ³n
+    // ya que se definiÃ³ como static.
 }
-printf(“%i”,i);
-// Por lo tanto la primera vez que se llame a esta función, se imprimirá
-// 0, en la segunda llamada 1 y así el valor irá aumentando en
+printf(â€œ%iâ€,i);
+// Por lo tanto la primera vez que se llame a esta funciÃ³n, se imprimirÃ¡
+// 0, en la segunda llamada 1 y asÃ­ el valor irÃ¡ aumentando en
 // cada nuevo llamado.
 }
 
@@ -255,27 +262,27 @@ int main(void){
 }
 </pre>
 
-<p class="content-block">Como último tipo tenemos el muy especial <strong>register</strong>. Una variable de tipo register pide al compilador que coloque el valor de esta variable directamente dentro de un registro del CPU en lugar de en memoria para así poder tener acceso a esta mucho más rápido. Sólo se puede usar en variables locales. Estas variables son ideales para bucles en esos casos en los que la velocidad de proceso de información es crítica. Personalmente les recomiendo el acostumbrase a su uso en los casos en que se hagan muchas referencias a la misma variable como por ejemplo en los contadores. Recuerden que esta variable siempre estará ocupando un registro del CPU por lo que si la usan en el bloque main(), el registro usado por la variable se mantendrá ocupado durante toda la ejecución del programa así que úsenla si en realidad es necesaria.</p>
+<p class="content-block">Como Ãºltimo tipo tenemos el muy especial <strong>register</strong>. Una variable de tipo register pide al compilador que coloque el valor de esta variable directamente dentro de un registro del CPU en lugar de en memoria para asÃ­ poder tener acceso a esta mucho mÃ¡s rÃ¡pido. SÃ³lo se puede usar en variables locales. Estas variables son ideales para bucles en esos casos en los que la velocidad de proceso de informaciÃ³n es crÃ­tica. Personalmente les recomiendo el acostumbrase a su uso en los casos en que se hagan muchas referencias a la misma variable como por ejemplo en los contadores. Recuerden que esta variable siempre estarÃ¡ ocupando un registro del CPU por lo que si la usan en el bloque main(), el registro usado por la variable se mantendrÃ¡ ocupado durante toda la ejecuciÃ³n del programa asÃ­ que Ãºsenla si en realidad es necesaria.</p>
 
 <h1 class="content-block">Operadores.</h1>
 
-<h2 class="content-block">Operadores aritméticos.</h2>
+<h2 class="content-block">Operadores aritmÃ©ticos.</h2>
 
-<p class="content-block">Los operadores aritméticos son:</p>
+<p class="content-block">Los operadores aritmÃ©ticos son:</p>
 <ul>
     <li>Resta "-". Ejemplo x = x - 3;</li>
     <li>Suma "+". Ejemplo x = x +2;</li>
-    <li>Multiplicación "*". Ejemplo x = x *5;</li>
-    <li>División "/". Ejemplo x = x /5;</li>
-    <li>División en módulo "%". Devuelve el resto de una división. Sólo puede aplicarse a enteros.</li>
-    <li>Ejemplo x = 10%3; asignará 1 a la variable x.</li>
+    <li>MultiplicaciÃ³n "*". Ejemplo x = x *5;</li>
+    <li>DivisiÃ³n "/". Ejemplo x = x /5;</li>
+    <li>DivisiÃ³n en mÃ³dulo "%". Devuelve el resto de una divisiÃ³n. SÃ³lo puede aplicarse a enteros.</li>
+    <li>Ejemplo x = 10%3; asignarÃ¡ 1 a la variable x.</li>
     <li>Decremento "--". Ejemplo x--; Es lo mismo que x=x-1. Decrementa en 1 el valor de x.</li>
     <li>Incremento "++". Ejemplo x++; Es lo mismo que x=x+1. Incrementa en 1 el valor de x.</li>
 </ul>
 
-<p class="content-block"><strong>MUY IMPORANTE. OJO: Cuando se aplica la división a un entero o a un caracter, cualquier resto es truncado. Por ejemplo: 22/3 devolverá 7 en división entera.</strong></p>
+<p class="content-block"><strong>MUY IMPORANTE. OJO: Cuando se aplica la divisiÃ³n a un entero o a un caracter, cualquier resto es truncado. Por ejemplo: 22/3 devolverÃ¡ 7 en divisiÃ³n entera.</strong></p>
 
-<p class="content-block">Los operadores de incremento y decremento pueden ser usados tanto como x++ y x-- ó como ++x y –x. Sin embargo existe una diferencia entre estas dos últimas y es que si por ejemplo hacemos:</p>
+<p class="content-block">Los operadores de incremento y decremento pueden ser usados tanto como x++ y x-- Ã³ como ++x y â€“x. Sin embargo existe una diferencia entre estas dos Ãºltimas y es que si por ejemplo hacemos:</p>
 
 <pre>
 y=10;
@@ -289,17 +296,17 @@ y=10;
 x = y++;
 </pre>
 
-<p class="content-block">entonces y=11 y x =10 ... Primero asigna y luego incrementa. Ojo con ésto en los bloques for();</p>
+<p class="content-block">entonces y=11 y x =10 ... Primero asigna y luego incrementa. Ojo con Ã©sto en los bloques for();</p>
 
-<p class="content-block">La precedencia de los operadores aritméticos es:</p>
+<p class="content-block">La precedencia de los operadores aritmÃ©ticos es:</p>
 <ul>
     <li>++ -- Se hace primero</li>
     <li>- ( menos monario )</li>
     <li>* / %</li>
-    <li>+ - Se hace de último</li>
+    <li>+ - Se hace de Ãºltimo</li>
 </ul>
 
-<h2 class="content-block">Operadores relacionales y lógicos.</h2>
+<h2 class="content-block">Operadores relacionales y lÃ³gicos.</h2>
 
 <p class="content-block">Los relacionales son:</p>
 <ul>
@@ -311,14 +318,14 @@ x = y++;
     <li>Distinto "!="</li>
 </ul>
 
-<p class="content-block">y los lógicos son:</p>
+<p class="content-block">y los lÃ³gicos son:</p>
 <ul>
     <li>AND "&&". Se usa si se requiere que dos condiciones se cumplan.</li>
-    <li>OR "||". Se usa cuando se sólo es necesario que una de las condiciones se cumpla.</li>
-    <li>NOT "!". Es un operador monario e invierte el estado de la condición.</li>
+    <li>OR "||". Se usa cuando se sÃ³lo es necesario que una de las condiciones se cumpla.</li>
+    <li>NOT "!". Es un operador monario e invierte el estado de la condiciÃ³n.</li>
 </ul>
 
-<p class="content-block">En realidad estos operadores se explican por sí sólos. La precedencia de estos es:</p>
+<p class="content-block">En realidad estos operadores se explican por sÃ­ sÃ³los. La precedencia de estos es:</p>
 <ul>
     <li>!</li>
     <li>> >= < <=</li>
@@ -337,13 +344,13 @@ x = y++;
     <li>Desplazamiento a la izquierda (<<).</li>
 </ul>
 
-<p class="content-block">Ejemplos x = x << 3 desplazará el equivalente binario de x tres bits a la izquierda y lo asignará a 'x' nuevamente. x = x >> 2, desplazará el equivalente binario de x dos bit a la derecha y el resultado lo asigna a 'x'. En ambos casos, los nuevos bits son reemplazados por ceros. Por lo tanto, si x =5, entonces:</p>
+<p class="content-block">Ejemplos x = x << 3 desplazarÃ¡ el equivalente binario de x tres bits a la izquierda y lo asignarÃ¡ a 'x' nuevamente. x = x >> 2, desplazarÃ¡ el equivalente binario de x dos bit a la derecha y el resultado lo asigna a 'x'. En ambos casos, los nuevos bits son reemplazados por ceros. Por lo tanto, si x =5, entonces:</p>
 
 <pre>
 x = x << 3; x = 00000101, luego de desplazar: x = 00101000, x = 40.
 </pre>
 
-<p class="content-block">Como el título lo indica, operan a nivel de bits. Ejemplo: x=3&1; entonces x=1. Porqué?</p>
+<p class="content-block">Como el tÃ­tulo lo indica, operan a nivel de bits. Ejemplo: x=3&1; entonces x=1. PorquÃ©?</p>
 
 <pre>
 00000011
@@ -357,7 +364,7 @@ es 00000001
 
 <p class="content-block">1.- Los dos operadores monarios '&' y '*' se usan para los punteros. Acerca de estos operadores profundizaremos en el apartado dedicado a punteros.</p>
 
-<p class="content-block">2.- Los operadores "." y "->" se usan en las estructuras. A éstos también llegaremos.</p>
+<p class="content-block">2.- Los operadores "." y "->" se usan en las estructuras. A Ã©stos tambiÃ©n llegaremos.</p>
 
 <p class="content-block">3.- El operador ','. Este operador se encarga de encadenar varias expresiones. Por ejemplo puede usarse:</p>
 
@@ -365,14 +372,14 @@ es 00000001
 x = (y=3, y+1);
 </pre>
 
-<p class="content-block">En este caso, y será 3 y x quedará con el valor 4. Los paréntesis son necesarios ya que el operador ',' tiene menor precedencia que el operador de asignación. Otro ejemplo sería:</p>
+<p class="content-block">En este caso, y serÃ¡ 3 y x quedarÃ¡ con el valor 4. Los parÃ©ntesis son necesarios ya que el operador ',' tiene menor precedencia que el operador de asignaciÃ³n. Otro ejemplo serÃ­a:</p>
 
 <pre>
 y = 10;
 x = ( y = y-5 , 25/y );
 </pre>
 
-<p class="content-block">En esta caso 'y' quedaría con el valor de 5 y x también.</p>
+<p class="content-block">En esta caso 'y' quedarÃ­a con el valor de 5 y x tambiÃ©n.</p>
 
 <p class="content-block">4.- El operador '?'. Este es un operador muy potente que puede usarse para sustituir sentencias del tipo if-then-else. Por ejemplo, si tenemos:</p>
 
@@ -390,14 +397,14 @@ if (x>9) {
 }
 </pre>
 
-<p class="content-block">5.- El operador sizeof NombreVariable; retorna el tamaño de la variable. Esto se usa mucho para facilitar la portabilidad del código. Por ejemplo, si tenemos:</p>
+<p class="content-block">5.- El operador sizeof NombreVariable; retorna el tamaÃ±o de la variable. Esto se usa mucho para facilitar la portabilidad del cÃ³digo. Por ejemplo, si tenemos:</p>
 
 <pre>
 int i;
-printf(“%i”, sizeof(i));
+printf(â€œ%iâ€, sizeof(i));
 </pre>
 
-<p class="content-block">el programa presentará por pantalla el valor 4 (o 2 en sistemas antiguos) ya que 'i' es una variable entera que ocupa 4 bytes en la mayoría de los sistemas modernos.</p>
+<p class="content-block">el programa presentarÃ¡ por pantalla el valor 4 (o 2 en sistemas antiguos) ya que 'i' es una variable entera que ocupa 4 bytes en la mayorÃ­a de los sistemas modernos.</p>
 
 <h2 class="content-block">Precedencia de los operadores de C.</h2>
 
@@ -421,78 +428,85 @@ printf(“%i”, sizeof(i));
     <li>,</li>
 </ul>
 
-<p class="content-block">Por lo tanto, todo lo que está dentro de paréntesis o corchetes, se ejecutará primero que cualquier otra cosa. Por ejemplo:</p>
+<p class="content-block">Por lo tanto, todo lo que estÃ¡ dentro de parÃ©ntesis o corchetes, se ejecutarÃ¡ primero que cualquier otra cosa. Por ejemplo:</p>
 
 <pre>
 3 + 4 * 5
 </pre>
 
-<p class="content-block">ejecutará 4*5 (ya que * tiene prioridad) y luego le sumará 3. Resultado = 23. En cambio</p>
+<p class="content-block">ejecutarÃ¡ 4*5 (ya que * tiene prioridad) y luego le sumarÃ¡ 3. Resultado = 23. En cambio</p>
 
 <pre>
 (3+ 4)*5
 </pre>
 
-<p class="content-block">resolverá primero 3 + 4 y luego multiplicará por 5. Resultado = 35.</p>
+<p class="content-block">resolverÃ¡ primero 3 + 4 y luego multiplicarÃ¡ por 5. Resultado = 35.</p>
 
 <h2 class="content-block">Expresiones.</h2>
 
-<p class="content-block">Los operadores, las constantes y las variables son lo que constituyen las “expresiones” en C. Una expresión en C es cualquier combinación válida de estos elementos. Como la mayoría de las expresiones tienden a seguir las reglas del álgebra, a menudo se dan por sabidas. Sin embargo, existen unos pocos aspectos de las expresiones relativos específicamente al lenguaje C. Los más importantes a resaltar son:</p>
+<p class="content-block">Los operadores, las constantes y las variables son lo que constituyen las â€œexpresionesâ€ en C. Una expresiÃ³n en C es cualquier combinaciÃ³n vÃ¡lida de estos elementos. Como la mayorÃ­a de las expresiones tienden a seguir las reglas del Ã¡lgebra, a menudo se dan por sabidas. Sin embargo, existen unos pocos aspectos de las expresiones relativos especÃ­ficamente al lenguaje C. Los mÃ¡s importantes a resaltar son:</p>
 
-<p class="content-block">1.- Moldes: Es posible forzar a una expresión para que sea de un tipo determinado. Ésto se logra usando la forma:</p>
+<p class="content-block">1.- Moldes: Es posible forzar a una expresiÃ³n para que sea de un tipo determinado. Ã‰sto se logra usando la forma:</p>
 
 <pre>
-(tipoQueQueremos) expresión;
+(tipoQueQueremos) expresiÃ³n;
 </pre>
 
-<p class="content-block">así por ejemplo:</p>
+<p class="content-block">asÃ­ por ejemplo:</p>
 
 <pre>
 (float) x/2;
 </pre>
 
-<p class="content-block">forzará a que la expresión sea evaluada como float aunque la variable x sea de otro tipo (p. ej. entera).</p>
+<p class="content-block">forzarÃ¡ a que la expresiÃ³n sea evaluada como float aunque la variable x sea de otro tipo (p. ej. entera).</p>
 
-<p class="content-block">2.- Espaciado y paréntesis: Se usan para dar mayor legibilidad al programa. Pueden añadirse tabulaciones y espacios a discreción en una expresión sin que estos alteren el resultado de la misma. Por ejemplo:</p>
+<p class="content-block">2.- Espaciado y parÃ©ntesis: Se usan para dar mayor legibilidad al programa. Pueden aÃ±adirse tabulaciones y espacios a discreciÃ³n en una expresiÃ³n sin que estos alteren el resultado de la misma. Por ejemplo:</p>
 
 <pre>
 x=y/3-5*z&127;
 </pre>
 
-<p class="content-block">es perfectamente válido, pero también es cierto que es más fácil a simple vista:</p>
+<p class="content-block">es perfectamente vÃ¡lido, pero tambiÃ©n es cierto que es mÃ¡s fÃ¡cil a simple vista:</p>
 
 <pre>
-x = y / 3 – 5 * z & 127;
+x = y / 3 â€“ 5 * z & 127;
 </pre>
 
-<p class="content-block">El uso de paréntesis redundantes no produce errores ni disminuye la velocidad de ejecución de un programa. Lo único que hace es facilitar la lectura del código. Así, la expresión anterior también la podemos escribir como:</p>
+<p class="content-block">El uso de parÃ©ntesis redundantes no produce errores ni disminuye la velocidad de ejecuciÃ³n de un programa. Lo Ãºnico que hace es facilitar la lectura del cÃ³digo. AsÃ­, la expresiÃ³n anterior tambiÃ©n la podemos escribir como:</p>
 
 <pre>
-x = (( y / 3) – (5 * z)) & 127 ;
+x = (( y / 3) â€“ (5 * z)) & 127 ;
 </pre>
 
-<p class="content-block">por lo que, gracias a la ayuda de los paréntesis, es mucho más fácil ver la precedencia de las operaciones.</p>
+<p class="content-block">por lo que, gracias a la ayuda de los parÃ©ntesis, es mucho mÃ¡s fÃ¡cil ver la precedencia de las operaciones.</p>
 
 <p class="content-block">3.- Abreviaturas en C.</p>
 
-<p class="content-block">Por último tenemos una abreviatura muy útil a la hora de escribir nuestro código ya que simplifican ciertas sentencias de asignación. Esta abreviatura consiste en que podemos escribir:</p>
+<p class="content-block">Por Ãºltimo tenemos una abreviatura muy Ãºtil a la hora de escribir nuestro cÃ³digo ya que simplifican ciertas sentencias de asignaciÃ³n. Esta abreviatura consiste en que podemos escribir:</p>
 
 <pre>
-NombreVariable = NombreVariable operador expresión;
+NombreVariable = NombreVariable operador expresiÃ³n;
 </pre>
 
 <p class="content-block">como:</p>
 
 <pre>
-NombreVariable operador= expresión;
+NombreVariable operador= expresiÃ³n;
 </pre>
 
 <p class="content-block">Por ejemplo:</p>
 <pre>
 x = x + 5; podemos escribirla como: x+=5;
-y = y – 3; podemos escribirla como y -= 3;
+y = y â€“ 3; podemos escribirla como y -= 3;
 z = z *2; podemos escribirla como: z *= 2;
 </pre>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

@@ -1,39 +1,46 @@
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE HTML>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Clase 13: Punteros (1era parte)</title>
 	<meta name="author" content="Tony Rodriguez">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <h1 class="content-block">Punteros (1era parte).</h1>
 
-<p class="content-block">Dentro de la memoria de la computadora cada dato almacenado ocupa una o más celdas contiguas de memoria. El número de celdas de memoria requeridas para almacenar un dato depende de su tipo.</p>
+<p class="content-block">Dentro de la memoria de la computadora cada dato almacenado ocupa una o mÃ¡s celdas contiguas de memoria. El nÃºmero de celdas de memoria requeridas para almacenar un dato depende de su tipo.</p>
 
-<p class="content-block">Si 'v' es una variable que representa un determinado dato, el compilador automáticamente asigna celdas de memoria para ese dato dependiendo de su tipo. El dato puede ser accedido si conocemos su localización (la dirección) de la primera celda de memoria. La dirección de 'v' se determina mediante <code>&v</code>, donde <code>&</code> es un operador monario, llamado operador dirección, que proporciona la dirección del operando. Si la dirección de 'v' se le asigna a otra variable <code>pv = &v;</code> esta nueva variable es <strong>un puntero a 'v'</strong>: representa la dirección de 'v' y no su valor. <strong>Los punteros son direcciones.</strong> El dato representado por 'v' puede ser entonces accedido mediante <code>*pv</code>, donde <code>*</code> es un operador monario, llamado operador indirección (u operador de “derreferencia”), que opera sólo sobre una variable puntero.</p>
+<p class="content-block">Si 'v' es una variable que representa un determinado dato, el compilador automÃ¡ticamente asigna celdas de memoria para ese dato dependiendo de su tipo. El dato puede ser accedido si conocemos su localizaciÃ³n (la direcciÃ³n) de la primera celda de memoria. La direcciÃ³n de 'v' se determina mediante <code>&v</code>, donde <code>&</code> es un operador monario, llamado operador direcciÃ³n, que proporciona la direcciÃ³n del operando. Si la direcciÃ³n de 'v' se le asigna a otra variable <code>pv = &v;</code> esta nueva variable es <strong>un puntero a 'v'</strong>: representa la direcciÃ³n de 'v' y no su valor. <strong>Los punteros son direcciones.</strong> El dato representado por 'v' puede ser entonces accedido mediante <code>*pv</code>, donde <code>*</code> es un operador monario, llamado operador indirecciÃ³n (u operador de â€œderreferenciaâ€), que opera sÃ³lo sobre una variable puntero.</p>
 
-<p class="content-block">En C, los punteros son una herramienta fundamental para construir programas. Sin ellos se podría hacer realmente poca cosa. Examinemos unos ejemplos que muestran donde los punteros son necesarios:</p>
+<p class="content-block">En C, los punteros son una herramienta fundamental para construir programas. Sin ellos se podrÃ­a hacer realmente poca cosa. Examinemos unos ejemplos que muestran donde los punteros son necesarios:</p>
 <ol>
-    <li>Paso de parámetros por referencia. (Ya hablamos de ésto en funciones).</li>
-    <li>Declaración de arreglos dinámicos.
+    <li>Paso de parÃ¡metros por referencia. (Ya hablamos de Ã©sto en funciones).</li>
+    <li>DeclaraciÃ³n de arreglos dinÃ¡micos.
         <ul>
-            <li>Imaginemos que estamos haciendo un procesador de imágenes, y que tenemos una función que va a hacer cierto tratamiento. Recibe por parámetro el nombre del fichero a utilizar, y ha de leerlo del disco, modificarlo, y guardarlo otra vez.</li>
-            <li>Nuestro problema es que no sabemos de antemano lo que va a medir la foto, y por lo tanto, si no existieran los arreglos dinámicos, deberíamos declarar un buffer lo suficientemente grande como para que cupiese la foto más enorme que tuviéramos.</li>
-            <li>¿Qué estamos haciendo si actuamos de este modo? Si la foto es pequeña, estamos usando demasiada memoria, que puede hacer incluso que se agoten los recursos del ordenador. Si la foto es más grande de lo que habíamos previsto, nuestro programa no será capaz de tratarla, aunque la computadora tenga recursos suficientes.</li>
+            <li>Imaginemos que estamos haciendo un procesador de imÃ¡genes, y que tenemos una funciÃ³n que va a hacer cierto tratamiento. Recibe por parÃ¡metro el nombre del fichero a utilizar, y ha de leerlo del disco, modificarlo, y guardarlo otra vez.</li>
+            <li>Nuestro problema es que no sabemos de antemano lo que va a medir la foto, y por lo tanto, si no existieran los arreglos dinÃ¡micos, deberÃ­amos declarar un buffer lo suficientemente grande como para que cupiese la foto mÃ¡s enorme que tuviÃ©ramos.</li>
+            <li>Â¿QuÃ© estamos haciendo si actuamos de este modo? Si la foto es pequeÃ±a, estamos usando demasiada memoria, que puede hacer incluso que se agoten los recursos del ordenador. Si la foto es mÃ¡s grande de lo que habÃ­amos previsto, nuestro programa no serÃ¡ capaz de tratarla, aunque la computadora tenga recursos suficientes.</li>
         </ul>
     </li>
-    <li>Acceso a memoria física.
+    <li>Acceso a memoria fÃ­sica.
         <ul>
-            <li>C es el lenguaje comúnmente utilizado a la hora de programar módulos de sistemas operativos, drivers, etc. Este tipo de programas deben acceder con frecuencia al hardware de la maquina, para poder leer datos del exterior (movimientos de un ratón, temperatura de un sensor) o bien para escribir sobre ellos (dibujar en una pantalla, mover electroválvulas). Una de las maneras de hacer todo esto consiste en “mapear” los dispositivos de entrada/salida sobre un espacio real de memoria. De este modo, cuando se escribe en cierta posición de memoria lo que se está haciendo realmente es actuar sobre una salida, y cuando se lee de cierta posición de memoria se está leyendo una entrada.</li>
-            <li><strong>(Nota histórica/obsoleta):</strong> Por ejemplo, en un PC, la memoria de la pantalla en modo texto se encontraba en la posición <code>0B8000000H</code> (también conocido como el par segmento:dirección <code>B800:0000</code> aunque ésto no funcionará en Windows, solo en MS-DOS, ya que Windows protege a la máquina contra los programas de usuario bajo una capa de memoria virtual). A partir de esta posición, cada dos bytes codifican una letra de pantalla: el primer byte corresponde al código ASCII de la misma, y el segundo byte corresponde al código del color a aplicarle.</li>
+            <li>C es el lenguaje comÃºnmente utilizado a la hora de programar mÃ³dulos de sistemas operativos, drivers, etc. Este tipo de programas deben acceder con frecuencia al hardware de la maquina, para poder leer datos del exterior (movimientos de un ratÃ³n, temperatura de un sensor) o bien para escribir sobre ellos (dibujar en una pantalla, mover electrovÃ¡lvulas). Una de las maneras de hacer todo esto consiste en â€œmapearâ€ los dispositivos de entrada/salida sobre un espacio real de memoria. De este modo, cuando se escribe en cierta posiciÃ³n de memoria lo que se estÃ¡ haciendo realmente es actuar sobre una salida, y cuando se lee de cierta posiciÃ³n de memoria se estÃ¡ leyendo una entrada.</li>
+            <li><strong>(Nota histÃ³rica/obsoleta):</strong> Por ejemplo, en un PC, la memoria de la pantalla en modo texto se encontraba en la posiciÃ³n <code>0B8000000H</code> (tambiÃ©n conocido como el par segmento:direcciÃ³n <code>B800:0000</code> aunque Ã©sto no funcionarÃ¡ en Windows, solo en MS-DOS, ya que Windows protege a la mÃ¡quina contra los programas de usuario bajo una capa de memoria virtual). A partir de esta posiciÃ³n, cada dos bytes codifican una letra de pantalla: el primer byte corresponde al cÃ³digo ASCII de la misma, y el segundo byte corresponde al cÃ³digo del color a aplicarle.</li>
         </ul>
     </li>
 </ol>
 
-<h2 class="content-block">Declaración de punteros</h2>
+<h2 class="content-block">DeclaraciÃ³n de punteros</h2>
 
-<p class="content-block">Los punteros, como cualquier otra variable, deben ser declarados antes de ser usados. Cuando una variable puntero es definida, el nombre de la variable debe ir precedida por un <code>*</code>. Este identifica que la variable es un puntero. El tipo de dato que aparece en la declaración se refiere al tipo de objeto del puntero, el tipo de dato que se almacena en la dirección representada por el puntero, en vez del puntero mismo. Así, una declaración de puntero general es:</p>
+<p class="content-block">Los punteros, como cualquier otra variable, deben ser declarados antes de ser usados. Cuando una variable puntero es definida, el nombre de la variable debe ir precedida por un <code>*</code>. Este identifica que la variable es un puntero. El tipo de dato que aparece en la declaraciÃ³n se refiere al tipo de objeto del puntero, el tipo de dato que se almacena en la direcciÃ³n representada por el puntero, en vez del puntero mismo. AsÃ­, una declaraciÃ³n de puntero general es:</p>
 
 <pre>
 tipo_dato *ptvar;
@@ -41,17 +48,17 @@ tipo_dato *ptvar;
 
 <p class="content-block">donde <code>ptvar</code> es la variable puntero y <code>tipo_dato</code> el tipo de dato apuntado por el puntero.</p>
 
-<p class="content-block">Dentro de la declaración, una variable puntero puede ser inicializada asignándole la dirección de otra variable que por supuesto debe estar previamente declarada.</p>
+<p class="content-block">Dentro de la declaraciÃ³n, una variable puntero puede ser inicializada asignÃ¡ndole la direcciÃ³n de otra variable que por supuesto debe estar previamente declarada.</p>
 
 <h2 class="content-block">Los operadores de punteros.</h2>
 
-<p class="content-block">Los operadores monarios <code>&</code> y <code>*</code> son miembros del mismo grupo de precedencia que los otros operadores monarios: <code>-</code>, <code>++</code>, <code>--</code>, <code>!</code>, <code>sizeof</code> y <code>(tipo)</code>. Hay que recordar que este grupo de operadores tiene mayor precedencia que el de los operadores aritméticos y la asociatividad de los operadores monarios es de derecha a izquierda.</p>
+<p class="content-block">Los operadores monarios <code>&</code> y <code>*</code> son miembros del mismo grupo de precedencia que los otros operadores monarios: <code>-</code>, <code>++</code>, <code>--</code>, <code>!</code>, <code>sizeof</code> y <code>(tipo)</code>. Hay que recordar que este grupo de operadores tiene mayor precedencia que el de los operadores aritmÃ©ticos y la asociatividad de los operadores monarios es de derecha a izquierda.</p>
 
-<p class="content-block">El operador dirección (<code>&</code>) sólo puede actuar sobre variables ordinarias o elementos simples de un arreglo.</p>
+<p class="content-block">El operador direcciÃ³n (<code>&</code>) sÃ³lo puede actuar sobre variables ordinarias o elementos simples de un arreglo.</p>
 
-<p class="content-block">El operador indirección (<code>*</code>) sólo puede actuar sobre operandos que sean punteros.</p>
+<p class="content-block">El operador indirecciÃ³n (<code>*</code>) sÃ³lo puede actuar sobre operandos que sean punteros.</p>
 
-<p class="content-block">Las variables puntero pueden apuntar a variables numéricas o de caracteres, arreglos, funciones, otras variables puntero y también pueden apuntar a otros tipos de estructuras de datos más complejos. Por tanto a una variable puntero se le puede asignar la dirección de una variable ordinaria. También se le puede asignar la dirección de otra variable puntero, siempre que ambas apunten al mismo tipo de dato.</p>
+<p class="content-block">Las variables puntero pueden apuntar a variables numÃ©ricas o de caracteres, arreglos, funciones, otras variables puntero y tambiÃ©n pueden apuntar a otros tipos de estructuras de datos mÃ¡s complejos. Por tanto a una variable puntero se le puede asignar la direcciÃ³n de una variable ordinaria. TambiÃ©n se le puede asignar la direcciÃ³n de otra variable puntero, siempre que ambas apunten al mismo tipo de dato.</p>
 
 <p class="content-block">Mostremos lo que hemos hablado hasta ahora con un ejemplo:</p>
 
@@ -63,17 +70,17 @@ int main(){
     int *pv;
 
     v1 = 555;	// Asigna 555 a v1
-    pv = &v1;	// pv recibe la dirección de v1.
-    v2 = *pv;	// Asigno a v2 el “contenido” de la posición de memoria pv.
+    pv = &v1;	// pv recibe la direcciÃ³n de v1.
+    v2 = *pv;	// Asigno a v2 el â€œcontenidoâ€ de la posiciÃ³n de memoria pv.
 
-    printf(“%i”,v2);	// Imprime 555;
+    printf(â€œ%iâ€,v2);	// Imprime 555;
     return 0;
 }
 </pre>
 
-<p class="content-block">Aquí se observa cómo los punteros contienen direcciones de memoria. 'v1' es una variable que contiene el valor de 555. 'pv' es un puntero (almacenado en cualquier dirección #### que realmente no nos importa en este caso) que contiene la dirección de memoria de 'v1', o sea, <code>0x00F0</code> (ejemplo). Luego a 'v2' se le asigna el contenido de 'pv' (el contenido de la localidad de memoria <code>0x00F0</code> que es 555). Por último el programa imprime la variable 'v2'. ¡¡¡ Fácil !!!, ¿no es cierto?, pues ese es el concepto detrás de los punteros.</p>
+<p class="content-block">AquÃ­ se observa cÃ³mo los punteros contienen direcciones de memoria. 'v1' es una variable que contiene el valor de 555. 'pv' es un puntero (almacenado en cualquier direcciÃ³n #### que realmente no nos importa en este caso) que contiene la direcciÃ³n de memoria de 'v1', o sea, <code>0x00F0</code> (ejemplo). Luego a 'v2' se le asigna el contenido de 'pv' (el contenido de la localidad de memoria <code>0x00F0</code> que es 555). Por Ãºltimo el programa imprime la variable 'v2'. Â¡Â¡Â¡ FÃ¡cil !!!, Â¿no es cierto?, pues ese es el concepto detrÃ¡s de los punteros.</p>
 
-<p class="content-block"><strong>OJO:</strong> Es muy peligroso trabajar con punteros si éstos no han sido asignados a ninguna posición de variable con anterioridad. Esto se ve bien ya que si no ha sido asignada una dirección, el puntero podría contener una dirección importante que ya está siendo usada y podría variar su valor. Para evitar este tipo de conflictos podríamos curarnos en salud asignándole a los punteros un valor predeterminado o inicializarlos a NULO (<code>NULL</code>). Esto nos indicaría que al puntero aun no se le ha asignado una dirección y por lo tanto no podrá ser usada. Ej:</p>
+<p class="content-block"><strong>OJO:</strong> Es muy peligroso trabajar con punteros si Ã©stos no han sido asignados a ninguna posiciÃ³n de variable con anterioridad. Esto se ve bien ya que si no ha sido asignada una direcciÃ³n, el puntero podrÃ­a contener una direcciÃ³n importante que ya estÃ¡ siendo usada y podrÃ­a variar su valor. Para evitar este tipo de conflictos podrÃ­amos curarnos en salud asignÃ¡ndole a los punteros un valor predeterminado o inicializarlos a NULO (<code>NULL</code>). Esto nos indicarÃ­a que al puntero aun no se le ha asignado una direcciÃ³n y por lo tanto no podrÃ¡ ser usada. Ej:</p>
 
 <pre>
 int *p=NULL;
@@ -81,7 +88,7 @@ int *p=NULL;
 
 <h2 class="content-block">Expresiones con punteros.</h2>
 
-<p class="content-block">En general, las expresiones que involucran punteros se ajustan a las mismas reglas que cualquier otra expresión de C. Esto quiere decir que si tenemos:</p>
+<p class="content-block">En general, las expresiones que involucran punteros se ajustan a las mismas reglas que cualquier otra expresiÃ³n de C. Esto quiere decir que si tenemos:</p>
 
 <pre>
 int x;
@@ -95,86 +102,86 @@ p1 = &x;
 p2 = p1;
 </pre>
 
-<p class="content-block">ó hacer operaciones simples con punteros ó incluso comparaciones. P. ej.:</p>
+<p class="content-block">Ã³ hacer operaciones simples con punteros Ã³ incluso comparaciones. P. ej.:</p>
 
 <pre>
-if (p1 == p2) printf(“Ambos apuntan al mismo sitio\n”);
-p2 = p1 +1; // Ésto es aritmética de punteros.
+if (p1 == p2) printf(â€œAmbos apuntan al mismo sitio\nâ€);
+p2 = p1 +1; // Ã‰sto es aritmÃ©tica de punteros.
 p2--;
 p1++;
 </pre>
 
-<p class="content-block">Pero no se permiten otras operaciones aritméticas con punteros. Así una variable puntero no puede ser multiplicada por una constante, dos punteros no pueden sumarse, etc.</p>
+<p class="content-block">Pero no se permiten otras operaciones aritmÃ©ticas con punteros. AsÃ­ una variable puntero no puede ser multiplicada por una constante, dos punteros no pueden sumarse, etc.</p>
 
-<h2 class="content-block">Aritmética de punteros.</h2>
+<h2 class="content-block">AritmÃ©tica de punteros.</h2>
 
-<p class="content-block">Existen sólo dos operaciones aritméticas que pueden hacerse con punteros: la suma y la resta. En particular, un valor entero puede ser sumado o restado a una variable puntero, pero el resultado de la operación debe ser interpretado con cuidado. Supongamos que <code>px</code> es una variable puntero que representa la dirección de una variable <code>x</code>. Se pueden escribir expresiones como <code>++px</code>, <code>--px</code>, <code>(px+3)</code>. Cada expresión representa una dirección localizada a cierta distancia de la posición original representada por <code>px</code>. La distancia exacta será el producto de la cantidad entera por el número de bytes que ocupa cada elemento al que apunta <code>px</code>. Es por eso que <strong>NO ES LO MISMO UN PUNTERO A CHAR QUE UN PUNTERO A INT.</strong> Ambos punteros contendrán una dirección de memoria pero, por ejemplo, en el siguiente caso:</p>
+<p class="content-block">Existen sÃ³lo dos operaciones aritmÃ©ticas que pueden hacerse con punteros: la suma y la resta. En particular, un valor entero puede ser sumado o restado a una variable puntero, pero el resultado de la operaciÃ³n debe ser interpretado con cuidado. Supongamos que <code>px</code> es una variable puntero que representa la direcciÃ³n de una variable <code>x</code>. Se pueden escribir expresiones como <code>++px</code>, <code>--px</code>, <code>(px+3)</code>. Cada expresiÃ³n representa una direcciÃ³n localizada a cierta distancia de la posiciÃ³n original representada por <code>px</code>. La distancia exacta serÃ¡ el producto de la cantidad entera por el nÃºmero de bytes que ocupa cada elemento al que apunta <code>px</code>. Es por eso que <strong>NO ES LO MISMO UN PUNTERO A CHAR QUE UN PUNTERO A INT.</strong> Ambos punteros contendrÃ¡n una direcciÃ³n de memoria pero, por ejemplo, en el siguiente caso:</p>
 
 <pre>
 char ch='a';
-char *pch=&ch;	// Asignamos al puntero pch la dirección de ch.
-// Supongamos que la dirección es 1000
+char *pch=&ch;	// Asignamos al puntero pch la direcciÃ³n de ch.
+// Supongamos que la direcciÃ³n es 1000
 pch++;		// Incrementa pch a 1001 ya que los tipo char ocupan 1 byte.
 </pre>
 
-<p class="content-block">Sí, es cierto, no se ve complicaciones ya que <code>pch</code> contiene el valor que esperábamos. En cambio:</p>
+<p class="content-block">SÃ­, es cierto, no se ve complicaciones ya que <code>pch</code> contiene el valor que esperÃ¡bamos. En cambio:</p>
 
 <pre>
 int x=10;
-int *px=&x;	// Asignamos al puntero px la dirección de x.
-// Supongamos que la dirección es 1000
-px++;		// Incrementa px a 1004 (no a 1001 o 1002) ya que los tipo int ocupan típicamente 4 bytes en sistemas modernos.
+int *px=&x;	// Asignamos al puntero px la direcciÃ³n de x.
+// Supongamos que la direcciÃ³n es 1000
+px++;		// Incrementa px a 1004 (no a 1001 o 1002) ya que los tipo int ocupan tÃ­picamente 4 bytes en sistemas modernos.
 </pre>
 
-<p class="content-block">Ahora sí, <code>px</code> tendrá 1004, NO 1001 o 1002 como quizá se esperaba. Esto es debido a que <strong>“toda la aritmética de punteros es relativa al tipo base”</strong>. Esto es de gran utilidad para manejar arreglos (entre otras utilidades) pero este punto lo estudiaremos más adelante.</p>
+<p class="content-block">Ahora sÃ­, <code>px</code> tendrÃ¡ 1004, NO 1001 o 1002 como quizÃ¡ se esperaba. Esto es debido a que <strong>â€œtoda la aritmÃ©tica de punteros es relativa al tipo baseâ€</strong>. Esto es de gran utilidad para manejar arreglos (entre otras utilidades) pero este punto lo estudiaremos mÃ¡s adelante.</p>
 
 <p class="content-block">Las operaciones que se pueden realizar sobre punteros:</p>
 <ol>
-    <li>A una variable puntero se le puede asignar la dirección de una variable ordinaria (<code>pv=&v</code>).</li>
+    <li>A una variable puntero se le puede asignar la direcciÃ³n de una variable ordinaria (<code>pv=&v</code>).</li>
     <li>A una variable puntero se le puede asignar el valor de otra variable puntero siempre que ambas apunten al mismo tipo de dato.</li>
     <li>A una variable puntero se le puede asignar el valor nulo (<code>NULL</code>).</li>
     <li>Una cantidad entera puede ser sumada o restada a una variable puntero.</li>
     <li>Una variable puntero puede ser restada de otra con tal de que ambas apunten a elementos del mismo arreglo. (OJO: este caso es muy especial).</li>
     <li>Dos variables puntero pueden ser comparadas siempre que ambas apunten a datos del mismo tipo.</li>
-    <li>Por último, como ya se comentó, no se permiten otras operaciones aritméticas con punteros. Así una variable puntero no puede ser multiplicada por una constante, dos punteros no pueden sumarse, etc.</li>
+    <li>Por Ãºltimo, como ya se comentÃ³, no se permiten otras operaciones aritmÃ©ticas con punteros. AsÃ­ una variable puntero no puede ser multiplicada por una constante, dos punteros no pueden sumarse, etc.</li>
 </ol>
 
-<h2 class="content-block">Funciones de asignación dinámica.</h2>
+<h2 class="content-block">Funciones de asignaciÃ³n dinÃ¡mica.</h2>
 
-<p class="content-block">Una vez compilados, todos los programas en C organizan la memoria de la computadora en cuatro regiones que contienen: el código del programa (en lenguaje máquina), los datos globales, la pila (o Stack) a través del cual se pasan argumentos y donde residen las variables locales y el montón (o Heap) que es el área de memoria libre que es gestionada por las funciones de asignación dinámica de C. Existen dos funciones básicas para trabajar con asignaciones dinámicas. Estas son:</p>
+<p class="content-block">Una vez compilados, todos los programas en C organizan la memoria de la computadora en cuatro regiones que contienen: el cÃ³digo del programa (en lenguaje mÃ¡quina), los datos globales, la pila (o Stack) a travÃ©s del cual se pasan argumentos y donde residen las variables locales y el montÃ³n (o Heap) que es el Ã¡rea de memoria libre que es gestionada por las funciones de asignaciÃ³n dinÃ¡mica de C. Existen dos funciones bÃ¡sicas para trabajar con asignaciones dinÃ¡micas. Estas son:</p>
 
 <pre>
 void *malloc(num_bytes);
 void free(void *p);
 </pre>
 
-<p class="content-block">La función <code>malloc()</code> asigna “num_bytes” número de bytes de memoria y devuelve un puntero <code>void</code> (sin tipo predeterminado. Si se desea que sea de algún tipo, debe usarse la expresión “<code>(tipo *)</code>” antes del <code>malloc()</code>. Ej: <code>(int *)malloc(128);</code>) del comienzo de dicha memoria y <code>free()</code> devuelve al Heap la memoria previamente asignada para que pueda ser reutilizada. Ambas funciones están el el archivo de cabecera “<strong><code>stdlib.h</code></strong>”.</p>
+<p class="content-block">La funciÃ³n <code>malloc()</code> asigna â€œnum_bytesâ€ nÃºmero de bytes de memoria y devuelve un puntero <code>void</code> (sin tipo predeterminado. Si se desea que sea de algÃºn tipo, debe usarse la expresiÃ³n â€œ<code>(tipo *)</code>â€ antes del <code>malloc()</code>. Ej: <code>(int *)malloc(128);</code>) del comienzo de dicha memoria y <code>free()</code> devuelve al Heap la memoria previamente asignada para que pueda ser reutilizada. Ambas funciones estÃ¡n el el archivo de cabecera â€œ<strong><code>stdlib.h</code></strong>â€.</p>
 
-<p class="content-block">Como comentamos en el punto “Declaración de arreglos dinámicos”, ésto es muy útil para todos esos casos en los que NO sabemos con antelación de cual tamaño será la variable que vamos a usar. Supongamos el caso en que tenemos un programa que leerá caracteres de un archivo. Nosotros no sabemos con antelación de que tamaño será ese archivo. Así que podríamos crear un arreglo que contenga espacio suficiente como para almacenar el mayor arreglo posible... quizá 100.000 caracteres pero ésto es increíblemente ineficiente ya que la memoria se estaría usando aunque no fuese necesaria (quizá para leer un archivo de tan sólo 4 bytes, por lo que nos quitaría memoria para otras operaciones realmente necesarias). Mejor es que usáramos una asignación dinámica con el <code>malloc()</code>. Así, supongamos que leemos un archivo y este contiene 500 bytes, entonces nos bastaría hacer algo como:</p>
+<p class="content-block">Como comentamos en el punto â€œDeclaraciÃ³n de arreglos dinÃ¡micosâ€, Ã©sto es muy Ãºtil para todos esos casos en los que NO sabemos con antelaciÃ³n de cual tamaÃ±o serÃ¡ la variable que vamos a usar. Supongamos el caso en que tenemos un programa que leerÃ¡ caracteres de un archivo. Nosotros no sabemos con antelaciÃ³n de que tamaÃ±o serÃ¡ ese archivo. AsÃ­ que podrÃ­amos crear un arreglo que contenga espacio suficiente como para almacenar el mayor arreglo posible... quizÃ¡ 100.000 caracteres pero Ã©sto es increÃ­blemente ineficiente ya que la memoria se estarÃ­a usando aunque no fuese necesaria (quizÃ¡ para leer un archivo de tan sÃ³lo 4 bytes, por lo que nos quitarÃ­a memoria para otras operaciones realmente necesarias). Mejor es que usÃ¡ramos una asignaciÃ³n dinÃ¡mica con el <code>malloc()</code>. AsÃ­, supongamos que leemos un archivo y este contiene 500 bytes, entonces nos bastarÃ­a hacer algo como:</p>
 
 <pre>
 char *p;
 unsigned long int i;
-// leemos el archivo. Asignamos en i el número de bytes que contiene (500 bytes).
+// leemos el archivo. Asignamos en i el nÃºmero de bytes que contiene (500 bytes).
 p=(char *)malloc(i);
 </pre>
 
-<p class="content-block">Después de la asignación, <code>p</code> apunta al primero de los 500 bytes de la memoria libre que ha sido reservada por el <code>malloc()</code>. Luego de usarlo, y si ya no es más necesaria su existencia, podemos devolver esa memoria al Heap para ser reutilizada. Esto se hace:</p>
+<p class="content-block">DespuÃ©s de la asignaciÃ³n, <code>p</code> apunta al primero de los 500 bytes de la memoria libre que ha sido reservada por el <code>malloc()</code>. Luego de usarlo, y si ya no es mÃ¡s necesaria su existencia, podemos devolver esa memoria al Heap para ser reutilizada. Esto se hace:</p>
 
 <pre>
 free(p);
 </pre>
 
-<p class="content-block">Eso sí, como el Heap no es infinito, siempre que se asigne memoria es necesario antes de usarla comprobar el valor devuelto por <code>malloc()</code> y así asegurarse que no es nulo. Un puntero nulo indicará un error en la asignación... p. ej. que no hay memoria suficiente. Si se utiliza un puntero nulo el programa fallará. Por lo tanto, siempre es conveniente hacer algo como:</p>
+<p class="content-block">Eso sÃ­, como el Heap no es infinito, siempre que se asigne memoria es necesario antes de usarla comprobar el valor devuelto por <code>malloc()</code> y asÃ­ asegurarse que no es nulo. Un puntero nulo indicarÃ¡ un error en la asignaciÃ³n... p. ej. que no hay memoria suficiente. Si se utiliza un puntero nulo el programa fallarÃ¡. Por lo tanto, siempre es conveniente hacer algo como:</p>
 
 <pre>
 if((p=malloc(100)==NULL) {
-    printf(“No hay memoria\n”);
+    printf(â€œNo hay memoria\nâ€);
     exit(1);
 }
 </pre>
 
-<p class="content-block">También existe una función muy importante en C llamada <strong><code>sizeof(tipo)</code></strong>. Esta función retorna la cantidad de bytes que ocupa una variable de tipo “tipo” lo que asegura un buen funcionamiento del programa sin importar el compilador lo que a su vez le da gran portabilidad al código amén del hecho de que así no tenemos que memorizar los tamaños de todos los tipos ni calcular con anterioridad el tamaño de un tipo de dato creado por nosotros (que se verá algunas clases más adelante). Supongamos que necesitamos espacio para guardar 10 variables de tipo <code>double</code>, podemos hacer:</p>
+<p class="content-block">TambiÃ©n existe una funciÃ³n muy importante en C llamada <strong><code>sizeof(tipo)</code></strong>. Esta funciÃ³n retorna la cantidad de bytes que ocupa una variable de tipo â€œtipoâ€ lo que asegura un buen funcionamiento del programa sin importar el compilador lo que a su vez le da gran portabilidad al cÃ³digo amÃ©n del hecho de que asÃ­ no tenemos que memorizar los tamaÃ±os de todos los tipos ni calcular con anterioridad el tamaÃ±o de un tipo de dato creado por nosotros (que se verÃ¡ algunas clases mÃ¡s adelante). Supongamos que necesitamos espacio para guardar 10 variables de tipo <code>double</code>, podemos hacer:</p>
 
 <pre>
 p = malloc(10*sizeof(double));
@@ -186,31 +193,31 @@ p = malloc(10*sizeof(double));
 
 <h3 class="content-block">Pila (stack).</h3>
 
-<p class="content-block">La Pila se caracteriza por ser una estructura de datos en la que el último elemento que se añade a la estructura es el primero en salir. Este modo de funcionamiento se conoce como política FILO (First In, Last Out) ó LIFO (Last In, First Out). En todo caso, el elemento que ocupa el extremo de la pila (ó su posición) se denomina <strong>tope</strong>.</p>
+<p class="content-block">La Pila se caracteriza por ser una estructura de datos en la que el Ãºltimo elemento que se aÃ±ade a la estructura es el primero en salir. Este modo de funcionamiento se conoce como polÃ­tica FILO (First In, Last Out) Ã³ LIFO (Last In, First Out). En todo caso, el elemento que ocupa el extremo de la pila (Ã³ su posiciÃ³n) se denomina <strong>tope</strong>.</p>
 
-<p class="content-block">Podemos hacernos una imagen más gráfica, pensando en una pila de bandejas en una pizzería ó pila de platos en un fregadero: en cualquiera de estos ejemplos, los elementos se retiran y se añaden por un mismo extremo. En una pila de platos podríamos intentar retirar uno de los intermedios con el consiguiente peligro de derrumbe. Sin embargo, en una estructura de datos de tipo pila, esto no es posible. El único elemento de la pila que podemos retirar es el situado en el “tope” de la misma, y si queremos retirar otro, será necesario previamente haber borrado todos los situados "por encima" de él.</p>
+<p class="content-block">Podemos hacernos una imagen mÃ¡s grÃ¡fica, pensando en una pila de bandejas en una pizzerÃ­a Ã³ pila de platos en un fregadero: en cualquiera de estos ejemplos, los elementos se retiran y se aÃ±aden por un mismo extremo. En una pila de platos podrÃ­amos intentar retirar uno de los intermedios con el consiguiente peligro de derrumbe. Sin embargo, en una estructura de datos de tipo pila, esto no es posible. El Ãºnico elemento de la pila que podemos retirar es el situado en el â€œtopeâ€ de la misma, y si queremos retirar otro, serÃ¡ necesario previamente haber borrado todos los situados "por encima" de Ã©l.</p>
 
-<p class="content-block">Sobre una pila podemos realizar dos operaciones básicas de manipulación:</p>
+<p class="content-block">Sobre una pila podemos realizar dos operaciones bÃ¡sicas de manipulaciÃ³n:</p>
 <ul>
-    <li><strong>Apilar</strong>: añade un elemento en la posición siguiente a la del tope actual.</li>
+    <li><strong>Apilar</strong>: aÃ±ade un elemento en la posiciÃ³n siguiente a la del tope actual.</li>
     <li><strong>Desapilar</strong>: elimina el elemento situado en el tope.</li>
 </ul>
 
 <h3 class="content-block">Cola (queue).</h3>
 
-<p class="content-block">El concepto de cola es ampliamente utilizado en la vida real. Cuando nos situamos ante la taquilla del cine para obtener nuestra entrada ó cuando esperamos nuestro turno en el comedor de la universidad (sin contar los “coleones”), solemos hacerlo en una cola. Ésto significa que formamos una fila en la que el primero que llega es el primero en obtener el servicio y salir de la misma (en un mundo ideal y perfectamente educado sin abusadores que se creen “más vivos” que los demás). Esta política de funcionamiento se denomina FIFO (First In First Out), es decir, el primer elemento en entrar es el primer elemento en salir.</p>
+<p class="content-block">El concepto de cola es ampliamente utilizado en la vida real. Cuando nos situamos ante la taquilla del cine para obtener nuestra entrada Ã³ cuando esperamos nuestro turno en el comedor de la universidad (sin contar los â€œcoleonesâ€), solemos hacerlo en una cola. Ã‰sto significa que formamos una fila en la que el primero que llega es el primero en obtener el servicio y salir de la misma (en un mundo ideal y perfectamente educado sin abusadores que se creen â€œmÃ¡s vivosâ€ que los demÃ¡s). Esta polÃ­tica de funcionamiento se denomina FIFO (First In First Out), es decir, el primer elemento en entrar es el primer elemento en salir.</p>
 
-<p class="content-block">Claro que en la vida real puede perfectamente ocurrir que alguien pretenda saltarse su turno en una cola, o incluso que abandone la misma antes de que le toque el turno. Sin embargo, en ambos casos se está incumpliendo la política de funcionamiento de la cola y, estrictamente hablando, ésta deja de serlo.</p>
+<p class="content-block">Claro que en la vida real puede perfectamente ocurrir que alguien pretenda saltarse su turno en una cola, o incluso que abandone la misma antes de que le toque el turno. Sin embargo, en ambos casos se estÃ¡ incumpliendo la polÃ­tica de funcionamiento de la cola y, estrictamente hablando, Ã©sta deja de serlo.</p>
 
 <h2 class="content-block">Punteros y Funciones.</h2>
 
-<p class="content-block">La relación entre los punteros y las funciones, puede verse en tres casos distintos, podemos pasarle a una función un puntero como argumento (por supuesto si su parámetro es un puntero del mismo tipo), pueden devolver un puntero de cualquier tipo (como ya hemos visto con <code>malloc()</code>) y es posible también apuntar a la dirección de la función, en otras palabras, al código en vez de a un dato.</p>
+<p class="content-block">La relaciÃ³n entre los punteros y las funciones, puede verse en tres casos distintos, podemos pasarle a una funciÃ³n un puntero como argumento (por supuesto si su parÃ¡metro es un puntero del mismo tipo), pueden devolver un puntero de cualquier tipo (como ya hemos visto con <code>malloc()</code>) y es posible tambiÃ©n apuntar a la direcciÃ³n de la funciÃ³n, en otras palabras, al cÃ³digo en vez de a un dato.</p>
 
-<h3 class="content-block">Punteros como parámetros de funciones.</h3>
+<h3 class="content-block">Punteros como parÃ¡metros de funciones.</h3>
 
-<p class="content-block">A menudo los punteros son pasados a las funciones como argumentos. Esto permite que datos de la porción de programa desde el que se llama a la función sean accedidos por la función, alterados dentro de ella y devueltos de forma alterada. Este uso de los punteros se conoce como paso de argumentos por dirección o por referencia (como vimos en funciones).</p>
+<p class="content-block">A menudo los punteros son pasados a las funciones como argumentos. Esto permite que datos de la porciÃ³n de programa desde el que se llama a la funciÃ³n sean accedidos por la funciÃ³n, alterados dentro de ella y devueltos de forma alterada. Este uso de los punteros se conoce como paso de argumentos por direcciÃ³n o por referencia (como vimos en funciones).</p>
 
-<p class="content-block">Cuando los punteros son usados como argumento de una función, es necesario tener cuidado con la declaración de los argumentos formales dentro de la función. Los argumentos formales que sean punteros deben ir precedidos por un asterisco. Esto ya lo vimos en funciones pero veamos otro ejemplo:</p>
+<p class="content-block">Cuando los punteros son usados como argumento de una funciÃ³n, es necesario tener cuidado con la declaraciÃ³n de los argumentos formales dentro de la funciÃ³n. Los argumentos formales que sean punteros deben ir precedidos por un asterisco. Esto ya lo vimos en funciones pero veamos otro ejemplo:</p>
 
 <pre>
 #include<stdio.h>
@@ -221,9 +228,9 @@ void f2(int *pu, int *pv);
 void main() { // Nota: main() sin tipo de retorno es obsoleto. Usar int main(void)
     int u=1,v=3;
     f1(u,v);
-    printf("después de la llamada a f1:  u=%i v=%i\n",u,v);
+    printf("despuÃ©s de la llamada a f1:  u=%i v=%i\n",u,v);
     f2(&u,&v);
-    printf("después de la llamada a f2:  u=%i v=%i\n",u,v);
+    printf("despuÃ©s de la llamada a f2:  u=%i v=%i\n",u,v);
 }
 
 void f1(int u, int v) {
@@ -242,17 +249,17 @@ void f2(int *pu, int *pv) {
 <p class="content-block">La salida del programa:</p>
 
 <pre>
-después de la llamada a f1:  u=1 v=3
-después de la llamada a f2:  u=0 v=0
+despuÃ©s de la llamada a f1:  u=1 v=3
+despuÃ©s de la llamada a f2:  u=0 v=0
 </pre>
 
-<p class="content-block">Ok, ahora, como vimos en arreglos, el nombre de un arreglo es un puntero al mismo y representa la dirección del primer elemento del arreglo. Por tanto, un nombre de arreglo se trata como un puntero cuando se pasa a una función y no hay que preceder el arreglo con el <code>&</code> dentro de la llamada a función (por eso dijimos en la clases de arreglos que la única forma de pasar un arreglo a una función es por referencia).</p>
+<p class="content-block">Ok, ahora, como vimos en arreglos, el nombre de un arreglo es un puntero al mismo y representa la direcciÃ³n del primer elemento del arreglo. Por tanto, un nombre de arreglo se trata como un puntero cuando se pasa a una funciÃ³n y no hay que preceder el arreglo con el <code>&</code> dentro de la llamada a funciÃ³n (por eso dijimos en la clases de arreglos que la Ãºnica forma de pasar un arreglo a una funciÃ³n es por referencia).</p>
 
-<p class="content-block"><strong>OJO:</strong> Hay que recordar que la función <code>scanf()</code> requiere que sus argumentos vayan precedidos por <code>&</code>, puesto que necesita la dirección de los elementos que van a ser leídos. Los <code>&</code> proporcionan un medio para acceder a las direcciones de variables ordinarias. Los <code>&</code> no son necesarios con nombres de arreglos ya que estos mismos representan direcciones.</p>
+<p class="content-block"><strong>OJO:</strong> Hay que recordar que la funciÃ³n <code>scanf()</code> requiere que sus argumentos vayan precedidos por <code>&</code>, puesto que necesita la direcciÃ³n de los elementos que van a ser leÃ­dos. Los <code>&</code> proporcionan un medio para acceder a las direcciones de variables ordinarias. Los <code>&</code> no son necesarios con nombres de arreglos ya que estos mismos representan direcciones.</p>
 
-<h3 class="content-block">Punteros como resultado de una función.</h3>
+<h3 class="content-block">Punteros como resultado de una funciÃ³n.</h3>
 
-<p class="content-block">Una función también puede devolver un puntero a la parte llamante del programa. Para hacer esto, la definición de la función y cualquier declaración de la función debe indicar que la función devolverá un puntero. Esto se realiza precediendo la función con un <code>*</code>. He aquí la parte de un código de programa que ilustra ésto:</p>
+<p class="content-block">Una funciÃ³n tambiÃ©n puede devolver un puntero a la parte llamante del programa. Para hacer esto, la definiciÃ³n de la funciÃ³n y cualquier declaraciÃ³n de la funciÃ³n debe indicar que la funciÃ³n devolverÃ¡ un puntero. Esto se realiza precediendo la funciÃ³n con un <code>*</code>. He aquÃ­ la parte de un cÃ³digo de programa que ilustra Ã©sto:</p>
 
 <pre>
 double *f1(double []); // Retorna un puntero a double.
@@ -260,7 +267,7 @@ double *f1(double []); // Retorna un puntero a double.
 void main() { // Nota: main() sin tipo de retorno es obsoleto. Usar int main(void)
     double z[10];
     double *pz;
-    pz = f1(z); // Le asigno al puntero pz el puntero retornado por la función f1.
+    pz = f1(z); // Le asigno al puntero pz el puntero retornado por la funciÃ³n f1.
 }
 
 double *f1(double z[]) {
@@ -270,16 +277,16 @@ double *f1(double z[]) {
 }
 </pre>
 
-<p class="content-block">Las funciones que retornan punteros son por lo general aquellas que modifican un argumento, que les ha sido pasado por dirección (por medio de un puntero), devolviendo un puntero a dicho argumento modificado, ó las que reservan lugar en el Heap para las variables dinámicas, retornando un puntero a dicho bloque de memoria (tal como vimos con <code>malloc()</code>).</p>
+<p class="content-block">Las funciones que retornan punteros son por lo general aquellas que modifican un argumento, que les ha sido pasado por direcciÃ³n (por medio de un puntero), devolviendo un puntero a dicho argumento modificado, Ã³ las que reservan lugar en el Heap para las variables dinÃ¡micas, retornando un puntero a dicho bloque de memoria (tal como vimos con <code>malloc()</code>).</p>
 
-<p class="content-block">Así podremos declarar funciones del tipo de:</p>
+<p class="content-block">AsÃ­ podremos declarar funciones del tipo de:</p>
 
 <pre>
 char *funcion1( char * var1 );
 double *funcion2(int i , double j , char *k );
 </pre>
 
-<p class="content-block">El retorno de las mismas puede inicializar punteros del mismo tipo al devuelto, ó distinto. Algunas funciones, tal como <code>malloc()</code>, definen su retorno como punteros a <code>void</code> (o sea, sin tipo predeterminado):</p>
+<p class="content-block">El retorno de las mismas puede inicializar punteros del mismo tipo al devuelto, Ã³ distinto. Algunas funciones, tal como <code>malloc()</code>, definen su retorno como punteros a <code>void</code> (o sea, sin tipo predeterminado):</p>
 
 <pre>
 void *malloc( int tamano );
@@ -291,15 +298,15 @@ void *malloc( int tamano );
 p = (double *)malloc( 64 );
 </pre>
 
-<p class="content-block">en el caso de que requiramos operaciones de “aritmética de punteros” con ella.</p>
+<p class="content-block">en el caso de que requiramos operaciones de â€œaritmÃ©tica de punterosâ€ con ella.</p>
 
 <h3 class="content-block">Punteros a funciones.</h3>
 
-<p class="content-block">Esta es una característica algo confusa pero muy útil de C. Incluso aunque una función no es una variable, tiene una posición física en memoria que puede asignarse a un puntero. La dirección es el punto de entrada de la función. Por ello, se puede usar un puntero a una función como argumento en la llamada de otras funciones.</p>
+<p class="content-block">Esta es una caracterÃ­stica algo confusa pero muy Ãºtil de C. Incluso aunque una funciÃ³n no es una variable, tiene una posiciÃ³n fÃ­sica en memoria que puede asignarse a un puntero. La direcciÃ³n es el punto de entrada de la funciÃ³n. Por ello, se puede usar un puntero a una funciÃ³n como argumento en la llamada de otras funciones.</p>
 
-<p class="content-block">Para entender como funcionan los punteros a funciones, se tiene que entender un poco cómo se compila y se llama a una función en C. Cuando se compila cada función, el código fuente se transforma en código objeto y se establece un punto de entrada. Cuando se llama a la función mientras se ejecuta el programa lo que se hace es una llamada en lenguaje máquina a ese punto de entrada. Por lo tanto, un puntero a una función contiene realmente la dirección de memoria del punto de entrada a la función. Es como hacer en Assembler un JUMP a la dirección de la función.</p>
+<p class="content-block">Para entender como funcionan los punteros a funciones, se tiene que entender un poco cÃ³mo se compila y se llama a una funciÃ³n en C. Cuando se compila cada funciÃ³n, el cÃ³digo fuente se transforma en cÃ³digo objeto y se establece un punto de entrada. Cuando se llama a la funciÃ³n mientras se ejecuta el programa lo que se hace es una llamada en lenguaje mÃ¡quina a ese punto de entrada. Por lo tanto, un puntero a una funciÃ³n contiene realmente la direcciÃ³n de memoria del punto de entrada a la funciÃ³n. Es como hacer en Assembler un JUMP a la direcciÃ³n de la funciÃ³n.</p>
 
-<p class="content-block">La dirección de una función se obtiene de forma análoga a las direcciones de los arreglos. Esto es que la dirección de una función es el nombre de la función SIN LOS PARENTESIS ni argumentos. Veamos un ejemplo:</p>
+<p class="content-block">La direcciÃ³n de una funciÃ³n se obtiene de forma anÃ¡loga a las direcciones de los arreglos. Esto es que la direcciÃ³n de una funciÃ³n es el nombre de la funciÃ³n SIN LOS PARENTESIS ni argumentos. Veamos un ejemplo:</p>
 
 <pre>
 #include <stdio.h> 
@@ -319,7 +326,7 @@ void main() { // Nota: main() sin tipo de retorno es obsoleto. Usar int main(voi
 }
 
 void printMensaje(float dato) {
-    printf(" Esta es la función printMensaje\n");
+    printf(" Esta es la funciÃ³n printMensaje\n");
 }
 
 void printNumero(float dato) {
@@ -327,24 +334,24 @@ void printNumero(float dato) {
 }
 </pre>
 
-<p class="content-block">La salida del programa será:</p>
+<p class="content-block">La salida del programa serÃ¡:</p>
 
 <pre>
-Esta es la función printMensaje
-Esta es la función printMensaje
+Esta es la funciÃ³n printMensaje
+Esta es la funciÃ³n printMensaje
 Este es el dato: 3.14159
 Este es el dato: 3.14159
 </pre>
 
-<p class="content-block">Ok, hemos declarado dos funciones (<code>printMensaje</code> y <code>printNumero</code>) y después “<code>funcPuntero</code>” que es un puntero a una función que recibe un parámetro real y no devuelve nada (<code>void</code>). Las dos funciones declaradas anteriormente se ajustan precisamente a este perfil, y por tanto pueden ser llamadas por este puntero.</p>
+<p class="content-block">Ok, hemos declarado dos funciones (<code>printMensaje</code> y <code>printNumero</code>) y despuÃ©s â€œ<code>funcPuntero</code>â€ que es un puntero a una funciÃ³n que recibe un parÃ¡metro real y no devuelve nada (<code>void</code>). Las dos funciones declaradas anteriormente se ajustan precisamente a este perfil, y por tanto pueden ser llamadas por este puntero.</p>
 
-<p class="content-block">En la función principal, llamamos a la función <code>printMensaje</code> con el parámetro <code>pi</code>, y en la línea siguiente asignamos al puntero a función <code>funcPuntero</code> el valor de <code>printMensaje</code> y utilizamos el puntero para llamar a la misma función de nuevo. Por tanto, las dos llamadas a la función <code>printMensaje</code> son idénticas gracias a la utilización del puntero <code>funcPuntero</code>.</p>
+<p class="content-block">En la funciÃ³n principal, llamamos a la funciÃ³n <code>printMensaje</code> con el parÃ¡metro <code>pi</code>, y en la lÃ­nea siguiente asignamos al puntero a funciÃ³n <code>funcPuntero</code> el valor de <code>printMensaje</code> y utilizamos el puntero para llamar a la misma funciÃ³n de nuevo. Por tanto, las dos llamadas a la funciÃ³n <code>printMensaje</code> son idÃ©nticas gracias a la utilizaciÃ³n del puntero <code>funcPuntero</code>.</p>
 
-<p class="content-block">Dado que hemos asignado el nombre de una función a un puntero a función, y el compilador no da error, el nombre de una función debe ser un puntero a una función. Esto es exactamente lo que sucede. Un nombre de una función es un puntero a esa función, pero es un puntero constante que no puede ser cambiado. Sucede lo mismo con los vectores: el nombre de un vector es un puntero constante al primer elemento del vector.</p>
+<p class="content-block">Dado que hemos asignado el nombre de una funciÃ³n a un puntero a funciÃ³n, y el compilador no da error, el nombre de una funciÃ³n debe ser un puntero a una funciÃ³n. Esto es exactamente lo que sucede. Un nombre de una funciÃ³n es un puntero a esa funciÃ³n, pero es un puntero constante que no puede ser cambiado. Sucede lo mismo con los vectores: el nombre de un vector es un puntero constante al primer elemento del vector.</p>
 
-<p class="content-block">Ya que el nombre de una función es un puntero a esa función, podemos asignar el nombre de una función a un puntero constante, y usar el puntero para llamar a la función. Pero el valor devuelto, así como el número y tipo de parámetros deben ser idénticos en el caso de que sean declarados. Muchos compiladores de C y C++ no avisan de las diferencias entre las listas de parámetros cuando se hacen las asignaciones. Esto se debe a que las asignaciones se hacen en tiempo de ejecución, cuando la información de este tipo no está disponible para el sistema.</p>
+<p class="content-block">Ya que el nombre de una funciÃ³n es un puntero a esa funciÃ³n, podemos asignar el nombre de una funciÃ³n a un puntero constante, y usar el puntero para llamar a la funciÃ³n. Pero el valor devuelto, asÃ­ como el nÃºmero y tipo de parÃ¡metros deben ser idÃ©nticos en el caso de que sean declarados. Muchos compiladores de C y C++ no avisan de las diferencias entre las listas de parÃ¡metros cuando se hacen las asignaciones. Esto se debe a que las asignaciones se hacen en tiempo de ejecuciÃ³n, cuando la informaciÃ³n de este tipo no estÃ¡ disponible para el sistema.</p>
 
-<p class="content-block">Si en el ejemplo anterior añadimos una función que tiene como parámetro un entero e intentamos llamarla con el puntero a función <code>funcPuntero</code>, el compilador lanzará el siguiente mensaje de error:</p>
+<p class="content-block">Si en el ejemplo anterior aÃ±adimos una funciÃ³n que tiene como parÃ¡metro un entero e intentamos llamarla con el puntero a funciÃ³n <code>funcPuntero</code>, el compilador lanzarÃ¡ el siguiente mensaje de error:</p>
 
 <pre>
 error: In this statement, the referenced type of the pointer value
@@ -365,34 +372,34 @@ int *func(int arg);
 int (*func)(int arg);
 </pre>
 
-<p class="content-block"><em>La primera es el prototipo de una función llamada “func” que recibe un entero como argumento y retorna un puntero a entero como resultado. En cambio la segunda declara “func” como un puntero a una función que recibe un argumento entero y retorna un entero, o sea, NO ES UN PROTOTIPO.</em></p>
+<p class="content-block"><em>La primera es el prototipo de una funciÃ³n llamada â€œfuncâ€ que recibe un entero como argumento y retorna un puntero a entero como resultado. En cambio la segunda declara â€œfuncâ€ como un puntero a una funciÃ³n que recibe un argumento entero y retorna un entero, o sea, NO ES UN PROTOTIPO.</em></p>
 
-<p class="content-block"><strong>OTRO TIP:</strong> Los tipos de argumentos a ser recibidos por un puntero a función no tienen que estar necesariamente especificados. Lo importante es que si lo están, todas las llamadas deben coincidir con ese tipo. Veamos un ejemplo en el que el tipo no está especificado:</p>
+<p class="content-block"><strong>OTRO TIP:</strong> Los tipos de argumentos a ser recibidos por un puntero a funciÃ³n no tienen que estar necesariamente especificados. Lo importante es que si lo estÃ¡n, todas las llamadas deben coincidir con ese tipo. Veamos un ejemplo en el que el tipo no estÃ¡ especificado:</p>
 
 <pre>
 #include<stdio.h>
-#include<conio.h> // Nota: conio.h es no estándar.
+#include<conio.h> // Nota: conio.h es no estÃ¡ndar.
 
 int suma(int a, int b);
 int resta(int a, int b);
 int cuadrado(int a);
 
 void main() { // Nota: main() sin tipo de retorno es obsoleto. Usar int main(void)
-    // Declaramos un puntero a funciones con dos parámetros
+    // Declaramos un puntero a funciones con dos parÃ¡metros
     // enteros que devuelven un entero
     // int (*funcion)(int,int);
-    // Pero también podemos definirlo sin tipos de argumentos y
-    // ambos darán el mismo resultado.
+    // Pero tambiÃ©n podemos definirlo sin tipos de argumentos y
+    // ambos darÃ¡n el mismo resultado.
     int (*funcion)();
     int x;
-    funcion = suma; // ‘funcion’ apunta a ‘suma’
+    funcion = suma; // â€˜funcionâ€™ apunta a â€˜sumaâ€™
     x = funcion(4,3); // x=suma(4,3)
     printf("Suma de 4 y 3: %i\n",x);
-    funcion = resta; // ‘funcion’ apunta a ‘resta’
+    funcion = resta; // â€˜funcionâ€™ apunta a â€˜restaâ€™
     x = funcion(4,3); // x=resta(4,3)
     printf("Resta de 4 y 3: %i\n",x);
-    funcion = cuadrado; // ‘funcion’ apunta a 'cuadrado'
-    x = funcion(4); // x=cuadrado(4). Sí, sólo es un argumento.
+    funcion = cuadrado; // â€˜funcionâ€™ apunta a 'cuadrado'
+    x = funcion(4); // x=cuadrado(4). SÃ­, sÃ³lo es un argumento.
     printf("Cuadrado de 4: %i\n",x);
 }
 
@@ -409,5 +416,12 @@ int cuadrado (int a) {
 }
 </pre>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

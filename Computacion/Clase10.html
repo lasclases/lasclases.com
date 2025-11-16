@@ -1,17 +1,24 @@
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE HTML>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Clase 10: Arreglos (Arrays)</title>
 	<meta name="author" content="Tony Rodriguez">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 <h1 class="content-block">Arreglos (Arrays).</h1>
 
-<p class="content-block">Muchas aplicaciones requieren el procesado de múltiples datos que tienen características comunes. En tales situaciones es a menudo conveniente colocar los datos en un arreglo ó “array”, donde todos comparten el mismo nombre. Los datos individuales pueden ser caracteres, enteros, números en coma flotante, etc. Pero todos tienen que ser del mismo tipo y con el mismo tipo de almacenamiento.</p>
+<p class="content-block">Muchas aplicaciones requieren el procesado de mÃºltiples datos que tienen caracterÃ­sticas comunes. En tales situaciones es a menudo conveniente colocar los datos en un arreglo Ã³ â€œarrayâ€, donde todos comparten el mismo nombre. Los datos individuales pueden ser caracteres, enteros, nÃºmeros en coma flotante, etc. Pero todos tienen que ser del mismo tipo y con el mismo tipo de almacenamiento.</p>
 
-<p class="content-block">Cada elemento del arreglo es referido especificando el nombre del arreglo seguido por uno o más índices, con cada índice encerrado entre corchetes. Cada índice debe ser expresado como un entero no negativo: una constante entera, una variable entera o una expresión entera más compleja.</p>
+<p class="content-block">Cada elemento del arreglo es referido especificando el nombre del arreglo seguido por uno o mÃ¡s Ã­ndices, con cada Ã­ndice encerrado entre corchetes. Cada Ã­ndice debe ser expresado como un entero no negativo: una constante entera, una variable entera o una expresiÃ³n entera mÃ¡s compleja.</p>
 
 <p class="content-block">En un arreglo x de n elementos los elementos del arreglo son:</p>
 
@@ -19,9 +26,9 @@
 x[0], x[1],...,x[n-1].
 </pre>
 
-<p class="content-block">El número de índices determina la dimensionalidad del arreglo.</p>
+<p class="content-block">El nÃºmero de Ã­ndices determina la dimensionalidad del arreglo.</p>
 
-<p class="content-block">En matemáticas se usa la siguiente notación para representar vectores y matrices:</p>
+<p class="content-block">En matemÃ¡ticas se usa la siguiente notaciÃ³n para representar vectores y matrices:</p>
 
 <p class="content-block">Vector. Matriz</p>
 
@@ -30,29 +37,29 @@ x[0], x[1],...,x[n-1].
     <img src="Clase10_html_m18e73c57.gif" alt="Matrix representation" width="183" height="121">
 </p>
 
-<p class="content-block">Donde cada componente se denota como <em>x<sub>i</sub></em> en el caso de vectores unidimensionales y <em>a<sub>ij</sub></em> en el caso de matrices. A los símbolos <em>i</em> y <em>j</em> se los conoce como <em>índices</em> y dicen la posición de la componente dentro del vector-matriz.</p>
+<p class="content-block">Donde cada componente se denota como <em>x<sub>i</sub></em> en el caso de vectores unidimensionales y <em>a<sub>ij</sub></em> en el caso de matrices. A los sÃ­mbolos <em>i</em> y <em>j</em> se los conoce como <em>Ã­ndices</em> y dicen la posiciÃ³n de la componente dentro del vector-matriz.</p>
 
-<p class="content-block">La dimensión de un vector es el número de sus componentes (<em>n</em>).</p>
-<p class="content-block">El orden de una matriz es el número de sus filas y columnas (<em>m</em> x <em>n</em>).</p>
+<p class="content-block">La dimensiÃ³n de un vector es el nÃºmero de sus componentes (<em>n</em>).</p>
+<p class="content-block">El orden de una matriz es el nÃºmero de sus filas y columnas (<em>m</em> x <em>n</em>).</p>
 
-<h2 class="content-block">Definición de un arreglo.</h2>
+<h2 class="content-block">DefiniciÃ³n de un arreglo.</h2>
 
-<p class="content-block">Al definirse, cada arreglo debe acompañarse de una especificación de tamaño (número de elementos). En términos generales, un arreglo unidimensional puede expresarse como:</p>
+<p class="content-block">Al definirse, cada arreglo debe acompaÃ±arse de una especificaciÃ³n de tamaÃ±o (nÃºmero de elementos). En tÃ©rminos generales, un arreglo unidimensional puede expresarse como:</p>
 
 <pre>
-tipo_vector nombre_vector[tamaño_vector];
-tipo_dato nombre_arreglo[expresión_entera_positiva];
+tipo_vector nombre_vector[tamaÃ±o_vector];
+tipo_dato nombre_arreglo[expresiÃ³n_entera_positiva];
 </pre>
 
-<p class="content-block">donde <code>tamaño_vector</code> (que debe ser una expresión entera positiva) indica el número de elementos del arreglo. Ojo que para hacer referencia a estos elementos se debe tomar en cuenta que el primer elemento es el número cero. Veamos unos ejemplos en los que se realiza asignaciones a elementos de un vector:</p>
+<p class="content-block">donde <code>tamaÃ±o_vector</code> (que debe ser una expresiÃ³n entera positiva) indica el nÃºmero de elementos del arreglo. Ojo que para hacer referencia a estos elementos se debe tomar en cuenta que el primer elemento es el nÃºmero cero. Veamos unos ejemplos en los que se realiza asignaciones a elementos de un vector:</p>
 
 <pre>
 int i;
 int vector[3];	// Define un arreglo unidimensional de 3 elementos
 i=2;
 vector[i]=1;	// Esto se puede hacer
-vector[0]=2;	// Esto también
-vector[3]=5;	// Obviamente ésto NO ya que no existe. Sólo 0, 1 y 2 (3 elementos)
+vector[0]=2;	// Esto tambiÃ©n
+vector[3]=5;	// Obviamente Ã©sto NO ya que no existe. SÃ³lo 0, 1 y 2 (3 elementos)
 </pre>
 
 <p class="content-block">y unos ejemplos de lectura:</p>
@@ -65,37 +72,37 @@ vector[i-1]=1;
 vector[vector[i]]=0;
 </pre>
 
-<p class="content-block">Las definiciones de arreglos pueden incluir, si se desea, la asignación de valores iniciales. Los valores iniciales deben aparecer en el orden en que serán asignados a los elementos individuales del arreglo, encerrados entre llaves y separados por comas. La forma general es:</p>
+<p class="content-block">Las definiciones de arreglos pueden incluir, si se desea, la asignaciÃ³n de valores iniciales. Los valores iniciales deben aparecer en el orden en que serÃ¡n asignados a los elementos individuales del arreglo, encerrados entre llaves y separados por comas. La forma general es:</p>
 
 <pre>
-tipo_dato nombre_arreglo[expresión] = {valor1,valor2,...,valorn};
+tipo_dato nombre_arreglo[expresiÃ³n] = {valor1,valor2,...,valorn};
 </pre>
 
-<p class="content-block">La presencia de la expresión, que indica el número de elementos del arreglo, es opcional cuando los valores iniciales están presentes.</p>
+<p class="content-block">La presencia de la expresiÃ³n, que indica el nÃºmero de elementos del arreglo, es opcional cuando los valores iniciales estÃ¡n presentes.</p>
 
-<p class="content-block"><strong>OJO, MUY IMPORTANTE:</strong> Todos los elementos del arreglo que no tienen asignados valores iniciales explícitos serán puestos automáticamente a cero. Por lo tanto si se desea asignar cero a todos los elementos de un arreglo, se podría tan solo declarar cero como el primer valor y el resto se hará de forma automática. P. ej.:</p>
+<p class="content-block"><strong>OJO, MUY IMPORTANTE:</strong> Todos los elementos del arreglo que no tienen asignados valores iniciales explÃ­citos serÃ¡n puestos automÃ¡ticamente a cero. Por lo tanto si se desea asignar cero a todos los elementos de un arreglo, se podrÃ­a tan solo declarar cero como el primer valor y el resto se harÃ¡ de forma automÃ¡tica. P. ej.:</p>
 
 <pre>
 int a[40]={0};
 </pre>
 
-<p class="content-block">asignará cero a los elementos entre el cero y el treinta y nueve del arreglo. También aplica para arreglos multidimensionales.</p>
+<p class="content-block">asignarÃ¡ cero a los elementos entre el cero y el treinta y nueve del arreglo. TambiÃ©n aplica para arreglos multidimensionales.</p>
 
-<p class="content-block">Ojo, esto no quiere decir que si se inicializa el primer elemento con uno el resto también lo será. NO. El primero será uno y el resto será cero.</p>
+<p class="content-block">Ojo, esto no quiere decir que si se inicializa el primer elemento con uno el resto tambiÃ©n lo serÃ¡. NO. El primero serÃ¡ uno y el resto serÃ¡ cero.</p>
 
 <h2 class="content-block">Nota importante acerca del procesamiento de un arreglo.</h2>
 
-<p class="content-block">En C no se permiten operaciones que impliquen arreglos completos. Así, si a y b son dos arreglos similares (mismo tipo de datos, misma dimensionalidad y mismo tamaño), las operaciones de asignación, comparación, etc., deben realizarse elemento por elemento. Para este fin también existe un grupo de funciones poderosas definidas dentro del archivo de cabecera “<code>string.h</code>” de las cuales hablaremos más adelante.</p>
+<p class="content-block">En C no se permiten operaciones que impliquen arreglos completos. AsÃ­, si a y b son dos arreglos similares (mismo tipo de datos, misma dimensionalidad y mismo tamaÃ±o), las operaciones de asignaciÃ³n, comparaciÃ³n, etc., deben realizarse elemento por elemento. Para este fin tambiÃ©n existe un grupo de funciones poderosas definidas dentro del archivo de cabecera â€œ<code>string.h</code>â€ de las cuales hablaremos mÃ¡s adelante.</p>
 
 <h2 class="content-block">Arreglos multidimensionales.</h2>
 
-<p class="content-block">Los arreglos multidimensionales son definidos prácticamente de la misma manera que los arreglos unidimensionales, excepto que se requiere un par de corchetes para cada índice. En general:</p>
+<p class="content-block">Los arreglos multidimensionales son definidos prÃ¡cticamente de la misma manera que los arreglos unidimensionales, excepto que se requiere un par de corchetes para cada Ã­ndice. En general:</p>
 
 <pre>
 tipo_matriz nombre_matriz[n_filas][n_columnas];
 </pre>
 
-<p class="content-block">ó incluso de más dimensiones:</p>
+<p class="content-block">Ã³ incluso de mÃ¡s dimensiones:</p>
 
 <pre>
 tipo_dato nombre_arreglo [indice_1][indice_2]...[indice_n];
@@ -111,10 +118,10 @@ j=2;
 Matriz[1][0]=2;	// Coorecto.
 Matriz[0][j]=k;	// Bien.
 Matriz[i][j]=50;	// Bien
-Matriz[j][k]=100;	// No señor, no está permitido.
+Matriz[j][k]=100;	// No seÃ±or, no estÃ¡ permitido.
 </pre>
 
-<p class="content-block">Y unos ejemplos de lectura serían:</p>
+<p class="content-block">Y unos ejemplos de lectura serÃ­an:</p>
 
 <pre>
 k=Matriz[i][j];
@@ -124,7 +131,7 @@ j=Matriz[5][j-1];
 k=Matriz[vector[i]][0];
 </pre>
 
-<p class="content-block">Los arreglos multidimensionales también puden ser inicializados al momento de su declaración. Un ejemplo específico con inicialización para un tipo bidimensional sería algo como:</p>
+<p class="content-block">Los arreglos multidimensionales tambiÃ©n puden ser inicializados al momento de su declaraciÃ³n. Un ejemplo especÃ­fico con inicializaciÃ³n para un tipo bidimensional serÃ­a algo como:</p>
 
 <pre>
 tipo_matriz nombre_matriz[][2]={
@@ -133,83 +140,83 @@ tipo_matriz nombre_matriz[][2]={
 };
 </pre>
 
-<p class="content-block">aunque las llaves internas no son necesarias y sólo se usan para facilitar la lectura del arreglo por parte del programador. Lo que si es absolutamente necesario es que en la definición del arreglo se incluya al menos uno de los índices (ésto si es de dos dimensiones. Lo importante es que sólo puede faltar un solo índice como máximo y éste debe ser el primero). Ésto es porque el compilador necesita saber como serán organizados los datos. Si no se coloca uno de los índices entonces sólo se sabría que es un arreglo que contiene 4 elementos lo cual podría ser un arreglo de 4 filas y 1 columna, 2 filas y 2 columnas ó 1 fila y 4 columnas.</p>
+<p class="content-block">aunque las llaves internas no son necesarias y sÃ³lo se usan para facilitar la lectura del arreglo por parte del programador. Lo que si es absolutamente necesario es que en la definiciÃ³n del arreglo se incluya al menos uno de los Ã­ndices (Ã©sto si es de dos dimensiones. Lo importante es que sÃ³lo puede faltar un solo Ã­ndice como mÃ¡ximo y Ã©ste debe ser el primero). Ã‰sto es porque el compilador necesita saber como serÃ¡n organizados los datos. Si no se coloca uno de los Ã­ndices entonces sÃ³lo se sabrÃ­a que es un arreglo que contiene 4 elementos lo cual podrÃ­a ser un arreglo de 4 filas y 1 columna, 2 filas y 2 columnas Ã³ 1 fila y 4 columnas.</p>
 
-<p class="content-block">Los arreglos multidimensionales se procesan de la misma manera que los arreglos unidimensionales, sobre la base de elemento a elemento. Sin embargo, se requiere algún cuidado cuando se pasan arreglos multidimensionales a una función. En particular, las declaraciones de argumentos formales dentro de la definición de función deben incluir especificaciones explícitas de tamaño en todos los índices excepto en el primero (análogo a lo dicho en el párrafo anterior). El paso de arreglos a funciones será nuestro próximo punto.</p>
+<p class="content-block">Los arreglos multidimensionales se procesan de la misma manera que los arreglos unidimensionales, sobre la base de elemento a elemento. Sin embargo, se requiere algÃºn cuidado cuando se pasan arreglos multidimensionales a una funciÃ³n. En particular, las declaraciones de argumentos formales dentro de la definiciÃ³n de funciÃ³n deben incluir especificaciones explÃ­citas de tamaÃ±o en todos los Ã­ndices excepto en el primero (anÃ¡logo a lo dicho en el pÃ¡rrafo anterior). El paso de arreglos a funciones serÃ¡ nuestro prÃ³ximo punto.</p>
 
 <h2 class="content-block">Paso de arreglos a funciones.</h2>
 
-<p class="content-block">A diferencia de los tipos básicos, el contenido de los vectores y matrices siempre es pasado por referencia. (Ver “llamada por referencia” en funciones).</p>
+<p class="content-block">A diferencia de los tipos bÃ¡sicos, el contenido de los vectores y matrices siempre es pasado por referencia. (Ver â€œllamada por referenciaâ€ en funciones).</p>
 
-<p class="content-block">El nombre de un arreglo se puede usar como argumento de una función, permitiendo así que el arreglo completo sea pasado a la función. Para pasar un arreglo a una función, el nombre del arreglo debe aparecer sólo, sin corchetes o índices, como un argumento actual dentro de la llamada a la función. El correspondiente argumento formal se escribe de la misma manera, pero debe ser declarado como un arreglo dentro de la declaración de argumentos formales. Cuando se declara un arreglo unidimensional como un argumento formal, el arreglo se escribe con un par de corchetes vacíos.</p>
+<p class="content-block">El nombre de un arreglo se puede usar como argumento de una funciÃ³n, permitiendo asÃ­ que el arreglo completo sea pasado a la funciÃ³n. Para pasar un arreglo a una funciÃ³n, el nombre del arreglo debe aparecer sÃ³lo, sin corchetes o Ã­ndices, como un argumento actual dentro de la llamada a la funciÃ³n. El correspondiente argumento formal se escribe de la misma manera, pero debe ser declarado como un arreglo dentro de la declaraciÃ³n de argumentos formales. Cuando se declara un arreglo unidimensional como un argumento formal, el arreglo se escribe con un par de corchetes vacÃ­os.</p>
 
-<p class="content-block">Hemos visto que los argumentos son pasados a la función por valor cuando los argumentos son variables ordinarias. Sin embargo, cuando se pasa un arreglo a una función, los valores de los elementos del arreglo no son pasados a la función. En vez de ésto, el nombre del arreglo se interpreta como la dirección del primer elemento del arreglo. Esta dirección se asigna al correspondiente argumento formal cuando se llama a la función. El argumento formal se convierte por tanto en un puntero al primer elemento del arreglo (más sobre esto cuando hablemos de punteros). Como ya sabemos, los argumentos pasados de esta forma se dicen que son pasados por referencia en vez de por valor. Por tanto, si un elemento del arreglo es alterado dentro de la función, esta alteración será reconocida en todo el ámbito de definición del arreglo. Veamos algunos ejemplos:</p>
+<p class="content-block">Hemos visto que los argumentos son pasados a la funciÃ³n por valor cuando los argumentos son variables ordinarias. Sin embargo, cuando se pasa un arreglo a una funciÃ³n, los valores de los elementos del arreglo no son pasados a la funciÃ³n. En vez de Ã©sto, el nombre del arreglo se interpreta como la direcciÃ³n del primer elemento del arreglo. Esta direcciÃ³n se asigna al correspondiente argumento formal cuando se llama a la funciÃ³n. El argumento formal se convierte por tanto en un puntero al primer elemento del arreglo (mÃ¡s sobre esto cuando hablemos de punteros). Como ya sabemos, los argumentos pasados de esta forma se dicen que son pasados por referencia en vez de por valor. Por tanto, si un elemento del arreglo es alterado dentro de la funciÃ³n, esta alteraciÃ³n serÃ¡ reconocida en todo el Ã¡mbito de definiciÃ³n del arreglo. Veamos algunos ejemplos:</p>
 
 <pre>
-void funcionMat(int M[2][2]); // Declara una función que recibira una matriz de 2x2.
+void funcionMat(int M[2][2]); // Declara una funciÃ³n que recibira una matriz de 2x2.
 
 void main()
 {
     int Matriz[2][2];	// Declara una matriz de 2x2 elementos
     Matriz[0][1]=1;		// Inicializa el elemento (1,2) a 1
-    funcionMat(Matriz);	// llama a la función y le envia la dirección de Matriz.
+    funcionMat(Matriz);	// llama a la funciÃ³n y le envia la direcciÃ³n de Matriz.
     // OJO en como se le envia (sin corchetes). Esto se
-    // traduce en “la dirección del primer elemento de Matriz”.
-    printf(“%d”, Matriz[0][1]); // Imprime el elemento que ya no contiene 1 porque...
+    // traduce en â€œla direcciÃ³n del primer elemento de Matrizâ€.
+    printf(â€œ%dâ€, Matriz[0][1]); // Imprime el elemento que ya no contiene 1 porque...
 }
 void funcionMat(int M[2][2])
 {
-    M[0][1]*=-2;	// ésto altera el valor del arreglo original. Recordar que es por referencia.
+    M[0][1]*=-2;	// Ã©sto altera el valor del arreglo original. Recordar que es por referencia.
 }
 </pre>
 
-<p class="content-block">Existen tres formas de pasarle un arreglo a una función. Éstas son:</p>
+<p class="content-block">Existen tres formas de pasarle un arreglo a una funciÃ³n. Ã‰stas son:</p>
 
 <pre>
 void funcion(int[10]);
 </pre>
 
-<p class="content-block">que es la clásica que hace uso de un arreglo delimitado. Esta también:</p>
+<p class="content-block">que es la clÃ¡sica que hace uso de un arreglo delimitado. Esta tambiÃ©n:</p>
 
 <pre>
 void funcion(int []);
 </pre>
 
-<p class="content-block">que es la versión con un array no delimitado. Y por último, como el paso de los arreglos a una función se hace por referencia, también podemos declarar una función que reciba un arreglo a través de los punteros. Por ejemplo para un arreglo unidimensional de enteros, basta con definir que la función recibirá un puntero a entero. Veremos un ejemplo aunque ésto será profundizado más adelante. El prototipo de una función que recibirá un arreglo unidimensional de enteros podría definirse:</p>
+<p class="content-block">que es la versiÃ³n con un array no delimitado. Y por Ãºltimo, como el paso de los arreglos a una funciÃ³n se hace por referencia, tambiÃ©n podemos declarar una funciÃ³n que reciba un arreglo a travÃ©s de los punteros. Por ejemplo para un arreglo unidimensional de enteros, basta con definir que la funciÃ³n recibirÃ¡ un puntero a entero. Veremos un ejemplo aunque Ã©sto serÃ¡ profundizado mÃ¡s adelante. El prototipo de una funciÃ³n que recibirÃ¡ un arreglo unidimensional de enteros podrÃ­a definirse:</p>
 
 <pre>
 void funcion(int *x);
 </pre>
 
-<p class="content-block">Todo lo anterior hace lo mismo. Definir que la función recibirá una dirección de memoria que apunta a un entero. De hecho, como <strong>C no comprueba los límites de un arreglo</strong>, en lo que a la función se refiere, realmente no importa la longitud del arreglo. El compilador al leer:</p>
+<p class="content-block">Todo lo anterior hace lo mismo. Definir que la funciÃ³n recibirÃ¡ una direcciÃ³n de memoria que apunta a un entero. De hecho, como <strong>C no comprueba los lÃ­mites de un arreglo</strong>, en lo que a la funciÃ³n se refiere, realmente no importa la longitud del arreglo. El compilador al leer:</p>
 
 <pre>
 void funcion(int[32]);
 </pre>
 
-<p class="content-block">hará exactamente lo mismo ya que el compilador instruye a <code>funcion</code> para recibir un puntero; realmente no crea un arreglo de 32 elementos.</p>
+<p class="content-block">harÃ¡ exactamente lo mismo ya que el compilador instruye a <code>funcion</code> para recibir un puntero; realmente no crea un arreglo de 32 elementos.</p>
 
 <h2 class="content-block">Cadenas de caracteres.</h2>
 
-<p class="content-block">En realidad en Lenguaje C no existe una variable de tipo “string” como tal. En C, lo que es conocido en otros lenguajes como strings son tan solo un tipo especial de arreglos. Específicamente son arreglos de caracteres.</p>
+<p class="content-block">En realidad en Lenguaje C no existe una variable de tipo â€œstringâ€ como tal. En C, lo que es conocido en otros lenguajes como strings son tan solo un tipo especial de arreglos. EspecÃ­ficamente son arreglos de caracteres.</p>
 
-<p class="content-block">Una cadena de caracteres se representa por un arreglo unidimensional de caracteres. Cada carácter de la cadena se almacena en un elemento del arreglo. De hecho ésta es la forma más usada de arreglos unidimensionales.</p>
+<p class="content-block">Una cadena de caracteres se representa por un arreglo unidimensional de caracteres. Cada carÃ¡cter de la cadena se almacena en un elemento del arreglo. De hecho Ã©sta es la forma mÃ¡s usada de arreglos unidimensionales.</p>
 
-<p class="content-block"><strong>OJO. MUY IMPORTANTE:</strong> En la las operaciones con arreglos de caracteres, siempre se guarda automáticamente como último elemento el carácter nulo: '<code>\0</code>'. Esto indicará siempre el fin de la cadena. Así que para declarar un arreglo de caracteres es necesario que sean un carácter más que la cadena más larga que pueda contener. Ejemplo:</p>
+<p class="content-block"><strong>OJO. MUY IMPORTANTE:</strong> En la las operaciones con arreglos de caracteres, siempre se guarda automÃ¡ticamente como Ãºltimo elemento el carÃ¡cter nulo: '<code>\0</code>'. Esto indicarÃ¡ siempre el fin de la cadena. AsÃ­ que para declarar un arreglo de caracteres es necesario que sean un carÃ¡cter mÃ¡s que la cadena mÃ¡s larga que pueda contener. Ejemplo:</p>
 
 <pre>
 char array1[10]="987654321";
 </pre>
 
-<p class="content-block">declara un arreglo de caracteres de 10 elementos y es inicializado. Cuando se inicializa una cadena podría dejarse los corchetes vacíos y así el compilador le asignará el índice requerido automáticamente pero si NO es así, se debe tener en cuenta que el último carácter de la cadena también ocupará un puesto. Este es el carácter nulo <code>\0</code>. Así que nuestra declaración contiene 10 elementos aunque sólo asignamos 9 (y no se le puede asignar más ya que no dejaríamos lugar al ya bastante mencionado <code>\0</code>). O sea que la sentencia anterior es lo mismo que:</p>
+<p class="content-block">declara un arreglo de caracteres de 10 elementos y es inicializado. Cuando se inicializa una cadena podrÃ­a dejarse los corchetes vacÃ­os y asÃ­ el compilador le asignarÃ¡ el Ã­ndice requerido automÃ¡ticamente pero si NO es asÃ­, se debe tener en cuenta que el Ãºltimo carÃ¡cter de la cadena tambiÃ©n ocuparÃ¡ un puesto. Este es el carÃ¡cter nulo <code>\0</code>. AsÃ­ que nuestra declaraciÃ³n contiene 10 elementos aunque sÃ³lo asignamos 9 (y no se le puede asignar mÃ¡s ya que no dejarÃ­amos lugar al ya bastante mencionado <code>\0</code>). O sea que la sentencia anterior es lo mismo que:</p>
 
 <pre>
 char array1[]={'9','8','7','6','5','4','3','2','1','\0'};
 </pre>
 
-<p class="content-block">usando la forma comentada en la “Definición de Arreglos”.</p>
+<p class="content-block">usando la forma comentada en la â€œDefiniciÃ³n de Arreglosâ€.</p>
 
-<h2 class="content-block">Algunas funciones de interés.</h2>
+<h2 class="content-block">Algunas funciones de interÃ©s.</h2>
 
 <p class="content-block">Algunos problemas requieren que los caracteres de la cadena sean procesados individualmente. No obstante, hay muchos otros problemas en los que se requiere que las cadenas se procesen como entidades completas. Tales problemas pueden simplificarse considerablemente usando funciones especiales orientadas a cadenas. Entre las funciones incluidas en <code>stdio.h</code> tenemos:</p>
 
@@ -221,7 +228,7 @@ gets(cadena_de_caracteres)
 
 <p class="content-block">y lo que hace es tomar de teclado un texto (hasta que se pulse enter) y guardarlo en <code>cadena_de_caracteres</code>.</p>
 
-<p class="content-block"><strong>ADVERTENCIA DE SEGURIDAD:</strong> La función <code>gets()</code> es extremadamente insegura y está obsoleta en C moderno (fue eliminada del estándar C11) porque no comprueba los límites del arreglo, lo que puede causar desbordamientos de búfer. Se recomienda usar <code>fgets()</code> en su lugar.</p>
+<p class="content-block"><strong>ADVERTENCIA DE SEGURIDAD:</strong> La funciÃ³n <code>gets()</code> es extremadamente insegura y estÃ¡ obsoleta en C moderno (fue eliminada del estÃ¡ndar C11) porque no comprueba los lÃ­mites del arreglo, lo que puede causar desbordamientos de bÃºfer. Se recomienda usar <code>fgets()</code> en su lugar.</p>
 
 <p class="content-block"><strong>puts():</strong> Su forma general es:</p>
 
@@ -229,13 +236,13 @@ gets(cadena_de_caracteres)
 puts(cadena_de_caracteres)
 </pre>
 
-<p class="content-block">y lo que hace escribir en pantalla el contenido de <code>cadena_de_caracteres</code> terminando con un salto de línea. También se puede usar la función <code>printf()</code> especificando que el tipo a imprimir es <code>%s</code>. P. ej.:</p>
+<p class="content-block">y lo que hace escribir en pantalla el contenido de <code>cadena_de_caracteres</code> terminando con un salto de lÃ­nea. TambiÃ©n se puede usar la funciÃ³n <code>printf()</code> especificando que el tipo a imprimir es <code>%s</code>. P. ej.:</p>
 
 <pre>
 printf("La cadena contiene: %s\n",nombre_cadena);
 </pre>
 
-<p class="content-block">Las funciones especificadas a continuación para el tratamiento de cadenas de caracteres se encuentran en el fichero de cabecera <strong><code>string.h</code></strong>:</p>
+<p class="content-block">Las funciones especificadas a continuaciÃ³n para el tratamiento de cadenas de caracteres se encuentran en el fichero de cabecera <strong><code>string.h</code></strong>:</p>
 
 <p class="content-block"><strong>strcmp():</strong> Su forma general es:</p>
 
@@ -243,14 +250,14 @@ printf("La cadena contiene: %s\n",nombre_cadena);
 strcmp(cadena1,cadena2)
 </pre>
 
-<p class="content-block">y lo que hace es comparar alfabéticamente dos cadenas. Devuelve:</p>
+<p class="content-block">y lo que hace es comparar alfabÃ©ticamente dos cadenas. Devuelve:</p>
 <ul>
-    <li>a.- un valor negativo si <code>cadena1</code> precede alfabéticamente a <code>cadena2</code>.</li>
-    <li>b.- el valor 0 si las dos cadenas son idénticas.</li>
-    <li>c.- un valor positivo si <code>cadena2</code> precede alfabéticamente a <code>cadena1</code>.</li>
+    <li>a.- un valor negativo si <code>cadena1</code> precede alfabÃ©ticamente a <code>cadena2</code>.</li>
+    <li>b.- el valor 0 si las dos cadenas son idÃ©nticas.</li>
+    <li>c.- un valor positivo si <code>cadena2</code> precede alfabÃ©ticamente a <code>cadena1</code>.</li>
 </ul>
 
-<p class="content-block">Vea que esta función devuelve FALSO (0) cuando las cadenas son iguales por lo que si está probando la igualdad, asegúrese de usar el operador lógico <strong>!</strong> para invertir la condición. Véase el ejemplo al final de este punto.</p>
+<p class="content-block">Vea que esta funciÃ³n devuelve FALSO (0) cuando las cadenas son iguales por lo que si estÃ¡ probando la igualdad, asegÃºrese de usar el operador lÃ³gico <strong>!</strong> para invertir la condiciÃ³n. VÃ©ase el ejemplo al final de este punto.</p>
 
 <p class="content-block"><strong>strcpy():</strong> Su forma general es:</p>
 
@@ -266,7 +273,7 @@ strcpy(cadena1, cadena2)
 strlen(cadena)
 </pre>
 
-<p class="content-block">y retorna el número de caracteres de la cadena.</p>
+<p class="content-block">y retorna el nÃºmero de caracteres de la cadena.</p>
 
 <p class="content-block"><strong>strcat():</strong> Su forma general es:</p>
 
@@ -274,9 +281,9 @@ strlen(cadena)
 strcat(cadena1, cadena2)
 </pre>
 
-<p class="content-block">y lo que hace es concatenar la cadena apuntada por <code>cadena2</code> a la cadena apuntada por <code>cadena1</code> la cual contendrá la versión final de la cadena. También devuelve <code>cadena1</code>. Véase que hace algo como: <code>cadena1 + cadena2</code>.</p>
+<p class="content-block">y lo que hace es concatenar la cadena apuntada por <code>cadena2</code> a la cadena apuntada por <code>cadena1</code> la cual contendrÃ¡ la versiÃ³n final de la cadena. TambiÃ©n devuelve <code>cadena1</code>. VÃ©ase que hace algo como: <code>cadena1 + cadena2</code>.</p>
 
-<p class="content-block">A continuación veamos un ejemplo:</p>
+<p class="content-block">A continuaciÃ³n veamos un ejemplo:</p>
 
 <pre>
 #include<stdio.h>
@@ -285,7 +292,7 @@ strcat(cadena1, cadena2)
 int main() {
     char c1[80], c2[80];
 
-    // ADVERTENCIA: gets() es insegura. Usar fgets() en código moderno.
+    // ADVERTENCIA: gets() es insegura. Usar fgets() en cÃ³digo moderno.
     gets(c1);
     gets(c2);
 
@@ -299,13 +306,20 @@ int main() {
 }
 </pre>
 
-<p class="content-block">Si se ejecuta este programa e introducimos las cadenas TEST y TEST, por ejemplo, la salida será:</p>
+<p class="content-block">Si se ejecuta este programa e introducimos las cadenas TEST y TEST, por ejemplo, la salida serÃ¡:</p>
 
 <pre>
-longitudes: 5 5	// Espero que sepan porqué.
+longitudes: 5 5	// Espero que sepan porquÃ©.
 Son iguales
 TESTTEST
 </pre>
 
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 </html>
+

@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="es">
 
 <head>
 <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>REPASO</title>
 <meta name="author" content="tony@mipropio.com">
 <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
+    <nav class="content-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="#content">Contenido</a>
+    </nav>
+
+    <main id="content">
 
 <h3><span class="highlight">ESTE PROGRAMA ESTA MUY COMENTADO CON LA INTENCION DE REPASAR VARIOS PUNTOS YA VISTOS HASTA AHORA.</span></h3>
-<p>Como verá no está tabulado. Eso es porque lo hice en un IDE y no pensaba en HTML en el momento.</p>
+<p>Como verÃ¡ no estÃ¡ tabulado. Eso es porque lo hice en un IDE y no pensaba en HTML en el momento.</p>
 
-<h3>De todas formas, puede bajar este programa pulsando <a href="MiCursoDeC.C">aquí.</a><br>Si lo lee todo y lo entiende bien pues ya tiene gran parte del terreno ganado.</h3>
+<h3>De todas formas, puede bajar este programa pulsando <a href="MiCursoDeC.C">aquÃ­.</a><br>Si lo lee todo y lo entiende bien pues ya tiene gran parte del terreno ganado.</h3>
 
 <h3><span class="highlight">####################################################################</span></h3>
 
 <pre class="justify content-block">
 #include < stdio.h >
-// #include < conio.h > // Obsoleto y no estándar.
+// #include < conio.h > // Obsoleto y no estÃ¡ndar.
 
 // Todos los archivos con extension .h ( o archivos de cabecera ) lo que
 // hacen es incluir prototipos de funciones. Por ejemplo: stdio.h, contiene
@@ -88,7 +95,7 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
     // Sin embargo, se recomienda realizar todas las declaraciones al principio
     // del codigo para mantener una mayor legibilidad del mismo.
     char ch, ch2; // Variables tipo char. Ocupa 1 byte -> 0..255
-    int i, cont, q; // Variable de Enteros. Ocupa típicamente 4 bytes en sistemas modernos (rango: -2,147,483,648 a 2,147,483,647). En sistemas antiguos de 16 bits, ocupaba 2 bytes.
+    int i, cont, q; // Variable de Enteros. Ocupa tÃ­picamente 4 bytes en sistemas modernos (rango: -2,147,483,648 a 2,147,483,647). En sistemas antiguos de 16 bits, ocupaba 2 bytes.
     float f; // Coma flotante. 
             // Numeros Reales. Ocupa 4 bytes -> 3.4E-38 a 3.4E+38
     double d; // Coma flotante doble precision.
@@ -301,7 +308,7 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
 
      */
     // system("cls"); // Ejecuta una orden de sistema, en este caso cls
-    // clrscr(); // Función no estándar (de conio.h). Se recomienda usar system("cls") o métodos específicos del sistema operativo.
+    // clrscr(); // FunciÃ³n no estÃ¡ndar (de conio.h). Se recomienda usar system("cls") o mÃ©todos especÃ­ficos del sistema operativo.
     // Impresion de la tabla ASCII
     for (i=0;i<256;i++) {
         printf("(%i,%c) ",i,i);
@@ -401,7 +408,7 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
     do {
         printf("Introduzca una letra (x para salir): ");
         ch=getchar();
-        // fflush(stdin);  // fflush(stdin) tiene un comportamiento indefinido según el estándar C. Se omite.
+        // fflush(stdin);  // fflush(stdin) tiene un comportamiento indefinido segÃºn el estÃ¡ndar C. Se omite.
     } while( ch != 'x' );
     printf("\n");
     printf("Introduzca un numero: ");
@@ -418,7 +425,7 @@ int main(void) { // Aqui main no recibe argumentos, pero podria. Ver
     // Exacto, funciona en la funcion pero no aqui. Ver mas datos en el
     // desarrollo de la funcion. Pensar en esto.
     system("pause"); // Para no se cierre la ventana de DOS y ver el resultado.
-    // Funciones de conio.h (clrscr, textcolor, textbackground) no son estándar y se han comentado.
+    // Funciones de conio.h (clrscr, textcolor, textbackground) no son estÃ¡ndar y se han comentado.
     printf("Texto de prueba\n");
     system("pause"); // Para no se cierre la ventana de DOS y ver el resultado.
     return 0;
@@ -587,6 +594,13 @@ void intercambia2 (char *x, char *y) {
 }
 
 </pre>
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Tony Rodriguez</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:tony@lasclases.com">tony@lasclases.com</a></p>
+    </footer>
 </body>
 
 </html>
+
