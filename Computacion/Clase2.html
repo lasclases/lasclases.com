@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<meta charset="utf-8">
 	<TITLE></TITLE>
 	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Win32)">
 	<META NAME="AUTHOR" CONTENT="Tony Rodriguez">
@@ -11,12 +11,12 @@
 </HEAD>
 <BODY LANG="es-ES" DIR="LTR">
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Paradigmas
-de Programación.</B></U></FONT></P>
+de ProgramaciÃ³n.</B></U></FONT></P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Un paradigma de
-programación es un modelo que engloba a ciertos lenguajes que
-comparten elementos estructurales o metodológicos similares.</P>
+programaciÃ³n es un modelo que engloba a ciertos lenguajes que
+comparten elementos estructurales o metodolÃ³gicos similares.</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Los principales
@@ -25,13 +25,13 @@ paradigmas son:</P>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Imperativo o
 <SPAN LANG="es-ES">Procedural</SPAN></B>: El mas antiguo de todos los
-paradigmas. Cada línea de programación es una orden.
+paradigmas. Cada lÃ­nea de programaciÃ³n es una orden.
 Este paradigma se caracteriza por una secuencia de acciones que se
 realizan en orden. Los lenguajes que usan este paradigma tienen
-herramientas para modificar el orden de ejecución de las
-acciones. Su <SPAN LANG="es-ES">característica</SPAN>
-principal es que depende poderosamente de la modificación de
-valores de variables: Durante la ejecución de estos programa,
+herramientas para modificar el orden de ejecuciÃ³n de las
+acciones. Su <SPAN LANG="es-ES">caracterÃ­stica</SPAN>
+principal es que depende poderosamente de la modificaciÃ³n de
+valores de variables: Durante la ejecuciÃ³n de estos programa,
 cada comando cambia el estado de dichas variables. Si Cond_1 -&gt;
 Valor_2 -&gt; Valor_3 -&gt;... -&gt; Fin. El programador se concreta
 en el procesamiento y  el algoritmo requerido para llevar a cabo el
@@ -40,7 +40,7 @@ recursos para pasar argumentos a las funciones y devolver valores
 desde las mismas. Ejemplos de lenguajes son: C, <SPAN LANG="es-ES">Perl</SPAN>,
 Pascal, Basic, etc.  Para ilustrar veremos un ejemplo de lenguaje
 imperativo o <SPAN LANG="es-ES">procedural</SPAN> en el caso de la
-función factorial.</P>
+funciÃ³n factorial.</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">function
@@ -59,14 +59,14 @@ x = 1; </P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Funcional o
-Aplicativo:</B> La programación se realiza a través de
-la definición de una serie de funciones. Esencialmente, un
-programa funcional es simplemente &quot;una expresión&quot; y
-la ejecución significaría la evaluación de dicha
-expresión. Ejemplo de este lenguaje: Lenguaje Scheme. Perl
-<SPAN LANG="es-ES">también</SPAN> soporta el paradigma
-Funcional. La misma función factorial del paradigma
-imperativo, podría expresarse de la siguiente forma en un
+Aplicativo:</B> La programaciÃ³n se realiza a travÃ©s de
+la definiciÃ³n de una serie de funciones. Esencialmente, un
+programa funcional es simplemente &quot;una expresiÃ³n&quot; y
+la ejecuciÃ³n significarÃ­a la evaluaciÃ³n de dicha
+expresiÃ³n. Ejemplo de este lenguaje: Lenguaje Scheme. Perl
+<SPAN LANG="es-ES">tambiÃ©n</SPAN> soporta el paradigma
+Funcional. La misma funciÃ³n factorial del paradigma
+imperativo, podrÃ­a expresarse de la siguiente forma en un
 lenguaje funcional:</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
@@ -75,43 +75,43 @@ n =  if n = 1 then 1 else n * factorial(n &minus; 1);</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Orientado a Objetos:</B>
-Uno de los más usados en la actualidad. Consisten en una
-colección de &quot;objetos&quot; que intercambian mensajes
-entre sí. Cada &quot;objeto&quot; es una entidad que agrupa o
-&quot;encapsula&quot; una cierta información ( ó estado
-) y un conjunto de mecanismos para manipularla (métodos). Un
+Uno de los mÃ¡s usados en la actualidad. Consisten en una
+colecciÃ³n de &quot;objetos&quot; que intercambian mensajes
+entre sÃ­. Cada &quot;objeto&quot; es una entidad que agrupa o
+&quot;encapsula&quot; una cierta informaciÃ³n ( Ã³ estado
+) y un conjunto de mecanismos para manipularla (mÃ©todos). Un
 buen ejemplo para ejemplificar este concepto es un bombillo. Este
 &quot;objeto&quot; tiene dos &quot;estados&quot; ( Encendido y
-Apagado ), y posee un &quot;método&quot; que se usa para
-cambiar esos estados que sería el interruptor. Toda la entidad
+Apagado ), y posee un &quot;mÃ©todo&quot; que se usa para
+cambiar esos estados que serÃ­a el interruptor. Toda la entidad
 esta encapsulada y el usuario solo puede <SPAN LANG="es-ES">accesar</SPAN>
-al método y no a los estados directamente. Los métodos
-del objeto son los que se encarga de cambiar el estado. Quizá
-en futuras clases se aborden las características de este
-lenguaje con más profundidad. Ejemplos: Lenguaje C++, Perl,
+al mÃ©todo y no a los estados directamente. Los mÃ©todos
+del objeto son los que se encarga de cambiar el estado. QuizÃ¡
+en futuras clases se aborden las caracterÃ­sticas de este
+lenguaje con mÃ¡s profundidad. Ejemplos: Lenguaje C++, Perl,
 Java, etc.</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
-<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Lógico
-Declarativo:</B> En estos lenguajes, cada línea de
-programación es una declaración y no una orden. La
-programación se realiza a través de la definición
-de hechos y relaciones lógicas entre éstos. Una forma
-de razonar para resolver problemas en matemáticas se
-fundamenta en la lógica de primer orden. El conocimiento
-básico de las matemáticas se puede representar en la
-lógica en forma de axiomas, a los cuales se la agregan reglas
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>LÃ³gico
+Declarativo:</B> En estos lenguajes, cada lÃ­nea de
+programaciÃ³n es una declaraciÃ³n y no una orden. La
+programaciÃ³n se realiza a travÃ©s de la definiciÃ³n
+de hechos y relaciones lÃ³gicas entre Ã©stos. Una forma
+de razonar para resolver problemas en matemÃ¡ticas se
+fundamenta en la lÃ³gica de primer orden. El conocimiento
+bÃ¡sico de las matemÃ¡ticas se puede representar en la
+lÃ³gica en forma de axiomas, a los cuales se la agregan reglas
 formales para deducir cosas verdaderas ( teoremas ). Los lenguajes
-que utilizan esta lógica se llaman lenguajes declarativos,
+que utilizan esta lÃ³gica se llaman lenguajes declarativos,
 porque todo lo que tiene que hacer el programador para solucionar un
-problema es describirlo <SPAN LANG="es-ES">vía</SPAN> axiomas
-y reglas de deducción. En estos lenguajes, no se indica el
-orden en el que se computa una función. Ejemplo: Lenguaje
-Prolog. Perl en su futura <SPAN LANG="es-ES">versión</SPAN> 6
-soportará este paradigma y de esta forma será el único
-lenguaje de programación en soportar los cuatro paradigmas
-principales de programación.  Un ejemplo de <SPAN LANG="es-ES">programación</SPAN>
-lógica sería algo como:</P>
+problema es describirlo <SPAN LANG="es-ES">vÃ­a</SPAN> axiomas
+y reglas de deducciÃ³n. En estos lenguajes, no se indica el
+orden en el que se computa una funciÃ³n. Ejemplo: Lenguaje
+Prolog. Perl en su futura <SPAN LANG="es-ES">versiÃ³n</SPAN> 6
+soportarÃ¡ este paradigma y de esta forma serÃ¡ el Ãºnico
+lenguaje de programaciÃ³n en soportar los cuatro paradigmas
+principales de programaciÃ³n.  Un ejemplo de <SPAN LANG="es-ES">programaciÃ³n</SPAN>
+lÃ³gica serÃ­a algo como:</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">7&gt;3</P>
@@ -124,7 +124,7 @@ lógica sería algo como:</P>
 	</OL>
 </OL>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El orden de las
-declaraciones no altera la deducción lógica.</P>
+declaraciones no altera la deducciÃ³n lÃ³gica.</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
@@ -134,29 +134,29 @@ IDE</B></U></FONT></P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Un Entorno de desarrollo
-integrado ( IDE por sus siglas en inglés ) se refiere al
+integrado ( IDE por sus siglas en inglÃ©s ) se refiere al
 sistema usado para el desarrollo de los programas. Existen muchos
 programadores que prefieren realizar sus programas en un sencillo
-editor de texto. Para la mayoría de los mortales sin embargo,
-el uso de un entorno desarrollado especialmente para la programación
-tiene grandes ventajas. Entre ellas <SPAN LANG="es-ES">están</SPAN>
-el resaltado y la <SPAN LANG="es-ES">corrección</SPAN> de
+editor de texto. Para la mayorÃ­a de los mortales sin embargo,
+el uso de un entorno desarrollado especialmente para la programaciÃ³n
+tiene grandes ventajas. Entre ellas <SPAN LANG="es-ES">estÃ¡n</SPAN>
+el resaltado y la <SPAN LANG="es-ES">correcciÃ³n</SPAN> de
 sintaxis ( algunos <SPAN LANG="es-ES">incluso</SPAN> en tiempo real y
-no en el compilado ), la facilidad de creación de proyectos
-formados con <SPAN LANG="es-ES">múltiples</SPAN> módulos,
-tabulación <SPAN LANG="es-ES">automática</SPAN> de los
-distintos bloques de un programa y configuración de los
-parámetros de compilación entre muchos otros. Existen
-una gran variedad de entornos IDE quedando a disposición del
+no en el compilado ), la facilidad de creaciÃ³n de proyectos
+formados con <SPAN LANG="es-ES">mÃºltiples</SPAN> mÃ³dulos,
+tabulaciÃ³n <SPAN LANG="es-ES">automÃ¡tica</SPAN> de los
+distintos bloques de un programa y configuraciÃ³n de los
+parÃ¡metros de compilaciÃ³n entre muchos otros. Existen
+una gran variedad de entornos IDE quedando a disposiciÃ³n del
 programador cual usar. Muchos de los paquetes propietarios de
-programación vienen con su propio IDE como Turbo C++, Turbo
+programaciÃ³n vienen con su propio IDE como Turbo C++, Turbo
 Pascal, Borland C, Visual Basic, etc. Pero existen otros totalmente
-gratuitos y poderosos, mas modernos y acoplados al <SPAN LANG="es-ES">estándar</SPAN>
-ANSI C de programación como es el caso de Dev-C++ el cual será
+gratuitos y poderosos, mas modernos y acoplados al <SPAN LANG="es-ES">estÃ¡ndar</SPAN>
+ANSI C de programaciÃ³n como es el caso de Dev-C++ el cual serÃ¡
 el entorno de desarrollo usado por mi en el laboratorio. Entre las
 ventajas que existen entre este IDE y, por ejemplo, Turbo C++ es que
 Dev-C++ esta pensado para el desarrollo de grandes proyectos con
-ambiente gráfico y no sólo en modo texto. Cabe resaltar
+ambiente grÃ¡fico y no sÃ³lo en modo texto. Cabe resaltar
 el hecho de que Dev-C++ esta amparado bajo la licencia GPL ( GNU
 Public License ).</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
@@ -164,36 +164,36 @@ Public License ).</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=5><U><B>Conceptos
-Básicos.</B></U></FONT></P>
+BÃ¡sicos.</B></U></FONT></P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">La base del C proviene
 del BCPL, escrito por Martin Richards, y del B escrito por Ken
 Thompson en 1970 para el primer sistema UNIX en un DEC PDP-7. Estos
 son lenguajes sin tipos, al contrario que el C que proporciona varios
-tipos de datos. Los tipos son caracteres, números enteros y en
-coma flotante, de varios tamaños. Además se pueden
-crear tipos derivados mediante la utilización de punteros,
+tipos de datos. Los tipos son caracteres, nÃºmeros enteros y en
+coma flotante, de varios tamaÃ±os. AdemÃ¡s se pueden
+crear tipos derivados mediante la utilizaciÃ³n de punteros,
 vectores, registros y uniones. El primer compilador de C fue escrito
-por Dennis Ritchie para un DEC PDP-11 y escribió el propio
+por Dennis Ritchie para un DEC PDP-11 y escribiÃ³ el propio
 sistema operativo en C.</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">C trabaja con tipos de
-datos que son directamente tratables por el hardware de la mayoría
-de computadoras actuales, como son los caracteres, números y
+datos que son directamente tratables por el hardware de la mayorÃ­a
+de computadoras actuales, como son los caracteres, nÃºmeros y
 direcciones. Estos tipos de datos pueden ser manipulados por las
-operaciones aritméticas que proporcionan las computadoras. No
+operaciones aritmÃ©ticas que proporcionan las computadoras. No
 proporciona mecanismos para tratar tipos de datos que no sean los
-básicos, debiendo ser el programador el que los desarrolle.
-Esto permite que el código generado sea muy eficiente y de ahí
-el éxito que ha tenido como lenguaje de desarrollo de
+bÃ¡sicos, debiendo ser el programador el que los desarrolle.
+Esto permite que el cÃ³digo generado sea muy eficiente y de ahÃ­
+el Ã©xito que ha tenido como lenguaje de desarrollo de
 sistemas. No proporciona otros mecanismos de almacenamiento de datos
-que no sea el estático y no proporciona mecanismos de entrada
+que no sea el estÃ¡tico y no proporciona mecanismos de entrada
 ni salida. Ello permite que el lenguaje sea reducido y los
-compiladores de fácil implementación en distintos
+compiladores de fÃ¡cil implementaciÃ³n en distintos
 sistemas. Por contra, estas carencias se compensan mediante la
-inclusión de funciones de librería para realizar todas
+inclusiÃ³n de funciones de librerÃ­a para realizar todas
 estas tareas, que normalmente dependen del sistema operativo. 
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
@@ -215,9 +215,9 @@ aumenta cada vez que se entra en un nuevo :</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">//
-Los comentarios de una línea comienzan con '//'</P>
+Los comentarios de una lÃ­nea comienzan con '//'</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">/*
-Los mensajes <SPAN LANG="es-ES">multilíneas</SPAN></P>
+Los mensajes <SPAN LANG="es-ES">multilÃ­neas</SPAN></P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">   
 van encerrados entre '/*' y '*/'.</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">   
@@ -226,24 +226,24 @@ Fin del comentario. */</P>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">/*
 &quot;#include&quot; se usa al principio del programa para &quot;insertar&quot;
-en el archivo las cabeceras de las funciones estándar a usar
-dentro del programa como <SPAN LANG="es-ES">también</SPAN>
-cualquier otro módulo que sea parte del proyecto principal.*/</P>
+en el archivo las cabeceras de las funciones estÃ¡ndar a usar
+dentro del programa como <SPAN LANG="es-ES">tambiÃ©n</SPAN>
+cualquier otro mÃ³dulo que sea parte del proyecto principal.*/</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">//
-Declaración de los prototipos de las funciones.</P>
+DeclaraciÃ³n de los prototipos de las funciones.</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">int
 funcion(int x);  //Recibe un entero y retorna un entero.</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">main
-()  // función principal. Se sobreentiende que es “int
-main(void)”. De esta ultima forma, la  		 // explicita, es como
+()  // funciÃ³n principal. Se sobreentiende que es â€œint
+main(void)â€. De esta ultima forma, la  		 // explicita, es como
 yo lo prefiero.</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">{</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">int
-x;   // <SPAN LANG="es-ES">Declaración</SPAN> de variables.</P>
+x;   // <SPAN LANG="es-ES">DeclaraciÃ³n</SPAN> de variables.</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">char
 ch;</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">do {</P>
@@ -255,7 +255,7 @@ ch;</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">LoQueSea;</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">	</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">return
-0; // Devuelve el valor cero al sistema que lo llamó. Indica
+0; // Devuelve el valor cero al sistema que lo llamÃ³. Indica
 que no hubo error.</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
@@ -263,8 +263,8 @@ que no hubo error.</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">//
 Luego desarrollamos el cuerpo de las funciones.</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">/*
-Declaración del cuerpo de las funciones. Los prototipos deben
-concordar con la previa declaración o de lo contrario mandará
+DeclaraciÃ³n del cuerpo de las funciones. Los prototipos deben
+concordar con la previa declaraciÃ³n o de lo contrario mandarÃ¡
 un mensaje de error a nivel del compilador.*/</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
 </P>
@@ -275,18 +275,18 @@ funcion(int x) {</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 2.5cm; margin-bottom: 0cm">...</P>
 <P ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">}</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Las sentencias que siguen
-a main () son las primeras sentencias que se <SPAN LANG="es-ES">ejecutarán.</SPAN>
-La sección de un programa que comienza con main (), seguida de
-una llave de apertura '{' se denomina función principal. Un
+a main () son las primeras sentencias que se <SPAN LANG="es-ES">ejecutarÃ¡n.</SPAN>
+La secciÃ³n de un programa que comienza con main (), seguida de
+una llave de apertura '{' se denomina funciÃ³n principal. Un
 programa escrito en C es en realidad un conjunto de funciones (
-pequeñas secciones de código ). La función
-denominada main () es de <SPAN LANG="es-ES">ejecución</SPAN>
-obligada y <SPAN LANG="es-ES">además</SPAN> es la primera
-función que se ejecuta cuando se hace correr el programa.</P>
+pequeÃ±as secciones de cÃ³digo ). La funciÃ³n
+denominada main () es de <SPAN LANG="es-ES">ejecuciÃ³n</SPAN>
+obligada y <SPAN LANG="es-ES">ademÃ¡s</SPAN> es la primera
+funciÃ³n que se ejecuta cuando se hace correr el programa.</P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Todo lo que se encuentra
-colocado entre dos llaves que se corresponden entre sí, una de
+colocado entre dos llaves que se corresponden entre sÃ­, una de
 apertura y otra de cierre, constituye un bloque. Todas las sentencias
 ejecutables de C deben incluir un punto y coma (;) al final, de modo
 que C sepa donde termina cada sentencia.</P>
